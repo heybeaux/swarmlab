@@ -130,6 +130,18 @@ gate policy would have to enforce, made visible here:
   run halts safely here only because the rails are hard-coded; the argument is
   that a real multi-agent system needs Lattice to supply them.
 
+## Live-LLM applicability (sim-only — honest)
+
+This experiment has **no genuine LLM seam**, so there is no live-model run. What it
+studies — genome diversity collapsing under sycophantic mutation, and whether a hard
+diversity/kill-switch rail catches it — is a property of the *mutation dynamics and the
+gate*, not of any single agent's reasoning. The "agents" here are prompt genomes folded
+into a numeric guess; swapping in a real haiku to author each mutation would change the
+flavor of the drift text but not the load-bearing finding, which is that fitness-blind
+selection homogenizes a population and only a governance rail (not smarter agents) stops
+it. Wiring a real model would be theater, so per the honesty rule we document it as
+sim-only rather than stage a decorative call. The Lattice lesson stands on the sweep.
+
 ## Files
 
 - `types.ts` — genome model (`Directive`), `Mutation`, `RailConfig`, outcomes.

@@ -83,3 +83,15 @@ reconciliation / anti-entropy pass (versioned facts, confidence-weighted overwri
 checksum the mesh can vote on) so a node that adopted a mangled early version can be healed
 by a truer one later. Without that, distance from the source is a permanent tax on truth.
 The trace is honest: a real result, no cell faked green.
+
+## Live-LLM applicability (sim-only — honest)
+
+**No genuine LLM seam.** The finding — coverage and fidelity are orthogonal, and corruption
+radiates as a spatial gradient from the seed under first-write-wins adoption — is a property
+of the *mesh topology and the per-hop noise parameter*, not of any node's reasoning. Each
+node here is a bit-vector fact mutated by a seeded corruption probability; substituting a
+real haiku to "retell" the fact per hop would just be a slower, noisier random mutator and
+would not change what the experiment measures (the epidemic-decay shape and the
+distance-from-source tax). Per the honesty rule we run it as a deterministic sweep rather
+than stage a decorative model call. The Engram lesson (anti-entropy / versioned facts to heal
+early-hop corruption) rests on the sim.

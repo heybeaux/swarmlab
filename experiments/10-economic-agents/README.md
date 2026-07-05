@@ -113,3 +113,15 @@ first time it overspends.
 
 The trace is honest: the collapse cells really do collapse, and no cell was faked green.
 `runs/econ-*.jsonl` replays with full spawn/message/score/kill parity.
+
+## Live-LLM applicability (sim-only — honest)
+
+**No genuine LLM seam.** The finding — collaboration collapses at a cost/budget *ratio*
+(`c/B ≳ 0.4`), not at any absolute price, and full-wallet-starvation hides behind a green
+ledger — is a property of the *metered-bus economics*, not of any agent's message content.
+Agents here are budget counters that decide send/no-send against a price; a real haiku
+composing each message would burn tokens without changing the affordability math that drives
+the collapse (the same `c/B` threshold governs whether a call is affordable regardless of
+what the call says). Per the honesty rule this stays a deterministic sweep. The Sonder /
+Lattice lessons (price as a fraction of remaining budget, sends-attempted-vs-afforded metric,
+never price a call above the affordability floor) rest on the sim.

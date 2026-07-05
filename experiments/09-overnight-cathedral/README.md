@@ -106,3 +106,16 @@ unbounded, so Sonder's audit trail must diff the artifact against the *original 
 intent*, not just against the previous commit, or a spec-complete cathedral quietly grows a
 hundred rooms nobody designed. The trace is honest: the ungoverned long build really does
 end at zero, and no cell was faked green.
+
+## Live-LLM applicability (sim-only — honest)
+
+**No genuine LLM seam.** The finding — long-horizon unsupervised work peaks then rots, the
+rot deepens with the horizon, and an inter-step review link converts a biased random walk
+into a quality ratchet — is a property of the *chain structure and the reviewer catch-rate
+parameter*, not of any builder's or reviewer's prose. Builders and reviewers here are
+Bernoulli draws (introduce-defect probability, catch probability); a real haiku in either
+seat would move the exact numbers but not the phase structure (peak-then-rot) or the two
+governance thresholds the experiment exists to locate (review is mandatory; review has a
+minimum viable catch rate). Per the honesty rule this stays a deterministic sweep. The
+Lattice + Sonder lesson (required review edge, measured catch rate, spec-conformance diff)
+rests on the sim.

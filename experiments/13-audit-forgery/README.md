@@ -131,3 +131,16 @@ signed running count / Merkle-accumulator / high-water-seq attestation so a sile
 event leaves a hole the chain itself can see. Every result here is real: a caught forgery and a
 slipped one are both honest findings, and the one that slips (insider tail-drop) is the most
 important thing this experiment learned.
+
+## Live-LLM applicability (sim-only — honest)
+
+**No genuine LLM seam.** The finding — signatures authenticate authorship but not history, the
+four verifier invariants are non-substitutable, and deletion is the hardest forgery to catch —
+is a property of *cryptographic structure* (hash chain, sequence numbers, signatures), not of
+any agent's judgement. The forger and the verifier here are deterministic algorithms; there is
+nothing an LLM "decides" that would change whether a dropped tail event leaves a detectable
+hole — that is fixed by the chain's math. A model could *narrate* an attack, but the attack's
+detectability is not a reasoning problem, so a live call would add cost and zero signal. Per the
+honesty rule this stays a deterministic suite. The Sonder lesson (always run the `full`
+verifier; defend insiders with CHAIN+SEQ structure; add an out-of-band completeness attestation)
+rests on the suite.
