@@ -11,6 +11,57 @@
 
 ---
 
+## Live-LLM sweep (real haiku, 20 runs total)
+
+Beyond the single-shot exhibitions, we swept the parameters that drive each
+experiment's core claim. These are the load-bearing live results.
+
+**04 — liar-count K sweep (does majority capture happen with real panelists?)**
+
+| K liars (of 5) | consensus | truth won | honest flipped |
+|---|---|---|---|
+| 1 | B (true) | ✅ yes | 0 |
+| 2 | B (true) | ✅ yes | 0 |
+| 3 | A (lie) | ❌ **no** | 0 |
+
+The tipping point is real and live: **truth survives a liar minority (K≤2) but
+falls to a liar majority (K=3) — and not one honest agent was ever persuaded.**
+`honestOnLie=0` at every K. At K=3 the lie wins purely by vote arithmetic. This
+is *capture, not persuasion* — the single most important Parliament/Lattice
+result in the suite, now confirmed against real models. **Quorum composition
+(who gets a seat) dominates deliberation mechanics.**
+
+**11 — probe-budget sweep (does more probing help or self-poison?)**
+
+| budget | happy-path within-5% | edge-case |
+|---|---|---|
+| 2 | 0.208 | 0.00 |
+| 6 | **0.500** | 0.06 |
+| 12 | 0.167 | 0.25 |
+| 24 | 0.125 | 0.19 |
+
+**Non-monotone, live-confirmed.** Happy-path accuracy *peaks at budget 6 then
+collapses* as more probing accumulates loyalty-discounted observations that poison
+the fit. The sim predicted this ("stateful probing self-poisons"); a real reasoning
+model reproduces it. **More data made the reconstruction worse** — the observer
+changed the system, and probed itself into a corrupted contract.
+
+**12 — seed-variance sweep (is "caution" reliable?)**
+
+5 seeds, all `silentCorruption=0`, all `ffCaught=3/3`. The first single-shot run's
+1/3 catch was the outlier; with an explicit "same name may mean different things"
+warning, warned haiku reliably *avoids* the traps (0 silent corruption across all
+seeds). But note the mechanism is still avoidance-by-non-agreement, not typed
+detection — the Sonder directive holds regardless.
+
+**05 — deep chain (chain=8, reps=5): rubberStampTax still 0.**
+
+Even at double the depth, haiku caught the off-by-one every rep. Confirms the tax
+is a difficulty-curve phenomenon (real on subtle-enough defects, absent on a clear
+boundary bug) — it does not emerge from depth alone.
+
+---
+
 ## The one finding under all the others
 
 **Green is not correct. Agreement is not truth. Fidelity is not meaning.**
@@ -229,7 +280,9 @@ these failures get caught or don't.
 
 ## Honesty ledger
 
-- **Live-LLM (real haiku, replay-verified this run):** 04, 05, 07, 11, 12.
+- **Live-LLM (real haiku, replay-verified):** 04, 05, 07, 11, 12 — single-shot
+  exhibitions plus a 20-run parameter sweep (04 K∈{1,2,3}, 11 budget∈{2,6,12,24},
+  12 five seeds, 05 chain=8/reps=5). Sweep table above.
 - **Sim-only (mechanism-level findings, no live seam by design):** 02, 03, 06, 08,
   09, 10, 13, and the sweep halves of 01/04/11/12.
 - Where live results *refined* the sim, that's noted inline (12 caution-not-
