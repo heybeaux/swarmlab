@@ -55,6 +55,9 @@ the `NN` prefix is the brainstorm idea number, not build order.
 - **Consult skill** — pull in a second opinion when a design decision is genuinely hard.
 - **OpenRouter API** — reach for other models when a task suits them better.
 - **Codex / other agents** — call any agent in the crew or spawn sub-agents for parallel work.
+- **MCP servers** — you may expand your own capabilities by wiring in MCP servers when an
+  experiment genuinely needs a tool you don't have. Catalog: https://github.com/punkpeye/awesome-mcp-servers
+  Prefer local/stdio servers; never add one that exfiltrates workspace data or sends externally.
 - **Be creative** — the specs are floors, not ceilings. If you see a weirder, more instructive
   version of an experiment, build that and write down why.
 
