@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1.0",
+  "id": "rcpt_20260705_060733_04d778",
+  "created_at": "2026-07-05T06:07:33.856Z",
+  "updated_at": "2026-07-05T06:07:33.856Z",
+  "completed_at": "2026-07-05T06:07:33.856Z",
+  "status": "needs-review",
+  "claim": {
+    "summary": "OpenClaw scout task failed: You're out of extra usage · resets Jul 7 at 4pm (America/Vancouver)",
+    "details": "OpenClaw agent turn failed: You're out of extra usage · resets Jul 7 at 4pm (America/Vancouver)"
+  },
+  "actor": {
+    "type": "agent",
+    "id": "scout",
+    "model": null
+  },
+  "task": {
+    "source": "openclaw",
+    "id": "be698f49-6d91-404b-82f1-8ea2665db368",
+    "url": null
+  },
+  "workspace": {
+    "source": "openclaw-agent-end",
+    "workspace_dir": "/Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab",
+    "session_key": "agent:scout:subagent:be015bcd-5812-4260-85c7-b6f2e4143a56",
+    "session_id": "16aea351-f141-45bc-a358-767121752c5b",
+    "run_id": "be698f49-6d91-404b-82f1-8ea2665db368",
+    "duration_ms": 2849,
+    "git_available": false,
+    "git_error": "Git evidence is not collected by the safe in-process OpenClaw plugin adapter."
+  },
+  "changes": [],
+  "evidence": [
+    {
+      "id": "ev_001",
+      "kind": "log",
+      "label": "OpenClaw agent_end event",
+      "path": ".receipts/artifacts/rcpt_20260705_060733_04d778/openclaw-agent-end.json",
+      "created_at": "2026-07-05T06:07:33.856Z"
+    }
+  ],
+  "verification": {
+    "summary": "1 failed",
+    "checks": [
+      {
+        "kind": "openclaw-agent-end",
+        "label": "OpenClaw agent turn completed",
+        "status": "failed",
+        "evidence_id": "ev_001",
+        "explanation": "You're out of extra usage · resets Jul 7 at 4pm (America/Vancouver)"
+      }
+    ]
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "OpenClaw completion proves the agent produced a final turn, not that every task claim is semantically correct.",
+      "The safe in-process OpenClaw plugin adapter does not shell out for git evidence; review workspace changes separately when needed."
+    ],
+    "assumptions": [
+      "Agent transcript/event metadata is treated as evidence of observed runtime behavior, not human approval."
+    ],
+    "rollback": null
+  },
+  "integrations": {
+    "openclaw": {
+      "hook": "agent_end",
+      "run_id": "be698f49-6d91-404b-82f1-8ea2665db368",
+      "session_key": "agent:scout:subagent:be015bcd-5812-4260-85c7-b6f2e4143a56",
+      "session_id": "16aea351-f141-45bc-a358-767121752c5b",
+      "message_provider": "telegram",
+      "channel_id": "telegram",
+      "model_source": "unknown"
+    }
+  },
+  "recommended_next_action": "Inspect the OpenClaw error and rerun or repair the failed task before approval.",
+  "integrity": {
+    "algorithm": "sha256",
+    "receipt_payload_sha256": "f330ee6031693fc30c810dec1d63d909d27cea33c27a2dc5fe7bfe6c477019a1",
+    "artifacts": [
+      {
+        "path": ".receipts/artifacts/rcpt_20260705_060733_04d778/openclaw-agent-end.json",
+        "sha256": "ae864d66daf6e85af5dc88994d2294be8435b6ff17e8fcc78e5d0996f41551ab"
+      }
+    ]
+  }
+}
