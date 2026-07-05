@@ -66,13 +66,16 @@ Use freedoms with judgment: they're for unblocking and elevating, not for churn.
 - If it's an experiment: it runs, produces a valid JSONL trace, `replay()` reads it back,
   and it has a `README.md` (written by you) explaining what it tests and what you observed.
 - If it's the observatory: it builds, runs, and renders real traces from `experiments/*/runs/`.
-- Committed to git with a clear message. **Commit after every green unit — never lose work.**
+- Committed **and pushed** to GitHub with a clear message. **Commit + push after every green
+  unit — never lose work.** Remote is `origin` (github.com/heybeaux/swarmlab, branch `main`).
 - A one-paragraph learning note appended to `JOURNAL.md`: what happened, what surprised you.
 
 ## Working Rules
 
-- **Commit early, commit often.** Session recycling can abort long runs (~380s). Small green
-  commits are how the team survives restarts and picks up where it left off.
+- **Commit early, commit often — and push each time.** Session recycling can abort long runs
+  (~380s). Small green commits pushed to `origin` are how the team survives restarts AND how Beaux
+  watches progress without losing work. `git push` is part of every commit step, not optional.
+  If a push fails (e.g. remote moved), `git pull --rebase origin main` then push again.
 - **Specs + git are shared memory.** The next iteration reads `TEAM.md`, `JOURNAL.md`, `git log`,
   and `specs/` to know where things stand. Leave the trail clean.
 - **Never fake a result.** A real red trace beats a fake green one. If something doesn't work,
