@@ -412,8 +412,9 @@ live and in sim.
   seeds, adoption decided by the **real shipped** `reconcile` + `antiEntropySync` (linked via a
   `file:` dep on the built module — never reimplemented). Per-hop drift corrupts `content` without
   re-authoring the digest (a retelling); each receiver reconciles; one anti-entropy pass runs per
-  live edge per round, continuing until the mesh converges. Baseline run `rm-baseline-mr7uu75x`,
-  engram run `rm-engram-mr7uvyij`, all traces replay-verified.
+  live edge per round, continuing until the mesh converges. Baseline run `rm-baseline-mr7uziwl`,
+  engram run `rm-engram-mr7uzjds`, all traces replay-verified (deterministic — re-runs reproduce
+  these metrics exactly).
 
   | metric | before (first-write-wins) | after (versioned + anti-entropy) | target | verdict |
   |---|---|---|---|---|

@@ -114,7 +114,8 @@ verified copy heals a corrupt neighbor only one hop per pass. `timeToSaturation`
 latched at the coverage threshold, so continued repair never inflates it.
 
 **Before / after** (30 trials/cell, seed `rumor-mill-v1`; baseline run
-`rm-baseline-mr7uu75x`, engram run `rm-engram-mr7uvyij`):
+`rm-baseline-mr7uziwl`, engram run `rm-engram-mr7uzjds`; deterministic — re-runs
+reproduce these IDs' metrics exactly):
 
 | metric | baseline (first-write-wins) | engram (versioned + anti-entropy) | target | verdict |
 |---|---|---|---|---|
