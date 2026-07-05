@@ -133,3 +133,18 @@ every `pass` count in every trace is executed, and the red run is reported red.
    ships a wrong program — the worst kind of failure because every dashboard is
    green. This is the AWM lesson: trusting your own test suite unconditionally
    makes a single bad-faith constraint indistinguishable from ground truth.
+
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` (4 rounds, poisonRate=0, integer-label oracle).
+- **Trace:** `runs/ap-mr7fzdfy.jsonl` (replay-verified).
+- **Key metrics (final):** `finalPassRate=1`, `finalTests=1`, `poisonedTests=0`,
+  `oracleConsistent=1`, `everConverged=0` (`convergedAtRound=-1`), `meanChurn=0.274`.
+- **Live vs sim:** the standout live finding is that the real black-box breaker is *weak* —
+  it filed only one test the whole run and never drove churn to zero, so `everConverged=0`
+  even though pass-rate sits at a green 1.0. That is exactly takeaway #2 playing out against a
+  real model: **pass-rate is a useless convergence signal** (it's pinned at 1.0 while `churn`
+  stays at 0.274, i.e. the code is still moving). The sim can manufacture a diligent breaker
+  that disarms itself; the live haiku breaker under-tests and quietly leaves the fight
+  unfinished — a green dashboard over an unconverged system, which is the AWM failure mode in
+  miniature.

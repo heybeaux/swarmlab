@@ -125,3 +125,25 @@ data when the target has hidden state. Reconstruction from behavior needs a way 
 and quarantine state-induced drift, or it will confidently ship a contract that's most wrong
 where it probed hardest. The trace is honest — the stateful curve bends the wrong way, and
 we let it.
+
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` via `dist/llm.js`. A real haiku
+  *prober* spends a budget of 12 probes against the SAME sealed stateful oracle (so loyalty
+  state is real), sees only prices, then predicts a held-out test set split HAPPY vs EDGE.
+- **Trace:** `runs/re-llm-mr7ggy84.jsonl` (replay-verified).
+- **Key metrics:** `agreement=0.025`, `happyPathAgreement=0`, **`happyPathWithin5pct=0.458`**,
+  `edgeCaseAgreement=0.063`, `probesUsed=12`, `predsReturned=40/40`.
+- **Live vs sim — the self-poisoning finding.** Exact-match agreement is ~0, but the
+  within-5% happy-path metric (0.458) tells the real story: **the model recovers the ladder's
+  *shape* about half the time, and every miss is systematically LOW.** Sample pred/truth pairs:
+  `2: 275/306`, `17: 1603/1800`, `39: 3571/3700`, `36: 3301/3400` — all undershoots. The
+  cause is the hidden loyalty layer: the prober's *own* probe spend crosses the loyalty bar
+  partway through its budget, so roughly half its observations are silently discounted by 0.9×.
+  It therefore fits a ladder biased toward the discounted rates and undershoots every fresh-
+  session test price. This is the sim's "stateful probing self-poisons" result, reproduced by a
+  real reasoning model that has no way to know its measurements are changing the system. Edge
+  cases (cliff/promo/loyalty-active) are near-total misses (0.063), exactly as the sim predicts:
+  a black-box sweep cannot see behavior it never thought to trigger. **The observer changed the
+  system, and the contract it would have shipped is most wrong precisely where it probed
+  hardest.**

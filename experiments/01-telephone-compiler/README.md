@@ -79,3 +79,17 @@ lower-bound shape to compare the real runs against.
 3. **Isolation is a prerequisite for measurement.** Nested agent calls
    inherit cwd context by default; without sandboxing, the experiment
    measures the harness, not the phenomenon.
+
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` (4 rounds, parking-garage fee-calc spec).
+- **Trace:** `runs/tg-mr7fxbfr.jsonl` (replay-verified).
+- **Key metrics (final):** `finalJaccard=0.172` (down from `0.214` at round 0),
+  `finalNumberRetention=0.5` / `minNumberRetention=0.5` (flat across all rounds),
+  `finalLengthRatio=0.625`.
+- **Live vs sim:** the live run reproduces the sim's signature exactly — **vocabulary
+  Jaccard decays round over round while numeric retention holds flat at 0.5.** The spec's
+  *prose* is re-invented every spec→code→spec hop (Jaccard slides ~0.21→0.17), but the
+  fee constants that survive the first code round stay verbatim thereafter. The drift is
+  real and monotone in framing, not in numbers — confirming with a real model that "numbers
+  are sticky, framing is not" is a property of the round-trip, not of the sim's noise model.

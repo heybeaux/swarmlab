@@ -78,3 +78,22 @@ review** (hide upstream verdicts) restores depth's value nearly for free, and (b
 subtle-enough defects, *no* amount of human review depth is a safe gate, so Lattice
 should route subtlety-class defects to mechanical gates rather than more reviewers.
 The trace is honest: a real red result, no cell faked green.
+
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` (chain=4, reps=3, both policies).
+- **Bug under review:** a real off-by-one in `inRange` (`x < hi` where the doc comment says
+  the range is *inclusive* of `hi`) — a genuine correctness bug with a contradicting comment.
+- **Trace:** `runs/bt-llm-mr7g7k83.jsonl` (replay-verified).
+- **Key metrics:** `serialShipRate=0`, `independentShipRate=0`, `rubberStampTax=0`.
+- **Live vs sim — an honest null.** The real haiku reviewers caught this bug at **position 0
+  in every rep of both policies**, so nothing ever shipped and the rubber-stamp tax measured
+  **exactly 0** — even under the "N reviewers already approved this" social prime. This does
+  *not* refute the sim's +0.103 tax; it exposes the tax's precondition. The sim's tax lives on
+  *subtle* defects (`s≈0.5–0.95`) where a reviewer's catch is probabilistic and social
+  complacency can tip it. This live bug is `s≈0.1` (glaring, comment-contradicted) — the model
+  is ~certain to catch it regardless of the social frame, so there is no probability for
+  complacency to erode. **The rubber-stamp effect requires a bug that sits near a reviewer's
+  detection threshold; obvious bugs are immune to it and so are near-invisible ones.** The
+  honest live takeaway is that the tax is a middle-of-the-difficulty-curve phenomenon, which
+  sharpens (not contradicts) the sim's Lattice lesson.

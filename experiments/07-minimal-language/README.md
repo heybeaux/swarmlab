@@ -109,6 +109,26 @@ enforce, made visible here:
   design time, not evaluation time. ACR should gate spec propagation on task-coverage
   smoke tests before any interpreter or programmer sees the spec.
 
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` via `dist/llm.js`. A real haiku
+  *designer* writes a prose spec for a fixed 4-opcode ISA (`LOAD/PUSH/ADD/STORE`); a real
+  haiku *interpreter* reads only that spec text and emits a JSON semantics map; two real haiku
+  *programmers* read only the spec and write programs for the tasks `inc`/`const42`. Programs
+  are executed against BOTH the ground-truth ISA and the interpreter's reading.
+- **Trace:** `runs/ml-llm-mr7g2ja5.jsonl` (replay-verified).
+- **Key metrics:** `programsWritten=4`, `passTruthRate=1`, `passInterpRate=1`,
+  `interpMisreads=0`, `interpAgreement=1`, `silentDivergence=0` (spec ≈ 1043 chars).
+- **Live vs sim.** The live run is the sim's *best case*, made real: when a competent model
+  authors the spec **in its own words** and the opcode set is complete, the spec→interpreter
+  and spec→programmer contracts hold perfectly — every program passes on both the ground truth
+  and the interpreter's reading, and there is zero silent divergence. This is the crucial
+  control: it proves the sim's failures (ambiguity-driven silent divergence, the 3-opcode
+  expressiveness floor) are caused by the *injected ambiguity and under-specification*, not by
+  the LLMs being incapable. A clean, self-authored, complete spec is a solved contract; the
+  danger is entirely in the fuzzy clauses and the missing opcodes the sweep injects — which is
+  exactly why ACR should gate on ambiguity score and coverage *before* propagation.
+
 ## Run it
 
 ```bash

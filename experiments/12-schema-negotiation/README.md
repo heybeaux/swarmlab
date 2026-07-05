@@ -125,3 +125,29 @@ Three directives fall out:
 The trace is honest: `ff=0` is genuinely clean (no cell faked corruption where none existed),
 and the corruption curve is monotone in the one variable — false-friend count — the hypothesis
 named. The silent-corruption metric is derivable directly from the `score` events in the JSONL.
+
+## Live run (real LLM)
+
+- **Mode / model:** `llm`, `claude-haiku-4-5-20251001` via `dist/llm.js`. Two real haiku agents
+  A and B each see ONLY their own field list (name, wire type, 3 sample values — never the
+  hidden `concept`) and each proposes a mapping to the other's fields. Three false friends are
+  injected: `total` (subtotal vs grand total), `id` (order id string vs customer id int),
+  `created` (ms vs sec) — same name on both sides, different meaning.
+- **Trace:** `runs/sn-llm-mr7g5kxu.jsonl` (replay-verified).
+- **Key metrics:** `agreedRows=4`, `trulyMatched=4`, **`silentCorruption=0`**,
+  `falseFriendsInjected=3`, `falseFriendsCaught=1`, `falseFriendsMapped=0`.
+- **Live vs sim — cautious by avoidance, not by detection.** The sim's headline is grim:
+  agents converge fast and unanimously on false-friend mappings, and **~91% of injected traps
+  ship silently** (silent corruption climbing 0.43→0.55→0.64 with false-friend density). The
+  live warned haiku agents did **not** reproduce that catastrophe — `silentCorruption=0` — but
+  the reason is subtle and worth stating honestly: they mostly **avoided the traps by not
+  agreeing on them**, not by identifying them. A proposed `id → order_ref` from one side vs
+  `id → id` from the other means the row never reaches *mutual* agreement, so no corrupt
+  mapping is asserted — but only **1 of 3** false friends was actively *caught* and named, and
+  agent B still fell for the naive `id → id`. So the live result refines the sim rather than
+  refuting it: **an explicit "same name may mean different things" warning is enough to stop
+  the confident-agreement failure mode, but it is NOT enough to make the agents reliably
+  identify the traps.** They become cautious (good) without becoming correct (still risky) —
+  which is exactly why the Sonder directive holds: transmit `concept`+unit as a first-class,
+  checkable type, because a warning that only produces *hesitation* still leaves the meaning
+  unverified.
