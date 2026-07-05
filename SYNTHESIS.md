@@ -280,11 +280,11 @@ these failures get caught or don't.
 
 ## Honesty ledger
 
-- **Live-LLM (real haiku, replay-verified):** 04, 05, 07, 11, 12 — single-shot
+- **Live-LLM (real haiku, replay-verified):** 04, 05, 07, 11, 12, 14 — single-shot
   exhibitions plus a 20-run parameter sweep (04 K∈{1,2,3}, 11 budget∈{2,6,12,24},
-  12 five seeds, 05 chain=8/reps=5). Sweep table above.
+  12 five seeds, 05 chain=8/reps=5, 14 d0/d2b2/d3b3 trees). Sweep table above.
 - **Sim-only (mechanism-level findings, no live seam by design):** 02, 03, 06, 08,
-  09, 10, 13, and the sweep halves of 01/04/11/12.
+  09, 10, 13, and the sweep halves of 01/04/11/12/14.
 - Where live results *refined* the sim, that's noted inline (12 caution-not-
   detection; 05 tax is difficulty-dependent; 11 self-poison reproduced; 04 capture-
   not-persuasion + criterion-drift). No sim result is presented as a live one.
@@ -508,3 +508,57 @@ This closes the on-standard fabrication hole surfaced by RT-02 — silent captur
 return under the adapted attack when a ground store exists. Full 14-cell tables (B1 + B2), the
 B3 evidence table, and the honesty accounting live in the exp-04 README "Retest: fact-checked
 audit" section.
+
+### RT-05 — Engram capability facts as delegation trust memory (from exp-14)
+
+- **Finding (exp-14 Part B, the question):** exp-08 → RT-03 proved versioned facts +
+  anti-entropy heal *corrupted* memory in a gossip mesh. The open question for the memory
+  faculty was different: does the same substrate carry **operational trust** — "who can
+  actually do this task class" — across the three deaths a transcript cannot survive
+  (context truncation, session restart, agent replacement)? Baselines say the problem is
+  real: a memoryless root re-hires a reliably-failing delegate at chance (~1/6) for 30
+  straight rounds (late rate 0.183/0.177 vs chance 0.167), and an in-context root with a
+  realistic 10-round window suppresses but **never converges** — evidence ages out of the
+  window, the bad delegate re-enters the eligible pool, and after a root restart the
+  windowed arm is indistinguishable from amnesiac (0.14–0.20 post-reset).
+- **Change:** none needed — that's the receipt. exp-14 links the **real shipped**
+  `@openengram/reconciliation` (`file:` dep, branch `versioned-facts-anti-entropy`, PR #323;
+  never reimplemented) in a NEW role: each observed delegation outcome is re-authored as a
+  capability `VersionedFact` (`cap:{worker}:{task_class}`, cumulative successes/failures,
+  failed assertion + evidence digest in content, `verification_tier=provenance` — the root
+  directly measured what it recorded), written through `reconcile()` and read back through
+  `verifyFact()`. 1500 writes/condition: 300 `adopted`, 1200 `healed` (the module's
+  verified-newer-version path), 0 `rejected_corrupt`.
+- **Retest (`experiments/14-delegation-decay`, Part B):** 6 workers, one harness-handicapped
+  (`mercury` fails `quota-policy` invisibly), 3 arms × {loud, confident-wrong} × 50 seeded
+  trials × 30 rounds, same seeds and same environment draws across arms; root killed and
+  restarted between rounds 15/16; brand-new root reads the store at round 30. Run
+  `dd-b-mr7zvbuu`, replay-verified, deterministic across reruns.
+
+  | metric (loud / confident-wrong) | amnesiac | in-context (W=10) | engram store | verdict |
+  |---|---|---|---|---|
+  | late incapable-selection (r25–30) | 0.183 / 0.177 | 0.087 / 0.093 | **0.000 / 0.003** | ✅ |
+  | convergence round (≤0.05 sustained) | never / never | never / never | **9 / 11** | ✅ (honest: not ≤5) |
+  | post-reset incapable rate | 0.18 / 0.18 | 0.14 / 0.20 | **0.00 / 0.00** | ✅ |
+  | transfer-avoid, brand-new root | 0.80 / 0.86 (≈blind 0.83) | 0.84 / 0.88 (≈blind) | **1.00 / 1.00**, evidence 1.00 | ✅ **deliverable** |
+  | wasted tokens / trial | 73 / 121 | 35 / 69 | **15 / 30** | ✅ |
+
+- **Honesty notes:** (1) convergence lands at rounds 9–11, not the hypothesized "handful
+  (≤5)" — with 6 workers under uniform exploration plus 1–2 rounds of detection lag, ≤5 is
+  unreachable by design; the store converges at the exploration floor, and the miss is
+  reported, not smoothed. (2) The store does not fix unforgiving priors:
+  `capableExcluded` averages 0.22 capable workers/trial permanently benched by early
+  transient failures under the failures>successes rule — a production trust router needs
+  decay/forgiveness on top of persistence. (3) Confident-wrong failure doubles wasted
+  tokens in *every* arm (engram 15→30); memory shrinks the tax, nothing eliminates the
+  pre-evidence rounds. (4) In-context is genuinely better than amnesiac inside its window
+  (0.09 vs 0.18) — reported plainly; it loses on convergence, reset, and transfer, which is
+  exactly where the store wins.
+
+This is RT-03's substrate doing new work without modification: capability knowledge written
+as provenance-tier versioned facts **outlives the agent that learned it** — 100%
+transfer-avoid with verified evidence on a root that never saw a single failure. Part A of
+the same experiment (README) separately refuted H-A's seam clause: under exp-01-calibrated
+handoff noise, silent omission (50% of losses) dominates the sibling integration seam (21%)
+in deep trees — and the live haiku d3b3 tree reproduced exactly that signature (7/7 losses
+were drops, 9.3× cost).
