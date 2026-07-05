@@ -1,0 +1,16 @@
+run dd-b-mr7zvbuu | conditions=6 trials=50 rounds=30
+amnesiac-loud              | late=0.183 conv= -1 wasted=  73 slopeLate=2.8 postReset=0.18 transferAvoid=0.80
+amnesiac-confident-wrong   | late=0.177 conv= -1 wasted= 121 slopeLate=4.4 postReset=0.18 transferAvoid=0.86
+incontext-loud             | late=0.087 conv= -1 wasted=  35 slopeLate=1.3 postReset=0.14 transferAvoid=0.84
+incontext-confident-wrong  | late=0.093 conv= -1 wasted=  69 slopeLate=2.3 postReset=0.20 transferAvoid=0.88
+engram-loud                | late=0.000 conv=  9 wasted=  15 slopeLate=0.0 postReset=0.00 transferAvoid=1.00
+engram-confident-wrong     | late=0.003 conv= 11 wasted=  30 slopeLate=0.1 postReset=0.00 transferAvoid=1.00
+summary: {"conditions":6,"trials":50,"amLoudLate":0.183,"amLoudConv":-1,"amLoudPostReset":0.18,"amLoudTransfer":0.8,"amLoudWasted":72.9,"amCWLate":0.177,"amCWConv":-1,"amCWPostReset":0.18,"amCWTransfer":0.86,"amCWWasted":120.5,"icLoudLate":0.087,"icLoudConv":-1,"icLoudPostReset":0.14,"icLoudTransfer":0.84,"icLoudWasted":34.8,"icCWLate":0.093,"icCWConv":-1,"icCWPostReset":0.2,"icCWTransfer":0.88,"icCWWasted":68.5,"enLoudLate":0,"enLoudConv":9,"enLoudPostReset":0,"enLoudTransfer":1,"enLoudWasted":15,"enCWLate":0.003,"enCWConv":11,"enCWPostReset":0,"enCWTransfer":1,"enCWWasted":30}
+curve amnesiac-loud: 0.12 0.22 0.18 0.20 0.16 0.16 0.08 0.26 0.06 0.08 0.12 0.16 0.22 0.20 0.26 0.18 0.22 0.16 0.08 0.14 0.14 0.08 0.12 0.16 0.14 0.18 0.20 0.18 0.28 0.12
+curve amnesiac-confident-wrong: 0.10 0.14 0.18 0.22 0.20 0.16 0.12 0.16 0.16 0.16 0.14 0.10 0.14 0.18 0.14 0.18 0.22 0.18 0.14 0.08 0.14 0.14 0.24 0.14 0.12 0.10 0.22 0.26 0.24 0.12
+curve incontext-loud: 0.18 0.20 0.06 0.04 0.12 0.04 0.02 0.10 0.06 0.04 0.04 0.04 0.12 0.02 0.12 0.14 0.10 0.16 0.02 0.02 0.04 0.04 0.04 0.04 0.04 0.06 0.12 0.10 0.10 0.10
+curve incontext-confident-wrong: 0.26 0.12 0.14 0.10 0.12 0.10 0.08 0.08 0.10 0.00 0.02 0.08 0.10 0.10 0.10 0.20 0.04 0.10 0.06 0.10 0.10 0.02 0.04 0.02 0.02 0.10 0.12 0.12 0.12 0.08
+curve engram-loud: 0.26 0.10 0.10 0.14 0.06 0.04 0.10 0.12 0.00 0.02 0.04 0.00 0.02 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+curve engram-confident-wrong: 0.16 0.22 0.18 0.20 0.08 0.10 0.06 0.02 0.02 0.06 0.04 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.04 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.02
+replay verified: 470 events (spawn=42 message=379 score=7 kill=42)
+trace: /Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab/experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl

@@ -1,0 +1,25 @@
+Spec 17 complete. Everything is built, tested, pushed, and the PR is open (not merged).
+
+## Final Report — Spec 17: AOP v0.2 `payload_contract`
+
+**Branch:** `spec-v0.2-payload-contract` (off `main`)
+**PR:** https://github.com/heybeaux/aop/pull/1 — *"spec v0.2: payload_contract — authenticate meaning, not just authorship"* (open, **not merged**)
+
+**Files added (9 changed, +752/−8):**
+- `spec/v0.2/agent-observation-event.schema.json` — `aop_version` const `"0.2"`, `$id` → `/v0.2/`, optional `payload_contract` + `field_contract`/`payload_contract` `$defs` (aligned in meaning with Sonder's `contract.ts`); updated `payload` description.
+- `spec/v0.2/agent_observation_event.proto` — `FieldContract`/`PayloadContract` messages, `payload_contract = 19` appended; **all v0.1 field numbers preserved, none renumbered**; package → `aop.v0_2`.
+- `spec/v0.2/semantic-conventions.md` — normative "Payload contracts & negotiation semantics" section (match IFF concept+unit; `false_friend`/`unit_mismatch`/`unmapped` taxonomy) with exp-12 evidence line.
+- `packages/aop-ts/{types.ts,validate.ts,index.ts,package.json}` — `FieldContract`/`PayloadContract`/`AopEventV02` types, `AOP_VERSION_V02`, `validateAopEventV02`/`getValidatorV02`/`schemaPathV02`, build copies v0.2 schema.
+- `packages/aop-ts/src/__tests__/validate-v0.2.test.ts` — 8 new tests.
+- `README.md` — v0.2 note + Versions section.
+
+**Commit SHAs:**
+- `b2b02fe` — spec v0.2 (schema/proto/conventions)
+- `a942949` — aop-ts v0.2 types + validator + tests
+- `26d81c3` — README note
+
+**Test results:** `pnpm build` green · `pnpm typecheck` clean · `pnpm test` **28/28 pass** (incl. 8 new v0.2 tests: valid contract validates, missing `unit` fails, v0.1 event unchanged against v0.1).
+
+**Immutability check:** `git diff origin/main -- spec/v0.1` is **empty** — v0.1 byte-identical, no spec violation.
+
+**Honesty note:** every PR claim traces to committed sources — exp-12 numbers (0.908→0.00, 0.845→0.00, 0/960) from the swarmlab README's "Retest: typed contracts", Sonder PR #10 / `contract.ts` as reference impl, and the by-detection-not-refusal caveat carried verbatim rather than smoothed.

@@ -1,0 +1,35 @@
+## Final Report — Spec 16 (Engram Versioned Facts + Anti-Entropy + Exp-08 Retest)
+
+**Green retest — all four B2 criteria met, by healing, not damping.**
+
+### Files touched
+
+**Engram** (`~/projects/engram`, branch `versioned-facts-anti-entropy`, **local-only, not pushed**):
+- `src/reconciliation/{versioned-fact,reconcile,anti-entropy,index}.ts`, `reconciliation.spec.ts`, `package.json`, `tsconfig.build.json`
+- Pre-existing uncommitted `src/**` changes left untouched. I rebuilt the gitignored `dist/` (not committed).
+
+**swarmlab** (`/Users/.../swarmlab`, branch `main`):
+- `experiments/08-rumor-mill/src/engram-sim.ts` (new), `src/main.ts`, `src/types.ts`, `package.json`, root `package-lock.json`
+- `experiments/08-rumor-mill/README.md` (Retest section), `SYNTHESIS.md` (RT-03 ledger)
+
+### Commit SHAs
+- **Engram branch `versioned-facts-anti-entropy`:** `baf3d05` (module + A4 tests), `0a4910d` (adopt-then-heal fix for empty nodes). 7/7 jest tests green; module builds to importable CommonJS.
+- **swarmlab `main`:** `0e7c019` (engram-mode retest + writeups), `ddf16db` (pinned canonical run IDs).
+
+### Run IDs (deterministic; 30 trials/cell, seed `rumor-mill-v1`)
+- Baseline: `rm-baseline-mr7uziwl` — reproduces committed baseline exactly.
+- Engram: `rm-engram-mr7uzjds` — both replay-verified (24065 / 7377 events).
+
+### B2 metric deltas + healing accounting
+
+| metric | baseline | engram | target | verdict |
+|---|---|---|---|---|
+| `coverageOutrunsTruth` | 19/36 | **0/36** | 0 | ✅ |
+| worst-cell fidelity | 0.574 | **1.000** | ≥0.99 | ✅ |
+| `telephoneGradient` | 0.113 | **0.000** | ≤0.01 | ✅ |
+| coverage/saturation | 1.00 | **1.00** | no regression | ✅ |
+| max TTS regression | — | **−3.567** (all faster) | ≤+1 | ✅ |
+
+**Healing:** ~279 `healed` and ~2768 `rejected_corrupt` outcomes per trial across the sweep (0/0 in the noiseless `m=0` column). Fidelity recovers by verified copies diffusing and overwriting corrupt ones.
+
+**Honesty note (documented in README/SYNTHESIS):** anti-entropy over every live edge is also a propagation channel, so TTS *dropped* sharply (e.g. 17.27→1.10 rounds). It doesn't regress, so the spec guard holds, but I state plainly it's repair *plus* accelerated diffusion rather than pretending it's spread-neutral. Part A and the full Part B implementation were already committed by a concurrent process; I verified builds/tests, rebuilt against branch HEAD, re-ran both sweeps, and my commit pins the canonical run IDs.

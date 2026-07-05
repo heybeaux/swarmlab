@@ -1,0 +1,9 @@
+cell d0: running live tree (d=0, b=1)…
+d0    | survival=1.000 reint=0 drop=0 seam=0 tokens≈507
+cell d2b2: running live tree (d=2, b=2)…
+d2b2  | survival=1.000 reint=0 drop=0 seam=0 tokens≈1892
+cell d3b3: running live tree (d=3, b=3)…
+d3b3  | survival=0.650 reint=0 drop=7 seam=0 tokens≈4738
+cost amplification vs d0: {"d0Tokens":507,"d2b2CostAmp":3.732,"d3b3CostAmp":9.345}
+replay verified: 184 events (spawn=48 message=84 score=4 kill=48)
+trace: /Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab/experiments/14-delegation-decay/runs/dd-llm-mr8042v5.jsonl

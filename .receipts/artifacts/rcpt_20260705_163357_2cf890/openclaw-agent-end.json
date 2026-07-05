@@ -1,0 +1,27 @@
+{
+  "event": {
+    "runId": "e4829dd9-a614-4ca3-9757-d1ddcd9bf206",
+    "success": false,
+    "error": "You're out of extra usage · resets 10:10am (America/Vancouver)",
+    "durationMs": 2084164,
+    "messages": [
+      {
+        "role": "user",
+        "type": null,
+        "toolName": null,
+        "content": "[Sun 2026-07-05 08:59 PDT] [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status.\n\n[Subagent Task]\n\nRead /Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab/.dispatch/spec19-task.md and execute it to completion. It is the full builder brief for Spec 19 (exp-14, delegation decay & trust routing) in the swarmlab repo. Work from /Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab. Commit early and often.\n\nBegin. Execute the assigned task to completion."
+      }
+    ]
+  },
+  "ctx": {
+    "agentId": "scout",
+    "sessionId": "725890fb-a583-4fff-9419-2d0440902fe4",
+    "sessionKey": "agent:scout:subagent:33e28416-5549-4057-b039-f01c67355aa4",
+    "runId": "e4829dd9-a614-4ca3-9757-d1ddcd9bf206",
+    "workspaceDir": "/Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab",
+    "modelProviderId": null,
+    "modelId": null,
+    "messageProvider": "telegram",
+    "channelId": "telegram"
+  }
+}

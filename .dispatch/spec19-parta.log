@@ -1,0 +1,24 @@
+run dd-a-mr7zv9zp | cells=20 trials/cell=25
+d0b1   | survival=1.000 reint=0.000 drop=0.000 seam=0.000 costAmp=1.00
+d0b2   | survival=1.000 reint=0.000 drop=0.000 seam=0.000 costAmp=1.00
+d0b3   | survival=1.000 reint=0.000 drop=0.000 seam=0.000 costAmp=1.00
+d0b4   | survival=1.000 reint=0.000 drop=0.000 seam=0.000 costAmp=1.00
+d1b1   | survival=0.840 reint=0.076 drop=0.084 seam=0.000 costAmp=1.24
+d1b2   | survival=0.758 reint=0.076 drop=0.120 seam=0.046 costAmp=1.23
+d1b3   | survival=0.746 reint=0.076 drop=0.118 seam=0.060 costAmp=1.24
+d1b4   | survival=0.732 reint=0.076 drop=0.118 seam=0.074 costAmp=1.26
+d2b1   | survival=0.698 reint=0.132 drop=0.170 seam=0.000 costAmp=1.44
+d2b2   | survival=0.570 reint=0.132 drop=0.216 seam=0.082 costAmp=1.48
+d2b3   | survival=0.538 reint=0.132 drop=0.224 seam=0.106 costAmp=1.55
+d2b4   | survival=0.532 reint=0.132 drop=0.220 seam=0.116 costAmp=1.66
+d3b1   | survival=0.578 reint=0.182 drop=0.240 seam=0.000 costAmp=1.63
+d3b2   | survival=0.424 reint=0.182 drop=0.286 seam=0.108 costAmp=1.78
+d3b3   | survival=0.392 reint=0.182 drop=0.298 seam=0.128 costAmp=2.05
+d3b4   | survival=0.390 reint=0.182 drop=0.294 seam=0.134 costAmp=2.47
+d4b1   | survival=0.484 reint=0.200 drop=0.316 seam=0.000 costAmp=1.80
+d4b2   | survival=0.302 reint=0.200 drop=0.364 seam=0.134 costAmp=2.13
+d4b3   | survival=0.276 reint=0.200 drop=0.378 seam=0.146 costAmp=2.76
+d4b4   | survival=0.272 reint=0.200 drop=0.372 seam=0.156 costAmp=3.54
+summary: {"cells":20,"trialsPerCell":25,"survivalD0":1,"survivalD1":0.769,"survivalD2":0.585,"survivalD3":0.446,"survivalD4":0.334,"deepSeamLoss":0.123,"deepDroppedLoss":0.295,"deepReinterpretedLoss":0.171,"deepSeamShare":0.21,"maxCostAmplification":3.541}
+replay verified: 2210 events (spawn=704 message=781 score=21 kill=704)
+trace: /Users/beauxwalton/.openclaw/agents/scout/workspace/swarmlab/experiments/14-delegation-decay/runs/dd-a-mr7zv9zp.jsonl
