@@ -1,4 +1,7 @@
 import { execFile, execFileSync } from 'node:child_process';
+import { mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import type { AgentRuntime, AgentSpec, RuntimeAgent } from '@swarmlab/core';
 
 /** One text completion. The seam between the experiment and any model. */
@@ -12,13 +15,22 @@ export interface TextGen {
  * Real LLM calls via the local `claude` CLI (one-shot `claude -p`).
  * The system prompt is prepended to the user prompt so we don't depend on
  * CLI flag availability across versions.
+ *
+ * Isolation matters (learned the hard way — see README "the hijack"): without
+ * `--tools ""` the CLI's agentic layer may try to write files and emit
+ * "Requesting permission..." chatter *as the agent's answer*, and when run
+ * from the workspace cwd it inherits project context (CLAUDE.md, auto-memory)
+ * that bleeds unrelated session context into the telephone line. So: no
+ * tools, and an empty temp dir as cwd.
  */
 export class ClaudeCliGen implements TextGen {
   readonly mode = 'llm' as const;
   readonly model: string;
+  readonly #cwd: string;
 
   constructor(model = 'claude-haiku-4-5-20251001') {
     this.model = model;
+    this.#cwd = mkdtempSync(join(tmpdir(), 'telephone-llm-'));
   }
 
   gen(systemPrompt: string, user: string): Promise<string> {
@@ -26,8 +38,8 @@ export class ClaudeCliGen implements TextGen {
     return new Promise((resolve, reject) => {
       execFile(
         'claude',
-        ['-p', prompt, '--model', this.model],
-        { timeout: 120_000, maxBuffer: 4 * 1024 * 1024 },
+        ['-p', prompt, '--model', this.model, '--tools', ''],
+        { timeout: 120_000, maxBuffer: 4 * 1024 * 1024, cwd: this.#cwd },
         (err, stdout, stderr) => {
           if (err) {
             reject(new Error(`claude CLI failed: ${err.message}\n${stderr.slice(0, 500)}`));
