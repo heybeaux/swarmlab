@@ -1,12 +1,12 @@
-# Experiment 07 — Team's Choice
+# Experiment 13 — Team's Choice
 
 **Faculty under test:** you decide.
 
 ## The Brief
 
 This one is yours. Beaux explicitly asked the team to invent an experiment of its own,
-in addition to the selected set. Design something weird that stress-tests a heybeaux
-faculty (Parliament, Lattice, Sonder, Engram, ACR/AWM) in a way experiments 03/04/06 do not.
+**in addition to** the twelve from the brainstorm. Design something weird that stress-tests a
+heybeaux faculty (Parliament, Lattice, Sonder, Engram, ACR/AWM) in a way the twelve do not.
 
 ## Requirements
 

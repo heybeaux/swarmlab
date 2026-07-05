@@ -19,14 +19,36 @@ reviewed, and committed by an agent. The orchestrator specs and coordinates; bui
 
 ## Backlog (build in this order)
 
+Substrate first, then the showpiece, then **all 12** experiments, then the team's own.
+
 1. `core/` — DONE ✅ (substrate: spawn, bus, score, trace)
 2. `observatory/` — Svelte dashboard. The showpiece. Navigate experiments, trigger runs,
    replay traces visually, compare results. Must be genuinely beautiful.
-3. `experiments/03-prompt-darwinism/` — mutate prompts, score, breed winners.
-4. `experiments/04-consensus-under-lies/` — N agents agree; 1-2 secretly mislead.
-5. `experiments/06-self-modifying-swarm/` — agents rewrite each other's prompts mid-run.
-6. `experiments/07-team-choice/` — **the team invents its own experiment.** Pick something
-   weird that tests a faculty in a way our selection doesn't. Spec it, build it, justify it.
+
+Then the twelve (each stress-tests a faculty; build on `core/`, trace + replay + README + journal):
+
+3. `experiments/01-telephone-compiler/` — spec→code→spec drift over 10 hops. (Sonder/ACR)
+4. `experiments/02-adversarial-pair/` — coder vs test-writer alternate forever. (Lattice/AWM)
+5. `experiments/03-prompt-darwinism/` — mutate prompts, score, breed winners. (ACR/AWM)
+6. `experiments/04-consensus-under-lies/` — N agree; 1-2 secretly mislead. (Parliament/Lattice)
+7. `experiments/05-bug-telephone/` — injected bug survives a reviewer chain. (Lattice)
+8. `experiments/06-self-modifying-swarm/` — agents rewrite each other's prompts. (Lattice)
+9. `experiments/07-minimal-language/` — swarm designs a DSL + interpreter blind. (Sonder)
+10. `experiments/08-rumor-mill/` — gossip/epidemic propagation on a neighbor mesh. (Engram)
+11. `experiments/09-overnight-cathedral/` — long-horizon iterative build, each commit reviewed. (ACR)
+12. `experiments/10-economic-agents/` — token-budget scarcity shapes collaboration. (Lattice/AWM)
+13. `experiments/11-reverse-engineer/` — black-box behavioral reconstruction. (Sonder)
+14. `experiments/12-schema-negotiation/` — two agents negotiate a shared protocol. (Sonder)
+
+Finally:
+
+15. `experiments/13-team-choice/` — **the team invents its own experiment**, in addition to
+    the twelve. Pick something weird that tests a faculty the others don't. Spec it, justify it, build it.
+
+**Spec coverage:** detailed specs exist for 03, 04, 06 (`specs/*.md`) and 02-observatory. For the
+other experiments the backlog one-liner + the original 12-idea brainstorm (in `BRAINSTORM.md`) is the
+brief — the builder writes a proper `specs/NN-*.md` FIRST, then builds. Keep the numbering above:
+the `NN` prefix is the brainstorm idea number, not build order.
 
 ## Freedoms (you are trusted — use them)
 
