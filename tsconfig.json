@@ -6,6 +6,7 @@
     { "path": "experiments/01-telephone-compiler" },
     { "path": "experiments/02-adversarial-pair" },
     { "path": "experiments/03-prompt-darwinism" },
-    { "path": "experiments/04-consensus-under-lies" }
+    { "path": "experiments/04-consensus-under-lies" },
+    { "path": "experiments/06-self-modifying-swarm" }
   ]
 }
