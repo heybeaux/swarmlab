@@ -74,7 +74,7 @@ Each experiment tests a faculty. `NN` is the brainstorm idea number, not build o
 | 06 | Self-Modifying Swarm | Lattice | agents rewrite each other's prompts |
 | 07 | Minimal Language | Sonder | swarm designs a DSL + interpreter blind |
 | 08 | Rumor Mill | Engram | gossip/epidemic propagation on a mesh |
-| 09 | Overnight Cathedral | ACR | long-horizon iterative build, each commit reviewed |
+| 09 | Overnight Cathedral | Lattice / Sonder | long-horizon iterative build, each commit reviewed |
 | 10 | Economic Agents | Lattice / AWM | token-budget scarcity shapes collaboration |
 | 11 | Reverse Engineer | Sonder | black-box behavioral reconstruction |
 | 12 | Schema Negotiation | Sonder | two agents negotiate a shared protocol |
