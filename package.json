@@ -1,0 +1,21 @@
+{
+  "name": "swarmlab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "core",
+    "experiments/*"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b --force",
+    "smoke": "npm run build && node experiments/00-smoke/dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

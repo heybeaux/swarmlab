@@ -1,0 +1,19 @@
+{
+  "name": "@swarmlab/core",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./spawn": "./dist/spawn/index.js",
+    "./bus": "./dist/bus/index.js",
+    "./score": "./dist/score/index.js",
+    "./trace": "./dist/trace/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}
