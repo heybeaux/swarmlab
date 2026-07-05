@@ -1,0 +1,14 @@
+{
+  "name": "@swarmlab/experiment-15-trust-forgiveness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@swarmlab/core": "0.1.0",
+    "@swarmlab/experiment-14-delegation-decay": "0.1.0",
+    "@openengram/reconciliation": "file:../../../../../../../projects/engram/src/reconciliation"
+  },
+  "scripts": {
+    "start": "node dist/main.js"
+  }
+}
