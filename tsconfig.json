@@ -3,6 +3,7 @@
   "references": [
     { "path": "core" },
     { "path": "experiments/00-smoke" },
-    { "path": "experiments/01-telephone-compiler" }
+    { "path": "experiments/01-telephone-compiler" },
+    { "path": "experiments/02-adversarial-pair" }
   ]
 }
