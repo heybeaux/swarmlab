@@ -4,6 +4,7 @@
     { "path": "core" },
     { "path": "experiments/00-smoke" },
     { "path": "experiments/01-telephone-compiler" },
-    { "path": "experiments/02-adversarial-pair" }
+    { "path": "experiments/02-adversarial-pair" },
+    { "path": "experiments/03-prompt-darwinism" }
   ]
 }
