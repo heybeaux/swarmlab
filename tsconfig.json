@@ -17,6 +17,7 @@
     { "path": "experiments/12-schema-negotiation" },
     { "path": "experiments/13-audit-forgery" },
     { "path": "experiments/14-delegation-decay" },
-    { "path": "experiments/15-trust-forgiveness" }
+    { "path": "experiments/15-trust-forgiveness" },
+    { "path": "experiments/16-handoff-guards" }
   ]
 }

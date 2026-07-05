@@ -1,0 +1,14 @@
+{
+  "name": "@swarmlab/experiment-16-handoff-guards",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@swarmlab/core": "0.1.0",
+    "@swarmlab/experiment-14-delegation-decay": "0.1.0"
+  },
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:llm": "node dist/llm.js"
+  }
+}

@@ -30,9 +30,9 @@ export const COST_WORK = 3;
 export const COST_MERGE = 1;
 export const BASELINE_COST = N_KEY_TASKS * COST_WORK; // d=0: 84
 
-type Role = 'U' | 'P' | 'A' | 'B';
+export type Role = 'U' | 'P' | 'A' | 'B';
 
-interface Unit {
+export interface Unit {
   reqId: string;
   role: Role;
   param: number;
@@ -42,7 +42,7 @@ interface Unit {
   keyB?: string;
 }
 
-function keyTasks(u: Unit): number {
+export function keyTasks(u: Unit): number {
   return u.role === 'P' ? 2 : 1;
 }
 
@@ -64,11 +64,30 @@ export interface DecayEmit {
   leaf(agent: string, keys: readonly string[]): void;
 }
 
+/**
+ * Manifest hook (exp-16, spec 21): a handoff guard sees what the delegator
+ * intended to send (`sent`, pre-noise) and what actually arrived (`received`,
+ * post-noise) and may return a corrected brief plus the extra token cost the
+ * check/repair spent. Purely additive — when `guard` is undefined the trial is
+ * byte-identical to the un-hooked engine (all RNG draws are key-addressed, so
+ * no draw-order sensitivity exists).
+ */
+export interface HandoffGuard {
+  check(
+    sent: readonly Unit[],
+    received: readonly Unit[],
+    level: number,
+    parent: string,
+    child: string,
+  ): { brief: Unit[]; extraCost: number };
+}
+
 export function runDecayTrial(
   depth: number,
   branching: number,
   seedBase: string,
   emit?: DecayEmit,
+  guard?: HandoffGuard,
 ): DecayTrialResult {
   const config = new Map<string, number>();
   const forked = new Set<string>();
@@ -127,7 +146,7 @@ export function runDecayTrial(
       const slice = slices[c];
       if (!slice) continue;
       const child = `${agent}.${c}`;
-      const brief: Unit[] = [];
+      let brief: Unit[] = [];
       let transmitted = 0;
       for (const u of slice) {
         const stream = seeded(`${seedBase}:noise:${u.reqId}:${u.role}:h${level}`);
@@ -138,6 +157,11 @@ export function runDecayTrial(
         cost += keyTasks(u) * COST_TRANSMIT;
       }
       emit?.brief(agent, child, level, brief.length, transmitted);
+      if (guard) {
+        const g = guard.check(slice, brief, level, agent, child);
+        brief = g.brief;
+        cost += g.extraCost;
+      }
       if (brief.length > 0 || remaining - 1 === 0) {
         delegate(child, brief, level + 1, remaining - 1);
       }
