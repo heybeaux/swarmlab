@@ -562,3 +562,54 @@ the same experiment (README) separately refuted H-A's seam clause: under exp-01-
 handoff noise, silent omission (50% of losses) dominates the sibling integration seam (21%)
 in deep trees — and the live haiku d3b3 tree reproduced exactly that signature (7/7 losses
 were drops, 9.3× cost).
+
+### RT-06 — Forgiveness on top of persistence: evidence-capped probation (from exp-15)
+
+- **Finding (the question):** RT-05's honesty note #2 was a debt: the unforgiving
+  `failures <= successes` rule that delivered 0.000 late incapable-selection also permanently
+  benched **0.22 capable workers/trial** on 5% transient stumbles. Can an eligibility policy
+  recover the capable without re-admitting the incapable? Headline criterion is JOINT, in the
+  same arm: `capableExcluded → 0` AND late (r25–30) incapable-selection ≤ 0.05.
+- **Change:** read-side eligibility policy only. exp-15 reuses exp-14's engine wholesale — the
+  control arm literally calls `runTrustTrial('engram', …)` (module reused, not forked) and an
+  in-code gate verifies RT-05 reproduction against all metrics *and full 30-round curves*
+  (EXACT on every pinned run, same seeds `trust-routing-v1`). Writes still go through the real
+  shipped `@openengram/reconciliation` (`file:` dep, never reimplemented); the store payload
+  gains round-stamped history and probation-state facts riding the same substrate (~61
+  probation adoptions per run alongside the 300 cap-fact adoptions, zero rejected).
+- **Retest (`experiments/15-trust-forgiveness`, run `tf-mr84czql`, 50 trials × 30 rounds,
+  replay-verified):** four arms × {loud, confident-wrong} on identical seeds/env draws.
+
+  | metric (loud / CW) | unforgiving (RT-05) | time-decay W=10 | probation | **evidence-capped probation** |
+  |---|---|---|---|---|
+  | late incapable-selection (r25–30) | 0.000 / 0.003 | **0.077 / 0.073 ✗** | 0.027 / 0.050 | **0.017 / 0.047 ✓** |
+  | capableExcluded | **0.22 / 0.22 ✗** | 0.00 | 0.02 / 0.00 | **0.00 / 0.02 ✓** |
+  | incapable pool re-entries | 0 | **1.52 ✗** | 0 | **0** |
+  | transfer-avoid @r30 | 1.00 | **0.90 / 0.96 ✗ (regression!)** | 1.00 | **1.00** |
+  | wasted tokens/trial | 15 / 30 | 33 / 65 | 60 / 99 | 59 / 98 |
+
+- **Verdicts:** **H-C1 CONFIRMED** — evidence-capped probation (bench on failures>successes,
+  probe at +2 rounds with ×2 backoff, readmit when the cumulative record re-balances, STOP
+  probing once failures−successes>3) meets the joint criterion in both styles. **H-C2
+  CONFIRMED** — naive time-decay leaks mercury back 1.52×/trial, never converges, and
+  *regresses the RT-05 transfer deliverable to 0.90/0.96*: by round 30 his failures have aged
+  out, so even a fresh root picks him — forgetting is not forgiveness. **H-C3 REFUTED /
+  untestable as designed** — in the inherited harness only the incapable worker's failures are
+  confident-wrong; capable transients are always loud, so the "forgiveness matters more under
+  CW" premise can't be instantiated without breaking control reproduction. As measured the
+  advantage is larger under loud.
+- **Honesty notes:** (1) the forgiveness tax is ~4× control wasted tokens (59 vs 15 / 98 vs
+  30), nearly all deliberate probe spend — a priced insurance premium, reported plainly.
+  (2) Probe cadence is the real design surface: at base-4 spacing the third probe lands past
+  round 30, the margin cap never binds, and the late window catches scheduled probes
+  (0.053–0.090 ✗ in the sensitivity sweep); front-loading (base 2, ×2 → probes +2/+6/+14)
+  finishes the evidence before r25. Cadence was tuned on the shared seeds — in-sample, no
+  hold-out sweep. (3) Post-reset "incapable selections" of 0.28–0.32 in loud probe arms
+  decompose to 100% scheduled probes (new stat proves it); probation continuity across the
+  root reset is 1.00 because probation state lives in the store, not the root.
+
+Stack recommendation for the lattice/sonder trust router: evidence-capped probation as the
+default eligibility policy — bench at failures>successes, first probe ~2 rounds later, ×2
+backoff, readmit on record re-balance, stop probing at failure margin >3, keep probation
+state as store facts so it survives restarts, and budget ~3 probes (≈50–75 tokens) per
+benched worker. Never use time-window decay on capability facts.
