@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@swarmlab/core": "0.1.0"
+    "@swarmlab/core": "0.1.0",
+    "@parliament/core": "file:../../../../../../../dev/parliament/packages/core"
   },
   "scripts": {
     "start": "node dist/main.js"

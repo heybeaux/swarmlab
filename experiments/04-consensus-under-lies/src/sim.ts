@@ -222,6 +222,9 @@ export function runTrial(cfg: TrialConfig, rand: Rand, emit?: EmitStatement): Tr
   const finalPositions: Record<string, string> = {};
   for (const a of agents) finalPositions[a.id] = a.position;
 
+  const honestEvidence: Record<string, string> = {};
+  for (const a of agents) if (a.kind === 'honest') honestEvidence[a.id] = a.evidence;
+
   const counts = new Map<string, number>();
   for (const a of agents) counts.set(a.position, (counts.get(a.position) ?? 0) + 1);
   let consensus: string | null = null;
@@ -260,6 +263,7 @@ export function runTrial(cfg: TrialConfig, rand: Rand, emit?: EmitStatement): Tr
     honestOnTruth,
     meanLiarTrust: round3(meanLiarTrust),
     finalPositions,
+    honestEvidence,
     statements: allStatements,
   };
 }

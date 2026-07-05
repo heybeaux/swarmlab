@@ -46,6 +46,13 @@ export interface TrialResult {
   /** Mean trust honest agents assign to liars at the end (1.0 under naive). */
   meanLiarTrust: number;
   finalPositions: Record<string, string>;
+  /**
+   * Each honest agent's private evidence answer (what its verifiable, on-standard
+   * citation actually supports), keyed by agent id. Liars are absent. Used by the
+   * parliament retest: an agent's admissible evidence points here regardless of
+   * where social pressure dragged its public position.
+   */
+  honestEvidence: Record<string, string>;
   statements: Statement[];
 }
 
