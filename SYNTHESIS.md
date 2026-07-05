@@ -613,3 +613,73 @@ default eligibility policy — bench at failures>successes, first probe ~2 round
 backoff, readmit on record re-balance, stop probing at failure margin >3, keep probation
 state as store facts so it survives restarts, and budget ~3 probes (≈50–75 tokens) per
 benched worker. Never use time-window decay on capability facts.
+
+### RT-07 — Handoff requirement-survival guards: absence is cheap, meaning is expensive (from exp-16)
+
+- **Finding (the question):** RT-05 Part A showed deep-delegation loss is dominated by silent
+  omission (drops = 50% of losses vs the seam's 21%). If the loss is silent, a deterministic
+  **manifest carried at each handoff** should catch it at the hop that introduced it. Does a
+  presence check (requirement-ID set diff) recover survival, and how much of the loss needs
+  the more expensive value-echo (id + expected-value digest, receiver echoes what it parsed)?
+- **Change:** harness-level guard hook only. exp-14's `decay.ts` gained a minimal additive
+  refactor (optional `guard` param on `runDecayTrial`; `Unit`/`keyTasks` exported) — with the
+  guard undefined the path is identical, and an in-code gate asserts all 20 control cells
+  reproduce the RT-05 Part A table exactly (survival/reint/drop/seam to 3 decimals, costAmp
+  to 2) or the run halts. Gate PASSED on every pinned run; exp-14 Part A rerun post-refactor
+  is byte-identical (`dd-a-mr853q86`). No LLM judges survival — the guard is a set/digest
+  comparison; restores retransmit the sender's unit verbatim.
+- **Retest (`experiments/16-handoff-guards`, run `hg-mr853iu8`, 20 cells × 3 tiers × 25
+  trials, same seeds `delegation-decay-v1`, replay-verified):**
+
+  | deep (d≥3) means | un-guarded (RT-05) | presence manifest | value-echo manifest |
+  |---|---:|---:|---:|
+  | survival | 0.390 | 0.578 | **1.000** |
+  | dropRecovery / reinterpretRecovery | — | 1.00 / **0.00** | 1.00 / 1.00 |
+  | guard cost (× d0 baseline) | 0 | 0.252 | 0.852 |
+  | cost amplification | 2.269 | 2.948 | 3.548 |
+  | netTokenEfficiency (Δsurv/ΔcostAmp) | — | 0.292 | 0.485 |
+  | falseFlagRate | — | 0.000 | 0.000 |
+
+- **The headline is the tier gap: 0.422 survival at d≥3.** Presence catches literally 100% of
+  drop events yet recovers only **31%** of the recoverable deep loss — because a back-filled
+  requirement re-enters the noise gauntlet and is re-lost to drift and seam forking at later
+  hops (presence end-state reinterpretation 0.284 @ d4 and seam 0.272 @ d4b4 *exceed* control's
+  0.200 / 0.156; the manifest converts silent omission into exposure to the other loss
+  classes). The naive read of RT-05 ("drops are 50% of loss, an ID manifest recovers ~half")
+  is inverted: **69% of recoverable deep loss is reinterpretation-shaped.** Absence is cheap
+  to detect; meaning is what's expensive to keep alive.
+- **Verdicts:** **H-D1 CONFIRMED for value-echo** (full recovery 0.390→1.000 at d≥3 — every
+  corruption caught at the hop that introduced it, seams included since forked copies are
+  re-pinned each hop), **PARTIALLY for presence** (0.390→0.578). **H-D2 CONFIRMED** —
+  presence reinterpretRecovery is exactly 0.00; value-echo reaches 1.00 at 3.4× the guard
+  spend. **H-D3 MIXED, leaning REFUTED** — the registered bar (nte > 1 through d≤3) is missed
+  everywhere (peak 0.81 at d1b4): per extra token, no guard buys survival as cheaply as d0
+  work creates it. But the guard never doubles tree cost (max +51%), and
+  cost-per-delivered-requirement *falls* ~40% at deep cells (24.4 → 14.9 units at d4b4).
+  Bonus inversion: value-echo's marginal efficiency over presence **rises** with depth
+  (0.48 @ d1 → 0.80 @ d3–4) — the spec's guess ("presence everywhere, echo only shallow")
+  is backwards; deep trees are exactly where value inspection earns its cost.
+- **Honesty notes:** (1) full recovery to 1.000 is a property of this noise model — every
+  corruption is a per-hop drop/perturb the digest can see; noise classes outside the model
+  (semantic rewording that keeps the number, requirement fusion) are untested here (exp-01
+  suggests they exist). (2) Recovery rates are structural for a deterministic guard —
+  the informative numbers are the end-state loss classes and costs, and the presence tier's
+  drift-exposure side effect is reported as the red it is. (3) falseFlagRate 0.000 is
+  measured (counter, 42k+ flags), not assumed. (4) Guard costs are modeled units grounded on
+  chars/4 of the actual manifest/echo strings; the live haiku exhibition
+  (`hg-llm-mr85fdgv`, d0 + d3b3 × 3 tiers, replay-verified) provides real numbers and is
+  labeled exhibition, not evidence — this run's *un-guarded* live tree happened to deliver
+  1.000 (n=1; exp-14's live tree lost 7/7 to drops), while the presence tree's delegators
+  really did drop 3 lines that the manifest caught and back-filled at ~93 tokens (1.9% of
+  tree spend); value-echo's real manifest cost ~748 tokens (15%), consistent with the modeled
+  3.4× tier ratio.
+
+Stack recommendation: the manifest belongs at the **sonder/lattice handoff boundary as a
+first-class field of the AOP payload contract** (spec 17's `payload_contract` is the natural
+home — `contract_id` is the presence check, per-field concept/unit/expected-digest is the
+value echo; no local AOP checkout exists, so exp-16's manifest is standalone lab code with
+the mapping noted). **Default tier: value-echo for any tree of depth ≥2**; presence-only is
+defensible solely at d1. At no depth in the sweep does value-echo stop being worth its cost
+relative to presence. The honest caveat: no guard tier pays for itself against
+not-delegating (nte < 1 everywhere) — the first-order decision is still RT-05's "don't
+delegate deeper than you must"; the guard is how you cap the damage when depth is forced.
