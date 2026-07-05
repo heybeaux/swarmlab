@@ -97,16 +97,32 @@ async function main(): Promise<void> {
     'You probed a black-box pricing function and observed these (quantity -> price cents) pairs:\n' +
     `${table}\n\n` +
     'Now predict the price the SAME function returns for each quantity I list. Reply with ONLY ' +
-    'the predicted integer prices, one per line, in the same order as the quantities I give. No prose.';
+    'lines of the form "qty=price" (one per line), e.g. "15=1596". No prose, no other text.';
   const qtyList = tests.map((t) => t.probe.qty);
-  const predRaw = await gen.gen(predictSys, `Quantities:\n${qtyList.join('\n')}`);
-  const preds = parseInts(predRaw);
+  const predRaw = await gen.gen(predictSys, `Quantities (predict a price for each):\n${qtyList.join('\n')}`);
+  // Parse "qty=price" pairs; last write wins per qty. Falls back to positional if none parse.
+  const byQty = new Map<number, number>();
+  for (const line of stripFences(predRaw).split('\n')) {
+    const m = /(-?\d+)\s*(?:=|->|:)\s*(-?\d+)/.exec(line);
+    if (m && m[1] && m[2]) byQty.set(Number(m[1]), Number(m[2]));
+  }
+  const positional = byQty.size === 0 ? parseInts(predRaw) : [];
+  const predAt = (i: number, qty: number): number | undefined =>
+    byQty.size > 0 ? byQty.get(qty) : positional[i];
+  const preds = tests.map((t, i) => predAt(i, t.probe.qty));
 
   let all = 0;
   let happy = 0;
   let happyN = 0;
   let edge = 0;
   let edgeN = 0;
+  // Exact match is brutal for a reasoning model that infers a smooth-ish curve; also track
+  // "close" (within 5%) so the README can distinguish "recovered the shape but off by the
+  // loyalty cut" from "totally lost". The self-poisoning story lives in this gap.
+  let happyClose = 0;
+  const within5 = (g: number | undefined, truth: number): boolean =>
+    g !== undefined && truth > 0 && Math.abs(g - truth) / truth <= 0.05;
+  const samples: string[] = [];
   for (let i = 0; i < tests.length; i += 1) {
     const tc = tests[i];
     if (!tc) continue;
@@ -116,6 +132,8 @@ async function main(): Promise<void> {
     if (tc.kind === 'happy') {
       happy += match;
       happyN += 1;
+      if (within5(guess, tc.truth)) happyClose += 1;
+      if (samples.length < 6) samples.push(`${tc.probe.qty}: pred=${guess ?? '?'} truth=${tc.truth}`);
     } else {
       edge += match;
       edgeN += 1;
@@ -124,13 +142,15 @@ async function main(): Promise<void> {
   const round3 = (n: number): number => Math.round(n * 1000) / 1000;
   const agreement = round3(tests.length === 0 ? 0 : all / tests.length);
   const happyAgreement = round3(happyN === 0 ? 0 : happy / happyN);
+  const happyCloseAgreement = round3(happyN === 0 ? 0 : happyClose / happyN);
   const edgeAgreement = round3(edgeN === 0 ? 1 : edge / edgeN);
+  console.log(`happy samples: ${samples.join(' | ')}`);
 
   bus.publish({
     from: 'oracleA',
     to: '*',
     topic: 'verdict',
-    body: { agreement, happyPathAgreement: happyAgreement, edgeCaseAgreement: edgeAgreement, probesUsed: observed.length },
+    body: { agreement, happyPathAgreement: happyAgreement, happyPathWithin5pct: happyCloseAgreement, edgeCaseAgreement: edgeAgreement, probesUsed: observed.length },
   });
   trace.append({
     t: 'score',
@@ -141,8 +161,9 @@ async function main(): Promise<void> {
       probesUsed: observed.length,
       agreement,
       happyPathAgreement: happyAgreement,
+      happyPathWithin5pct: happyCloseAgreement,
       edgeCaseAgreement: edgeAgreement,
-      predsReturned: preds.length,
+      predsReturned: preds.filter((p) => p !== undefined).length,
       testCases: tests.length,
     },
   });
@@ -150,8 +171,8 @@ async function main(): Promise<void> {
 
   const replayed = await readRunRecord(traceFile);
   console.log(
-    `agreement=${agreement} happy=${happyAgreement} edge=${edgeAgreement} ` +
-      `probes=${observed.length} preds=${preds.length}/${tests.length} | ` +
+    `agreement=${agreement} happy=${happyAgreement} happyWithin5%=${happyCloseAgreement} edge=${edgeAgreement} ` +
+      `probes=${observed.length} preds=${preds.filter((p) => p !== undefined).length}/${tests.length} | ` +
       `replay verified: ${replayed.events.length} events | trace: ${traceFile}`,
   );
 }
