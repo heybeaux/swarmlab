@@ -1,0 +1,15 @@
+{
+  "name": "@swarmlab/experiment-14-delegation-decay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@swarmlab/core": "0.1.0",
+    "@openengram/reconciliation": "file:../../../../../../../projects/engram/src/reconciliation"
+  },
+  "scripts": {
+    "start:a": "node dist/maina.js",
+    "start:b": "node dist/mainb.js",
+    "start:llm": "node dist/llm.js"
+  }
+}
