@@ -8,6 +8,7 @@
     { "path": "experiments/03-prompt-darwinism" },
     { "path": "experiments/04-consensus-under-lies" },
     { "path": "experiments/05-bug-telephone" },
-    { "path": "experiments/06-self-modifying-swarm" }
+    { "path": "experiments/06-self-modifying-swarm" },
+    { "path": "experiments/07-minimal-language" }
   ]
 }
