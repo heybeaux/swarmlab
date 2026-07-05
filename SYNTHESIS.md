@@ -337,3 +337,56 @@ and the re-measured result of that change. This is the loop closing.
 This is priority-order item #1 from the synthesis above, now built and measured. The single
 most common failure across the suite — silent semantic corruption under a green board — is
 zero in the retest.
+
+### RT-02 — Parliament pinned criterion + evidence audit (from exp-04)
+
+- **Finding (exp-04):** the sharpest real-LLM risk isn't false facts, it's **criterion drift**
+  — liars conceded the true `O(n²)` bound and reframed the *yardstick* to average-case
+  superiority — and at liar-majority **vote arithmetic outruns evidence** (K=3: silent lie
+  consensus `1.00`, every confidence/style heuristic inverts because the liars *are* the
+  plurality). No style or confidence signal can see either failure.
+- **Change (`~/dev/parliament`, branch `criterion-pinning`, commits `1562a1f` + `4436f89`):**
+  a pinned decision criterion + evidence audit in `packages/core`. `DecisionCriterion
+  { criterion_id, question, standard, admissible_evidence }`, `EvidenceCitation`,
+  `AuditedPosition`, and a pure, deterministic `tallyWithAudit(criterion, positions)` that
+  gates consensus on *substance*: (1) votes without a verifiable, on-standard citation don't
+  count; (2) criterion drift is **named** (`drift=true` + detected standard), never silent;
+  (3) an arithmetic majority on inadmissible evidence is **blocked** (`winner=null`,
+  `blocked_reason`), so capture is *detected* not out-voted; (4) admissibility is per-position,
+  so honest lone dissent survives. `criterion_id` is a stable FNV-1a hash invariant under
+  field reordering. 9 vitest cases green (full core suite 776 passing). `./criterion` subpath
+  export added for direct consumer import.
+- **Retest (`experiments/04-consensus-under-lies`, mode `parliament`):** the same belief/trust
+  deliberation as `naive`/`vigilant`, the same 14 cells × 25 seeded trials, but every verdict
+  decided by the **real shipped** `tallyWithAudit` (linked via a `file:` dep from the
+  `./criterion` subpath — not reimplemented). Sim run `cul-parl-mr7ty33i`, all traces
+  replay-verified.
+
+  | metric | before (naive/vigilant) | after (parliament) | target | verdict |
+  |---|---|---|---|---|
+  | silent lie consensus at K=3 | **1.00** lie wins | **0.00** (both K=3 cells blocked 25/25) | 0.00 | ✅ |
+  | audited lie win, any cell | up to 0.72 | **≤ 0.01** (one vigilant-k1-sneaky trial) | ~0 | ✅ |
+  | truth rate at K=0 (false-positive tax) | 0.92 / 0.84 | **0.92 / 0.84** (`blockedCleanPanels=0`) | ≥ 0.92 | ✅ (naive) |
+  | truth rate at K=1–2 sneaky | 0.60 / 0.28 | 0.60 / 0.28 (unchanged) | ≥ 0.90 | ❌ |
+
+- **Live exhibition (real `claude-haiku-4-5-20251001`, 5 panelists, audited):** K=1 → audited
+  **B** (truth), `driftFlagged=1/1`, every liar drifted; K=2 → audited **B**, `driftFlagged=0/2`
+  (these liars asserted a *false worst-case* rather than drifting — inadmissible via the
+  unverifiable path, still not certified for the lie); K=3 → raw arithmetic **A** (the lie wins
+  the vote), **audit blocks with `criterion_drift`, `winner=none`**, `driftFlagged=2/3`. The spec
+  B3 success condition — audit refuses to certify a lie that won the arithmetic — is met live.
+- **Honesty note:** the change eliminates **silent capture and criterion-drift certification at
+  zero clean-panel cost** — the two failures exp-04 said no heuristic could touch — but it does
+  **not** raise honest truth-recovery at K=1–2 sneaky (0.60 / 0.28, red). There the audit
+  reliably kills the *lie* (lie rate → 0) but the outcome lands on **blocked/no-consensus** rather
+  than **truth**: with 1–2 honest voices dragged and thin evidence (p=0.7), admissible truth votes
+  don't always form a strict majority, so the tally correctly declines to certify rather than
+  manufacture a truth win. Closing that is a *deliberation* change (honest evidence pooling), not
+  an audit change — the parliament retest is a verdict layer and deliberately leaves the trust rule
+  fixed so the audit is the only variable. `dragged-honest` is likewise unchanged (~2.28, red by
+  construction); what changed is that dragging no longer flips the verdict. Full 14-cell table and
+  the sim→`AuditedPosition` mapping in the exp-04 README "Retest: criterion pinning" section.
+
+This is priority-order item #2 from the synthesis above. The K=3 capture hole — a lie winning
+under a green, high-confidence board — is now **detected and blocked** rather than certified,
+live and in sim.
