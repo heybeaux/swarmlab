@@ -14,6 +14,7 @@
     { "path": "experiments/09-overnight-cathedral" },
     { "path": "experiments/10-economic-agents" },
     { "path": "experiments/11-reverse-engineer" },
-    { "path": "experiments/12-schema-negotiation" }
+    { "path": "experiments/12-schema-negotiation" },
+    { "path": "experiments/13-audit-forgery" }
   ]
 }
