@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@swarmlab/core": "0.1.0"
+    "@swarmlab/core": "0.1.0",
+    "@heybeaux/sonder-core": "file:../../../../../../../dev/sonder/packages/core"
   },
   "scripts": {
     "start": "node dist/main.js"

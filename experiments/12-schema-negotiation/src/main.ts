@@ -24,12 +24,66 @@ import {
 } from '@swarmlab/core';
 import { seeded } from './rng.js';
 import { round3, runTrial } from './sim.js';
+import { runSonderTrial, type SonderTrialResult, type SonderTurn } from './sondermode.js';
 import type { NegotiationTurn, TrialConfig, TrialResult } from './types.js';
 
 // --- configuration -----------------------------------------------------------
 
 const TRIALS = Number(process.env.SCHEMA_TRIALS ?? 40);
 const SEED = process.env.SCHEMA_SEED ?? 'schema-negotiation-v1';
+
+/** 'naive' (default, the exp-12 baseline) or 'sonder' (Spec-14 typed-contract retest). */
+const MODE = (process.env.SCHEMA_MODE ?? 'naive') as 'naive' | 'sonder';
+/**
+ * Commit SHA of the @heybeaux/sonder-core the retest exercises. Recorded in the
+ * meta event so a trace names the exact shipped matcher it ran against.
+ */
+const SONDER_SHA = process.env.SONDER_SHA ?? 'unknown';
+
+/**
+ * Normalize a naive or sonder trial into the common metric shape the sweep
+ * aggregates. `mismatchesNamed`/`falseFriendsInjected` are sonder-only (used to
+ * prove corruption reached 0 BY DETECTION, not by refusal-to-agree).
+ */
+interface CommonTrial {
+  agreed: boolean;
+  fidelity: number;
+  silentCorruption: number;
+  falseFriendsCaught: number;
+  mappedFields: number;
+  rounds: number;
+  mismatchesNamed: number;
+  falseFriendsInjected: number;
+  ffCorruptEscapes: number;
+}
+
+function fromNaive(r: TrialResult): CommonTrial {
+  return {
+    agreed: r.agreed,
+    fidelity: r.fidelity,
+    silentCorruption: r.silentCorruption,
+    falseFriendsCaught: r.falseFriendsCaught,
+    mappedFields: r.mappedFields,
+    rounds: r.rounds,
+    mismatchesNamed: 0,
+    falseFriendsInjected: 0,
+    ffCorruptEscapes: 0,
+  };
+}
+
+function fromSonder(r: SonderTrialResult): CommonTrial {
+  return {
+    agreed: r.agreed,
+    fidelity: r.fidelity,
+    silentCorruption: r.silentCorruption,
+    falseFriendsCaught: r.falseFriendsCaught,
+    mappedFields: r.mappedFields,
+    rounds: 1, // contract negotiation is a single deterministic handshake
+    mismatchesNamed: r.mismatchesNamed,
+    falseFriendsInjected: r.falseFriendsInjected,
+    ffCorruptEscapes: r.ffCorruptEscapes,
+  };
+}
 
 const OVERLAPS: readonly number[] = [0.25, 0.5, 0.75, 1.0];
 const FALSE_FRIENDS: readonly number[] = [0, 1, 2, 3];
@@ -63,7 +117,7 @@ function cellConfig(cell: Cell): TrialConfig {
 
 const runsDir = join(import.meta.dirname, '..', 'runs');
 mkdirSync(runsDir, { recursive: true });
-const runId = `sn-${Date.now().toString(36)}`;
+const runId = `sn-${MODE}-${Date.now().toString(36)}`;
 const traceFile = join(runsDir, `${runId}.jsonl`);
 const trace = new TraceWriter(traceFile, { runId, experiment: '12-schema-negotiation' });
 const bus = new MessageBus({ trace });
@@ -74,7 +128,8 @@ bus.publish({
   to: '*',
   topic: 'meta',
   body: {
-    mode: 'sim',
+    mode: MODE,
+    sonderSha: MODE === 'sonder' ? SONDER_SHA : undefined,
     trials: TRIALS,
     seed: SEED,
     overlaps: OVERLAPS,
@@ -84,7 +139,7 @@ bus.publish({
   },
 });
 
-console.log(`run ${runId} | cells=${cells.length} trials/cell=${TRIALS}`);
+console.log(`run ${runId} | mode=${MODE} cells=${cells.length} trials/cell=${TRIALS}`);
 
 // --- sweep -----------------------------------------------------------------------
 
@@ -96,6 +151,12 @@ interface CellAggregate {
   silentCorruption: number;
   falseFriendsCaught: number;
   meanMappedFields: number;
+  /** Sonder mode: total false friends surfaced as a named mismatch across the cell. */
+  mismatchesNamed: number;
+  /** Sonder mode: total false friends injected across the cell. */
+  falseFriendsInjected: number;
+  /** Sonder mode: wrong same-name→same-name maps that escaped (must be 0). */
+  ffCorruptEscapes: number;
 }
 
 const aggregates: CellAggregate[] = [];
@@ -128,30 +189,44 @@ for (let c = 0; c < cells.length; c += 1) {
     { runtime, trace },
   );
 
-  const results: TrialResult[] = [];
+  const results: CommonTrial[] = [];
   for (let t = 0; t < TRIALS; t += 1) {
     const rand = seeded(`${SEED}:${cell.id}:${t}`);
-    if (t === 0) {
-      const emit = (turn: NegotiationTurn): void => {
-        bus.publish({
-          from: turn.from === 'A' ? agentA.id : agentB.id,
-          to: turn.to === 'A' ? agentA.id : agentB.id,
-          topic: 'negotiate',
-          body: {
-            round: turn.round,
-            kind: turn.kind,
-            rows: turn.rows.map((r) => ({
-              aName: r.aName,
-              bName: r.bName,
-              basis: r.basis,
-              confidence: r.confidence,
-            })),
-          },
-        });
-      };
-      results.push(runTrial(cfg, rand, { emit }));
+    const exhibition = t === 0;
+
+    if (MODE === 'sonder') {
+      const emit = exhibition
+        ? (turn: SonderTurn): void => {
+            bus.publish({
+              from: turn.from === 'A' ? agentA.id : agentB.id,
+              to: turn.to === 'A' ? agentA.id : agentB.id,
+              topic: 'contract',
+              body: { kind: turn.kind, ...turn.body },
+            });
+          }
+        : undefined;
+      results.push(fromSonder(runSonderTrial(cfg, rand, emit ? { emit } : undefined)));
     } else {
-      results.push(runTrial(cfg, rand));
+      const emit = exhibition
+        ? (turn: NegotiationTurn): void => {
+            bus.publish({
+              from: turn.from === 'A' ? agentA.id : agentB.id,
+              to: turn.to === 'A' ? agentA.id : agentB.id,
+              topic: 'negotiate',
+              body: {
+                round: turn.round,
+                kind: turn.kind,
+                rows: turn.rows.map((r) => ({
+                  aName: r.aName,
+                  bName: r.bName,
+                  basis: r.basis,
+                  confidence: r.confidence,
+                })),
+              },
+            });
+          }
+        : undefined;
+      results.push(fromNaive(runTrial(cfg, rand, emit ? { emit } : undefined)));
     }
   }
 
@@ -160,8 +235,10 @@ for (let c = 0; c < cells.length; c += 1) {
   await agentB.kill();
   bus.removeAgent(agentB.id);
 
-  const mean = (f: (r: TrialResult) => number): number =>
+  const mean = (f: (r: CommonTrial) => number): number =>
     round3(results.reduce((s, r) => s + f(r), 0) / results.length);
+  const sum = (f: (r: CommonTrial) => number): number =>
+    results.reduce((s, r) => s + f(r), 0);
 
   const agg: CellAggregate = {
     cell,
@@ -171,6 +248,9 @@ for (let c = 0; c < cells.length; c += 1) {
     silentCorruption: mean((r) => r.silentCorruption),
     falseFriendsCaught: mean((r) => r.falseFriendsCaught),
     meanMappedFields: mean((r) => r.mappedFields),
+    mismatchesNamed: sum((r) => r.mismatchesNamed),
+    falseFriendsInjected: sum((r) => r.falseFriendsInjected),
+    ffCorruptEscapes: sum((r) => r.ffCorruptEscapes),
   };
   aggregates.push(agg);
 
@@ -188,12 +268,19 @@ for (let c = 0; c < cells.length; c += 1) {
       silentCorruption: agg.silentCorruption,
       falseFriendsCaught: agg.falseFriendsCaught,
       meanMappedFields: agg.meanMappedFields,
+      mismatchesNamed: agg.mismatchesNamed,
+      falseFriendsInjected: agg.falseFriendsInjected,
+      ffCorruptEscapes: agg.ffCorruptEscapes,
     },
   });
 
+  const detect =
+    agg.falseFriendsInjected > 0
+      ? ` named=${agg.mismatchesNamed}/${agg.falseFriendsInjected}`
+      : '';
   console.log(
     `${cell.id.padEnd(14)} | agree=${fmt(agg.agreementRate)} rounds=${agg.meanRounds} ` +
-      `fid=${fmt(agg.fidelity)} silent=${fmt(agg.silentCorruption)} ffCaught=${fmt(agg.falseFriendsCaught)}`,
+      `fid=${fmt(agg.fidelity)} silent=${fmt(agg.silentCorruption)} ffCaught=${fmt(agg.falseFriendsCaught)}${detect}`,
   );
 }
 
@@ -258,6 +345,42 @@ function meanFalseFriendMissRate(): number {
   return n === 0 ? 0 : round3(sum / n);
 }
 
+/**
+ * Detection rate: fraction of ALL injected false friends surfaced as a named
+ * mismatch, across every cell. This is the honesty check for the retest — silent
+ * corruption must reach 0 BY DETECTION (mismatches named), not by refusal-to-agree.
+ * 1.0 means every false friend was named. Sonder-only (naive injects no contracts).
+ */
+function falseFriendDetectionRate(): number {
+  let named = 0;
+  let injected = 0;
+  for (const a of aggregates) {
+    named += a.mismatchesNamed;
+    injected += a.falseFriendsInjected;
+  }
+  return injected === 0 ? 0 : round3(named / injected);
+}
+
+/**
+ * The retest headline: total wrong SAME-NAME→SAME-NAME mappings that escaped into
+ * agreed matches across the whole sweep. This is silent corruption at the source.
+ * MUST be 0 with typed contracts — corruption prevented BY DETECTION, not by
+ * refusal-to-agree. (A false friend the contract layer routes to its true concept
+ * twin or leaves unmapped is prevented; only a same-name wrong map is corruption.)
+ */
+function totalFalseFriendCorruptEscapes(): number {
+  let escapes = 0;
+  for (const a of aggregates) escapes += a.ffCorruptEscapes;
+  return escapes;
+}
+
+/** Total false friends injected across the sweep (denominator for detection). */
+function totalFalseFriendsInjected(): number {
+  let n = 0;
+  for (const a of aggregates) n += a.falseFriendsInjected;
+  return n;
+}
+
 /** Mean negotiation rounds to agreement across cells that actually agreed. */
 function meanRoundsToAgreement(): number {
   let sum = 0;
@@ -282,6 +405,9 @@ const summaryScorer: Scorer = {
       silentAtFf3: silentByFalseFriends(3),
       silentCorruptionSlope: silentCorruptionSlope(),
       meanFalseFriendMissRate: meanFalseFriendMissRate(),
+      falseFriendDetectionRate: falseFriendDetectionRate(),
+      falseFriendCorruptEscapes: totalFalseFriendCorruptEscapes(),
+      falseFriendsInjected: totalFalseFriendsInjected(),
       meanRoundsToAgreement: meanRoundsToAgreement(),
       worstSilentCorruption: worstCell().silent,
     };

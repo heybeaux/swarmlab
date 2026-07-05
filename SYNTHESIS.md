@@ -290,3 +290,50 @@ these failures get caught or don't.
   not-persuasion + criterion-drift). No sim result is presented as a live one.
 - Traces are honest: red runs are reported red (02's hallucinated coder, 11's
   bending stateful curve, 13's slipped tail-drop) rather than smoothed.
+
+---
+
+## Retest ledger (findings → stack changes → measured deltas)
+
+The receipt that the lab produced something useful: a finding that changed the stack,
+and the re-measured result of that change. This is the loop closing.
+
+### RT-01 — Sonder typed payload contracts (from exp-12 + exp-11)
+
+- **Finding (exp-12):** refereeless schema negotiation converges fast and unanimously on
+  *false friends* (same wire name, different concept/unit). Sim: `meanFalseFriendMissRate
+  = 0.908`, worst-cell `silentCorruption = 0.845` at 100% reported agreement. Units traps
+  (`created` ms/sec, `total` pre/post-tax) are byte-identical and uncatchable from the wire
+  surface. exp-11 adds: probing can't recover statefulness/edge regions, so contracts must
+  *state* them.
+- **Change (`~/dev/sonder`, branch `typed-payload-contracts`, commit `4c7dddf`):** a typed
+  payload-contract layer in `packages/core`. `FieldContract { name, wire, concept, unit }`,
+  `PayloadContract`, and `negotiateContracts(a, b)` — a pure, deterministic type-check that
+  matches on `concept`+`unit` only and NAMES every collision (`false_friend`,
+  `unit_mismatch`). Optional `payload_contract` on `SonderEventCore` (backward-compatible,
+  mirrors the Phase-3.5 `outcome`/`resources` pattern). Full test suite green
+  (150 passing; the 3 exp-12 recipes surface as named mismatches, zero mapped).
+- **Retest (`experiments/12-schema-negotiation`, mode `sonder`):** same generator, same
+  sweep, same metrics — mapping produced by the **real shipped** `negotiateContracts`
+  (linked, not reimplemented).
+
+  | metric | before (naive) | after (contracts) | target | verdict |
+  |---|---|---|---|---|
+  | `meanFalseFriendMissRate` | 0.908 | **0.00** | 0.00 | ✅ |
+  | worst-cell `silentCorruption` | 0.845 | **0.00** | 0.00 | ✅ |
+  | false-friend corrupt escapes | (silent) | **0 / 960** | 0 | ✅ |
+  | honest-rename match rate | high | preserved (`o1-ff0` agree=1.00 fid=1.00) | ≥ naive | ✅ |
+
+- **Honesty note:** corruption reaches 0 **by detection** (`falseFriendCorruptEscapes = 0`),
+  not by refusal. The literal named-collision rate `mismatchesNamed/injected = 0.716` (not
+  1.0) is a real finding, not a miss: at full overlap every false friend is explicitly named
+  (40/40, 80/80, 120/120), but at lower overlap some are prevented by *re-routing each half
+  to its true concept twin* + leaving the ambiguous field unmapped — a stronger outcome than
+  naming. `agreementRate` drops as false friends rise because a contract with an unresolvable
+  `unit_mismatch` is `ok=false` — the pair correctly **refuses to agree on a corrupt
+  contract** instead of shipping it at 100% confidence like the naive matcher did. Details and
+  the full 16-cell table in the exp-12 README "Retest: typed contracts" section.
+
+This is priority-order item #1 from the synthesis above, now built and measured. The single
+most common failure across the suite — silent semantic corruption under a green board — is
+zero in the retest.

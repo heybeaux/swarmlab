@@ -151,3 +151,71 @@ named. The silent-corruption metric is derivable directly from the `score` event
   which is exactly why the Sonder directive holds: transmit `concept`+unit as a first-class,
   checkable type, because a warning that only produces *hesitation* still leaves the meaning
   unverified.
+
+## Retest: typed contracts (Spec 14)
+
+This is the first stack change driven by a lab finding. The exp-12 result above is a
+direct argument for making meaning a transmitted, typed term — so we built exactly that
+in Sonder and re-ran the sweep against the shipped code.
+
+- **What shipped (`~/dev/sonder`, branch `typed-payload-contracts`, commit `4c7dddf`):**
+  `FieldContract { name, wire, concept, unit }`, `PayloadContract`, and
+  `negotiateContracts(a, b)` — a **pure, deterministic** type-check that matches on
+  `concept`+`unit` equality only (wire-name equality contributes nothing) and NAMES
+  every collision: `false_friend` (same name, different concept) and `unit_mismatch`
+  (same concept, different unit, no registered conversion). Plus an optional
+  `payload_contract` field on `SonderEventCore` (backward-compatible). See
+  `packages/core/src/contract.ts` and its tests.
+- **How the retest runs it (`src/sondermode.ts`, mode `sonder`):** same schema
+  generator, same sweep (overlap × falseFriends, 40 trials/cell), same metrics. Each
+  side transmits its hidden `concept` (+ derived `unit`) as a `FieldContract`; the
+  mapping is produced by the **real** `@heybeaux/sonder-core` `negotiateContracts` (linked
+  via a `file:` dep, not reimplemented). The `meta` event records `mode=sonder` and the
+  sonder commit SHA.
+
+### Before / after (headline metrics)
+
+| metric | naive baseline | typed contracts (`sonder`) | target |
+|---|---|---|---|
+| `meanFalseFriendMissRate` | **0.908** | **0.00** | 0.00 ✅ |
+| worst-cell `silentCorruption` (`o0.25-ff3`) | **0.845** | **0.00** | 0.00 ✅ |
+| `silentCorruption` at ff1 / ff2 / ff3 | 0.427 / 0.553 / 0.642 | 0.00 / 0.00 / 0.00 | — ✅ |
+| false-friend **corrupt escapes** (wrong same-name maps) | n/a (naive: silent) | **0 / 960 injected** | 0 ✅ |
+| honest-rename match rate (`ff=0` cells) | high, agree=1.00 | matches preserved, `o1-ff0` agree=1.00 fid=1.00 | ≥ naive ✅ |
+
+Naive run: `sn-naive-*.jsonl` — `meanFalseFriendMissRate=0.908`, `worstSilentCorruption=0.845`
+(reproduces the committed baseline exactly). Sonder run: `sn-sonder-*.jsonl` — `silent=0` in
+every one of the 16 cells, `falseFriendCorruptEscapes=0` across all 960 injected false friends.
+(Run IDs are per-execution timestamps; traces land in `runs/`, which is gitignored.)
+
+### The honest part: 0 corruption BY DETECTION, not by refusal
+
+The success criterion is that corruption reaches 0 **by detection** (mismatches named), not
+by a blanket refusal-to-agree. The retest reports `falseFriendCorruptEscapes = 0 / 960` — no
+false friend ever mapped same-name→same-name to a wrong meaning. That is the number that
+matters, and it is 0.
+
+There is a subtlety worth stating plainly rather than smoothing over. The *literal* rate
+`mismatchesNamed / falseFriendsInjected` is **0.716**, not 1.0 — and that is a real,
+instructive result, not a miss:
+
+- At **full overlap** (`o1`), every injected false friend is surfaced as an **explicit named
+  collision**: `40/40`, `80/80`, `120/120`. The type checker names the trap.
+- At **lower overlap**, some false friends are prevented a *different* way. Because both the
+  pre-tax and post-tax halves of a `total` collision map to concept `order.total` (at
+  different units), the greedy concept-matcher often routes each half to its **true concept
+  twin** (an honest field that legitimately shares that concept+unit) and leaves the
+  ambiguous wire-name field **unmapped**. The wrong same-name mapping never ships — corruption
+  is prevented — but via *re-routing to the correct meaning* rather than a named collision.
+
+So typed contracts prevent 100% of the corruption, sometimes by naming the collision and
+sometimes by dissolving it into correct matches. Only the escapes count as failures, and there
+are zero. The `falseFriendDetectionRate` (named-only) is reported alongside so the mechanism is
+never hidden behind the headline.
+
+One more honest note: `agreementRate` **drops** as false-friend count rises (e.g. `o1-ff1`
+agree=0.00). This is correct and desirable — a contract containing an unresolvable
+`unit_mismatch` is `ok=false`, i.e. the pair **refuses to agree on a corrupt contract**. In the
+naive world the same pair agreed at 100% and shipped the corruption. Refusing a bad contract is
+the point; the false-friend halves are still individually re-routed or named, so no meaning is
+lost — only the wrong agreement is withheld.
