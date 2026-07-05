@@ -35,6 +35,7 @@ import {
 import type { FailStyle, TrustTrialResult } from '@swarmlab/experiment-14-delegation-decay/dist/types.js';
 import {
   DECAY_WINDOW,
+  EVIDENCE_MARGIN,
   PROBE_BACKOFF,
   PROBE_BASE,
   runForgivingTrial,
@@ -47,7 +48,7 @@ const TRIALS = Number(process.env.FORGIVE_TRIALS ?? 50);
 const SEED = process.env.FORGIVE_SEED ?? 'trust-routing-v1'; // exp-14 Part B seed, unchanged
 const SKIP_REPRO_GATE = process.env.SKIP_REPRO_GATE === '1';
 
-const ARMS: readonly ForgArm[] = ['unforgiving', 'decay', 'probation'];
+const ARMS: readonly ForgArm[] = ['unforgiving', 'decay', 'probation', 'evidence'];
 const STYLES: readonly FailStyle[] = ['loud', 'confident-wrong'];
 
 interface Condition {
@@ -84,6 +85,7 @@ bus.publish({
     decayWindow: DECAY_WINDOW,
     probeBase: PROBE_BASE,
     probeBackoff: PROBE_BACKOFF,
+    evidenceMargin: EVIDENCE_MARGIN,
     workers: WORKERS.map((w) => w.id),
     incapable: INCAPABLE,
     taskClass: TASK_CLASS,
@@ -116,6 +118,8 @@ interface ConditionAggregate {
   probeCountMean: number;
   probeTokensMean: number;
   probeTokensWastedMean: number;
+  lateIncapableProbesMean: number;
+  postResetProbeRate: number;
   midProbationAtResetRate: number;
   postResetContinuityRate: number;
   transferPoolHadIncapableRate: number;
@@ -255,6 +259,8 @@ for (let c = 0; c < conditions.length; c += 1) {
     probeCountMean: exMean((e) => e.probeCount),
     probeTokensMean: exMean((e) => e.probeTokens),
     probeTokensWastedMean: exMean((e) => e.probeTokensWasted),
+    lateIncapableProbesMean: exMean((e) => e.lateIncapableProbes),
+    postResetProbeRate: exRate((e) => e.postResetIncapableWasProbe),
     midProbationAtResetRate: exRate((e) => e.midProbationAtReset),
     postResetContinuityRate: exRate((e) => e.postResetContinuityOk),
     transferPoolHadIncapableRate: exRate((e) => e.transferPoolHadIncapable),
@@ -269,7 +275,7 @@ for (let c = 0; c < conditions.length; c += 1) {
     ts: Date.now(),
     scores: {
       conditionIndex: c,
-      arm: cond.arm === 'unforgiving' ? 0 : cond.arm === 'decay' ? 1 : 2,
+      arm: cond.arm === 'unforgiving' ? 0 : cond.arm === 'decay' ? 1 : cond.arm === 'probation' ? 2 : 3,
       style: cond.style === 'loud' ? 0 : 1,
       trials: TRIALS,
       lateSelectionRate: agg.lateRate,
@@ -287,6 +293,8 @@ for (let c = 0; c < conditions.length; c += 1) {
       probeCountMean: agg.probeCountMean,
       probeTokensMean: agg.probeTokensMean,
       probeTokensWastedMean: agg.probeTokensWastedMean,
+      lateIncapableProbesMean: agg.lateIncapableProbesMean,
+      postResetProbeRate: agg.postResetProbeRate,
       midProbationAtResetRate: agg.midProbationAtResetRate,
       postResetContinuityRate: agg.postResetContinuityRate,
       transferPoolHadIncapableRate: agg.transferPoolHadIncapableRate,
@@ -418,7 +426,7 @@ const summaryScorer: Scorer = {
       for (const style of STYLES) {
         const a = find(arm, style);
         if (!a) continue;
-        const key = `${arm === 'unforgiving' ? 'uf' : arm === 'decay' ? 'dc' : 'pb'}${style === 'loud' ? 'Loud' : 'CW'}`;
+        const key = `${arm === 'unforgiving' ? 'uf' : arm === 'decay' ? 'dc' : arm === 'probation' ? 'pb' : 'ev'}${style === 'loud' ? 'Loud' : 'CW'}`;
         s[`${key}Late`] = a.lateRate;
         s[`${key}CapEx`] = a.capableExcludedMean;
         s[`${key}Recov`] = a.capableRecoveriesMean;

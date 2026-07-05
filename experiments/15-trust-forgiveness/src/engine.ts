@@ -34,11 +34,23 @@ import { seeded, type Rand } from '@swarmlab/experiment-14-delegation-decay/dist
 import type { FailStyle, TrustTrialResult } from '@swarmlab/experiment-14-delegation-decay/dist/types.js';
 import { ForgivingStore, type ProbationState } from './store.js';
 
-export type ForgArm = 'unforgiving' | 'decay' | 'probation';
+export type ForgArm = 'unforgiving' | 'decay' | 'probation' | 'evidence';
 
 export const DECAY_WINDOW = 10; // rounds; mirrors exp-14's in-context window for comparability
-export const PROBE_BASE = 4; // first probe N rounds after probation entry
-export const PROBE_BACKOFF = 2; // interval multiplier after each probe
+// Probe cadence is the design parameter under test; env-overridable so the
+// cadence sensitivity runs are pinned separately. Defaults are the RECOMMENDED
+// config found by the sweep: front-loaded probes (first probe +2 rounds,
+// interval ×2 after each) so conclusive evidence is gathered early — slower
+// cadences (base 4) push mercury's 2nd/3rd probes into the late measurement
+// window and the evidence cap never binds within a 30-round horizon.
+export const PROBE_BASE = Number(process.env.FORGIVE_PROBE_BASE ?? 2);
+export const PROBE_BACKOFF = Number(process.env.FORGIVE_PROBE_BACKOFF ?? 2);
+// Arm 4 (evidence): probing stops once a worker's failure margin
+// (failures - successes) is conclusive — provenance-tier failures pile up only
+// on the genuinely incapable. At P_CAPABLE_TRANSIENT_FAIL=0.05 a capable
+// worker essentially never reaches net margin 4; mercury reaches it after 4
+// observed failures with certainty. Window-independent by construction.
+export const EVIDENCE_MARGIN = Number(process.env.FORGIVE_EVIDENCE_MARGIN ?? 3);
 
 /** Same literal as exp-14 trust.ts (not exported there); feeds fact content only. */
 const ASSERTIONS = ['quota_cap_set', 'burst_ratio_valid', 'policy_scope_bound', 'ttl_consistent'] as const;
@@ -69,6 +81,8 @@ export interface ForgivenessExtras {
   probeTokensWasted: number;
   /** probes that landed in rounds 25–30 AND hit the incapable agent */
   lateIncapableProbes: number;
+  /** post-reset (round 16) incapable selection was a SCHEDULED PROBE, not a pool pick */
+  postResetIncapableWasProbe: boolean;
   /** was any worker mid-probation when the root was killed (after r15)? */
   midProbationAtReset: boolean;
   /** store snapshot identical across the restart + schedule honored afterwards */
@@ -87,7 +101,7 @@ function pickUniform(candidates: readonly string[], rand: Rand): string {
 }
 
 export function runForgivingTrial(
-  arm: 'decay' | 'probation',
+  arm: 'decay' | 'probation' | 'evidence',
   style: FailStyle,
   seedBase: string,
   emit?: TrustEmit,
@@ -113,6 +127,7 @@ export function runForgivingTrial(
     probeTokens: 0,
     probeTokensWasted: 0,
     lateIncapableProbes: 0,
+    postResetIncapableWasProbe: false,
     midProbationAtReset: false,
     postResetContinuityOk: true,
     transferPoolHadIncapable: false,
@@ -139,7 +154,7 @@ export function runForgivingTrial(
         success: obs.success,
         ...(obs.failedAssertion !== undefined ? { failedAssertion: obs.failedAssertion } : {}),
       });
-      if (arm === 'probation') {
+      if (arm !== 'decay') {
         // evidence-driven exit: record re-balanced while in probation → readmit
         const p = store.readProbation(obs.worker);
         const cap = store.readCap(obs.worker);
@@ -180,7 +195,7 @@ export function runForgivingTrial(
       // Root killed + restarted. This engine keeps ZERO root-local trust
       // state — every round re-reads the store — so the restart's only real
       // test is that the store still holds what it held. Verify exactly that.
-      if (arm === 'probation') {
+      if (arm !== 'decay') {
         const after = store.snapshotProbation(WORKER_IDS);
         extras.postResetContinuityOk = after === resetSnapshot;
         extras.midProbationAtReset = midProbationAtResetState.length > 0;
@@ -212,8 +227,8 @@ export function runForgivingTrial(
       prevEligible = elig;
     }
 
-    // probation arm: threshold crossings enter probation (exp-14's exact crossing rule)
-    if (arm === 'probation') {
+    // probation/evidence arms: threshold crossings enter probation (exp-14's exact crossing rule)
+    if (arm !== 'decay') {
       for (const id of WORKER_IDS) {
         const cap = store.readCap(id);
         if (!cap || cap.failures <= cap.successes) continue;
@@ -242,6 +257,13 @@ export function runForgivingTrial(
           (x): x is { id: string; p: ProbationState } =>
             x.p !== null && x.p.status === 'probation' && x.p.nextProbeRound <= round,
         )
+        // evidence arm: conclusive failure margin ends probing — the worker
+        // stays benched on evidence, not on schedule position
+        .filter((x) => {
+          if (arm !== 'evidence') return true;
+          const cap = store.readCap(x.id);
+          return cap === null || cap.failures - cap.successes <= EVIDENCE_MARGIN;
+        })
         .sort((a, b) => a.p.nextProbeRound - b.p.nextProbeRound || a.id.localeCompare(b.id));
       const first = due[0];
       if (first !== undefined) {
@@ -262,7 +284,10 @@ export function runForgivingTrial(
     selections.push(chosen);
     const isIncapable = chosen === INCAPABLE;
     incapableChosen.push(isIncapable);
-    if (round === RESET_AFTER_ROUND + 1) postResetIncapable = isIncapable;
+    if (round === RESET_AFTER_ROUND + 1) {
+      postResetIncapable = isIncapable;
+      extras.postResetIncapableWasProbe = isIncapable && isProbe;
+    }
     emit?.choice(round, 'root', chosen);
 
     // execute: harness-level ground truth, identical semantics to exp-14
@@ -293,7 +318,7 @@ export function runForgivingTrial(
     emit?.outcome(round, chosen, success, failedAssertion);
 
     // end of round 15: snapshot probation state the store holds at kill time
-    if (round === RESET_AFTER_ROUND && arm === 'probation') {
+    if (round === RESET_AFTER_ROUND && arm !== 'decay') {
       resetSnapshot = store.snapshotProbation(WORKER_IDS);
       midProbationAtResetState = WORKER_IDS.map((id) => ({ id, p: store.readProbation(id) }))
         .filter((x): x is { id: string; p: ProbationState } => x.p !== null && x.p.status === 'probation');
@@ -303,11 +328,21 @@ export function runForgivingTrial(
   // schedule-honored half of the continuity check: every worker mid-probation
   // at the reset either got its probe exactly when scheduled, exited earlier
   // on evidence, or had its probe scheduled beyond the horizon.
-  if (arm === 'probation' && midProbationAtResetState.length > 0) {
+  if (arm !== 'decay' && midProbationAtResetState.length > 0) {
+    // honored = the scheduled probe happened at (or, under same-round probe
+    // contention, shortly after) its scheduled round, OR the worker exited on
+    // evidence first, OR the probe was scheduled beyond the horizon. Never
+    // silently readmitted, never permanently dropped.
     const honored = midProbationAtResetState.every(({ id, p }) => {
       if (p.nextProbeRound > ROUNDS) return true;
-      if (probeLog.some((e) => e.worker === id && e.round === p.nextProbeRound)) return true;
-      return exitLog.some((e) => e.worker === id && e.round > RESET_AFTER_ROUND && e.round <= p.nextProbeRound);
+      if (probeLog.some((e) => e.worker === id && e.round >= p.nextProbeRound)) return true;
+      if (exitLog.some((e) => e.worker === id && e.round > RESET_AFTER_ROUND)) return true;
+      if (arm === 'evidence') {
+        // conclusively benched: probing legitimately stopped on evidence
+        const cap = store.readCap(id);
+        if (cap !== null && cap.failures - cap.successes > EVIDENCE_MARGIN) return true;
+      }
+      return false;
     });
     extras.postResetContinuityOk = extras.postResetContinuityOk && honored;
   }
