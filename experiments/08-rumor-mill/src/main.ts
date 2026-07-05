@@ -21,12 +21,22 @@ import {
 } from '@swarmlab/core';
 import { seeded } from './rng.js';
 import { round3, runTrial } from './sim.js';
+import { runEngramTrial } from './engram-sim.js';
 import type { GossipStep, RoundSnapshot, TrialConfig, TrialResult } from './types.js';
 
 // --- configuration -----------------------------------------------------------
 
 const TRIALS = Number(process.env.RUMOR_TRIALS ?? 30);
 const SEED = process.env.RUMOR_SEED ?? 'rumor-mill-v1';
+
+/**
+ * Adoption mode. `baseline` = first-write-wins (the committed exp-08 result).
+ * `engram` = the Spec 16 retest: adoption via the REAL shipped
+ * `@openengram/reconciliation` (`reconcile` + `antiEntropySync`), linked as a
+ * `file:` dep — never reimplemented in the lab.
+ */
+const MODE = (process.env.RUMOR_MODE ?? 'baseline') as 'baseline' | 'engram';
+const trialFn = MODE === 'engram' ? runEngramTrial : runTrial;
 
 const FANOUTS: readonly number[] = [1, 2, 3];
 const MUTATION_RATES: readonly number[] = [0.0, 0.02, 0.05, 0.1];
@@ -73,7 +83,7 @@ function cellConfig(cell: Cell): TrialConfig {
 
 const runsDir = join(import.meta.dirname, '..', 'runs');
 mkdirSync(runsDir, { recursive: true });
-const runId = `rm-${Date.now().toString(36)}`;
+const runId = `rm-${MODE}-${Date.now().toString(36)}`;
 const traceFile = join(runsDir, `${runId}.jsonl`);
 const trace = new TraceWriter(traceFile, { runId, experiment: '08-rumor-mill' });
 const bus = new MessageBus({ trace });
@@ -84,7 +94,8 @@ bus.publish({
   to: '*',
   topic: 'meta',
   body: {
-    mode: 'sim',
+    mode: MODE,
+    engramModule: MODE === 'engram' ? '@openengram/reconciliation (file: dep, branch versioned-facts-anti-entropy)' : undefined,
     trials: TRIALS,
     seed: SEED,
     fanouts: FANOUTS,
@@ -96,7 +107,7 @@ bus.publish({
   },
 });
 
-console.log(`run ${runId} | cells=${cells.length} trials/cell=${TRIALS}`);
+console.log(`run ${runId} | mode=${MODE} cells=${cells.length} trials/cell=${TRIALS}`);
 
 // --- sweep -----------------------------------------------------------------------
 
@@ -108,6 +119,9 @@ interface CellAggregate {
   finalCoverage: number;
   fidelityNearHop: number;
   fidelityFarHop: number;
+  /** Engram-mode healing accounting (mean per trial); 0 in baseline. */
+  healedNodes: number;
+  rejectedCorrupt: number;
 }
 
 const aggregates: CellAggregate[] = [];
@@ -186,9 +200,9 @@ for (let c = 0; c < cells.length; c += 1) {
           body: { cell: cell.id, round: snap.round, coverage: snap.coverage, meanFidelity: snap.meanFidelity },
         });
       };
-      results.push(runTrial(cfg, rand, emit, emitSnap));
+      results.push(trialFn(cfg, rand, emit, emitSnap));
     } else {
-      results.push(runTrial(cfg, rand));
+      results.push(trialFn(cfg, rand));
     }
   }
 
@@ -208,6 +222,8 @@ for (let c = 0; c < cells.length; c += 1) {
     finalCoverage: mean((r) => r.finalCoverage),
     fidelityNearHop: mean((r) => r.fidelityNearHop),
     fidelityFarHop: mean((r) => r.fidelityFarHop),
+    healedNodes: mean((r) => r.healedNodes ?? 0),
+    rejectedCorrupt: mean((r) => r.rejectedCorrupt ?? 0),
   };
   aggregates.push(agg);
 
@@ -226,12 +242,17 @@ for (let c = 0; c < cells.length; c += 1) {
       finalCoverage: agg.finalCoverage,
       fidelityNearHop: agg.fidelityNearHop,
       fidelityFarHop: agg.fidelityFarHop,
+      healedNodes: agg.healedNodes,
+      rejectedCorrupt: agg.rejectedCorrupt,
     },
   });
 
   console.log(
     `${cell.id.padEnd(20)} | sat=${fmt(agg.saturationRate)} tts=${agg.meanTimeToSaturation} ` +
-      `fidSat=${fmt(agg.fidelityAtSaturation)} near=${fmt(agg.fidelityNearHop)} far=${fmt(agg.fidelityFarHop)}`,
+      `fidSat=${fmt(agg.fidelityAtSaturation)} near=${fmt(agg.fidelityNearHop)} far=${fmt(agg.fidelityFarHop)}` +
+      (MODE === 'engram'
+        ? ` healed=${agg.healedNodes.toFixed(1)} rej=${agg.rejectedCorrupt.toFixed(1)}`
+        : ''),
   );
 }
 
@@ -307,6 +328,22 @@ function telephoneGradient(): number {
 const trade = speedFidelityTrade();
 const fast = fastestCell();
 
+/** Lowest fidelity-at-saturation across all saturated cells (the worst cell). */
+function worstCellFidelity(): { id: string; fidelity: number } {
+  let worst: CellAggregate | undefined;
+  for (const a of aggregates) {
+    if (a.saturationRate < 0.99) continue;
+    if (!worst || a.fidelityAtSaturation < worst.fidelityAtSaturation) worst = a;
+  }
+  return worst
+    ? { id: worst.cell.id, fidelity: worst.fidelityAtSaturation }
+    : { id: 'none', fidelity: -1 };
+}
+
+const worst = worstCellFidelity();
+const totalHealed = round3(aggregates.reduce((s, a) => s + a.healedNodes, 0));
+const totalRejected = round3(aggregates.reduce((s, a) => s + a.rejectedCorrupt, 0));
+
 const summaryScorer: Scorer = {
   score() {
     return {
@@ -318,12 +355,15 @@ const summaryScorer: Scorer = {
       fanoutFidelityDelta: trade.fidDelta,
       telephoneGradient: telephoneGradient(),
       coverageOutrunsTruth: coverageOutrunsTruthCount(0.9),
+      worstCellFidelity: worst.fidelity,
+      meanHealedPerTrial: totalHealed,
+      meanRejectedPerTrial: totalRejected,
     };
   },
 };
 const summary = runScorer(summaryScorer, trace.toRunRecord());
 trace.append({ t: 'score', ts: Date.now(), scores: summary });
-console.log('summary:', JSON.stringify(summary));
+console.log(`summary [mode=${MODE}, worstCell=${worst.id}]:`, JSON.stringify(summary));
 
 // --- replay verification (DoD: replay() must read the trace back) ----------------
 

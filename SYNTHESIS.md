@@ -390,3 +390,47 @@ zero in the retest.
 This is priority-order item #2 from the synthesis above. The K=3 capture hole — a lie winning
 under a green, high-confidence board — is now **detected and blocked** rather than certified,
 live and in sim.
+
+### RT-03 — Engram versioned facts + anti-entropy (from exp-08)
+
+- **Finding (exp-08):** in a gossip mesh, coverage and fidelity are *orthogonal* — every one of
+  36 cells saturates (`saturationRate=1.00`), but **19/36 hit full coverage with sub-0.90
+  fidelity** (`coverageOutrunsTruth=19`); the worst cell (m=0.1, N=120) reaches everyone while
+  the typical held version is only **0.574** faithful. Corruption radiates as a spatial gradient
+  from the seed (`telephoneGradient=0.113`). The villain is **first-write-wins**: sticky adoption
+  freezes early-hop corruption permanently — a later, truer retelling bounces off as a duplicate.
+- **Change (`~/projects/engram`, branch `versioned-facts-anti-entropy`, commits `baf3d05` +
+  `0a4910d`, local-only):** a pure-TS `src/reconciliation/` module — no NestJS deps, built to an
+  importable CommonJS artifact. `VersionedFact { fact_id, version, origin_id, content, digest }`
+  with a content-addressed digest (`verifyFact` recomputes and matches — a hop-mutated retelling
+  breaks it); `reconcile(held, incoming)` that kills first-write-wins with named outcomes
+  (`kept` / `adopted` / `healed` / `rejected_corrupt`): a later verifiable write **heals** a
+  corrupt copy, a corrupt copy **never** overwrites a verified one, and an empty node adopts a
+  provisional (healable) copy so it stays informed; `antiEntropySync(a, b)` for pairwise neighbor
+  repair. 7 jest cases green (the five Spec-16 A4 recipes + adopt + symmetric repair).
+- **Retest (`experiments/08-rumor-mill`, mode `engram`):** the identical 36-cell sweep, same
+  seeds, adoption decided by the **real shipped** `reconcile` + `antiEntropySync` (linked via a
+  `file:` dep on the built module — never reimplemented). Per-hop drift corrupts `content` without
+  re-authoring the digest (a retelling); each receiver reconciles; one anti-entropy pass runs per
+  live edge per round, continuing until the mesh converges. Baseline run `rm-baseline-mr7uu75x`,
+  engram run `rm-engram-mr7uvyij`, all traces replay-verified.
+
+  | metric | before (first-write-wins) | after (versioned + anti-entropy) | target | verdict |
+  |---|---|---|---|---|
+  | `coverageOutrunsTruth` | **19 / 36** | **0 / 36** | 0 | ✅ |
+  | worst-cell fidelity at saturation | **0.574** | **1.000** | ≥ 0.99 | ✅ |
+  | `telephoneGradient` | **0.113** | **0.000** | ≤ 0.01 | ✅ |
+  | `saturationRate` / coverage | 1.00 | **1.00** | no regression | ✅ |
+  | max per-cell time-to-saturation delta | — | **−3.567 rounds** (faster) | ≤ +1 | ✅ |
+
+- **Honesty note:** fidelity reaches 1.0 **by healing**, not by damping spread — the real module
+  reported `meanHealedPerTrial ≈ 279` (`healed` outcomes) and `meanRejectedPerTrial ≈ 2768`
+  (`rejected_corrupt`) across the sweep, `0/0` in the noiseless `m=0` column. Time-to-saturation
+  *improved* at every cell (max delta −3.567) because anti-entropy is a propagation channel too: a
+  still-empty node adopts a verified copy from an informed neighbor during a sync pass, so coverage
+  completes in ~1 round. This is the exp-08 directive confirmed — *push fidelity by shortening
+  paths, not by damping spread.* Full 36-cell before/after and healing accounting in the exp-08
+  README "Retest: versioned facts + anti-entropy" section.
+
+This is the exp-08 priority item — the single most damaging memory-mesh failure, *the fact is
+everywhere and wrong at once* — now zero in the retest, and healed rather than throttled.

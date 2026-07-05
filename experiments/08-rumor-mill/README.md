@@ -84,6 +84,66 @@ checksum the mesh can vote on) so a node that adopted a mangled early version ca
 by a truer one later. Without that, distance from the source is a permanent tax on truth.
 The trace is honest: a real result, no cell faked green.
 
+## Retest: versioned facts + anti-entropy
+
+**Spec [`specs/16-engram-versioned-facts.md`](../../specs/16-engram-versioned-facts.md).**
+The exp-08 finding — coverage outruns truth, first-write-wins freezes early-hop
+corruption — drove a real Engram change: a **versioned-fact + anti-entropy**
+reconciliation module (`~/projects/engram/src/reconciliation`, branch
+`versioned-facts-anti-entropy`, commits `baf3d05` + `0a4910d`). This retest links
+that **real shipped module** (`@openengram/reconciliation`, a `file:` dep on its
+built output — never reimplemented in the lab) and re-runs the identical 36-cell
+sweep (same grid, same seeds) in two modes.
+
+Run both:
+
+```bash
+npm run build
+RUMOR_MODE=baseline node experiments/08-rumor-mill/dist/main.js   # first-write-wins
+RUMOR_MODE=engram   node experiments/08-rumor-mill/dist/main.js   # versioned facts + anti-entropy
+```
+
+**The honest drift model.** The seed *authors* the fact once as a content-addressed
+`VersionedFact` (digest bound to the truth at the origin). A per-hop retelling
+corrupts `content` **without recomputing the digest** — a retelling, not a new
+authorship — so any drifted copy fails `verifyFact`. Each receiving node runs the
+real `reconcile`; after every gossip round, one `antiEntropySync` pass runs over
+each live edge. Repair continues until the mesh *converges* (a full anti-entropy
+pass produces no heal) — full coverage alone does **not** stop the run, because a
+verified copy heals a corrupt neighbor only one hop per pass. `timeToSaturation` is
+latched at the coverage threshold, so continued repair never inflates it.
+
+**Before / after** (30 trials/cell, seed `rumor-mill-v1`; baseline run
+`rm-baseline-mr7uu75x`, engram run `rm-engram-mr7uvyij`):
+
+| metric | baseline (first-write-wins) | engram (versioned + anti-entropy) | target | verdict |
+|---|---|---|---|---|
+| `coverageOutrunsTruth` (full coverage, fidelity < 0.90) | **19 / 36** | **0 / 36** | 0 / 36 | ✅ |
+| worst-cell typical fidelity at saturation | **0.574** (`f1-m0.1-N120`) | **1.000** | ≥ 0.99 | ✅ |
+| `telephoneGradient` (near−far fidelity) | **0.113** | **0.000** | ≤ 0.01 | ✅ |
+| `saturationRate` / coverage | 1.00 | **1.00** | no regression | ✅ |
+| max time-to-saturation delta vs baseline (per cell) | — | **−3.567 rounds** (faster) | ≤ +1 | ✅ |
+
+All four criteria are met, and fidelity recovers **by healing**, not by damping
+spread. Across the sweep the real module reported `meanHealedPerTrial ≈ 279`
+`healed` outcomes and `meanRejectedPerTrial ≈ 2768` `rejected_corrupt` outcomes.
+The near/far gradient collapses to zero: once anti-entropy has converged, every
+node holds the verified origin copy regardless of hop distance from the seed — the
+"distance from source is a permanent tax on truth" tax is gone.
+
+**Why time-to-saturation *improved* rather than regressed.** Anti-entropy is a
+propagation channel as well as a repair one: a node that is still empty can adopt a
+verified copy from an informed neighbor during a sync pass. So `engram` mode reaches
+full coverage in ~1 round at every cell (vs 4–17 rounds baseline) — the anti-entropy
+adds reach, not throttling. This directly confirms the exp-08 directive: *push
+fidelity by shortening paths, not by damping spread.*
+
+**Healing accounting (per cell, from the real module's named outcomes).** At the
+noisiest cells the counts scale with corruption: e.g. `f3-m0.1-N120` heals ~23
+copies/trial while rejecting ~476 corrupt re-infections; the zero-noise column
+(`m=0`) shows `healed=0 rej=0` — nothing drifts, nothing to repair. Every number in
+the table above is computed from executed runs (traces in `runs/`), not asserted.
+
 ## Live-LLM applicability (sim-only — honest)
 
 **No genuine LLM seam.** The finding — coverage and fidelity are orthogonal, and corruption

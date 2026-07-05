@@ -54,6 +54,17 @@ export interface TrialResult {
   fidelityFarHop: number;
   /** Per-round coverage trace (index = round). */
   coverageByRound: number[];
+  /**
+   * Engram-mode only: count of nodes healed from a corrupt/absent copy to a
+   * verified one over the whole trial (reconcile outcome `healed`). Zero in the
+   * first-write-wins baseline (which has no healing mechanism).
+   */
+  healedNodes?: number;
+  /**
+   * Engram-mode only: count of corrupt incoming copies refused while the node
+   * already held a verified copy (reconcile outcome `rejected_corrupt`).
+   */
+  rejectedCorrupt?: number;
 }
 
 /** Optional hook so the harness can trace each retelling through the core bus. */
