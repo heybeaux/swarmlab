@@ -683,3 +683,55 @@ defensible solely at d1. At no depth in the sweep does value-echo stop being wor
 relative to presence. The honest caveat: no guard tier pays for itself against
 not-delegating (nte < 1 everywhere) — the first-order decision is still RT-05's "don't
 delegate deeper than you must"; the guard is how you cap the damage when depth is forced.
+
+### RT-08 — Verification tiers: evidence is not a boolean (from exp-17)
+
+- **Question (Spec 23):** RT-04 closed Parliament's on-standard fabrication hole *when a ground
+  store exists*, but that store was a seeded oracle. The missing production question is how a
+  submitted claim earns `supported` status in the first place. exp-17 builds a deterministic
+  synthetic corpus (30 claims) spanning signed human attestations, operational claims with receipts,
+  documented external claims, stale sources, fabricated claims, ambiguous claims, poisoned sources,
+  and citations that exist but do not entail the submitted conclusion. The verifier read path never
+  sees the ground-truth labels; labels are scorer-only. No LLM judges success.
+- **Retest (`experiments/17-ground-store-verification`, run `gsv-mr9bvkkk`, 30 claims × 6 arms,
+  replay-verified):**
+
+  | arm | falseSupport | trueReject | staleSupport | citationEntailmentMiss | downstreamAuditEscape | cost/accepted |
+  |---|---:|---:|---:|---:|---:|---:|
+  | first-write-wins | 1.000 | 0.000 | 1.000 | 1.000 | 1.000 | 0.100 |
+  | provenance-only | **0.000** | 0.429 | 0.000 | 0.000 | **0.000** | 3.625 |
+  | retrieval-only | 0.250 | 0.429 | **1.000** | 0.000 | 0.250 | 4.750 |
+  | cross-model-only | 0.563 | 0.000 | 0.667 | 0.667 | 0.563 | 4.913 |
+  | tiered-hierarchy | 0.188 | **0.000** | **0.000** | **0.000** | 0.188 | 3.412 |
+  | tiered-consumed-by-audit | 0.188 | **0.000** | **0.000** | **0.000** | **0.063** | 3.412 |
+
+- **Findings:** **H-E1 CONFIRMED for operational claims** — provenance-chain verification is the
+  right tier for inspectable system claims (`tests passed`, `commit pushed`, `file changed`):
+  operational true-reject 0.000 and operational false-support 0.000. The honesty caveat is scope:
+  provenance-only rejects every true external documented claim (`provenanceExternalTrueReject=1.000`)
+  because a doc fact is not an action receipt. **H-E2 CONFIRMED with the registered stale failure** —
+  retrieval admits true external docs (`retrievalExternalTrueReject=0.000`) and catches non-entailed
+  citations in this harness, but if expiry/poison state is ignored then stale source text is
+  catastrophic (`retrievalStaleSupport=1.000`). A URI is not freshness. **H-E3 CONFIRMED** —
+  cross-model adversarial verification has recall but remains a correlated-error channel:
+  false-support 0.563, stale support 0.667, non-entailed citation support 0.667. Agreement is not a
+  ground tier. **H-E4 CONFIRMED** — storing `verification_tier` helps, but audits must consume it:
+  the hierarchy's false support is 0.188 because it falls back to cross-model support where no
+  stronger evidence exists; when a Parliament-style high-risk audit refuses facts supported only by
+  `cross_model_adversarial`, downstream audit escape falls 0.188 → **0.063** at the same admission
+  cost.
+- **Stack recommendation:** Engram facts should carry a verification envelope separate from content:
+  `tier`, `status`, `verifier`, `verifiedAt`, `evidenceDigest`, `receiptUri`, `sourceUri`,
+  `sourceDigest`, `expiresAt`, `revalidateAfter`, and `correlatedVerifierRisk`. Recommended tier
+  order: `human_attestation` > `provenance_chain` > fresh `retrieval_grounded` >
+  `cross_model_adversarial` > `unsupported_claim_only`. Parliament should accept high-risk facts
+  only from human/provenance/fresh retrieval tiers, downgrade expired retrieval to `needs_human`,
+  treat `contradicted` as stronger than support unless superseded by newer higher-tier evidence,
+  and never let cross-model-only agreement certify high-risk claims. Unsupported claims can remain
+  searchable memory, not trusted facts.
+- **Honesty notes:** sources are synthetic fixtures, not live web retrieval. The cross-model panel is
+  simulated to make correlated misses measurable rather than hand-waved. An initial local run exposed
+  a harness bug: an ambiguous parent-task receipt was treated as verifying the child assertion; that
+  run is not pinned, and the fixed pinned run marks the receipt non-matching, restoring provenance's
+  operational false-support to 0. This experiment recommends schema/policy only; no external Engram
+  branch was changed.

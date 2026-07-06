@@ -122,7 +122,7 @@ Traces land in `experiments/NN-*/runs/` and are read back deterministically by
 ## Status
 
 Built by the autonomous team, in order: `core/` → `observatory/` → experiments
-`01`–`16`, plus retest specs 14–18 and follow-on specs 19–21. Progress is committed
+`01`–`17`, plus retest specs 14–18 and follow-on specs 19–23. Progress is committed
 and pushed to `origin/main` after every green unit, so `git log` is the live build feed.
 Check `JOURNAL.md`, `SYNTHESIS.md`, and the North Star roadmap for the findings and
 next dispatchable work.
