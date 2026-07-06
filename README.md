@@ -28,8 +28,10 @@ swarmlab/
   observatory/   Svelte 5 dashboard — navigate experiments, replay traces visually
   experiments/   one folder per experiment, each built on core/
   specs/         detailed specs written before a build
+  docs/          handovers, screenshots, and the North Star roadmap
   TEAM.md        the team charter / constitution
   JOURNAL.md     chronological learning notes (one paragraph per unit)
+  SYNTHESIS.md   cross-experiment findings and stack recommendations
   BRAINSTORM.md  the canonical 12-idea brief
 ```
 
@@ -80,9 +82,17 @@ Each experiment tests a faculty. `NN` is the brainstorm idea number, not build o
 | 12 | Schema Negotiation | Sonder | two agents negotiate a shared protocol |
 | 13 | Team's Choice | — | the team invents its own experiment |
 
-Each experiment folder ships: source built on `core/`, a `runs/*.jsonl` real trace,
+Each experiment folder ships: source built on `core/`, committed `runs/*.jsonl` traces,
 a `README.md` explaining what it tests and what was *actually observed*, and a note
 in `JOURNAL.md`. Every result is real — a red trace beats a faked green one.
+
+## Evidence and roadmap
+
+- [`SYNTHESIS.md`](./SYNTHESIS.md) is the cross-experiment stack intelligence report.
+- [`docs/NORTH-STAR-ROADMAP.md`](./docs/NORTH-STAR-ROADMAP.md) formalizes the next phase:
+  evidence supply-chain hardening plus specs 22–30.
+- Raw traces are intentionally committed under `experiments/*/runs/*.jsonl`; they are the
+  replayable evidence corpus behind the writeups.
 
 ## Running an experiment
 
@@ -98,5 +108,7 @@ Traces land in `experiments/NN-*/runs/` and are read back deterministically by
 ## Status
 
 Built by the autonomous team, in order: `core/` → `observatory/` → experiments
-`01`–`13`. Progress is committed and pushed to `origin/main` after every green unit,
-so `git log` is the live build feed. Check `JOURNAL.md` for the findings as they land.
+`01`–`16`, plus retest specs 14–18 and follow-on specs 19–21. Progress is committed
+and pushed to `origin/main` after every green unit, so `git log` is the live build feed.
+Check `JOURNAL.md`, `SYNTHESIS.md`, and the North Star roadmap for the findings and
+next dispatchable work.
