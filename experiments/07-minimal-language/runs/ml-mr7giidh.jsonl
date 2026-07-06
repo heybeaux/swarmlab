@@ -1,0 +1,512 @@
+{"t":"message","ts":1783235733893,"from":"orchestrator","to":"*","topic":"meta","body":{"mode":"sim","trials":25,"seed":"minimal-language-v1","nProgrammers":4,"maxOpcodes":6,"cells":["p0-o3","p0-o4","p0-o6","p0.05-o3","p0.05-o4","p0.05-o6","p0.15-o3","p0.15-o4","p0.15-o6","p0.3-o3","p0.3-o4","p0.3-o6","p0.6-o3","p0.6-o4","p0.6-o6"]}}
+{"t":"message","ts":1783235733895,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0-o3","pAmbiguity":0,"opcodeCount":3}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:designer","spec":{"id":"p0-o3:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:interpreter","spec":{"id":"p0-o3:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:programmer-0","spec":{"id":"p0-o3:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:programmer-1","spec":{"id":"p0-o3:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:programmer-2","spec":{"id":"p0-o3:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:programmer-3","spec":{"id":"p0-o3:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733895,"agentId":"p0-o3:evaluator","spec":{"id":"p0-o3:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:designer","to":"*","topic":"spec","body":{"specId":"p0-o3:t0","opcodeCount":3,"clauseCount":3,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:interpreter","to":"p0-o3:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD"]}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-0","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-0","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-1","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-1","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-2","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-2","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-3","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:programmer-3","to":"p0-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733896,"from":"p0-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733897,"agentId":"p0-o3:designer"}
+{"t":"kill","ts":1783235733897,"agentId":"p0-o3:interpreter"}
+{"t":"kill","ts":1783235733898,"agentId":"p0-o3:programmer-0"}
+{"t":"kill","ts":1783235733898,"agentId":"p0-o3:programmer-1"}
+{"t":"kill","ts":1783235733898,"agentId":"p0-o3:programmer-2"}
+{"t":"kill","ts":1783235733898,"agentId":"p0-o3:programmer-3"}
+{"t":"kill","ts":1783235733898,"agentId":"p0-o3:evaluator"}
+{"t":"score","ts":1783235733898,"scores":{"cellIndex":0,"pAmbiguity":0,"opcodeCount":3,"trials":25,"meanParseRate":1,"meanPassRate":0,"meanConsistency":1,"meanSpecCoverage":0.667,"meanMisreadClauses":0}}
+{"t":"message","ts":1783235733898,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0-o4","pAmbiguity":0,"opcodeCount":4}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:designer","spec":{"id":"p0-o4:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:interpreter","spec":{"id":"p0-o4:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:programmer-0","spec":{"id":"p0-o4:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:programmer-1","spec":{"id":"p0-o4:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:programmer-2","spec":{"id":"p0-o4:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:programmer-3","spec":{"id":"p0-o4:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733898,"agentId":"p0-o4:evaluator","spec":{"id":"p0-o4:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:designer","to":"*","topic":"spec","body":{"specId":"p0-o4:t0","opcodeCount":4,"clauseCount":4,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:interpreter","to":"p0-o4:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH"]}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-0","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-0","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-1","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-1","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-2","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-2","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-3","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:programmer-3","to":"p0-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733898,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733899,"from":"p0-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:designer"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:interpreter"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:programmer-0"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:programmer-1"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:programmer-2"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:programmer-3"}
+{"t":"kill","ts":1783235733899,"agentId":"p0-o4:evaluator"}
+{"t":"score","ts":1783235733899,"scores":{"cellIndex":1,"pAmbiguity":0,"opcodeCount":4,"trials":25,"meanParseRate":1,"meanPassRate":1,"meanConsistency":1,"meanSpecCoverage":1,"meanMisreadClauses":0}}
+{"t":"message","ts":1783235733899,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0-o6","pAmbiguity":0,"opcodeCount":6}}
+{"t":"spawn","ts":1783235733899,"agentId":"p0-o6:designer","spec":{"id":"p0-o6:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:interpreter","spec":{"id":"p0-o6:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:programmer-0","spec":{"id":"p0-o6:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:programmer-1","spec":{"id":"p0-o6:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:programmer-2","spec":{"id":"p0-o6:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:programmer-3","spec":{"id":"p0-o6:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733900,"agentId":"p0-o6:evaluator","spec":{"id":"p0-o6:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:designer","to":"*","topic":"spec","body":{"specId":"p0-o6:t0","opcodeCount":6,"clauseCount":6,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:interpreter","to":"p0-o6:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH","JZ","SUB"]}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-0","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-0","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-1","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-1","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-2","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-2","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-3","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:programmer-3","to":"p0-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733900,"from":"p0-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:designer"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:interpreter"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:programmer-0"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:programmer-1"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:programmer-2"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:programmer-3"}
+{"t":"kill","ts":1783235733901,"agentId":"p0-o6:evaluator"}
+{"t":"score","ts":1783235733901,"scores":{"cellIndex":2,"pAmbiguity":0,"opcodeCount":6,"trials":25,"meanParseRate":1,"meanPassRate":1,"meanConsistency":1,"meanSpecCoverage":0.667,"meanMisreadClauses":0}}
+{"t":"message","ts":1783235733901,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.05-o3","pAmbiguity":0.05,"opcodeCount":3}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:designer","spec":{"id":"p0.05-o3:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:interpreter","spec":{"id":"p0.05-o3:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:programmer-0","spec":{"id":"p0.05-o3:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:programmer-1","spec":{"id":"p0.05-o3:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:programmer-2","spec":{"id":"p0.05-o3:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:programmer-3","spec":{"id":"p0.05-o3:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733901,"agentId":"p0.05-o3:evaluator","spec":{"id":"p0.05-o3:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:designer","to":"*","topic":"spec","body":{"specId":"p0.05-o3:t0","opcodeCount":3,"clauseCount":3,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:interpreter","to":"p0.05-o3:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD"]}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-0","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-0","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-1","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-1","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-2","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-2","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-3","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:programmer-3","to":"p0.05-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733901,"from":"p0.05-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:designer"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:interpreter"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:programmer-0"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:programmer-1"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:programmer-2"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:programmer-3"}
+{"t":"kill","ts":1783235733902,"agentId":"p0.05-o3:evaluator"}
+{"t":"score","ts":1783235733902,"scores":{"cellIndex":3,"pAmbiguity":0.05,"opcodeCount":3,"trials":25,"meanParseRate":1,"meanPassRate":0,"meanConsistency":0.97,"meanSpecCoverage":0.667,"meanMisreadClauses":0}}
+{"t":"message","ts":1783235733902,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.05-o4","pAmbiguity":0.05,"opcodeCount":4}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:designer","spec":{"id":"p0.05-o4:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:interpreter","spec":{"id":"p0.05-o4:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:programmer-0","spec":{"id":"p0.05-o4:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:programmer-1","spec":{"id":"p0.05-o4:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:programmer-2","spec":{"id":"p0.05-o4:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:programmer-3","spec":{"id":"p0.05-o4:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733902,"agentId":"p0.05-o4:evaluator","spec":{"id":"p0.05-o4:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:designer","to":"*","topic":"spec","body":{"specId":"p0.05-o4:t0","opcodeCount":4,"clauseCount":4,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:interpreter","to":"p0.05-o4:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH"]}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-0","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-0","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-1","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-1","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-2","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-2","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-3","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:programmer-3","to":"p0.05-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733902,"from":"p0.05-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:designer"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:interpreter"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:programmer-0"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:programmer-1"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:programmer-2"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:programmer-3"}
+{"t":"kill","ts":1783235733903,"agentId":"p0.05-o4:evaluator"}
+{"t":"score","ts":1783235733903,"scores":{"cellIndex":4,"pAmbiguity":0.05,"opcodeCount":4,"trials":25,"meanParseRate":1,"meanPassRate":1,"meanConsistency":1,"meanSpecCoverage":1,"meanMisreadClauses":0}}
+{"t":"message","ts":1783235733903,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.05-o6","pAmbiguity":0.05,"opcodeCount":6}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:designer","spec":{"id":"p0.05-o6:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:interpreter","spec":{"id":"p0.05-o6:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:programmer-0","spec":{"id":"p0.05-o6:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:programmer-1","spec":{"id":"p0.05-o6:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:programmer-2","spec":{"id":"p0.05-o6:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:programmer-3","spec":{"id":"p0.05-o6:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733903,"agentId":"p0.05-o6:evaluator","spec":{"id":"p0.05-o6:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:designer","to":"*","topic":"spec","body":{"specId":"p0.05-o6:t0","opcodeCount":6,"clauseCount":6,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:interpreter","to":"p0.05-o6:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH","JZ","DUP"]}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-0","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-0","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-1","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-1","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-2","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-2","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-3","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:programmer-3","to":"p0.05-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733903,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733904,"from":"p0.05-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:designer"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:interpreter"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:programmer-0"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:programmer-1"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:programmer-2"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:programmer-3"}
+{"t":"kill","ts":1783235733904,"agentId":"p0.05-o6:evaluator"}
+{"t":"score","ts":1783235733904,"scores":{"cellIndex":5,"pAmbiguity":0.05,"opcodeCount":6,"trials":25,"meanParseRate":1,"meanPassRate":0.96,"meanConsistency":0.95,"meanSpecCoverage":0.667,"meanMisreadClauses":0.04}}
+{"t":"message","ts":1783235733904,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.15-o3","pAmbiguity":0.15,"opcodeCount":3}}
+{"t":"spawn","ts":1783235733904,"agentId":"p0.15-o3:designer","spec":{"id":"p0.15-o3:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733904,"agentId":"p0.15-o3:interpreter","spec":{"id":"p0.15-o3:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733905,"agentId":"p0.15-o3:programmer-0","spec":{"id":"p0.15-o3:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733905,"agentId":"p0.15-o3:programmer-1","spec":{"id":"p0.15-o3:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733905,"agentId":"p0.15-o3:programmer-2","spec":{"id":"p0.15-o3:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733905,"agentId":"p0.15-o3:programmer-3","spec":{"id":"p0.15-o3:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733905,"agentId":"p0.15-o3:evaluator","spec":{"id":"p0.15-o3:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:designer","to":"*","topic":"spec","body":{"specId":"p0.15-o3:t0","opcodeCount":3,"clauseCount":3,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:interpreter","to":"p0.15-o3:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD"]}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-0","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-0","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-1","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-1","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-2","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-2","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-3","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:programmer-3","to":"p0.15-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733905,"from":"p0.15-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:designer"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:interpreter"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:programmer-0"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:programmer-1"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:programmer-2"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:programmer-3"}
+{"t":"kill","ts":1783235733906,"agentId":"p0.15-o3:evaluator"}
+{"t":"score","ts":1783235733906,"scores":{"cellIndex":6,"pAmbiguity":0.15,"opcodeCount":3,"trials":25,"meanParseRate":1,"meanPassRate":0,"meanConsistency":0.87,"meanSpecCoverage":0.667,"meanMisreadClauses":0.08}}
+{"t":"message","ts":1783235733906,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.15-o4","pAmbiguity":0.15,"opcodeCount":4}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:designer","spec":{"id":"p0.15-o4:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:interpreter","spec":{"id":"p0.15-o4:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:programmer-0","spec":{"id":"p0.15-o4:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:programmer-1","spec":{"id":"p0.15-o4:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:programmer-2","spec":{"id":"p0.15-o4:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:programmer-3","spec":{"id":"p0.15-o4:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733906,"agentId":"p0.15-o4:evaluator","spec":{"id":"p0.15-o4:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:designer","to":"*","topic":"spec","body":{"specId":"p0.15-o4:t0","opcodeCount":4,"clauseCount":4,"ambiguousClauses":0,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:interpreter","to":"p0.15-o4:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH"]}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-0","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-0","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-1","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-1","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-2","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-2","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-3","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:programmer-3","to":"p0.15-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733906,"from":"p0.15-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:designer"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:interpreter"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:programmer-0"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:programmer-1"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:programmer-2"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:programmer-3"}
+{"t":"kill","ts":1783235733907,"agentId":"p0.15-o4:evaluator"}
+{"t":"score","ts":1783235733907,"scores":{"cellIndex":7,"pAmbiguity":0.15,"opcodeCount":4,"trials":25,"meanParseRate":1,"meanPassRate":0.86,"meanConsistency":0.82,"meanSpecCoverage":1,"meanMisreadClauses":0.16}}
+{"t":"message","ts":1783235733907,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.15-o6","pAmbiguity":0.15,"opcodeCount":6}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:designer","spec":{"id":"p0.15-o6:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:interpreter","spec":{"id":"p0.15-o6:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:programmer-0","spec":{"id":"p0.15-o6:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:programmer-1","spec":{"id":"p0.15-o6:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:programmer-2","spec":{"id":"p0.15-o6:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:programmer-3","spec":{"id":"p0.15-o6:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733907,"agentId":"p0.15-o6:evaluator","spec":{"id":"p0.15-o6:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733907,"from":"p0.15-o6:designer","to":"*","topic":"spec","body":{"specId":"p0.15-o6:t0","opcodeCount":6,"clauseCount":6,"ambiguousClauses":3,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:interpreter","to":"p0.15-o6:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD","PUSH","SUB","DUP"]}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-0","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-0","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-1","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-1","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-2","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-2","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-3","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:programmer-3","to":"p0.15-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":true,"testsPassed":5,"totalTests":5}}
+{"t":"message","ts":1783235733908,"from":"p0.15-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:designer"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:interpreter"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:programmer-0"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:programmer-1"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:programmer-2"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:programmer-3"}
+{"t":"kill","ts":1783235733909,"agentId":"p0.15-o6:evaluator"}
+{"t":"score","ts":1783235733909,"scores":{"cellIndex":8,"pAmbiguity":0.15,"opcodeCount":6,"trials":25,"meanParseRate":1,"meanPassRate":0.96,"meanConsistency":0.85,"meanSpecCoverage":0.667,"meanMisreadClauses":0.08}}
+{"t":"message","ts":1783235733909,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.3-o3","pAmbiguity":0.3,"opcodeCount":3}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:designer","spec":{"id":"p0.3-o3:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:interpreter","spec":{"id":"p0.3-o3:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:programmer-0","spec":{"id":"p0.3-o3:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:programmer-1","spec":{"id":"p0.3-o3:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:programmer-2","spec":{"id":"p0.3-o3:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:programmer-3","spec":{"id":"p0.3-o3:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733909,"agentId":"p0.3-o3:evaluator","spec":{"id":"p0.3-o3:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:designer","to":"*","topic":"spec","body":{"specId":"p0.3-o3:t0","opcodeCount":3,"clauseCount":3,"ambiguousClauses":2,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:interpreter","to":"p0.3-o3:evaluator","topic":"impl","body":{"misreadClauses":1,"ambiguityNotes":["LOAD: read as 'dup' (ground truth: 'load')"],"opcodes":["LOAD","STORE","ADD"]}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-0","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-0","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-1","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-1","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-2","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-2","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-3","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:programmer-3","to":"p0.3-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733909,"from":"p0.3-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:designer"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:interpreter"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:programmer-0"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:programmer-1"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:programmer-2"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:programmer-3"}
+{"t":"kill","ts":1783235733910,"agentId":"p0.3-o3:evaluator"}
+{"t":"score","ts":1783235733910,"scores":{"cellIndex":9,"pAmbiguity":0.3,"opcodeCount":3,"trials":25,"meanParseRate":1,"meanPassRate":0,"meanConsistency":0.7,"meanSpecCoverage":0.667,"meanMisreadClauses":0.16}}
+{"t":"message","ts":1783235733910,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.3-o4","pAmbiguity":0.3,"opcodeCount":4}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:designer","spec":{"id":"p0.3-o4:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:interpreter","spec":{"id":"p0.3-o4:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:programmer-0","spec":{"id":"p0.3-o4:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:programmer-1","spec":{"id":"p0.3-o4:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:programmer-2","spec":{"id":"p0.3-o4:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:programmer-3","spec":{"id":"p0.3-o4:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733910,"agentId":"p0.3-o4:evaluator","spec":{"id":"p0.3-o4:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:designer","to":"*","topic":"spec","body":{"specId":"p0.3-o4:t0","opcodeCount":4,"clauseCount":4,"ambiguousClauses":1,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:interpreter","to":"p0.3-o4:evaluator","topic":"impl","body":{"misreadClauses":1,"ambiguityNotes":["LOAD: read as 'dup' (ground truth: 'load')"],"opcodes":["LOAD","STORE","ADD","PUSH"]}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-0","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-0","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-1","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-1","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-2","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-2","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-3","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:programmer-3","to":"p0.3-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733910,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:designer"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:interpreter"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:programmer-0"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:programmer-1"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:programmer-2"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:programmer-3"}
+{"t":"kill","ts":1783235733911,"agentId":"p0.3-o4:evaluator"}
+{"t":"score","ts":1783235733911,"scores":{"cellIndex":10,"pAmbiguity":0.3,"opcodeCount":4,"trials":25,"meanParseRate":1,"meanPassRate":0.78,"meanConsistency":0.64,"meanSpecCoverage":1,"meanMisreadClauses":0.36}}
+{"t":"message","ts":1783235733911,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.3-o6","pAmbiguity":0.3,"opcodeCount":6}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:designer","spec":{"id":"p0.3-o6:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:interpreter","spec":{"id":"p0.3-o6:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:programmer-0","spec":{"id":"p0.3-o6:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:programmer-1","spec":{"id":"p0.3-o6:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:programmer-2","spec":{"id":"p0.3-o6:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:programmer-3","spec":{"id":"p0.3-o6:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733911,"agentId":"p0.3-o6:evaluator","spec":{"id":"p0.3-o6:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:designer","to":"*","topic":"spec","body":{"specId":"p0.3-o6:t0","opcodeCount":6,"clauseCount":6,"ambiguousClauses":3,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:interpreter","to":"p0.3-o6:evaluator","topic":"impl","body":{"misreadClauses":1,"ambiguityNotes":["LOAD: read as 'dup' (ground truth: 'load')"],"opcodes":["LOAD","STORE","ADD","PUSH","JZ","NOP"]}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-0","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-0","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-1","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-1","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-2","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-2","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-3","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:programmer-3","to":"p0.3-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733911,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733912,"from":"p0.3-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:designer"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:interpreter"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:programmer-0"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:programmer-1"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:programmer-2"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:programmer-3"}
+{"t":"kill","ts":1783235733912,"agentId":"p0.3-o6:evaluator"}
+{"t":"score","ts":1783235733912,"scores":{"cellIndex":11,"pAmbiguity":0.3,"opcodeCount":6,"trials":25,"meanParseRate":1,"meanPassRate":0.56,"meanConsistency":0.38,"meanSpecCoverage":0.667,"meanMisreadClauses":0.8}}
+{"t":"message","ts":1783235733912,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.6-o3","pAmbiguity":0.6,"opcodeCount":3}}
+{"t":"spawn","ts":1783235733912,"agentId":"p0.6-o3:designer","spec":{"id":"p0.6-o3:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733912,"agentId":"p0.6-o3:interpreter","spec":{"id":"p0.6-o3:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733912,"agentId":"p0.6-o3:programmer-0","spec":{"id":"p0.6-o3:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o3:programmer-1","spec":{"id":"p0.6-o3:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o3:programmer-2","spec":{"id":"p0.6-o3:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o3:programmer-3","spec":{"id":"p0.6-o3:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o3:evaluator","spec":{"id":"p0.6-o3:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:designer","to":"*","topic":"spec","body":{"specId":"p0.6-o3:t0","opcodeCount":3,"clauseCount":3,"ambiguousClauses":3,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:interpreter","to":"p0.6-o3:evaluator","topic":"impl","body":{"misreadClauses":0,"ambiguityNotes":[],"opcodes":["LOAD","STORE","ADD"]}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-0","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-0","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-1","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-1","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-2","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-2","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-3","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":2,"source":"LOAD\nSTORE"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:programmer-3","to":"p0.6-o3:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":1,"source":"LOAD"}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733913,"from":"p0.6-o3:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:designer"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:interpreter"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:programmer-0"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:programmer-1"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:programmer-2"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:programmer-3"}
+{"t":"kill","ts":1783235733913,"agentId":"p0.6-o3:evaluator"}
+{"t":"score","ts":1783235733913,"scores":{"cellIndex":12,"pAmbiguity":0.6,"opcodeCount":3,"trials":25,"meanParseRate":1,"meanPassRate":0,"meanConsistency":0.33,"meanSpecCoverage":0.667,"meanMisreadClauses":1.12}}
+{"t":"message","ts":1783235733913,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.6-o4","pAmbiguity":0.6,"opcodeCount":4}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:designer","spec":{"id":"p0.6-o4:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:interpreter","spec":{"id":"p0.6-o4:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:programmer-0","spec":{"id":"p0.6-o4:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:programmer-1","spec":{"id":"p0.6-o4:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:programmer-2","spec":{"id":"p0.6-o4:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:programmer-3","spec":{"id":"p0.6-o4:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733913,"agentId":"p0.6-o4:evaluator","spec":{"id":"p0.6-o4:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:designer","to":"*","topic":"spec","body":{"specId":"p0.6-o4:t0","opcodeCount":4,"clauseCount":4,"ambiguousClauses":2,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:interpreter","to":"p0.6-o4:evaluator","topic":"impl","body":{"misreadClauses":2,"ambiguityNotes":["STORE: read as 'dup' (ground truth: 'store')","PUSH: read as 'dup' (ground truth: 'push')"],"opcodes":["LOAD","STORE","ADD","PUSH"]}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-0","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-0","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-1","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-1","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-2","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-2","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-3","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:programmer-3","to":"p0.6-o4:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":0,"totalTests":5}}
+{"t":"message","ts":1783235733914,"from":"p0.6-o4:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":false,"testsPassed":0,"totalTests":3}}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:designer"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:interpreter"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:programmer-0"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:programmer-1"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:programmer-2"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:programmer-3"}
+{"t":"kill","ts":1783235733914,"agentId":"p0.6-o4:evaluator"}
+{"t":"score","ts":1783235733914,"scores":{"cellIndex":13,"pAmbiguity":0.6,"opcodeCount":4,"trials":25,"meanParseRate":1,"meanPassRate":0.4,"meanConsistency":0.29,"meanSpecCoverage":1,"meanMisreadClauses":1.32}}
+{"t":"message","ts":1783235733915,"from":"orchestrator","to":"*","topic":"cell","body":{"cell":"p0.6-o6","pAmbiguity":0.6,"opcodeCount":6}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:designer","spec":{"id":"p0.6-o6:designer","systemPrompt":"You are the DSL Designer. Design a minimal language spec."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:interpreter","spec":{"id":"p0.6-o6:interpreter","systemPrompt":"You are the Interpreter. Read the spec and implement it."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:programmer-0","spec":{"id":"p0.6-o6:programmer-0","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:programmer-1","spec":{"id":"p0.6-o6:programmer-1","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:programmer-2","spec":{"id":"p0.6-o6:programmer-2","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:programmer-3","spec":{"id":"p0.6-o6:programmer-3","systemPrompt":"You are a Programmer. Write programs per the spec."}}
+{"t":"spawn","ts":1783235733915,"agentId":"p0.6-o6:evaluator","spec":{"id":"p0.6-o6:evaluator","systemPrompt":"You are the Evaluator. Score all programs."}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:designer","to":"*","topic":"spec","body":{"specId":"p0.6-o6:t0","opcodeCount":6,"clauseCount":6,"ambiguousClauses":3,"specText":"MinLang DSL Specification v1\n============================\n\nThis document defines the complete MinLang instruction set.\nPrograms are sequences of instructions. Each instruction is on its own line.\nOperands are separated from the opcode by a space.\nThe stack is initially empty. Execution begins at ins"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:interpreter","to":"p0.6-o6:evaluator","topic":"impl","body":{"misreadClauses":2,"ambiguityNotes":["LOAD: read as 'dup' (ground truth: 'load')","JZ: read as 'jmp' (ground truth: 'jz')"],"opcodes":["LOAD","STORE","ADD","PUSH","SUB","JZ"]}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-0","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-0","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-0","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-1","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-1","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-1","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-2","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-2","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-2","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-3","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"inc","instructionCount":4,"source":"LOAD\nPUSH 1\nADD\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:programmer-3","to":"p0.6-o6:evaluator","topic":"program","body":{"agentId":"programmer-3","task":"const42","instructionCount":2,"source":"PUSH 42\nSTORE"}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-0","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-1","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-2","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"inc","parsed":true,"passed":false,"testsPassed":1,"totalTests":5}}
+{"t":"message","ts":1783235733915,"from":"p0.6-o6:evaluator","to":"*","topic":"result","body":{"agentId":"programmer-3","task":"const42","parsed":true,"passed":true,"testsPassed":3,"totalTests":3}}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:designer"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:interpreter"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:programmer-0"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:programmer-1"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:programmer-2"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:programmer-3"}
+{"t":"kill","ts":1783235733915,"agentId":"p0.6-o6:evaluator"}
+{"t":"score","ts":1783235733915,"scores":{"cellIndex":14,"pAmbiguity":0.6,"opcodeCount":6,"trials":25,"meanParseRate":1,"meanPassRate":0.34,"meanConsistency":0.18,"meanSpecCoverage":0.667,"meanMisreadClauses":2.04}}
+{"t":"score","ts":1783235733916,"scores":{"cells":15,"trialsPerCell":25,"meanPassRateAtZeroAmbiguity":0.667,"meanPassRateAtHighAmbiguity":0.347,"passRateDrop":0.32,"meanConsistencyAtZeroAmbiguity":1,"meanConsistencyAtHighAmbiguity":0.42,"consistencyDrop":0.58}}

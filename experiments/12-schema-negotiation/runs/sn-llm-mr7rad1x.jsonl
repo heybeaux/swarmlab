@@ -1,0 +1,9 @@
+{"t":"message","ts":1783253829525,"from":"moderator","to":"*","topic":"meta","body":{"mode":"llm","model":"claude-haiku-4-5-20251001","overlap":0.7,"falseFriends":["total","id","created"],"aFields":["customerId","createdAtMs","grandTotal","orderId","currency","subtotal","shipping","itemCount","total","id","created"],"bFields":["buyer_id","ts_millis","total_due","order_ref","ccy","net_amount","state","total","id","created"]}}
+{"t":"spawn","ts":1783253829526,"agentId":"A","spec":{"id":"A","model":"claude-haiku-4-5-20251001","systemPrompt":"Schema negotiator A"}}
+{"t":"spawn","ts":1783253829526,"agentId":"B","spec":{"id":"B","model":"claude-haiku-4-5-20251001","systemPrompt":"Schema negotiator B"}}
+{"t":"message","ts":1783253841515,"from":"A","to":"B","topic":"propose","body":{"pairs":[{"from":"customerId","to":"buyer_id"},{"from":"createdAtMs","to":"ts_millis"},{"from":"currency","to":"ccy"},{"from":"orderId","to":"order_ref"},{"from":"id","to":"order_ref"},{"from":"created","to":"ts_millis"}]}}
+{"t":"message","ts":1783253851707,"from":"B","to":"A","topic":"counter","body":{"pairs":[{"from":"buyer_id","to":"customerId"},{"from":"ts_millis","to":"createdAtMs"},{"from":"order_ref","to":"orderId"},{"from":"ccy","to":"currency"},{"from":"id","to":"id"},{"from":"created","to":"created"}]}}
+{"t":"message","ts":1783253851708,"from":"moderator","to":"*","topic":"verdict","body":{"agreedRows":4,"trulyMatched":4,"silentCorruptions":0,"silentRows":[]}}
+{"t":"score","ts":1783253851708,"scores":{"agreedRows":4,"trulyMatched":4,"silentCorruption":0,"falseFriendsInjected":3,"falseFriendsMapped":0,"falseFriendsCaught":1}}
+{"t":"kill","ts":1783253851708,"agentId":"A"}
+{"t":"kill","ts":1783253851708,"agentId":"B"}

@@ -1,0 +1,17 @@
+{"t":"message","ts":1783235661124,"from":"oracleA","to":"*","topic":"meta","body":{"mode":"llm","model":"claude-haiku-4-5-20251001","complexity":"stateful","budget":12,"maxQty":40}}
+{"t":"spawn","ts":1783235661125,"agentId":"proberB","spec":{"id":"proberB","model":"claude-haiku-4-5-20251001","systemPrompt":"Reverse engineer"}}
+{"t":"message","ts":1783235673079,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":12,"price":1290}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":1,"price":186}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":11,"price":1188}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":5,"price":666}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":10,"price":1086}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":15,"price":1436}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":20,"price":1895}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":25,"price":2354}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":30,"price":2543}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":2,"price":275}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":40,"price":3420}}
+{"t":"message","ts":1783235673080,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":3,"price":383}}
+{"t":"message","ts":1783235684128,"from":"oracleA","to":"*","topic":"verdict","body":{"agreement":0.025,"happyPathAgreement":0,"happyPathWithin5pct":0.458,"edgeCaseAgreement":0.063,"probesUsed":12}}
+{"t":"score","ts":1783235684129,"scores":{"complexity":2,"budget":12,"probesUsed":12,"agreement":0.025,"happyPathAgreement":0,"happyPathWithin5pct":0.458,"edgeCaseAgreement":0.063,"predsReturned":40,"testCases":40}}
+{"t":"kill","ts":1783235684129,"agentId":"proberB"}

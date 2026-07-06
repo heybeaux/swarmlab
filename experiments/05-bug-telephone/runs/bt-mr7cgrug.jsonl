@@ -1,0 +1,659 @@
+{"t":"message","ts":1783228934392,"from":"moderator","to":"*","topic":"meta","body":{"mode":"sim","trials":40,"seed":"bug-telephone-v1","chainLens":[1,2,3,5,8],"subtleties":[0.2,0.5,0.8,0.95],"policies":["serial","independent"],"baseCatch":0.75,"fatigue":0.25,"rubberStamp":0.3}}
+{"t":"message","ts":1783228934394,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L1-s0.2","chainLen":1,"subtlety":0.2,"policy":"serial"}}
+{"t":"spawn","ts":1783228934394,"agentId":"serial-L1-s0.2:injector","spec":{"id":"serial-L1-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934394,"from":"serial-L1-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934394,"agentId":"serial-L1-s0.2:r0","spec":{"id":"serial-L1-s0.2:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934394,"from":"serial-L1-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.865,"attention":1,"complacency":1,"pCatch":0.519,"caught":false}}
+{"t":"message","ts":1783228934394,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L1-s0.2","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934394,"agentId":"serial-L1-s0.2:injector"}
+{"t":"kill","ts":1783228934395,"agentId":"serial-L1-s0.2:r0"}
+{"t":"score","ts":1783228934395,"scores":{"cellIndex":0,"policy":0,"chainLen":1,"subtlety":0.2,"trials":40,"shipRate":0.575,"meanSurvivalDepth":0.575,"meanReviewsUsed":1,"catchRateAtPos0":0.425,"catchRateDeep":0}}
+{"t":"message","ts":1783228934395,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L2-s0.2","chainLen":2,"subtlety":0.2,"policy":"serial"}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L2-s0.2:injector","spec":{"id":"serial-L2-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934395,"from":"serial-L2-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L2-s0.2:r0","spec":{"id":"serial-L2-s0.2:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L2-s0.2:r1","spec":{"id":"serial-L2-s0.2:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934395,"from":"serial-L2-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.544,"attention":1,"complacency":1,"pCatch":0.326,"caught":false}}
+{"t":"message","ts":1783228934395,"from":"serial-L2-s0.2:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.843,"attention":0.8,"complacency":0.7,"pCatch":0.283,"caught":false}}
+{"t":"message","ts":1783228934395,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L2-s0.2","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934395,"agentId":"serial-L2-s0.2:injector"}
+{"t":"kill","ts":1783228934395,"agentId":"serial-L2-s0.2:r0"}
+{"t":"kill","ts":1783228934395,"agentId":"serial-L2-s0.2:r1"}
+{"t":"score","ts":1783228934395,"scores":{"cellIndex":1,"policy":0,"chainLen":2,"subtlety":0.2,"trials":40,"shipRate":0.5,"meanSurvivalDepth":1.175,"meanReviewsUsed":1.675,"catchRateAtPos0":0.325,"catchRateDeep":0}}
+{"t":"message","ts":1783228934395,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L3-s0.2","chainLen":3,"subtlety":0.2,"policy":"serial"}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L3-s0.2:injector","spec":{"id":"serial-L3-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934395,"from":"serial-L3-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L3-s0.2:r0","spec":{"id":"serial-L3-s0.2:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L3-s0.2:r1","spec":{"id":"serial-L3-s0.2:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934395,"agentId":"serial-L3-s0.2:r2","spec":{"id":"serial-L3-s0.2:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934395,"from":"serial-L3-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.598,"attention":1,"complacency":1,"pCatch":0.359,"caught":true}}
+{"t":"message","ts":1783228934396,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L3-s0.2","survivalDepth":0,"shipped":false,"chainLen":3}}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L3-s0.2:injector"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L3-s0.2:r0"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L3-s0.2:r1"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L3-s0.2:r2"}
+{"t":"score","ts":1783228934396,"scores":{"cellIndex":2,"policy":0,"chainLen":3,"subtlety":0.2,"trials":40,"shipRate":0.45,"meanSurvivalDepth":1.6,"meanReviewsUsed":2.15,"catchRateAtPos0":0.375,"catchRateDeep":0.143}}
+{"t":"message","ts":1783228934396,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L5-s0.2","chainLen":5,"subtlety":0.2,"policy":"serial"}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:injector","spec":{"id":"serial-L5-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934396,"from":"serial-L5-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:r0","spec":{"id":"serial-L5-s0.2:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:r1","spec":{"id":"serial-L5-s0.2:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:r2","spec":{"id":"serial-L5-s0.2:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:r3","spec":{"id":"serial-L5-s0.2:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L5-s0.2:r4","spec":{"id":"serial-L5-s0.2:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934396,"from":"serial-L5-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.847,"attention":1,"complacency":1,"pCatch":0.508,"caught":false}}
+{"t":"message","ts":1783228934396,"from":"serial-L5-s0.2:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.758,"attention":0.8,"complacency":0.7,"pCatch":0.255,"caught":false}}
+{"t":"message","ts":1783228934396,"from":"serial-L5-s0.2:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.85,"attention":0.667,"complacency":0.49,"pCatch":0.167,"caught":false}}
+{"t":"message","ts":1783228934396,"from":"serial-L5-s0.2:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.898,"attention":0.571,"complacency":0.343,"pCatch":0.106,"caught":true}}
+{"t":"message","ts":1783228934396,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L5-s0.2","survivalDepth":3,"shipped":false,"chainLen":5}}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:injector"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:r0"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:r1"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:r2"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:r3"}
+{"t":"kill","ts":1783228934396,"agentId":"serial-L5-s0.2:r4"}
+{"t":"score","ts":1783228934396,"scores":{"cellIndex":3,"policy":0,"chainLen":5,"subtlety":0.2,"trials":40,"shipRate":0.35,"meanSurvivalDepth":2.3,"meanReviewsUsed":2.95,"catchRateAtPos0":0.3,"catchRateDeep":0}}
+{"t":"message","ts":1783228934396,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L8-s0.2","chainLen":8,"subtlety":0.2,"policy":"serial"}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L8-s0.2:injector","spec":{"id":"serial-L8-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934396,"from":"serial-L8-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L8-s0.2:r0","spec":{"id":"serial-L8-s0.2:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L8-s0.2:r1","spec":{"id":"serial-L8-s0.2:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934396,"agentId":"serial-L8-s0.2:r2","spec":{"id":"serial-L8-s0.2:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L8-s0.2:r3","spec":{"id":"serial-L8-s0.2:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L8-s0.2:r4","spec":{"id":"serial-L8-s0.2:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L8-s0.2:r5","spec":{"id":"serial-L8-s0.2:r5","systemPrompt":"Review the diff. You can see that 5 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L8-s0.2:r6","spec":{"id":"serial-L8-s0.2:r6","systemPrompt":"Review the diff. You can see that 6 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L8-s0.2:r7","spec":{"id":"serial-L8-s0.2:r7","systemPrompt":"Review the diff. You can see that 7 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934397,"from":"serial-L8-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.712,"attention":1,"complacency":1,"pCatch":0.427,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"serial-L8-s0.2:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.627,"attention":0.8,"complacency":0.7,"pCatch":0.211,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"serial-L8-s0.2:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.581,"attention":0.667,"complacency":0.49,"pCatch":0.114,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"serial-L8-s0.2:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.918,"attention":0.571,"complacency":0.343,"pCatch":0.108,"caught":true}}
+{"t":"message","ts":1783228934397,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L8-s0.2","survivalDepth":3,"shipped":false,"chainLen":8}}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:injector"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r0"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r1"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r2"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r3"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r4"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r5"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r6"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L8-s0.2:r7"}
+{"t":"score","ts":1783228934397,"scores":{"cellIndex":4,"policy":0,"chainLen":8,"subtlety":0.2,"trials":40,"shipRate":0.325,"meanSurvivalDepth":3.175,"meanReviewsUsed":3.85,"catchRateAtPos0":0.4,"catchRateDeep":0}}
+{"t":"message","ts":1783228934397,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L1-s0.5","chainLen":1,"subtlety":0.5,"policy":"serial"}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L1-s0.5:injector","spec":{"id":"serial-L1-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934397,"from":"serial-L1-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L1-s0.5:r0","spec":{"id":"serial-L1-s0.5:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934397,"from":"serial-L1-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.866,"attention":1,"complacency":1,"pCatch":0.325,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L1-s0.5","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L1-s0.5:injector"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L1-s0.5:r0"}
+{"t":"score","ts":1783228934397,"scores":{"cellIndex":5,"policy":0,"chainLen":1,"subtlety":0.5,"trials":40,"shipRate":0.775,"meanSurvivalDepth":0.775,"meanReviewsUsed":1,"catchRateAtPos0":0.225,"catchRateDeep":0}}
+{"t":"message","ts":1783228934397,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L2-s0.5","chainLen":2,"subtlety":0.5,"policy":"serial"}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L2-s0.5:injector","spec":{"id":"serial-L2-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934397,"from":"serial-L2-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L2-s0.5:r0","spec":{"id":"serial-L2-s0.5:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934397,"agentId":"serial-L2-s0.5:r1","spec":{"id":"serial-L2-s0.5:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934397,"from":"serial-L2-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.501,"attention":1,"complacency":1,"pCatch":0.188,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"serial-L2-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.902,"attention":0.8,"complacency":0.7,"pCatch":0.189,"caught":false}}
+{"t":"message","ts":1783228934397,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L2-s0.5","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L2-s0.5:injector"}
+{"t":"kill","ts":1783228934397,"agentId":"serial-L2-s0.5:r0"}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L2-s0.5:r1"}
+{"t":"score","ts":1783228934398,"scores":{"cellIndex":6,"policy":0,"chainLen":2,"subtlety":0.5,"trials":40,"shipRate":0.675,"meanSurvivalDepth":1.4,"meanReviewsUsed":1.725,"catchRateAtPos0":0.275,"catchRateDeep":0}}
+{"t":"message","ts":1783228934398,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L3-s0.5","chainLen":3,"subtlety":0.5,"policy":"serial"}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L3-s0.5:injector","spec":{"id":"serial-L3-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934398,"from":"serial-L3-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L3-s0.5:r0","spec":{"id":"serial-L3-s0.5:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L3-s0.5:r1","spec":{"id":"serial-L3-s0.5:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L3-s0.5:r2","spec":{"id":"serial-L3-s0.5:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934398,"from":"serial-L3-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.804,"attention":1,"complacency":1,"pCatch":0.302,"caught":false}}
+{"t":"message","ts":1783228934398,"from":"serial-L3-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.506,"attention":0.8,"complacency":0.7,"pCatch":0.106,"caught":false}}
+{"t":"message","ts":1783228934398,"from":"serial-L3-s0.5:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.871,"attention":0.667,"complacency":0.49,"pCatch":0.107,"caught":false}}
+{"t":"message","ts":1783228934398,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L3-s0.5","survivalDepth":3,"shipped":true,"chainLen":3}}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L3-s0.5:injector"}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L3-s0.5:r0"}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L3-s0.5:r1"}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L3-s0.5:r2"}
+{"t":"score","ts":1783228934398,"scores":{"cellIndex":7,"policy":0,"chainLen":3,"subtlety":0.5,"trials":40,"shipRate":0.6,"meanSurvivalDepth":1.975,"meanReviewsUsed":2.375,"catchRateAtPos0":0.25,"catchRateDeep":0.04}}
+{"t":"message","ts":1783228934398,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L5-s0.5","chainLen":5,"subtlety":0.5,"policy":"serial"}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:injector","spec":{"id":"serial-L5-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934398,"from":"serial-L5-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:r0","spec":{"id":"serial-L5-s0.5:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:r1","spec":{"id":"serial-L5-s0.5:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:r2","spec":{"id":"serial-L5-s0.5:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:r3","spec":{"id":"serial-L5-s0.5:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934398,"agentId":"serial-L5-s0.5:r4","spec":{"id":"serial-L5-s0.5:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934398,"from":"serial-L5-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.927,"attention":1,"complacency":1,"pCatch":0.348,"caught":true}}
+{"t":"message","ts":1783228934398,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L5-s0.5","survivalDepth":0,"shipped":false,"chainLen":5}}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L5-s0.5:injector"}
+{"t":"kill","ts":1783228934398,"agentId":"serial-L5-s0.5:r0"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L5-s0.5:r1"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L5-s0.5:r2"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L5-s0.5:r3"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L5-s0.5:r4"}
+{"t":"score","ts":1783228934399,"scores":{"cellIndex":8,"policy":0,"chainLen":5,"subtlety":0.5,"trials":40,"shipRate":0.475,"meanSurvivalDepth":2.675,"meanReviewsUsed":3.2,"catchRateAtPos0":0.35,"catchRateDeep":0}}
+{"t":"message","ts":1783228934399,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L8-s0.5","chainLen":8,"subtlety":0.5,"policy":"serial"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:injector","spec":{"id":"serial-L8-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934399,"from":"serial-L8-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r0","spec":{"id":"serial-L8-s0.5:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r1","spec":{"id":"serial-L8-s0.5:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r2","spec":{"id":"serial-L8-s0.5:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r3","spec":{"id":"serial-L8-s0.5:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r4","spec":{"id":"serial-L8-s0.5:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r5","spec":{"id":"serial-L8-s0.5:r5","systemPrompt":"Review the diff. You can see that 5 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r6","spec":{"id":"serial-L8-s0.5:r6","systemPrompt":"Review the diff. You can see that 6 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L8-s0.5:r7","spec":{"id":"serial-L8-s0.5:r7","systemPrompt":"Review the diff. You can see that 7 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934399,"from":"serial-L8-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.58,"attention":1,"complacency":1,"pCatch":0.217,"caught":true}}
+{"t":"message","ts":1783228934399,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L8-s0.5","survivalDepth":0,"shipped":false,"chainLen":8}}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:injector"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r0"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r1"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r2"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r3"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r4"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r5"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r6"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L8-s0.5:r7"}
+{"t":"score","ts":1783228934399,"scores":{"cellIndex":9,"policy":0,"chainLen":8,"subtlety":0.5,"trials":40,"shipRate":0.325,"meanSurvivalDepth":3.5,"meanReviewsUsed":4.175,"catchRateAtPos0":0.375,"catchRateDeep":0}}
+{"t":"message","ts":1783228934399,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L1-s0.8","chainLen":1,"subtlety":0.8,"policy":"serial"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L1-s0.8:injector","spec":{"id":"serial-L1-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934399,"from":"serial-L1-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L1-s0.8:r0","spec":{"id":"serial-L1-s0.8:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934399,"from":"serial-L1-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.564,"attention":1,"complacency":1,"pCatch":0.085,"caught":false}}
+{"t":"message","ts":1783228934399,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L1-s0.8","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L1-s0.8:injector"}
+{"t":"kill","ts":1783228934399,"agentId":"serial-L1-s0.8:r0"}
+{"t":"score","ts":1783228934399,"scores":{"cellIndex":10,"policy":0,"chainLen":1,"subtlety":0.8,"trials":40,"shipRate":0.875,"meanSurvivalDepth":0.875,"meanReviewsUsed":1,"catchRateAtPos0":0.125,"catchRateDeep":0}}
+{"t":"message","ts":1783228934399,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L2-s0.8","chainLen":2,"subtlety":0.8,"policy":"serial"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L2-s0.8:injector","spec":{"id":"serial-L2-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934399,"from":"serial-L2-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L2-s0.8:r0","spec":{"id":"serial-L2-s0.8:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934399,"agentId":"serial-L2-s0.8:r1","spec":{"id":"serial-L2-s0.8:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934399,"from":"serial-L2-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.777,"attention":1,"complacency":1,"pCatch":0.117,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L2-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.785,"attention":0.8,"complacency":0.7,"pCatch":0.066,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L2-s0.8","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L2-s0.8:injector"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L2-s0.8:r0"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L2-s0.8:r1"}
+{"t":"score","ts":1783228934400,"scores":{"cellIndex":11,"policy":0,"chainLen":2,"subtlety":0.8,"trials":40,"shipRate":0.825,"meanSurvivalDepth":1.7,"meanReviewsUsed":1.875,"catchRateAtPos0":0.125,"catchRateDeep":0}}
+{"t":"message","ts":1783228934400,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L3-s0.8","chainLen":3,"subtlety":0.8,"policy":"serial"}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L3-s0.8:injector","spec":{"id":"serial-L3-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934400,"from":"serial-L3-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L3-s0.8:r0","spec":{"id":"serial-L3-s0.8:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L3-s0.8:r1","spec":{"id":"serial-L3-s0.8:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L3-s0.8:r2","spec":{"id":"serial-L3-s0.8:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934400,"from":"serial-L3-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.949,"attention":1,"complacency":1,"pCatch":0.142,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L3-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.609,"attention":0.8,"complacency":0.7,"pCatch":0.051,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L3-s0.8:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.801,"attention":0.667,"complacency":0.49,"pCatch":0.039,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L3-s0.8","survivalDepth":3,"shipped":true,"chainLen":3}}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L3-s0.8:injector"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L3-s0.8:r0"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L3-s0.8:r1"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L3-s0.8:r2"}
+{"t":"score","ts":1783228934400,"scores":{"cellIndex":12,"policy":0,"chainLen":3,"subtlety":0.8,"trials":40,"shipRate":0.825,"meanSurvivalDepth":2.6,"meanReviewsUsed":2.775,"catchRateAtPos0":0.1,"catchRateDeep":0.057}}
+{"t":"message","ts":1783228934400,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L5-s0.8","chainLen":5,"subtlety":0.8,"policy":"serial"}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:injector","spec":{"id":"serial-L5-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:r0","spec":{"id":"serial-L5-s0.8:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:r1","spec":{"id":"serial-L5-s0.8:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:r2","spec":{"id":"serial-L5-s0.8:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:r3","spec":{"id":"serial-L5-s0.8:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934400,"agentId":"serial-L5-s0.8:r4","spec":{"id":"serial-L5-s0.8:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.713,"attention":1,"complacency":1,"pCatch":0.107,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.473,"attention":0.8,"complacency":0.7,"pCatch":0.04,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.787,"attention":0.667,"complacency":0.49,"pCatch":0.039,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.584,"attention":0.571,"complacency":0.343,"pCatch":0.017,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"serial-L5-s0.8:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.939,"attention":0.5,"complacency":0.24,"pCatch":0.017,"caught":false}}
+{"t":"message","ts":1783228934400,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L5-s0.8","survivalDepth":5,"shipped":true,"chainLen":5}}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L5-s0.8:injector"}
+{"t":"kill","ts":1783228934400,"agentId":"serial-L5-s0.8:r0"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L5-s0.8:r1"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L5-s0.8:r2"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L5-s0.8:r3"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L5-s0.8:r4"}
+{"t":"score","ts":1783228934401,"scores":{"cellIndex":13,"policy":0,"chainLen":5,"subtlety":0.8,"trials":40,"shipRate":0.775,"meanSurvivalDepth":4.15,"meanReviewsUsed":4.375,"catchRateAtPos0":0.1,"catchRateDeep":0.031}}
+{"t":"message","ts":1783228934401,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L8-s0.8","chainLen":8,"subtlety":0.8,"policy":"serial"}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:injector","spec":{"id":"serial-L8-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r0","spec":{"id":"serial-L8-s0.8:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r1","spec":{"id":"serial-L8-s0.8:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r2","spec":{"id":"serial-L8-s0.8:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r3","spec":{"id":"serial-L8-s0.8:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r4","spec":{"id":"serial-L8-s0.8:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r5","spec":{"id":"serial-L8-s0.8:r5","systemPrompt":"Review the diff. You can see that 5 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r6","spec":{"id":"serial-L8-s0.8:r6","systemPrompt":"Review the diff. You can see that 6 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L8-s0.8:r7","spec":{"id":"serial-L8-s0.8:r7","systemPrompt":"Review the diff. You can see that 7 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.93,"attention":1,"complacency":1,"pCatch":0.139,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.595,"attention":0.8,"complacency":0.7,"pCatch":0.05,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.492,"attention":0.667,"complacency":0.49,"pCatch":0.024,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.686,"attention":0.571,"complacency":0.343,"pCatch":0.02,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.846,"attention":0.5,"complacency":0.24,"pCatch":0.015,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r5","to":"*","topic":"review","body":{"pos":5,"competence":0.494,"attention":0.444,"complacency":0.168,"pCatch":0.006,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r6","to":"*","topic":"review","body":{"pos":6,"competence":0.781,"attention":0.4,"complacency":0.118,"pCatch":0.006,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"serial-L8-s0.8:r7","to":"*","topic":"review","body":{"pos":7,"competence":0.54,"attention":0.364,"complacency":0.082,"pCatch":0.002,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L8-s0.8","survivalDepth":8,"shipped":true,"chainLen":8}}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:injector"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r0"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r1"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r2"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r3"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r4"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r5"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r6"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L8-s0.8:r7"}
+{"t":"score","ts":1783228934401,"scores":{"cellIndex":14,"policy":0,"chainLen":8,"subtlety":0.8,"trials":40,"shipRate":0.85,"meanSurvivalDepth":6.9,"meanReviewsUsed":7.05,"catchRateAtPos0":0.075,"catchRateDeep":0}}
+{"t":"message","ts":1783228934401,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L1-s0.95","chainLen":1,"subtlety":0.95,"policy":"serial"}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L1-s0.95:injector","spec":{"id":"serial-L1-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934401,"from":"serial-L1-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934401,"agentId":"serial-L1-s0.95:r0","spec":{"id":"serial-L1-s0.95:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934401,"from":"serial-L1-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.583,"attention":1,"complacency":1,"pCatch":0.022,"caught":false}}
+{"t":"message","ts":1783228934401,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L1-s0.95","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L1-s0.95:injector"}
+{"t":"kill","ts":1783228934401,"agentId":"serial-L1-s0.95:r0"}
+{"t":"score","ts":1783228934402,"scores":{"cellIndex":15,"policy":0,"chainLen":1,"subtlety":0.95,"trials":40,"shipRate":1,"meanSurvivalDepth":1,"meanReviewsUsed":1,"catchRateAtPos0":0,"catchRateDeep":0}}
+{"t":"message","ts":1783228934402,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L2-s0.95","chainLen":2,"subtlety":0.95,"policy":"serial"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L2-s0.95:injector","spec":{"id":"serial-L2-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934402,"from":"serial-L2-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L2-s0.95:r0","spec":{"id":"serial-L2-s0.95:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L2-s0.95:r1","spec":{"id":"serial-L2-s0.95:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934402,"from":"serial-L2-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.702,"attention":1,"complacency":1,"pCatch":0.026,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L2-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.529,"attention":0.8,"complacency":0.7,"pCatch":0.011,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L2-s0.95","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L2-s0.95:injector"}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L2-s0.95:r0"}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L2-s0.95:r1"}
+{"t":"score","ts":1783228934402,"scores":{"cellIndex":16,"policy":0,"chainLen":2,"subtlety":0.95,"trials":40,"shipRate":1,"meanSurvivalDepth":2,"meanReviewsUsed":2,"catchRateAtPos0":0,"catchRateDeep":0}}
+{"t":"message","ts":1783228934402,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L3-s0.95","chainLen":3,"subtlety":0.95,"policy":"serial"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L3-s0.95:injector","spec":{"id":"serial-L3-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934402,"from":"serial-L3-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L3-s0.95:r0","spec":{"id":"serial-L3-s0.95:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L3-s0.95:r1","spec":{"id":"serial-L3-s0.95:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L3-s0.95:r2","spec":{"id":"serial-L3-s0.95:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934402,"from":"serial-L3-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.815,"attention":1,"complacency":1,"pCatch":0.031,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L3-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.462,"attention":0.8,"complacency":0.7,"pCatch":0.01,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L3-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.936,"attention":0.667,"complacency":0.49,"pCatch":0.011,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L3-s0.95","survivalDepth":3,"shipped":true,"chainLen":3}}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L3-s0.95:injector"}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L3-s0.95:r0"}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L3-s0.95:r1"}
+{"t":"kill","ts":1783228934402,"agentId":"serial-L3-s0.95:r2"}
+{"t":"score","ts":1783228934402,"scores":{"cellIndex":17,"policy":0,"chainLen":3,"subtlety":0.95,"trials":40,"shipRate":0.975,"meanSurvivalDepth":2.925,"meanReviewsUsed":2.95,"catchRateAtPos0":0.025,"catchRateDeep":0}}
+{"t":"message","ts":1783228934402,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L5-s0.95","chainLen":5,"subtlety":0.95,"policy":"serial"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:injector","spec":{"id":"serial-L5-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934402,"from":"serial-L5-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:r0","spec":{"id":"serial-L5-s0.95:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:r1","spec":{"id":"serial-L5-s0.95:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:r2","spec":{"id":"serial-L5-s0.95:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:r3","spec":{"id":"serial-L5-s0.95:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934402,"agentId":"serial-L5-s0.95:r4","spec":{"id":"serial-L5-s0.95:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934402,"from":"serial-L5-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.656,"attention":1,"complacency":1,"pCatch":0.025,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L5-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.799,"attention":0.8,"complacency":0.7,"pCatch":0.017,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L5-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.82,"attention":0.667,"complacency":0.49,"pCatch":0.01,"caught":false}}
+{"t":"message","ts":1783228934402,"from":"serial-L5-s0.95:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.637,"attention":0.571,"complacency":0.343,"pCatch":0.005,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L5-s0.95:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.846,"attention":0.5,"complacency":0.24,"pCatch":0.004,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L5-s0.95","survivalDepth":5,"shipped":true,"chainLen":5}}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:injector"}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:r0"}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:r1"}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:r2"}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:r3"}
+{"t":"kill","ts":1783228934403,"agentId":"serial-L5-s0.95:r4"}
+{"t":"score","ts":1783228934403,"scores":{"cellIndex":18,"policy":0,"chainLen":5,"subtlety":0.95,"trials":40,"shipRate":1,"meanSurvivalDepth":5,"meanReviewsUsed":5,"catchRateAtPos0":0,"catchRateDeep":0}}
+{"t":"message","ts":1783228934403,"from":"moderator","to":"*","topic":"cell","body":{"cell":"serial-L8-s0.95","chainLen":8,"subtlety":0.95,"policy":"serial"}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:injector","spec":{"id":"serial-L8-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r0","spec":{"id":"serial-L8-s0.95:r0","systemPrompt":"Review the diff. You can see that 0 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r1","spec":{"id":"serial-L8-s0.95:r1","systemPrompt":"Review the diff. You can see that 1 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r2","spec":{"id":"serial-L8-s0.95:r2","systemPrompt":"Review the diff. You can see that 2 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r3","spec":{"id":"serial-L8-s0.95:r3","systemPrompt":"Review the diff. You can see that 3 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r4","spec":{"id":"serial-L8-s0.95:r4","systemPrompt":"Review the diff. You can see that 4 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r5","spec":{"id":"serial-L8-s0.95:r5","systemPrompt":"Review the diff. You can see that 5 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r6","spec":{"id":"serial-L8-s0.95:r6","systemPrompt":"Review the diff. You can see that 6 reviewer(s) already approved it."}}
+{"t":"spawn","ts":1783228934403,"agentId":"serial-L8-s0.95:r7","spec":{"id":"serial-L8-s0.95:r7","systemPrompt":"Review the diff. You can see that 7 reviewer(s) already approved it."}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.901,"attention":1,"complacency":1,"pCatch":0.034,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.744,"attention":0.8,"complacency":0.7,"pCatch":0.016,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.537,"attention":0.667,"complacency":0.49,"pCatch":0.007,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.597,"attention":0.571,"complacency":0.343,"pCatch":0.004,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.796,"attention":0.5,"complacency":0.24,"pCatch":0.004,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r5","to":"*","topic":"review","body":{"pos":5,"competence":0.553,"attention":0.444,"complacency":0.168,"pCatch":0.002,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r6","to":"*","topic":"review","body":{"pos":6,"competence":0.82,"attention":0.4,"complacency":0.118,"pCatch":0.001,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"serial-L8-s0.95:r7","to":"*","topic":"review","body":{"pos":7,"competence":0.569,"attention":0.364,"complacency":0.082,"pCatch":0.001,"caught":false}}
+{"t":"message","ts":1783228934403,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"serial-L8-s0.95","survivalDepth":8,"shipped":true,"chainLen":8}}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:injector"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r0"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r1"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r2"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r3"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r4"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r5"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r6"}
+{"t":"kill","ts":1783228934404,"agentId":"serial-L8-s0.95:r7"}
+{"t":"score","ts":1783228934404,"scores":{"cellIndex":19,"policy":0,"chainLen":8,"subtlety":0.95,"trials":40,"shipRate":0.95,"meanSurvivalDepth":7.7,"meanReviewsUsed":7.75,"catchRateAtPos0":0,"catchRateDeep":0}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L1-s0.2","chainLen":1,"subtlety":0.2,"policy":"independent"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L1-s0.2:injector","spec":{"id":"independent-L1-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934404,"from":"independent-L1-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L1-s0.2:r0","spec":{"id":"independent-L1-s0.2:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934404,"from":"independent-L1-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.892,"attention":1,"complacency":1,"pCatch":0.535,"caught":false}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L1-s0.2","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L1-s0.2:injector"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L1-s0.2:r0"}
+{"t":"score","ts":1783228934404,"scores":{"cellIndex":20,"policy":1,"chainLen":1,"subtlety":0.2,"trials":40,"shipRate":0.7,"meanSurvivalDepth":0.7,"meanReviewsUsed":1,"catchRateAtPos0":0.3,"catchRateDeep":0}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L2-s0.2","chainLen":2,"subtlety":0.2,"policy":"independent"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L2-s0.2:injector","spec":{"id":"independent-L2-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934404,"from":"independent-L2-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L2-s0.2:r0","spec":{"id":"independent-L2-s0.2:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L2-s0.2:r1","spec":{"id":"independent-L2-s0.2:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934404,"from":"independent-L2-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.52,"attention":1,"complacency":1,"pCatch":0.312,"caught":true}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L2-s0.2","survivalDepth":0,"shipped":false,"chainLen":2}}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L2-s0.2:injector"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L2-s0.2:r0"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L2-s0.2:r1"}
+{"t":"score","ts":1783228934404,"scores":{"cellIndex":21,"policy":1,"chainLen":2,"subtlety":0.2,"trials":40,"shipRate":0.4,"meanSurvivalDepth":0.925,"meanReviewsUsed":1.525,"catchRateAtPos0":0.475,"catchRateDeep":0}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L3-s0.2","chainLen":3,"subtlety":0.2,"policy":"independent"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L3-s0.2:injector","spec":{"id":"independent-L3-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934404,"from":"independent-L3-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L3-s0.2:r0","spec":{"id":"independent-L3-s0.2:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L3-s0.2:r1","spec":{"id":"independent-L3-s0.2:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L3-s0.2:r2","spec":{"id":"independent-L3-s0.2:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934404,"from":"independent-L3-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.876,"attention":1,"complacency":1,"pCatch":0.526,"caught":true}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L3-s0.2","survivalDepth":0,"shipped":false,"chainLen":3}}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L3-s0.2:injector"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L3-s0.2:r0"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L3-s0.2:r1"}
+{"t":"kill","ts":1783228934404,"agentId":"independent-L3-s0.2:r2"}
+{"t":"score","ts":1783228934404,"scores":{"cellIndex":22,"policy":1,"chainLen":3,"subtlety":0.2,"trials":40,"shipRate":0.325,"meanSurvivalDepth":1.275,"meanReviewsUsed":1.95,"catchRateAtPos0":0.475,"catchRateDeep":0.235}}
+{"t":"message","ts":1783228934404,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L5-s0.2","chainLen":5,"subtlety":0.2,"policy":"independent"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L5-s0.2:injector","spec":{"id":"independent-L5-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934404,"from":"independent-L5-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L5-s0.2:r0","spec":{"id":"independent-L5-s0.2:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L5-s0.2:r1","spec":{"id":"independent-L5-s0.2:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934404,"agentId":"independent-L5-s0.2:r2","spec":{"id":"independent-L5-s0.2:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L5-s0.2:r3","spec":{"id":"independent-L5-s0.2:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L5-s0.2:r4","spec":{"id":"independent-L5-s0.2:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934405,"from":"independent-L5-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.678,"attention":1,"complacency":1,"pCatch":0.407,"caught":true}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L5-s0.2","survivalDepth":0,"shipped":false,"chainLen":5}}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:injector"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:r0"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:r1"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:r2"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:r3"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L5-s0.2:r4"}
+{"t":"score","ts":1783228934405,"scores":{"cellIndex":23,"policy":1,"chainLen":5,"subtlety":0.2,"trials":40,"shipRate":0.2,"meanSurvivalDepth":1.775,"meanReviewsUsed":2.575,"catchRateAtPos0":0.375,"catchRateDeep":0.2}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L8-s0.2","chainLen":8,"subtlety":0.2,"policy":"independent"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:injector","spec":{"id":"independent-L8-s0.2:injector","systemPrompt":"Plant one bug of subtlety 0.2 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934405,"from":"independent-L8-s0.2:injector","to":"*","topic":"inject","body":{"subtlety":0.2,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r0","spec":{"id":"independent-L8-s0.2:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r1","spec":{"id":"independent-L8-s0.2:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r2","spec":{"id":"independent-L8-s0.2:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r3","spec":{"id":"independent-L8-s0.2:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r4","spec":{"id":"independent-L8-s0.2:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r5","spec":{"id":"independent-L8-s0.2:r5","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r6","spec":{"id":"independent-L8-s0.2:r6","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L8-s0.2:r7","spec":{"id":"independent-L8-s0.2:r7","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934405,"from":"independent-L8-s0.2:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.942,"attention":1,"complacency":1,"pCatch":0.565,"caught":true}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L8-s0.2","survivalDepth":0,"shipped":false,"chainLen":8}}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:injector"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r0"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r1"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r2"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r3"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r4"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r5"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r6"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L8-s0.2:r7"}
+{"t":"score","ts":1783228934405,"scores":{"cellIndex":24,"policy":1,"chainLen":8,"subtlety":0.2,"trials":40,"shipRate":0.05,"meanSurvivalDepth":2,"meanReviewsUsed":2.95,"catchRateAtPos0":0.4,"catchRateDeep":0.417}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L1-s0.5","chainLen":1,"subtlety":0.5,"policy":"independent"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L1-s0.5:injector","spec":{"id":"independent-L1-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934405,"from":"independent-L1-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L1-s0.5:r0","spec":{"id":"independent-L1-s0.5:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934405,"from":"independent-L1-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.844,"attention":1,"complacency":1,"pCatch":0.317,"caught":false}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L1-s0.5","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L1-s0.5:injector"}
+{"t":"kill","ts":1783228934405,"agentId":"independent-L1-s0.5:r0"}
+{"t":"score","ts":1783228934405,"scores":{"cellIndex":25,"policy":1,"chainLen":1,"subtlety":0.5,"trials":40,"shipRate":0.8,"meanSurvivalDepth":0.8,"meanReviewsUsed":1,"catchRateAtPos0":0.2,"catchRateDeep":0}}
+{"t":"message","ts":1783228934405,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L2-s0.5","chainLen":2,"subtlety":0.5,"policy":"independent"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L2-s0.5:injector","spec":{"id":"independent-L2-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934405,"from":"independent-L2-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934405,"agentId":"independent-L2-s0.5:r0","spec":{"id":"independent-L2-s0.5:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L2-s0.5:r1","spec":{"id":"independent-L2-s0.5:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934406,"from":"independent-L2-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.685,"attention":1,"complacency":1,"pCatch":0.257,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L2-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.667,"attention":0.8,"complacency":1,"pCatch":0.2,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L2-s0.5","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L2-s0.5:injector"}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L2-s0.5:r0"}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L2-s0.5:r1"}
+{"t":"score","ts":1783228934406,"scores":{"cellIndex":26,"policy":1,"chainLen":2,"subtlety":0.5,"trials":40,"shipRate":0.725,"meanSurvivalDepth":1.6,"meanReviewsUsed":1.875,"catchRateAtPos0":0.125,"catchRateDeep":0}}
+{"t":"message","ts":1783228934406,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L3-s0.5","chainLen":3,"subtlety":0.5,"policy":"independent"}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L3-s0.5:injector","spec":{"id":"independent-L3-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934406,"from":"independent-L3-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L3-s0.5:r0","spec":{"id":"independent-L3-s0.5:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L3-s0.5:r1","spec":{"id":"independent-L3-s0.5:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L3-s0.5:r2","spec":{"id":"independent-L3-s0.5:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934406,"from":"independent-L3-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.944,"attention":1,"complacency":1,"pCatch":0.354,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L3-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.789,"attention":0.8,"complacency":1,"pCatch":0.237,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L3-s0.5:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.692,"attention":0.667,"complacency":1,"pCatch":0.173,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L3-s0.5","survivalDepth":3,"shipped":true,"chainLen":3}}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L3-s0.5:injector"}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L3-s0.5:r0"}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L3-s0.5:r1"}
+{"t":"kill","ts":1783228934406,"agentId":"independent-L3-s0.5:r2"}
+{"t":"score","ts":1783228934406,"scores":{"cellIndex":27,"policy":1,"chainLen":3,"subtlety":0.5,"trials":40,"shipRate":0.525,"meanSurvivalDepth":1.85,"meanReviewsUsed":2.325,"catchRateAtPos0":0.275,"catchRateDeep":0.125}}
+{"t":"message","ts":1783228934406,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L5-s0.5","chainLen":5,"subtlety":0.5,"policy":"independent"}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:injector","spec":{"id":"independent-L5-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:r0","spec":{"id":"independent-L5-s0.5:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:r1","spec":{"id":"independent-L5-s0.5:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:r2","spec":{"id":"independent-L5-s0.5:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:r3","spec":{"id":"independent-L5-s0.5:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934406,"agentId":"independent-L5-s0.5:r4","spec":{"id":"independent-L5-s0.5:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.694,"attention":1,"complacency":1,"pCatch":0.26,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.807,"attention":0.8,"complacency":1,"pCatch":0.242,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.545,"attention":0.667,"complacency":1,"pCatch":0.136,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.576,"attention":0.571,"complacency":1,"pCatch":0.124,"caught":false}}
+{"t":"message","ts":1783228934406,"from":"independent-L5-s0.5:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.645,"attention":0.5,"complacency":1,"pCatch":0.121,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L5-s0.5","survivalDepth":5,"shipped":true,"chainLen":5}}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:injector"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:r0"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:r1"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:r2"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:r3"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L5-s0.5:r4"}
+{"t":"score","ts":1783228934407,"scores":{"cellIndex":28,"policy":1,"chainLen":5,"subtlety":0.5,"trials":40,"shipRate":0.3,"meanSurvivalDepth":2.425,"meanReviewsUsed":3.125,"catchRateAtPos0":0.225,"catchRateDeep":0.143}}
+{"t":"message","ts":1783228934407,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L8-s0.5","chainLen":8,"subtlety":0.5,"policy":"independent"}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:injector","spec":{"id":"independent-L8-s0.5:injector","systemPrompt":"Plant one bug of subtlety 0.5 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:injector","to":"*","topic":"inject","body":{"subtlety":0.5,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r0","spec":{"id":"independent-L8-s0.5:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r1","spec":{"id":"independent-L8-s0.5:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r2","spec":{"id":"independent-L8-s0.5:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r3","spec":{"id":"independent-L8-s0.5:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r4","spec":{"id":"independent-L8-s0.5:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r5","spec":{"id":"independent-L8-s0.5:r5","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r6","spec":{"id":"independent-L8-s0.5:r6","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L8-s0.5:r7","spec":{"id":"independent-L8-s0.5:r7","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.751,"attention":1,"complacency":1,"pCatch":0.282,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.942,"attention":0.8,"complacency":1,"pCatch":0.283,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.527,"attention":0.667,"complacency":1,"pCatch":0.132,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.463,"attention":0.571,"complacency":1,"pCatch":0.099,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.521,"attention":0.5,"complacency":1,"pCatch":0.098,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r5","to":"*","topic":"review","body":{"pos":5,"competence":0.699,"attention":0.444,"complacency":1,"pCatch":0.116,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r6","to":"*","topic":"review","body":{"pos":6,"competence":0.514,"attention":0.4,"complacency":1,"pCatch":0.077,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"independent-L8-s0.5:r7","to":"*","topic":"review","body":{"pos":7,"competence":0.539,"attention":0.364,"complacency":1,"pCatch":0.073,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L8-s0.5","survivalDepth":8,"shipped":true,"chainLen":8}}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:injector"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r0"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r1"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r2"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r3"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r4"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r5"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r6"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L8-s0.5:r7"}
+{"t":"score","ts":1783228934407,"scores":{"cellIndex":29,"policy":1,"chainLen":8,"subtlety":0.5,"trials":40,"shipRate":0.3,"meanSurvivalDepth":3.4,"meanReviewsUsed":4.1,"catchRateAtPos0":0.275,"catchRateDeep":0.04}}
+{"t":"message","ts":1783228934407,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L1-s0.8","chainLen":1,"subtlety":0.8,"policy":"independent"}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L1-s0.8:injector","spec":{"id":"independent-L1-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934407,"from":"independent-L1-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934407,"agentId":"independent-L1-s0.8:r0","spec":{"id":"independent-L1-s0.8:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934407,"from":"independent-L1-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.724,"attention":1,"complacency":1,"pCatch":0.109,"caught":false}}
+{"t":"message","ts":1783228934407,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L1-s0.8","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L1-s0.8:injector"}
+{"t":"kill","ts":1783228934407,"agentId":"independent-L1-s0.8:r0"}
+{"t":"score","ts":1783228934408,"scores":{"cellIndex":30,"policy":1,"chainLen":1,"subtlety":0.8,"trials":40,"shipRate":0.925,"meanSurvivalDepth":0.925,"meanReviewsUsed":1,"catchRateAtPos0":0.075,"catchRateDeep":0}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L2-s0.8","chainLen":2,"subtlety":0.8,"policy":"independent"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L2-s0.8:injector","spec":{"id":"independent-L2-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934408,"from":"independent-L2-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L2-s0.8:r0","spec":{"id":"independent-L2-s0.8:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L2-s0.8:r1","spec":{"id":"independent-L2-s0.8:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934408,"from":"independent-L2-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.927,"attention":1,"complacency":1,"pCatch":0.139,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L2-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.492,"attention":0.8,"complacency":1,"pCatch":0.059,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L2-s0.8","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L2-s0.8:injector"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L2-s0.8:r0"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L2-s0.8:r1"}
+{"t":"score","ts":1783228934408,"scores":{"cellIndex":31,"policy":1,"chainLen":2,"subtlety":0.8,"trials":40,"shipRate":0.825,"meanSurvivalDepth":1.725,"meanReviewsUsed":1.9,"catchRateAtPos0":0.1,"catchRateDeep":0}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L3-s0.8","chainLen":3,"subtlety":0.8,"policy":"independent"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L3-s0.8:injector","spec":{"id":"independent-L3-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934408,"from":"independent-L3-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L3-s0.8:r0","spec":{"id":"independent-L3-s0.8:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L3-s0.8:r1","spec":{"id":"independent-L3-s0.8:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L3-s0.8:r2","spec":{"id":"independent-L3-s0.8:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934408,"from":"independent-L3-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.882,"attention":1,"complacency":1,"pCatch":0.132,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L3-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.851,"attention":0.8,"complacency":1,"pCatch":0.102,"caught":true}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L3-s0.8","survivalDepth":1,"shipped":false,"chainLen":3}}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L3-s0.8:injector"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L3-s0.8:r0"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L3-s0.8:r1"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L3-s0.8:r2"}
+{"t":"score","ts":1783228934408,"scores":{"cellIndex":32,"policy":1,"chainLen":3,"subtlety":0.8,"trials":40,"shipRate":0.7,"meanSurvivalDepth":2.2,"meanReviewsUsed":2.5,"catchRateAtPos0":0.225,"catchRateDeep":0.034}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L5-s0.8","chainLen":5,"subtlety":0.8,"policy":"independent"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:injector","spec":{"id":"independent-L5-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:r0","spec":{"id":"independent-L5-s0.8:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:r1","spec":{"id":"independent-L5-s0.8:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:r2","spec":{"id":"independent-L5-s0.8:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:r3","spec":{"id":"independent-L5-s0.8:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934408,"agentId":"independent-L5-s0.8:r4","spec":{"id":"independent-L5-s0.8:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.552,"attention":1,"complacency":1,"pCatch":0.083,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.469,"attention":0.8,"complacency":1,"pCatch":0.056,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.609,"attention":0.667,"complacency":1,"pCatch":0.061,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.689,"attention":0.571,"complacency":1,"pCatch":0.059,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"independent-L5-s0.8:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.908,"attention":0.5,"complacency":1,"pCatch":0.068,"caught":false}}
+{"t":"message","ts":1783228934408,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L5-s0.8","survivalDepth":5,"shipped":true,"chainLen":5}}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L5-s0.8:injector"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L5-s0.8:r0"}
+{"t":"kill","ts":1783228934408,"agentId":"independent-L5-s0.8:r1"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L5-s0.8:r2"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L5-s0.8:r3"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L5-s0.8:r4"}
+{"t":"score","ts":1783228934409,"scores":{"cellIndex":33,"policy":1,"chainLen":5,"subtlety":0.8,"trials":40,"shipRate":0.7,"meanSurvivalDepth":4.1,"meanReviewsUsed":4.4,"catchRateAtPos0":0.025,"catchRateDeep":0.067}}
+{"t":"message","ts":1783228934409,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L8-s0.8","chainLen":8,"subtlety":0.8,"policy":"independent"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:injector","spec":{"id":"independent-L8-s0.8:injector","systemPrompt":"Plant one bug of subtlety 0.8 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934409,"from":"independent-L8-s0.8:injector","to":"*","topic":"inject","body":{"subtlety":0.8,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r0","spec":{"id":"independent-L8-s0.8:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r1","spec":{"id":"independent-L8-s0.8:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r2","spec":{"id":"independent-L8-s0.8:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r3","spec":{"id":"independent-L8-s0.8:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r4","spec":{"id":"independent-L8-s0.8:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r5","spec":{"id":"independent-L8-s0.8:r5","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r6","spec":{"id":"independent-L8-s0.8:r6","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L8-s0.8:r7","spec":{"id":"independent-L8-s0.8:r7","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934409,"from":"independent-L8-s0.8:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.68,"attention":1,"complacency":1,"pCatch":0.102,"caught":false}}
+{"t":"message","ts":1783228934409,"from":"independent-L8-s0.8:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.695,"attention":0.8,"complacency":1,"pCatch":0.083,"caught":true}}
+{"t":"message","ts":1783228934409,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L8-s0.8","survivalDepth":1,"shipped":false,"chainLen":8}}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:injector"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r0"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r1"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r2"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r3"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r4"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r5"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r6"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L8-s0.8:r7"}
+{"t":"score","ts":1783228934409,"scores":{"cellIndex":34,"policy":1,"chainLen":8,"subtlety":0.8,"trials":40,"shipRate":0.55,"meanSurvivalDepth":5.3,"meanReviewsUsed":5.75,"catchRateAtPos0":0.125,"catchRateDeep":0.063}}
+{"t":"message","ts":1783228934409,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L1-s0.95","chainLen":1,"subtlety":0.95,"policy":"independent"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L1-s0.95:injector","spec":{"id":"independent-L1-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934409,"from":"independent-L1-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L1-s0.95:r0","spec":{"id":"independent-L1-s0.95:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934409,"from":"independent-L1-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.74,"attention":1,"complacency":1,"pCatch":0.028,"caught":false}}
+{"t":"message","ts":1783228934409,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L1-s0.95","survivalDepth":1,"shipped":true,"chainLen":1}}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L1-s0.95:injector"}
+{"t":"kill","ts":1783228934409,"agentId":"independent-L1-s0.95:r0"}
+{"t":"score","ts":1783228934409,"scores":{"cellIndex":35,"policy":1,"chainLen":1,"subtlety":0.95,"trials":40,"shipRate":0.925,"meanSurvivalDepth":0.925,"meanReviewsUsed":1,"catchRateAtPos0":0.075,"catchRateDeep":0}}
+{"t":"message","ts":1783228934409,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L2-s0.95","chainLen":2,"subtlety":0.95,"policy":"independent"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L2-s0.95:injector","spec":{"id":"independent-L2-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934409,"from":"independent-L2-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L2-s0.95:r0","spec":{"id":"independent-L2-s0.95:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934409,"agentId":"independent-L2-s0.95:r1","spec":{"id":"independent-L2-s0.95:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934409,"from":"independent-L2-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.618,"attention":1,"complacency":1,"pCatch":0.023,"caught":false}}
+{"t":"message","ts":1783228934409,"from":"independent-L2-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.465,"attention":0.8,"complacency":1,"pCatch":0.014,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L2-s0.95","survivalDepth":2,"shipped":true,"chainLen":2}}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L2-s0.95:injector"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L2-s0.95:r0"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L2-s0.95:r1"}
+{"t":"score","ts":1783228934410,"scores":{"cellIndex":36,"policy":1,"chainLen":2,"subtlety":0.95,"trials":40,"shipRate":0.9,"meanSurvivalDepth":1.825,"meanReviewsUsed":1.925,"catchRateAtPos0":0.075,"catchRateDeep":0}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L3-s0.95","chainLen":3,"subtlety":0.95,"policy":"independent"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L3-s0.95:injector","spec":{"id":"independent-L3-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934410,"from":"independent-L3-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L3-s0.95:r0","spec":{"id":"independent-L3-s0.95:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L3-s0.95:r1","spec":{"id":"independent-L3-s0.95:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L3-s0.95:r2","spec":{"id":"independent-L3-s0.95:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934410,"from":"independent-L3-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.95,"attention":1,"complacency":1,"pCatch":0.036,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L3-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.469,"attention":0.8,"complacency":1,"pCatch":0.014,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L3-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.94,"attention":0.667,"complacency":1,"pCatch":0.023,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L3-s0.95","survivalDepth":3,"shipped":true,"chainLen":3}}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L3-s0.95:injector"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L3-s0.95:r0"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L3-s0.95:r1"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L3-s0.95:r2"}
+{"t":"score","ts":1783228934410,"scores":{"cellIndex":37,"policy":1,"chainLen":3,"subtlety":0.95,"trials":40,"shipRate":0.9,"meanSurvivalDepth":2.75,"meanReviewsUsed":2.85,"catchRateAtPos0":0.05,"catchRateDeep":0}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L5-s0.95","chainLen":5,"subtlety":0.95,"policy":"independent"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:injector","spec":{"id":"independent-L5-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:r0","spec":{"id":"independent-L5-s0.95:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:r1","spec":{"id":"independent-L5-s0.95:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:r2","spec":{"id":"independent-L5-s0.95:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:r3","spec":{"id":"independent-L5-s0.95:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L5-s0.95:r4","spec":{"id":"independent-L5-s0.95:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.927,"attention":1,"complacency":1,"pCatch":0.035,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.905,"attention":0.8,"complacency":1,"pCatch":0.027,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.704,"attention":0.667,"complacency":1,"pCatch":0.018,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.897,"attention":0.571,"complacency":1,"pCatch":0.019,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"independent-L5-s0.95:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.536,"attention":0.5,"complacency":1,"pCatch":0.01,"caught":false}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L5-s0.95","survivalDepth":5,"shipped":true,"chainLen":5}}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:injector"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:r0"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:r1"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:r2"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:r3"}
+{"t":"kill","ts":1783228934410,"agentId":"independent-L5-s0.95:r4"}
+{"t":"score","ts":1783228934410,"scores":{"cellIndex":38,"policy":1,"chainLen":5,"subtlety":0.95,"trials":40,"shipRate":0.95,"meanSurvivalDepth":4.825,"meanReviewsUsed":4.875,"catchRateAtPos0":0.025,"catchRateDeep":0}}
+{"t":"message","ts":1783228934410,"from":"moderator","to":"*","topic":"cell","body":{"cell":"independent-L8-s0.95","chainLen":8,"subtlety":0.95,"policy":"independent"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L8-s0.95:injector","spec":{"id":"independent-L8-s0.95:injector","systemPrompt":"Plant one bug of subtlety 0.95 into the diff. Make it plausible."}}
+{"t":"message","ts":1783228934410,"from":"independent-L8-s0.95:injector","to":"*","topic":"inject","body":{"subtlety":0.95,"kind":"off-by-one / boundary"}}
+{"t":"spawn","ts":1783228934410,"agentId":"independent-L8-s0.95:r0","spec":{"id":"independent-L8-s0.95:r0","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r1","spec":{"id":"independent-L8-s0.95:r1","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r2","spec":{"id":"independent-L8-s0.95:r2","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r3","spec":{"id":"independent-L8-s0.95:r3","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r4","spec":{"id":"independent-L8-s0.95:r4","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r5","spec":{"id":"independent-L8-s0.95:r5","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r6","spec":{"id":"independent-L8-s0.95:r6","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"spawn","ts":1783228934411,"agentId":"independent-L8-s0.95:r7","spec":{"id":"independent-L8-s0.95:r7","systemPrompt":"Review the diff blind. You do NOT know whether anyone else has looked at it."}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r0","to":"*","topic":"review","body":{"pos":0,"competence":0.733,"attention":1,"complacency":1,"pCatch":0.027,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r1","to":"*","topic":"review","body":{"pos":1,"competence":0.732,"attention":0.8,"complacency":1,"pCatch":0.022,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r2","to":"*","topic":"review","body":{"pos":2,"competence":0.471,"attention":0.667,"complacency":1,"pCatch":0.012,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r3","to":"*","topic":"review","body":{"pos":3,"competence":0.881,"attention":0.571,"complacency":1,"pCatch":0.019,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r4","to":"*","topic":"review","body":{"pos":4,"competence":0.707,"attention":0.5,"complacency":1,"pCatch":0.013,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r5","to":"*","topic":"review","body":{"pos":5,"competence":0.628,"attention":0.444,"complacency":1,"pCatch":0.01,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r6","to":"*","topic":"review","body":{"pos":6,"competence":0.529,"attention":0.4,"complacency":1,"pCatch":0.008,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"independent-L8-s0.95:r7","to":"*","topic":"review","body":{"pos":7,"competence":0.901,"attention":0.364,"complacency":1,"pCatch":0.012,"caught":false}}
+{"t":"message","ts":1783228934411,"from":"moderator","to":"*","topic":"verdict","body":{"cell":"independent-L8-s0.95","survivalDepth":8,"shipped":true,"chainLen":8}}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:injector"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r0"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r1"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r2"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r3"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r4"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r5"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r6"}
+{"t":"kill","ts":1783228934411,"agentId":"independent-L8-s0.95:r7"}
+{"t":"score","ts":1783228934411,"scores":{"cellIndex":39,"policy":1,"chainLen":8,"subtlety":0.95,"trials":40,"shipRate":0.9,"meanSurvivalDepth":7.3,"meanReviewsUsed":7.4,"catchRateAtPos0":0.05,"catchRateDeep":0}}
+{"t":"score","ts":1783228934411,"scores":{"cells":40,"trialsPerCell":40,"cheapestSafeSerialSubtle":-1,"cheapestSafeIndepSubtle":-1,"rubberStampPenalty":0.103,"nonMonotoneSerial":2,"nonMonotoneIndep":1}}

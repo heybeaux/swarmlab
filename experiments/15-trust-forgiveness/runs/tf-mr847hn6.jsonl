@@ -1,0 +1,626 @@
+{"t":"message","ts":1783275530514,"from":"moderator","to":"*","topic":"meta","body":{"mode":"sim","trials":50,"seed":"trust-routing-v1","rounds":30,"resetAfterRound":15,"decayWindow":10,"probeBase":4,"probeBackoff":3,"evidenceMargin":3,"workers":["atlas","birch","cedar","mercury","nimbus","quill"],"incapable":"mercury","taskClass":"quota-policy","pCapableTransientFail":0.05,"engramModule":"@openengram/reconciliation (file: dep, branch versioned-facts-anti-entropy, PR #323)","controlModule":"@swarmlab/experiment-14-delegation-decay runTrustTrial(\"engram\") — reused, not forked","conditions":["unforgiving-loud","unforgiving-confident-wrong","decay-loud","decay-confident-wrong","probation-loud","probation-confident-wrong","evidence-loud","evidence-confident-wrong"]}}
+{"t":"message","ts":1783275530516,"from":"moderator","to":"*","topic":"condition","body":{"condition":"unforgiving-loud","arm":"unforgiving","style":"loud"}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:root","spec":{"id":"unforgiving-loud:root","systemPrompt":"Delegation root (unforgiving eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:atlas","spec":{"id":"unforgiving-loud:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:birch","spec":{"id":"unforgiving-loud:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:cedar","spec":{"id":"unforgiving-loud:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:mercury","spec":{"id":"unforgiving-loud:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:nimbus","spec":{"id":"unforgiving-loud:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530517,"agentId":"unforgiving-loud:quill","spec":{"id":"unforgiving-loud:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":1,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:root","to":"unforgiving-loud:atlas","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:atlas","to":"unforgiving-loud:root","topic":"outcome","body":{"round":2,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:root","to":"unforgiving-loud:mercury","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530517,"from":"unforgiving-loud:mercury","to":"unforgiving-loud:root","topic":"outcome","body":{"round":3,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:nimbus","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:nimbus","to":"unforgiving-loud:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:nimbus","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:nimbus","to":"unforgiving-loud:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530518,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530518,"from":"moderator","to":"*","topic":"reset","body":{"condition":"unforgiving-loud","round":16,"arm":"engram","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:nimbus","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:nimbus","to":"unforgiving-loud:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":20,"success":false,"failedAssertion":"quota_cap_set"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:nimbus","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:nimbus","to":"unforgiving-loud:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530519,"from":"unforgiving-loud:root","to":"unforgiving-loud:cedar","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:cedar","to":"unforgiving-loud:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:root","to":"unforgiving-loud:nimbus","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:nimbus","to":"unforgiving-loud:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:root","to":"unforgiving-loud:quill","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:quill","to":"unforgiving-loud:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:root","to":"unforgiving-loud:birch","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530520,"from":"unforgiving-loud:birch","to":"unforgiving-loud:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530520,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"unforgiving-loud","newRoot":"root-prime","arm":"engram","choice":"quill","hadEvidence":true}}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:root"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:atlas"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:birch"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:cedar"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:mercury"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:nimbus"}
+{"t":"kill","ts":1783275530537,"agentId":"unforgiving-loud:quill"}
+{"t":"score","ts":1783275530538,"scores":{"conditionIndex":0,"arm":0,"style":0,"trials":50,"lateSelectionRate":0,"convergenceRound":9,"meanWastedTokens":15,"wastedSlopeLate":0,"postResetSelectionRate":0,"transferAvoidRate":1,"transferEvidenceRate":1,"capableExcludedMean":0.22,"capableRecoveriesMean":0,"recoveryLatencyMean":-1,"incapableLeaksMean":0,"capableBenchedEverMean":0,"probeCountMean":0,"probeTokensMean":0,"probeTokensWastedMean":0,"lateIncapableProbesMean":0,"midProbationAtResetRate":0,"postResetContinuityRate":0,"transferPoolHadIncapableRate":0,"transferReadmittedProbationRate":0,"reconcileAdopted":300,"reconcileHealed":1200,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.26,"selR2":0.1,"selR3":0.1,"selR4":0.14,"selR5":0.06,"selR6":0.04,"selR7":0.1,"selR8":0.12,"selR9":0,"selR10":0.02,"selR11":0.04,"selR12":0,"selR13":0.02,"selR14":0,"selR15":0,"selR16":0,"selR17":0,"selR18":0,"selR19":0,"selR20":0,"selR21":0,"selR22":0,"selR23":0,"selR24":0,"selR25":0,"selR26":0,"selR27":0,"selR28":0,"selR29":0,"selR30":0}}
+{"t":"message","ts":1783275530538,"from":"moderator","to":"*","topic":"condition","body":{"condition":"unforgiving-confident-wrong","arm":"unforgiving","style":"confident-wrong"}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:root","spec":{"id":"unforgiving-confident-wrong:root","systemPrompt":"Delegation root (unforgiving eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:atlas","spec":{"id":"unforgiving-confident-wrong:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:birch","spec":{"id":"unforgiving-confident-wrong:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:cedar","spec":{"id":"unforgiving-confident-wrong:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:mercury","spec":{"id":"unforgiving-confident-wrong:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:nimbus","spec":{"id":"unforgiving-confident-wrong:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530538,"agentId":"unforgiving-confident-wrong:quill","spec":{"id":"unforgiving-confident-wrong:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:mercury","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:mercury","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":1,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:birch","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:birch","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":2,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:cedar","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:cedar","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":3,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:birch","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:birch","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:cedar","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:cedar","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:nimbus","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530538,"from":"unforgiving-confident-wrong:nimbus","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:birch","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:birch","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"moderator","to":"*","topic":"reset","body":{"condition":"unforgiving-confident-wrong","round":16,"arm":"engram","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:cedar","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:cedar","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:birch","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:birch","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:nimbus","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:nimbus","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:cedar","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:cedar","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:nimbus","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:nimbus","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:nimbus","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:nimbus","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:atlas","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:atlas","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530539,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:quill","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530540,"from":"unforgiving-confident-wrong:quill","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530540,"from":"unforgiving-confident-wrong:root","to":"unforgiving-confident-wrong:cedar","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530540,"from":"unforgiving-confident-wrong:cedar","to":"unforgiving-confident-wrong:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530540,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"unforgiving-confident-wrong","newRoot":"root-prime","arm":"engram","choice":"quill","hadEvidence":true}}
+{"t":"kill","ts":1783275530552,"agentId":"unforgiving-confident-wrong:root"}
+{"t":"kill","ts":1783275530552,"agentId":"unforgiving-confident-wrong:atlas"}
+{"t":"kill","ts":1783275530552,"agentId":"unforgiving-confident-wrong:birch"}
+{"t":"kill","ts":1783275530552,"agentId":"unforgiving-confident-wrong:cedar"}
+{"t":"kill","ts":1783275530553,"agentId":"unforgiving-confident-wrong:mercury"}
+{"t":"kill","ts":1783275530553,"agentId":"unforgiving-confident-wrong:nimbus"}
+{"t":"kill","ts":1783275530553,"agentId":"unforgiving-confident-wrong:quill"}
+{"t":"score","ts":1783275530553,"scores":{"conditionIndex":1,"arm":0,"style":1,"trials":50,"lateSelectionRate":0.003,"convergenceRound":11,"meanWastedTokens":30,"wastedSlopeLate":0.083,"postResetSelectionRate":0,"transferAvoidRate":1,"transferEvidenceRate":1,"capableExcludedMean":0.22,"capableRecoveriesMean":0,"recoveryLatencyMean":-1,"incapableLeaksMean":0,"capableBenchedEverMean":0,"probeCountMean":0,"probeTokensMean":0,"probeTokensWastedMean":0,"lateIncapableProbesMean":0,"midProbationAtResetRate":0,"postResetContinuityRate":0,"transferPoolHadIncapableRate":0,"transferReadmittedProbationRate":0,"reconcileAdopted":300,"reconcileHealed":1200,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.16,"selR2":0.22,"selR3":0.18,"selR4":0.2,"selR5":0.08,"selR6":0.1,"selR7":0.06,"selR8":0.02,"selR9":0.02,"selR10":0.06,"selR11":0.04,"selR12":0,"selR13":0,"selR14":0,"selR15":0,"selR16":0,"selR17":0,"selR18":0,"selR19":0,"selR20":0,"selR21":0.04,"selR22":0,"selR23":0,"selR24":0,"selR25":0,"selR26":0,"selR27":0,"selR28":0,"selR29":0,"selR30":0.02}}
+{"t":"message","ts":1783275530553,"from":"moderator","to":"*","topic":"condition","body":{"condition":"decay-loud","arm":"decay","style":"loud"}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:root","spec":{"id":"decay-loud:root","systemPrompt":"Delegation root (decay eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:atlas","spec":{"id":"decay-loud:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:birch","spec":{"id":"decay-loud:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:cedar","spec":{"id":"decay-loud:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:mercury","spec":{"id":"decay-loud:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:nimbus","spec":{"id":"decay-loud:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530553,"agentId":"decay-loud:quill","spec":{"id":"decay-loud:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530553,"from":"decay-loud:root","to":"decay-loud:quill","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530553,"from":"decay-loud:quill","to":"decay-loud:root","topic":"outcome","body":{"round":1,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530553,"from":"decay-loud:root","to":"decay-loud:atlas","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530553,"from":"decay-loud:atlas","to":"decay-loud:root","topic":"outcome","body":{"round":2,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:birch","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:birch","to":"decay-loud:root","topic":"outcome","body":{"round":3,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:mercury","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:mercury","to":"decay-loud:root","topic":"outcome","body":{"round":5,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:nimbus","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:nimbus","to":"decay-loud:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:birch","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:birch","to":"decay-loud:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:nimbus","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:nimbus","to":"decay-loud:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:birch","to":"decay-loud:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:root","to":"decay-loud:quill","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530554,"from":"decay-loud:quill","to":"decay-loud:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"moderator","to":"*","topic":"reset","body":{"condition":"decay-loud","round":16,"arm":"decay","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:birch","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:birch","to":"decay-loud:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:quill","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:quill","to":"decay-loud:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:quill","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:quill","to":"decay-loud:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:atlas","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:atlas","to":"decay-loud:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:quill","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:quill","to":"decay-loud:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:nimbus","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:nimbus","to":"decay-loud:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:nimbus","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:nimbus","to":"decay-loud:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:birch","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:birch","to":"decay-loud:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:atlas","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:atlas","to":"decay-loud:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:atlas","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:atlas","to":"decay-loud:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:nimbus","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:nimbus","to":"decay-loud:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:root","to":"decay-loud:mercury","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530555,"from":"decay-loud:mercury","to":"decay-loud:root","topic":"outcome","body":{"round":29,"success":false,"failedAssertion":"quota_cap_set"}}
+{"t":"message","ts":1783275530556,"from":"decay-loud:root","to":"decay-loud:cedar","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530556,"from":"decay-loud:cedar","to":"decay-loud:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530556,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"decay-loud","newRoot":"root-prime","arm":"decay","choice":"atlas","hadEvidence":true,"poolHadIncapable":false}}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:root"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:atlas"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:birch"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:cedar"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:mercury"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:nimbus"}
+{"t":"kill","ts":1783275530588,"agentId":"decay-loud:quill"}
+{"t":"score","ts":1783275530588,"scores":{"conditionIndex":2,"arm":1,"style":0,"trials":50,"lateSelectionRate":0.077,"convergenceRound":-1,"meanWastedTokens":32.7,"wastedSlopeLate":1.15,"postResetSelectionRate":0.06,"transferAvoidRate":0.9,"transferEvidenceRate":0.98,"capableExcludedMean":0,"capableRecoveriesMean":0.2,"recoveryLatencyMean":9,"incapableLeaksMean":1.52,"capableBenchedEverMean":0.2,"probeCountMean":0,"probeTokensMean":0,"probeTokensWastedMean":0,"lateIncapableProbesMean":0,"midProbationAtResetRate":0,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0.36,"transferReadmittedProbationRate":0,"reconcileAdopted":299,"reconcileHealed":1201,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.1,"selR2":0.22,"selR3":0.08,"selR4":0.16,"selR5":0.1,"selR6":0.08,"selR7":0.08,"selR8":0.04,"selR9":0.04,"selR10":0,"selR11":0.04,"selR12":0.04,"selR13":0.06,"selR14":0.08,"selR15":0.04,"selR16":0.06,"selR17":0.12,"selR18":0.1,"selR19":0.04,"selR20":0.04,"selR21":0.02,"selR22":0.04,"selR23":0.08,"selR24":0.06,"selR25":0.06,"selR26":0.08,"selR27":0.08,"selR28":0.08,"selR29":0.08,"selR30":0.08}}
+{"t":"message","ts":1783275530588,"from":"moderator","to":"*","topic":"condition","body":{"condition":"decay-confident-wrong","arm":"decay","style":"confident-wrong"}}
+{"t":"spawn","ts":1783275530588,"agentId":"decay-confident-wrong:root","spec":{"id":"decay-confident-wrong:root","systemPrompt":"Delegation root (decay eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:atlas","spec":{"id":"decay-confident-wrong:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:birch","spec":{"id":"decay-confident-wrong:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:cedar","spec":{"id":"decay-confident-wrong:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:mercury","spec":{"id":"decay-confident-wrong:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:nimbus","spec":{"id":"decay-confident-wrong:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530589,"agentId":"decay-confident-wrong:quill","spec":{"id":"decay-confident-wrong:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:cedar","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:cedar","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":1,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:quill","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:quill","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":2,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:mercury","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:mercury","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":3,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:cedar","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:cedar","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530589,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:cedar","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:cedar","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"moderator","to":"*","topic":"reset","body":{"condition":"decay-confident-wrong","round":16,"arm":"decay","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":16,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:mercury","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:mercury","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":18,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530590,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:quill","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:quill","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:atlas","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:atlas","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:quill","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:quill","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":25,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:quill","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:quill","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:birch","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:birch","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:nimbus","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:nimbus","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530591,"from":"decay-confident-wrong:root","to":"decay-confident-wrong:cedar","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530592,"from":"decay-confident-wrong:cedar","to":"decay-confident-wrong:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530592,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"decay-confident-wrong","newRoot":"root-prime","arm":"decay","choice":"nimbus","hadEvidence":true,"poolHadIncapable":true}}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:root"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:atlas"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:birch"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:cedar"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:mercury"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:nimbus"}
+{"t":"kill","ts":1783275530621,"agentId":"decay-confident-wrong:quill"}
+{"t":"score","ts":1783275530622,"scores":{"conditionIndex":3,"arm":1,"style":1,"trials":50,"lateSelectionRate":0.073,"convergenceRound":-1,"meanWastedTokens":64.5,"wastedSlopeLate":1.833,"postResetSelectionRate":0.1,"transferAvoidRate":0.96,"transferEvidenceRate":1,"capableExcludedMean":0,"capableRecoveriesMean":0.26,"recoveryLatencyMean":8.462,"incapableLeaksMean":1.52,"capableBenchedEverMean":0.24,"probeCountMean":0,"probeTokensMean":0,"probeTokensWastedMean":0,"lateIncapableProbesMean":0,"midProbationAtResetRate":0,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0.34,"transferReadmittedProbationRate":0,"reconcileAdopted":298,"reconcileHealed":1202,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.16,"selR2":0.12,"selR3":0.1,"selR4":0.08,"selR5":0.16,"selR6":0.08,"selR7":0.06,"selR8":0.06,"selR9":0.02,"selR10":0.02,"selR11":0.06,"selR12":0.1,"selR13":0.08,"selR14":0.08,"selR15":0.16,"selR16":0.1,"selR17":0.12,"selR18":0.06,"selR19":0.06,"selR20":0.1,"selR21":0.08,"selR22":0.12,"selR23":0.08,"selR24":0.08,"selR25":0.04,"selR26":0.06,"selR27":0.08,"selR28":0.12,"selR29":0.08,"selR30":0.06}}
+{"t":"message","ts":1783275530622,"from":"moderator","to":"*","topic":"condition","body":{"condition":"probation-loud","arm":"probation","style":"loud"}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:root","spec":{"id":"probation-loud:root","systemPrompt":"Delegation root (probation eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:atlas","spec":{"id":"probation-loud:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:birch","spec":{"id":"probation-loud:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:cedar","spec":{"id":"probation-loud:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:mercury","spec":{"id":"probation-loud:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:nimbus","spec":{"id":"probation-loud:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530622,"agentId":"probation-loud:quill","spec":{"id":"probation-loud:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":1,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":2,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:mercury","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:mercury","to":"probation-loud:root","topic":"outcome","body":{"round":3,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:birch","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:birch","to":"probation-loud:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530622,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:mercury","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:mercury","to":"probation-loud:root","topic":"outcome","body":{"round":8,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"moderator","to":"*","topic":"reset","body":{"condition":"probation-loud","round":16,"arm":"probation","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530623,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:mercury","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:mercury","to":"probation-loud:root","topic":"outcome","body":{"round":20,"success":false,"failedAssertion":"quota_cap_set"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:root","to":"probation-loud:atlas","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530624,"from":"probation-loud:atlas","to":"probation-loud:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:root","to":"probation-loud:nimbus","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:nimbus","to":"probation-loud:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:root","to":"probation-loud:birch","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:birch","to":"probation-loud:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:root","to":"probation-loud:cedar","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:cedar","to":"probation-loud:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:root","to":"probation-loud:quill","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530625,"from":"probation-loud:quill","to":"probation-loud:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530625,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"probation-loud","newRoot":"root-prime","arm":"probation","choice":"atlas","hadEvidence":true,"poolHadIncapable":false}}
+{"t":"kill","ts":1783275530659,"agentId":"probation-loud:root"}
+{"t":"kill","ts":1783275530659,"agentId":"probation-loud:atlas"}
+{"t":"kill","ts":1783275530659,"agentId":"probation-loud:birch"}
+{"t":"kill","ts":1783275530659,"agentId":"probation-loud:cedar"}
+{"t":"kill","ts":1783275530659,"agentId":"probation-loud:mercury"}
+{"t":"kill","ts":1783275530660,"agentId":"probation-loud:nimbus"}
+{"t":"kill","ts":1783275530660,"agentId":"probation-loud:quill"}
+{"t":"score","ts":1783275530660,"scores":{"conditionIndex":4,"arm":2,"style":0,"trials":50,"lateSelectionRate":0.03,"convergenceRound":-1,"meanWastedTokens":44.1,"wastedSlopeLate":0.45,"postResetSelectionRate":0.04,"transferAvoidRate":1,"transferEvidenceRate":1,"capableExcludedMean":0.02,"capableRecoveriesMean":0.26,"recoveryLatencyMean":5,"incapableLeaksMean":0,"capableBenchedEverMean":0.26,"probeCountMean":2.24,"probeTokensMean":33.6,"probeTokensWastedMean":29.4,"lateIncapableProbesMean":0.18,"midProbationAtResetRate":0.94,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0,"transferReadmittedProbationRate":0,"reconcileAdopted":361,"reconcileHealed":1328,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.26,"selR2":0.12,"selR3":0.12,"selR4":0.02,"selR5":0.08,"selR6":0.34,"selR7":0.2,"selR8":0.16,"selR9":0.06,"selR10":0.1,"selR11":0.12,"selR12":0.1,"selR13":0.06,"selR14":0.04,"selR15":0.06,"selR16":0.04,"selR17":0.02,"selR18":0.26,"selR19":0.16,"selR20":0.16,"selR21":0.02,"selR22":0.08,"selR23":0.08,"selR24":0.1,"selR25":0.04,"selR26":0.04,"selR27":0,"selR28":0.06,"selR29":0.02,"selR30":0.02}}
+{"t":"message","ts":1783275530660,"from":"moderator","to":"*","topic":"condition","body":{"condition":"probation-confident-wrong","arm":"probation","style":"confident-wrong"}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:root","spec":{"id":"probation-confident-wrong:root","systemPrompt":"Delegation root (probation eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:atlas","spec":{"id":"probation-confident-wrong:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:birch","spec":{"id":"probation-confident-wrong:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:cedar","spec":{"id":"probation-confident-wrong:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:mercury","spec":{"id":"probation-confident-wrong:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:nimbus","spec":{"id":"probation-confident-wrong:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530660,"agentId":"probation-confident-wrong:quill","spec":{"id":"probation-confident-wrong:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:mercury","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:mercury","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":1,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":2,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:atlas","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:atlas","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":3,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:cedar","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:cedar","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":5,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:cedar","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530660,"from":"probation-confident-wrong:cedar","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:mercury","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:mercury","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":7,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:birch","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:birch","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:cedar","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:cedar","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:birch","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:birch","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:birch","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:atlas","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:atlas","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"moderator","to":"*","topic":"reset","body":{"condition":"probation-confident-wrong","round":16,"arm":"probation","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:atlas","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:atlas","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:atlas","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:atlas","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:mercury","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530661,"from":"probation-confident-wrong:mercury","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":19,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:birch","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:birch","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:cedar","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:cedar","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":25,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:cedar","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:cedar","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:quill","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:quill","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:atlas","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:atlas","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:birch","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:birch","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:root","to":"probation-confident-wrong:nimbus","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530662,"from":"probation-confident-wrong:nimbus","to":"probation-confident-wrong:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530662,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"probation-confident-wrong","newRoot":"root-prime","arm":"probation","choice":"birch","hadEvidence":true,"poolHadIncapable":false}}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:root"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:atlas"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:birch"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:cedar"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:mercury"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:nimbus"}
+{"t":"kill","ts":1783275530690,"agentId":"probation-confident-wrong:quill"}
+{"t":"score","ts":1783275530690,"scores":{"conditionIndex":5,"arm":2,"style":1,"trials":50,"lateSelectionRate":0.057,"convergenceRound":-1,"meanWastedTokens":74.5,"wastedSlopeLate":1.417,"postResetSelectionRate":0.1,"transferAvoidRate":1,"transferEvidenceRate":1,"capableExcludedMean":0.02,"capableRecoveriesMean":0.22,"recoveryLatencyMean":5,"incapableLeaksMean":0,"capableBenchedEverMean":0.2,"probeCountMean":2.1,"probeTokensMean":50.3,"probeTokensWastedMean":47,"lateIncapableProbesMean":0.32,"midProbationAtResetRate":0.9,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0,"transferReadmittedProbationRate":0,"reconcileAdopted":360,"reconcileHealed":1318,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.18,"selR2":0.1,"selR3":0.12,"selR4":0.1,"selR5":0.1,"selR6":0.08,"selR7":0.22,"selR8":0.16,"selR9":0.16,"selR10":0.18,"selR11":0.14,"selR12":0.1,"selR13":0.04,"selR14":0.06,"selR15":0.02,"selR16":0.1,"selR17":0.02,"selR18":0.04,"selR19":0.2,"selR20":0.1,"selR21":0.14,"selR22":0.08,"selR23":0.1,"selR24":0.1,"selR25":0.06,"selR26":0.06,"selR27":0.06,"selR28":0.12,"selR29":0.02,"selR30":0.02}}
+{"t":"message","ts":1783275530690,"from":"moderator","to":"*","topic":"condition","body":{"condition":"evidence-loud","arm":"evidence","style":"loud"}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:root","spec":{"id":"evidence-loud:root","systemPrompt":"Delegation root (evidence eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:atlas","spec":{"id":"evidence-loud:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:birch","spec":{"id":"evidence-loud:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:cedar","spec":{"id":"evidence-loud:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:mercury","spec":{"id":"evidence-loud:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:nimbus","spec":{"id":"evidence-loud:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530690,"agentId":"evidence-loud:quill","spec":{"id":"evidence-loud:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530690,"from":"evidence-loud:root","to":"evidence-loud:mercury","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530690,"from":"evidence-loud:mercury","to":"evidence-loud:root","topic":"outcome","body":{"round":1,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530690,"from":"evidence-loud:root","to":"evidence-loud:birch","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530690,"from":"evidence-loud:birch","to":"evidence-loud:root","topic":"outcome","body":{"round":2,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":3,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:mercury","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:mercury","to":"evidence-loud:root","topic":"outcome","body":{"round":6,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:birch","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:birch","to":"evidence-loud:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":11,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:birch","to":"evidence-loud:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530691,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"moderator","to":"*","topic":"reset","body":{"condition":"evidence-loud","round":16,"arm":"evidence","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:birch","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:birch","to":"evidence-loud:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":17,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:mercury","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:mercury","to":"evidence-loud:root","topic":"outcome","body":{"round":18,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:birch","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:birch","to":"evidence-loud:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:cedar","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:cedar","to":"evidence-loud:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:cedar","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:cedar","to":"evidence-loud:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:nimbus","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:nimbus","to":"evidence-loud:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530692,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:root","to":"evidence-loud:cedar","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:cedar","to":"evidence-loud:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:root","to":"evidence-loud:atlas","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:atlas","to":"evidence-loud:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":28,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":29,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:root","to":"evidence-loud:quill","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530693,"from":"evidence-loud:quill","to":"evidence-loud:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530693,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"evidence-loud","newRoot":"root-prime","arm":"evidence","choice":"nimbus","hadEvidence":true,"poolHadIncapable":false}}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:root"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:atlas"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:birch"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:cedar"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:mercury"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:nimbus"}
+{"t":"kill","ts":1783275530721,"agentId":"evidence-loud:quill"}
+{"t":"score","ts":1783275530721,"scores":{"conditionIndex":6,"arm":3,"style":0,"trials":50,"lateSelectionRate":0.023,"convergenceRound":26,"meanWastedTokens":43.8,"wastedSlopeLate":0.35,"postResetSelectionRate":0.02,"transferAvoidRate":1,"transferEvidenceRate":0.98,"capableExcludedMean":0.02,"capableRecoveriesMean":0.28,"recoveryLatencyMean":5,"incapableLeaksMean":0,"capableBenchedEverMean":0.24,"probeCountMean":2.26,"probeTokensMean":33.9,"probeTokensWastedMean":29.4,"lateIncapableProbesMean":0.14,"midProbationAtResetRate":0.96,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0.02,"transferReadmittedProbationRate":0,"reconcileAdopted":359,"reconcileHealed":1332,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.24,"selR2":0.2,"selR3":0.08,"selR4":0.02,"selR5":0.14,"selR6":0.3,"selR7":0.28,"selR8":0.14,"selR9":0.06,"selR10":0.14,"selR11":0.08,"selR12":0.1,"selR13":0.06,"selR14":0.04,"selR15":0.02,"selR16":0.02,"selR17":0.02,"selR18":0.24,"selR19":0.2,"selR20":0.1,"selR21":0.02,"selR22":0.14,"selR23":0.06,"selR24":0.08,"selR25":0.06,"selR26":0.04,"selR27":0,"selR28":0.02,"selR29":0.02,"selR30":0}}
+{"t":"message","ts":1783275530721,"from":"moderator","to":"*","topic":"condition","body":{"condition":"evidence-confident-wrong","arm":"evidence","style":"confident-wrong"}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:root","spec":{"id":"evidence-confident-wrong:root","systemPrompt":"Delegation root (evidence eligibility policy). Choose one worker per round for quota-policy tasks. Worker roster: atlas — Infra config specialist; strong on quota and rate policy work. | birch — Backend generalist; careful, verbose, reliable on config tasks. | cedar — Platform engineer; fast turnaround on policy and schema briefs. | mercury — Systems generalist; fast turnaround on config work of any class. | nimbus — SRE-flavored worker; conservative, checks its own output twice. | quill — Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:atlas","spec":{"id":"evidence-confident-wrong:atlas","systemPrompt":"Worker atlas: Infra config specialist; strong on quota and rate policy work."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:birch","spec":{"id":"evidence-confident-wrong:birch","systemPrompt":"Worker birch: Backend generalist; careful, verbose, reliable on config tasks."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:cedar","spec":{"id":"evidence-confident-wrong:cedar","systemPrompt":"Worker cedar: Platform engineer; fast turnaround on policy and schema briefs."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:mercury","spec":{"id":"evidence-confident-wrong:mercury","systemPrompt":"Worker mercury: Systems generalist; fast turnaround on config work of any class."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:nimbus","spec":{"id":"evidence-confident-wrong:nimbus","systemPrompt":"Worker nimbus: SRE-flavored worker; conservative, checks its own output twice."}}
+{"t":"spawn","ts":1783275530721,"agentId":"evidence-confident-wrong:quill","spec":{"id":"evidence-confident-wrong:quill","systemPrompt":"Worker quill: Config-generation specialist; likes crisp machine-checkable briefs."}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:nimbus","topic":"delegate","body":{"round":1,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:nimbus","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":1,"success":false,"failedAssertion":"policy_scope_bound"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:quill","topic":"delegate","body":{"round":2,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:quill","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":2,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":3,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":3,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:quill","topic":"delegate","body":{"round":4,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:quill","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":4,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":5,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":5,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:nimbus","topic":"delegate","body":{"round":6,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:nimbus","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":6,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":7,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":7,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":8,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":8,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":9,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":9,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:nimbus","topic":"delegate","body":{"round":10,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:nimbus","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":10,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:mercury","topic":"delegate","body":{"round":11,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:mercury","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":11,"success":false,"failedAssertion":"quota_cap_set"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:nimbus","topic":"delegate","body":{"round":12,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:nimbus","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":12,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:birch","topic":"delegate","body":{"round":13,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:birch","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":13,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":14,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530722,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":14,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:birch","topic":"delegate","body":{"round":15,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:birch","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":15,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"moderator","to":"*","topic":"reset","body":{"condition":"evidence-confident-wrong","round":16,"arm":"evidence","note":"root killed and restarted"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:quill","topic":"delegate","body":{"round":16,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:quill","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":16,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:mercury","topic":"delegate","body":{"round":17,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:mercury","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":17,"success":false,"failedAssertion":"burst_ratio_valid"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:quill","topic":"delegate","body":{"round":18,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:quill","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":18,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":19,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":19,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":20,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":20,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:birch","topic":"delegate","body":{"round":21,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:birch","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":21,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:nimbus","topic":"delegate","body":{"round":22,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:nimbus","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":22,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:birch","topic":"delegate","body":{"round":23,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:birch","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":23,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":24,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":24,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":25,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":25,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":26,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":26,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:birch","topic":"delegate","body":{"round":27,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:birch","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":27,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:atlas","topic":"delegate","body":{"round":28,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:atlas","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":28,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:mercury","topic":"delegate","body":{"round":29,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:mercury","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":29,"success":false,"failedAssertion":"ttl_consistent"}}
+{"t":"message","ts":1783275530723,"from":"evidence-confident-wrong:root","to":"evidence-confident-wrong:cedar","topic":"delegate","body":{"round":30,"taskClass":"quota-policy"}}
+{"t":"message","ts":1783275530724,"from":"evidence-confident-wrong:cedar","to":"evidence-confident-wrong:root","topic":"outcome","body":{"round":30,"success":true,"failedAssertion":null}}
+{"t":"message","ts":1783275530724,"from":"moderator","to":"*","topic":"transfer","body":{"condition":"evidence-confident-wrong","newRoot":"root-prime","arm":"evidence","choice":"cedar","hadEvidence":true,"poolHadIncapable":false}}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:root"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:atlas"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:birch"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:cedar"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:mercury"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:nimbus"}
+{"t":"kill","ts":1783275530750,"agentId":"evidence-confident-wrong:quill"}
+{"t":"score","ts":1783275530750,"scores":{"conditionIndex":7,"arm":3,"style":1,"trials":50,"lateSelectionRate":0.053,"convergenceRound":-1,"meanWastedTokens":75.5,"wastedSlopeLate":1.333,"postResetSelectionRate":0.08,"transferAvoidRate":1,"transferEvidenceRate":1,"capableExcludedMean":0.06,"capableRecoveriesMean":0.24,"recoveryLatencyMean":5.083,"incapableLeaksMean":0,"capableBenchedEverMean":0.28,"probeCountMean":2.16,"probeTokensMean":51,"probeTokensWastedMean":47.4,"lateIncapableProbesMean":0.32,"midProbationAtResetRate":0.88,"postResetContinuityRate":1,"transferPoolHadIncapableRate":0,"transferReadmittedProbationRate":0,"reconcileAdopted":364,"reconcileHealed":1321,"reconcileKept":0,"reconcileRejectedCorrupt":0,"selR1":0.18,"selR2":0.04,"selR3":0.12,"selR4":0.18,"selR5":0.06,"selR6":0.06,"selR7":0.24,"selR8":0.06,"selR9":0.18,"selR10":0.2,"selR11":0.12,"selR12":0.1,"selR13":0.08,"selR14":0.02,"selR15":0.06,"selR16":0.08,"selR17":0.08,"selR18":0.06,"selR19":0.2,"selR20":0.06,"selR21":0.1,"selR22":0.24,"selR23":0.08,"selR24":0.1,"selR25":0.04,"selR26":0.04,"selR27":0.06,"selR28":0.06,"selR29":0.08,"selR30":0.04}}
+{"t":"score","ts":1783275530750,"scores":{"conditions":8,"trials":50,"reproOk":1,"ufLoudLate":0,"ufLoudCapEx":0.22,"ufLoudRecov":0,"ufLoudLeaks":0,"ufLoudTransfer":1,"ufLoudWasted":15,"ufLoudProbeTok":0,"ufCWLate":0.003,"ufCWCapEx":0.22,"ufCWRecov":0,"ufCWLeaks":0,"ufCWTransfer":1,"ufCWWasted":30,"ufCWProbeTok":0,"dcLoudLate":0.077,"dcLoudCapEx":0,"dcLoudRecov":0.2,"dcLoudLeaks":1.52,"dcLoudTransfer":0.9,"dcLoudWasted":32.7,"dcLoudProbeTok":0,"dcCWLate":0.073,"dcCWCapEx":0,"dcCWRecov":0.26,"dcCWLeaks":1.52,"dcCWTransfer":0.96,"dcCWWasted":64.5,"dcCWProbeTok":0,"pbLoudLate":0.03,"pbLoudCapEx":0.02,"pbLoudRecov":0.26,"pbLoudLeaks":0,"pbLoudTransfer":1,"pbLoudWasted":44.1,"pbLoudProbeTok":33.6,"pbCWLate":0.057,"pbCWCapEx":0.02,"pbCWRecov":0.22,"pbCWLeaks":0,"pbCWTransfer":1,"pbCWWasted":74.5,"pbCWProbeTok":50.3,"evLoudLate":0.023,"evLoudCapEx":0.02,"evLoudRecov":0.28,"evLoudLeaks":0,"evLoudTransfer":1,"evLoudWasted":43.8,"evLoudProbeTok":33.9,"evCWLate":0.053,"evCWCapEx":0.06,"evCWRecov":0.24,"evCWLeaks":0,"evCWTransfer":1,"evCWWasted":75.5,"evCWProbeTok":51}}

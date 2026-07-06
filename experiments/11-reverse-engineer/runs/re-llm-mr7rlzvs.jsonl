@@ -1,0 +1,7 @@
+{"t":"message","ts":1783254372328,"from":"oracleA","to":"*","topic":"meta","body":{"mode":"llm","model":"claude-haiku-4-5-20251001","complexity":"stateful","budget":2,"maxQty":40}}
+{"t":"spawn","ts":1783254372329,"agentId":"proberB","spec":{"id":"proberB","model":"claude-haiku-4-5-20251001","systemPrompt":"Reverse engineer"}}
+{"t":"message","ts":1783254382023,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":2,"price":306}}
+{"t":"message","ts":1783254382024,"from":"proberB","to":"oracleA","topic":"probe","body":{"qty":1,"price":186}}
+{"t":"message","ts":1783254393728,"from":"oracleA","to":"*","topic":"verdict","body":{"agreement":0.125,"happyPathAgreement":0.208,"happyPathWithin5pct":0.208,"edgeCaseAgreement":0,"probesUsed":2}}
+{"t":"score","ts":1783254393728,"scores":{"complexity":2,"budget":2,"probesUsed":2,"agreement":0.125,"happyPathAgreement":0.208,"happyPathWithin5pct":0.208,"edgeCaseAgreement":0,"predsReturned":40,"testCases":40}}
+{"t":"kill","ts":1783254393729,"agentId":"proberB"}

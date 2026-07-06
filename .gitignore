@@ -1,5 +1,4 @@
 node_modules/
 dist/
 *.tsbuildinfo
-experiments/*/runs/
 .openclaw/

@@ -1,0 +1,782 @@
+{"t":"message","ts":1783233856369,"from":"moderator","to":"*","topic":"meta","body":{"mode":"sim","trials":40,"seed":"audit-forgery-v1","attacks":["insert","drop","reorder","backdate","tamper-payload"],"keyStates":[false,true],"stitchStates":[false,true],"verifiers":["sig-only","hash+sig","chain+sig","full"],"authorCount":4,"eventCount":24}}
+{"t":"message","ts":1783233856371,"from":"moderator","to":"*","topic":"cell","body":{"cell":"insert-outsider-naive","attack":"insert","keyCompromised":false,"stitch":false}}
+{"t":"spawn","ts":1783233856371,"agentId":"insert-outsider-naive:author0","spec":{"id":"insert-outsider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856371,"agentId":"insert-outsider-naive:author1","spec":{"id":"insert-outsider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856371,"agentId":"insert-outsider-naive:author2","spec":{"id":"insert-outsider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856371,"agentId":"insert-outsider-naive:author3","spec":{"id":"insert-outsider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":194520301,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2340054604,"prev":444839637,"ts":1004}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2474275556,"prev":2131406786,"ts":1007}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":528616205,"prev":546840223,"ts":1011}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360692920,"prev":1460200099,"ts":1014}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":260027206,"prev":2869191582,"ts":1016}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":460519991,"prev":2344444992,"ts":1018}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":342929563,"prev":3475147659,"ts":1021}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":191930992,"prev":3169803796,"ts":1025}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":3069838561,"ts":1029}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2658535175,"prev":2574395306,"ts":1030}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2557869461,"prev":265781376,"ts":1031}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author3","to":"*","topic":"append","body":{"seq":12,"author":3,"h":2607363675,"prev":3284990381,"ts":1035}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":3942600842,"ts":1037}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":229594420,"prev":1755696086,"ts":1038}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":15,"author":1,"h":112151087,"prev":916989589,"ts":1039}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":229741515,"prev":3030650129,"ts":1042}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4155748288,"prev":4107763266,"ts":1046}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":3327279279,"ts":1050}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2109129033,"prev":2216283258,"ts":1052}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":20,"author":2,"h":2007330486,"prev":1600999840,"ts":1053}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2124773819,"prev":1757579607,"ts":1056}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2108143295,"prev":1329925330,"ts":1058}}
+{"t":"message","ts":1783233856372,"from":"insert-outsider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2192178485,"prev":945699510,"ts":1062}}
+{"t":"message","ts":1783233856372,"from":"adversary","to":"*","topic":"attack","body":{"attack":"insert","stitch":false,"keyCompromised":false,"targetSeq":5}}
+{"t":"message","ts":1783233856372,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856372,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856373,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856373,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856375,"agentId":"insert-outsider-naive:author0"}
+{"t":"kill","ts":1783233856375,"agentId":"insert-outsider-naive:author1"}
+{"t":"kill","ts":1783233856375,"agentId":"insert-outsider-naive:author2"}
+{"t":"kill","ts":1783233856375,"agentId":"insert-outsider-naive:author3"}
+{"t":"score","ts":1783233856375,"scores":{"cellIndex":0,"attackCode":0,"keyCompromised":0,"stitch":0,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856375,"from":"moderator","to":"*","topic":"cell","body":{"cell":"insert-outsider-stitched","attack":"insert","keyCompromised":false,"stitch":true}}
+{"t":"spawn","ts":1783233856375,"agentId":"insert-outsider-stitched:author0","spec":{"id":"insert-outsider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856375,"agentId":"insert-outsider-stitched:author1","spec":{"id":"insert-outsider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856375,"agentId":"insert-outsider-stitched:author2","spec":{"id":"insert-outsider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856375,"agentId":"insert-outsider-stitched:author3","spec":{"id":"insert-outsider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":177742682,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2340054604,"prev":2824464006,"ts":1008}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":737531442,"ts":1009}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":478283348,"prev":3960070901,"ts":1011}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":411025777,"prev":1479137688,"ts":1014}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":5,"author":0,"h":478136253,"prev":2475028770,"ts":1017}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":477297610,"prev":1664970684,"ts":1021}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":326151944,"prev":2182029568,"ts":1025}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":208708611,"prev":2889290456,"ts":1028}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2289574652,"prev":1675946918,"ts":1030}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2658535175,"prev":3079307952,"ts":1031}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2557869461,"prev":1575325285,"ts":1035}}
+{"t":"message","ts":1783233856375,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":12,"author":3,"h":2640918913,"prev":2738896971,"ts":1038}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2623994199,"prev":3177685379,"ts":1039}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2489773247,"prev":1043228741,"ts":1042}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":196039182,"prev":2340936530,"ts":1043}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":296851991,"prev":3890623463,"ts":1045}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":179408658,"prev":1882838541,"ts":1048}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":4239636383,"prev":3617924861,"ts":1050}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":19,"author":0,"h":2159461890,"prev":1587203505,"ts":1053}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":2024108105,"prev":82962693,"ts":1057}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":3658278084,"ts":1058}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2141698533,"prev":662694147,"ts":1062}}
+{"t":"message","ts":1783233856376,"from":"insert-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2108290390,"prev":1022292823,"ts":1063}}
+{"t":"message","ts":1783233856376,"from":"adversary","to":"*","topic":"attack","body":{"attack":"insert","stitch":true,"keyCompromised":false,"targetSeq":6}}
+{"t":"message","ts":1783233856376,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856376,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856376,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856376,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"insert","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856378,"agentId":"insert-outsider-stitched:author0"}
+{"t":"kill","ts":1783233856378,"agentId":"insert-outsider-stitched:author1"}
+{"t":"kill","ts":1783233856378,"agentId":"insert-outsider-stitched:author2"}
+{"t":"kill","ts":1783233856378,"agentId":"insert-outsider-stitched:author3"}
+{"t":"score","ts":1783233856378,"scores":{"cellIndex":1,"attackCode":0,"keyCompromised":0,"stitch":1,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856378,"from":"moderator","to":"*","topic":"cell","body":{"cell":"insert-insider-naive","attack":"insert","keyCompromised":true,"stitch":false}}
+{"t":"spawn","ts":1783233856378,"agentId":"insert-insider-naive:author0","spec":{"id":"insert-insider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856378,"agentId":"insert-insider-naive:author1","spec":{"id":"insert-insider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856378,"agentId":"insert-insider-naive:author2","spec":{"id":"insert-insider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856378,"agentId":"insert-insider-naive:author3","spec":{"id":"insert-insider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":160965063,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":26744111,"prev":2733361894,"ts":1008}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2474275556,"prev":2198057278,"ts":1010}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":411172872,"prev":2485559940,"ts":1014}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360692920,"prev":1913197084,"ts":1016}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":260027206,"prev":4287370814,"ts":1020}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":376631896,"prev":1593902409,"ts":1022}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":1947763571,"ts":1025}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":8,"author":2,"h":191930992,"prev":3761547381,"ts":1029}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":3753466716,"ts":1032}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2641757556,"prev":2935541257,"ts":1034}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2591424699,"prev":2840815818,"ts":1036}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":12,"author":1,"h":2607363675,"prev":4028845777,"ts":1040}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":13,"author":2,"h":2556883723,"prev":3681704839,"ts":1041}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2472995628,"prev":2891208886,"ts":1045}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":179261563,"prev":951664803,"ts":1049}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":280074372,"prev":1112797963,"ts":1051}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author0","to":"*","topic":"append","body":{"seq":17,"author":0,"h":4155748288,"prev":3592829456,"ts":1052}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":3593649005,"ts":1054}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2092351414,"prev":2153920337,"ts":1056}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":4062331351,"ts":1057}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2124773819,"prev":2785842906,"ts":1058}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2208809009,"prev":1278380253,"ts":1061}}
+{"t":"message","ts":1783233856378,"from":"insert-insider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2125068009,"prev":706130743,"ts":1064}}
+{"t":"message","ts":1783233856378,"from":"adversary","to":"*","topic":"attack","body":{"attack":"insert","stitch":false,"keyCompromised":true,"targetSeq":7}}
+{"t":"message","ts":1783233856378,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"insert","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856379,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"insert","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856379,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"insert","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856379,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"insert","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856380,"agentId":"insert-insider-naive:author0"}
+{"t":"kill","ts":1783233856380,"agentId":"insert-insider-naive:author1"}
+{"t":"kill","ts":1783233856380,"agentId":"insert-insider-naive:author2"}
+{"t":"kill","ts":1783233856380,"agentId":"insert-insider-naive:author3"}
+{"t":"score","ts":1783233856380,"scores":{"cellIndex":2,"attackCode":0,"keyCompromised":1,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856380,"from":"moderator","to":"*","topic":"cell","body":{"cell":"insert-insider-stitched","attack":"insert","keyCompromised":true,"stitch":true}}
+{"t":"spawn","ts":1783233856380,"agentId":"insert-insider-stitched:author0","spec":{"id":"insert-insider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856380,"agentId":"insert-insider-stitched:author1","spec":{"id":"insert-insider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856381,"agentId":"insert-insider-stitched:author2","spec":{"id":"insert-insider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856381,"agentId":"insert-insider-stitched:author3","spec":{"id":"insert-insider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":93854587,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2356832223,"prev":1324228215,"ts":1007}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":2605081880,"ts":1008}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":511838586,"prev":2635932191,"ts":1012}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":3431505138,"ts":1015}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":444581015,"prev":648706771,"ts":1018}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":494075229,"prev":3283590944,"ts":1019}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":342929563,"prev":4215306503,"ts":1023}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":208708611,"prev":3812896474,"ts":1024}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2289574652,"prev":3495361275,"ts":1028}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2641757556,"prev":3994987727,"ts":1029}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2691251770,"prev":2095591268,"ts":1031}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2590586056,"prev":4254666264,"ts":1034}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2623994199,"prev":1625410316,"ts":1038}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":246372039,"prev":2302192428,"ts":1040}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":179261563,"prev":2724121630,"ts":1041}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":246519134,"prev":2129495539,"ts":1042}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4189303526,"prev":3431790363,"ts":1043}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":2142684271,"prev":2063445853,"ts":1047}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2092351414,"prev":3163360144,"ts":1049}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1973775248,"prev":1193258843,"ts":1052}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":1289935233,"ts":1053}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author0","to":"*","topic":"append","body":{"seq":22,"author":0,"h":2108143295,"prev":2779242401,"ts":1056}}
+{"t":"message","ts":1783233856381,"from":"insert-insider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2141845628,"prev":4129453559,"ts":1059}}
+{"t":"message","ts":1783233856381,"from":"adversary","to":"*","topic":"attack","body":{"attack":"insert","stitch":true,"keyCompromised":true,"targetSeq":6}}
+{"t":"message","ts":1783233856381,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"insert","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856381,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"insert","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856381,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"insert","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856381,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"insert","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856383,"agentId":"insert-insider-stitched:author0"}
+{"t":"kill","ts":1783233856383,"agentId":"insert-insider-stitched:author1"}
+{"t":"kill","ts":1783233856383,"agentId":"insert-insider-stitched:author2"}
+{"t":"kill","ts":1783233856383,"agentId":"insert-insider-stitched:author3"}
+{"t":"score","ts":1783233856383,"scores":{"cellIndex":3,"attackCode":0,"keyCompromised":1,"stitch":1,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856383,"from":"moderator","to":"*","topic":"cell","body":{"cell":"drop-outsider-naive","attack":"drop","keyCompromised":false,"stitch":false}}
+{"t":"spawn","ts":1783233856383,"agentId":"drop-outsider-naive:author0","spec":{"id":"drop-outsider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856383,"agentId":"drop-outsider-naive:author1","spec":{"id":"drop-outsider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856383,"agentId":"drop-outsider-naive:author2","spec":{"id":"drop-outsider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856383,"agentId":"drop-outsider-naive:author3","spec":{"id":"drop-outsider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":0,"author":1,"h":144187444,"prev":-1,"ts":1001}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":9966492,"prev":2161906526,"ts":1002}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2323276985,"prev":2928409045,"ts":1005}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":427950491,"prev":3713242578,"ts":1006}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360840015,"prev":622362477,"ts":1010}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":276804825,"prev":2132887182,"ts":1012}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":376631896,"prev":2243770488,"ts":1016}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":3491657834,"ts":1018}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":426817658,"prev":1852857899,"ts":1022}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2306352271,"prev":1949996159,"ts":1023}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2608202318,"prev":1727102453,"ts":1025}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2557869461,"prev":238899667,"ts":1027}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2624141294,"prev":577554910,"ts":1028}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":1641753387,"ts":1032}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":14,"author":1,"h":229594420,"prev":1786120821,"ts":1036}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":179261563,"prev":4004343487,"ts":1040}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":263296753,"prev":789435872,"ts":1044}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4155748288,"prev":3015233635,"ts":1047}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":4239636383,"prev":3637382324,"ts":1048}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":3355506479,"ts":1049}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":2024108105,"prev":2617997839,"ts":1053}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2107996200,"prev":2242459224,"ts":1055}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author0","to":"*","topic":"append","body":{"seq":22,"author":0,"h":2108143295,"prev":1832893770,"ts":1058}}
+{"t":"message","ts":1783233856383,"from":"drop-outsider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2141845628,"prev":2334188013,"ts":1059}}
+{"t":"message","ts":1783233856383,"from":"adversary","to":"*","topic":"attack","body":{"attack":"drop","stitch":false,"keyCompromised":false,"targetSeq":10}}
+{"t":"message","ts":1783233856383,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856383,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856383,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856384,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856385,"agentId":"drop-outsider-naive:author0"}
+{"t":"kill","ts":1783233856385,"agentId":"drop-outsider-naive:author1"}
+{"t":"kill","ts":1783233856385,"agentId":"drop-outsider-naive:author2"}
+{"t":"kill","ts":1783233856385,"agentId":"drop-outsider-naive:author3"}
+{"t":"score","ts":1783233856385,"scores":{"cellIndex":4,"attackCode":1,"keyCompromised":0,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856385,"from":"moderator","to":"*","topic":"cell","body":{"cell":"drop-outsider-stitched","attack":"drop","keyCompromised":false,"stitch":true}}
+{"t":"spawn","ts":1783233856385,"agentId":"drop-outsider-stitched:author0","spec":{"id":"drop-outsider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856385,"agentId":"drop-outsider-stitched:author1","spec":{"id":"drop-outsider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856385,"agentId":"drop-outsider-stitched:author2","spec":{"id":"drop-outsider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856385,"agentId":"drop-outsider-stitched:author3","spec":{"id":"drop-outsider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":160965063,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":9966492,"prev":2733361894,"ts":1005}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2289721747,"prev":872447541,"ts":1008}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":528616205,"prev":1642753961,"ts":1012}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":411025777,"prev":1234751239,"ts":1013}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":5,"author":3,"h":427803396,"prev":3187650801,"ts":1016}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":376631896,"prev":3948860635,"ts":1017}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":7,"author":1,"h":342929563,"prev":917387289,"ts":1019}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":426817658,"prev":1194830121,"ts":1021}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2323129890,"prev":964631083,"ts":1023}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2608202318,"prev":3619502341,"ts":1027}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2557869461,"prev":1610535597,"ts":1031}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2640918913,"prev":931002418,"ts":1033}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2623994199,"prev":1732697628,"ts":1037}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":229594420,"prev":2704531664,"ts":1038}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":15,"author":1,"h":179261563,"prev":2605713620,"ts":1041}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":229741515,"prev":761929147,"ts":1044}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4206081145,"prev":1786985131,"ts":1047}}
+{"t":"message","ts":1783233856385,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":1704149107,"ts":1049}}
+{"t":"message","ts":1783233856386,"from":"drop-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2092351414,"prev":3468553075,"ts":1050}}
+{"t":"message","ts":1783233856386,"from":"drop-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1973775248,"prev":3116908384,"ts":1053}}
+{"t":"message","ts":1783233856386,"from":"drop-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2107996200,"prev":3643505030,"ts":1056}}
+{"t":"message","ts":1783233856386,"from":"drop-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2108143295,"prev":3704840719,"ts":1059}}
+{"t":"message","ts":1783233856386,"from":"drop-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2108290390,"prev":1196211234,"ts":1060}}
+{"t":"message","ts":1783233856386,"from":"adversary","to":"*","topic":"attack","body":{"attack":"drop","stitch":true,"keyCompromised":false,"targetSeq":13}}
+{"t":"message","ts":1783233856386,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"drop","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856386,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"drop","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856386,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"drop","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856386,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"drop","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856386,"agentId":"drop-outsider-stitched:author0"}
+{"t":"kill","ts":1783233856387,"agentId":"drop-outsider-stitched:author1"}
+{"t":"kill","ts":1783233856387,"agentId":"drop-outsider-stitched:author2"}
+{"t":"kill","ts":1783233856387,"agentId":"drop-outsider-stitched:author3"}
+{"t":"score","ts":1783233856387,"scores":{"cellIndex":5,"attackCode":1,"keyCompromised":0,"stitch":1,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856387,"from":"moderator","to":"*","topic":"cell","body":{"cell":"drop-insider-naive","attack":"drop","keyCompromised":true,"stitch":false}}
+{"t":"spawn","ts":1783233856387,"agentId":"drop-insider-naive:author0","spec":{"id":"drop-insider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856387,"agentId":"drop-insider-naive:author1","spec":{"id":"drop-insider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856387,"agentId":"drop-insider-naive:author2","spec":{"id":"drop-insider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856387,"agentId":"drop-insider-naive:author3","spec":{"id":"drop-insider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":177742682,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":1,"author":0,"h":2340054604,"prev":2824464006,"ts":1005}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":2,"author":1,"h":2306499366,"prev":2068650385,"ts":1009}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":3,"author":1,"h":511838586,"prev":2303937130,"ts":1013}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":411025777,"prev":447342246,"ts":1016}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":444581015,"prev":3783927034,"ts":1020}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":393409515,"prev":304166406,"ts":1023}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":326151944,"prev":2264203367,"ts":1026}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":443595277,"prev":1243962356,"ts":1030}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":675940871,"ts":1033}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2641757556,"prev":959971408,"ts":1037}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2708029389,"prev":408540093,"ts":1040}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2640918913,"prev":3268577270,"ts":1043}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":2407030253,"ts":1046}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author3","to":"*","topic":"append","body":{"seq":14,"author":3,"h":229594420,"prev":3679005408,"ts":1050}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":196039182,"prev":927366897,"ts":1051}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":296851991,"prev":3366110155,"ts":1053}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":179408658,"prev":1437382366,"ts":1056}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":18,"author":0,"h":4222858764,"prev":1619698308,"ts":1057}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2092351414,"prev":4173323316,"ts":1060}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":1007794739,"ts":1062}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author2","to":"*","topic":"append","body":{"seq":21,"author":2,"h":2074588057,"prev":2010642693,"ts":1064}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":22,"author":1,"h":2108143295,"prev":1686694704,"ts":1065}}
+{"t":"message","ts":1783233856387,"from":"drop-insider-naive:author1","to":"*","topic":"append","body":{"seq":23,"author":1,"h":2125068009,"prev":3192426497,"ts":1068}}
+{"t":"message","ts":1783233856387,"from":"adversary","to":"*","topic":"attack","body":{"attack":"drop","stitch":false,"keyCompromised":true,"targetSeq":5}}
+{"t":"message","ts":1783233856387,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856387,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856387,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856387,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856389,"agentId":"drop-insider-naive:author0"}
+{"t":"kill","ts":1783233856389,"agentId":"drop-insider-naive:author1"}
+{"t":"kill","ts":1783233856389,"agentId":"drop-insider-naive:author2"}
+{"t":"kill","ts":1783233856389,"agentId":"drop-insider-naive:author3"}
+{"t":"score","ts":1783233856389,"scores":{"cellIndex":6,"attackCode":1,"keyCompromised":1,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856389,"from":"moderator","to":"*","topic":"cell","body":{"cell":"drop-insider-stitched","attack":"drop","keyCompromised":true,"stitch":true}}
+{"t":"spawn","ts":1783233856389,"agentId":"drop-insider-stitched:author0","spec":{"id":"drop-insider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856389,"agentId":"drop-insider-stitched:author1","spec":{"id":"drop-insider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856389,"agentId":"drop-insider-stitched:author2","spec":{"id":"drop-insider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856389,"agentId":"drop-insider-stitched:author3","spec":{"id":"drop-insider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":160965063,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":1,"author":2,"h":26744111,"prev":2733361894,"ts":1007}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2474275556,"prev":3380531727,"ts":1008}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":528616205,"prev":2046077808,"ts":1009}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":344062396,"prev":4255473961,"ts":1011}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":260027206,"prev":816452755,"ts":1012}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":494075229,"prev":1258996376,"ts":1014}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":2779065900,"ts":1016}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":2239241795,"prev":1450945320,"ts":1018}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":2172276697,"ts":1022}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":10,"author":1,"h":2658535175,"prev":578917184,"ts":1024}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2541091842,"prev":314653973,"ts":1025}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":12,"author":1,"h":2607363675,"prev":1730700696,"ts":1026}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2556883723,"prev":2642733088,"ts":1028}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":229594420,"prev":1244964655,"ts":1031}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":196039182,"prev":3256195014,"ts":1035}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":246519134,"prev":1184436610,"ts":1037}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":1011164920,"ts":1039}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":4239636383,"prev":3596930676,"ts":1042}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2075573795,"prev":174329056,"ts":1044}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1973775248,"prev":2434343832,"ts":1046}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":4081682439,"ts":1048}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2141698533,"prev":1717011303,"ts":1052}}
+{"t":"message","ts":1783233856389,"from":"drop-insider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2141845628,"prev":4059620094,"ts":1054}}
+{"t":"message","ts":1783233856389,"from":"adversary","to":"*","topic":"attack","body":{"attack":"drop","stitch":true,"keyCompromised":true,"targetSeq":7}}
+{"t":"message","ts":1783233856389,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856389,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"drop","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856389,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856389,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"drop","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856391,"agentId":"drop-insider-stitched:author0"}
+{"t":"kill","ts":1783233856391,"agentId":"drop-insider-stitched:author1"}
+{"t":"kill","ts":1783233856391,"agentId":"drop-insider-stitched:author2"}
+{"t":"kill","ts":1783233856391,"agentId":"drop-insider-stitched:author3"}
+{"t":"score","ts":1783233856391,"scores":{"cellIndex":7,"attackCode":1,"keyCompromised":1,"stitch":1,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":0.975,"det_full":0.975}}
+{"t":"message","ts":1783233856391,"from":"moderator","to":"*","topic":"cell","body":{"cell":"reorder-outsider-naive","attack":"reorder","keyCompromised":false,"stitch":false}}
+{"t":"spawn","ts":1783233856391,"agentId":"reorder-outsider-naive:author0","spec":{"id":"reorder-outsider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856391,"agentId":"reorder-outsider-naive:author1","spec":{"id":"reorder-outsider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856391,"agentId":"reorder-outsider-naive:author2","spec":{"id":"reorder-outsider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856391,"agentId":"reorder-outsider-naive:author3","spec":{"id":"reorder-outsider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":0,"author":1,"h":160965063,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author0","to":"*","topic":"append","body":{"seq":1,"author":0,"h":2340054604,"prev":4132012915,"ts":1005}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":1334022903,"ts":1008}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":3,"author":1,"h":528616205,"prev":885376118,"ts":1012}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":344062396,"prev":250884828,"ts":1016}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":427803396,"prev":3497047986,"ts":1019}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":6,"author":3,"h":460519991,"prev":2877360543,"ts":1021}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":342929563,"prev":2386161086,"ts":1025}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":443595277,"prev":487940124,"ts":1028}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2289574652,"prev":2153719507,"ts":1032}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2608202318,"prev":3693038300,"ts":1034}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2591424699,"prev":1844026044,"ts":1036}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2573808437,"prev":3538603315,"ts":1037}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":2554489329,"ts":1039}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":229594420,"prev":3799610491,"ts":1041}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author2","to":"*","topic":"append","body":{"seq":15,"author":2,"h":179261563,"prev":1671292673,"ts":1042}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":280074372,"prev":4005723486,"ts":1044}}
+{"t":"message","ts":1783233856391,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":179408658,"prev":3956838997,"ts":1045}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":45334801,"prev":544068690,"ts":1047}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":2901388341,"ts":1048}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":20,"author":3,"h":2040885724,"prev":2972931811,"ts":1052}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2091218581,"prev":2167782208,"ts":1053}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author1","to":"*","topic":"append","body":{"seq":22,"author":1,"h":2124920914,"prev":2381965278,"ts":1054}}
+{"t":"message","ts":1783233856392,"from":"reorder-outsider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2158623247,"prev":1244013078,"ts":1058}}
+{"t":"message","ts":1783233856392,"from":"adversary","to":"*","topic":"attack","body":{"attack":"reorder","stitch":false,"keyCompromised":false,"targetSeq":6}}
+{"t":"message","ts":1783233856392,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856392,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856392,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856392,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856393,"agentId":"reorder-outsider-naive:author0"}
+{"t":"kill","ts":1783233856393,"agentId":"reorder-outsider-naive:author1"}
+{"t":"kill","ts":1783233856393,"agentId":"reorder-outsider-naive:author2"}
+{"t":"kill","ts":1783233856393,"agentId":"reorder-outsider-naive:author3"}
+{"t":"score","ts":1783233856393,"scores":{"cellIndex":8,"attackCode":2,"keyCompromised":0,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856393,"from":"moderator","to":"*","topic":"cell","body":{"cell":"reorder-outsider-stitched","attack":"reorder","keyCompromised":false,"stitch":true}}
+{"t":"spawn","ts":1783233856393,"agentId":"reorder-outsider-stitched:author0","spec":{"id":"reorder-outsider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856393,"agentId":"reorder-outsider-stitched:author1","spec":{"id":"reorder-outsider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856393,"agentId":"reorder-outsider-stitched:author2","spec":{"id":"reorder-outsider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856393,"agentId":"reorder-outsider-stitched:author3","spec":{"id":"reorder-outsider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856393,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":177742682,"prev":-1,"ts":1004}}
+{"t":"message","ts":1783233856393,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2340054604,"prev":2824464006,"ts":1005}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":737531442,"ts":1009}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":478283348,"prev":3960070901,"ts":1010}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":1479137688,"ts":1012}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":478136253,"prev":24435264,"ts":1013}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":6,"author":0,"h":477297610,"prev":950063069,"ts":1016}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":3391675211,"ts":1019}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":191930992,"prev":496164957,"ts":1022}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":4265509002,"ts":1025}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2658535175,"prev":2570072914,"ts":1027}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2691251770,"prev":2782009461,"ts":1031}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2573808437,"prev":3672929938,"ts":1033}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2556883723,"prev":1944619184,"ts":1037}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":14,"author":3,"h":2489773247,"prev":925119053,"ts":1039}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":95373468,"prev":3512823674,"ts":1042}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":229741515,"prev":779698789,"ts":1044}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":2074882657,"ts":1048}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":45334801,"prev":3276816260,"ts":1049}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2075573795,"prev":2201537138,"ts":1052}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":2007330486,"prev":3261861571,"ts":1055}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":2274138497,"ts":1057}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":22,"author":3,"h":2124920914,"prev":4175752391,"ts":1058}}
+{"t":"message","ts":1783233856394,"from":"reorder-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2108290390,"prev":3409093079,"ts":1060}}
+{"t":"message","ts":1783233856394,"from":"adversary","to":"*","topic":"attack","body":{"attack":"reorder","stitch":true,"keyCompromised":false,"targetSeq":19}}
+{"t":"message","ts":1783233856394,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"reorder","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856394,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"reorder","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856394,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"reorder","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856394,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"reorder","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856395,"agentId":"reorder-outsider-stitched:author0"}
+{"t":"kill","ts":1783233856395,"agentId":"reorder-outsider-stitched:author1"}
+{"t":"kill","ts":1783233856395,"agentId":"reorder-outsider-stitched:author2"}
+{"t":"kill","ts":1783233856395,"agentId":"reorder-outsider-stitched:author3"}
+{"t":"score","ts":1783233856395,"scores":{"cellIndex":9,"attackCode":2,"keyCompromised":0,"stitch":1,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856395,"from":"moderator","to":"*","topic":"cell","body":{"cell":"reorder-insider-naive","attack":"reorder","keyCompromised":true,"stitch":false}}
+{"t":"spawn","ts":1783233856395,"agentId":"reorder-insider-naive:author0","spec":{"id":"reorder-insider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856395,"agentId":"reorder-insider-naive:author1","spec":{"id":"reorder-insider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856395,"agentId":"reorder-insider-naive:author2","spec":{"id":"reorder-insider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856395,"agentId":"reorder-insider-naive:author3","spec":{"id":"reorder-insider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":194520301,"prev":-1,"ts":1001}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":1,"author":0,"h":110632206,"prev":444839637,"ts":1005}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2323276985,"prev":2324379320,"ts":1007}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":3,"author":2,"h":528616205,"prev":1024899878,"ts":1008}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":379838152,"ts":1011}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":260027206,"prev":3700772916,"ts":1015}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":6,"author":1,"h":460519991,"prev":2003066067,"ts":1016}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":326151944,"prev":857563923,"ts":1020}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":2239241795,"prev":4006134785,"ts":1023}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2256019414,"prev":3537756572,"ts":1026}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2641757556,"prev":3083931710,"ts":1028}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2557869461,"prev":2069373934,"ts":1032}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2590586056,"prev":869178082,"ts":1036}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2657549437,"prev":105892672,"ts":1038}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2489773247,"prev":382585735,"ts":1040}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":212816801,"prev":1120875052,"ts":1043}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":280074372,"prev":2411084795,"ts":1047}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":179408658,"prev":1154412121,"ts":1050}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":45334801,"prev":474291939,"ts":1051}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2109129033,"prev":2363502135,"ts":1055}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":20,"author":1,"h":2024108105,"prev":2334575755,"ts":1057}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author3","to":"*","topic":"append","body":{"seq":21,"author":3,"h":2107996200,"prev":2710319644,"ts":1058}}
+{"t":"message","ts":1783233856395,"from":"reorder-insider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2091365676,"prev":3769905219,"ts":1061}}
+{"t":"message","ts":1783233856396,"from":"reorder-insider-naive:author1","to":"*","topic":"append","body":{"seq":23,"author":1,"h":2158623247,"prev":4037255936,"ts":1065}}
+{"t":"message","ts":1783233856396,"from":"adversary","to":"*","topic":"attack","body":{"attack":"reorder","stitch":false,"keyCompromised":true,"targetSeq":11}}
+{"t":"message","ts":1783233856396,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856396,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856396,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856396,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856397,"agentId":"reorder-insider-naive:author0"}
+{"t":"kill","ts":1783233856397,"agentId":"reorder-insider-naive:author1"}
+{"t":"kill","ts":1783233856397,"agentId":"reorder-insider-naive:author2"}
+{"t":"kill","ts":1783233856397,"agentId":"reorder-insider-naive:author3"}
+{"t":"score","ts":1783233856397,"scores":{"cellIndex":10,"attackCode":2,"keyCompromised":1,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856397,"from":"moderator","to":"*","topic":"cell","body":{"cell":"reorder-insider-stitched","attack":"reorder","keyCompromised":true,"stitch":true}}
+{"t":"spawn","ts":1783233856397,"agentId":"reorder-insider-stitched:author0","spec":{"id":"reorder-insider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856397,"agentId":"reorder-insider-stitched:author1","spec":{"id":"reorder-insider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856397,"agentId":"reorder-insider-stitched:author2","spec":{"id":"reorder-insider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856397,"agentId":"reorder-insider-stitched:author3","spec":{"id":"reorder-insider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":0,"author":3,"h":160965063,"prev":-1,"ts":1002}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":1,"author":3,"h":2356832223,"prev":4125527029,"ts":1003}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2306499366,"prev":3742068533,"ts":1004}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":528616205,"prev":33678971,"ts":1008}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":1881262177,"ts":1012}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":5,"author":0,"h":276804825,"prev":2496777733,"ts":1016}}
+{"t":"message","ts":1783233856397,"from":"reorder-insider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":376631896,"prev":1230021992,"ts":1020}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":3004558618,"ts":1021}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":191930992,"prev":2822977897,"ts":1024}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":4036285392,"ts":1026}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author1","to":"*","topic":"append","body":{"seq":10,"author":1,"h":2608202318,"prev":1478106949,"ts":1027}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2591424699,"prev":2257510107,"ts":1028}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2590586056,"prev":4265996478,"ts":1030}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2640771818,"prev":1522624343,"ts":1034}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":14,"author":0,"h":263149658,"prev":3042631797,"ts":1038}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":15,"author":0,"h":95373468,"prev":1757012907,"ts":1042}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":229741515,"prev":89289426,"ts":1044}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":17,"author":3,"h":4155748288,"prev":718930301,"ts":1047}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":2142684271,"prev":1735161851,"ts":1050}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":1831260420,"ts":1052}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":619080751,"ts":1053}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2124773819,"prev":662245567,"ts":1056}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2208809009,"prev":2384908891,"ts":1058}}
+{"t":"message","ts":1783233856398,"from":"reorder-insider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2125068009,"prev":2972612116,"ts":1059}}
+{"t":"message","ts":1783233856398,"from":"adversary","to":"*","topic":"attack","body":{"attack":"reorder","stitch":true,"keyCompromised":true,"targetSeq":15}}
+{"t":"message","ts":1783233856398,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856398,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"reorder","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856398,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856398,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"reorder","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856400,"agentId":"reorder-insider-stitched:author0"}
+{"t":"kill","ts":1783233856400,"agentId":"reorder-insider-stitched:author1"}
+{"t":"kill","ts":1783233856400,"agentId":"reorder-insider-stitched:author2"}
+{"t":"kill","ts":1783233856400,"agentId":"reorder-insider-stitched:author3"}
+{"t":"score","ts":1783233856400,"scores":{"cellIndex":11,"attackCode":2,"keyCompromised":1,"stitch":1,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856400,"from":"moderator","to":"*","topic":"cell","body":{"cell":"backdate-outsider-naive","attack":"backdate","keyCompromised":false,"stitch":false}}
+{"t":"spawn","ts":1783233856400,"agentId":"backdate-outsider-naive:author0","spec":{"id":"backdate-outsider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856400,"agentId":"backdate-outsider-naive:author1","spec":{"id":"backdate-outsider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856400,"agentId":"backdate-outsider-naive:author2","spec":{"id":"backdate-outsider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856400,"agentId":"backdate-outsider-naive:author3","spec":{"id":"backdate-outsider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":144187444,"prev":-1,"ts":1002}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":1,"author":3,"h":110632206,"prev":3119528575,"ts":1004}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":2,"author":1,"h":2323276985,"prev":2489838039,"ts":1005}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":478283348,"prev":3119070816,"ts":1007}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":1164938971,"ts":1008}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":276804825,"prev":1368860519,"ts":1010}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":494075229,"prev":1558669787,"ts":1014}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":342929563,"prev":2657012020,"ts":1016}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":443595277,"prev":1641879882,"ts":1019}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2289574652,"prev":622538432,"ts":1021}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2692090413,"prev":922217331,"ts":1022}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2541091842,"prev":4196105825,"ts":1023}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2640918913,"prev":1914429398,"ts":1025}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":3318618490,"ts":1027}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2472995628,"prev":1056352785,"ts":1030}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":179261563,"prev":2915868089,"ts":1034}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":16,"author":3,"h":280074372,"prev":2122832135,"ts":1038}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":303122178,"ts":1042}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":2142684271,"prev":4215645746,"ts":1046}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":1096867412,"ts":1050}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":1234416630,"ts":1052}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":1917210866,"ts":1055}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2124920914,"prev":443378515,"ts":1059}}
+{"t":"message","ts":1783233856400,"from":"backdate-outsider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2125068009,"prev":2748834962,"ts":1061}}
+{"t":"message","ts":1783233856400,"from":"adversary","to":"*","topic":"attack","body":{"attack":"backdate","stitch":false,"keyCompromised":false,"targetSeq":14}}
+{"t":"message","ts":1783233856400,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856400,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856401,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856401,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856402,"agentId":"backdate-outsider-naive:author0"}
+{"t":"kill","ts":1783233856402,"agentId":"backdate-outsider-naive:author1"}
+{"t":"kill","ts":1783233856402,"agentId":"backdate-outsider-naive:author2"}
+{"t":"kill","ts":1783233856402,"agentId":"backdate-outsider-naive:author3"}
+{"t":"score","ts":1783233856402,"scores":{"cellIndex":12,"attackCode":3,"keyCompromised":0,"stitch":0,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856402,"from":"moderator","to":"*","topic":"cell","body":{"cell":"backdate-outsider-stitched","attack":"backdate","keyCompromised":false,"stitch":true}}
+{"t":"spawn","ts":1783233856402,"agentId":"backdate-outsider-stitched:author0","spec":{"id":"backdate-outsider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856402,"agentId":"backdate-outsider-stitched:author1","spec":{"id":"backdate-outsider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856402,"agentId":"backdate-outsider-stitched:author2","spec":{"id":"backdate-outsider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856402,"agentId":"backdate-outsider-stitched:author3","spec":{"id":"backdate-outsider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":144187444,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":110632206,"prev":3119528575,"ts":1005}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2306499366,"prev":4185376421,"ts":1006}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":478283348,"prev":2500773865,"ts":1008}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":344062396,"prev":1911156118,"ts":1009}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":478136253,"prev":4126024609,"ts":1013}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":477297610,"prev":1575649439,"ts":1014}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":326151944,"prev":792506678,"ts":1016}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":191930992,"prev":2948471633,"ts":1020}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":9,"author":2,"h":2306352271,"prev":3751258060,"ts":1023}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2608202318,"prev":3097200097,"ts":1027}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2591424699,"prev":2923860676,"ts":1029}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2573808437,"prev":2335378113,"ts":1030}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":13,"author":2,"h":2556883723,"prev":535847444,"ts":1034}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2472995628,"prev":1906048501,"ts":1038}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":179261563,"prev":179923239,"ts":1039}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":263296753,"prev":3785196682,"ts":1040}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":1714964847,"ts":1044}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":2330400306,"ts":1048}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":19,"author":1,"h":2159461890,"prev":279346460,"ts":1052}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":20,"author":3,"h":2040885724,"prev":1105765815,"ts":1053}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":3281833856,"ts":1056}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2091365676,"prev":4271075803,"ts":1059}}
+{"t":"message","ts":1783233856402,"from":"backdate-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2192178485,"prev":4241016000,"ts":1061}}
+{"t":"message","ts":1783233856402,"from":"adversary","to":"*","topic":"attack","body":{"attack":"backdate","stitch":true,"keyCompromised":false,"targetSeq":19}}
+{"t":"message","ts":1783233856403,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856403,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856403,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856403,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856404,"agentId":"backdate-outsider-stitched:author0"}
+{"t":"kill","ts":1783233856404,"agentId":"backdate-outsider-stitched:author1"}
+{"t":"kill","ts":1783233856404,"agentId":"backdate-outsider-stitched:author2"}
+{"t":"kill","ts":1783233856404,"agentId":"backdate-outsider-stitched:author3"}
+{"t":"score","ts":1783233856404,"scores":{"cellIndex":13,"attackCode":3,"keyCompromised":0,"stitch":1,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856404,"from":"moderator","to":"*","topic":"cell","body":{"cell":"backdate-insider-naive","attack":"backdate","keyCompromised":true,"stitch":false}}
+{"t":"spawn","ts":1783233856404,"agentId":"backdate-insider-naive:author0","spec":{"id":"backdate-insider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856404,"agentId":"backdate-insider-naive:author1","spec":{"id":"backdate-insider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856404,"agentId":"backdate-insider-naive:author2","spec":{"id":"backdate-insider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856404,"agentId":"backdate-insider-naive:author3","spec":{"id":"backdate-insider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":0,"author":1,"h":177742682,"prev":-1,"ts":1002}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":9966492,"prev":130693887,"ts":1005}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2306499366,"prev":1456303658,"ts":1009}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":478283348,"prev":332640457,"ts":1011}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":394248158,"prev":2573100973,"ts":1015}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":276804825,"prev":2066682715,"ts":1018}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":494075229,"prev":1119583531,"ts":1022}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":359707182,"prev":2244336059,"ts":1023}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":426817658,"prev":1233476068,"ts":1025}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2306352271,"prev":3180126939,"ts":1028}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2675312794,"prev":1961480499,"ts":1029}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":11,"author":1,"h":2541091842,"prev":511012042,"ts":1030}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2624141294,"prev":754909369,"ts":1034}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2640771818,"prev":3883982332,"ts":1037}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":2472995628,"prev":1114932284,"ts":1041}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":95373468,"prev":3447246614,"ts":1042}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":246519134,"prev":1432210935,"ts":1043}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4155748288,"prev":284772444,"ts":1045}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":1618126285,"ts":1049}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2075573795,"prev":2139431467,"ts":1053}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author3","to":"*","topic":"append","body":{"seq":20,"author":3,"h":2040885724,"prev":3316280257,"ts":1054}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2057810438,"prev":1273208202,"ts":1057}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author0","to":"*","topic":"append","body":{"seq":22,"author":0,"h":2141698533,"prev":3762079979,"ts":1061}}
+{"t":"message","ts":1783233856404,"from":"backdate-insider-naive:author1","to":"*","topic":"append","body":{"seq":23,"author":1,"h":2141845628,"prev":3057778385,"ts":1063}}
+{"t":"message","ts":1783233856404,"from":"adversary","to":"*","topic":"attack","body":{"attack":"backdate","stitch":false,"keyCompromised":true,"targetSeq":12}}
+{"t":"message","ts":1783233856404,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856404,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856404,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856404,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"backdate","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856406,"agentId":"backdate-insider-naive:author0"}
+{"t":"kill","ts":1783233856406,"agentId":"backdate-insider-naive:author1"}
+{"t":"kill","ts":1783233856406,"agentId":"backdate-insider-naive:author2"}
+{"t":"kill","ts":1783233856406,"agentId":"backdate-insider-naive:author3"}
+{"t":"score","ts":1783233856406,"scores":{"cellIndex":14,"attackCode":3,"keyCompromised":1,"stitch":0,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856406,"from":"moderator","to":"*","topic":"cell","body":{"cell":"backdate-insider-stitched","attack":"backdate","keyCompromised":true,"stitch":true}}
+{"t":"spawn","ts":1783233856406,"agentId":"backdate-insider-stitched:author0","spec":{"id":"backdate-insider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856406,"agentId":"backdate-insider-stitched:author1","spec":{"id":"backdate-insider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856406,"agentId":"backdate-insider-stitched:author2","spec":{"id":"backdate-insider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856406,"agentId":"backdate-insider-stitched:author3","spec":{"id":"backdate-insider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":194520301,"prev":-1,"ts":1002}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2356832223,"prev":444839637,"ts":1003}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2323276985,"prev":3141661674,"ts":1005}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":511838586,"prev":868748012,"ts":1007}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360692920,"prev":145563935,"ts":1010}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":276804825,"prev":3398743778,"ts":1011}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":460519991,"prev":389201163,"ts":1014}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":275966182,"prev":2458374637,"ts":1015}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":443595277,"prev":2146514487,"ts":1018}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":583001930,"ts":1022}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2675312794,"prev":1751313912,"ts":1024}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2541091842,"prev":3224044082,"ts":1028}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2590586056,"prev":2480486552,"ts":1032}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2640771818,"prev":3563158967,"ts":1036}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":263149658,"prev":74426144,"ts":1038}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":112151087,"prev":965194311,"ts":1042}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":296851991,"prev":4222746536,"ts":1043}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":3219648190,"ts":1047}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":2893672726,"ts":1051}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":436119051,"ts":1053}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":1776757700,"ts":1054}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2091218581,"prev":2147996443,"ts":1056}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2208809009,"prev":1713528982,"ts":1060}}
+{"t":"message","ts":1783233856406,"from":"backdate-insider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2141845628,"prev":931605450,"ts":1064}}
+{"t":"message","ts":1783233856406,"from":"adversary","to":"*","topic":"attack","body":{"attack":"backdate","stitch":true,"keyCompromised":true,"targetSeq":8}}
+{"t":"message","ts":1783233856406,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"backdate","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856406,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"backdate","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856406,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"backdate","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856406,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"backdate","clean":false,"reason":"SEQ"}}
+{"t":"kill","ts":1783233856408,"agentId":"backdate-insider-stitched:author0"}
+{"t":"kill","ts":1783233856408,"agentId":"backdate-insider-stitched:author1"}
+{"t":"kill","ts":1783233856408,"agentId":"backdate-insider-stitched:author2"}
+{"t":"kill","ts":1783233856408,"agentId":"backdate-insider-stitched:author3"}
+{"t":"score","ts":1783233856408,"scores":{"cellIndex":15,"attackCode":3,"keyCompromised":1,"stitch":1,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":0,"det_full":1}}
+{"t":"message","ts":1783233856408,"from":"moderator","to":"*","topic":"cell","body":{"cell":"tamper-payload-outsider-naive","attack":"tamper-payload","keyCompromised":false,"stitch":false}}
+{"t":"spawn","ts":1783233856408,"agentId":"tamper-payload-outsider-naive:author0","spec":{"id":"tamper-payload-outsider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856408,"agentId":"tamper-payload-outsider-naive:author1","spec":{"id":"tamper-payload-outsider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856408,"agentId":"tamper-payload-outsider-naive:author2","spec":{"id":"tamper-payload-outsider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856408,"agentId":"tamper-payload-outsider-naive:author3","spec":{"id":"tamper-payload-outsider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":0,"author":2,"h":177742682,"prev":-1,"ts":1002}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":9966492,"prev":1729316824,"ts":1004}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":437393796,"ts":1008}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":411172872,"prev":3941844472,"ts":1010}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":411025777,"prev":1063410743,"ts":1014}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":276804825,"prev":1430741435,"ts":1015}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":393409515,"prev":1683366102,"ts":1018}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":2607421585,"ts":1020}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":2239241795,"prev":4089358173,"ts":1023}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":9,"author":2,"h":2289574652,"prev":1896227426,"ts":1024}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author0","to":"*","topic":"append","body":{"seq":10,"author":0,"h":2641757556,"prev":2762151944,"ts":1025}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2691251770,"prev":3365275696,"ts":1029}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2573808437,"prev":4015197949,"ts":1032}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2556883723,"prev":2943680911,"ts":1034}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":263149658,"prev":314689871,"ts":1037}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":15,"author":3,"h":112151087,"prev":2590335466,"ts":1039}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":16,"author":3,"h":263296753,"prev":3160720398,"ts":1043}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4206081145,"prev":1062604360,"ts":1045}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":1720653688,"ts":1047}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2075573795,"prev":3348197947,"ts":1048}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":20,"author":1,"h":1973775248,"prev":375679908,"ts":1049}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2107996200,"prev":3582473392,"ts":1053}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2208809009,"prev":3666953704,"ts":1054}}
+{"t":"message","ts":1783233856408,"from":"tamper-payload-outsider-naive:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2158623247,"prev":707483447,"ts":1057}}
+{"t":"message","ts":1783233856408,"from":"adversary","to":"*","topic":"attack","body":{"attack":"tamper-payload","stitch":false,"keyCompromised":false,"targetSeq":11}}
+{"t":"message","ts":1783233856408,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856408,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"tamper-payload","clean":false,"reason":"HASH"}}
+{"t":"message","ts":1783233856408,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856408,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"tamper-payload","clean":false,"reason":"HASH"}}
+{"t":"kill","ts":1783233856410,"agentId":"tamper-payload-outsider-naive:author0"}
+{"t":"kill","ts":1783233856410,"agentId":"tamper-payload-outsider-naive:author1"}
+{"t":"kill","ts":1783233856410,"agentId":"tamper-payload-outsider-naive:author2"}
+{"t":"kill","ts":1783233856410,"agentId":"tamper-payload-outsider-naive:author3"}
+{"t":"score","ts":1783233856410,"scores":{"cellIndex":16,"attackCode":4,"keyCompromised":0,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":1,"det_chain+sig":0,"det_full":1}}
+{"t":"message","ts":1783233856410,"from":"moderator","to":"*","topic":"cell","body":{"cell":"tamper-payload-outsider-stitched","attack":"tamper-payload","keyCompromised":false,"stitch":true}}
+{"t":"spawn","ts":1783233856410,"agentId":"tamper-payload-outsider-stitched:author0","spec":{"id":"tamper-payload-outsider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856410,"agentId":"tamper-payload-outsider-stitched:author1","spec":{"id":"tamper-payload-outsider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856410,"agentId":"tamper-payload-outsider-stitched:author2","spec":{"id":"tamper-payload-outsider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856410,"agentId":"tamper-payload-outsider-stitched:author3","spec":{"id":"tamper-payload-outsider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":0,"author":2,"h":160965063,"prev":-1,"ts":1001}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":1,"author":3,"h":26744111,"prev":915767056,"ts":1003}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2272944128,"prev":1317045864,"ts":1005}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":511838586,"prev":2510569436,"ts":1008}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360692920,"prev":1448349382,"ts":1012}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":5,"author":0,"h":276804825,"prev":3170112165,"ts":1014}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":6,"author":2,"h":460519991,"prev":192250778,"ts":1016}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":342929563,"prev":398401671,"ts":1018}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":191930992,"prev":1379661322,"ts":1020}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2256019414,"prev":1133943525,"ts":1023}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2692090413,"prev":1278841824,"ts":1024}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2591424699,"prev":3238870530,"ts":1028}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2624141294,"prev":3690160029,"ts":1030}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2556883723,"prev":2807276308,"ts":1034}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":14,"author":3,"h":2472995628,"prev":964678535,"ts":1036}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":15,"author":2,"h":179261563,"prev":1384326585,"ts":1040}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":229741515,"prev":1291332605,"ts":1044}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4155748288,"prev":3077225569,"ts":1048}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":4239636383,"prev":561122047,"ts":1050}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2058796176,"prev":3195494248,"ts":1051}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":2040885724,"prev":2551958171,"ts":1052}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2124773819,"prev":3944376236,"ts":1056}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2141698533,"prev":2684622957,"ts":1057}}
+{"t":"message","ts":1783233856410,"from":"tamper-payload-outsider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2141845628,"prev":3095249463,"ts":1058}}
+{"t":"message","ts":1783233856410,"from":"adversary","to":"*","topic":"attack","body":{"attack":"tamper-payload","stitch":true,"keyCompromised":false,"targetSeq":14}}
+{"t":"message","ts":1783233856410,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"tamper-payload","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856410,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"tamper-payload","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856410,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"tamper-payload","clean":false,"reason":"SIG"}}
+{"t":"message","ts":1783233856410,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"tamper-payload","clean":false,"reason":"SIG"}}
+{"t":"kill","ts":1783233856412,"agentId":"tamper-payload-outsider-stitched:author0"}
+{"t":"kill","ts":1783233856412,"agentId":"tamper-payload-outsider-stitched:author1"}
+{"t":"kill","ts":1783233856412,"agentId":"tamper-payload-outsider-stitched:author2"}
+{"t":"kill","ts":1783233856412,"agentId":"tamper-payload-outsider-stitched:author3"}
+{"t":"score","ts":1783233856412,"scores":{"cellIndex":17,"attackCode":4,"keyCompromised":0,"stitch":1,"trials":40,"det_sig-only":1,"det_hash+sig":1,"det_chain+sig":1,"det_full":1}}
+{"t":"message","ts":1783233856412,"from":"moderator","to":"*","topic":"cell","body":{"cell":"tamper-payload-insider-naive","attack":"tamper-payload","keyCompromised":true,"stitch":false}}
+{"t":"spawn","ts":1783233856412,"agentId":"tamper-payload-insider-naive:author0","spec":{"id":"tamper-payload-insider-naive:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856412,"agentId":"tamper-payload-insider-naive:author1","spec":{"id":"tamper-payload-insider-naive:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856412,"agentId":"tamper-payload-insider-naive:author2","spec":{"id":"tamper-payload-insider-naive:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856412,"agentId":"tamper-payload-insider-naive:author3","spec":{"id":"tamper-payload-insider-naive:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":160965063,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":2340054604,"prev":2733361894,"ts":1004}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2289721747,"prev":1136590170,"ts":1005}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":511838586,"prev":341818976,"ts":1006}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":411025777,"prev":2522699582,"ts":1008}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":5,"author":0,"h":260027206,"prev":812761614,"ts":1011}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author3","to":"*","topic":"append","body":{"seq":6,"author":3,"h":494075229,"prev":593743234,"ts":1014}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":376484801,"prev":4025858595,"ts":1017}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":2239241795,"prev":1220464264,"ts":1019}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2306352271,"prev":1344892569,"ts":1023}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":10,"author":0,"h":2641757556,"prev":3262456948,"ts":1025}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author3","to":"*","topic":"append","body":{"seq":11,"author":3,"h":2708029389,"prev":3751119192,"ts":1026}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2590586056,"prev":3676593718,"ts":1028}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":13,"author":1,"h":2540106104,"prev":1092125492,"ts":1032}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":14,"author":1,"h":2472995628,"prev":4139541541,"ts":1033}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":15,"author":1,"h":95373468,"prev":2011309221,"ts":1034}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":280074372,"prev":832350409,"ts":1035}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":4172525907,"prev":178671834,"ts":1036}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":2142684271,"prev":977459150,"ts":1037}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2159461890,"prev":1376876341,"ts":1041}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1990552867,"prev":3245141388,"ts":1044}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2124773819,"prev":3158999579,"ts":1048}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2124920914,"prev":77163291,"ts":1051}}
+{"t":"message","ts":1783233856412,"from":"tamper-payload-insider-naive:author2","to":"*","topic":"append","body":{"seq":23,"author":2,"h":2108290390,"prev":3727851742,"ts":1053}}
+{"t":"message","ts":1783233856412,"from":"adversary","to":"*","topic":"attack","body":{"attack":"tamper-payload","stitch":false,"keyCompromised":true,"targetSeq":1}}
+{"t":"message","ts":1783233856412,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856412,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"tamper-payload","clean":false,"reason":"HASH"}}
+{"t":"message","ts":1783233856412,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856412,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"tamper-payload","clean":false,"reason":"HASH"}}
+{"t":"kill","ts":1783233856414,"agentId":"tamper-payload-insider-naive:author0"}
+{"t":"kill","ts":1783233856414,"agentId":"tamper-payload-insider-naive:author1"}
+{"t":"kill","ts":1783233856414,"agentId":"tamper-payload-insider-naive:author2"}
+{"t":"kill","ts":1783233856414,"agentId":"tamper-payload-insider-naive:author3"}
+{"t":"score","ts":1783233856414,"scores":{"cellIndex":18,"attackCode":4,"keyCompromised":1,"stitch":0,"trials":40,"det_sig-only":0,"det_hash+sig":1,"det_chain+sig":0,"det_full":1}}
+{"t":"message","ts":1783233856414,"from":"moderator","to":"*","topic":"cell","body":{"cell":"tamper-payload-insider-stitched","attack":"tamper-payload","keyCompromised":true,"stitch":true}}
+{"t":"spawn","ts":1783233856414,"agentId":"tamper-payload-insider-stitched:author0","spec":{"id":"tamper-payload-insider-stitched:author0","systemPrompt":"You are signing author 0 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856414,"agentId":"tamper-payload-insider-stitched:author1","spec":{"id":"tamper-payload-insider-stitched:author1","systemPrompt":"You are signing author 1 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856414,"agentId":"tamper-payload-insider-stitched:author2","spec":{"id":"tamper-payload-insider-stitched:author2","systemPrompt":"You are signing author 2 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"spawn","ts":1783233856414,"agentId":"tamper-payload-insider-stitched:author3","spec":{"id":"tamper-payload-insider-stitched:author3","systemPrompt":"You are signing author 3 on a Sonder audit trail. Append signed, causally-linked events."}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":0,"author":0,"h":177742682,"prev":-1,"ts":1003}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":1,"author":1,"h":110632206,"prev":2824464006,"ts":1004}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":2,"author":2,"h":2474275556,"prev":1727499871,"ts":1008}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author3","to":"*","topic":"append","body":{"seq":3,"author":3,"h":411172872,"prev":3612547712,"ts":1011}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":4,"author":0,"h":360840015,"prev":2902228087,"ts":1013}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":5,"author":1,"h":427803396,"prev":496662151,"ts":1017}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":6,"author":0,"h":393409515,"prev":3256609494,"ts":1018}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author3","to":"*","topic":"append","body":{"seq":7,"author":3,"h":359707182,"prev":4012742459,"ts":1020}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":8,"author":0,"h":208708611,"prev":645335878,"ts":1022}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":9,"author":1,"h":2339907509,"prev":644642940,"ts":1023}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":10,"author":2,"h":2675312794,"prev":226440674,"ts":1024}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":11,"author":2,"h":2557869461,"prev":941668230,"ts":1025}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":12,"author":0,"h":2640918913,"prev":3840202112,"ts":1026}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":13,"author":2,"h":2556883723,"prev":4036677327,"ts":1027}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":14,"author":2,"h":263149658,"prev":376271180,"ts":1029}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":15,"author":1,"h":196039182,"prev":2378445820,"ts":1031}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":16,"author":0,"h":280074372,"prev":3139032375,"ts":1034}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":17,"author":1,"h":179408658,"prev":3847581036,"ts":1037}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":18,"author":2,"h":28557182,"prev":3239936832,"ts":1040}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author3","to":"*","topic":"append","body":{"seq":19,"author":3,"h":2159461890,"prev":1056466711,"ts":1043}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author0","to":"*","topic":"append","body":{"seq":20,"author":0,"h":1973775248,"prev":2762611411,"ts":1044}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author1","to":"*","topic":"append","body":{"seq":21,"author":1,"h":2107996200,"prev":3121562120,"ts":1046}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author2","to":"*","topic":"append","body":{"seq":22,"author":2,"h":2108143295,"prev":2901807113,"ts":1047}}
+{"t":"message","ts":1783233856414,"from":"tamper-payload-insider-stitched:author3","to":"*","topic":"append","body":{"seq":23,"author":3,"h":2192178485,"prev":3184379335,"ts":1051}}
+{"t":"message","ts":1783233856415,"from":"adversary","to":"*","topic":"attack","body":{"attack":"tamper-payload","stitch":true,"keyCompromised":true,"targetSeq":10}}
+{"t":"message","ts":1783233856415,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"sig-only","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856415,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"hash+sig","attack":"tamper-payload","clean":true,"reason":"none"}}
+{"t":"message","ts":1783233856415,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"chain+sig","attack":"tamper-payload","clean":false,"reason":"CHAIN"}}
+{"t":"message","ts":1783233856415,"from":"verifier","to":"*","topic":"verdict","body":{"verifier":"full","attack":"tamper-payload","clean":false,"reason":"CHAIN"}}
+{"t":"kill","ts":1783233856416,"agentId":"tamper-payload-insider-stitched:author0"}
+{"t":"kill","ts":1783233856416,"agentId":"tamper-payload-insider-stitched:author1"}
+{"t":"kill","ts":1783233856416,"agentId":"tamper-payload-insider-stitched:author2"}
+{"t":"kill","ts":1783233856416,"agentId":"tamper-payload-insider-stitched:author3"}
+{"t":"score","ts":1783233856416,"scores":{"cellIndex":19,"attackCode":4,"keyCompromised":1,"stitch":1,"trials":40,"det_sig-only":0,"det_hash+sig":0,"det_chain+sig":1,"det_full":1}}
+{"t":"score","ts":1783233856417,"scores":{"cells":20,"trialsPerCell":40,"verifiers":4,"silentForgerySurface":27,"overallBlindSpotRate":0.338,"sigOnlyOutsiderCatchRate":0.7,"minVerifier_insert":1,"minVerifier_drop":2,"minVerifier_reorder":2,"minVerifier_backdate":1,"minVerifier_tamperPayload":2,"insiderCaughtByFull":4,"insiderLostByFull":1}}

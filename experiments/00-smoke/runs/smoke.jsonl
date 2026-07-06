@@ -1,0 +1,6 @@
+{"t":"spawn","ts":1783294440205,"agentId":"alice","spec":{"id":"alice","systemPrompt":"You are alice. Greet bob."}}
+{"t":"spawn","ts":1783294440205,"agentId":"bob","spec":{"id":"bob","systemPrompt":"You are bob. Listen for greetings."}}
+{"t":"message","ts":1783294440205,"from":"alice","to":"bob","topic":"greeting","body":{"text":"hello bob"}}
+{"t":"score","ts":1783294440207,"scores":{"messages":1,"delivered":1}}
+{"t":"kill","ts":1783294440207,"agentId":"alice"}
+{"t":"kill","ts":1783294440207,"agentId":"bob"}

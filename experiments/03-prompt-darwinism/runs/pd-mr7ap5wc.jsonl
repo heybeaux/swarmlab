@@ -1,0 +1,206 @@
+{"t":"message","ts":1783225966620,"from":"breeder","to":"*","topic":"meta","body":{"mode":"sim","model":"sim-mulberry32","pop":8,"gens":6,"elite":2,"deception":0,"seed":"prompt-darwinism-v1","task":"colors"}}
+{"t":"spawn","ts":1783225966621,"agentId":"g0-1","spec":{"id":"g0-1","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:lavender, style:formal, style:list-only. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966621,"from":"g0-1","to":"breeder","topic":"output","body":{"gen":0,"directives":["name:lavender","style:formal","style:list-only"],"output":["lavender"]}}
+{"t":"score","ts":1783225966622,"agentId":"g0-1","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.3,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":2,"len":3}}
+{"t":"kill","ts":1783225966622,"agentId":"g0-1"}
+{"t":"spawn","ts":1783225966622,"agentId":"g0-2","spec":{"id":"g0-2","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:ash, style:concise, style:formal. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966622,"from":"g0-2","to":"breeder","topic":"output","body":{"gen":0,"directives":["name:ash","style:concise","style:formal"],"output":["ash"]}}
+{"t":"score","ts":1783225966622,"agentId":"g0-2","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.3,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":2,"len":3}}
+{"t":"kill","ts":1783225966622,"agentId":"g0-2"}
+{"t":"spawn","ts":1783225966622,"agentId":"g0-3","spec":{"id":"g0-3","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:coral, name:salmon. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966622,"from":"g0-3","to":"breeder","topic":"output","body":{"gen":0,"directives":["name:coral","name:salmon"],"output":["coral","salmon"]}}
+{"t":"score","ts":1783225966622,"agentId":"g0-3","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.2,"hits":0,"misses":2,"size":2,"precision":0,"recall":0,"themeGenes":0,"distractGenes":2,"metaGenes":0,"len":2}}
+{"t":"kill","ts":1783225966622,"agentId":"g0-3"}
+{"t":"spawn","ts":1783225966622,"agentId":"g0-4","spec":{"id":"g0-4","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, style:concise. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966622,"from":"g0-4","to":"breeder","topic":"output","body":{"gen":0,"directives":["name:orange","name:salmon","style:concise"],"output":["orange","salmon"]}}
+{"t":"score","ts":1783225966622,"agentId":"g0-4","scores":{"gen":0,"fitness":0.25,"trueF1":0.25,"proxy":0.3,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":1,"len":3}}
+{"t":"kill","ts":1783225966622,"agentId":"g0-4"}
+{"t":"spawn","ts":1783225966622,"agentId":"g0-5","spec":{"id":"g0-5","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:no-prose, style:no-prose, name:grass, style:list-only. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966622,"from":"g0-5","to":"breeder","topic":"output","body":{"gen":0,"directives":["style:no-prose","style:no-prose","name:grass","style:list-only"],"output":[]}}
+{"t":"score","ts":1783225966622,"agentId":"g0-5","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.4,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":3,"len":4}}
+{"t":"kill","ts":1783225966622,"agentId":"g0-5"}
+{"t":"spawn","ts":1783225966622,"agentId":"g0-6","spec":{"id":"g0-6","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:navy, name:amber, style:no-prose. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966623,"from":"g0-6","to":"breeder","topic":"output","body":{"gen":0,"directives":["name:navy","name:amber","style:no-prose"],"output":["navy","amber"]}}
+{"t":"score","ts":1783225966623,"agentId":"g0-6","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.3,"hits":0,"misses":2,"size":2,"precision":0,"recall":0,"themeGenes":0,"distractGenes":2,"metaGenes":1,"len":3}}
+{"t":"kill","ts":1783225966623,"agentId":"g0-6"}
+{"t":"spawn","ts":1783225966623,"agentId":"g0-7","spec":{"id":"g0-7","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:no-prose, style:think-step, style:no-prose, style:no-prose. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966623,"from":"g0-7","to":"breeder","topic":"output","body":{"gen":0,"directives":["style:no-prose","style:think-step","style:no-prose","style:no-prose"],"output":["plum"]}}
+{"t":"score","ts":1783225966623,"agentId":"g0-7","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.4,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":4,"len":4}}
+{"t":"kill","ts":1783225966623,"agentId":"g0-7"}
+{"t":"spawn","ts":1783225966623,"agentId":"g0-8","spec":{"id":"g0-8","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:concise, style:verbose. Emit the words your directives point to.","context":{"gen":0}}}
+{"t":"message","ts":1783225966623,"from":"g0-8","to":"breeder","topic":"output","body":{"gen":0,"directives":["style:concise","style:verbose"],"output":[]}}
+{"t":"score","ts":1783225966623,"agentId":"g0-8","scores":{"gen":0,"fitness":0,"trueF1":0,"proxy":0.2,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":2,"len":2}}
+{"t":"kill","ts":1783225966623,"agentId":"g0-8"}
+{"t":"score","ts":1783225966623,"scores":{"gen":0,"bestFitness":0.25,"bestTrueF1":0.25,"meanFitness":0.031,"meanTrueF1":0.031,"diversity":1,"themeShare":0.042}}
+{"t":"message","ts":1783225966623,"from":"breeder","to":"*","topic":"generation","body":{"gen":0,"bestFitness":0.25,"bestTrueF1":0.25,"meanFitness":0.031,"meanTrueF1":0.031,"diversity":1,"themeShare":0.042}}
+{"t":"spawn","ts":1783225966623,"agentId":"g0-4","spec":{"id":"g0-4","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, style:concise. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966623,"from":"g0-4","to":"breeder","topic":"output","body":{"gen":1,"directives":["name:orange","name:salmon","style:concise"],"output":["orange","salmon"]}}
+{"t":"score","ts":1783225966623,"agentId":"g0-4","scores":{"gen":1,"fitness":0.25,"trueF1":0.25,"proxy":0.3,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":1,"len":3}}
+{"t":"kill","ts":1783225966623,"agentId":"g0-4"}
+{"t":"spawn","ts":1783225966623,"agentId":"g0-1","spec":{"id":"g0-1","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:lavender, style:formal, style:list-only. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966623,"from":"g0-1","to":"breeder","topic":"output","body":{"gen":1,"directives":["name:lavender","style:formal","style:list-only"],"output":["lavender"]}}
+{"t":"score","ts":1783225966623,"agentId":"g0-1","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.3,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":2,"len":3}}
+{"t":"kill","ts":1783225966623,"agentId":"g0-1"}
+{"t":"spawn","ts":1783225966623,"agentId":"g1-a","spec":{"id":"g1-a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966623,"from":"g1-a","to":"breeder","topic":"output","body":{"gen":1,"directives":["name:green","name:orange","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966623,"agentId":"g1-a","scores":{"gen":1,"fitness":0.444,"trueF1":0.444,"proxy":0.3,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":0,"len":3}}
+{"t":"kill","ts":1783225966623,"agentId":"g1-a"}
+{"t":"spawn","ts":1783225966623,"agentId":"g1-c","spec":{"id":"g1-c","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:lavender, style:think-step, style:list-only. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966623,"from":"g1-c","to":"breeder","topic":"output","body":{"gen":1,"directives":["name:lavender","style:think-step","style:list-only"],"output":[]}}
+{"t":"score","ts":1783225966623,"agentId":"g1-c","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.3,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":2,"len":3}}
+{"t":"kill","ts":1783225966623,"agentId":"g1-c"}
+{"t":"spawn","ts":1783225966623,"agentId":"g1-e","spec":{"id":"g1-e","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:formal. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966623,"from":"g1-e","to":"breeder","topic":"output","body":{"gen":1,"directives":["style:formal"],"output":[]}}
+{"t":"score","ts":1783225966623,"agentId":"g1-e","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":1,"len":1}}
+{"t":"kill","ts":1783225966623,"agentId":"g1-e"}
+{"t":"spawn","ts":1783225966624,"agentId":"g1-g","spec":{"id":"g1-g","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:list-only. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966624,"from":"g1-g","to":"breeder","topic":"output","body":{"gen":1,"directives":["style:list-only"],"output":[]}}
+{"t":"score","ts":1783225966624,"agentId":"g1-g","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":1,"len":1}}
+{"t":"kill","ts":1783225966624,"agentId":"g1-g"}
+{"t":"spawn","ts":1783225966624,"agentId":"g1-i","spec":{"id":"g1-i","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:formal. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966624,"from":"g1-i","to":"breeder","topic":"output","body":{"gen":1,"directives":["style:formal"],"output":[]}}
+{"t":"score","ts":1783225966624,"agentId":"g1-i","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":1,"len":1}}
+{"t":"kill","ts":1783225966624,"agentId":"g1-i"}
+{"t":"spawn","ts":1783225966624,"agentId":"g1-k","spec":{"id":"g1-k","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:coral. Emit the words your directives point to.","context":{"gen":1}}}
+{"t":"message","ts":1783225966624,"from":"g1-k","to":"breeder","topic":"output","body":{"gen":1,"directives":["name:coral"],"output":["coral"]}}
+{"t":"score","ts":1783225966624,"agentId":"g1-k","scores":{"gen":1,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":0,"len":1}}
+{"t":"kill","ts":1783225966624,"agentId":"g1-k"}
+{"t":"score","ts":1783225966624,"scores":{"gen":1,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.087,"meanTrueF1":0.087,"diversity":0.875,"themeShare":0.188}}
+{"t":"message","ts":1783225966624,"from":"breeder","to":"*","topic":"generation","body":{"gen":1,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.087,"meanTrueF1":0.087,"diversity":0.875,"themeShare":0.188}}
+{"t":"spawn","ts":1783225966624,"agentId":"g1-a","spec":{"id":"g1-a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g1-a","to":"breeder","topic":"output","body":{"gen":2,"directives":["name:green","name:orange","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966624,"agentId":"g1-a","scores":{"gen":2,"fitness":0.444,"trueF1":0.444,"proxy":0.3,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":0,"len":3}}
+{"t":"kill","ts":1783225966624,"agentId":"g1-a"}
+{"t":"spawn","ts":1783225966624,"agentId":"g0-4","spec":{"id":"g0-4","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, style:concise. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g0-4","to":"breeder","topic":"output","body":{"gen":2,"directives":["name:orange","name:salmon","style:concise"],"output":["orange","salmon"]}}
+{"t":"score","ts":1783225966624,"agentId":"g0-4","scores":{"gen":2,"fitness":0.25,"trueF1":0.25,"proxy":0.3,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":1,"len":3}}
+{"t":"kill","ts":1783225966624,"agentId":"g0-4"}
+{"t":"spawn","ts":1783225966624,"agentId":"g2-m","spec":{"id":"g2-m","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:think-step. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g2-m","to":"breeder","topic":"output","body":{"gen":2,"directives":["style:think-step"],"output":["chalk"]}}
+{"t":"score","ts":1783225966624,"agentId":"g2-m","scores":{"gen":2,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":1,"len":1}}
+{"t":"kill","ts":1783225966624,"agentId":"g2-m"}
+{"t":"spawn","ts":1783225966624,"agentId":"g2-o","spec":{"id":"g2-o","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:no-prose, name:salmon. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g2-o","to":"breeder","topic":"output","body":{"gen":2,"directives":["style:no-prose","name:salmon"],"output":["salmon"]}}
+{"t":"score","ts":1783225966624,"agentId":"g2-o","scores":{"gen":2,"fitness":0,"trueF1":0,"proxy":0.2,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":1,"len":2}}
+{"t":"kill","ts":1783225966624,"agentId":"g2-o"}
+{"t":"spawn","ts":1783225966624,"agentId":"g2-q","spec":{"id":"g2-q","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:banana. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g2-q","to":"breeder","topic":"output","body":{"gen":2,"directives":["name:green","name:banana"],"output":["green","banana"]}}
+{"t":"score","ts":1783225966624,"agentId":"g2-q","scores":{"gen":2,"fitness":0.25,"trueF1":0.25,"proxy":0.2,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":0,"len":2}}
+{"t":"kill","ts":1783225966624,"agentId":"g2-q"}
+{"t":"spawn","ts":1783225966624,"agentId":"g2-s","spec":{"id":"g2-s","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:sun. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966624,"from":"g2-s","to":"breeder","topic":"output","body":{"gen":2,"directives":["name:sun"],"output":["sun"]}}
+{"t":"score","ts":1783225966624,"agentId":"g2-s","scores":{"gen":2,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":0,"len":1}}
+{"t":"kill","ts":1783225966624,"agentId":"g2-s"}
+{"t":"spawn","ts":1783225966624,"agentId":"g2-u","spec":{"id":"g2-u","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:list-only, name:coral. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966625,"from":"g2-u","to":"breeder","topic":"output","body":{"gen":2,"directives":["style:list-only","name:coral"],"output":["coral"]}}
+{"t":"score","ts":1783225966625,"agentId":"g2-u","scores":{"gen":2,"fitness":0,"trueF1":0,"proxy":0.2,"hits":0,"misses":1,"size":1,"precision":0,"recall":0,"themeGenes":0,"distractGenes":1,"metaGenes":1,"len":2}}
+{"t":"kill","ts":1783225966625,"agentId":"g2-u"}
+{"t":"spawn","ts":1783225966625,"agentId":"g2-w","spec":{"id":"g2-w","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal. Emit the words your directives point to.","context":{"gen":2}}}
+{"t":"message","ts":1783225966625,"from":"g2-w","to":"breeder","topic":"output","body":{"gen":2,"directives":["name:green","name:orange","name:lavender","style:formal"],"output":["green","orange","lavender"]}}
+{"t":"score","ts":1783225966625,"agentId":"g2-w","scores":{"gen":2,"fitness":0.444,"trueF1":0.444,"proxy":0.4,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":1,"len":4}}
+{"t":"kill","ts":1783225966625,"agentId":"g2-w"}
+{"t":"score","ts":1783225966625,"scores":{"gen":2,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.174,"meanTrueF1":0.174,"diversity":1,"themeShare":0.333}}
+{"t":"message","ts":1783225966625,"from":"breeder","to":"*","topic":"generation","body":{"gen":2,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.174,"meanTrueF1":0.174,"diversity":1,"themeShare":0.333}}
+{"t":"spawn","ts":1783225966625,"agentId":"g1-a","spec":{"id":"g1-a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g1-a","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:green","name:orange","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966625,"agentId":"g1-a","scores":{"gen":3,"fitness":0.444,"trueF1":0.444,"proxy":0.3,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":0,"len":3}}
+{"t":"kill","ts":1783225966625,"agentId":"g1-a"}
+{"t":"spawn","ts":1783225966625,"agentId":"g2-w","spec":{"id":"g2-w","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g2-w","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:green","name:orange","name:lavender","style:formal"],"output":["green","orange","lavender"]}}
+{"t":"score","ts":1783225966625,"agentId":"g2-w","scores":{"gen":3,"fitness":0.444,"trueF1":0.444,"proxy":0.4,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":1,"len":4}}
+{"t":"kill","ts":1783225966625,"agentId":"g2-w"}
+{"t":"spawn","ts":1783225966625,"agentId":"g3-y","spec":{"id":"g3-y","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, style:formal. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g3-y","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:orange","name:salmon","style:formal"],"output":["orange","salmon"]}}
+{"t":"score","ts":1783225966625,"agentId":"g3-y","scores":{"gen":3,"fitness":0.25,"trueF1":0.25,"proxy":0.3,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":1,"len":3}}
+{"t":"kill","ts":1783225966625,"agentId":"g3-y"}
+{"t":"spawn","ts":1783225966625,"agentId":"g3-10","spec":{"id":"g3-10","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, style:think-step, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g3-10","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:green","style:think-step","name:orange","name:salmon"],"output":["green","orange","salmon","scarlet"]}}
+{"t":"score","ts":1783225966625,"agentId":"g3-10","scores":{"gen":3,"fitness":0.4,"trueF1":0.4,"proxy":0.4,"hits":2,"misses":2,"size":4,"precision":0.5,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":1,"len":4}}
+{"t":"kill","ts":1783225966625,"agentId":"g3-10"}
+{"t":"spawn","ts":1783225966625,"agentId":"g3-12","spec":{"id":"g3-12","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:lemon, name:orange. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g3-12","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:lemon","name:orange"],"output":[]}}
+{"t":"score","ts":1783225966625,"agentId":"g3-12","scores":{"gen":3,"fitness":0,"trueF1":0,"proxy":0.2,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":1,"distractGenes":1,"metaGenes":0,"len":2}}
+{"t":"kill","ts":1783225966625,"agentId":"g3-12"}
+{"t":"spawn","ts":1783225966625,"agentId":"g3-14","spec":{"id":"g3-14","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:blue. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966625,"from":"g3-14","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:blue"],"output":["blue"]}}
+{"t":"score","ts":1783225966625,"agentId":"g3-14","scores":{"gen":3,"fitness":0.286,"trueF1":0.286,"proxy":0.1,"hits":1,"misses":0,"size":1,"precision":1,"recall":0.167,"themeGenes":1,"distractGenes":0,"metaGenes":0,"len":1}}
+{"t":"kill","ts":1783225966626,"agentId":"g3-14"}
+{"t":"spawn","ts":1783225966626,"agentId":"g3-16","spec":{"id":"g3-16","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal, name:lavender, name:ochre. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966626,"from":"g3-16","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:green","name:orange","name:lavender","style:formal","name:lavender","name:ochre"],"output":["green","orange","lavender","ochre"]}}
+{"t":"score","ts":1783225966626,"agentId":"g3-16","scores":{"gen":3,"fitness":0.4,"trueF1":0.4,"proxy":0.6,"hits":2,"misses":2,"size":4,"precision":0.5,"recall":0.333,"themeGenes":2,"distractGenes":3,"metaGenes":1,"len":6}}
+{"t":"kill","ts":1783225966626,"agentId":"g3-16"}
+{"t":"spawn","ts":1783225966626,"agentId":"g3-18","spec":{"id":"g3-18","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, name:green, name:orange, name:coal, name:salmon. Emit the words your directives point to.","context":{"gen":3}}}
+{"t":"message","ts":1783225966626,"from":"g3-18","to":"breeder","topic":"output","body":{"gen":3,"directives":["name:orange","name:salmon","name:green","name:orange","name:coal","name:salmon"],"output":["salmon","green","orange","coal","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g3-18","scores":{"gen":3,"fitness":0.4,"trueF1":0.4,"proxy":0.6,"hits":2,"misses":2,"size":4,"precision":0.5,"recall":0.333,"themeGenes":3,"distractGenes":3,"metaGenes":0,"len":6}}
+{"t":"kill","ts":1783225966626,"agentId":"g3-18"}
+{"t":"score","ts":1783225966626,"scores":{"gen":3,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.328,"meanTrueF1":0.328,"diversity":1,"themeShare":0.483}}
+{"t":"message","ts":1783225966626,"from":"breeder","to":"*","topic":"generation","body":{"gen":3,"bestFitness":0.444,"bestTrueF1":0.444,"meanFitness":0.328,"meanTrueF1":0.328,"diversity":1,"themeShare":0.483}}
+{"t":"spawn","ts":1783225966626,"agentId":"g1-a","spec":{"id":"g1-a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g1-a","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g1-a","scores":{"gen":4,"fitness":0.444,"trueF1":0.444,"proxy":0.3,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":0,"len":3}}
+{"t":"kill","ts":1783225966626,"agentId":"g1-a"}
+{"t":"spawn","ts":1783225966626,"agentId":"g2-w","spec":{"id":"g2-w","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g2-w","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","name:lavender","style:formal"],"output":["green","orange","lavender"]}}
+{"t":"score","ts":1783225966626,"agentId":"g2-w","scores":{"gen":4,"fitness":0.444,"trueF1":0.444,"proxy":0.4,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":1,"len":4}}
+{"t":"kill","ts":1783225966626,"agentId":"g2-w"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1a","spec":{"id":"g4-1a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon, name:green, style:no-prose, name:salmon. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1a","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","name:salmon","name:green","style:no-prose","name:salmon"],"output":["green","orange","salmon","green","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1a","scores":{"gen":4,"fitness":0.444,"trueF1":0.444,"proxy":0.6,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":3,"distractGenes":2,"metaGenes":1,"len":6}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1a"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1c","spec":{"id":"g4-1c","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:lavender, style:formal, name:lavender. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1c","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:lavender","style:formal","name:lavender"],"output":["green","lavender"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1c","scores":{"gen":4,"fitness":0.25,"trueF1":0.25,"proxy":0.4,"hits":1,"misses":1,"size":2,"precision":0.5,"recall":0.167,"themeGenes":1,"distractGenes":2,"metaGenes":1,"len":4}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1c"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1e","spec":{"id":"g4-1e","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:amber, name:salmon. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1e","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","name:amber","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1e","scores":{"gen":4,"fitness":0.444,"trueF1":0.444,"proxy":0.4,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":2,"metaGenes":0,"len":4}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1e"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1g","spec":{"id":"g4-1g","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, style:formal, name:lavender, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1g","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","style:formal","name:lavender","name:orange","name:salmon"],"output":["green","orange","lavender","orange","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1g","scores":{"gen":4,"fitness":0.4,"trueF1":0.4,"proxy":0.6,"hits":2,"misses":2,"size":4,"precision":0.5,"recall":0.333,"themeGenes":3,"distractGenes":2,"metaGenes":1,"len":6}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1g"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1i","spec":{"id":"g4-1i","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal, name:lavender, name:purple, name:ochre. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1i","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:green","name:orange","name:lavender","style:formal","name:lavender","name:purple","name:ochre"],"output":["green","orange","lavender","lavender","purple"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1i","scores":{"gen":4,"fitness":0.6,"trueF1":0.6,"proxy":0.7,"hits":3,"misses":1,"size":4,"precision":0.75,"recall":0.5,"themeGenes":3,"distractGenes":3,"metaGenes":1,"len":7}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1i"}
+{"t":"spawn","ts":1783225966626,"agentId":"g4-1k","spec":{"id":"g4-1k","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:magenta, name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":4}}}
+{"t":"message","ts":1783225966626,"from":"g4-1k","to":"breeder","topic":"output","body":{"gen":4,"directives":["name:magenta","name:green","name:orange","name:salmon"],"output":["magenta","green","orange","salmon"]}}
+{"t":"score","ts":1783225966626,"agentId":"g4-1k","scores":{"gen":4,"fitness":0.4,"trueF1":0.4,"proxy":0.4,"hits":2,"misses":2,"size":4,"precision":0.5,"recall":0.333,"themeGenes":2,"distractGenes":2,"metaGenes":0,"len":4}}
+{"t":"kill","ts":1783225966626,"agentId":"g4-1k"}
+{"t":"score","ts":1783225966627,"scores":{"gen":4,"bestFitness":0.6,"bestTrueF1":0.6,"meanFitness":0.428,"meanTrueF1":0.428,"diversity":1,"themeShare":0.474}}
+{"t":"message","ts":1783225966627,"from":"breeder","to":"*","topic":"generation","body":{"gen":4,"bestFitness":0.6,"bestTrueF1":0.6,"meanFitness":0.428,"meanTrueF1":0.428,"diversity":1,"themeShare":0.474}}
+{"t":"spawn","ts":1783225966627,"agentId":"g4-1i","spec":{"id":"g4-1i","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:lavender, style:formal, name:lavender, name:purple, name:ochre. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g4-1i","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","name:orange","name:lavender","style:formal","name:lavender","name:purple","name:ochre"],"output":["green","orange","lavender","lavender","purple"]}}
+{"t":"score","ts":1783225966627,"agentId":"g4-1i","scores":{"gen":5,"fitness":0.6,"trueF1":0.6,"proxy":0.7,"hits":3,"misses":1,"size":4,"precision":0.75,"recall":0.5,"themeGenes":3,"distractGenes":3,"metaGenes":1,"len":7}}
+{"t":"kill","ts":1783225966627,"agentId":"g4-1i"}
+{"t":"spawn","ts":1783225966627,"agentId":"g1-a","spec":{"id":"g1-a","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g1-a","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","name:orange","name:salmon"],"output":["green","orange","salmon"]}}
+{"t":"score","ts":1783225966627,"agentId":"g1-a","scores":{"gen":5,"fitness":0.444,"trueF1":0.444,"proxy":0.3,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":2,"distractGenes":1,"metaGenes":0,"len":3}}
+{"t":"kill","ts":1783225966627,"agentId":"g1-a"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1m","spec":{"id":"g5-1m","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:orange, name:salmon, name:orange, name:salmon, name:green, style:no-prose, name:salmon. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1m","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:orange","name:salmon","name:orange","name:salmon","name:green","style:no-prose","name:salmon"],"output":["orange","salmon","orange","salmon","green","salmon"]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1m","scores":{"gen":5,"fitness":0.444,"trueF1":0.444,"proxy":0.7,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":3,"distractGenes":3,"metaGenes":1,"len":7}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1m"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1o","spec":{"id":"g5-1o","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:salmon. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1o","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","name:salmon"],"output":["green"]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1o","scores":{"gen":5,"fitness":0.286,"trueF1":0.286,"proxy":0.2,"hits":1,"misses":0,"size":1,"precision":1,"recall":0.167,"themeGenes":1,"distractGenes":1,"metaGenes":0,"len":2}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1o"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1q","spec":{"id":"g5-1q","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, style:no-prose, name:salmon, name:green, style:no-prose, name:salmon, name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1q","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","style:no-prose","name:salmon","name:green","style:no-prose","name:salmon","name:green","name:orange","name:salmon"],"output":["green","salmon","green","salmon","green","orange","salmon"]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1q","scores":{"gen":5,"fitness":0.444,"trueF1":0.444,"proxy":0.9,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":4,"distractGenes":3,"metaGenes":2,"len":9}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1q"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1s","spec":{"id":"g5-1s","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): style:list-only. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1s","to":"breeder","topic":"output","body":{"gen":5,"directives":["style:list-only"],"output":[]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1s","scores":{"gen":5,"fitness":0,"trueF1":0,"proxy":0.1,"hits":0,"misses":0,"size":0,"precision":0,"recall":0,"themeGenes":0,"distractGenes":0,"metaGenes":1,"len":1}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1s"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1u","spec":{"id":"g5-1u","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon, name:green, name:orange, name:salmon. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1u","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","name:orange","name:salmon","name:green","name:orange","name:salmon"],"output":["green","orange","salmon","green","orange","salmon"]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1u","scores":{"gen":5,"fitness":0.444,"trueF1":0.444,"proxy":0.6,"hits":2,"misses":1,"size":3,"precision":0.667,"recall":0.333,"themeGenes":4,"distractGenes":2,"metaGenes":0,"len":6}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1u"}
+{"t":"spawn","ts":1783225966627,"agentId":"g5-1w","spec":{"id":"g5-1w","systemPrompt":"You are a word-list generator. Output ONLY a comma-separated list of single words, no prose. Your directives (hints about what to name): name:green, name:orange, name:salmon, name:green, name:silver, name:ochre. Emit the words your directives point to.","context":{"gen":5}}}
+{"t":"message","ts":1783225966627,"from":"g5-1w","to":"breeder","topic":"output","body":{"gen":5,"directives":["name:green","name:orange","name:salmon","name:green","name:silver","name:ochre"],"output":["green","orange","salmon","green","silver","ochre"]}}
+{"t":"score","ts":1783225966627,"agentId":"g5-1w","scores":{"gen":5,"fitness":0.364,"trueF1":0.364,"proxy":0.6,"hits":2,"misses":3,"size":5,"precision":0.4,"recall":0.333,"themeGenes":3,"distractGenes":3,"metaGenes":0,"len":6}}
+{"t":"kill","ts":1783225966627,"agentId":"g5-1w"}
+{"t":"score","ts":1783225966627,"scores":{"gen":5,"bestFitness":0.6,"bestTrueF1":0.6,"meanFitness":0.378,"meanTrueF1":0.378,"diversity":1,"themeShare":0.488}}
+{"t":"message","ts":1783225966627,"from":"breeder","to":"*","topic":"generation","body":{"gen":5,"bestFitness":0.6,"bestTrueF1":0.6,"meanFitness":0.378,"meanTrueF1":0.378,"diversity":1,"themeShare":0.488}}
+{"t":"score","ts":1783225966627,"scores":{"generations":6,"firstBestF1":0.25,"finalBestF1":0.6,"f1Climb":0.35,"finalDiversity":1,"converged":0,"goodhartDivergence":0,"bestEverF1":0.6}}
