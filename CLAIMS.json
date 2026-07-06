@@ -1,0 +1,302 @@
+[
+  {
+    "id": "RT-01",
+    "claim": "Typed Sonder payload contracts eliminate false-friend silent corruption in the exp-12 schema-negotiation retest while preserving honest rename matching.",
+    "experiment": "experiments/12-schema-negotiation",
+    "spec": "specs/14-sonder-typed-payload-contracts.md",
+    "runIds": ["sn-naive-mr7swifj", "sn-sonder-mr7t4fau"],
+    "tracePaths": [
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl",
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.meanFalseFriendMissRate",
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.worstSilentCorruption",
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.meanFalseFriendMissRate",
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.worstSilentCorruption",
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendCorruptEscapes",
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendsInjected"
+    ],
+    "expectedValues": {
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.meanFalseFriendMissRate": { "equals": 0.908, "tolerance": 0 },
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.worstSilentCorruption": { "equals": 0.845, "tolerance": 0 },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.meanFalseFriendMissRate": { "equals": 0, "tolerance": 0 },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.worstSilentCorruption": { "equals": 0, "tolerance": 0 },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendCorruptEscapes": { "equals": 0, "tolerance": 0 },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendsInjected": { "equals": 960, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && SCHEMA_MODE=naive node experiments/12-schema-negotiation/dist/main.js && SCHEMA_MODE=sonder SONDER_SHA=4c7dddf node experiments/12-schema-negotiation/dist/main.js",
+    "stackRecommendation": "Ship concept+unit typed payload contracts as first-class Sonder event metadata; never infer semantic equality from wire names alone.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/dev/sonder",
+        "package": "@heybeaux/sonder-core",
+        "branch": "typed-payload-contracts",
+        "commits": ["4c7dddf"],
+        "prs": [],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Historical trace metadata records sonderSha=4c7dddf but not full external repo dirty state; do not invent it. Naive baseline is included to preserve the measured delta."
+  },
+  {
+    "id": "RT-02",
+    "claim": "Parliament pinned criteria and evidence audit detect/block K=3 vote-arithmetic capture and criterion drift instead of certifying a lie, at zero clean-panel block cost.",
+    "experiment": "experiments/04-consensus-under-lies",
+    "spec": "specs/15-parliament-criterion-pinning.md",
+    "runIds": ["cul-parl-mr7ty33i"],
+    "tracePaths": ["experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl"],
+    "scoreFields": [
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK3",
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK2",
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK1",
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.blockedCleanPanels",
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK1Sneaky",
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK2Sneaky"
+    ],
+    "expectedValues": {
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK3": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK2": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK1": { "equals": 0.01, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.blockedCleanPanels": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK1Sneaky": { "equals": 0.7, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK2Sneaky": { "equals": 0.3, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && node experiments/04-consensus-under-lies/dist/parliament.js",
+    "stackRecommendation": "Pin the decision criterion in the gate contract and require on-standard verifiable evidence before tallying votes; a blocked/no-consensus verdict is preferable to certifying a green lie.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/dev/parliament",
+        "package": "@parliament/core",
+        "branch": "criterion-pinning",
+        "commits": ["1562a1f", "4436f89"],
+        "prs": [],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "The audit closes silent capture and criterion-drift certification; it does not recover truth in K=1-2 sneaky cases, which remain deliberately red in the ledger."
+  },
+  {
+    "id": "RT-03",
+    "claim": "Engram versioned facts plus anti-entropy turn the exp-08 gossip mesh from full-coverage-but-corrupted to full-coverage-and-faithful by healing corrupt copies.",
+    "experiment": "experiments/08-rumor-mill",
+    "spec": "specs/16-engram-versioned-facts.md",
+    "runIds": ["rm-baseline-mr7uziwl", "rm-engram-mr7uzjds"],
+    "tracePaths": [
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.coverageOutrunsTruth",
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.worstCellFidelity",
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.telephoneGradient",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.coverageOutrunsTruth",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.worstCellFidelity",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.telephoneGradient",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanHealedPerTrial",
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanRejectedPerTrial"
+    ],
+    "expectedValues": {
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.coverageOutrunsTruth": { "equals": 19, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.worstCellFidelity": { "equals": 0.574, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.telephoneGradient": { "equals": 0.113, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.coverageOutrunsTruth": { "equals": 0, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.worstCellFidelity": { "equals": 1, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.telephoneGradient": { "equals": 0, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanHealedPerTrial": { "equals": 279.267, "tolerance": 0 },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanRejectedPerTrial": { "equals": 2768.165, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && RUMOR_MODE=baseline node experiments/08-rumor-mill/dist/main.js && RUMOR_MODE=engram node experiments/08-rumor-mill/dist/main.js",
+    "stackRecommendation": "Use content-addressed versioned facts and anti-entropy reconciliation; measure fidelity separately from coverage and heal corrupt first-write copies rather than throttling propagation.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/projects/engram",
+        "package": "@openengram/reconciliation",
+        "branch": "versioned-facts-anti-entropy",
+        "commits": ["baf3d05", "0a4910d"],
+        "prs": [],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "The retest uses a seeded deterministic gossip harness. The external Engram package dirty state was not embedded in the historical trace, so only the writeup commit IDs are carried."
+  },
+  {
+    "id": "RT-04",
+    "claim": "Parliament fact-checked evidence audit closes the adapted on-standard fabrication hole when a seeded ground store exists.",
+    "experiment": "experiments/04-consensus-under-lies",
+    "spec": "specs/18-parliament-fact-check.md",
+    "runIds": ["cul-fc-hole-mr7wkmvf", "cul-fc-factcheck-mr7wkmw0"],
+    "tracePaths": [
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK1",
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK2",
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK3",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK1",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK2",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK3",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.summedFabricatedBlockedRate",
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.blockedCleanPanels"
+    ],
+    "expectedValues": {
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK1": { "equals": 0.08, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK2": { "equals": 0.24, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK3": { "equals": 1, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK1": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK2": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK3": { "equals": 0, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.summedFabricatedBlockedRate": { "equals": 3.68, "tolerance": 0 },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.blockedCleanPanels": { "equals": 6, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && LIES_FC_MODE=hole node experiments/04-consensus-under-lies/dist/factchecksweep.js && LIES_FC_MODE=factcheck node experiments/04-consensus-under-lies/dist/factchecksweep.js",
+    "stackRecommendation": "Layer a dependency-injected fact store under the criterion audit; report fabricated, ungrounded, drifted, and no-admissible-evidence as distinct block reasons.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/dev/parliament",
+        "package": "@parliament/core",
+        "branch": "fact-check-audit",
+        "commits": ["218faf1"],
+        "prs": [],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "The ground store is a seeded oracle, not a general truth machine. K=0 ungrounded blocks are real and kept visible."
+  },
+  {
+    "id": "RT-05",
+    "claim": "Engram-backed capability facts let a delegation trust router converge, survive root restart, and transfer knowledge to a brand-new root with verified evidence.",
+    "experiment": "experiments/14-delegation-decay",
+    "spec": "specs/19-delegation-decay.md",
+    "runIds": ["dd-b-mr7zvbuu"],
+    "tracePaths": ["experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl"],
+    "scoreFields": [
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.amLoudLate",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.icLoudLate",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudLate",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWLate",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudConv",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWConv",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudPostReset",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWPostReset",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudTransfer",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWTransfer",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudWasted",
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWWasted"
+    ],
+    "expectedValues": {
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.amLoudLate": { "equals": 0.183, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.icLoudLate": { "equals": 0.087, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudLate": { "equals": 0, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWLate": { "equals": 0.003, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudConv": { "equals": 9, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWConv": { "equals": 11, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudPostReset": { "equals": 0, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWPostReset": { "equals": 0, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudTransfer": { "equals": 1, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWTransfer": { "equals": 1, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudWasted": { "equals": 15, "tolerance": 0 },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWWasted": { "equals": 30, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && TRUST_TRIALS=50 node experiments/14-delegation-decay/dist/mainb.js",
+    "stackRecommendation": "Record delegation outcomes as provenance-tier versioned capability facts in Engram; read verified store-backed evidence for routing decisions instead of trusting transcript memory.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/projects/engram",
+        "package": "@openengram/reconciliation",
+        "branch": "versioned-facts-anti-entropy",
+        "commits": ["baf3d05", "0a4910d"],
+        "prs": ["323"],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Convergence is verified at rounds 9/11, not the hypothesized <=5. Unforgiving priors permanently exclude capable workers; RT-06 addresses that separate debt."
+  },
+  {
+    "id": "RT-06",
+    "claim": "Evidence-capped probation recovers capable workers without leaking the incapable worker back into steady-state routing, but the policy is tuned in-sample and still needs a holdout sweep.",
+    "experiment": "experiments/15-trust-forgiveness",
+    "spec": "specs/20-trust-forgiveness.md",
+    "runIds": ["tf-mr84czql"],
+    "tracePaths": ["experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl"],
+    "scoreFields": [
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer"
+    ],
+    "expectedValues": {
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk": { "equals": 1, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate": { "equals": 0.017, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate": { "equals": 0.047, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx": { "equals": 0, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx": { "equals": 0.02, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks": { "equals": 0, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks": { "equals": 0, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer": { "equals": 1, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer": { "equals": 1, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks": { "equals": 1.52, "tolerance": 0 },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer": { "equals": 0.9, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && node experiments/15-trust-forgiveness/dist/main.js",
+    "stackRecommendation": "Use evidence-capped probation over time-window decay: bench on failures>successes, probe with front-loaded backoff, readmit only on cumulative rebalance, cap probes after a failure margin. Store probation state as facts so it survives restarts.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/projects/engram",
+        "package": "@openengram/reconciliation",
+        "branch": "versioned-facts-anti-entropy",
+        "commits": ["baf3d05", "0a4910d"],
+        "prs": ["323"],
+        "dirtyState": "unknown_past_run"
+      }
+    ],
+    "evidenceStatus": "in_sample",
+    "notes": "Policy cadence was tuned on the shared seed family. Do not treat production defaults as final until Spec 22/23 follow-up adds a holdout seed sweep; this ledger verifies the current in-sample evidence."
+  },
+  {
+    "id": "RT-07",
+    "claim": "Value-echo handoff manifests fully recover deep delegated requirement survival under the exp-16 noise model; presence-only catches drops but leaves meaning loss exposed.",
+    "experiment": "experiments/16-handoff-guards",
+    "spec": "specs/21-handoff-requirement-guards.md",
+    "runIds": ["hg-mr853iu8"],
+    "tracePaths": ["experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl"],
+    "scoreFields": [
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.controlReproducedRT05",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT1",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT2",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT3",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepGapT3minusT2",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepNetTokenEffT3",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT2",
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT3"
+    ],
+    "expectedValues": {
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.controlReproducedRT05": { "equals": 1, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT1": { "equals": 0.39, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT2": { "equals": 0.578, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT3": { "equals": 1, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepGapT3minusT2": { "equals": 0.422, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepNetTokenEffT3": { "equals": 0.485, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT2": { "equals": 0, "tolerance": 0 },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT3": { "equals": 0, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && node experiments/16-handoff-guards/dist/main.js",
+    "stackRecommendation": "Put value-echo manifests at the Sonder/Lattice handoff boundary for delegated trees of depth >=2; presence-only is acceptable mainly at d1. Still prefer not delegating deeper than necessary.",
+    "stackReposAndPRs": [],
+    "evidenceStatus": "verified",
+    "notes": "Full recovery is bounded to the tested per-hop drop/reinterpret/fork noise model. The live haiku run is informative exhibition only and intentionally not used as verified evidence here."
+  }
+]

@@ -89,10 +89,24 @@ in `JOURNAL.md`. Every result is real — a red trace beats a faked green one.
 ## Evidence and roadmap
 
 - [`SYNTHESIS.md`](./SYNTHESIS.md) is the cross-experiment stack intelligence report.
+- [`CLAIMS.json`](./CLAIMS.json) is the machine-readable claims ledger: each RT headline maps to
+  run ids, trace paths, score fields, reproduction commands, and stack recommendations.
+- [`docs/EVIDENCE-LEDGER.md`](./docs/EVIDENCE-LEDGER.md) explains the ledger format, verification
+  command, and run metadata convention for new traces.
 - [`docs/NORTH-STAR-ROADMAP.md`](./docs/NORTH-STAR-ROADMAP.md) formalizes the next phase:
   evidence supply-chain hardening plus specs 22–30.
 - Raw traces are intentionally committed under `experiments/*/runs/*.jsonl`; they are the
   replayable evidence corpus behind the writeups.
+
+### Evidence and replay
+
+```bash
+npm run verify:evidence
+```
+
+The verifier loads `CLAIMS.json`, replays every referenced JSONL trace with the shared trace
+reader, and asserts the listed score fields. This verifies the committed evidence corpus; use the
+per-claim `reproductionCommand` when you need to regenerate fresh traces.
 
 ## Running an experiment
 

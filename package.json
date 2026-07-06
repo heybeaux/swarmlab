@@ -13,7 +13,8 @@
   "scripts": {
     "build": "tsc -b",
     "typecheck": "tsc -b --force",
-    "smoke": "npm run build && node experiments/00-smoke/dist/main.js"
+    "smoke": "npm run build && node experiments/00-smoke/dist/main.js",
+    "verify:evidence": "node scripts/verify-evidence.mjs"
   },
   "devDependencies": {
     "typescript": "^5.5.4"
