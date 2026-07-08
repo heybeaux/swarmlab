@@ -3,8 +3,8 @@
 **Purpose:** Agent-run experiment lab for the heybeaux stack. SwarmLab builds controlled multi-agent experiments, records replayable traces, measures whether green signals hide wrong outcomes, and turns findings into production changes across Sonder, AOP, Lattice, Engram, Parliament, ACR, AWM, and Aegis.
 **Repo:** https://github.com/heybeaux/swarmlab
 **Status:** active
-**Phase:** experiment/retest campaign complete through exp-16 and RT-07; lifecycle model drafted
-**Last verified:** 2026-07-07
+**Phase:** experiment/retest campaign complete through exp-17 and RT-08; first Aegis-wrapped retest landed
+**Last verified:** 2026-07-08
 
 ## Runtime
 
@@ -44,7 +44,8 @@
 3. Use Engram versioned facts + anti-entropy for memory fidelity and capability trust transfer.
 4. Implement evidence-capped probation for delegation trust routing.
 5. Require value-echo handoff manifests for delegation depth ≥2.
-6. Feed proven findings into Aegis benchmark axes and shadow/enforcement policies.
+6. Consume verification tiers in high-risk audits; RT-08 now has an Aegis-wrapped retest proving Aegis reduces audit escape when inserted.
+7. Feed proven findings into Aegis benchmark axes and shadow/enforcement policies.
 
 ## Where to learn more
 

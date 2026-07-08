@@ -6,4 +6,4 @@ SwarmLab is the agent-run experiment lab for the heybeaux stack. It builds contr
 **Repo:** https://github.com/heybeaux/swarmlab
 **Relates to:** Aegis harnessizes its findings; Sonder/AOP/Lattice/Engram/Parliament/ACR/AWM consume its retest evidence.
 
-Current phase: first experiment + retest campaign complete through exp-16 / RT-07. `SYNTHESIS.md` is the canonical cross-stack evidence ledger; `docs/STACK-LIFECYCLE.md` defines the development and release loop.
+Current phase: retest campaign complete through exp-17 / RT-08, including the first explicit Aegis-wrapped retest (`gsv-mrc3huyf`) that reruns a SwarmLab scenario with the real Aegis evaluator in the path. `SYNTHESIS.md` is the canonical cross-stack evidence ledger; `docs/STACK-LIFECYCLE.md` defines the development and release loop.

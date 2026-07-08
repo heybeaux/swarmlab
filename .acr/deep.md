@@ -35,7 +35,8 @@ SwarmLab follows an evidence loop:
 6. patch the owning stack repo
 7. retest in SwarmLab against the real patched package via `file:` dependency
 8. promote the finding into Aegis as a rule, feature, label, or benchmark axis
-9. update territory/release docs so future agents inherit the map
+9. when practical, rerun the same SwarmLab scenario with the real Aegis evaluator in the path and pin the delta
+10. update territory/release docs so future agents inherit the map
 
 `docs/STACK-LIFECYCLE.md` is the canonical lifecycle and release-cycle document.
 
@@ -48,12 +49,14 @@ SwarmLab follows an evidence loop:
 - **Delegation trust:** exp-14 showed persistent Engram capability facts let a brand-new root avoid an incapable delegate; context windows do not.
 - **Forgiveness:** exp-15 showed naive time decay is dangerous and evidence-capped probation recovers capable workers without reopening incapable-worker leaks.
 - **Handoff guards:** exp-16 showed presence manifests are insufficient for deep delegation; value-echo manifests fully recover the modeled loss at depth ≥2.
+- **Verification tiers / Aegis-wrapped audits:** exp-17 showed evidence is not boolean; RT-08 plus Aegis PR #7 added a high-risk audit gate, and retest `gsv-mrc3huyf` proved Aegis-wrapped audit escape falls 0.188 → 0.063 with measured governance cost tax 0.106.
 
 ## Boundaries
 
 - SwarmLab **does** produce experiments, metrics, traces, retests, synthesis, and stack recommendations.
 - SwarmLab **does not** own production enforcement. Lattice/Aegis own runtime gates; owner repos own implementation; territory owns orientation.
 - SwarmLab **does not** certify a change unless the retest links real implementation code.
+- SwarmLab **does not** certify an Aegis runtime/harness claim unless an Aegis-wrapped retest exists or the blocker is explicit.
 
 ## Release implications
 
@@ -71,5 +74,5 @@ Any production release motivated by SwarmLab evidence should carry:
 
 - Aegis needs stable decision→outcome joins and enough labeled data for its predictive layer.
 - Engram-backed `FactStore` needs verification tiers (`attestation`, `provenance`, `retrieval`, `cross_model`, etc.).
+- Parliament/Engram still need the full RT-08 verification-envelope rollout; the current Aegis-wrapped retest proves the audit gate only.
 - Lattice/Aegis need production delegation-depth policy for value-echo handoffs and evidence-capped probation.
-- SwarmLab and Aegis should both be first-class territory projects; SwarmLab card exists in this repo, Aegis still needs an owning-repo card once its current worktree is safe to touch.
