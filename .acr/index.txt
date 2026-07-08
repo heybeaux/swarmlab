@@ -1,0 +1,1 @@
+swarmlab: agent-run experiment lab — replay-verified swarm tests that drive stack changes

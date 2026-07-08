@@ -1,0 +1,68 @@
+name: swarmlab
+type: capability
+version: 1.0.0
+description: "Agent-run experiment lab and replay-verified retest ledger for the heybeaux stack."
+
+provides:
+  - agent-experiment-lab
+  - retest-ledger
+  - stack-evidence
+
+requires:
+  tools: []
+  capabilities:
+    - name: sonder
+      optional: true
+    - name: aop
+      optional: true
+    - name: lattice
+      optional: true
+    - name: engram
+      optional: true
+    - name: parliament
+      optional: true
+    - name: acr
+      optional: true
+    - name: awm
+      optional: true
+  context: []
+
+budget:
+  index: 20
+  summary: 200
+  standard: 1250
+  deep: 2500
+
+activation:
+  triggers:
+    - type: pattern
+      match: "(swarmlab|swarm lab|experiment lab|retest ledger|agent experiments|STACK-LIFECYCLE|SYNTHESIS.md)"
+  trigger_logic: OR
+  co_activates:
+    - aegis
+    - sonder
+    - engram
+    - lattice
+    - parliament
+  conflicts: []
+
+permissions:
+  data:
+    swarmlab_metadata: read-only
+
+behavioral:
+  core: |
+    When discussing or working on SwarmLab:
+    1. Treat it as the experiment/retest lab, not a product runtime.
+    2. Read SYNTHESIS.md for current evidence before asserting stack priorities.
+    3. Retests must link real production packages via file: deps; do not reimplement owner-repo logic in the lab.
+    4. Preserve the Prime Rule: only agents write code; human charters/specs guide the work.
+    5. Never smooth red metrics. Replay-verified red findings are valid output.
+  overlays: []
+
+verification:
+  checklist:
+    - "Checked /Users/beauxwalton/projects/swarmlab as canonical local path"
+    - "Used SYNTHESIS.md or experiment README for evidence claims"
+    - "Did not present agreement/pass-rate/coverage as truth without oracle/fidelity metrics"
+    - "Linked any production retest to real owner package code"
