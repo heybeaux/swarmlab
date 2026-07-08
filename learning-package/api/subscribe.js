@@ -68,26 +68,26 @@ export default async function handler(req, res) {
 
     if (!isEmail(email)) return json(res, 400, { error: 'Enter a valid email address.' });
 
-    try {
-      await dripctl('/users', {
-        email,
-        properties: {
-          source,
-          skin,
-          leadMagnet: 'green-is-not-correct',
-          subscribedAt: new Date().toISOString()
-        }
-      });
-    } catch (err) {
-      // User may already exist depending on current DripCtl semantics. The event is the important part.
-      if (err.statusCode && ![409, 422].includes(err.statusCode)) throw err;
-    }
+    const subscribedAt = new Date().toISOString();
+    const userResult = await dripctl('/users/upsert', {
+      email,
+      status: 'active',
+      source,
+      tags: ['swarmlab', 'lead-magnet', skin],
+      metadata: {
+        source,
+        skin,
+        leadMagnet: 'green-is-not-correct',
+        subscribedAt
+      }
+    });
 
     await dripctl('/events', {
       eventType: DRIPCTL_SEQUENCE_EVENT,
-      userId: email,
+      userId: userResult?.user?.id || email,
       payload: {
         email,
+        recipientEmail: email,
         source,
         skin,
         leadMagnet: 'green-is-not-correct'

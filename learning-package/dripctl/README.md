@@ -6,7 +6,7 @@ This folder converts the SwarmLab newsletter lead magnet into DripCtl-ready arti
 
 - `sequences/swarmlab-green-is-not-correct.ts` — typed sequence-as-code using `@dripctl/sdk` builders.
 - `templates/swarmlab-green-is-not-correct.json` — extracted email template payloads from `content/newsletter-sequence.md`.
-- `deploy-sequence.mjs` — direct REST deploy helper for the current DripCtl API.
+- `deploy-sequence.mjs` — direct REST deploy helper for the current DripCtl API. It inlines the exported template bodies into send steps because DripCtl does not have a first-class template import endpoint yet.
 
 ## Trigger
 
@@ -36,4 +36,4 @@ cd learning-package
 DRIPCTL_API_KEY=... DRIPCTL_TENANT_ID=... node dripctl/deploy-sequence.mjs
 ```
 
-Note: the current DripCtl API stores sequence steps with `template` references. The full email bodies are exported here as JSON so they can be imported into whichever provider/template store DripCtl exposes next.
+Note: DripCtl currently stores sequence definitions as JSONB and can execute inline `html` / `text` on send steps. It does not currently expose a separate template-storage/import endpoint for full reusable template bodies.
