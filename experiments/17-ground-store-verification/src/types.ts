@@ -16,7 +16,8 @@ export type VerificationArmId =
   | 'retrieval-only'
   | 'cross-model-only'
   | 'tiered-hierarchy'
-  | 'tiered-consumed';
+  | 'tiered-consumed'
+  | 'aegis-wrapped';
 
 export type VerificationStatus = 'supported' | 'unsupported' | 'contradicted' | 'needs_human';
 
@@ -78,6 +79,9 @@ export interface VerificationResult {
   readonly sourceUri?: string;
   readonly expiry?: string;
   readonly cost: number;
+  readonly aegisAction?: 'allow' | 'ask' | 'deny';
+  readonly aegisReason?: string;
+  readonly aegisMatches?: readonly string[];
 }
 
 export interface ArmMetrics {

@@ -288,13 +288,26 @@ Gate:
 - Aegis does not enforce new learned policy until shadow-mode data says the false-positive cost is acceptable
 - deterministic high-confidence rules can enforce earlier if the SwarmLab retest proves zero clean-panel tax
 
-### 7. Benchmark and release gate
+### 7. Aegis-wrapped retest and release gate
+
+After Aegis absorbs a SwarmLab finding as a deterministic rule, feature, or benchmark axis, SwarmLab
+must rerun the relevant scenario with the real Aegis evaluator in the path when practical. This is
+the closed loop: the lab result changes the harness, then the lab measures whether the changed
+harness actually improves the outcome it was meant to improve.
+
+Required outputs for Aegis-driven fixes:
+
+- Aegis owner repo PR/commit and tests
+- SwarmLab run that links the real Aegis package/evaluator, not a local policy imitation
+- before/after metric delta, including governance cost/friction tax
+- replay-verified trace and ledger assertions
+- explicit note if the Aegis-wrapped retest is not practical yet
 
 Every stack release should pass four axes:
 
 1. **Package tests** — unit/integration tests in the owning repo.
 2. **SwarmLab regression** — the retest that justified the change still passes.
-3. **Aegis safety axis** — the change does not introduce known bad action patterns or regress predictor calibration.
+3. **Aegis-wrapped safety axis** — the same scenario with Aegis inserted improves or at least does not regress the target outcome and reports its ask/deny/cost tax.
 4. **Operational smoke** — real local usage path still works, preferably via AOP/Sonder event capture.
 
 Optional additional axes:
@@ -307,6 +320,7 @@ Optional additional axes:
 Gate:
 
 - no release based on package tests alone if the change was motivated by a SwarmLab failure
+- no Aegis runtime/harness claim without an Aegis-wrapped retest or an explicit documented blocker
 - no Aegis predictor promotion without calibration and held-out evaluation
 
 ### 8. Release and territory update
@@ -440,7 +454,7 @@ From the current SwarmLab synthesis and retest ledger:
 ## Immediate implementation plan
 
 1. Add SwarmLab and Aegis to territory as first-class projects so future agents discover the lab/harness boundary immediately.
-2. Create an Aegis benchmark axis for the already-proven retests:
+2. Create/extend Aegis benchmark axes for the already-proven retests:
    - typed payload mismatch
    - criterion drift
    - fabricated claim
@@ -448,6 +462,7 @@ From the current SwarmLab synthesis and retest ledger:
    - capability trust transfer
    - evidence-capped probation
    - value-echo handoff guard
+   - verification-tier high-risk audit gate (`RT-08`, first Aegis-wrapped retest landed via Aegis PR #7 + SwarmLab `gsv-mrc3huyf`)
 3. Fix/verify Aegis decision→outcome joins so live labels are usable.
 4. Define `verification_tier` for Engram facts and an Engram-backed `FactStore` adapter for Parliament/Aegis.
 5. Implement Lattice/Aegis policy for delegation depth:

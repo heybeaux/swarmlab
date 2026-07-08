@@ -1,3 +1,4 @@
+import { evaluate } from '@heybeaux/lattice-aegis';
 import type {
   ArmMetrics,
   ClaimCase,
@@ -14,6 +15,7 @@ export const ARMS: readonly VerificationArmId[] = [
   'cross-model-only',
   'tiered-hierarchy',
   'tiered-consumed',
+  'aegis-wrapped',
 ];
 
 export function round3(n: number): number {
@@ -69,13 +71,9 @@ function crossModel(claim: ClaimCase, arm: VerificationArmId): VerificationResul
   return result(claim, arm, 'needs_human', 'cross_model_adversarial', 'diverse-verifier-panel', 'panel could not resolve claim', 4);
 }
 
-export function verifyClaim(claim: ClaimCase, arm: VerificationArmId): VerificationResult {
-  if (arm === 'first-write-wins') return result(claim, arm, 'supported', 'unsupported_claim_only', 'none', 'first write wins; no verification performed', 0.1);
+function tieredVerification(claim: ClaimCase, arm: VerificationArmId): VerificationResult {
   const human = humanAttestation(claim, arm);
   if (human) return human;
-  if (arm === 'provenance-only') return provenance(claim, arm) ?? result(claim, arm, 'unsupported', 'unsupported_claim_only', 'receipt-verifier', 'no receipt evidence supplied', 1);
-  if (arm === 'retrieval-only') return retrieval(claim, arm, false) ?? result(claim, arm, 'unsupported', 'unsupported_claim_only', 'synthetic-retrieval-entailment', 'no retrievable source supplied', 2);
-  if (arm === 'cross-model-only') return crossModel(claim, arm);
   const prov = provenance(claim, arm);
   if (prov && prov.status !== 'unsupported') return prov;
   const ret = retrieval(claim, arm, true);
@@ -83,8 +81,44 @@ export function verifyClaim(claim: ClaimCase, arm: VerificationArmId): Verificat
   return crossModel(claim, arm);
 }
 
+function aegisWrap(claim: ClaimCase): VerificationResult {
+  const base = tieredVerification(claim, 'aegis-wrapped');
+  const decision = evaluate(
+    {
+      tool: 'AuditClaim',
+      verification: {
+        highRiskAudit: claim.highRiskAudit,
+        status: base.status,
+        tier: base.tier,
+        correlatedVerifierRisk: base.verifier === 'correlated-verifier-panel',
+      },
+    },
+    [],
+    { ruleVersions: ['swarmlab.rt08'] },
+  );
+  return {
+    ...base,
+    aegisAction: decision.action,
+    aegisReason: decision.reason,
+    aegisMatches: decision.matches.map((m) => m.id),
+    cost: round3(base.cost + (decision.action === 'allow' ? 0.05 : 0.25)),
+  };
+}
+
+export function verifyClaim(claim: ClaimCase, arm: VerificationArmId): VerificationResult {
+  if (arm === 'first-write-wins') return result(claim, arm, 'supported', 'unsupported_claim_only', 'none', 'first write wins; no verification performed', 0.1);
+  const human = humanAttestation(claim, arm);
+  if (human) return human;
+  if (arm === 'provenance-only') return provenance(claim, arm) ?? result(claim, arm, 'unsupported', 'unsupported_claim_only', 'receipt-verifier', 'no receipt evidence supplied', 1);
+  if (arm === 'retrieval-only') return retrieval(claim, arm, false) ?? result(claim, arm, 'unsupported', 'unsupported_claim_only', 'synthetic-retrieval-entailment', 'no retrievable source supplied', 2);
+  if (arm === 'cross-model-only') return crossModel(claim, arm);
+  if (arm === 'aegis-wrapped') return aegisWrap(claim);
+  return tieredVerification(claim, arm);
+}
+
 function auditAccepts(claim: ClaimCase, verification: VerificationResult, arm: VerificationArmId): boolean {
   if (!claim.downstreamAudit || verification.status !== 'supported') return false;
+  if (arm === 'aegis-wrapped') return verification.aegisAction === 'allow';
   if (arm !== 'tiered-consumed') return true;
   if (!claim.highRiskAudit) return true;
   return verification.tier === 'human_attestation' || verification.tier === 'provenance_chain' || verification.tier === 'retrieval_grounded';
