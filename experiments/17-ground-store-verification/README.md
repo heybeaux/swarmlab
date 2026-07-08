@@ -41,10 +41,17 @@ failures without using a seeded oracle in the verifier path.
 6. **Tiered hierarchy consumed by audit** — same fact admission as tiered hierarchy, but downstream
    high-risk Parliament-style audits refuse to certify facts whose only support tier is
    `cross_model_adversarial`.
+7. **Aegis-wrapped audit** — same tiered fact admission as the hierarchy, but downstream audit
+   certification is routed through the real `@heybeaux/lattice-aegis` evaluator (`swarmlab.rt08`) so
+   the lab measures Aegis in the path, not a local policy imitation.
 
 ## Results
 
-Pinned run: `gsv-mr9bvkkk` — 30 claims × 6 arms, replay-verified 128 events.
+Original pinned run: `gsv-mr9bvkkk` — 30 claims × 6 arms, replay-verified 128 events.
+
+Aegis-wrapped retest: `gsv-mrc3huyf` — 30 claims × 7 arms, replay-verified 149 events, run after
+Aegis PR #7 landed as `2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad` and the local file-linked Aegis
+package was rebuilt.
 
 | arm | falseSupportRate | trueRejectRate | staleSupportRate | citationEntailmentMiss | downstreamAuditEscape | cost / accepted |
 |---|---:|---:|---:|---:|---:|---:|
@@ -54,6 +61,7 @@ Pinned run: `gsv-mr9bvkkk` — 30 claims × 6 arms, replay-verified 128 events.
 | cross-model-only | 0.563 | 0.000 | 0.667 | 0.667 | 0.563 | 4.913 |
 | tiered-hierarchy | 0.188 | **0.000** | **0.000** | **0.000** | 0.188 | 3.412 |
 | tiered-consumed | 0.188 | **0.000** | **0.000** | **0.000** | **0.063** | 3.412 |
+| aegis-wrapped | 0.188 | **0.000** | **0.000** | **0.000** | **0.063** | 3.518 |
 
 Summary scores:
 
@@ -76,11 +84,17 @@ Summary scores:
   "consumedFalseSupport": 0.188,
   "consumedAuditEscape": 0.063,
   "consumedEscapeReduction": 0.125,
+  "aegisFalseSupport": 0.188,
+  "aegisAuditEscape": 0.063,
+  "aegisEscapeReduction": 0.125,
+  "aegisGovernanceCostTax": 0.106,
   "hierarchyCostPerAccepted": 3.412,
+  "aegisCostPerAccepted": 3.518,
   "he1ProvenanceDominatesOperational": 1,
   "he2RetrievalDominatesExternalButStaleFails": 1,
   "he3CrossModelCorrelatedErrorsRemain": 1,
-  "he4TierConsumedReducesAuditEscape": 1
+  "he4TierConsumedReducesAuditEscape": 1,
+  "he5AegisWrapperReducesAuditEscape": 1
 }
 ```
 
@@ -104,6 +118,11 @@ Summary scores:
    audit escape remains 0.188 because cross-model-only support can still be treated as enough. When
    the Parliament-style audit refuses high-risk facts supported only by `cross_model_adversarial`,
    audit escape falls to 0.063 with no change in admission cost.
+5. **H-E5 confirmed after Aegis harnessization.** The real Aegis evaluator now implements the RT-08
+   high-risk audit policy. When exp-17 reruns with `aegis-wrapped` in the audit path, downstream
+   audit escape falls 0.188 → 0.063, matching the intended tier-consumption behavior, with a measured
+   governance cost tax of 0.106 cost/accepted fact. This is the tighter loop: lab finding → Aegis
+   policy → same lab retest with Aegis inserted → measured outcome delta.
 
 ## Stack recommendation
 
@@ -164,10 +183,19 @@ Parliament should weight tiers explicitly:
 - The hierarchy still has false support (0.188) because it deliberately falls back to cross-model
   support when no stronger evidence exists. The stack fix is not "never store it"; it is "store the
   tier and make audits consume it."
+- `aegis-wrapped` depends on a local `file:` link to `@heybeaux/lattice-aegis`; pinned retest
+  `gsv-mrc3huyf` was run after Aegis PR #7 was merged and local Aegis dist was rebuilt from commit
+  `2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad`.
 
 ## Reproduce
 
 ```bash
+cd /Users/beauxwalton/Dev/aegis
+git checkout 2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad
+pnpm --filter @heybeaux/lattice-aegis build
+
+cd /Users/beauxwalton/projects/swarmlab
+npm install
 npm run build
 node experiments/17-ground-store-verification/dist/main.js
 ```

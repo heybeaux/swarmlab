@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@heybeaux/lattice-aegis": "file:/Users/beauxwalton/Dev/aegis/packages/aegis",
     "@swarmlab/core": "0.1.0"
   },
   "scripts": {

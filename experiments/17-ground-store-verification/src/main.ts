@@ -82,6 +82,8 @@ for (let a = 0; a < ARMS.length; a += 1) {
           status: verdict.status,
           tier: verdict.tier,
           reason: verdict.reason,
+          aegisAction: verdict.aegisAction,
+          aegisMatches: verdict.aegisMatches,
         },
       });
     }
@@ -114,6 +116,7 @@ const summaryScorer: Scorer = {
     const xmod = metric('cross-model-only');
     const tier = metric('tiered-hierarchy');
     const consumed = metric('tiered-consumed');
+    const aegis = metric('aegis-wrapped');
     return {
       corpusClaims: CLAIMS.length,
       fwwFalseSupport: fww.falseSupportRate,
@@ -132,11 +135,17 @@ const summaryScorer: Scorer = {
       consumedFalseSupport: consumed.falseSupportRate,
       consumedAuditEscape: consumed.downstreamAuditEscape,
       consumedEscapeReduction: Math.round((tier.downstreamAuditEscape - consumed.downstreamAuditEscape) * 1000) / 1000,
+      aegisFalseSupport: aegis.falseSupportRate,
+      aegisAuditEscape: aegis.downstreamAuditEscape,
+      aegisEscapeReduction: Math.round((tier.downstreamAuditEscape - aegis.downstreamAuditEscape) * 1000) / 1000,
+      aegisGovernanceCostTax: Math.round((aegis.verificationCost - tier.verificationCost) * 1000) / 1000,
       hierarchyCostPerAccepted: tier.verificationCost,
+      aegisCostPerAccepted: aegis.verificationCost,
       he1ProvenanceDominatesOperational: prov.operationalTrueRejectRate === 0 && prov.operationalFalseSupportRate === 0 ? 1 : 0,
       he2RetrievalDominatesExternalButStaleFails: ret.externalTrueRejectRate === 0 && ret.staleSupportRate > 0 ? 1 : 0,
       he3CrossModelCorrelatedErrorsRemain: xmod.falseSupportRate > tier.falseSupportRate ? 1 : 0,
       he4TierConsumedReducesAuditEscape: consumed.downstreamAuditEscape < tier.downstreamAuditEscape ? 1 : 0,
+      he5AegisWrapperReducesAuditEscape: aegis.downstreamAuditEscape < tier.downstreamAuditEscape ? 1 : 0,
     };
   },
 };

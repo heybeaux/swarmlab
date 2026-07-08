@@ -693,8 +693,11 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   documented external claims, stale sources, fabricated claims, ambiguous claims, poisoned sources,
   and citations that exist but do not entail the submitted conclusion. The verifier read path never
   sees the ground-truth labels; labels are scorer-only. No LLM judges success.
-- **Retest (`experiments/17-ground-store-verification`, run `gsv-mr9bvkkk`, 30 claims × 6 arms,
-  replay-verified):**
+- **Retest (`experiments/17-ground-store-verification`):** original run `gsv-mr9bvkkk` proved the
+  tier-consumption policy over 30 claims × 6 arms (replay-verified). Follow-up run `gsv-mrc3huyf`
+  reran the same corpus after Aegis PR #7 landed as `2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad`,
+  adding an `aegis-wrapped` arm that routes high-risk audit certification through the real
+  `@heybeaux/lattice-aegis` evaluator. That run has 30 claims × 7 arms and is replay-verified.
 
   | arm | falseSupport | trueReject | staleSupport | citationEntailmentMiss | downstreamAuditEscape | cost/accepted |
   |---|---:|---:|---:|---:|---:|---:|
@@ -704,6 +707,7 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   | cross-model-only | 0.563 | 0.000 | 0.667 | 0.667 | 0.563 | 4.913 |
   | tiered-hierarchy | 0.188 | **0.000** | **0.000** | **0.000** | 0.188 | 3.412 |
   | tiered-consumed-by-audit | 0.188 | **0.000** | **0.000** | **0.000** | **0.063** | 3.412 |
+  | aegis-wrapped | 0.188 | **0.000** | **0.000** | **0.000** | **0.063** | 3.518 |
 
 - **Findings:** **H-E1 CONFIRMED for operational claims** — provenance-chain verification is the
   right tier for inspectable system claims (`tests passed`, `commit pushed`, `file changed`):
@@ -719,7 +723,9 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   the hierarchy's false support is 0.188 because it falls back to cross-model support where no
   stronger evidence exists; when a Parliament-style high-risk audit refuses facts supported only by
   `cross_model_adversarial`, downstream audit escape falls 0.188 → **0.063** at the same admission
-  cost.
+  cost. **H-E5 CONFIRMED** — after Aegis harnessization, rerunning exp-17 with the real Aegis
+  evaluator in the path (`aegis-wrapped`) produces the same safety delta: downstream audit escape
+  0.188 → **0.063**, with measured governance cost tax 0.106 cost/accepted fact.
 - **Stack recommendation:** Engram facts should carry a verification envelope separate from content:
   `tier`, `status`, `verifier`, `verifiedAt`, `evidenceDigest`, `receiptUri`, `sourceUri`,
   `sourceDigest`, `expiresAt`, `revalidateAfter`, and `correlatedVerifierRisk`. Recommended tier
@@ -733,5 +739,7 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   simulated to make correlated misses measurable rather than hand-waved. An initial local run exposed
   a harness bug: an ambiguous parent-task receipt was treated as verifying the child assertion; that
   run is not pinned, and the fixed pinned run marks the receipt non-matching, restoring provenance's
-  operational false-support to 0. This experiment recommends schema/policy only; no external Engram
-  branch was changed.
+  operational false-support to 0. The Aegis-wrapped retest depends on a local `file:` link to the
+  landed Aegis package build, matching prior SwarmLab retest style for Sonder/Parliament/Engram.
+  This experiment still recommends Engram/Parliament schema/policy only; no external Engram or
+  Parliament branch was changed.

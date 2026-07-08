@@ -4,7 +4,10 @@
     "claim": "Typed Sonder payload contracts eliminate false-friend silent corruption in the exp-12 schema-negotiation retest while preserving honest rename matching.",
     "experiment": "experiments/12-schema-negotiation",
     "spec": "specs/14-sonder-typed-payload-contracts.md",
-    "runIds": ["sn-naive-mr7swifj", "sn-sonder-mr7t4fau"],
+    "runIds": [
+      "sn-naive-mr7swifj",
+      "sn-sonder-mr7t4fau"
+    ],
     "tracePaths": [
       "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl",
       "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl"
@@ -18,12 +21,30 @@
       "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendsInjected"
     ],
     "expectedValues": {
-      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.meanFalseFriendMissRate": { "equals": 0.908, "tolerance": 0 },
-      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.worstSilentCorruption": { "equals": 0.845, "tolerance": 0 },
-      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.meanFalseFriendMissRate": { "equals": 0, "tolerance": 0 },
-      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.worstSilentCorruption": { "equals": 0, "tolerance": 0 },
-      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendCorruptEscapes": { "equals": 0, "tolerance": 0 },
-      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendsInjected": { "equals": 960, "tolerance": 0 }
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.meanFalseFriendMissRate": {
+        "equals": 0.908,
+        "tolerance": 0
+      },
+      "experiments/12-schema-negotiation/runs/sn-naive-mr7swifj.jsonl#last.worstSilentCorruption": {
+        "equals": 0.845,
+        "tolerance": 0
+      },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.meanFalseFriendMissRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.worstSilentCorruption": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendCorruptEscapes": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/12-schema-negotiation/runs/sn-sonder-mr7t4fau.jsonl#last.falseFriendsInjected": {
+        "equals": 960,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && SCHEMA_MODE=naive node experiments/12-schema-negotiation/dist/main.js && SCHEMA_MODE=sonder SONDER_SHA=4c7dddf node experiments/12-schema-negotiation/dist/main.js",
     "stackRecommendation": "Ship concept+unit typed payload contracts as first-class Sonder event metadata; never infer semantic equality from wire names alone.",
@@ -32,7 +53,9 @@
         "repo": "~/dev/sonder",
         "package": "@heybeaux/sonder-core",
         "branch": "typed-payload-contracts",
-        "commits": ["4c7dddf"],
+        "commits": [
+          "4c7dddf"
+        ],
         "prs": [],
         "dirtyState": "unknown_past_run"
       }
@@ -45,8 +68,12 @@
     "claim": "Parliament pinned criteria and evidence audit detect/block K=3 vote-arithmetic capture and criterion drift instead of certifying a lie, at zero clean-panel block cost.",
     "experiment": "experiments/04-consensus-under-lies",
     "spec": "specs/15-parliament-criterion-pinning.md",
-    "runIds": ["cul-parl-mr7ty33i"],
-    "tracePaths": ["experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl"],
+    "runIds": [
+      "cul-parl-mr7ty33i"
+    ],
+    "tracePaths": [
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl"
+    ],
     "scoreFields": [
       "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK3",
       "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK2",
@@ -56,12 +83,30 @@
       "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK2Sneaky"
     ],
     "expectedValues": {
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK3": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK2": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK1": { "equals": 0.01, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.blockedCleanPanels": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK1Sneaky": { "equals": 0.7, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK2Sneaky": { "equals": 0.3, "tolerance": 0 }
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK3": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK2": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.silentLieConsensusK1": {
+        "equals": 0.01,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.blockedCleanPanels": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK1Sneaky": {
+        "equals": 0.7,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-parl-mr7ty33i.jsonl#last.truthK2Sneaky": {
+        "equals": 0.3,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && node experiments/04-consensus-under-lies/dist/parliament.js",
     "stackRecommendation": "Pin the decision criterion in the gate contract and require on-standard verifiable evidence before tallying votes; a blocked/no-consensus verdict is preferable to certifying a green lie.",
@@ -70,7 +115,10 @@
         "repo": "~/dev/parliament",
         "package": "@parliament/core",
         "branch": "criterion-pinning",
-        "commits": ["1562a1f", "4436f89"],
+        "commits": [
+          "1562a1f",
+          "4436f89"
+        ],
         "prs": [],
         "dirtyState": "unknown_past_run"
       }
@@ -83,7 +131,10 @@
     "claim": "Engram versioned facts plus anti-entropy turn the exp-08 gossip mesh from full-coverage-but-corrupted to full-coverage-and-faithful by healing corrupt copies.",
     "experiment": "experiments/08-rumor-mill",
     "spec": "specs/16-engram-versioned-facts.md",
-    "runIds": ["rm-baseline-mr7uziwl", "rm-engram-mr7uzjds"],
+    "runIds": [
+      "rm-baseline-mr7uziwl",
+      "rm-engram-mr7uzjds"
+    ],
     "tracePaths": [
       "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl",
       "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl"
@@ -99,14 +150,38 @@
       "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanRejectedPerTrial"
     ],
     "expectedValues": {
-      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.coverageOutrunsTruth": { "equals": 19, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.worstCellFidelity": { "equals": 0.574, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.telephoneGradient": { "equals": 0.113, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.coverageOutrunsTruth": { "equals": 0, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.worstCellFidelity": { "equals": 1, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.telephoneGradient": { "equals": 0, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanHealedPerTrial": { "equals": 279.267, "tolerance": 0 },
-      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanRejectedPerTrial": { "equals": 2768.165, "tolerance": 0 }
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.coverageOutrunsTruth": {
+        "equals": 19,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.worstCellFidelity": {
+        "equals": 0.574,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-baseline-mr7uziwl.jsonl#last.telephoneGradient": {
+        "equals": 0.113,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.coverageOutrunsTruth": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.worstCellFidelity": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.telephoneGradient": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanHealedPerTrial": {
+        "equals": 279.267,
+        "tolerance": 0
+      },
+      "experiments/08-rumor-mill/runs/rm-engram-mr7uzjds.jsonl#last.meanRejectedPerTrial": {
+        "equals": 2768.165,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && RUMOR_MODE=baseline node experiments/08-rumor-mill/dist/main.js && RUMOR_MODE=engram node experiments/08-rumor-mill/dist/main.js",
     "stackRecommendation": "Use content-addressed versioned facts and anti-entropy reconciliation; measure fidelity separately from coverage and heal corrupt first-write copies rather than throttling propagation.",
@@ -115,7 +190,10 @@
         "repo": "~/projects/engram",
         "package": "@openengram/reconciliation",
         "branch": "versioned-facts-anti-entropy",
-        "commits": ["baf3d05", "0a4910d"],
+        "commits": [
+          "baf3d05",
+          "0a4910d"
+        ],
         "prs": [],
         "dirtyState": "unknown_past_run"
       }
@@ -128,7 +206,10 @@
     "claim": "Parliament fact-checked evidence audit closes the adapted on-standard fabrication hole when a seeded ground store exists.",
     "experiment": "experiments/04-consensus-under-lies",
     "spec": "specs/18-parliament-fact-check.md",
-    "runIds": ["cul-fc-hole-mr7wkmvf", "cul-fc-factcheck-mr7wkmw0"],
+    "runIds": [
+      "cul-fc-hole-mr7wkmvf",
+      "cul-fc-factcheck-mr7wkmw0"
+    ],
     "tracePaths": [
       "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl",
       "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl"
@@ -144,14 +225,38 @@
       "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.blockedCleanPanels"
     ],
     "expectedValues": {
-      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK1": { "equals": 0.08, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK2": { "equals": 0.24, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK3": { "equals": 1, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK1": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK2": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK3": { "equals": 0, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.summedFabricatedBlockedRate": { "equals": 3.68, "tolerance": 0 },
-      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.blockedCleanPanels": { "equals": 6, "tolerance": 0 }
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK1": {
+        "equals": 0.08,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK2": {
+        "equals": 0.24,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-hole-mr7wkmvf.jsonl#last.sneakyLieK3": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK1": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK2": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.sneakyLieK3": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.summedFabricatedBlockedRate": {
+        "equals": 3.68,
+        "tolerance": 0
+      },
+      "experiments/04-consensus-under-lies/runs/cul-fc-factcheck-mr7wkmw0.jsonl#last.blockedCleanPanels": {
+        "equals": 6,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && LIES_FC_MODE=hole node experiments/04-consensus-under-lies/dist/factchecksweep.js && LIES_FC_MODE=factcheck node experiments/04-consensus-under-lies/dist/factchecksweep.js",
     "stackRecommendation": "Layer a dependency-injected fact store under the criterion audit; report fabricated, ungrounded, drifted, and no-admissible-evidence as distinct block reasons.",
@@ -160,7 +265,9 @@
         "repo": "~/dev/parliament",
         "package": "@parliament/core",
         "branch": "fact-check-audit",
-        "commits": ["218faf1"],
+        "commits": [
+          "218faf1"
+        ],
         "prs": [],
         "dirtyState": "unknown_past_run"
       }
@@ -173,8 +280,12 @@
     "claim": "Engram-backed capability facts let a delegation trust router converge, survive root restart, and transfer knowledge to a brand-new root with verified evidence.",
     "experiment": "experiments/14-delegation-decay",
     "spec": "specs/19-delegation-decay.md",
-    "runIds": ["dd-b-mr7zvbuu"],
-    "tracePaths": ["experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl"],
+    "runIds": [
+      "dd-b-mr7zvbuu"
+    ],
+    "tracePaths": [
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl"
+    ],
     "scoreFields": [
       "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.amLoudLate",
       "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.icLoudLate",
@@ -190,18 +301,54 @@
       "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWWasted"
     ],
     "expectedValues": {
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.amLoudLate": { "equals": 0.183, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.icLoudLate": { "equals": 0.087, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudLate": { "equals": 0, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWLate": { "equals": 0.003, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudConv": { "equals": 9, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWConv": { "equals": 11, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudPostReset": { "equals": 0, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWPostReset": { "equals": 0, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudTransfer": { "equals": 1, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWTransfer": { "equals": 1, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudWasted": { "equals": 15, "tolerance": 0 },
-      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWWasted": { "equals": 30, "tolerance": 0 }
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.amLoudLate": {
+        "equals": 0.183,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.icLoudLate": {
+        "equals": 0.087,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudLate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWLate": {
+        "equals": 0.003,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudConv": {
+        "equals": 9,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWConv": {
+        "equals": 11,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudPostReset": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWPostReset": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enLoudWasted": {
+        "equals": 15,
+        "tolerance": 0
+      },
+      "experiments/14-delegation-decay/runs/dd-b-mr7zvbuu.jsonl#last.enCWWasted": {
+        "equals": 30,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && TRUST_TRIALS=50 node experiments/14-delegation-decay/dist/mainb.js",
     "stackRecommendation": "Record delegation outcomes as provenance-tier versioned capability facts in Engram; read verified store-backed evidence for routing decisions instead of trusting transcript memory.",
@@ -210,8 +357,13 @@
         "repo": "~/projects/engram",
         "package": "@openengram/reconciliation",
         "branch": "versioned-facts-anti-entropy",
-        "commits": ["baf3d05", "0a4910d"],
-        "prs": ["323"],
+        "commits": [
+          "baf3d05",
+          "0a4910d"
+        ],
+        "prs": [
+          "323"
+        ],
         "dirtyState": "unknown_past_run"
       }
     ],
@@ -223,8 +375,12 @@
     "claim": "Evidence-capped probation recovers capable workers without leaking the incapable worker back into steady-state routing, but the policy is tuned in-sample and still needs a holdout sweep.",
     "experiment": "experiments/15-trust-forgiveness",
     "spec": "specs/20-trust-forgiveness.md",
-    "runIds": ["tf-mr84czql"],
-    "tracePaths": ["experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl"],
+    "runIds": [
+      "tf-mr84czql"
+    ],
+    "tracePaths": [
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl"
+    ],
     "scoreFields": [
       "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk",
       "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate",
@@ -239,17 +395,50 @@
       "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer"
     ],
     "expectedValues": {
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk": { "equals": 1, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate": { "equals": 0.017, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate": { "equals": 0.047, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx": { "equals": 0, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx": { "equals": 0.02, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks": { "equals": 0, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks": { "equals": 0, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer": { "equals": 1, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer": { "equals": 1, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks": { "equals": 1.52, "tolerance": 0 },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer": { "equals": 0.9, "tolerance": 0 }
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate": {
+        "equals": 0.017,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate": {
+        "equals": 0.047,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx": {
+        "equals": 0.02,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks": {
+        "equals": 1.52,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer": {
+        "equals": 0.9,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && node experiments/15-trust-forgiveness/dist/main.js",
     "stackRecommendation": "Use evidence-capped probation over time-window decay: bench on failures>successes, probe with front-loaded backoff, readmit only on cumulative rebalance, cap probes after a failure margin. Store probation state as facts so it survives restarts.",
@@ -258,8 +447,13 @@
         "repo": "~/projects/engram",
         "package": "@openengram/reconciliation",
         "branch": "versioned-facts-anti-entropy",
-        "commits": ["baf3d05", "0a4910d"],
-        "prs": ["323"],
+        "commits": [
+          "baf3d05",
+          "0a4910d"
+        ],
+        "prs": [
+          "323"
+        ],
         "dirtyState": "unknown_past_run"
       }
     ],
@@ -271,8 +465,12 @@
     "claim": "Value-echo handoff manifests fully recover deep delegated requirement survival under the exp-16 noise model; presence-only catches drops but leaves meaning loss exposed.",
     "experiment": "experiments/16-handoff-guards",
     "spec": "specs/21-handoff-requirement-guards.md",
-    "runIds": ["hg-mr853iu8"],
-    "tracePaths": ["experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl"],
+    "runIds": [
+      "hg-mr853iu8"
+    ],
+    "tracePaths": [
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl"
+    ],
     "scoreFields": [
       "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.controlReproducedRT05",
       "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT1",
@@ -284,14 +482,38 @@
       "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT3"
     ],
     "expectedValues": {
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.controlReproducedRT05": { "equals": 1, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT1": { "equals": 0.39, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT2": { "equals": 0.578, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT3": { "equals": 1, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepGapT3minusT2": { "equals": 0.422, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepNetTokenEffT3": { "equals": 0.485, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT2": { "equals": 0, "tolerance": 0 },
-      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT3": { "equals": 0, "tolerance": 0 }
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.controlReproducedRT05": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT1": {
+        "equals": 0.39,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT2": {
+        "equals": 0.578,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepSurvivalT3": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepGapT3minusT2": {
+        "equals": 0.422,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.deepNetTokenEffT3": {
+        "equals": 0.485,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT2": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/16-handoff-guards/runs/hg-mr853iu8.jsonl#last.falseFlagRateT3": {
+        "equals": 0,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && node experiments/16-handoff-guards/dist/main.js",
     "stackRecommendation": "Put value-echo manifests at the Sonder/Lattice handoff boundary for delegated trees of depth >=2; presence-only is acceptable mainly at d1. Still prefer not delegating deeper than necessary.",
@@ -301,11 +523,17 @@
   },
   {
     "id": "RT-08",
-    "claim": "Ground-store facts need explicit verification tiers, and high-risk audits must consume those tiers instead of treating all supported facts equally.",
+    "claim": "Ground-store facts need explicit verification tiers, high-risk audits must consume those tiers, and Aegis-wrapped audits reduce downstream audit escapes when inserted into the exp-17 retest path.",
     "experiment": "experiments/17-ground-store-verification",
     "spec": "specs/23-ground-store-verification-tiers.md",
-    "runIds": ["gsv-mr9bvkkk"],
-    "tracePaths": ["experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl"],
+    "runIds": [
+      "gsv-mr9bvkkk",
+      "gsv-mrc3huyf"
+    ],
+    "tracePaths": [
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl"
+    ],
     "scoreFields": [
       "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.corpusClaims",
       "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.fwwFalseSupport",
@@ -323,31 +551,135 @@
       "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he1ProvenanceDominatesOperational",
       "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he2RetrievalDominatesExternalButStaleFails",
       "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he3CrossModelCorrelatedErrorsRemain",
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he4TierConsumedReducesAuditEscape"
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he4TierConsumedReducesAuditEscape",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.corpusClaims",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.tieredAuditEscape",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisFalseSupport",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisAuditEscape",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisEscapeReduction",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisGovernanceCostTax",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisCostPerAccepted",
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.he5AegisWrapperReducesAuditEscape"
     ],
     "expectedValues": {
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.corpusClaims": { "equals": 30, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.fwwFalseSupport": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceOperationalTrueReject": { "equals": 0, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceOperationalFalseSupport": { "equals": 0, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceExternalTrueReject": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalExternalTrueReject": { "equals": 0, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalStaleSupport": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalCitationEntailmentMiss": { "equals": 0, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.crossModelFalseSupport": { "equals": 0.563, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.tieredFalseSupport": { "equals": 0.188, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.tieredAuditEscape": { "equals": 0.188, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.consumedAuditEscape": { "equals": 0.063, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.consumedEscapeReduction": { "equals": 0.125, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he1ProvenanceDominatesOperational": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he2RetrievalDominatesExternalButStaleFails": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he3CrossModelCorrelatedErrorsRemain": { "equals": 1, "tolerance": 0 },
-      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he4TierConsumedReducesAuditEscape": { "equals": 1, "tolerance": 0 }
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.corpusClaims": {
+        "equals": 30,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.fwwFalseSupport": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceOperationalTrueReject": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceOperationalFalseSupport": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.provenanceExternalTrueReject": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalExternalTrueReject": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalStaleSupport": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.retrievalCitationEntailmentMiss": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.crossModelFalseSupport": {
+        "equals": 0.563,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.tieredFalseSupport": {
+        "equals": 0.188,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.tieredAuditEscape": {
+        "equals": 0.188,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.consumedAuditEscape": {
+        "equals": 0.063,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.consumedEscapeReduction": {
+        "equals": 0.125,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he1ProvenanceDominatesOperational": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he2RetrievalDominatesExternalButStaleFails": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he3CrossModelCorrelatedErrorsRemain": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mr9bvkkk.jsonl#last.he4TierConsumedReducesAuditEscape": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.corpusClaims": {
+        "equals": 30,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.tieredAuditEscape": {
+        "equals": 0.188,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisFalseSupport": {
+        "equals": 0.188,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisAuditEscape": {
+        "equals": 0.063,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisEscapeReduction": {
+        "equals": 0.125,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisGovernanceCostTax": {
+        "equals": 0.106,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.aegisCostPerAccepted": {
+        "equals": 3.518,
+        "tolerance": 0
+      },
+      "experiments/17-ground-store-verification/runs/gsv-mrc3huyf.jsonl#last.he5AegisWrapperReducesAuditEscape": {
+        "equals": 1,
+        "tolerance": 0
+      }
     },
-    "reproductionCommand": "npm run build && node experiments/17-ground-store-verification/dist/main.js",
+    "reproductionCommand": "cd /Users/beauxwalton/Dev/aegis && git checkout 2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/swarmlab && npm install && npm run build && node experiments/17-ground-store-verification/dist/main.js",
     "stackRecommendation": "Store verification_tier/status/verifier/evidence digest/source URI/expiry/revalidation metadata on Engram facts. Parliament should accept high-risk facts only from human_attestation, provenance_chain, or fresh retrieval_grounded tiers; cross_model_adversarial is triage, not certification.",
-    "stackReposAndPRs": [],
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "feat/rt08-verification-tier-policy",
+        "commits": [
+          "2d8042e3d3e0e72b4cbf578218df4c69ba4bb3ad"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/7"
+        ],
+        "dirtyState": "main CI green; file-linked retest ran after local checkout/build of this commit"
+      }
+    ],
     "evidenceStatus": "verified",
-    "notes": "Synthetic corpus; tests architecture and failure modes rather than live web retrieval. Cross-model verifier behavior is simulated to measure correlated misses. No external Engram branch was changed."
+    "notes": "Synthetic corpus; tests architecture and failure modes rather than live web retrieval. Cross-model verifier behavior is simulated to measure correlated misses. Original RT-08 run gsv-mr9bvkkk proved the tier-consumption policy in the lab. Follow-up run gsv-mrc3huyf reran the same experiment with the real @heybeaux/lattice-aegis evaluator in the audit path after Aegis PR #7 landed as 2d8042e; Aegis-wrapped audit escape was 0.063 vs tiered-hierarchy 0.188, with governance cost tax 0.106. No external Engram/Parliament schema branch was changed."
   }
 ]
