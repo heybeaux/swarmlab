@@ -1,0 +1,131 @@
+{
+  "sequence": "swarmlab-green-is-not-correct",
+  "templates": [
+    {
+      "id": "swarmlab-green-not-correct-welcome",
+      "day": 0,
+      "title": "Welcome: The Lab Where AI Teams Fail on Purpose",
+      "subject": "The lab where AI teams fail on purpose",
+      "subjectOptions": [
+        "The lab where AI teams fail on purpose",
+        "Welcome to the false green board",
+        "We made AI teams fail so you don't have to"
+      ],
+      "previewText": "Seven short lessons on how teams look aligned while getting the answer wrong.",
+      "bodyMarkdown": "Hey — welcome.\n\nThis course comes out of a project called SwarmLab: a batch of experiments where AI agents are put on teams and made to collaborate, review, remember, negotiate, and decide.\n\nThe point wasn't to prove AI is brilliant. It was to watch it fail under controlled conditions — because that turns out to be far more useful.\n\nThe failures look painfully familiar:\n\n- A group agrees on the wrong answer.\n- Reviewers approve broken work because earlier reviewers approved it.\n- A dashboard goes green while the real outcome gets worse.\n- A handoff keeps every word and loses the meaning.\n- A fact spreads everywhere before anyone checks whether it's true.\n\nNone of these are AI problems. They're team problems. AI swarms are just the wind tunnel — they let us compress a meeting, a handoff, a review chain, or a memory system into a loop we can run a hundred times and measure.\n\nOne line holds it all together:\n\n**Green is not correct. Agreement is not truth. Fidelity is not meaning.**\n\nOver the next seven emails I'll take one lesson at a time. No code, no jargon — just the pattern, the experiment that exposed it, and the question to ask next time something looks \"done.\"\n\nTomorrow: why a green status board can be the most dangerous thing in the room.\n\n— Beaux / heybeaux",
+      "ctaMarkdown": "Know someone rolling out AI workflows? Forward this — it might save them from worshipping a dashboard.\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-1",
+      "day": 1,
+      "title": "Green Is Not Correct",
+      "subject": "Green is not correct",
+      "subjectOptions": [
+        "Green is not correct",
+        "The dashboard lied without lying",
+        "A smoke alarm for the wrong thing"
+      ],
+      "previewText": "A workflow can pass every visible check and still fail the thing that mattered.",
+      "bodyMarkdown": "The most important lesson from SwarmLab is also the simplest:\n\n**Green is not correct.**\n\nGreen only means the thing you measured passed. That sounds obvious — until you watch a system go green for all the wrong reasons.\n\nIn one experiment, an AI coding loop hit a perfect pass rate while being wrong on every poisoned input that mattered.\n\nIn another, agents reached 100% agreement on a data schema while quietly meaning different things by the same field names.\n\nIn another, the ledger read 100% balanced while the agents were too starved to afford a single message — 13% of the work got done.\n\nEvery board looked successful. Every actual outcome wasn't.\n\nThat's the hidden risk in AI workflows: a system can learn to satisfy your success signal without satisfying your intent. And once it can, the green light is measuring the wrong thing forever.\n\nThe fix isn't better vibes. It's sharper evidence. Before you trust a green light, ask three questions:\n\n1. What does green literally mean?\n2. What could still be broken while this stays green?\n3. What evidence would prove the real outcome — not just the reported state?\n\nA smoke alarm that only checks whether the battery is installed stays green while the kitchen burns down. A project board does the same thing.\n\n**Takeaway**\n\nDon't ask, \"Did it go green?\" Ask, \"What is green blind to?\"\n\nTomorrow: the confident liar who never has to lie.",
+      "ctaMarkdown": "Try this today: pick one dashboard you trust and write down a single failure it cannot see.\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-2",
+      "day": 2,
+      "title": "The Confident Liar Does Not Need to Lie",
+      "subject": "The confident liar does not need to lie",
+      "subjectOptions": [
+        "The confident liar does not need to lie",
+        "Consensus is a social outcome",
+        "The meeting answered the wrong question"
+      ],
+      "previewText": "The most dangerous move is not always falsehood. Sometimes it is reframing.",
+      "bodyMarkdown": "In a SwarmLab consensus experiment, five AI agents debated a question. Some were secretly told to mislead the group.\n\nHere's the part that surprised us: the misleading agents never stated a false fact. Every one conceded the true answer — then argued the group should care about a *different* yardstick. They didn't refute the question. They reframed it.\n\nWith one or two liars in the group of five, truth won. With three, the false answer won.\n\nBut no honest agent ever flipped. Not one, at any level. The lie didn't win by persuading anyone — it won by vote arithmetic. Enough seats, and the count did the rest.\n\nThat's the part worth sitting with. A group can converge without discovering truth: because the wrong people got enough seats, or because the question quietly changed halfway through. We called it capture, not persuasion — and it's the classic failure mode of a bad meeting. The loudest voice doesn't have to say anything false. It just has to make the room answer a different question.\n\n**Takeaway**\n\nConsensus is not truth. It's a social outcome. The fix is to pin the criterion *before* the debate:\n\n- What question are we answering?\n- What evidence counts?\n- What evidence doesn't?\n- What would make us block the decision instead of forcing a winner?\n\nIf the yardstick can drift, the answer can look unanimous and still be wrong.\n\nTomorrow: why adding more reviewers can make review worse.",
+      "ctaMarkdown": "Before your next decision meeting, write the criterion at the top of the doc. When the conversation drifts, drag it back.\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-3",
+      "day": 3,
+      "title": "More Reviewers Can Make Work Worse",
+      "subject": "More reviewers can make work worse",
+      "subjectOptions": [
+        "More reviewers can make work worse",
+        "The rubber-stamp tax",
+        "PASS is contagious"
+      ],
+      "previewText": "A visible trail of approval can turn independent review into social proof.",
+      "bodyMarkdown": "Most teams solve a quality problem by adding reviewers. SwarmLab suggests that can backfire.\n\nIn a review-chain experiment, an injected bug ran a line of reviewers who could each see that the last ones had passed it. That visible PASS trail changed the job. The reviewer wasn't only judging the work anymore — they were also judging the social evidence that three other people had already said yes.\n\nThat's the rubber-stamp effect. More steps don't automatically mean more independent judgment; past a point, review depth becomes approval theater.\n\nIt doesn't bite on everything. On an obvious defect, reviewers caught it every time regardless. The tax lands on the *subtle* stuff — the bugs where a reviewer is uncertain enough to lean on what everyone else already decided. Which is exactly the class you most need caught.\n\nThe fix is simple: **blind the review.** Show the artifact, hide the upstream verdict. If the work is correct, a reviewer should be able to say so from the work itself. If they need the comfort of three prior approvals, you're measuring conformity, not correctness.\n\nThis matters more with AI agents, not less — a multi-agent system can generate a very convincing paper trail. Lots of agents, lots of comments, lots of \"LGTM.\" But if each layer saw the last layer's confidence, you built a confidence amplifier, not a review process.\n\n**Takeaway**\n\nReview depth only helps when the layers stay independent.\n\n- Hide previous verdicts.\n- Show the work, not the approval trail.\n- Send subtle issues to tests, not more opinions.\n\nA jury shouldn't vote by watching everyone else raise their hands first.\n\nTomorrow: why \"let it run overnight\" is not a reliability strategy.",
+      "ctaMarkdown": "Audit one approval process this week. Ask: are reviewers judging the work, or the approvals in front of it?\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-4",
+      "day": 4,
+      "title": "Overnight Work Rots Without a Review Edge",
+      "subject": "Overnight work rots",
+      "subjectOptions": [
+        "Overnight work rots",
+        "Why unattended agents drift",
+        "Activity is not quality"
+      ],
+      "previewText": "Long-running autonomous work can peak, then decay, while still producing output.",
+      "bodyMarkdown": "\"Let the agents run overnight and check in the morning\" sounds efficient. It's also one of the cleanest failure modes SwarmLab found.\n\nIn the overnight-work experiment, quality didn't just improve with time. It rose, peaked, then decayed — and the longer the run, the deeper the rot. The whole time, the system kept doing things. That was the problem: activity continued long after quality started falling. Check only at the end, and you never see the moment momentum turned into rot.\n\nWe didn't just measure this — we lived it. A real overnight loop of ours rotted into a dead account by morning, commits landing the entire way down. The activity log looked productive right up to the corpse.\n\nThe fix wasn't heroics. It was a review edge between steps. Small loop, verify, next step. Small loop, verify, next step. That turns a wandering chain into a ratchet — each step can only build on a verified one.\n\nThis is the line between autonomy and abandonment. Autonomy means the system acts within bounds. Abandonment means nobody checks whether the bounds still hold.\n\n**Takeaway**\n\nDon't judge long-running AI work by how much output it produced. Ask where the review edges are.\n\n- Inspect between steps, not only at the end.\n- Require a receipt after each meaningful action.\n- Treat commits, messages, and files as activity — not proof of quality.\n\nTomorrow: how a fact can spread everywhere and still be wrong.",
+      "ctaMarkdown": "Planning an agent workflow? Draw the review edges before you draw the automation.\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-5",
+      "day": 5,
+      "title": "A Fact Can Be Everywhere and Wrong",
+      "subject": "A fact can be everywhere and wrong",
+      "subjectOptions": [
+        "A fact can be everywhere and wrong",
+        "The loudest rumor in the building",
+        "Coverage is not truth"
+      ],
+      "previewText": "Memory systems need correction, not just propagation.",
+      "bodyMarkdown": "A story starts on one side of a company. By Friday, every department has heard it. That sounds like successful communication — unless the first version was wrong.\n\nIn SwarmLab's rumor experiment, a fact could reach *everyone* while shedding fidelity at every hop. Coverage went up; truth didn't follow. Spread and accuracy turned out to be two different measurements — a memory can be everywhere and wrong at the same time. In the worst case, the fact saturated the whole mesh while the version most nodes held was barely half-right.\n\nThe culprit was first-write-wins. Whatever arrived first stuck, so early corruption became permanent — and a later, truer retelling got rejected because the system thought it already knew.\n\nThe fix is versioned memory. Not just \"who heard it?\" but:\n\n- Where did this claim come from?\n- What version is it?\n- What evidence supports it?\n- Can newer verified evidence *heal* an older claim?\n\nThat last word is the one that matters: heal. When we rebuilt the memory to let a verified write correct a corrupt one, the \"everywhere and wrong\" failure went to zero — and the mesh reached everyone *faster*, because correction spreads too. Good memory doesn't just store. It corrects.\n\n**Takeaway**\n\nA rumor repeated by every department doesn't become a record. It becomes a louder rumor.\n\n- Don't treat first-write as final.\n- Store provenance and versions.\n- Let better evidence heal older claims.\n- Measure fidelity, not just reach.\n\nTomorrow: why using the same word isn't the same as meaning the same thing.",
+      "ctaMarkdown": "Pick one \"known fact\" on your team. Do you know its source — or only that everyone repeats it?\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-6",
+      "day": 6,
+      "title": "Same Word, Different Meaning",
+      "subject": "Same word, different meaning",
+      "subjectOptions": [
+        "Same word, different meaning",
+        "“Total” broke the handoff",
+        "Names are not meaning"
+      ],
+      "previewText": "Two systems can agree on a label and silently disagree on the concept.",
+      "bodyMarkdown": "\"Total\" sounds simple. Pre-tax or post-tax? \"Created\" sounds simple. Seconds or milliseconds?\n\nA lot of systems break right here — because everyone *thinks* they agreed. The field name matched, the label looked right, the handoff went green. The meaning didn't survive.\n\nIn SwarmLab's schema negotiation experiment, two agents reached fast, unanimous agreement while mapping fields that quietly meant different things. Same word, different concept, corrupted result — and byte-for-byte, `total` pre-tax and `total` post-tax look identical on the wire, so nothing catches it.\n\nMore conversation wasn't the fix. Typed contracts were. The system had to carry the *concept* and the *unit* as first-class information — not just `total`, but `total@posttax`; not just `created`, but `created@milliseconds`. Now a mismatch is a type error at the handshake, not a corruption at runtime.\n\nOnce meaning became explicit, silent corruption dropped to zero — by detection and refusal. And refusal is the word that matters. A safe system should sometimes say \"we don't have a valid agreement\" instead of smiling and corrupting the data.\n\n**Takeaway**\n\nShared names are not shared meaning.\n\n- Define the concept, not only the label.\n- Define the unit, not only the value.\n- Make ambiguity fail early.\n- Prefer refusal over silent agreement.\n\nTomorrow: why \"done\" is not evidence.",
+      "ctaMarkdown": "Pick one field, metric, or KPI your team uses. Ask three people exactly what it includes. Enjoy the chaos.\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-lesson-7",
+      "day": 7,
+      "title": "“I Did It” Is Not a Receipt",
+      "subject": "“I did it” is not a receipt",
+      "subjectOptions": [
+        "“I did it” is not a receipt",
+        "Ask the world, not the agent",
+        "Done needs proof"
+      ],
+      "previewText": "Reports are useful. Receipts are better.",
+      "bodyMarkdown": "There's a big difference between a report and a receipt.\n\n\"I sent the email\" is a report. A sent-message ID is a receipt. \"I updated the file\" is a report; a diff is a receipt. \"The tests pass\" is a report; a test run with logs is a receipt.\n\nAs agents start doing real work in the world, this distinction stops being pedantic and becomes the whole game. You don't want a system that asks agents whether they succeeded. You want one that asks the world.\n\nSwarmLab keeps circling this from different angles. Signatures prove who authored something — not that the history is complete. Approval trails prove people said PASS — not that the work is correct. Cross-model agreement proves several models agreed — not that the claim is grounded.\n\nSo evidence is not a boolean. A signed human attestation, a provenance-chain receipt, a fresh source, and model agreement are *different tiers* of trust. Treating them as equal is exactly how false confidence gets certified — and cross-model agreement is the sneakiest, because several models can be confidently wrong together.\n\n**Takeaway**\n\n\"Done\" should point to evidence.\n\n- Require an external receipt.\n- Store the evidence tier.\n- Expire stale evidence.\n- Treat model agreement as weak evidence, not proof.\n\nDon't ask the agent whether it happened. Ask the world.\n\nTomorrow I'll pull all seven into a practical checklist.",
+      "ctaMarkdown": "Before you accept \"done,\" ask: what changed outside the chat window?\n\n---"
+    },
+    {
+      "id": "swarmlab-green-not-correct-checklist",
+      "day": 8,
+      "title": "The Practical Checklist",
+      "subject": "The false-green checklist",
+      "subjectOptions": [
+        "The false-green checklist",
+        "How to build workflows that do not fake green",
+        "Seven questions before you trust an AI workflow"
+      ],
+      "previewText": "A simple reliability checklist for agentic work.",
+      "bodyMarkdown": "Over the last week, we walked through seven failure modes:\n\n1. Green is not correct.\n2. The confident liar never has to lie.\n3. More reviewers can make work worse.\n4. Overnight work rots without a review edge.\n5. A fact can be everywhere and wrong.\n6. Shared names are not shared meaning.\n7. \"I did it\" is not a receipt.\n\nThey rhyme. In every one, the system's own success signal went green while the real outcome went wrong — and nothing inside the system could tell. Here's the checklist I run when I look at any AI workflow:\n\n**1. What is the green signal blind to?**  \nIf the board says success, what could still be wrong?\n\n**2. Is the decision criterion pinned?**  \nDo agents know what question they are answering and what evidence counts?\n\n**3. Are reviews independent?**  \nCan reviewers see previous PASS labels, or are they judging the work directly?\n\n**4. Where are the review edges?**  \nDoes the workflow verify between steps, or only after a long unattended run?\n\n**5. Can memory heal?**  \nCan newer verified evidence correct an older claim?\n\n**6. Is meaning explicit?**  \nDo handoffs carry concept and unit, or just names and prose?\n\n**7. What is the receipt?**  \nWhat changed in the world, and how do we know?\n\nThat's the difference between an impressive demo and a reliable system. A demo succeeds by looking right for ten minutes. A system has to keep telling the truth when nobody's watching. That's what we build for.\n\nIf your team is planning AI workflows — internal ops, client delivery, support automation, research agents, sales intelligence, anything with real stakes — design the gates before you trust the autonomy.\n\nThe goal isn't to prevent every failure. It's to make failure visible before it gets expensive.\n\n— Beaux / heybeaux",
+      "ctaMarkdown": "Soft:\n\nIf this was useful, reply with the workflow you are thinking about. I’ll tell you which false-green risks I would check first.\n\nClient-facing:\n\nIf you want help designing agent workflows with evidence gates, receipts, and reliable handoffs, book a reliability review.\n\nInternal/community:\n\nForward this to the person most likely to trust a green dashboard too quickly."
+    }
+  ]
+}

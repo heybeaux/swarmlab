@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Green Is Not Correct - SwarmLab</title>
+  <meta
+    name="description"
+    content="Seven lessons from SwarmLab on why teams, dashboards, and AI workflows can look aligned while getting the answer wrong."
+  />
+  <meta name="theme-color" content="#0a0d0c" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-aura" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="mark" href="#top" aria-label="SwarmLab home">
+      <span class="mark-pip"></span>
+      <span>SwarmLab</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#lessons">Lessons</a>
+      <a href="#simulator">Simulator</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#formats">Formats</a>
+    </nav>
+    <div class="skin-toggle" role="group" aria-label="Audience toggle">
+      <button class="active" type="button" data-skin="newsletter">Newsletter</button>
+      <button type="button" data-skin="client">Client</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid shell">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Seven lessons from multi-agent failure</p>
+          <h1 class="hero-title" aria-label="Green is not correct. Agreement is not truth. Fidelity is not meaning.">
+            <span class="hero-line">
+              <span class="hero-kinetic" data-word="Green">Green</span>
+              <span>is not correct.</span>
+            </span>
+            <span class="hero-line">Agreement is not truth.</span>
+            <span class="hero-line">Fidelity is not meaning.</span>
+          </h1>
+          <p class="hero-dek reveal" data-copy="heroDek">
+            A field guide for non-technical teams on why AI workflows, reviews, and group decisions can look aligned while getting the answer wrong.
+          </p>
+          <form class="signup-form reveal" data-signup-form>
+            <label class="sr-only" for="hero-email">Email address</label>
+            <input id="hero-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <button class="button button-primary" type="submit">Get the 7-day course</button>
+            <p class="signup-status" data-signup-status aria-live="polite"></p>
+          </form>
+          <div class="hero-actions reveal">
+            <a class="button button-secondary" href="/pdf/swarmlab-client-report.pdf">Download PDF</a>
+            <a class="button button-secondary" href="/content/newsletter-sequence.md">View email course</a>
+          </div>
+          <div class="hero-points reveal" aria-label="Three core claims">
+            <span>False green signals</span>
+            <span>Consensus capture</span>
+            <span>Proof over reports</span>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal">
+          <section class="truth-board" aria-labelledby="truth-board-title">
+            <div class="board-head">
+              <p class="board-kicker mono" id="truth-board-title">Status board</p>
+              <strong class="board-score mono" id="boardScore">100% GREEN</strong>
+            </div>
+            <div class="board-stack">
+              <article class="board-row board-row-good" data-good="consensus reached" data-bad="no ground truth checked">
+                <span class="board-dot"></span>
+                <span class="board-label">consensus reached</span>
+                <span class="board-tag">PASS</span>
+              </article>
+              <article class="board-row board-row-good" data-good="review passed" data-bad="rubber stamp after prior PASS">
+                <span class="board-dot"></span>
+                <span class="board-label">review passed</span>
+                <span class="board-tag">PASS</span>
+              </article>
+              <article class="board-row board-row-good" data-good="coverage 100%" data-bad="fidelity 0.574">
+                <span class="board-dot"></span>
+                <span class="board-label">coverage 100%</span>
+                <span class="board-tag">PASS</span>
+              </article>
+              <article class="board-row board-row-bad">
+                <span class="board-dot"></span>
+                <span class="board-label">truth unverified</span>
+                <span class="board-tag">FAIL</span>
+              </article>
+            </div>
+            <button class="board-toggle mono" id="boardToggle" type="button" aria-live="polite">Reveal hidden failure</button>
+          </section>
+
+          <section class="swarm-window" aria-labelledby="swarm-window-title">
+            <div class="swarm-head">
+              <div>
+                <p class="board-kicker mono" id="swarm-window-title">Live capture model</p>
+                <strong>Vote arithmetic beats truth when the quorum tips.</strong>
+              </div>
+              <div class="swarm-readout mono">
+                <span id="simLiarCount">3 liars</span>
+                <span id="simOutcome">truth lost</span>
+              </div>
+            </div>
+            <canvas id="swarmCanvas" width="560" height="420" aria-label="Animated swarm capture simulation"></canvas>
+            <div class="sim-controls">
+              <label class="sim-range" for="liarRange">
+                <span class="mono">Seats captured</span>
+                <input id="liarRange" type="range" min="1" max="3" value="3" />
+                <span class="sim-range-values"><span>1</span><span>3</span></span>
+              </label>
+              <div class="sim-metrics" aria-live="polite">
+                <div class="sim-metric">
+                  <span class="mono">Decision</span>
+                  <strong id="simDecision">A wins</strong>
+                </div>
+                <div class="sim-metric">
+                  <span class="mono">Honest flips</span>
+                  <strong>0</strong>
+                </div>
+                <div class="sim-metric">
+                  <span class="mono">Mechanism</span>
+                  <strong id="simMechanism">capture, not persuasion</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="thesis-strip shell reveal">
+        <span>Green is not correct.</span>
+        <span>Agreement is not truth.</span>
+        <span>Fidelity is not meaning.</span>
+      </div>
+    </section>
+
+    <section class="manifesto shell reveal">
+      <p class="manifesto-intro">SwarmLab makes AI teams fail on purpose so humans can see the pattern before it reaches production.</p>
+      <div class="manifesto-copy">
+        <strong>A dashboard can go green while the real outcome gets worse.</strong>
+        <p>
+          The experiments converge on the same operational warning: internal success signals are cheap, social, and easy to spoof. The real work is designing gates where truth is easier to inspect than agreement.
+        </p>
+      </div>
+    </section>
+
+    <section id="lessons" class="lessons shell">
+      <div class="section-head reveal">
+        <p class="eyebrow">The seven lessons</p>
+        <h2>Seven failure modes, one moving spine.</h2>
+        <p class="section-copy">
+          Scroll the lesson rail. The left side tracks the active lesson, while each card turns one SwarmLab result into a non-technical operating rule.
+        </p>
+      </div>
+
+      <div class="lesson-layout">
+        <aside class="lesson-rail" aria-label="Lesson progression">
+          <div class="rail-sticky">
+            <div class="rail-meter" aria-hidden="true">
+              <div class="rail-progress" id="railProgress"></div>
+            </div>
+            <ol class="rail-list">
+              <li class="rail-item active" data-lesson-nav="1"><span class="mono">01</span><span>Green is not correct</span></li>
+              <li class="rail-item" data-lesson-nav="2"><span class="mono">02</span><span>Consensus capture</span></li>
+              <li class="rail-item" data-lesson-nav="3"><span class="mono">03</span><span>Rubber-stamp review</span></li>
+              <li class="rail-item" data-lesson-nav="4"><span class="mono">04</span><span>Overnight rot</span></li>
+              <li class="rail-item" data-lesson-nav="5"><span class="mono">05</span><span>Memory drift</span></li>
+              <li class="rail-item" data-lesson-nav="6"><span class="mono">06</span><span>False friends</span></li>
+              <li class="rail-item" data-lesson-nav="7"><span class="mono">07</span><span>Receipts, not reports</span></li>
+            </ol>
+            <div class="rail-detail" id="railDetail">
+              <p class="mono">active rule</p>
+              <strong>Ask what failure could stay hidden while the dashboard is green.</strong>
+            </div>
+          </div>
+        </aside>
+
+        <div class="lesson-cards" role="list">
+          <article class="lesson-card reveal" role="listitem" data-lesson="1" data-rule="Ask what failure could stay hidden while the dashboard is green.">
+            <div class="lesson-index mono">01</div>
+            <div class="lesson-body">
+              <h3>Green is not correct</h3>
+              <p>Across the suite, visible success signals kept reporting PASS while the real outcome was wrong. In adversarial testing, pass rate hit 1.0 while the poisoned program stayed wrong at every poisoned input.</p>
+              <b>The rule: inspect the thing you care about, not the green label that claims to represent it.</b>
+            </div>
+            <div class="lesson-art lesson-art-board" aria-hidden="true">
+              <div class="mini-board">
+                <div class="mini-row good"><span></span><em>pass rate 1.0</em><strong>PASS</strong></div>
+                <div class="mini-row good"><span></span><em>review complete</em><strong>PASS</strong></div>
+                <div class="mini-row bad"><span></span><em>oracle consistent</em><strong>0/40</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="2" data-rule="Pin the decision criterion before debate begins.">
+            <div class="lesson-index mono">02</div>
+            <div class="lesson-body">
+              <h3>The confident liar does not need to lie</h3>
+              <p>In a real panel of five, truth survived one or two liars, then lost at three. Not one honest agent flipped. The false answer won because the quorum changed, not because truth was refuted.</p>
+              <b>The rule: a vote is social math, not evidence. Lock the criterion before you let the room talk.</b>
+            </div>
+            <div class="lesson-art lesson-art-votes" aria-hidden="true">
+              <div class="vote-pill honest">H</div>
+              <div class="vote-pill honest">H</div>
+              <div class="vote-pill liar">L</div>
+              <div class="vote-pill liar">L</div>
+              <div class="vote-pill liar">L</div>
+              <p class="mono">3 liars = majority capture</p>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="3" data-rule="Hide upstream verdicts so review stays independent.">
+            <div class="lesson-index mono">03</div>
+            <div class="lesson-body">
+              <h3>More reviewers can make work worse</h3>
+              <p>Visible PASS trails turn independent review into social proof. On subtle defects, new reviewers stop checking the artifact and start inheriting the confidence of the people before them.</p>
+              <b>The rule: blind review beats longer review chains.</b>
+            </div>
+            <div class="lesson-art lesson-art-review" aria-hidden="true">
+              <div class="review-lane">
+                <span class="review-node pass">PASS</span>
+                <span class="review-arrow">-&gt;</span>
+                <span class="review-node pass faded">PASS</span>
+                <span class="review-arrow">-&gt;</span>
+                <span class="review-node pass faded">PASS</span>
+                <span class="review-arrow">-&gt;</span>
+                <span class="review-node fail">bug lives</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="4" data-rule="Add review edges between steps, not just at the end.">
+            <div class="lesson-index mono">04</div>
+            <div class="lesson-body">
+              <h3>Overnight work rots without a review edge</h3>
+              <p>Long-horizon work peaks, then decays, while still producing activity. "Commits are landing" is not a quality signal. It is often the sound of drift continuing unsupervised.</p>
+              <b>The rule: bounded autonomy with inter-step review beats one heroic unattended run.</b>
+            </div>
+            <div class="lesson-art lesson-art-curve" aria-hidden="true">
+              <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 102C44 84 76 22 108 20C136 18 172 44 230 96" />
+                <line x1="108" y1="20" x2="230" y2="96" />
+                <circle cx="108" cy="20" r="4" />
+              </svg>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="5" data-rule="Memory needs correction channels, not just propagation.">
+            <div class="lesson-index mono">05</div>
+            <div class="lesson-body">
+              <h3>A fact can be everywhere and wrong</h3>
+              <p>A memory can reach everyone while fidelity stays low. SwarmLab recorded full coverage with fidelity at 0.574, meaning the story spread farther than the truth did.</p>
+              <b>The rule: let newer verified evidence heal older memory instead of freezing first-write forever.</b>
+            </div>
+            <div class="lesson-art lesson-art-mesh" aria-hidden="true">
+              <div class="mesh-node source"></div>
+              <div class="mesh-node good"></div>
+              <div class="mesh-node good"></div>
+              <div class="mesh-node bad"></div>
+              <div class="mesh-node bad"></div>
+              <p class="mono">coverage 100% / fidelity 0.574</p>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="6" data-rule="Carry concept and unit in the contract, not just the field name.">
+            <div class="lesson-index mono">06</div>
+            <div class="lesson-body">
+              <h3>The same word can mean two different things</h3>
+              <p>Two agents can agree on "total" while meaning different totals. SwarmLab found worst-case silent corruption at 84.5% even while reported agreement stayed at 100%.</p>
+              <b>The rule: make ambiguity fail early, and prefer refusal to silent agreement.</b>
+            </div>
+            <div class="lesson-art lesson-art-contract" aria-hidden="true">
+              <div class="contract-side">
+                <span class="mono">Agent A</span>
+                <strong>total = $420 pretax</strong>
+              </div>
+              <div class="contract-split">!=</div>
+              <div class="contract-side">
+                <span class="mono">Agent B</span>
+                <strong>total = $367 posttax</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card reveal" role="listitem" data-lesson="7" data-rule="Ask the world for a receipt instead of asking the agent for confidence.">
+            <div class="lesson-index mono">07</div>
+            <div class="lesson-body">
+              <h3>"Done" needs proof</h3>
+              <p>"I did it" is a report. A changed file, transaction ID, passed test, or signed approval is a receipt. Cross-model agreement is still correlated error, not proof.</p>
+              <b>The rule: verify outcomes outside the agent's own narration.</b>
+            </div>
+            <div class="lesson-art lesson-art-proof" aria-hidden="true">
+              <div class="proof-row weak"><span class="mono">weak</span><strong>I did it</strong></div>
+              <div class="proof-row better"><span class="mono">better</span><strong>cross-model agree</strong></div>
+              <div class="proof-row strong"><span class="mono">strong</span><strong>provenance receipt</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulator" class="simulator shell">
+      <div class="section-head reveal">
+        <p class="eyebrow">Interactive concept</p>
+        <h2>Consensus can look stable while truth loses.</h2>
+        <p class="section-copy">
+          This model is intentionally simple: five seats, honest agents vote for the true answer, liar seats vote for the lie, and honest agents never flip. Change the captured seats and watch the outcome switch without any persuasion event.
+        </p>
+      </div>
+      <div class="simulator-grid">
+        <div class="simulator-card reveal">
+          <div class="dial-strip">
+            <div>
+              <span class="mono">truth votes</span>
+              <strong id="simTruthVotes">2</strong>
+            </div>
+            <div>
+              <span class="mono">lie votes</span>
+              <strong id="simLieVotes">3</strong>
+            </div>
+            <div>
+              <span class="mono">result</span>
+              <strong id="simResultLabel">false answer wins</strong>
+            </div>
+          </div>
+          <div class="sim-copy">
+            <p>
+              With one or two liar seats, truth survives. At three liar seats, the false answer wins by arithmetic alone. The honest agents do not switch sides.
+            </p>
+          </div>
+        </div>
+        <div class="simulator-card reveal">
+          <div class="tipping-bars">
+            <div class="tip-row">
+              <span class="mono">K=1</span>
+              <div class="tip-bar"><div class="tip-fill good" style="--fill: 80%"></div></div>
+              <strong>truth wins</strong>
+            </div>
+            <div class="tip-row">
+              <span class="mono">K=2</span>
+              <div class="tip-bar"><div class="tip-fill good" style="--fill: 80%"></div></div>
+              <strong>truth wins</strong>
+            </div>
+            <div class="tip-row">
+              <span class="mono">K=3</span>
+              <div class="tip-bar"><div class="tip-fill bad" style="--fill: 100%"></div></div>
+              <strong>lie wins</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="checklist shell">
+      <div class="section-head reveal">
+        <p class="eyebrow">Practical gate</p>
+        <h2>Find the false green before it gets expensive.</h2>
+        <p class="section-copy">
+          Click through the seven questions. If a workflow cannot answer them, it is not ready for high-trust, high-stakes, or client-facing use.
+        </p>
+      </div>
+      <div class="checklist-grid">
+        <div class="gate-meter reveal" aria-live="polite">
+          <strong class="mono" id="gateProgressLabel">0 / 7 gates answered</strong>
+          <div class="gate-meter-bar"><div class="gate-meter-fill" id="gateProgressFill"></div></div>
+          <p>Readiness is not whether the board looks calm. Readiness is whether hidden failure has somewhere to show up before delivery.</p>
+        </div>
+        <div class="gate-list reveal" role="list">
+          <button class="gate" type="button" role="listitem"><span class="mono">01</span><span>What could stay broken while the dashboard is green?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">02</span><span>Is the decision criterion pinned before debate?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">03</span><span>Can reviewers see prior PASS labels?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">04</span><span>Where are the review edges between steps?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">05</span><span>Can newer evidence heal older memory?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">06</span><span>Do handoffs carry concept and unit, not just names?</span><span class="gate-check">OK</span></button>
+          <button class="gate" type="button" role="listitem"><span class="mono">07</span><span>What external receipt proves "done"?</span><span class="gate-check">OK</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="formats" class="formats shell reveal">
+      <p class="eyebrow">Distribution surfaces</p>
+      <h2>One lesson library, three ways to use it.</h2>
+      <div class="format-grid">
+        <a class="format-card" href="/content/newsletter-sequence.md">
+          <span class="format-title">Email sequence</span>
+          <p>Lead magnet copy built for punch, surprise, and practical rules.</p>
+          <span class="format-arrow mono">Open -&gt;</span>
+        </a>
+        <a class="format-card" href="/pdf/swarmlab-client-report.pdf">
+          <span class="format-title">Client PDF</span>
+          <p>Credibility artifact for discovery calls, workshops, and AI risk conversations.</p>
+          <span class="format-arrow mono">Open -&gt;</span>
+        </a>
+        <a class="format-card" href="/content/LESSONS.md">
+          <span class="format-title">Lesson library</span>
+          <p>The canonical content spine for future workshops, pages, and internal training.</p>
+          <span class="format-arrow mono">Open -&gt;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="cta shell reveal">
+      <p class="eyebrow" data-copy="ctaEyebrow">Lead magnet positioning</p>
+      <h2 data-copy="ctaHeadline">A seven-part field guide on why teams agree on the wrong thing.</h2>
+      <p data-copy="ctaBody">Use this as a newsletter hook: short, surprising, practical, and grounded in replayable SwarmLab results.</p>
+      <form class="signup-form cta-signup" data-signup-form>
+        <label class="sr-only" for="cta-email">Email address</label>
+        <input id="cta-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+        <button class="button button-primary" type="submit">Start the email course</button>
+        <p class="signup-status" data-signup-status aria-live="polite"></p>
+      </form>
+      <div class="hero-actions">
+        <a class="button button-secondary" href="/content/newsletter-sequence.md">Use the email sequence</a>
+        <a class="button button-secondary" href="/pdf/swarmlab-client-report.pdf">Send the PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

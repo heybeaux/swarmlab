@@ -1,0 +1,15 @@
+{
+  "name": "swarmlab-learning-package",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Static SwarmLab learning-package landing page and client collateral.",
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "preview": "python3 -m http.server 8877 --bind 127.0.0.1",
+    "check": "node --check site/app.js && node --check scripts/build-static.mjs && node --check api/subscribe.js && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Green Is Not Correct — SwarmLab Client Report</title>
+<style>
+/* ── Page geometry ─────────────────────────────────────────────── */
+@page {
+  size: Letter;
+  margin: 0.72in 0.78in;
+}
+@page :first {
+  margin: 0;
+}
+
+/* ── Design tokens ─────────────────────────────────────────────── */
+:root {
+  --ink:          #0f1209;
+  --ink-soft:     #2b3226;
+  --muted:        #606858;
+  --subtle:       #8a9284;
+  --paper:        #fbfcf7;
+  --panel:        #ffffff;
+  --panel-tint:   #f7faf0;
+  --line:         #dce4d3;
+  --line-soft:    #edf2e8;
+  --accent:       #5db870;
+  --accent-bold:  #217a32;
+  --accent-dark:  #0d4a1a;
+  --warn:         #9e3a2b;
+  --warn-light:   #fdf1ef;
+  --warn-border:  #e8c4bc;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ──────────────────────────────────────────────────────── */
+body {
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 10.6pt;
+  line-height: 1.58;
+}
+
+/* ── Cover ─────────────────────────────────────────────────────── */
+.cover {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.88in 0.88in 0.6in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0f1209;
+  color: #fff;
+  page-break-after: always;
+}
+
+.cover-top { flex: 1; }
+
+.cover-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.55in;
+  font-weight: 600;
+}
+
+.cover-title {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 54pt;
+  line-height: 0.90;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  color: #ffffff;
+  max-width: 6.8in;
+  margin-bottom: 0.28in;
+}
+
+.cover-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.cover-dek {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15pt;
+  line-height: 1.30;
+  color: #c8d4c2;
+  max-width: 5.8in;
+  margin-bottom: 0.45in;
+  font-weight: 400;
+}
+
+.cover-thesis {
+  border-left: 6px solid var(--accent);
+  padding: 0.22in 0.28in;
+  background: rgba(93,184,112,0.08);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13.5pt;
+  line-height: 1.22;
+  font-weight: 700;
+  color: #e8f0e4;
+  max-width: 6.4in;
+  margin-bottom: 0.5in;
+}
+
+.cover-meta {
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding-top: 0.22in;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3in;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 8.5pt;
+  color: #8ea083;
+  line-height: 1.45;
+}
+
+.cover-meta strong {
+  color: #c0ccba;
+  display: block;
+  margin-bottom: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ── Body typography ───────────────────────────────────────────── */
+.body-content {
+  padding: 0.22in 0.30in 0.45in;
+  background: rgba(255,255,255,0.72);
+}
+
+h1.section-title {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 28pt;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0.5in 0 0.18in;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18pt;
+  line-height: 1.06;
+  letter-spacing: -0.030em;
+  font-weight: 750;
+  color: var(--ink);
+  margin: 0.42in 0 0.13in;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0.28in 0 0.08in;
+  page-break-after: avoid;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0.09in 0;
+}
+
+ul, ol {
+  margin: 0.07in 0 0.16in 0.22in;
+  padding: 0;
+}
+
+li {
+  margin: 0.04in 0;
+}
+
+strong { font-weight: 700; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0.32in 0;
+}
+
+/* ── Pull quote ────────────────────────────────────────────────── */
+.pull-quote {
+  margin: 0.34in 0;
+  padding: 0.26in 0.36in 0.26in 0.40in;
+  border-left: 4px solid var(--accent-bold);
+  background: var(--panel-tint);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13.2pt;
+  font-weight: 700;
+  line-height: 1.26;
+  color: var(--ink);
+}
+
+/* ── Callout box ───────────────────────────────────────────────── */
+.callout {
+  margin: 0.22in 0;
+  padding: 0.22in 0.30in;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 2px;
+}
+
+.callout.risk {
+  background: var(--warn-light);
+  border-color: var(--warn-border);
+}
+
+.callout-label {
+  font-family: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  font-size: 7pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.05in;
+}
+
+.callout.risk .callout-label {
+  color: var(--warn);
+}
+
+/* ── Lesson card ───────────────────────────────────────────────── */
+.lesson {
+  margin: 0.30in 0;
+  padding: 0.27in 0.34in;
+  border: 1px solid var(--line-soft);
+  background: var(--panel);
+  page-break-inside: avoid;
+}
+
+.lesson-number {
+  font-family: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  font-size: 7.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--subtle);
+  margin-bottom: 0.07in;
+}
+
+.lesson-title {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 13pt;
+  font-weight: 750;
+  color: var(--ink);
+  margin-bottom: 0.1in;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.lesson-body {
+  font-size: 10pt;
+  color: var(--ink-soft);
+  margin-bottom: 0.12in;
+  line-height: 1.50;
+}
+
+.lesson-tags {
+  display: flex;
+  gap: 0.12in;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 600;
+  padding: 0.025in 0.09in;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+}
+
+.tag.risk-tag {
+  background: var(--warn-light);
+  color: var(--warn);
+  border: 1px solid var(--warn-border);
+}
+
+.tag.design-tag {
+  background: #f4faf1;
+  color: var(--accent-dark);
+  border: 1px solid #cfe6cf;
+}
+
+/* ── Evidence table ────────────────────────────────────────────── */
+.evidence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.18in 0 0.24in;
+  font-size: 9pt;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.evidence-table th {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.085in 0.13in;
+  font-size: 8pt;
+  letter-spacing: 0.02em;
+}
+
+.evidence-table td {
+  padding: 0.085in 0.13in;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-soft);
+  vertical-align: top;
+  line-height: 1.42;
+}
+
+.evidence-table tr:nth-child(odd) td {
+  background: #fafbf7;
+}
+
+.evidence-table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ── Principles list ───────────────────────────────────────────── */
+.principles {
+  list-style: none;
+  margin: 0.14in 0;
+  padding: 0;
+}
+
+.principles li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.12in;
+  padding: 0.09in 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.40;
+}
+
+.principles li:last-child { border-bottom: 0; }
+
+.p-num {
+  font-family: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  font-size: 8pt;
+  color: var(--subtle);
+  min-width: 0.22in;
+  font-weight: 600;
+}
+
+/* ── Checklist ─────────────────────────────────────────────────── */
+.checklist-group {
+  margin: 0.18in 0;
+  page-break-inside: avoid;
+}
+
+.checklist-group-title {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.06in;
+  margin-bottom: 0.1in;
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.13in;
+  margin: 0.07in 0;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  line-height: 1.46;
+}
+
+.check-box {
+  flex-shrink: 0;
+  width: 0.16in;
+  height: 0.16in;
+  border: 1px solid var(--subtle);
+  display: inline-block;
+  border-radius: 1px;
+  margin-top: 0.02in;
+}
+
+/* ── Close section ─────────────────────────────────────────────── */
+.close-section {
+  margin-top: 0.42in;
+  padding: 0.36in 0.42in;
+  background: var(--ink);
+  color: #fff;
+}
+
+.close-section h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.14in;
+  font-size: 16pt;
+}
+
+.close-section p {
+  color: #c0ccba;
+  font-size: 10pt;
+  line-height: 1.55;
+}
+
+.close-section .close-cta {
+  margin-top: 0.18in;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.35;
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer {
+  position: fixed;
+  bottom: 0.28in;
+  left: 0.78in;
+  right: 0.78in;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 7pt;
+  color: var(--subtle);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 0.05in;
+}
+
+@media print {
+  a { color: inherit; text-decoration: none; }
+  .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .close-section { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .evidence-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .lesson { break-inside: avoid; }
+  .checklist-group { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Cover ──────────────────────────────────────────────────── -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="cover-eyebrow">SwarmLab · heybeaux · Client Briefing</div>
+    <h1 class="cover-title"><em>Green</em><br>Is Not<br>Correct</h1>
+    <p class="cover-dek">Seven reliability lessons from controlled AI-team experiments — translated for leaders planning agentic workflows.</p>
+    <div class="cover-thesis">
+      Agreement is not truth. Reports are not receipts.<br>
+      A dashboard can go green while the real outcome gets worse.
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div>
+      <strong>Use this for</strong>
+      Discovery calls, AI readiness reviews, agent workflow planning, and executive briefings on AI reliability.
+    </div>
+    <div>
+      <strong>Built from</strong>
+      SwarmLab — a controlled lab for studying how AI agent teams fail under consensus pressure, adversarial inputs, long-horizon autonomy, and semantic handoffs.
+    </div>
+  </div>
+</section>
+
+<!-- ── Body ───────────────────────────────────────────────────── -->
+<main class="body-content">
+
+  <!-- Executive Summary -->
+  <h1 class="section-title">Executive Summary</h1>
+
+  <p>AI agents are moving from demos into operational workflows. That shift creates a class of failure that does not appear in typical capability evaluations: the system's own success signals go green while the actual outcome is wrong — and nothing inside the system can tell.</p>
+
+  <p>SwarmLab is a controlled research lab that tests exactly this. Across more than a dozen experiments, AI agent teams were placed under conditions of consensus pressure, adversarial inputs, long-running autonomy, information handoffs, and memory propagation. Results were measured against verifiable ground truth — not agent self-reports.</p>
+
+  <div class="pull-quote">
+    Green is not correct. Agreement is not truth. Fidelity is not meaning.
+  </div>
+
+  <p>Every experiment arrived at a version of the same failure from a different direction. The findings have been translated into concrete design changes — implemented, retested, and measured. This document summarizes what clients need to understand before deploying agentic workflows.</p>
+
+  <hr>
+
+  <!-- Why it matters -->
+  <h2>Why This Matters Before You Deploy</h2>
+
+  <p>Most early AI adoption conversations are about capability: Can it write the proposal? Update the CRM? Summarize the call? Generate the report? Those questions matter. They are also insufficient.</p>
+
+  <p>Once an AI workflow moves from experimentation into operations, a second set of questions becomes the ones that determine whether the deployment is trustworthy or merely busy:</p>
+
+  <ul>
+    <li>How do we know it did the <em>right</em> thing — not just <em>a</em> thing?</li>
+    <li>What evidence is attached to "complete"?</li>
+    <li>What happens when agents converge on the wrong answer together?</li>
+    <li>Can a corrupted fact in one system spread to others?</li>
+    <li>Where does independent verification happen?</li>
+    <li>What does the dashboard fail to see?</li>
+  </ul>
+
+  <p>SwarmLab answers those questions under controlled, measurable conditions — before they appear as production incidents.</p>
+
+  <hr>
+
+  <!-- Evidence table -->
+  <h2>The Pattern Across All Experiments</h2>
+
+  <p>In nine separate experiments, a visible success signal went green while the underlying outcome was wrong. The signal and the outcome were not the same thing.</p>
+
+  <table class="evidence-table">
+    <thead>
+      <tr>
+        <th>Experiment</th>
+        <th>The green signal</th>
+        <th>What it was hiding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Adversarial pair</td>
+        <td>Pass rate = 100%</td>
+        <td>Program incorrect at every adversarially chosen input</td>
+      </tr>
+      <tr>
+        <td>Consensus under lies</td>
+        <td>Consensus reached, all cells</td>
+        <td>One confident liar cut truth rate from 92% to 56%</td>
+      </tr>
+      <tr>
+        <td>Bug telephone</td>
+        <td>Serial PASS review trail</td>
+        <td>Visible approvals turned later reviewers into rubber stamps</td>
+      </tr>
+      <tr>
+        <td>Minimal language</td>
+        <td>Parse rate = 100%</td>
+        <td>Semantic divergence invisible until execution</td>
+      </tr>
+      <tr>
+        <td>Overnight build</td>
+        <td>Commits landing continuously</td>
+        <td>Quality peaked then degraded; the rot was already in</td>
+      </tr>
+      <tr>
+        <td>Economic agents</td>
+        <td>Ledger at 100% balance</td>
+        <td>Swarm effectively starved; 13% task completion</td>
+      </tr>
+      <tr>
+        <td>Reverse engineer</td>
+        <td>Happy-path fit = 100%</td>
+        <td>Edge-case behavior: 0%; system self-poisoned by over-probing</td>
+      </tr>
+      <tr>
+        <td>Schema negotiation</td>
+        <td>100% agreement in ~2 rounds</td>
+        <td>Up to 84% of fields silently meant different things</td>
+      </tr>
+      <tr>
+        <td>Audit forgery</td>
+        <td>All signatures verified</td>
+        <td>History had been dropped, reordered, and backdated</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The stack's job is to make the true signal cheaper to read than the green one. That is what reliable agentic design means in practice.</p>
+
+  <hr>
+
+  <!-- Seven lessons -->
+  <h2>Seven Reliability Lessons</h2>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 01</div>
+    <div class="lesson-title">Green is not correct</div>
+    <p class="lesson-body">A workflow can fully satisfy its visible success signal while failing the underlying intent. Agents optimize what they measure. If the measurement is wrong or incomplete, the optimization is wrong — and the board stays green.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: false confidence from dashboards and self-reports</span>
+      <span class="tag design-tag">Response: define what the signal measures; attach external outcome evidence</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 02</div>
+    <div class="lesson-title">Consensus is not truth</div>
+    <p class="lesson-body">A panel of agents can converge on a wrong answer through vote arithmetic, not persuasion. In one experiment, a three-agent liar majority produced unanimous consensus on the incorrect answer — without a single honest agent being persuaded. The liars did not state false facts; they quietly shifted what question was being answered. No style-based detector can see criterion drift.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: multi-agent voting certifies the wrong answer</span>
+      <span class="tag design-tag">Response: pin the criterion; define admissible evidence; allow the gate to block</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 03</div>
+    <div class="lesson-title">Review depth is not independence</div>
+    <p class="lesson-body">More reviewers do not automatically improve quality. When each reviewer sees the prior approvals, the marginal benefit of each additional review drops toward zero. A visible PASS trail converts independent eyes into confirmation machines. The audit trail looks thorough. It is not.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: approval chains with no independent scrutiny</span>
+      <span class="tag design-tag">Response: hide prior verdicts; route subtle correctness issues to mechanical tests</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 04</div>
+    <div class="lesson-title">Long-running autonomy rots without gates</div>
+    <p class="lesson-body">In extended unsupervised operations, quality follows a phase structure: it rises, peaks, then degrades. The degradation is not random — it is a predictable consequence of missing review edges. Adding a single inter-step review edge produced a 99% quality improvement in the experiment. Without it, quality rot goes undetected as activity continues.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: high-volume output that requires expensive remediation</span>
+      <span class="tag design-tag">Response: bounded loops with review edges, not unattended overnight runs</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 05</div>
+    <div class="lesson-title">Memory needs correction, not just storage</div>
+    <p class="lesson-body">A fact can reach every part of a system while becoming progressively less accurate. First-write-wins propagation locks in early corruptions — later corrections cannot overwrite them. Coverage and fidelity are independent. A fact can be everywhere and wrong simultaneously.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: organization-wide false records spreading through handoffs</span>
+      <span class="tag design-tag">Response: versioned facts with provenance; allow newer evidence to heal older claims</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 06</div>
+    <div class="lesson-title">Shared names are not shared meaning</div>
+    <p class="lesson-body">Two agents or systems can use identical field names while referring to different concepts or units. "Total" might mean pre-tax or post-tax. "Created" might be milliseconds or seconds. The wire format is byte-identical; the semantic meaning is incompatible. Agents reach agreement fast — and wrong — with 100% reported confidence.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: silent data corruption in handoffs and integrations</span>
+      <span class="tag design-tag">Response: semantic contracts with explicit concept, unit, and explicit refusal on mismatch</span>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-number">Lesson 07</div>
+    <div class="lesson-title">Reports are not receipts</div>
+    <p class="lesson-body">An agent asserting "done" is not evidence that anything changed in the real world. Self-reported completion is the weakest possible evidence tier. External receipts — transaction IDs, diffs, sent-message confirmations, audit entries, external system state — are categorically different from an agent's own account of what happened.</p>
+    <div class="lesson-tags">
+      <span class="tag risk-tag">Risk: workflows report completion without external verification</span>
+      <span class="tag design-tag">Response: require external receipts for high-value actions before closing any task</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Principles -->
+  <h2>Principles for Reliable Agentic Systems</h2>
+
+  <ol class="principles">
+    <li><span class="p-num">01</span><strong>Make true signals cheaper to inspect than green signals.</strong></li>
+    <li><span class="p-num">02</span><strong>Pin the decision criterion before deliberation begins.</strong></li>
+    <li><span class="p-num">03</span><strong>Keep reviews structurally independent — hide prior verdicts.</strong></li>
+    <li><span class="p-num">04</span><strong>Build bounded loops, not unattended sprawl.</strong></li>
+    <li><span class="p-num">05</span><strong>Treat memory as versioned, verified evidence — not a notes file.</strong></li>
+    <li><span class="p-num">06</span><strong>Carry meaning in semantic contracts, not prose descriptions.</strong></li>
+    <li><span class="p-num">07</span><strong>Attach external receipts to claims of completion.</strong></li>
+    <li><span class="p-num">08</span><strong>Let the system block when evidence is insufficient — never force a winner.</strong></li>
+  </ol>
+
+  <hr>
+
+  <!-- Readiness checklist -->
+  <h2>Readiness Checklist</h2>
+
+  <p>Use this before deploying any AI agent workflow into operations.</p>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Outcome Evidence</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>What does success mean in the world — not in the agent's report?</li>
+      <li><span class="check-box"></span>What external artifact proves it happened?</li>
+      <li><span class="check-box"></span>Can the workflow report success without producing that artifact?</li>
+    </ul>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Decision Governance</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>Is the decision criterion written down before the process starts?</li>
+      <li><span class="check-box"></span>What evidence is defined as admissible?</li>
+      <li><span class="check-box"></span>Is the system permitted to block when evidence is insufficient?</li>
+    </ul>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Review Design</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>Are reviewers shielded from prior verdicts?</li>
+      <li><span class="check-box"></span>Which issues are routed to mechanical tests vs. judgment-based review?</li>
+      <li><span class="check-box"></span>Is review depth proportional to the stakes and subtlety of the task?</li>
+    </ul>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Handoff Integrity</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>What concepts and units are passed between agents or systems?</li>
+      <li><span class="check-box"></span>Is each field's meaning explicit — not inferred from the name?</li>
+      <li><span class="check-box"></span>Can a receiver detect missing requirements? Changed meaning?</li>
+    </ul>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Memory Reliability</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>Where did each stored claim come from?</li>
+      <li><span class="check-box"></span>What is its verification tier?</li>
+      <li><span class="check-box"></span>Can newer verified evidence correct or supersede older claims?</li>
+    </ul>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-title">Action Receipts</div>
+    <ul class="checklist">
+      <li><span class="check-box"></span>Does "complete" link to an external receipt?</li>
+      <li><span class="check-box"></span>Is the receipt independent of the agent's own report?</li>
+      <li><span class="check-box"></span>Is the evidence tier stored alongside the claim?</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- Close -->
+  <div class="close-section">
+    <h2>How heybeaux Uses This</h2>
+    <p>SwarmLab is not theoretical. It directly informs how we design, evaluate, and govern agent systems. The experiments produced concrete changes: typed semantic contracts for handoffs, pinned criterion gates for multi-agent decisions, versioned memory with anti-entropy healing, receipt-backed completion, and bounded loops with mandatory review edges.</p>
+    <p>Each change was implemented, retested against the original experiment conditions, and measured against verifiable ground truth. Findings that produced red results are reported as red.</p>
+    <p>The standard: when an agent says "done," there is an external receipt. When a gate says "pass," there is evidence. When memory says "fact," there is a provenance chain. The goal is not agents incapable of failure — it is failure that is visible, recoverable, and cheaper than false confidence.</p>
+    <div class="close-cta">If you are planning an AI workflow, we can map the false-green risks before launch — the success signals, handoff boundaries, receipts, memory policies, and review gates that make the system reliable enough to trust.</div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <span>Green Is Not Correct · SwarmLab Client Briefing</span>
+  <span>heybeaux · 2026</span>
+</div>
+
+</body>
+</html>
