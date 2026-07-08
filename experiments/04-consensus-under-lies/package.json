@@ -5,7 +5,7 @@
   "type": "module",
   "dependencies": {
     "@swarmlab/core": "0.1.0",
-    "@parliament/core": "file:../../../../../../../dev/parliament/packages/core"
+    "@parliament/core": "file:/Users/beauxwalton/Dev/parliament/packages/core"
   },
   "scripts": {
     "start": "node dist/main.js"

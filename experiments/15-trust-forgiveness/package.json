@@ -6,7 +6,7 @@
   "dependencies": {
     "@swarmlab/core": "0.1.0",
     "@swarmlab/experiment-14-delegation-decay": "0.1.0",
-    "@openengram/reconciliation": "file:../../../../../../../projects/engram/src/reconciliation"
+    "@openengram/reconciliation": "file:/Users/beauxwalton/projects/engram/src/reconciliation"
   },
   "scripts": {
     "start": "node dist/main.js"
