@@ -32,7 +32,9 @@ import {
 } from '@swarmlab/experiment-14-delegation-decay/dist/trust.js';
 import { seeded, type Rand } from '@swarmlab/experiment-14-delegation-decay/dist/rng.js';
 import type { FailStyle, TrustTrialResult } from '@swarmlab/experiment-14-delegation-decay/dist/types.js';
-import { ForgivingStore, type ProbationState } from './store.js';
+import type { ProbationState, TrustConfig } from '@heybeaux/lattice-trust';
+import { applyObservation, advanceProbe, DISABLED_EVIDENCE_MARGIN } from './lattice.js';
+import { ForgivingStore } from './store.js';
 
 export type ForgArm = 'unforgiving' | 'decay' | 'probation' | 'evidence';
 
@@ -56,6 +58,16 @@ export const EVIDENCE_MARGIN = Number(process.env.FORGIVE_EVIDENCE_MARGIN ?? 3);
 const ASSERTIONS = ['quota_cap_set', 'burst_ratio_valid', 'policy_scope_bound', 'ttl_consistent'] as const;
 
 const WORKER_IDS: readonly string[] = WORKERS.map((w) => w.id);
+const PROBATION_CONFIG: TrustConfig = {
+  probeBase: PROBE_BASE,
+  probeBackoff: PROBE_BACKOFF,
+  evidenceMargin: DISABLED_EVIDENCE_MARGIN,
+};
+const EVIDENCE_CONFIG: TrustConfig = {
+  probeBase: PROBE_BASE,
+  probeBackoff: PROBE_BACKOFF,
+  evidenceMargin: EVIDENCE_MARGIN,
+};
 
 interface Observation {
   round: number;
@@ -140,6 +152,7 @@ export function runForgivingTrial(
   const exitLog: { round: number; worker: string }[] = [];
   let resetSnapshot: string | null = null;
   let midProbationAtResetState: { id: string; p: ProbationState }[] = [];
+  const trustConfig = arm === 'probation' ? PROBATION_CONFIG : EVIDENCE_CONFIG;
 
   const envFail = (round: number, worker: string): boolean =>
     seeded(`${seedBase}:env:r${round}:${worker}`)() < P_CAPABLE_TRANSIENT_FAIL;
@@ -148,6 +161,7 @@ export function runForgivingTrial(
     while (learnedUpTo < observations.length) {
       const obs = observations[learnedUpTo];
       if (!obs || obs.visibleAtRound > round) break;
+      const rootBefore = arm === 'decay' ? null : store.readTrustRoot(WORKER_IDS, trustConfig);
       store.writeObservation('root', {
         round: obs.round,
         worker: obs.worker,
@@ -155,16 +169,20 @@ export function runForgivingTrial(
         ...(obs.failedAssertion !== undefined ? { failedAssertion: obs.failedAssertion } : {}),
       });
       if (arm !== 'decay') {
-        // evidence-driven exit: record re-balanced while in probation → readmit
-        const p = store.readProbation(obs.worker);
-        const cap = store.readCap(obs.worker);
-        if (p?.status === 'probation' && cap && cap.failures <= cap.successes) {
-          store.writeProbation('root', obs.worker, { ...p, status: 'active' });
+        const before = rootBefore?.capabilities[obs.worker]?.probation ?? null;
+        const rootAfter = applyObservation(rootBefore ?? store.readTrustRoot(WORKER_IDS, trustConfig), obs.worker, obs.success, obs.round);
+        const after = rootAfter.capabilities[obs.worker]?.probation ?? null;
+        if (after) store.writeProbation('root', obs.worker, after);
+        if (obs.worker !== INCAPABLE && before?.status === 'active' && after !== null && after.status !== 'active') {
+          benchedEver.add(obs.worker);
+        }
+        if (before?.status === 'probation' && after?.status === 'active') {
           exitLog.push({ round, worker: obs.worker });
           if (obs.worker === INCAPABLE) extras.incapableLeaks += 1;
           else {
             extras.capableRecoveries += 1;
-            extras.recoveryLatencies.push(round - p.enteredRound);
+            const enteredAt = before.enteredAt ?? obs.round;
+            extras.recoveryLatencies.push(round - enteredAt);
           }
         }
       }
@@ -184,7 +202,10 @@ export function runForgivingTrial(
   };
 
   const activePool = (): string[] => {
-    const ok = WORKER_IDS.filter((id) => store.readProbation(id)?.status !== 'probation');
+    const ok = WORKER_IDS.filter((id) => {
+      const status = store.readProbation(id)?.status;
+      return status === undefined || status === 'active';
+    });
     return ok.length > 0 ? ok : [...WORKER_IDS];
   };
 
@@ -226,56 +247,27 @@ export function runForgivingTrial(
       }
       prevEligible = elig;
     }
-
-    // probation/evidence arms: threshold crossings enter probation (exp-14's exact crossing rule)
-    if (arm !== 'decay') {
-      for (const id of WORKER_IDS) {
-        const cap = store.readCap(id);
-        if (!cap || cap.failures <= cap.successes) continue;
-        const p = store.readProbation(id);
-        if (p?.status === 'probation') continue;
-        store.writeProbation('root', id, {
-          status: 'probation',
-          enteredRound: round,
-          nextProbeRound: round + PROBE_BASE,
-          interval: PROBE_BASE,
-          probes: 0,
-          entries: (p?.entries ?? 0) + 1,
-        });
-        if (id !== INCAPABLE) benchedEver.add(id);
-      }
-    }
-
     // choose
     let chosen: string;
     let isProbe = false;
     if (arm === 'decay') {
       chosen = pickUniform(decayEligible(round), choiceRand);
     } else {
-      const due = WORKER_IDS.map((id) => ({ id, p: store.readProbation(id) }))
-        .filter(
-          (x): x is { id: string; p: ProbationState } =>
-            x.p !== null && x.p.status === 'probation' && x.p.nextProbeRound <= round,
-        )
-        // evidence arm: conclusive failure margin ends probing — the worker
-        // stays benched on evidence, not on schedule position
-        .filter((x) => {
-          if (arm !== 'evidence') return true;
-          const cap = store.readCap(x.id);
-          return cap === null || cap.failures - cap.successes <= EVIDENCE_MARGIN;
-        })
-        .sort((a, b) => a.p.nextProbeRound - b.p.nextProbeRound || a.id.localeCompare(b.id));
-      const first = due[0];
-      if (first !== undefined) {
-        chosen = first.id;
+      const beforeStatuses = new Map(
+        WORKER_IDS.map((id) => [id, store.readProbation(id)?.status ?? 'active'] as const),
+      );
+      const { root: nextRoot, issuedWorker } = advanceProbe(store.readTrustRoot(WORKER_IDS, trustConfig), round);
+      for (const id of WORKER_IDS) {
+        const probation = nextRoot.capabilities[id]?.probation;
+        if (probation) store.writeProbation('root', id, probation);
+        if (id !== INCAPABLE && beforeStatuses.get(id) === 'active' && probation?.status !== 'active') {
+          benchedEver.add(id);
+        }
+      }
+      if (issuedWorker !== null) {
+        chosen = issuedWorker;
         isProbe = true;
-        store.writeProbation('root', first.id, {
-          ...first.p,
-          probes: first.p.probes + 1,
-          interval: first.p.interval * PROBE_BACKOFF,
-          nextProbeRound: round + first.p.interval * PROBE_BACKOFF,
-        });
-        probeLog.push({ round, worker: first.id });
+        probeLog.push({ round, worker: issuedWorker });
       } else {
         chosen = pickUniform(activePool(), choiceRand);
       }
@@ -334,13 +326,12 @@ export function runForgivingTrial(
     // evidence first, OR the probe was scheduled beyond the horizon. Never
     // silently readmitted, never permanently dropped.
     const honored = midProbationAtResetState.every(({ id, p }) => {
-      if (p.nextProbeRound > ROUNDS) return true;
-      if (probeLog.some((e) => e.worker === id && e.round >= p.nextProbeRound)) return true;
+      if ((p.nextProbeAt ?? Number.POSITIVE_INFINITY) > ROUNDS) return true;
+      if (probeLog.some((e) => e.worker === id && e.round >= (p.nextProbeAt ?? Number.POSITIVE_INFINITY))) return true;
       if (exitLog.some((e) => e.worker === id && e.round > RESET_AFTER_ROUND)) return true;
       if (arm === 'evidence') {
         // conclusively benched: probing legitimately stopped on evidence
-        const cap = store.readCap(id);
-        if (cap !== null && cap.failures - cap.successes > EVIDENCE_MARGIN) return true;
+        if (store.readProbation(id)?.status === 'conclusive') return true;
       }
       return false;
     });
@@ -355,9 +346,7 @@ export function runForgivingTrial(
     pool = decayEligible(ROUNDS + 1);
   } else {
     pool = activePool();
-    extras.transferReadmittedProbation = pool.some(
-      (id) => store.readProbation(id)?.status === 'probation',
-    );
+    extras.transferReadmittedProbation = pool.some((id) => store.readProbation(id)?.status === 'probation');
   }
   extras.transferPoolHadIncapable = pool.includes(INCAPABLE);
   const inc = store.readCap(INCAPABLE);
@@ -380,7 +369,7 @@ export function runForgivingTrial(
       if (!cap) continue;
       const effFailures = cap.history.filter((h) => !h.s && h.r > ROUNDS + 1 - DECAY_WINDOW).length;
       if (effFailures > cap.successes) capableExcluded += 1;
-    } else if (store.readProbation(id)?.status === 'probation') {
+    } else if ((store.readProbation(id)?.status ?? 'active') !== 'active') {
       capableExcluded += 1;
     }
   }

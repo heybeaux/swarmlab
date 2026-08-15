@@ -372,77 +372,360 @@
   },
   {
     "id": "RT-06",
-    "claim": "Evidence-capped probation recovers capable workers without leaking the incapable worker back into steady-state routing, but the policy is tuned in-sample and still needs a holdout sweep.",
+    "claim": "Evidence-capped probation, delegated to the real @heybeaux/lattice-trust package, recovers capable workers without leaking the incapable worker back into steady-state routing and holds across a five-seed RT-06 holdout sweep.",
     "experiment": "experiments/15-trust-forgiveness",
     "spec": "specs/20-trust-forgiveness.md",
     "runIds": [
-      "tf-mr84czql"
+      "tf-msuyd5mn",
+      "tf-msuyd60e",
+      "tf-msuyd6dc",
+      "tf-msuyd6q9",
+      "tf-msuyd736",
+      "tf-msuyd7g2"
     ],
     "tracePaths": [
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl"
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl"
     ],
     "scoreFields": [
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks",
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer"
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.reproOk",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.dcLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.dcLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWLate",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWCapEx",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWLeaks",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWTransfer",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudTransferEvidence",
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWTransferEvidence"
     ],
     "expectedValues": {
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.reproOk": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.reproOk": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLate": {
-        "equals": 0.017,
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudLate": {
+        "equals": 0.013,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLate": {
-        "equals": 0.047,
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWLate": {
+        "equals": 0.03,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudCapEx": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudCapEx": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWCapEx": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWCapEx": {
         "equals": 0.02,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudLeaks": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudLeaks": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWLeaks": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWLeaks": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evLoudTransfer": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudTransfer": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.evCWTransfer": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWTransfer": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudLeaks": {
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evLoudTransferEvidence": {
+        "equals": 0.98,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.evCWTransferEvidence": {
+        "equals": 0.98,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.dcLoudLeaks": {
         "equals": 1.52,
         "tolerance": 0
       },
-      "experiments/15-trust-forgiveness/runs/tf-mr84czql.jsonl#last.dcLoudTransfer": {
-        "equals": 0.9,
+      "experiments/15-trust-forgiveness/runs/tf-msuyd5mn.jsonl#last.dcLoudTransfer": {
+        "equals": 0.898,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudLate": {
+        "equals": 0.02,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWLate": {
+        "equals": 0.02,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evLoudTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd60e.jsonl#last.evCWTransferEvidence": {
+        "equals": 0.98,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudLate": {
+        "equals": 0.017,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWLate": {
+        "equals": 0.017,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evLoudTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6dc.jsonl#last.evCWTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudLate": {
+        "equals": 0.023,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWLate": {
+        "equals": 0.03,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evLoudTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd6q9.jsonl#last.evCWTransferEvidence": {
+        "equals": 0.98,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudLate": {
+        "equals": 0.023,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWLate": {
+        "equals": 0.03,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evLoudTransferEvidence": {
+        "equals": 0.98,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd736.jsonl#last.evCWTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudLate": {
+        "equals": 0.027,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWLate": {
+        "equals": 0.03,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWCapEx": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWLeaks": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWTransfer": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evLoudTransferEvidence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/15-trust-forgiveness/runs/tf-msuyd7g2.jsonl#last.evCWTransferEvidence": {
+        "equals": 1,
         "tolerance": 0
       }
     },
-    "reproductionCommand": "npm run build && node experiments/15-trust-forgiveness/dist/main.js",
+    "reproductionCommand": "npm run build && node experiments/15-trust-forgiveness/dist/main.js && node scripts/verify-rt06-holdout.mjs",
     "stackRecommendation": "Use evidence-capped probation over time-window decay: bench on failures>successes, probe with front-loaded backoff, readmit only on cumulative rebalance, cap probes after a failure margin. Store probation state as facts so it survives restarts.",
     "stackReposAndPRs": [
+      {
+        "repo": "~/projects/worktrees/lattice-rt06",
+        "package": "@heybeaux/lattice-trust",
+        "branch": "focus/rt06-evidence-probation",
+        "commits": [
+          "2d5bbcf",
+          "2d5bbcf14b4614b7f65d270307b9b24767620e9e"
+        ],
+        "prs": [
+          "42"
+        ],
+        "dirtyState": "clean_at_package_commit"
+      },
       {
         "repo": "~/projects/engram",
         "package": "@openengram/reconciliation",
@@ -457,8 +740,8 @@
         "dirtyState": "unknown_past_run"
       }
     ],
-    "evidenceStatus": "in_sample",
-    "notes": "Policy cadence was tuned on the shared seed family. Do not treat production defaults as final until Spec 22/23 follow-up adds a holdout seed sweep; this ledger verifies the current in-sample evidence."
+    "evidenceStatus": "verified",
+    "notes": "August 15, 2026 retest wired exp-15 to the real @heybeaux/lattice-trust package from Lattice commit 2d5bbcf14b4614b7f65d270307b9b24767620e9e (PR #42) and reran both the shared-seed canonical trace plus five fresh holdout seeds. Every trace emits package provenance in the initial meta event and the holdout verifier records the same provenance alongside run IDs and trace paths."
   },
   {
     "id": "RT-07",

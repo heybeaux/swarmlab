@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { spawnSync } from 'node:child_process';
+import { basename } from 'node:path';
 
 const seeds = [
   'trust-routing-holdout-v1',
@@ -22,6 +23,7 @@ const thresholds = {
 
 const rows = [];
 let failed = false;
+let provenance = null;
 
 for (const seed of seeds) {
   const run = spawnSync(
@@ -48,12 +50,17 @@ for (const seed of seeds) {
   const traceLine = run.stdout
     .split('\n')
     .find((line) => line.startsWith('trace: '));
-  if (!summaryLine || !traceLine) {
-    console.error(`RT-06 holdout ${seed}: missing summary or trace output`);
+  const provenanceLine = run.stdout
+    .split('\n')
+    .find((line) => line.startsWith('provenance: '));
+  if (!summaryLine || !traceLine || !provenanceLine) {
+    console.error(`RT-06 holdout ${seed}: missing summary, trace, or provenance output`);
     process.exit(1);
   }
 
   const scores = JSON.parse(summaryLine.slice('summary: '.length));
+  provenance ??= JSON.parse(provenanceLine.slice('provenance: '.length));
+  const tracePath = traceLine.slice('trace: '.length);
   const checks = {
     loudLate: scores.evLoudLate <= thresholds.maxLateIncapableSelectionRate,
     confidentWrongLate: scores.evCWLate <= thresholds.maxLateIncapableSelectionRate,
@@ -73,7 +80,9 @@ for (const seed of seeds) {
   rows.push({
     seed,
     passed,
-    trace: traceLine.slice('trace: '.length),
+    runId: basename(tracePath, '.jsonl'),
+    trace: tracePath,
+    provenance,
     scores: {
       evLoudLate: scores.evLoudLate,
       evCWLate: scores.evCWLate,
@@ -88,14 +97,15 @@ for (const seed of seeds) {
     },
     checks,
   });
-  console.log(
+console.log(
     `${passed ? 'PASS' : 'FAIL'} ${seed}: late=${scores.evLoudLate}/${scores.evCWLate} ` +
       `capEx=${scores.evLoudCapEx}/${scores.evCWCapEx} ` +
       `leaks=${scores.evLoudLeaks}/${scores.evCWLeaks} ` +
       `transferWhenKnown=${scores.evLoudTransfer}/${scores.evCWTransfer} ` +
-      `evidence=${scores.evLoudTransferEvidence}/${scores.evCWTransferEvidence}`,
+      `evidence=${scores.evLoudTransferEvidence}/${scores.evCWTransferEvidence} ` +
+      `pkg=${provenance.packageName}@${provenance.commit}`,
   );
 }
 
-console.log(JSON.stringify({ status: failed ? 'failed' : 'passed', thresholds, runs: rows }, null, 2));
+console.log(JSON.stringify({ status: failed ? 'failed' : 'passed', thresholds, provenance, runs: rows }, null, 2));
 if (failed) process.exit(1);

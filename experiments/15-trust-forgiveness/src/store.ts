@@ -22,7 +22,9 @@ import {
   type ReconcileOutcome,
   type VersionedFact,
 } from '@openengram/reconciliation';
+import type { ProbationState, TrustConfig, TrustRoot } from '@heybeaux/lattice-trust';
 import { TASK_CLASS } from '@swarmlab/experiment-14-delegation-decay/dist/trust.js';
+import { buildTrustRoot, type StoredWorkerState } from './lattice.js';
 
 export interface HistoryEntry {
   /** round the observation was made */
@@ -35,16 +37,6 @@ export interface CapSummary {
   successes: number;
   failures: number;
   history: HistoryEntry[];
-}
-
-export interface ProbationState {
-  status: 'probation' | 'active';
-  enteredRound: number;
-  nextProbeRound: number;
-  interval: number;
-  probes: number;
-  /** how many separate times this worker has entered probation */
-  entries: number;
 }
 
 export interface StoreObservation {
@@ -107,7 +99,12 @@ export class ForgivingStore {
       agent_id: worker,
       task_class: TASK_CLASS,
       verification_tier: 'provenance',
-      ...state,
+      status: state.status,
+      enteredAt: state.enteredAt,
+      nextProbeAt: state.nextProbeAt,
+      interval: state.interval,
+      probes: state.probes,
+      entries: state.entries,
     });
     this.#put(`probation:${worker}:${TASK_CLASS}`, originId, content);
   }
@@ -117,17 +114,26 @@ export class ForgivingStore {
     if (!c) return null;
     return {
       status: c.status,
-      enteredRound: c.enteredRound,
-      nextProbeRound: c.nextProbeRound,
+      enteredAt: c.enteredAt,
+      nextProbeAt: c.nextProbeAt,
       interval: c.interval,
       probes: c.probes,
-      entries: c.entries,
+      entries: (c.entries ?? []).map((entry) => ({ ...entry })),
     };
   }
 
   /** Canonical snapshot of all probation facts (for the reset-continuity check). */
   snapshotProbation(workers: readonly string[]): string {
     return JSON.stringify(workers.map((w) => [w, this.readProbation(w)]));
+  }
+
+  readTrustRoot(workers: readonly string[], config: TrustConfig): TrustRoot {
+    const snapshot: StoredWorkerState[] = workers.map((id) => ({
+      id,
+      capability: this.readCap(id),
+      probation: this.readProbation(id),
+    }));
+    return buildTrustRoot(snapshot, config);
   }
 
   factCount(): number {

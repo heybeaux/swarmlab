@@ -10,6 +10,25 @@ genuinely incapable workers?**
 Headline criterion is **JOINT**, in the same arm:
 `capableExcluded → 0` **AND** late (r25–30) incapable-selection `≤ 0.05`.
 
+## RT-06 Retest (August 15, 2026)
+
+`exp-15` now routes probation/evidence decisions through the real
+`@heybeaux/lattice-trust` package (`2d5bbcf14b4614b7f65d270307b9b24767620e9e`,
+branch `focus/rt06-evidence-probation`, PR #42, file dependency at
+`/Users/beauxwalton/projects/worktrees/lattice-rt06/packages/trust`).
+
+- Canonical shared-seed retest: `tf-msuyd5mn`
+- Five-seed holdout verifier: `tf-msuyd60e`, `tf-msuyd6dc`, `tf-msuyd6q9`,
+  `tf-msuyd736`, `tf-msuyd7g2`
+- Holdout verdict: passed on all five fresh seeds
+
+Real-package headline numbers shifted slightly but remained green:
+
+| run | loud late | CW late | loud capEx | CW capEx | loud transfer evidence | CW transfer evidence |
+|---|---|---|---|---|---|---|
+| `tf-msuyd5mn` | 0.013 | 0.030 | 0.00 | 0.02 | 0.98 | 0.98 |
+| holdout range | 0.017–0.027 | 0.017–0.030 | 0.00 | 0.00 | 0.98–1.00 | 0.98–1.00 |
+
 ## Result (headline)
 
 **Yes — the evidence-capped probation arm meets the joint criterion in both
@@ -137,10 +156,9 @@ cap never binds, which is why arm 4 was ineffective there (late 0.053 CW,
 capEx 0.06 in `tf-mr847hn6`). Front-load the evidence gathering; don't
 stretch it across the horizon.
 
-Honesty note: this tuning was done *on the shared seeds* — no fresh
-hold-out seed set was run. The mechanism (probe schedule × margin cap
-interaction) is analytic, not fitted, but the exact 0.017/0.047 numbers
-should be treated as in-sample.
+Historical note: the original Spec 20 tuning below was done on the shared
+seeds only. That in-sample caveat was closed on August 15, 2026 by the
+five-seed RT-06 holdout sweep listed above.
 
 ## Hypothesis verdicts
 
@@ -169,8 +187,9 @@ should be treated as in-sample.
    98 vs 30 CW), nearly all deliberate probe spend on a known-bad worker.
    We report it plainly; do not deploy probation where probe cost is
    unbounded or probes have side effects.
-2. **Cadence numbers are in-sample** (tuned on the shared RT-05 seeds; no
-   hold-out seed sweep was run).
+2. **The original cadence search was in-sample**, but the chosen
+   base-2/×2 defaults were later checked on five fresh RT-06 holdout seeds
+   and stayed within threshold.
 3. **probation·CW = 0.050 exactly** — a pass by the letter of `≤ 0.05`.
    The evidence cap is what buys real margin.
 4. **postReset ≈ 0.28–0.32 in loud probe arms** is 100% scheduled probes
@@ -205,7 +224,9 @@ spawn 56 / message 505 / score 9 / kill 56; verified on every run).
 
 | run | config | role |
 |---|---|---|
-| `tf-mr84czql` | 8 cond, base 2 ×2 (defaults) | **headline** |
+| `tf-msuyd5mn` | 8 cond, base 2 ×2, real `@heybeaux/lattice-trust` | **RT-06 package retest headline** |
+| `tf-msuyd60e` / `tf-msuyd6dc` / `tf-msuyd6q9` / `tf-msuyd736` / `tf-msuyd7g2` | 8 cond, five fresh holdout seeds | **RT-06 holdout verifier** |
+| `tf-mr84czql` | 8 cond, base 2 ×2 (historical local-policy headline) | pre-package baseline |
 | `tf-mr848h02` | 8 cond, base 2 ×2 | pre-default confirmation (identical numbers — deterministic) |
 | `tf-mr847hn6` | 8 cond, base 4 ×3 | evidence arm ineffective at base 4 |
 | `tf-mr8443r0` / `tf-mr840223` | 6 cond, base 4 ×2 | cadence sweep |

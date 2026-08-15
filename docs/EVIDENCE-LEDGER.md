@@ -120,4 +120,4 @@ For any `file:` dependency, record the external package repo, branch, commit SHA
 
 ## Holdout discipline
 
-Tuned policies must be labeled `in_sample` until fresh holdout seeds are run. Current example: `RT-06` evidence-capped probation has strong trace support but selected probe cadence on the shared seed family, so the ledger marks it `in_sample` and names the missing holdout explicitly.
+Tuned policies must be labeled `in_sample` until fresh holdout seeds are run. Historical example: `RT-06` evidence-capped probation started as `in_sample` while its probe cadence was still shared-seed-only, then moved to `verified` after the August 15, 2026 five-seed holdout sweep.
