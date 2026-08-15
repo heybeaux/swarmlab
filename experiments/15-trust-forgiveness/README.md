@@ -13,20 +13,20 @@ Headline criterion is **JOINT**, in the same arm:
 ## RT-06 Retest (August 15, 2026)
 
 `exp-15` now routes probation/evidence decisions through the real
-`@heybeaux/lattice-trust` package (`2d5bbcf14b4614b7f65d270307b9b24767620e9e`,
+`@heybeaux/lattice-trust` package (`1f21d06833f7842c02544029636debebaf3a88d7`,
 branch `focus/rt06-evidence-probation`, PR #42, file dependency at
-`/Users/beauxwalton/projects/worktrees/lattice-rt06/packages/trust`).
+`/Users/beauxwalton/Dev/lattice/packages/trust`).
 
-- Canonical shared-seed retest: `tf-msuyd5mn`
-- Five-seed holdout verifier: `tf-msuyd60e`, `tf-msuyd6dc`, `tf-msuyd6q9`,
-  `tf-msuyd736`, `tf-msuyd7g2`
+- Canonical shared-seed retest: `tf-msv0gfsa`
+- Five-seed holdout verifier: `tf-msv0frlb`, `tf-msv0fryh`, `tf-msv0fsbq`,
+  `tf-msv0fsp2`, `tf-msv0ft24`
 - Holdout verdict: passed on all five fresh seeds
 
 Real-package headline numbers shifted slightly but remained green:
 
 | run | loud late | CW late | loud capEx | CW capEx | loud transfer evidence | CW transfer evidence |
 |---|---|---|---|---|---|---|
-| `tf-msuyd5mn` | 0.013 | 0.030 | 0.00 | 0.02 | 0.98 | 0.98 |
+| `tf-msv0gfsa` | 0.013 | 0.030 | 0.00 | 0.02 | 0.98 | 0.98 |
 | holdout range | 0.017–0.027 | 0.017–0.030 | 0.00 | 0.00 | 0.98–1.00 | 0.98–1.00 |
 
 ## Result (headline)
@@ -224,8 +224,8 @@ spawn 56 / message 505 / score 9 / kill 56; verified on every run).
 
 | run | config | role |
 |---|---|---|
-| `tf-msuyd5mn` | 8 cond, base 2 ×2, real `@heybeaux/lattice-trust` | **RT-06 package retest headline** |
-| `tf-msuyd60e` / `tf-msuyd6dc` / `tf-msuyd6q9` / `tf-msuyd736` / `tf-msuyd7g2` | 8 cond, five fresh holdout seeds | **RT-06 holdout verifier** |
+| `tf-msv0gfsa` | 8 cond, base 2 ×2, real `@heybeaux/lattice-trust` | **RT-06 package retest headline** |
+| `tf-msv0frlb` / `tf-msv0fryh` / `tf-msv0fsbq` / `tf-msv0fsp2` / `tf-msv0ft24` | 8 cond, five fresh holdout seeds | **RT-06 holdout verifier** |
 | `tf-mr84czql` | 8 cond, base 2 ×2 (historical local-policy headline) | pre-package baseline |
 | `tf-mr848h02` | 8 cond, base 2 ×2 | pre-default confirmation (identical numbers — deterministic) |
 | `tf-mr847hn6` | 8 cond, base 4 ×3 | evidence arm ineffective at base 4 |

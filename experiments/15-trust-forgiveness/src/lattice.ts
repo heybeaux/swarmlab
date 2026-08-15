@@ -11,12 +11,12 @@ import {
 } from '@heybeaux/lattice-trust';
 
 export const LATTICE_TRUST_PACKAGE = '@heybeaux/lattice-trust';
-export const LATTICE_TRUST_COMMIT = '2d5bbcf';
-export const LATTICE_TRUST_FULL_SHA = '2d5bbcf14b4614b7f65d270307b9b24767620e9e';
-export const LATTICE_TRUST_BRANCH = 'focus/rt06-evidence-probation';
+export const LATTICE_TRUST_COMMIT = '1f21d06';
+export const LATTICE_TRUST_FULL_SHA = '1f21d06833f7842c02544029636debebaf3a88d7';
+export const LATTICE_TRUST_BRANCH = 'main';
 export const LATTICE_TRUST_PR = 'https://github.com/heybeaux/lattice/pull/42';
 export const LATTICE_TRUST_PACKAGE_PATH =
-  '/Users/beauxwalton/projects/worktrees/lattice-rt06/packages/trust';
+  '/Users/beauxwalton/Dev/lattice/packages/trust';
 export const DISABLED_EVIDENCE_MARGIN = Number.MAX_SAFE_INTEGER;
 
 export interface StoredCapability {
