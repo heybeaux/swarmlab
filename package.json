@@ -14,7 +14,8 @@
     "build": "tsc -b",
     "typecheck": "tsc -b --force",
     "smoke": "npm run build && node experiments/00-smoke/dist/main.js",
-    "verify:evidence": "node scripts/verify-evidence.mjs"
+    "verify:evidence": "node scripts/verify-evidence.mjs",
+    "verify:rt06-holdout": "npm run build && node scripts/verify-rt06-holdout.mjs"
   },
   "devDependencies": {
     "typescript": "^5.5.4"

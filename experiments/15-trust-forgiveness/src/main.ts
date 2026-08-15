@@ -108,6 +108,7 @@ interface ConditionAggregate {
   postResetRate: number;
   transferAvoidRate: number;
   transferEvidenceRate: number;
+  transferKnownAvoidRate: number;
   capableExcludedMean: number;
   reconcileTotals: Record<string, number>;
   // forgiveness metrics (NaN / 0 where not applicable)
@@ -236,6 +237,7 @@ for (let c = 0; c < conditions.length; c += 1) {
   const exRate = (f: (e: ForgivenessExtras) => boolean): number =>
     extras.length === 0 ? 0 : round3(extras.filter(f).length / extras.length);
   const allLatencies = extras.flatMap((e) => e.recoveryLatencies);
+  const transferKnown = results.filter((r) => r.transferHadEvidence);
 
   const agg: ConditionAggregate = {
     condition: cond,
@@ -247,6 +249,10 @@ for (let c = 0; c < conditions.length; c += 1) {
     postResetRate: rate((r) => r.postResetIncapable),
     transferAvoidRate: rate((r) => r.transferAvoided),
     transferEvidenceRate: rate((r) => r.transferHadEvidence),
+    transferKnownAvoidRate:
+      transferKnown.length === 0
+        ? 1
+        : round3(transferKnown.filter((r) => r.transferAvoided).length / transferKnown.length),
     capableExcludedMean: round3(results.reduce((s, r) => s + r.capableExcluded, 0) / results.length),
     reconcileTotals,
     capableRecoveriesMean: exMean((e) => e.capableRecoveries),
@@ -431,7 +437,8 @@ const summaryScorer: Scorer = {
         s[`${key}CapEx`] = a.capableExcludedMean;
         s[`${key}Recov`] = a.capableRecoveriesMean;
         s[`${key}Leaks`] = a.incapableLeaksMean;
-        s[`${key}Transfer`] = a.transferAvoidRate;
+        s[`${key}Transfer`] = a.transferKnownAvoidRate;
+        s[`${key}TransferEvidence`] = a.transferEvidenceRate;
         s[`${key}Wasted`] = a.meanWasted;
         s[`${key}ProbeTok`] = a.probeTokensMean;
       }
