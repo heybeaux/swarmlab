@@ -43,6 +43,7 @@ import {
   type ForgTrialResult,
   type ForgivenessExtras,
 } from './engine.js';
+import { LATTICE_TRUST_PROVENANCE } from './lattice.js';
 
 const TRIALS = Number(process.env.FORGIVE_TRIALS ?? 50);
 const SEED = process.env.FORGIVE_SEED ?? 'trust-routing-v1'; // exp-14 Part B seed, unchanged
@@ -92,11 +93,13 @@ bus.publish({
     pCapableTransientFail: P_CAPABLE_TRANSIENT_FAIL,
     engramModule: '@openengram/reconciliation (file: dep, branch versioned-facts-anti-entropy, PR #323)',
     controlModule: '@swarmlab/experiment-14-delegation-decay runTrustTrial("engram") — reused, not forked',
+    latticeTrust: LATTICE_TRUST_PROVENANCE,
     conditions: conditions.map((c) => c.id),
   },
 });
 
 console.log(`run ${runId} | conditions=${conditions.length} trials=${TRIALS} rounds=${ROUNDS}`);
+console.log(`provenance: ${JSON.stringify(LATTICE_TRUST_PROVENANCE)}`);
 
 interface ConditionAggregate {
   condition: Condition;
