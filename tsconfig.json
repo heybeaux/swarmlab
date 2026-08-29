@@ -21,6 +21,7 @@
     { "path": "experiments/16-handoff-guards" },
     { "path": "experiments/17-ground-store-verification" },
     { "path": "experiments/18-receipt-honesty" },
-    { "path": "experiments/19-context-recall-decay" }
+    { "path": "experiments/19-context-recall-decay" },
+    { "path": "experiments/20-prompt-injection-boundaries" }
   ]
 }
