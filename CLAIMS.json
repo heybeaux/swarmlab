@@ -964,5 +964,114 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Synthetic corpus; tests architecture and failure modes rather than live web retrieval. Cross-model verifier behavior is simulated to measure correlated misses. Original RT-08 run gsv-mr9bvkkk proved the tier-consumption policy in the lab. Follow-up run gsv-mrc3huyf reran the same experiment with the real @heybeaux/lattice-aegis evaluator in the audit path after Aegis PR #7 landed as 2d8042e; Aegis-wrapped audit escape was 0.063 vs tiered-hierarchy 0.188, with governance cost tax 0.106. No external Engram/Parliament schema branch was changed."
+  },
+  {
+    "id": "RT-09",
+    "claim": "Task completion claims need explicit receipt metadata: current Aegis matches naive success-text behavior on the exp-18 receipt-honesty corpus, while RT-09 completion gating moves the same Aegis-wrapped arm to zero false-done and zero duplicate-side-effect on the same seed.",
+    "experiment": "experiments/18-receipt-honesty",
+    "spec": "specs/24-receipt-honesty-action-verification.md",
+    "runIds": [
+      "rh-mteig1r7",
+      "rh-mteiw0l8"
+    ],
+    "tracePaths": [
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.scenarioCount",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.selfReportFalseDone",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.desiredStateIdemFalseDone",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.desiredStateIdemDuplicateSideEffect",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedFalseDone",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedDuplicateSideEffect",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedReceiptSufficiency",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.fixtureNaiveOverclaims",
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.fixtureRobustControlGreen",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.scenarioCount",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedFalseDone",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedDuplicateSideEffect",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedReceiptSufficiency",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedSafeSuccessAskRate",
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedRecoveryRate"
+    ],
+    "expectedValues": {
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.scenarioCount": {
+        "equals": 12,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.selfReportFalseDone": {
+        "equals": 0.417,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.desiredStateIdemFalseDone": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.desiredStateIdemDuplicateSideEffect": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedFalseDone": {
+        "equals": 0.417,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedDuplicateSideEffect": {
+        "equals": 0.083,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.aegisWrappedReceiptSufficiency": {
+        "equals": 0.083,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.fixtureNaiveOverclaims": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteig1r7.jsonl#last.fixtureRobustControlGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.scenarioCount": {
+        "equals": 12,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedFalseDone": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedDuplicateSideEffect": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedReceiptSufficiency": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedSafeSuccessAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/18-receipt-honesty/runs/rh-mteiw0l8.jsonl#last.aegisWrappedRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp18 && git checkout 856df0a2f64baa4f2593dcea7b4f1e66913d5500 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp18 && npm install && npm run build && node experiments/18-receipt-honesty/dist/main.js && cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp18 && git checkout 3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp18 && npm run build && node experiments/18-receipt-honesty/dist/main.js",
+    "stackRecommendation": "Treat completion claims as a governed boundary. Aegis should require desired-state receipts for mutating-task final statuses and idempotency evidence before ambiguous external retries proceed.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-08-29-exp18-aegis",
+        "commits": [
+          "3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA 3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic receipt-policy harness. The pinned red/green pair is baseline rh-mteig1r7 on origin/main Aegis 856df0a2f64baa4f2593dcea7b4f1e66913d5500 and committed rerun rh-mteiw0l8 on Aegis commit 3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3. Two intermediate post-fix reruns were not pinned: one executed against stale dist output after an overlapping rebuild, and one exposed a harness bug where the wrapper skipped the final post-retry completion check."
   }
 ]
