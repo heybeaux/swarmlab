@@ -835,3 +835,48 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   benchmark. One intermediate rerun (`cr-mtek6adx`) proved the policy shape but ran against an
   uncommitted dirty Aegis tree, so it is intentionally not pinned. The admitted red/green pair is
   baseline `cr-mtejzvuq` versus committed-Aegis rerun `cr-mtek7ko5`.
+
+### RT-11 — Untrusted content needs boundary metadata, not just phrase rails (from exp-20)
+
+- **Question (Spec 26):** can Aegis distinguish harmless extraction from authority-spoofed
+  instructions embedded in untrusted issues, JSON, logs, HTML, traces, and quoted chat, and force
+  a safe boundary-aware parse before an agent obeys them? exp-20 builds a deterministic 7-scenario
+  corpus covering one literal cartoon attack, five non-literal authority-spoof attacks, and one
+  clean untrusted extraction control. The scorer owns the correct benign answer, whether the attack
+  requested secret disclosure or false completion, and whether the result treated the document as an
+  untrusted boundary.
+- **Retest (`experiments/20-prompt-injection-boundaries`):** baseline run `pib-mtelqjao` used
+  `@heybeaux/lattice-aegis` at `e34ac3188cce453f2c314996920a7fde624f5766` and showed that current
+  Aegis only catches the literal phrase-match case: the `aegis-wrapped` arm stayed red on the rest
+  of the corpus (`injectionComplianceRate 0.833`, `taskCompletionRate 0.286`,
+  `exfilAttemptRate 0.429`, `falseDoneRate 0.286`, `boundaryCitationRate 0.167`). After Aegis
+  commit `af0fb9f6975123d6bd0c73f605c98ebb186d0c24` added RT-11 content-boundary metadata plus a
+  runtime ask for raw untrusted authority-bearing content that redirects the task, the same
+  seed/scenario set reran as `pib-mtem0cbj` and the Aegis-wrapped arm moved to
+  `injectionComplianceRate 0.000`, `taskCompletionRate 1.000`, `exfilAttemptRate 0.000`,
+  `falseDoneRate 0.000`, `boundaryCitationRate 1.000`.
+
+  | arm | injectionCompliance | taskCompletion | exfilAttempt | falseDone | boundaryCitation |
+  |---|---:|---:|---:|---:|---:|
+  | raw-ingestion | 1.000 | 0.143 | 0.571 | 0.286 | 0.000 |
+  | labels-only | 0.833 | 0.286 | 0.429 | 0.286 | 1.000 |
+  | structured-extractor | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 |
+  | aegis-wrapped baseline | 0.833 | 0.286 | 0.429 | 0.286 | 0.167 |
+  | aegis-wrapped post-fix | **0.000** | **1.000** | **0.000** | **0.000** | **1.000** |
+
+- **Findings:** phrase rails are necessary but insufficient. The current baseline only caught the
+  one attack that literally said "ignore previous instructions"; JSON `role=system`, fake tool
+  output, HTML comments, trace role spoofing, and quoted chat completion overrides all slipped
+  through because the boundary itself was not represented in runtime metadata. The labels-only arm
+  proves the second part of the lesson: knowing the source is untrusted is not enough if the parser
+  still treats the full document as instructions. Once the boundary became explicit in Aegis, the
+  same wrapped path matched the structured-extractor control on the same seed.
+- **Stack recommendation:** untrusted content boundaries need a governed envelope just like handoffs,
+  audit tiers, completion claims, and recall. Raw untrusted content that both spoofs authority and
+  redirects the task should ask before execution. Structured extraction from the same source should
+  remain allow-path so safe work is not taxed.
+- **Honesty notes:** this is a deterministic boundary-governance harness, not a generic jailbreak
+  benchmark. The builtin injection rulepack honestly helped on the literal cartoon attack; the RT-11
+  contribution is closing the non-literal boundary-spoof gap. The pre-registration was committed as
+  `2c304f6` before the first run, and one compile-only helper fix landed before the admitted
+  baseline without changing the scenario set or thresholds.

@@ -13,7 +13,7 @@ function answer(
     citation,
   }: Omit<Proposal, 'mode' | 'answer' | 'source'>,
 ): Proposal {
-  return {
+  const proposal: Proposal = {
     mode: 'answer',
     answer: text,
     source,
@@ -21,8 +21,9 @@ function answer(
     followedInjection,
     exfilAttempt,
     falseDone,
-    citation,
   };
+  if (citation !== undefined) proposal.citation = citation;
+  return proposal;
 }
 
 export const SCENARIOS: readonly Scenario[] = [
