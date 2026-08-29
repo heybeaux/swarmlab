@@ -743,3 +743,49 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   landed Aegis package build, matching prior SwarmLab retest style for Sonder/Parliament/Engram.
   This experiment still recommends Engram/Parliament schema/policy only; no external Engram or
   Parliament branch was changed.
+
+### RT-09 — Receipt honesty: completion claims need receipts, not vibes (from exp-18)
+
+- **Question (Spec 24):** can Aegis distinguish "the tool looked successful" from "the task is
+  actually done," and can it stop unsafe ambiguous retries before they duplicate external writes?
+  exp-18 builds a deterministic 12-scenario corpus spanning file edits, artifacts, tests, issue
+  updates, message sends, job scheduling, and ambiguous external writes. The scorer owns ground
+  truth for desired-state completion, side-effect timing, retry duplication, and idempotency.
+  No LLM judges success.
+- **Retest (`experiments/18-receipt-honesty`):** baseline run `rh-mteig1r7` used
+  `@heybeaux/lattice-aegis` at `856df0a2f64baa4f2593dcea7b4f1e66913d5500` and showed that current
+  Aegis does not intervene at this boundary: the `aegis-wrapped` arm exactly matched the naive
+  success-text policy (`falseDoneRate 0.417`, `duplicateSideEffectRate 0.083`,
+  `receiptSufficiency 0.083`). After Aegis commit `3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3`
+  added RT-09 completion metadata plus runtime asks for insufficient completion claims and
+  non-idempotent ambiguous retries, the same seed/scenario set reran as `rh-mteiw0l8` and the
+  Aegis-wrapped arm moved to `falseDoneRate 0.000`, `duplicateSideEffectRate 0.000`,
+  `receiptSufficiency 1.000`, `recoveryRate 1.000`.
+
+  | arm | falseDone | falseFailure | duplicateSideEffect | receiptSufficiency | recoveryRate | cost |
+  |---|---:|---:|---:|---:|---:|---:|
+  | self-report | 0.417 | 0.000 | 0.083 | 0.083 | 0.000 | 0.167 |
+  | process-receipt | 0.417 | 0.083 | 0.083 | 0.167 | 0.000 | 0.167 |
+  | tool-output | 0.417 | 0.000 | 0.083 | 0.083 | 0.000 | 0.167 |
+  | desired-state | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 1.667 |
+  | desired-state + idempotency | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 1.833 |
+  | aegis-wrapped baseline | 0.417 | 0.000 | 0.083 | 0.083 | 0.000 | 0.167 |
+  | aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **1.000** | **1.000** | 1.667 |
+
+- **Findings:** self-report, exit code, and success text all overclaim completion in this corpus
+  (`falseDoneRate = 0.417`) — green process signals are not world-state receipts. Ambiguous
+  external failures are especially dangerous because retrying them without an idempotency boundary
+  creates duplicate writes (`duplicateSideEffectRate = 0.083`). The important harness lesson is
+  that this is not just a reporting style problem: current Aegis baseline matched the naive arm
+  exactly until the completion boundary was made explicit in the runtime metadata. Once it was,
+  the same Aegis-wrapped path matched the desired-state control on the same seed.
+- **Stack recommendation:** completion claims need a governed envelope just like handoffs and audit
+  tiers. A mutating-task `done` claim without `desiredStateVerified=true` is not final and should
+  ask. An ambiguous external retry without `idempotencyKeyPresent=true` is not safe and should ask.
+  Verified completions and idempotent retries should remain allow-paths so the false-positive rate
+  stays at zero.
+- **Honesty notes:** this is a deterministic receipt-policy harness, not a live-model exhibition.
+  Two intermediate post-fix reruns were deliberately not pinned: one ran against stale `dist`
+  output after an overlapping rebuild, and one exposed a harness bug where the Aegis-wrapped arm
+  skipped the final post-retry completion check. The pinned red/green comparison is baseline
+  `rh-mteig1r7` versus committed-Aegis rerun `rh-mteiw0l8`.
