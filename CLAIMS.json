@@ -1073,5 +1073,144 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic receipt-policy harness. The pinned red/green pair is baseline rh-mteig1r7 on origin/main Aegis 856df0a2f64baa4f2593dcea7b4f1e66913d5500 and committed rerun rh-mteiw0l8 on Aegis commit 3ffb1f79a3a731d5d165efa0a807a28ca8fa70a3. Two intermediate post-fix reruns were not pinned: one executed against stale dist output after an overlapping rebuild, and one exposed a harness bug where the wrapper skipped the final post-retry completion check."
+  },
+  {
+    "id": "RT-10",
+    "claim": "Compacted-context exact recall needs explicit recall metadata: current Aegis matches naive summary-only behavior on the exp-19 context-recall corpus, while RT-10 recall gating moves the same Aegis-wrapped arm to perfect exact recall with zero stale-fact use and zero privacy leakage on the same seed.",
+    "experiment": "experiments/19-context-recall-decay",
+    "spec": "specs/25-context-compression-recall-decay.md",
+    "runIds": [
+      "cr-mtejzvuq",
+      "cr-mtek7ko5"
+    ],
+    "tracePaths": [
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.scenarioCount",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.summaryOnlyExactRecall",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.summaryOnlyPrivacyLeakRate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.structuredLedgerExactRecall",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.structuredLedgerPrivacyLeakRate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedExactRecall",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedStaleFactUseRate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedPrivacyLeakRate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedSearchBeforeExactClaimRate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureSummaryLosesExactness",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureSummaryLeaksPrivate",
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureLedgerGreen",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.scenarioCount",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedExactRecall",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedNegativeConstraintRecall",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedStaleFactUseRate",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedPrivacyLeakRate",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedSearchBeforeExactClaimRate",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedCitationSufficiency",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedSafeSummaryAskRate",
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedResumeTaskSuccessRate"
+    ],
+    "expectedValues": {
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.scenarioCount": {
+        "equals": 8,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.summaryOnlyExactRecall": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.summaryOnlyPrivacyLeakRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.structuredLedgerExactRecall": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.structuredLedgerPrivacyLeakRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedExactRecall": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedStaleFactUseRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedPrivacyLeakRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.aegisWrappedSearchBeforeExactClaimRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureSummaryLosesExactness": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureSummaryLeaksPrivate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtejzvuq.jsonl#last.fixtureLedgerGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.scenarioCount": {
+        "equals": 8,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedExactRecall": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedNegativeConstraintRecall": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedStaleFactUseRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedPrivacyLeakRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedSearchBeforeExactClaimRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedCitationSufficiency": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedSafeSummaryAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/19-context-recall-decay/runs/cr-mtek7ko5.jsonl#last.aegisWrappedResumeTaskSuccessRate": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp19 && git checkout add7be290a6c44bcefb38ffcad90d48765a1a6ed && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp19 && npm install && npm run build && node experiments/19-context-recall-decay/dist/main.js && cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp19 && git checkout bb734b0934b5937bc51d37583d8335ebf4353f88 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp19 && npm run build && node experiments/19-context-recall-decay/dist/main.js",
+    "stackRecommendation": "Treat compacted-context exact recall as a governed boundary. Aegis should require grounded citations or raw context for exact answers, require fresh evidence for corrected facts, and stop private memory from being disclosed into a broader scope.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-08-29-exp19-aegis",
+        "commits": [
+          "bb734b0934b5937bc51d37583d8335ebf4353f88"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA bb734b0934b5937bc51d37583d8335ebf4353f88; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic recall-governance harness. The pinned red/green pair is baseline cr-mtejzvuq on origin/main Aegis add7be290a6c44bcefb38ffcad90d48765a1a6ed and committed rerun cr-mtek7ko5 on Aegis commit bb734b0934b5937bc51d37583d8335ebf4353f88. Intermediate rerun cr-mtek6adx proved the policy shape but ran against an uncommitted dirty Aegis tree and is intentionally not pinned."
   }
 ]
