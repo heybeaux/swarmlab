@@ -789,3 +789,49 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   output after an overlapping rebuild, and one exposed a harness bug where the Aegis-wrapped arm
   skipped the final post-retry completion check. The pinned red/green comparison is baseline
   `rh-mteig1r7` versus committed-Aegis rerun `rh-mteiw0l8`.
+
+### RT-10 — Context recall needs evidence and scope, not summary vibes (from exp-19)
+
+- **Question (Spec 25):** can Aegis distinguish safe high-level summaries from risky exact memory
+  claims after context compaction, and force evidence-grounded recall plus scope-safe refusals
+  before an agent asserts or discloses? exp-19 builds a deterministic 8-scenario resume corpus
+  covering exact paths, punctuation-sensitive commands, stale corrected branch/date facts, exact
+  negative constraints, a private secret requested in a shared context, and one safe high-level
+  owner-intent summary. The scorer owns canonical answers, freshness, citation sufficiency, and
+  privacy scope. No LLM judges success.
+- **Retest (`experiments/19-context-recall-decay`):** baseline run `cr-mtejzvuq` used
+  `@heybeaux/lattice-aegis` at `add7be290a6c44bcefb38ffcad90d48765a1a6ed` and showed that current
+  Aegis does not intervene at this boundary: the `aegis-wrapped` arm exactly matched the naive
+  summary-only policy (`exactRecallRate 0.000`, `staleFactUseRate 1.000`, `privacyLeakRate 1.000`,
+  `searchBeforeExactClaimRate 0.000`). After Aegis commit
+  `bb734b0934b5937bc51d37583d8335ebf4353f88` added RT-10 recall metadata plus runtime asks for
+  unsupported exact recall, stale evidence, and private cross-scope disclosure, the same
+  seed/scenario set reran as `cr-mtek7ko5` and the Aegis-wrapped arm moved to
+  `exactRecallRate 1.000`, `negativeConstraintRecall 1.000`, `staleFactUseRate 0.000`,
+  `privacyLeakRate 0.000`, `searchBeforeExactClaimRate 1.000`, `citationSufficiency 1.000`.
+
+  | arm | exactRecall | negativeConstraint | staleFactUse | privacyLeak | searchBefore | citationSufficiency | resumeSuccess |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | raw-context | 1.000 | 1.000 | 0.000 | 0.000 | 0.000 | 0.250 | 1.000 |
+  | summary-only | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.125 | 0.125 |
+  | retrieval-no-citation | 0.667 | 1.000 | 1.000 | 1.000 | 1.000 | 0.125 | 0.625 |
+  | structured-ledger | 1.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 1.000 |
+  | aegis-wrapped baseline | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.125 | 0.125 |
+  | aegis-wrapped post-fix | **1.000** | **1.000** | **0.000** | **0.000** | **1.000** | **1.000** | **1.000** |
+
+- **Findings:** summary compaction is good enough for intent but catastrophically unsafe for exact
+  resume claims: every exact claim failed, every corrected fact regressed to the stale version, and
+  the private secret leaked in the naive summary arm. Retrieval alone is not the answer: uncited
+  first-hit search improved some exact recall but still chose stale evidence and leaked private
+  state. The important harness lesson is that current Aegis baseline matched the naive summary path
+  exactly until the recall boundary was made explicit in runtime metadata. Once it was, the same
+  Aegis-wrapped path matched the structured-ledger control on the same seed.
+- **Stack recommendation:** exact recall after compaction needs a governed envelope just like
+  handoffs, audit tiers, and completion claims. An exact answer without grounded citation or fresh
+  fact-ledger evidence is not safe and should ask. Private memory cannot be disclosed into a
+  broader scope. High-level summaries should remain allow-paths so the fix does not create a
+  summary tax.
+- **Honesty notes:** this is a deterministic recall-governance harness, not a generic model-memory
+  benchmark. One intermediate rerun (`cr-mtek6adx`) proved the policy shape but ran against an
+  uncommitted dirty Aegis tree, so it is intentionally not pinned. The admitted red/green pair is
+  baseline `cr-mtejzvuq` versus committed-Aegis rerun `cr-mtek7ko5`.
