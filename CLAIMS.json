@@ -1341,5 +1341,189 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic boundary-governance harness. The pinned red/green pair is baseline pib-mtelqjao on origin/main Aegis e34ac3188cce453f2c314996920a7fde624f5766 and committed rerun pib-mtem0cbj on Aegis commit af0fb9f6975123d6bd0c73f605c98ebb186d0c24. The builtin injection rulepack honestly caught the one literal phrase attack; RT-11 closes the non-literal authority-spoof gap. A compile-only helper fix landed in SwarmLab after the pre-registration commit but before the admitted baseline without changing the scenario set or thresholds."
+  },
+  {
+    "id": "RT-12",
+    "claim": "Cited exact facts still need lifecycle freshness: current Aegis matches stale-basis behavior on the exp-21 fact-revocation corpus, while RT-12 lifecycle gating moves the same Aegis-wrapped arm to zero stale use and full correction/recovery handling on the same seed.",
+    "experiment": "experiments/21-fact-revocation-stale-trust",
+    "spec": "specs/27-fact-revocation-stale-trust.md",
+    "runIds": [
+      "frs-mtfg0rpw",
+      "frs-mtfga9tp"
+    ],
+    "tracePaths": [
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.scenarioCount",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.staleBasisStaleUseRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.ttlOnlyStaleUseRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.ttlOnlyOverForgetRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareStaleUseRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareCorrectionAdoptionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareRevalidationBypassRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareOverForgetRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareRecoveryRecognitionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedStaleUseRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedCorrectionAdoptionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedRevalidationBypassRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedOverForgetRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedRecoveryRecognitionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedLifecycleCitationRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedCleanActionAskRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.fixtureStaleBasisRed",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.fixtureLifecycleAwareGreen",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.baselineAegisRed",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.scenarioCount",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedStaleUseRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedCorrectionAdoptionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedRevalidationBypassRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedOverForgetRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedRecoveryRecognitionRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedLifecycleCitationRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedCleanActionAskRate",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.fixtureStaleBasisRed",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.fixtureLifecycleAwareGreen",
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.scenarioCount": {
+        "equals": 8,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.staleBasisStaleUseRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.ttlOnlyStaleUseRate": {
+        "equals": 0.857,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.ttlOnlyOverForgetRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareStaleUseRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareCorrectionAdoptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareRevalidationBypassRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareOverForgetRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.lifecycleAwareRecoveryRecognitionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedStaleUseRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedCorrectionAdoptionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedRevalidationBypassRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedOverForgetRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedRecoveryRecognitionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedLifecycleCitationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.aegisWrappedCleanActionAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.fixtureStaleBasisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.fixtureLifecycleAwareGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.scenarioCount": {
+        "equals": 8,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedStaleUseRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedCorrectionAdoptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedRevalidationBypassRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedOverForgetRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedRecoveryRecognitionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedLifecycleCitationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.aegisWrappedCleanActionAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.fixtureStaleBasisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.fixtureLifecycleAwareGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp21 && git checkout f2a5ece007347d4f6f1d367b8cb7d564774c1f9e && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp21 && npm install && npm run build && node experiments/21-fact-revocation-stale-trust/dist/main.js && cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-29-exp21 && git checkout 7bba757355474781bf0d1158bd01a9fd4c624522 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-29-exp21 && npm run build && node experiments/21-fact-revocation-stale-trust/dist/main.js",
+    "stackRecommendation": "Treat fact lifecycle as a governed runtime surface. A cited exact fact cannot drive routing, deployment, approval, or execution unless the latest lifecycle state still supports it.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-08-29-exp21-aegis",
+        "commits": [
+          "7bba757355474781bf0d1158bd01a9fd4c624522"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA 7bba757355474781bf0d1158bd01a9fd4c624522; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic lifecycle-governance harness. The pinned red/green pair is baseline frs-mtfg0rpw on origin/main Aegis f2a5ece007347d4f6f1d367b8cb7d564774c1f9e and committed rerun frs-mtfga9tp on Aegis commit 7bba757355474781bf0d1158bd01a9fd4c624522. TTL-only decay honestly stayed red: it missed fresh revocations and over-forgot stable or recovered facts. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before passing."
   }
 ]

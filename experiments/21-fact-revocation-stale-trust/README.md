@@ -191,6 +191,71 @@ npm run build
 node experiments/21-fact-revocation-stale-trust/dist/main.js
 ```
 
+## Results
+
+### Baseline red
+
+- **Aegis SHA:** `f2a5ece007347d4f6f1d367b8cb7d564774c1f9e`
+- **Pinned run:** `frs-mtfg0rpw`
+- **Trace:** `experiments/21-fact-revocation-stale-trust/runs/frs-mtfg0rpw.jsonl`
+
+| arm | staleUse | correctionAdoption | revalidationBypass | overForget | recoveryRecognition | lifecycleCitation | cleanActionAsk |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| stale-basis | 1.000 | 0.000 | 1.000 | 0.500 | 0.000 | 0.000 | 0.000 |
+| ttl-only | 0.857 | 0.000 | 1.000 | 1.000 | 0.000 | 0.000 | 0.000 |
+| lifecycle-aware | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+| aegis-wrapped baseline | 1.000 | 0.000 | 1.000 | 0.500 | 0.000 | 0.000 | 0.000 |
+
+Current `origin/main` Aegis matched the stale-basis arm exactly. A cited exact fact basis with
+`latestEvidence=true` still passed even after the latest lifecycle row revoked, superseded, or
+recovered it.
+
+### Aegis change
+
+The minimal proven fix was RT-12 in `~/Dev/aegis`, commit
+`7bba757355474781bf0d1158bd01a9fd4c624522`:
+
+- add `ToolCall.factLifecycle` metadata for basis/latest status, supersession, replacement, and
+  recovery;
+- teach the evaluator to ask before routing, deployment, approval, or execution relies on a
+  superseded, revoked, or revalidation-needed fact basis; and
+- pass the metadata through the stdin and OpenClaw adapters, plus focused regression coverage.
+
+### Post-fix green
+
+- **Aegis SHA:** `7bba757355474781bf0d1158bd01a9fd4c624522`
+- **Pinned run:** `frs-mtfga9tp`
+- **Trace:** `experiments/21-fact-revocation-stale-trust/runs/frs-mtfga9tp.jsonl`
+
+| arm | staleUse | correctionAdoption | revalidationBypass | overForget | recoveryRecognition | lifecycleCitation | cleanActionAsk |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| stale-basis | 1.000 | 0.000 | 1.000 | 0.500 | 0.000 | 0.000 | 0.000 |
+| ttl-only | 0.857 | 0.000 | 1.000 | 1.000 | 0.000 | 0.000 | 0.000 |
+| lifecycle-aware | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+| aegis-wrapped post-fix | **0.000** | **1.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+The same pre-registered seed/scenario set moved from red to green without changing thresholds.
+
+### Findings
+
+- Citation alone is not freshness. A once-supported fact can be exactly quoted and still be unsafe.
+- TTL-only decay is the wrong abstraction here: it both misses fresh revocations and over-forgets
+  stable or recovered facts.
+- Lifecycle metadata is the needed boundary. Once Aegis could see basis-vs-latest status, the same
+  wrapped arm matched the lifecycle-aware control.
+
+### Stack recommendation
+
+Treat fact lifecycle as a governed runtime surface, not just a memory concern. Exact cited facts
+need the latest lifecycle state before they can drive routing, deployment, approval, or execution.
+
+### Honesty notes
+
+- This is a deterministic lifecycle-governance harness, not a generic memory benchmark.
+- The admitted evidence pair is baseline `frs-mtfg0rpw` versus committed-Aegis rerun
+  `frs-mtfga9tp`.
+- Replay verification succeeded on both traces (`spawn=4`, `message=37`, `score=5`, `kill=4`).
+
 Post-fix commands:
 
 ```bash
