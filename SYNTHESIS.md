@@ -880,3 +880,45 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   contribution is closing the non-literal boundary-spoof gap. The pre-registration was committed as
   `2c304f6` before the first run, and one compile-only helper fix landed before the admitted
   baseline without changing the scenario set or thresholds.
+
+### RT-12 — Fact lifecycle freshness needs revocation-aware governance, not citation alone (from exp-21)
+
+- **Question (Spec 27):** can Aegis distinguish a previously supported exact fact from the latest
+  corrected lifecycle state after explicit revocation, supersession, or recovery, and force
+  revalidation before an agent acts on stale trust? exp-21 builds a deterministic 8-scenario corpus
+  covering regressed worker routing, removed deployment targets, changed notification preferences,
+  advisory-open dependencies, revoked endpoints, lowered quota limits, a supported worker recovery,
+  and one unchanged stable control. The scorer owns the stale basis, latest lifecycle state,
+  corrected replacement, recovery truth, and safe action. No LLM judges success.
+- **Retest (`experiments/21-fact-revocation-stale-trust`):** baseline run `frs-mtfg0rpw` used
+  `@heybeaux/lattice-aegis` at `f2a5ece007347d4f6f1d367b8cb7d564774c1f9e` and showed that current
+  Aegis had no lifecycle freshness boundary at all: the `aegis-wrapped` arm matched the stale-basis
+  control exactly (`staleUseRate 1.000`, `correctionAdoptionRate 0.000`,
+  `revalidationBypassRate 1.000`, `overForgetRate 0.500`, `recoveryRecognitionRate 0.000`,
+  `lifecycleCitationRate 0.000`). After Aegis commit
+  `7bba757355474781bf0d1158bd01a9fd4c624522` added RT-12 fact-lifecycle metadata plus a runtime ask
+  for superseded, revoked, or revalidation-needed fact bases, the same seed/scenario set reran as
+  `frs-mtfga9tp` and the Aegis-wrapped arm moved to `staleUseRate 0.000`,
+  `correctionAdoptionRate 1.000`, `revalidationBypassRate 0.000`, `overForgetRate 0.000`,
+  `recoveryRecognitionRate 1.000`, `lifecycleCitationRate 1.000`.
+
+  | arm | staleUse | correctionAdoption | revalidationBypass | overForget | recoveryRecognition | lifecycleCitation | cleanActionAsk |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | stale-basis | 1.000 | 0.000 | 1.000 | 0.500 | 0.000 | 0.000 | 0.000 |
+  | ttl-only | 0.857 | 0.000 | 1.000 | 1.000 | 0.000 | 0.000 | 0.000 |
+  | lifecycle-aware | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | aegis-wrapped baseline | 1.000 | 0.000 | 1.000 | 0.500 | 0.000 | 0.000 | 0.000 |
+  | aegis-wrapped post-fix | **0.000** | **1.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+- **Findings:** exact citation is not enough. The current baseline let a once-supported fact basis
+  route, deploy, notify, or approve work even when the latest lifecycle row had already revoked or
+  replaced it. TTL decay is also the wrong governance surface: it still missed fresh revocations
+  inside the freshness window and over-forgot stable or recovered facts. The key harness lesson is
+  that Aegis only needed a small amount of structured lifecycle state to match the lifecycle-aware
+  control on the same seed.
+- **Stack recommendation:** treat fact lifecycle as a governed runtime envelope alongside receipts,
+  recall, verification tiers, and untrusted boundaries. A cited exact fact cannot drive
+  routing/deployment/approval/execution unless the latest lifecycle state still supports it.
+- **Honesty notes:** this is a deterministic lifecycle-governance harness, not a generic memory or
+  retrieval benchmark. The admitted red/green pair is baseline `frs-mtfg0rpw` versus
+  committed-Aegis rerun `frs-mtfga9tp`.
