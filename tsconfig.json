@@ -23,6 +23,7 @@
     { "path": "experiments/18-receipt-honesty" },
     { "path": "experiments/19-context-recall-decay" },
     { "path": "experiments/20-prompt-injection-boundaries" },
-    { "path": "experiments/21-fact-revocation-stale-trust" }
+    { "path": "experiments/21-fact-revocation-stale-trust" },
+    { "path": "experiments/22-concurrent-merge-races" }
   ]
 }
