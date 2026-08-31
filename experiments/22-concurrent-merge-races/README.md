@@ -209,3 +209,93 @@ npm install
 npm run build
 node experiments/22-concurrent-merge-races/dist/main.js
 ```
+
+## Results
+
+### Baseline red
+
+- **Aegis SHA:** `6ce13611819a17088f1fca3af3aba7ae0a864aa3`
+- **Pinned run:** `cmr-mtgviubh`
+- **Trace:** `experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl`
+
+| arm | buildBreak | semanticRegression | duplicateWork | staleAssumption | cleanSafeAsk | coordinationRecovery |
+|---|---:|---:|---:|---:|---:|---:|
+| no-coordination | 0.400 | 0.400 | 0.200 | 0.400 | 0.000 | 0.200 |
+| file-locks | 0.200 | 0.400 | 0.200 | 0.400 | 0.000 | 0.400 |
+| task-leases | 0.400 | 0.200 | 0.000 | 0.400 | 0.000 | 0.400 |
+| merge-queue | 0.000 | 0.400 | 0.200 | 0.000 | 0.000 | 0.600 |
+| merge-queue + reviewer | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+| shared-intent-ledger | 0.400 | 0.000 | 0.000 | 0.200 | 0.000 | 0.600 |
+| aegis-wrapped baseline | 0.400 | 0.400 | 0.200 | 0.400 | 0.000 | 0.200 |
+
+Current `origin/main` Aegis matched the `no-coordination` arm exactly. It had no runtime boundary
+for stale branch merges, duplicate intent, or shared-invariant queue-only landings.
+
+### Aegis change
+
+The minimal proven fix was RT-13 in `~/Dev/aegis`.
+
+- **Runtime / regression-floor commit:** `b7642131f7d44d278e138d4260979cc6a5d1f227`
+- **Evidence-gate commit:** `58d0fcc76332c950632de36c8cad0682f1c87e0f`
+
+Runtime change:
+
+- add `ToolCall.coordination` metadata for branch freshness, overlap class, queue/lease/ledger
+  coverage, and semantic verification coverage;
+- teach the evaluator to ask on risky concurrent merges:
+  - text conflicts without a file lock or merge queue;
+  - stale API-drift merges without a merge queue;
+  - duplicate intent without a task lease, intent ledger, or semantic review; and
+  - shared-invariant merges that have queue-only visible checks but no semantic review; and
+- pass the metadata through the Claude Code stdin parser, OpenClaw adapter, predictor action-key,
+  and approval signature surfaces, with focused RT-13 regression coverage.
+
+### Post-fix green
+
+- **Aegis SHA:** `b7642131f7d44d278e138d4260979cc6a5d1f227`
+- **Pinned run:** `cmr-mtgvrs4b`
+- **Trace:** `experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl`
+
+| arm | buildBreak | semanticRegression | duplicateWork | staleAssumption | cleanSafeAsk | coordinationRecovery |
+|---|---:|---:|---:|---:|---:|---:|
+| no-coordination | 0.400 | 0.400 | 0.200 | 0.400 | 0.000 | 0.200 |
+| file-locks | 0.200 | 0.400 | 0.200 | 0.400 | 0.000 | 0.400 |
+| task-leases | 0.400 | 0.200 | 0.000 | 0.400 | 0.000 | 0.400 |
+| merge-queue | 0.000 | 0.400 | 0.200 | 0.000 | 0.000 | 0.600 |
+| merge-queue + reviewer | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+| shared-intent-ledger | 0.400 | 0.000 | 0.000 | 0.200 | 0.000 | 0.600 |
+| aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **1.000** |
+
+The same pre-registered seed/scenario set moved from red to green without changing thresholds.
+
+### Findings
+
+- Git-clean merges are not a sufficient safety signal. The baseline stayed red on stale API drift,
+  duplicate intent, and shared invariant breaks that ordinary merge success does not name.
+- File locks only solve the text-conflict slice. They did nothing for different-file stale merges or
+  duplicate semantic work.
+- A merge queue solves freshness for stale API drift, but queue-only visible checks still miss
+  hidden shared invariants and duplicate intent.
+- A small amount of structured coordination state was enough for Aegis to recover the
+  `merge-queue+reviewer` envelope on the same deterministic corpus.
+
+### Stack recommendation
+
+Treat concurrent merge coordination as a governed runtime surface. Aegis should see branch
+freshness, overlap class, claim-ledger/lease coverage, and semantic verification strength before it
+allows a risky merge to land.
+
+### Honesty notes
+
+- This is a deterministic toy-repo coordination harness, not a live multi-agent Git benchmark.
+- The admitted evidence pair is baseline `cmr-mtgviubh` versus committed-Aegis rerun
+  `cmr-mtgvrs4b`.
+- Three non-pinned reruns happened in the middle:
+  - `cmr-mtgvgviu` exposed a harness bug where the duplicate-registration validator counted the
+    helper definition as a second landing.
+  - `cmr-mtgvhp6n` reran before the rebuilt `dist` output was actually in place, so it still used
+    stale compiled code.
+  - `cmr-mtgvqc2a` proved the policy shape but ran against a dirty uncommitted Aegis tree, so it
+    is not admitted as evidence.
+- Replay verification succeeded on both pinned traces (`spawn=7`, `message=43`, `score=8`,
+  `kill=7`).

@@ -922,3 +922,47 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
 - **Honesty notes:** this is a deterministic lifecycle-governance harness, not a generic memory or
   retrieval benchmark. The admitted red/green pair is baseline `frs-mtfg0rpw` versus
   committed-Aegis rerun `frs-mtfga9tp`.
+
+### RT-13 — Concurrent merge safety needs coordination metadata, not Git-clean optimism (from exp-22)
+
+- **Question (Spec 28):** which coordination policy best prevents semantic regressions, duplicate
+  work, and broken builds when multiple agents work on related tasks in the same codebase? exp-22
+  builds a deterministic 5-scenario toy-repo corpus covering clean parallel docs work, same-line
+  config conflicts, stale API drift, duplicate webhook registration, and a shared batch-limit
+  invariant. The scorer owns file contents, overlap class, branch freshness, visible build truth,
+  hidden semantic invariants, and duplicate-intent detection. No LLM judges success.
+- **Retest (`experiments/22-concurrent-merge-races`):** baseline run `cmr-mtgviubh` used
+  `@heybeaux/lattice-aegis` at `6ce13611819a17088f1fca3af3aba7ae0a864aa3` and showed that current
+  Aegis had no coordination boundary at all: the `aegis-wrapped` arm matched the
+  `no-coordination` control exactly (`buildBreakRate 0.400`, `semanticRegressionRate 0.400`,
+  `duplicateWorkRate 0.200`, `staleAssumptionRate 0.400`). After Aegis commit
+  `b7642131f7d44d278e138d4260979cc6a5d1f227` added RT-13 coordination metadata plus a runtime ask
+  for risky concurrent merges, the same seed/scenario set reran as `cmr-mtgvrs4b` and the
+  Aegis-wrapped arm moved to `buildBreakRate 0.000`, `semanticRegressionRate 0.000`,
+  `duplicateWorkRate 0.000`, `staleAssumptionRate 0.000`, matching the
+  `merge-queue+reviewer` control envelope.
+
+  | arm | buildBreak | semanticRegression | duplicateWork | staleAssumption | cleanSafeAsk | coordinationRecovery |
+  |---|---:|---:|---:|---:|---:|---:|
+  | no-coordination | 0.400 | 0.400 | 0.200 | 0.400 | 0.000 | 0.200 |
+  | file-locks | 0.200 | 0.400 | 0.200 | 0.400 | 0.000 | 0.400 |
+  | task-leases | 0.400 | 0.200 | 0.000 | 0.400 | 0.000 | 0.400 |
+  | merge-queue | 0.000 | 0.400 | 0.200 | 0.000 | 0.000 | 0.600 |
+  | merge-queue + reviewer | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+  | shared-intent-ledger | 0.400 | 0.000 | 0.000 | 0.200 | 0.000 | 0.600 |
+  | aegis-wrapped baseline | 0.400 | 0.400 | 0.200 | 0.400 | 0.000 | 0.200 |
+  | aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **0.000** | **0.000** | **1.000** |
+
+- **Findings:** Git-clean or queue-only is not enough. File locks only help the one-line
+  text-conflict case. A merge queue cures stale API drift, but it still misses duplicate intent and
+  shared invariants when only visible checks run. The harness lesson is that Aegis needed a small
+  amount of structured coordination state to recover the full safe envelope on the same seed.
+- **Stack recommendation:** treat concurrent merge coordination as a governed runtime envelope
+  alongside receipts, recall, verification tiers, boundary parsing, and fact lifecycle. A risky
+  merge should surface branch freshness, overlap class, claim-ledger/lease coverage, and semantic
+  verification strength before it lands.
+- **Honesty notes:** this is a deterministic toy-repo coordination harness, not a live multi-agent
+  Git benchmark. The admitted red/green pair is baseline `cmr-mtgviubh` versus committed-Aegis
+  rerun `cmr-mtgvrs4b`. Three honest non-pinned reruns happened in the middle: `cmr-mtgvgviu`
+  exposed a duplicate-registration validator bug, `cmr-mtgvhp6n` ran against stale compiled
+  `dist`, and `cmr-mtgvqc2a` proved the policy shape against a dirty uncommitted Aegis tree.

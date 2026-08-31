@@ -1525,5 +1525,170 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic lifecycle-governance harness. The pinned red/green pair is baseline frs-mtfg0rpw on origin/main Aegis f2a5ece007347d4f6f1d367b8cb7d564774c1f9e and committed rerun frs-mtfga9tp on Aegis commit 7bba757355474781bf0d1158bd01a9fd4c624522. TTL-only decay honestly stayed red: it missed fresh revocations and over-forgot stable or recovered facts. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before passing."
+  },
+  {
+    "id": "RT-13",
+    "claim": "Concurrent merge safety needs coordination metadata: current Aegis matches no-coordination on the exp-22 merge-race corpus, while RT-13 coordination gating moves the same Aegis-wrapped arm to zero build breaks, semantic regressions, duplicate work, and stale-assumption landings on the same seed.",
+    "experiment": "experiments/22-concurrent-merge-races",
+    "spec": "specs/28-concurrent-agent-merge-races.md",
+    "runIds": [
+      "cmr-mtgviubh",
+      "cmr-mtgvrs4b"
+    ],
+    "tracePaths": [
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.scenarioCount",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationBuildBreakRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationSemanticRegressionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationDuplicateWorkRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationStaleAssumptionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerBuildBreakRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerSemanticRegressionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerDuplicateWorkRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerStaleAssumptionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedBuildBreakRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedSemanticRegressionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedDuplicateWorkRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedStaleAssumptionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.fixtureNoCoordinationRed",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.fixtureQueueReviewerGreen",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.baselineAegisRed",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.scenarioCount",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedBuildBreakRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedSemanticRegressionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedDuplicateWorkRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedStaleAssumptionRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.fixtureNoCoordinationRed",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.fixtureQueueReviewerGreen",
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.scenarioCount": {
+        "equals": 5,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationBuildBreakRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationSemanticRegressionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationDuplicateWorkRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.noCoordinationStaleAssumptionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerBuildBreakRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerSemanticRegressionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerDuplicateWorkRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.queueReviewerStaleAssumptionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedBuildBreakRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedSemanticRegressionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedDuplicateWorkRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedStaleAssumptionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.fixtureNoCoordinationRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.fixtureQueueReviewerGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgviubh.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.scenarioCount": {
+        "equals": 5,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedBuildBreakRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedSemanticRegressionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedDuplicateWorkRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedStaleAssumptionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.fixtureNoCoordinationRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.fixtureQueueReviewerGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/22-concurrent-merge-races/runs/cmr-mtgvrs4b.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-30-exp22 && git checkout 6ce13611819a17088f1fca3af3aba7ae0a864aa3 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-30-exp22 && npm install && npm run build && node experiments/22-concurrent-merge-races/dist/main.js && cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-30-exp22 && git checkout b7642131f7d44d278e138d4260979cc6a5d1f227 && pnpm --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-30-exp22 && npm run build && node experiments/22-concurrent-merge-races/dist/main.js",
+    "stackRecommendation": "Treat concurrent merge coordination as a governed runtime surface. A risky merge should surface branch freshness, overlap class, claim-ledger or lease coverage, and semantic verification strength before it lands.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-08-30-exp22-aegis",
+        "commits": [
+          "b7642131f7d44d278e138d4260979cc6a5d1f227",
+          "58d0fcc76332c950632de36c8cad0682f1c87e0f"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA b7642131f7d44d278e138d4260979cc6a5d1f227; evidence gate added in follow-on commit 58d0fcc76332c950632de36c8cad0682f1c87e0f; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic toy-repo coordination harness. The pinned red/green pair is baseline cmr-mtgviubh on origin/main Aegis 6ce13611819a17088f1fca3af3aba7ae0a864aa3 and committed rerun cmr-mtgvrs4b on Aegis commit b7642131f7d44d278e138d4260979cc6a5d1f227. Three honest non-pinned reruns happened in the middle: cmr-mtgvgviu exposed a duplicate-registration validator bug, cmr-mtgvhp6n ran against stale compiled dist, and cmr-mtgvqc2a proved the policy shape against a dirty uncommitted Aegis tree. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before passing."
   }
 ]
