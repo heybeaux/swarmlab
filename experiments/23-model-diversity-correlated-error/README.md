@@ -221,4 +221,94 @@ node experiments/23-model-diversity-correlated-error/dist/main.js
 
 ## Results
 
-Pending nightly baseline.
+### Baseline red
+
+- **Aegis SHA:** `ee87dc2f0cd46a6e7bae467d290c49679b5980e3`
+- **Pinned run:** `mdc-mtibi5oa`
+- **Trace:** `experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl`
+
+| arm | accuracy | corrWrong | minoritySuppressed | criterionDrift | evidenceUse | cleanSafeAsk |
+|---|---:|---:|---:|---:|---:|---:|
+| single-model | 0.200 | 0.000 | 0.000 | 0.200 | 0.200 | 0.000 |
+| same-model-n | 0.200 | 0.800 | 0.000 | 0.200 | 0.200 | 0.000 |
+| same-provider-different-models | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+| cross-provider | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+| cross-provider + pinned criterion | 0.400 | 0.600 | 0.200 | 0.000 | 0.400 | 0.000 |
+| cross-provider + adversarial | 0.800 | 0.200 | 0.200 | 0.000 | 0.800 | 0.000 |
+| specialist + panel | 1.000 | 0.000 | 0.000 | 0.000 | 1.000 | 0.000 |
+| aegis-wrapped baseline | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+
+Current `origin/main` Aegis matched the naive `cross-provider` arm exactly. Retrieval-grounded
+cross-provider agreement was still being treated as sufficient even when the panel shared a false
+premise, a single misleading source, or an unpinned criterion.
+
+### Aegis change
+
+The minimal proven fix was RT-14 in `~/Dev/aegis`.
+
+- **Commit:** `71c92d11eedc1a344de2bfdf2e9771c1ba809d46`
+
+Runtime change:
+
+- add `ToolCall.verification` panel-independence metadata for panel diversity, criterion pinning,
+  shared-premise risk, source diversity, and specialist/adversarial verifier presence;
+- teach the evaluator to ask on high-risk panel certifications when same-model or same-provider
+  redundancy, unpinned criteria, shared premises, or single-source grounding make the support
+  non-independent; and
+- pass the metadata through the Claude Code stdin parser, OpenClaw adapter, and regression floor,
+  with focused RT-14 runtime tests.
+
+### Post-fix green
+
+- **Aegis SHA:** `71c92d11eedc1a344de2bfdf2e9771c1ba809d46`
+- **Pinned run:** `mdc-mtibi5qt`
+- **Trace:** `experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl`
+
+| arm | accuracy | corrWrong | minoritySuppressed | criterionDrift | evidenceUse | cleanSafeAsk |
+|---|---:|---:|---:|---:|---:|---:|
+| single-model | 0.200 | 0.000 | 0.000 | 0.200 | 0.200 | 0.000 |
+| same-model-n | 0.200 | 0.800 | 0.000 | 0.200 | 0.200 | 0.000 |
+| same-provider-different-models | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+| cross-provider | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+| cross-provider + pinned criterion | 0.400 | 0.600 | 0.200 | 0.000 | 0.400 | 0.000 |
+| cross-provider + adversarial | 0.800 | 0.200 | 0.200 | 0.000 | 0.800 | 0.000 |
+| specialist + panel | 1.000 | 0.000 | 0.000 | 0.000 | 1.000 | 0.000 |
+| aegis-wrapped post-fix | **1.000** | **0.000** | **0.000** | **0.000** | **1.000** | **0.000** |
+
+The same pre-registered seed/scenario set moved from red to green without changing thresholds.
+
+### Findings
+
+- Cross-provider agreement is not the same thing as independent evidence. The baseline stayed red
+  whenever the panel shared a false premise, one misleading source, or the wrong criterion.
+- Criterion pinning fixes one class of failure, but it does not break a shared premise or a
+  single-source echo chamber.
+- Adversarial or specialist verification is the load-bearing independence check. A small amount of
+  structured panel metadata was enough for Aegis to recover that safe envelope on the same corpus.
+
+### Stack recommendation
+
+Treat model-panel certification as a governed runtime surface. High-risk retrieval-grounded answers
+should expose whether the certifying panel is actually independent, whether the criterion was
+explicitly pinned, and whether a specialist or adversarial verifier challenged the shared premise.
+
+### Honesty notes
+
+- This is a deterministic panel-governance harness, not a live multi-model benchmark.
+- The admitted evidence pair is baseline `mdc-mtibi5oa` versus committed-Aegis rerun
+  `mdc-mtibi5qt`.
+- Two earlier non-pinned runs happened before the final admitted pair:
+  - `mdc-mtiaynpz` and `mdc-mtibbvhx` used the same scenarios and showed the same primary red/green
+    shape, but the harness was undercounting `evidenceUseRate` for the clean independently grounded
+    control because the generalist path never credited independent evidence on a correct pinned
+    answer.
+  - after fixing that scorer bug, the admitted reruns pointed the same built harness at explicit
+    baseline and patched Aegis artifacts via `AEGIS_REPO` and `AEGIS_DIST`, preserving the same
+    seed, scenario set, and thresholds.
+- One earlier build bug happened before the first admitted run: exp-23 was missing from the root
+  `tsconfig` build graph, so the first `npm run build` did not emit `dist/`; that was fixed before
+  baseline evidence was recorded.
+- One unrelated wrong-workdir build of `@heybeaux/lattice-aegis` hit another checkout and was
+  discarded immediately; it is not part of the evidence trail.
+- Replay verification succeeded on both pinned traces (`spawn=8`, `message=49`, `score=9`,
+  `kill=8`).
