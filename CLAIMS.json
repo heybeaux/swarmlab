@@ -1690,5 +1690,174 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic toy-repo coordination harness. The pinned red/green pair is baseline cmr-mtgviubh on origin/main Aegis 6ce13611819a17088f1fca3af3aba7ae0a864aa3 and committed rerun cmr-mtgvrs4b on Aegis commit b7642131f7d44d278e138d4260979cc6a5d1f227. Three honest non-pinned reruns happened in the middle: cmr-mtgvgviu exposed a duplicate-registration validator bug, cmr-mtgvhp6n ran against stale compiled dist, and cmr-mtgvqc2a proved the policy shape against a dirty uncommitted Aegis tree. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before passing."
+  },
+  {
+    "id": "RT-14",
+    "claim": "High-risk panel certification needs independence metadata: current Aegis matches naive cross-provider agreement on the exp-23 model-diversity corpus, while RT-14 panel-independence gating moves the same Aegis-wrapped arm to full accuracy, zero correlated wrong decisions, and full evidence sufficiency on the same seed.",
+    "experiment": "experiments/23-model-diversity-correlated-error",
+    "spec": "specs/29-model-diversity-correlated-error.md",
+    "runIds": [
+      "mdc-mtibi5oa",
+      "mdc-mtibi5qt"
+    ],
+    "tracePaths": [
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.scenarioCount",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderPanelAccuracy",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderCorrelatedWrongRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderMinorityCorrectSuppressionRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderCriterionDriftRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistPanelAccuracy",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistCorrelatedWrongRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistCriterionDriftRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedPanelAccuracy",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCorrelatedWrongRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedMinorityCorrectSuppressionRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCriterionDriftRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedEvidenceUseRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.fixtureCrossProviderRed",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.fixtureSpecialistGreen",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.baselineAegisRed",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.scenarioCount",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedPanelAccuracy",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCorrelatedWrongRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedMinorityCorrectSuppressionRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCriterionDriftRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedEvidenceUseRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.fixtureCrossProviderRed",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.fixtureSpecialistGreen",
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.scenarioCount": {
+        "equals": 5,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderPanelAccuracy": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderCorrelatedWrongRate": {
+        "equals": 0.8,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderMinorityCorrectSuppressionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.crossProviderCriterionDriftRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistPanelAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistCorrelatedWrongRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.specialistCriterionDriftRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedPanelAccuracy": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCorrelatedWrongRate": {
+        "equals": 0.8,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedMinorityCorrectSuppressionRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCriterionDriftRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedEvidenceUseRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.fixtureCrossProviderRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.fixtureSpecialistGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5oa.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.scenarioCount": {
+        "equals": 5,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedPanelAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCorrelatedWrongRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedMinorityCorrectSuppressionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCriterionDriftRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedEvidenceUseRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.fixtureCrossProviderRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.fixtureSpecialistGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/23-model-diversity-correlated-error/runs/mdc-mtibi5qt.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23-baseline && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23 && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-08-31-exp23 && npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23-baseline/packages/aegis/dist/index.js node experiments/23-model-diversity-correlated-error/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-08-31-exp23/packages/aegis/dist/index.js node experiments/23-model-diversity-correlated-error/dist/main.js",
+    "stackRecommendation": "Treat high-risk model-panel certification as a governed runtime surface. Retrieval-grounded agreement should surface panel independence, pinned criteria, shared-premise risk, source diversity, and specialist or adversarial verification before it certifies.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-08-31-exp23-aegis",
+        "commits": [
+          "71c92d11eedc1a344de2bfdf2e9771c1ba809d46"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA 71c92d11eedc1a344de2bfdf2e9771c1ba809d46; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic panel-governance harness. The pinned red/green pair is baseline mdc-mtibi5oa on origin/main Aegis ee87dc2f0cd46a6e7bae467d290c49679b5980e3 and committed rerun mdc-mtibi5qt on Aegis commit 71c92d11eedc1a344de2bfdf2e9771c1ba809d46. Two honest non-pinned reruns happened in the middle: mdc-mtiaynpz and mdc-mtibbvhx showed the same primary red/green shape but undercounted evidenceUseRate because the clean independently grounded control was not credited on the generalist path until a scorer fix landed. An earlier build-graph fix happened before the first admitted run because exp-23 was initially missing from the root tsconfig references. A wrong-workdir build against /Users/beauxwalton/.openclaw/agents/nori/workspace/aegis-gap-closure was discarded immediately and is not evidence."
   }
 ]

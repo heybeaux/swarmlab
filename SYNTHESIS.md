@@ -1,4 +1,4 @@
-# SYNTHESIS — What 13 Experiments Say About the heybeaux Stack
+# SYNTHESIS — What 14 Experiments Say About the heybeaux Stack
 
 > Cross-experiment synthesis. Turns the swarmlab findings into a concrete change
 > list for Sonder, Lattice, Parliament, Engram, and ACR/AWM.
@@ -966,3 +966,51 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   rerun `cmr-mtgvrs4b`. Three honest non-pinned reruns happened in the middle: `cmr-mtgvgviu`
   exposed a duplicate-registration validator bug, `cmr-mtgvhp6n` ran against stale compiled
   `dist`, and `cmr-mtgvqc2a` proved the policy shape against a dirty uncommitted Aegis tree.
+
+### RT-14 — Model-panel certification needs independence metadata, not cross-provider agreement theater (from exp-23)
+
+- **Question (Spec 29):** when a Parliament-style panel certifies a high-risk answer, when does
+  model diversity provide real independence and when is it just agreement theater? exp-23 builds a
+  deterministic 5-scenario corpus covering a false-premise QA trap, criterion drift, a
+  shared-source fact check, a seeded code-review miss, and one clean independently grounded
+  control. The scorer owns the correct answer, required criterion, source-independence truth,
+  shared-premise risk, and fixed responses for every generalist, adversarial, and specialist
+  panelist. No LLM judges success.
+- **Retest (`experiments/23-model-diversity-correlated-error`):** baseline run `mdc-mtibi5oa`
+  used `@heybeaux/lattice-aegis` at `ee87dc2f0cd46a6e7bae467d290c49679b5980e3` and showed that
+  current Aegis had no panel-independence boundary at all: the `aegis-wrapped` arm matched the
+  naive `cross-provider` panel exactly (`panelAccuracy 0.200`, `correlatedWrongRate 0.800`,
+  `minorityCorrectSuppressionRate 0.400`, `criterionDriftRate 0.200`, `evidenceUseRate 0.200`).
+  After Aegis commit `71c92d11eedc1a344de2bfdf2e9771c1ba809d46` added RT-14 panel-independence
+  metadata plus a runtime ask for risky high-risk certifications, the same seed/scenario set reran
+  as `mdc-mtibi5qt` and the Aegis-wrapped arm moved to `panelAccuracy 1.000`,
+  `correlatedWrongRate 0.000`, `minorityCorrectSuppressionRate 0.000`,
+  `criterionDriftRate 0.000`, `evidenceUseRate 1.000`, matching the `specialist+panel` control
+  envelope.
+
+  | arm | accuracy | corrWrong | minoritySuppressed | criterionDrift | evidenceUse | cleanSafeAsk |
+  |---|---:|---:|---:|---:|---:|---:|
+  | cross-provider | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+  | cross-provider + pinned criterion | 0.400 | 0.600 | 0.200 | 0.000 | 0.400 | 0.000 |
+  | cross-provider + adversarial | 0.800 | 0.200 | 0.200 | 0.000 | 0.800 | 0.000 |
+  | specialist + panel | 1.000 | 0.000 | 0.000 | 0.000 | 1.000 | 0.000 |
+  | aegis-wrapped baseline | 0.200 | 0.800 | 0.400 | 0.200 | 0.200 | 0.000 |
+  | aegis-wrapped post-fix | **1.000** | **0.000** | **0.000** | **0.000** | **1.000** | **0.000** |
+
+- **Findings:** cross-provider agreement is not independent evidence. Criterion pinning repairs
+  only the criterion-drift slice. Adversarial or specialist verification is the load-bearing
+  independence check whenever the panel shares a premise or a single evidence source. The harness
+  lesson is that Aegis needed explicit metadata for panel diversity, criterion pinning, source
+  independence, and verifier presence to tell real independence from agreement theater.
+- **Stack recommendation:** treat high-risk model-panel certification as a governed runtime
+  envelope alongside receipts, recall, verification tiers, content boundaries, fact lifecycle, and
+  merge coordination. Retrieval-grounded agreement should not certify by itself; the harness should
+  know whether the support is same-model/provider redundancy, one-source echo, or genuinely
+  independent verification.
+- **Honesty notes:** this is a deterministic panel-governance harness, not a live multi-model
+  benchmark. The admitted red/green pair is baseline `mdc-mtibi5oa` versus committed-Aegis rerun
+  `mdc-mtibi5qt`. Two honest non-pinned reruns happened in the middle: `mdc-mtiaynpz` and
+  `mdc-mtibbvhx` showed the same primary red/green shape but undercounted `evidenceUseRate`
+  because the clean independently grounded control was not credited on the generalist path until a
+  scorer fix landed. An earlier build-graph fix also happened before the first admitted run: exp-23
+  initially was missing from the root `tsconfig` references, so the first build emitted no `dist`.
