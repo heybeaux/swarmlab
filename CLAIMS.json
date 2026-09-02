@@ -2045,13 +2045,14 @@
         "package": "@heybeaux/lattice-aegis",
         "branch": "nori/2026-09-01-exp24-aegis",
         "commits": [
-          "e6b73242e9240f50b9d84af7b5ba66d0cbe81e78"
+          "e6b73242e9240f50b9d84af7b5ba66d0cbe81e78",
+          "4c99cf99da479506696f48c317379c382c3690e0"
         ],
         "prs": [],
-        "dirtyState": "experiment rerun used committed Aegis SHA e6b73242e9240f50b9d84af7b5ba66d0cbe81e78; PR pending"
+        "dirtyState": "experiment rerun used committed Aegis SHA e6b73242e9240f50b9d84af7b5ba66d0cbe81e78; evidence gate added in follow-on commit 4c99cf99da479506696f48c317379c382c3690e0; PR pending"
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Deterministic intervention-governance harness. The pinned red/green pair is baseline hir-mtjqc6dq on origin/main Aegis 78487d5da1f7f56ce1f3043d82d8dc6414ae9dba and committed rerun hir-mtjqno1g on Aegis commit e6b73242e9240f50b9d84af7b5ba66d0cbe81e78. One honest non-pinned rerun happened in the middle: hir-mtjqm5fm showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook suite passed cleanly."
+    "notes": "Deterministic intervention-governance harness. The pinned red/green pair is baseline hir-mtjqc6dq on origin/main Aegis 78487d5da1f7f56ce1f3043d82d8dc6414ae9dba and committed rerun hir-mtjqno1g on Aegis commit e6b73242e9240f50b9d84af7b5ba66d0cbe81e78; the follow-on SwarmLab evidence gate landed in Aegis commit 4c99cf99da479506696f48c317379c382c3690e0. One honest non-pinned rerun happened in the middle: hir-mtjqm5fm showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook suite passed cleanly."
   }
 ]
