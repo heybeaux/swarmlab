@@ -1859,5 +1859,200 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic panel-governance harness. The pinned red/green pair is baseline mdc-mtibi5oa on origin/main Aegis ee87dc2f0cd46a6e7bae467d290c49679b5980e3 and committed rerun mdc-mtibi5qt on Aegis commit 71c92d11eedc1a344de2bfdf2e9771c1ba809d46. Two honest non-pinned reruns happened in the middle: mdc-mtiaynpz and mdc-mtibbvhx showed the same primary red/green shape but undercounted evidenceUseRate because the clean independently grounded control was not credited on the generalist path until a scorer fix landed. An earlier build-graph fix happened before the first admitted run because exp-23 was initially missing from the root tsconfig references. A wrong-workdir build against /Users/beauxwalton/.openclaw/agents/nori/workspace/aegis-gap-closure was discarded immediately and is not evidence."
+  },
+  {
+    "id": "RT-15",
+    "claim": "Resumed actions need durable intervention state: current Aegis matches naive context-only resume on the exp-24 intervention corpus, while RT-15 intervention gating moves the same Aegis-wrapped arm to full correction uptake, full stop/pause/denial compliance, zero approval-scope or duplicate-action violations, and perfect final-state accuracy on the same seed.",
+    "experiment": "experiments/24-human-intervention-resume-reliability",
+    "spec": "specs/30-human-intervention-resume-reliability.md",
+    "runIds": [
+      "hir-mtjqc6dq",
+      "hir-mtjqno1g"
+    ],
+    "tracePaths": [
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.scenarioCount",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.contextOnlyStalePlanContinuation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.contextOnlyResumeStateAccuracy",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredStopCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredApprovalScopeViolation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredDuplicateActionRate",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredResumeStateAccuracy",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedCorrectionUptake",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedStalePlanContinuation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedStopCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedPauseCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedApprovalScopeViolation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedDuplicateActionRate",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedDenialCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedResumeStateAccuracy",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.fixtureContextOnlyRed",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.fixtureRiskTieredGreen",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.baselineAegisRed",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.scenarioCount",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedCorrectionUptake",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedStalePlanContinuation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedStopCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedPauseCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedApprovalScopeViolation",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedDuplicateActionRate",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedDenialCompliance",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedResumeStateAccuracy",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedCleanSafeAskRate",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.fixtureContextOnlyRed",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.fixtureRiskTieredGreen",
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.scenarioCount": {
+        "equals": 7,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.contextOnlyStalePlanContinuation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.contextOnlyResumeStateAccuracy": {
+        "equals": 0.143,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredStopCompliance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredApprovalScopeViolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredDuplicateActionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.riskTieredResumeStateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedCorrectionUptake": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedStalePlanContinuation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedStopCompliance": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedPauseCompliance": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedApprovalScopeViolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedDuplicateActionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedDenialCompliance": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedResumeStateAccuracy": {
+        "equals": 0.143,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.fixtureContextOnlyRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.fixtureRiskTieredGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqc6dq.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.scenarioCount": {
+        "equals": 7,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedCorrectionUptake": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedStalePlanContinuation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedStopCompliance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedPauseCompliance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedApprovalScopeViolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedDuplicateActionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedDenialCompliance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedResumeStateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.aegisWrappedCleanSafeAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.fixtureContextOnlyRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.fixtureRiskTieredGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/24-human-intervention-resume-reliability/runs/hir-mtjqno1g.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24-baseline && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24 && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-01-exp24 && npm install && npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24-baseline/packages/aegis/dist/index.js node experiments/24-human-intervention-resume-reliability/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-01-exp24/packages/aegis/dist/index.js node experiments/24-human-intervention-resume-reliability/dist/main.js",
+    "stackRecommendation": "Treat human intervention state as a governed runtime surface. A resumed action should surface the latest correction, deny, pause or stop state, exact approval scope, and duplicate-completion evidence before it proceeds.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-09-01-exp24-aegis",
+        "commits": [
+          "e6b73242e9240f50b9d84af7b5ba66d0cbe81e78",
+          "4c99cf99da479506696f48c317379c382c3690e0"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis SHA e6b73242e9240f50b9d84af7b5ba66d0cbe81e78; evidence gate added in follow-on commit 4c99cf99da479506696f48c317379c382c3690e0; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic intervention-governance harness. The pinned red/green pair is baseline hir-mtjqc6dq on origin/main Aegis 78487d5da1f7f56ce1f3043d82d8dc6414ae9dba and committed rerun hir-mtjqno1g on Aegis commit e6b73242e9240f50b9d84af7b5ba66d0cbe81e78; the follow-on SwarmLab evidence gate landed in Aegis commit 4c99cf99da479506696f48c317379c382c3690e0. One honest non-pinned rerun happened in the middle: hir-mtjqm5fm showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In the fresh Aegis worktree, @heybeaux/aegis-hook tests required one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook suite passed cleanly."
   }
 ]
