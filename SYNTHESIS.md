@@ -1014,3 +1014,54 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   because the clean independently grounded control was not credited on the generalist path until a
   scorer fix landed. An earlier build-graph fix also happened before the first admitted run: exp-23
   initially was missing from the root `tsconfig` references, so the first build emitted no `dist`.
+
+### RT-15 — Resumed actions need durable intervention state, not context-only recollection (from exp-24)
+
+- **Question (Spec 30):** when a human interrupts or redirects an agentic task, what policy keeps
+  the resumed action aligned with the latest correction, stop, pause, denial, exact approval, and
+  duplicate-completion state? exp-24 builds a deterministic 7-scenario corpus covering one clean
+  low-risk doc control, a corrected release path, a paused production deploy, a stopped database
+  migration, an exact approval for tests only, a denied force-push, and a duplicate webhook replay.
+  The scorer owns the original plan, corrected safe action, risk tier, intervention directive,
+  approval scope, duplicate-completion truth, and final safe task state. No LLM judges success.
+- **Retest (`experiments/24-human-intervention-resume-reliability`):** baseline run
+  `hir-mtjqc6dq` used `@heybeaux/lattice-aegis` at
+  `78487d5da1f7f56ce1f3043d82d8dc6414ae9dba` and showed that current Aegis had no intervention
+  boundary at all: the `aegis-wrapped` arm matched the naive `context-only` resume shape on the
+  risky slices (`correctionUptake 0.000`, `stalePlanContinuation 1.000`, `stopCompliance 0.000`,
+  `pauseCompliance 0.000`, `approvalScopeViolation 1.000`, `duplicateActionRate 1.000`,
+  `denialCompliance 0.000`, `resumeStateAccuracy 0.143`). After Aegis commit
+  `e6b73242e9240f50b9d84af7b5ba66d0cbe81e78` added RT-15 intervention metadata plus a runtime ask
+  for stale corrected resumes, active pause/stop state, mismatched approval scope, and duplicate
+  replay risk, the same seed/scenario set reran as `hir-mtjqno1g` and the Aegis-wrapped arm moved
+  to `correctionUptake 1.000`, `stalePlanContinuation 0.000`, `stopCompliance 1.000`,
+  `pauseCompliance 1.000`, `approvalScopeViolation 0.000`, `duplicateActionRate 0.000`,
+  `denialCompliance 1.000`, `resumeStateAccuracy 1.000`, matching the `risk-tiered-policy`
+  control envelope.
+
+  | arm | correctionUptake | stalePlanContinuation | stopCompliance | pauseCompliance | approvalScopeViolation | duplicateActionRate | denialCompliance | resumeStateAccuracy | cleanSafeAsk |
+  |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+  | context-only | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.143 | 0.000 |
+  | intervention-log | 0.286 | 0.714 | 0.000 | 0.000 | 1.000 | 1.000 | 0.286 | 0.286 | 0.000 |
+  | intervention-log + action-gate | 0.571 | 0.429 | 1.000 | 1.000 | 1.000 | 1.000 | 0.571 | 0.571 | 0.000 |
+  | exact-approval-binding | 0.714 | 0.286 | 1.000 | 1.000 | 0.000 | 1.000 | 0.714 | 0.714 | 0.000 |
+  | pause-stop-sentinel + verifier | 1.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | risk-tiered-policy | 1.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | aegis-wrapped baseline | 0.000 | 1.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 | 0.143 | 0.000 |
+  | aegis-wrapped post-fix | **1.000** | **0.000** | **1.000** | **1.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+- **Findings:** durable intervention logging by itself is not enough. The resumed action still
+  drifted unless the harness checked active pause/stop/deny state, exact approval scope, and
+  already-completed side effects at the action boundary. The harness lesson is that Aegis only
+  needed a small amount of structured intervention metadata to recover the full safe envelope on
+  the same seed.
+- **Stack recommendation:** treat human intervention state as a governed runtime envelope
+  alongside receipts, recall, content boundaries, fact lifecycle, merge coordination, and panel
+  independence. A resumed action should prove that the latest human directive still authorizes that
+  exact action before it runs.
+- **Honesty notes:** this is a deterministic intervention-governance harness, not a live agent
+  restart benchmark. The admitted red/green pair is baseline `hir-mtjqc6dq` versus
+  committed-Aegis rerun `hir-mtjqno1g`. One honest non-pinned rerun happened in the middle:
+  `hir-mtjqm5fm` showed the same green policy shape against a dirty uncommitted Aegis tree, so it
+  is not admitted evidence. In the fresh Aegis worktree, `@heybeaux/aegis-hook` tests also needed
+  one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook suite passed cleanly.
