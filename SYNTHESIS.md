@@ -1065,3 +1065,52 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   `hir-mtjqm5fm` showed the same green policy shape against a dirty uncommitted Aegis tree, so it
   is not admitted evidence. In the fresh Aegis worktree, `@heybeaux/aegis-hook` tests also needed
   one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook suite passed cleanly.
+
+### RT-16 — Partial-success workflow resumes need step integrity, not blanket task approval (from exp-25)
+
+- **Question (Spec 31):** when a task resumes after partial success, what policy keeps the resumed
+  workflow aligned with completed, revoked, remaining, and exact step-instance state? exp-25
+  builds a deterministic 7-scenario corpus covering one clean low-risk doc tail control, a
+  completed publish replay, a revoked production rollout, a wrong artifact instance, a wrong
+  remaining step, a completed secret-rotation replay, and a revoked bulk notification. The scorer
+  owns the workflow step graph, partial-success state, completed/revoked/remaining step truth,
+  step-instance binding, noop requirements, and final safe workflow state. No LLM judges success.
+- **Retest (`experiments/25-partial-success-resume-integrity`):** baseline run `psr-mtl5r0re`
+  used `@heybeaux/lattice-aegis` at `1766256bee35a8eea175325c9047de75c2dc6522` and showed that
+  current Aegis had no workflow-resume boundary at all: the `aegis-wrapped` arm matched the naive
+  `context-only` resume shape on the risky slices (`completedStepReplayRate 1.000`,
+  `revokedStepExecutionRate 1.000`, `wrongStepInstanceRate 1.000`, `remainingStepCoverage 0.000`,
+  `workflowStateAccuracy 0.143`). After Aegis commit
+  `7edb662259b32b3ddb511bcd8b717cde9823f7f2` added RT-16 workflow-resume metadata plus a runtime
+  ask for completed, revoked, unknown, unverified-remaining, or wrong-step-instance risky
+  resumes, the same seed/scenario set reran as `psr-mtl5xs9o` and the Aegis-wrapped arm moved to
+  `completedStepReplayRate 0.000`, `revokedStepExecutionRate 0.000`,
+  `wrongStepInstanceRate 0.000`, `remainingStepCoverage 1.000`,
+  `workflowStateAccuracy 1.000`, matching the `risk-tiered-policy` control envelope.
+
+  | arm | completedReplay | revokedExec | wrongInstance | remainingCoverage | workflowAccuracy | cleanSafeAsk |
+  |---|---:|---:|---:|---:|---:|---:|
+  | context-only | 1.000 | 1.000 | 1.000 | 0.000 | 0.143 | 0.000 |
+  | durable-progress-log | 1.000 | 1.000 | 1.000 | 0.143 | 0.286 | 0.000 |
+  | completed-revoked-gate | 0.000 | 0.000 | 1.000 | 0.429 | 0.571 | 0.000 |
+  | exact-step-binding | 0.000 | 0.000 | 1.000 | 0.571 | 0.714 | 0.000 |
+  | exact-step-instance-binding | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | risk-tiered-policy | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | aegis-wrapped baseline | **1.000** | **1.000** | **1.000** | **0.000** | **0.143** | **0.000** |
+  | aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+- **Findings:** durable progress logging by itself is not enough. After partial success, broad
+  task approval and command-family matching still replay completed work, execute revoked steps, or
+  resume the wrong artifact instance unless the action boundary checks exact remaining-step truth.
+  The harness lesson is that Aegis only needed a small amount of structured workflow-resume state
+  to recover the full safe envelope on the same seed.
+- **Stack recommendation:** treat partial-success workflow state as a governed runtime envelope
+  alongside receipts, recall, content boundaries, fact lifecycle, merge coordination, model-panel
+  independence, and intervention state. A risky resumed workflow step should prove exact
+  step-instance binding and remaining-step verification before it proceeds.
+- **Honesty notes:** this is a deterministic workflow-resume harness, not a live production
+  scheduler benchmark. The admitted red/green pair is baseline `psr-mtl5r0re` versus
+  committed-Aegis rerun `psr-mtl5xs9o`. One honest non-pinned rerun happened in the middle:
+  `psr-mtl5wl14` showed the same green policy shape against a dirty uncommitted Aegis tree, so it
+  is not admitted evidence. In fresh Aegis worktrees, the first build failed on missing `tsup`
+  until dependencies were installed; that was setup-only work before the admitted baseline.

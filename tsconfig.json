@@ -26,6 +26,7 @@
     { "path": "experiments/21-fact-revocation-stale-trust" },
     { "path": "experiments/22-concurrent-merge-races" },
     { "path": "experiments/23-model-diversity-correlated-error" },
-    { "path": "experiments/24-human-intervention-resume-reliability" }
+    { "path": "experiments/24-human-intervention-resume-reliability" },
+    { "path": "experiments/25-partial-success-resume-integrity" }
   ]
 }

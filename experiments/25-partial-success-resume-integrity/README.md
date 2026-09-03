@@ -217,3 +217,64 @@ AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-02-exp25 \
 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-02-exp25/packages/aegis/dist/index.js \
 node experiments/25-partial-success-resume-integrity/dist/main.js
 ```
+
+## Baseline red
+
+- **Pinned baseline run:** `psr-mtl5r0re`
+- **Aegis SHA:** `1766256bee35a8eea175325c9047de75c2dc6522`
+- **Trace:** `experiments/25-partial-success-resume-integrity/runs/psr-mtl5r0re.jsonl`
+- **Outcome:** current `origin/main` Aegis matched the naive `context-only` resume shape on the
+  risky slices. It replayed completed steps, executed revoked steps, resumed the wrong step
+  instance, and failed to prove the correct remaining step.
+
+| arm | completedReplay | revokedExec | wrongInstance | remainingCoverage | workflowAccuracy | cleanSafeAsk |
+|---|---:|---:|---:|---:|---:|---:|
+| context-only | 1.000 | 1.000 | 1.000 | 0.000 | 0.143 | 0.000 |
+| durable-progress-log | 1.000 | 1.000 | 1.000 | 0.143 | 0.286 | 0.000 |
+| completed-revoked-gate | 0.000 | 0.000 | 1.000 | 0.429 | 0.571 | 0.000 |
+| exact-step-binding | 0.000 | 0.000 | 1.000 | 0.571 | 0.714 | 0.000 |
+| exact-step-instance-binding | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+| risk-tiered-policy | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+| aegis-wrapped baseline | **1.000** | **1.000** | **1.000** | **0.000** | **0.143** | **0.000** |
+
+## Aegis change
+
+- **Runtime commit:** `7edb662259b32b3ddb511bcd8b717cde9823f7f2`
+- **Rule id:** `swarmlab.rt16.partial-success-resumes-require-step-integrity`
+- **Change:** add `workflowResume` metadata to the Aegis evaluator and hook adapters, then ask on
+  partial-success resumes when the proposed step is already completed, revoked, unknown, not the
+  verified remaining step, or only broadly bound to a command family instead of the exact approved
+  step instance for a risky action.
+
+## Committed green rerun
+
+- **Pinned green run:** `psr-mtl5xs9o`
+- **Aegis SHA:** `7edb662259b32b3ddb511bcd8b717cde9823f7f2`
+- **Trace:** `experiments/25-partial-success-resume-integrity/runs/psr-mtl5xs9o.jsonl`
+- **Outcome:** on the same pre-registered seed and scenario roster, the Aegis-wrapped arm moved to
+  zero completed-step replay, zero revoked-step execution, zero wrong-instance execution, full
+  remaining-step coverage, and perfect workflow-state accuracy without taxing the clean safe
+  control.
+
+| arm | completedReplay | revokedExec | wrongInstance | remainingCoverage | workflowAccuracy | cleanSafeAsk |
+|---|---:|---:|---:|---:|---:|---:|
+| aegis-wrapped baseline | 1.000 | 1.000 | 1.000 | 0.000 | 0.143 | 0.000 |
+| aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+## Findings
+
+- Task-level approval is not step-level authorization. After partial success, exact remaining-step
+  identity and exact step-instance binding are the load-bearing safety checks.
+- Durable progress logging by itself is not enough. The action boundary still needs lifecycle-aware
+  gating over completed, revoked, unknown, and remaining workflow steps.
+- Aegis only needed a small amount of structured workflow-resume metadata to recover the
+  `risk-tiered-policy` envelope on the same seed.
+
+## Honesty notes
+
+- The admitted red/green pair is baseline `psr-mtl5r0re` versus committed rerun `psr-mtl5xs9o`.
+- Intermediate rerun `psr-mtl5wl14` showed the same green policy shape but ran against a dirty
+  uncommitted Aegis tree, so it is preserved only as a non-pinned trace.
+- In fresh Aegis worktrees, the first build failed because `node_modules` was absent and `tsup`
+  was unavailable. Installing dependencies was setup work only and happened before the admitted
+  baseline.
