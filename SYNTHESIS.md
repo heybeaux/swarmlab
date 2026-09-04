@@ -1114,3 +1114,53 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   `psr-mtl5wl14` showed the same green policy shape against a dirty uncommitted Aegis tree, so it
   is not admitted evidence. In fresh Aegis worktrees, the first build failed on missing `tsup`
   until dependencies were installed; that was setup-only work before the admitted baseline.
+
+### RT-17 — Exact approvals need freshness and prerequisite-envelope binding, not command-text replay alone (from exp-26)
+
+- **Question (Spec 32):** when a risky tool call receives an exact human approval, what policy
+  keeps that approval valid only while the approved world still exists? exp-26 builds a
+  deterministic 7-scenario corpus covering two clean controls plus five stale-retry failures:
+  expired `npm publish`, artifact-drifted `npm publish`, verification-stale service restart,
+  branch-drifted `git push`, and a lockfile write whose base digest changed underneath it. The
+  scorer owns the approved envelope, retry-time envelope, safe fallback action, and pass/fail
+  thresholds. No LLM judges success.
+- **Retest (`experiments/26-approval-envelope-integrity`):** baseline run `aei-mtmlbqy2` used
+  current `origin/main` Aegis `cd3f85e614c1a4afef52f28e6da7a8aceab3731c` and showed that current
+  Aegis had no approval-envelope governance at all: the `aegis-wrapped` arm matched the naive
+  `exact-retry-only` control on every risky stale-retry slice
+  (`expiredApprovalExecutionRate 1.000`, `artifactDriftExecutionRate 1.000`,
+  `verificationDriftExecutionRate 1.000`, `targetDriftExecutionRate 1.000`,
+  `approvalRefreshCoverage 0.000`, `approvalEnvelopeAccuracy 0.286`). After Aegis runtime commit
+  `6b621243400c0ed1c7fb6473dc56fb7d302b23e7` added `approvalEnvelope` metadata plus hook approval
+  consumption that expires stale retries and rebinds approval to artifact, verification, and
+  target digests, the same seed/scenario set reran as `aei-mtmlpt0o` and the `aegis-wrapped` arm
+  moved to `expiredApprovalExecutionRate 0.000`, `artifactDriftExecutionRate 0.000`,
+  `verificationDriftExecutionRate 0.000`, `targetDriftExecutionRate 0.000`,
+  `approvalRefreshCoverage 1.000`, `approvalEnvelopeAccuracy 1.000`, matching the
+  `risk-tiered-policy` control envelope.
+
+  | arm | expiredExec | artifactExec | verificationExec | targetExec | refreshCoverage | accuracy | cleanAsk |
+  |---|---:|---:|---:|---:|---:|---:|---:|
+  | exact-retry-only | 1.000 | 1.000 | 1.000 | 1.000 | 0.000 | 0.286 | 0.000 |
+  | freshness-window | 0.000 | 1.000 | 1.000 | 1.000 | 0.200 | 0.429 | 0.000 |
+  | artifact-binding | 1.000 | 0.000 | 1.000 | 1.000 | 0.200 | 0.429 | 0.000 |
+  | verification-envelope-binding | 1.000 | 0.000 | 0.000 | 0.000 | 0.800 | 0.857 | 0.000 |
+  | risk-tiered-policy | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 | 1.000 | 0.000 |
+  | aegis-wrapped baseline | **1.000** | **1.000** | **1.000** | **1.000** | **0.000** | **0.286** | **0.000** |
+  | aegis-wrapped post-fix | **0.000** | **0.000** | **0.000** | **0.000** | **1.000** | **1.000** | **0.000** |
+
+- **Findings:** exact command replay is not a sufficient approval boundary. A previously approved
+  tool call becomes unsafe when the artifact, verification basis, target state, or freshness
+  window drifts, even if the command text is unchanged. The harness lesson is that Aegis only
+  needed a small structured approval envelope to distinguish legitimate exact retries from stale
+  exact retries.
+- **Stack recommendation:** treat one-shot human approval as a governed runtime envelope alongside
+  receipts, recall, content boundaries, fact lifecycle, merge coordination, model-panel
+  independence, intervention state, and workflow-step integrity. A risky approved retry should
+  prove a fresh bound approval envelope before it proceeds.
+- **Honesty notes:** this is a deterministic approval-envelope harness, not a live human approval
+  UX benchmark. The admitted red/green pair is baseline `aei-mtmlbqy2` versus committed-Aegis
+  rerun `aei-mtmlpt0o`. One honest non-pinned rerun happened in the middle: `aei-mtmlnpxy`
+  showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not
+  admitted evidence. In fresh Aegis worktrees, `@heybeaux/aegis-hook` builds/tests still needed
+  `pnpm --filter @heybeaux/aegis-collect build` to complete before the hook package built cleanly.
