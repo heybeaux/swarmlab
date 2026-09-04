@@ -2213,5 +2213,185 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic workflow-resume harness. The pinned red/green pair is baseline psr-mtl5r0re on origin/main Aegis 1766256bee35a8eea175325c9047de75c2dc6522 and committed rerun psr-mtl5xs9o on Aegis commit 7edb662259b32b3ddb511bcd8b717cde9823f7f2. Intermediate rerun psr-mtl5wl14 showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In fresh Aegis worktrees, the first build failed on missing tsup until dependencies were installed; that was setup-only work before the admitted baseline."
+  },
+  {
+    "id": "RT-17",
+    "claim": "Exact approved retries need freshness and prerequisite-envelope binding: current Aegis matched naive exact-retry replay on expired, artifact-drifted, verification-drifted, and target-drifted retries, while RT-17 moved the same Aegis-wrapped arm to zero stale execution, full refresh coverage, and perfect approval-envelope accuracy on the same seed.",
+    "experiment": "experiments/26-approval-envelope-integrity",
+    "spec": "specs/32-conditional-approval-expiry-prerequisite-binding.md",
+    "runIds": [
+      "aei-mtmlbqy2",
+      "aei-mtmlpt0o"
+    ],
+    "tracePaths": [
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.scenarioCount",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.exactRetryOnlyExpiredApprovalExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.exactRetryOnlyApprovalEnvelopeAccuracy",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredApprovalRefreshCoverage",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredApprovalEnvelopeAccuracy",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredCleanFreshRetryAskRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedExpiredApprovalExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedArtifactDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedVerificationDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedTargetDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedApprovalRefreshCoverage",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedApprovalEnvelopeAccuracy",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedCleanFreshRetryAskRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedInitialAskCoverage",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.fixtureExactRetryOnlyRed",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.fixtureRiskTieredGreen",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.baselineAegisRed",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.scenarioCount",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedExpiredApprovalExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedArtifactDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedVerificationDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedTargetDriftExecutionRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedApprovalRefreshCoverage",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedApprovalEnvelopeAccuracy",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedCleanFreshRetryAskRate",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedInitialAskCoverage",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.fixtureExactRetryOnlyRed",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.fixtureRiskTieredGreen",
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.scenarioCount": {
+        "equals": 7,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.exactRetryOnlyExpiredApprovalExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.exactRetryOnlyApprovalEnvelopeAccuracy": {
+        "equals": 0.286,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredApprovalRefreshCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredApprovalEnvelopeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.riskTieredCleanFreshRetryAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedExpiredApprovalExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedArtifactDriftExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedVerificationDriftExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedTargetDriftExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedApprovalRefreshCoverage": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedApprovalEnvelopeAccuracy": {
+        "equals": 0.286,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedCleanFreshRetryAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.aegisWrappedInitialAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.fixtureExactRetryOnlyRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.fixtureRiskTieredGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlbqy2.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.scenarioCount": {
+        "equals": 7,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedExpiredApprovalExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedArtifactDriftExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedVerificationDriftExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedTargetDriftExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedApprovalRefreshCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedApprovalEnvelopeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedCleanFreshRetryAskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.aegisWrappedInitialAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.fixtureExactRetryOnlyRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.fixtureRiskTieredGreen": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/26-approval-envelope-integrity/runs/aei-mtmlpt0o.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "cd /Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26-baseline && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && npx -y pnpm@10.15.1 --filter @heybeaux/aegis-collect build && npx -y pnpm@10.15.1 --filter @heybeaux/aegis-hook build && cd /Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26 && npx -y pnpm@10.15.1 --filter @heybeaux/lattice-aegis build && npx -y pnpm@10.15.1 --filter @heybeaux/aegis-collect build && npx -y pnpm@10.15.1 --filter @heybeaux/aegis-hook build && cd /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-03-exp26 && npm install && npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26-baseline/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26-baseline/packages/aegis-hook/dist/index.js node experiments/26-approval-envelope-integrity/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-03-exp26/packages/aegis-hook/dist/index.js node experiments/26-approval-envelope-integrity/dist/main.js",
+    "stackRecommendation": "Treat one-shot human approval as a governed runtime surface. A risky approved retry should surface freshness, artifact identity, verification basis, and target/base-state bindings before the stored approval is consumed.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis + @heybeaux/aegis-hook",
+        "branch": "nori/2026-09-03-exp26-aegis",
+        "commits": [
+          "6b621243400c0ed1c7fb6473dc56fb7d302b23e7",
+          "8ecdb55fd258359995a7cc8dccba2755051f24a1"
+        ],
+        "prs": [],
+        "dirtyState": "experiment rerun used committed Aegis runtime SHA 6b621243400c0ed1c7fb6473dc56fb7d302b23e7; RT-17 evidence gate landed in follow-on commit 8ecdb55fd258359995a7cc8dccba2755051f24a1; PR pending"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic approval-envelope harness. The pinned red/green pair is baseline aei-mtmlbqy2 on origin/main Aegis cd3f85e614c1a4afef52f28e6da7a8aceab3731c and committed rerun aei-mtmlpt0o on Aegis runtime commit 6b621243400c0ed1c7fb6473dc56fb7d302b23e7. Intermediate rerun aei-mtmlnpxy showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In fresh Aegis worktrees, @heybeaux/aegis-hook build/test flows still needed one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook package built and tested cleanly."
   }
 ]
