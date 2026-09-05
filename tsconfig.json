@@ -28,6 +28,7 @@
     { "path": "experiments/23-model-diversity-correlated-error" },
     { "path": "experiments/24-human-intervention-resume-reliability" },
     { "path": "experiments/25-partial-success-resume-integrity" },
-    { "path": "experiments/26-approval-envelope-integrity" }
+    { "path": "experiments/26-approval-envelope-integrity" },
+    { "path": "experiments/27-approval-provenance-context-binding" }
   ]
 }

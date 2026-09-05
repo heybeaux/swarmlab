@@ -2393,5 +2393,119 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic approval-envelope harness. The pinned red/green pair is baseline aei-mtmlbqy2 on origin/main Aegis cd3f85e614c1a4afef52f28e6da7a8aceab3731c and committed rerun aei-mtmlpt0o on Aegis runtime commit 6b621243400c0ed1c7fb6473dc56fb7d302b23e7. Intermediate rerun aei-mtmlnpxy showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not admitted evidence. In fresh Aegis worktrees, @heybeaux/aegis-hook build/test flows still needed one prior `pnpm --filter @heybeaux/aegis-collect build` before the hook package built and tested cleanly."
+  },
+  {
+    "id": "approval-provenance-context-binding",
+    "reproductionCommand": "npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27-baseline/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27-baseline/packages/aegis-hook/dist/index.js node experiments/27-approval-provenance-context-binding/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-04-exp27/packages/aegis-hook/dist/index.js node experiments/27-approval-provenance-context-binding/dist/main.js",
+    "stackRecommendation": "Bind human approval to actor, workspace, task intent, current authorization digest, and session unless wider workspace portability was explicitly granted.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis + @heybeaux/aegis-hook",
+        "branch": "nori/2026-09-04-exp27-aegis",
+        "commits": [
+          "3360865046ef215f395f883b3f5634940d752725",
+          "2d442379753749f4f65a4063c361801192f553d5"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registered commit 32f2ff7. Baseline apc-mto0gars on origin/main 28baeed; exact post-fix roster apc-mto0ipo0 on committed Aegis 3360865. Missing provenance remains backward-compatible; protected hosts must supply metadata.",
+    "claim": "Approval provenance must be scope-aware: baseline Aegis consumed identical fresh approval across actor, session, workspace, task-intent, and revoked authorization changes; RT-18 rejected all unauthorized replays while preserving same-context and explicitly workspace-scoped retries.",
+    "experiment": "experiments/27-approval-provenance-context-binding",
+    "spec": "specs/33-approval-provenance-context-binding.md",
+    "runIds": [
+      "apc-mto0gars",
+      "apc-mto0ipo0"
+    ],
+    "tracePaths": [
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossActorExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossSessionExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossWorkspaceExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossIntentExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedRevokedAuthorizationExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedProvenanceAccuracy",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.baselineAegisRed",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossActorExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossSessionExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossWorkspaceExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossIntentExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedRevokedAuthorizationExecutionRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedProvenanceRefreshCoverage",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedProvenanceAccuracy",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedWorkspaceScopePortabilityFailureRate",
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossActorExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossSessionExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossWorkspaceExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedCrossIntentExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedRevokedAuthorizationExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.aegisWrappedProvenanceAccuracy": {
+        "equals": 0.286,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0gars.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossActorExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossSessionExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossWorkspaceExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedCrossIntentExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedRevokedAuthorizationExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedProvenanceRefreshCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedProvenanceAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.aegisWrappedWorkspaceScopePortabilityFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/27-approval-provenance-context-binding/runs/apc-mto0ipo0.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    }
   }
 ]
