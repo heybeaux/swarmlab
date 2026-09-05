@@ -1164,3 +1164,14 @@ delegate deeper than you must"; the guard is how you cap the damage when depth i
   showed the same green policy shape against a dirty uncommitted Aegis tree, so it is not
   admitted evidence. In fresh Aegis worktrees, `@heybeaux/aegis-hook` builds/tests still needed
   `pnpm --filter @heybeaux/aegis-collect build` to complete before the hook package built cleanly.
+
+
+---
+
+## RT-18 — Approval provenance and context binding (exp-27, 2026-09-04)
+
+A one-shot approval bound to exact command/evaluation and RT-17 prerequisite bytes was still a portable capability. On baseline Aegis `28baeed0`, an identical risky retry executed after actor, exact-session, workspace, task-intent, or authorization-revocation drift: each unauthorized execution rate was `1.000`, refresh coverage `0.000`, and provenance accuracy `0.286` (`apc-mto0gars`).
+
+A blanket session lock is too strict: it rejected a deliberately workspace-scoped sibling-session retry (`workspaceScopePortabilityFailureRate=1.000`). The correct policy is scope-aware. Aegis `3360865` now carries approval provenance through Claude Code/OpenClaw adapters and binds the approval signature to actor, workspace, task intent, authorization digest, and—unless workspace portability is explicit—session. The same fixed roster then scored all unauthorized execution rates `0.000`, refresh coverage and accuracy `1.000`, with zero same-context or workspace-portability tax (`apc-mto0ipo0`).
+
+**Change:** treat approval as authority, not merely matching bytes. Hosts must surface stable provenance; Aegis prevents confused-deputy consumption when that contract is present. Missing metadata stays backward-compatible rather than fabricating identity.

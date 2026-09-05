@@ -103,4 +103,9 @@ Post-fix: the same commands and scenarios, replacing every `exp27-baseline` Aegi
 
 ## Results
 
-Not observed at pre-registration time.
+- Baseline `apc-mto0gars` on Aegis `28baeed0c02667b65b79d0aee04bc74038c48aa4`: all five unauthorized replay rates `1.000`, refresh coverage `0.000`, provenance accuracy `0.286`; reproducible red.
+- Post-fix `apc-mto0ipo0` on Aegis `3360865046ef215f395f883b3f5634940d752725`: all five unauthorized replay rates `0.000`, refresh coverage `1.000`, provenance accuracy `1.000`, same-context re-ask `0.000`, workspace portability failure `0.000`; green.
+- Blanket exact-session control prevented replay but failed the declared workspace-portable scenario (`1.000`), confirming the fix must respect explicit grant scope rather than globally pin every approval to one session.
+- Both real-Aegis arms had initial ask coverage `1.000`; both traces replay-verified 52 events.
+
+The minimal fix adds `approvalProvenance` to the public ToolCall contract and hook adapters, includes actor/workspace/intent/authorization in the one-shot signature, and includes session unless `grantScope=workspace` is explicit. Missing provenance retains backward compatibility; callers seeking RT-18 protection must supply the contract.
