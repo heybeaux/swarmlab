@@ -1175,3 +1175,13 @@ A one-shot approval bound to exact command/evaluation and RT-17 prerequisite byt
 A blanket session lock is too strict: it rejected a deliberately workspace-scoped sibling-session retry (`workspaceScopePortabilityFailureRate=1.000`). The correct policy is scope-aware. Aegis `3360865` now carries approval provenance through Claude Code/OpenClaw adapters and binds the approval signature to actor, workspace, task intent, authorization digest, and—unless workspace portability is explicit—session. The same fixed roster then scored all unauthorized execution rates `0.000`, refresh coverage and accuracy `1.000`, with zero same-context or workspace-portability tax (`apc-mto0ipo0`).
 
 **Change:** treat approval as authority, not merely matching bytes. Hosts must surface stable provenance; Aegis prevents confused-deputy consumption when that contract is present. Missing metadata stays backward-compatible rather than fabricating identity.
+
+---
+
+## RT-19 — Delegated approval needs effective-consumer authority chains (exp-28, 2026-09-06)
+
+A principal-bound one-shot approval is a bearer token when work crosses agent boundaries. Baseline Aegis `4fcabe20` allowed a child to consume the root's approval by presenting retained root provenance (`aegisWrappedLaunderingExecutionRate=1.000`), yet blocked legitimate verified direct and bounded delegates (`legitimateDelegationBlockRate=0.667`). Merely replacing principal identity with effective-consumer identity stops laundering but preserves the overblock, so neither identity alone is sufficient.
+
+Aegis `74ab607` adds an explicit delegation envelope: effective consumer, declared `none`/`direct`/`bounded` portability, maximum depth, verified ordered root-to-consumer nodes, non-increasing authority levels, and trusted revocation/structure results. Approval consumption fails closed for missing or contradictory delegation truth, while legacy non-delegated approvals keep RT-18 semantics. The same pre-registered ten-scenario roster moved all unsafe execution classes to `0.000`, legitimate delegation block to `0.000`, refresh coverage and accuracy to `1.000`, with zero root re-ask and complete initial-ask coverage (`daa-mtqw5r7i` → `daa-mtqwgbcv`).
+
+**Stack recommendation:** approval is an authority capability, not command bytes. Hosts must surface who actually consumes it and independently verified delegation truth; Aegis should never infer delegation from inherited principal provenance or agent claims.

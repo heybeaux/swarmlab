@@ -2507,5 +2507,128 @@
         "tolerance": 0
       }
     }
+  },
+  {
+    "id": "delegated-approval-authority",
+    "claim": "Approval delegation is safe only when the effective consumer is bound to an explicit, verified, depth-bounded, attenuating, unrevoked root-to-consumer authority chain.",
+    "experiment": "experiments/28-delegated-approval-authority",
+    "spec": "specs/34-delegated-approval-authority.md",
+    "runIds": [
+      "daa-mtqw5r7i",
+      "daa-mtqwgbcv"
+    ],
+    "tracePaths": [
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedLaunderingExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedLegitimateDelegationBlockRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedDelegationRefreshCoverage",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedDelegationAccuracy",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.baselineAegisRed",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedLaunderingExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedTransitiveOverreachExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDepthOverflowExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedUnverifiedChainExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedRevocationBypassExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedMalformedChainExecutionRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedLegitimateDelegationBlockRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDelegationRefreshCoverage",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDelegationAccuracy",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedRootControlReaskRate",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedInitialAskCoverage",
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.baselineAegisRed"
+    ],
+    "expectedValues": {
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedLaunderingExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedLegitimateDelegationBlockRate": {
+        "equals": 0.667,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedDelegationRefreshCoverage": {
+        "equals": 0.857,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.aegisWrappedDelegationAccuracy": {
+        "equals": 0.7,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqw5r7i.jsonl#last.baselineAegisRed": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedLaunderingExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedTransitiveOverreachExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDepthOverflowExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedUnverifiedChainExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedRevocationBypassExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedMalformedChainExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedLegitimateDelegationBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDelegationRefreshCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedDelegationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedRootControlReaskRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.aegisWrappedInitialAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/28-delegated-approval-authority/runs/daa-mtqwgbcv.jsonl#last.baselineAegisRed": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28-baseline/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28-baseline/packages/aegis-hook/dist/index.js node experiments/28-delegated-approval-authority/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-05-exp28/packages/aegis-hook/dist/index.js node experiments/28-delegated-approval-authority/dist/main.js",
+    "stackRecommendation": "Bind approval to effective consumer plus independently verified delegation-chain truth; retained principal provenance alone is not authority.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis + @heybeaux/aegis-hook",
+        "branch": "nori/2026-09-05-exp28-aegis",
+        "commits": [
+          "74ab607b039e4256c7db2dd8c11964a558561a78"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 34 was pre-registered at 72fced8. Baseline and post-fix use the exact same ten scenarios and seed. Reserved holdout remains unused. Intermediate development traces are not admitted."
   }
 ]
