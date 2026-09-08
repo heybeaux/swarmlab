@@ -1185,3 +1185,21 @@ A principal-bound one-shot approval is a bearer token when work crosses agent bo
 Aegis `74ab607` adds an explicit delegation envelope: effective consumer, declared `none`/`direct`/`bounded` portability, maximum depth, verified ordered root-to-consumer nodes, non-increasing authority levels, and trusted revocation/structure results. Approval consumption fails closed for missing or contradictory delegation truth, while legacy non-delegated approvals keep RT-18 semantics. The same pre-registered ten-scenario roster moved all unsafe execution classes to `0.000`, legitimate delegation block to `0.000`, refresh coverage and accuracy to `1.000`, with zero root re-ask and complete initial-ask coverage (`daa-mtqw5r7i` → `daa-mtqwgbcv`).
 
 **Stack recommendation:** approval is an authority capability, not command bytes. Hosts must surface who actually consumes it and independently verified delegation truth; Aegis should never infer delegation from inherited principal provenance or agent claims.
+
+## RT-20 — Consumed approval is not yet execution authority (exp-29)
+
+**Result:** a one-shot approval decision must cross a second, atomic execution boundary. Baseline
+Aegis validated current authority at approval consumption but exposed no execution checkpoint;
+post-consumption authorization rotation, direct/intermediate revocation, consumer drift, authority
+expansion, a missing current snapshot, and replay all executed (`aec-mtsaq222`: every unsafe/replay
+class `1.000`, accuracy `0.300`). This is not RT-17/18/19 repeated: those validate the facts at
+consume time, while exp-29 deterministically mutates authority after consume and before the side
+effect.
+
+Aegis `bb4ffac` adds a bound execution permit plus atomic finalization against fresh host-supplied
+authority. The exact roster reran green (`aec-mtsatwg1`): every unsafe/replay execution class
+`0.000`, legitimate block `0.000`, refresh coverage and accuracy `1.000`. Architecture rule:
+**`ask → approve → consume` authorizes preparation; only `finalize-permit(latest authority)` may
+initiate the effect.** The permit must burn on invalid state as well as success, and one process must
+win its atomic consume. This closes the approval-check/use gap inside Aegis's host contract, but not
+inside hosts that skip finalization or lie about current authority.

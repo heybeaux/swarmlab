@@ -2630,5 +2630,133 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 34 was pre-registered at 72fced8. Baseline and post-fix use the exact same ten scenarios and seed. Reserved holdout remains unused. Intermediate development traces are not admitted."
+  },
+  {
+    "id": "approval-execution-checkpoint",
+    "claim": "Approval consumption safely initiates side effects only through an atomic one-shot execution permit finalized against fresh authorization and delegation state.",
+    "experiment": "experiments/29-approval-execution-checkpoint",
+    "spec": "specs/35-approval-execution-checkpoint.md",
+    "runIds": [
+      "aec-mtsaq222",
+      "aec-mtsatwg1"
+    ],
+    "tracePaths": [
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedAuthorizationRotationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedDirectRevocationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedIntermediateRevocationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedConsumerDriftExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedMissingCheckpointExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedPermitReplayExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedExecutionAccuracy",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedAuthorizationRotationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedDirectRevocationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedIntermediateRevocationExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedConsumerDriftExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedMissingCheckpointExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedPermitReplayExecutionRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedLegitimateExecutionBlockRate",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedExecutionRefreshCoverage",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedExecutionAccuracy",
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedCheckpointAvailability"
+    ],
+    "expectedValues": {
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedAuthorizationRotationExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedDirectRevocationExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedIntermediateRevocationExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedConsumerDriftExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedMissingCheckpointExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedPermitReplayExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsaq222.jsonl#last.aegisWrappedExecutionAccuracy": {
+        "equals": 0.3,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedAuthorizationRotationExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedDirectRevocationExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedIntermediateRevocationExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedConsumerDriftExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedAuthorityExpansionExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedMissingCheckpointExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedPermitReplayExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedLegitimateExecutionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedExecutionRefreshCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedExecutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/29-approval-execution-checkpoint/runs/aec-mtsatwg1.jsonl#last.aegisWrappedCheckpointAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29-baseline AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29-baseline/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29-baseline/packages/aegis-hook/dist/index.js node experiments/29-approval-execution-checkpoint/dist/main.js && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29/packages/aegis/dist/index.js AEGIS_HOOK_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-09-07-exp29/packages/aegis-hook/dist/index.js node experiments/29-approval-execution-checkpoint/dist/main.js",
+    "stackRecommendation": "Treat approval consumption as preparation authority; require atomic one-shot execution finalization against fresh authority immediately before the effect.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis + @heybeaux/aegis-hook",
+        "branch": "nori/2026-09-07-exp29-aegis",
+        "commits": [
+          "bb4ffac4fb2c17389227fd2ec30ecabab2061386"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 35 pre-registered at 6777eae. Baseline and post-fix use the exact same ten scenarios and seed. Reserved holdout remains unused."
   }
 ]
