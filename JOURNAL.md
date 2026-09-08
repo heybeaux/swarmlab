@@ -90,3 +90,16 @@ Pre-registered Spec 33 at commit `32f2ff7` before observing output. Built determ
 ## 2026-09-06 — exp-28 delegated approval authority
 
 Continued the already pre-registered Spec 34 instead of inventing a second question. The new ten-scenario real-Aegis harness established red at `daa-mtqw5r7i`: principal provenance let a child launder approval (`launderingExecutionRate=1.000`) while the same token blocked two of three legitimate delegation cases (`legitimateDelegationBlockRate=0.667`). A first implementation shape taught an important contract lesson: modeling links as parent→delegate edges did not match the pre-registered root-to-consumer node chain, and retaining actor identity in the signature still prevented authorized delegates. The landed contract therefore binds stable grant constraints in the signature, preserves original provenance in the record, and validates the retry's effective consumer against a verified root-to-leaf chain with explicit scope, bounded depth, non-increasing authority, current revocation check, and structural validity. Committed Aegis `74ab607` reran the unchanged roster green as `daa-mtqwgbcv`: all unsafe execution classes 0, legitimate block 0, refresh and accuracy 1, no root re-ask. Existing suites and RT-19 evidence gate passed afterward; they are regression verification, not the novel evidence.
+
+## 2026-09-07 — exp-29 approval execution checkpoint / revocation TOCTOU
+
+Pre-registered Spec 35 at `6777eae` before output and built a ten-scenario real-Aegis harness. The
+surprise is how cleanly earlier approval hardening left a new lifecycle seam: RT-17 freshness,
+RT-18 provenance, and RT-19 delegation all work at consumption, yet the returned allow decision is
+just a stale fact one instruction later. Baseline `aec-mtsaq222` therefore executed all six
+post-consumption drift cases and one replay while ask/consume coverage stayed perfect. A bound,
+atomic, one-shot execution permit is the smallest general fix; Aegis `bb4ffac` burns it on stale,
+revoked, malformed, expanded, or replayed authority. Unchanged rerun `aec-mtsatwg1` made every unsafe
+rate zero with no control block. The honest boundary matters: Aegis supplies a contract, not magic;
+a host that does not finalize immediately at the side effect—or supplies self-asserted “current”
+metadata—still owns the race.

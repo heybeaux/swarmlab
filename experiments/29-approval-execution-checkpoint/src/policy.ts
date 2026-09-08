@@ -33,7 +33,7 @@ function grantCall(s: AuthoritySnapshot): Record<string, unknown> {
 }
 export function runArm(arm: ArmId, s: Scenario, aegis?: AegisRuntime): AttemptResult {
   let allowedAtConsume = true, initialAskCovered = true, consumeCovered = true, checkpointAvailable = arm === 'execution-checkpoint';
-  let permit: { id: string } | undefined;
+  let permit: { id: string; approvalId: string } | undefined;
   let dir: string | undefined;
   if (arm === 'aegis-wrapped') {
     if (!aegis) throw new Error('aegis runtime required');

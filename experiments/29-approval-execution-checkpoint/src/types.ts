@@ -41,7 +41,7 @@ export interface Scenario {
 export type ArmId = 'precheck-only' | 'snapshot-only' | 'execution-checkpoint' | 'aegis-wrapped';
 export interface EvaluationLike { action: 'allow' | 'ask' | 'deny'; reason: string; matches: { id: string; severity: string; category: string; target: string }[] }
 export interface DecisionLike { exitCode: 0 | 2; stderr: string; approval?: { event: 'requested' | 'consumed'; id: string } }
-export interface PermitLike { id: string }
+export interface PermitLike { id: string; approvalId: string }
 export interface AegisRuntime {
   evaluate(call: Record<string, unknown>): EvaluationLike;
   decide(evaluation: EvaluationLike, call: Record<string, unknown>, dir: string): DecisionLike;
