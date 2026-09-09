@@ -93,6 +93,9 @@
     },
     {
       "path": "experiments/29-approval-execution-checkpoint"
+    },
+    {
+      "path": "experiments/30-distributed-execution-permit-store"
     }
   ]
 }

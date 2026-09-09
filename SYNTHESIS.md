@@ -1203,3 +1203,9 @@ authority. The exact roster reran green (`aec-mtsatwg1`): every unsafe/replay ex
 initiate the effect.** The permit must burn on invalid state as well as success, and one process must
 win its atomic consume. This closes the approval-check/use gap inside Aegis's host contract, but not
 inside hosts that skip finalization or lie about current authority.
+
+## Exp-30 — distributed execution-permit stores
+
+RT-20's local atomic rename was not a global one-shot primitive. On two independent approval directories, baseline Aegis `108e492` admitted cross-host replay, concurrent duplicate finalization, invalid-burn retry, duplicate creation, and execution during shared-store unavailability (`dps-mttq7j53`; five unsafe rates `1`, accuracy `0.286`). A deterministic atomic-store fixture was fully green.
+
+Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` create-if-absent/destructive-take semantics through shared create/finalize APIs. Invalid snapshots burn the permit; replay, malformed IDs, duplicate create, and store failure fail closed; existing local APIs remain compatible. The unchanged scenarios reran green as `dps-mttq9s83` with all unsafe rates `0` and accuracy/API availability `1`. This proves the adapter contract with a deterministic transactional implementation, not the availability or correctness of any particular production database.
