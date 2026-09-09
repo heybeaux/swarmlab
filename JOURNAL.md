@@ -103,3 +103,6 @@ revoked, malformed, expanded, or replayed authority. Unchanged rerun `aec-mtsatw
 rate zero with no control block. The honest boundary matters: Aegis supplies a contract, not magic;
 a host that does not finalize immediately at the side effect—or supplies self-asserted “current”
 metadata—still owns the race.
+
+### 2026-09-08 — exp-30 distributed execution-permit store
+Pre-registered Spec 36 at `a59ed2e` before implementation or output. Built a deterministic seven-scenario real-Aegis harness at `7ccdf0e`. Baseline `108e492` failed all five distributed unsafe classes as `dps-mttq7j53`; fixture control stayed green. Added shared transactional execution-permit store APIs and focused tests in Aegis `1c79f8d`; exact same roster reran green as `dps-mttq9s83`. Existing evidence checks remain regression verification, not the novel evidence.

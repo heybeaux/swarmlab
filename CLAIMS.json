@@ -2758,5 +2758,123 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 35 pre-registered at 6777eae. Baseline and post-fix use the exact same ten scenarios and seed. Reserved holdout remains unused."
+  },
+  {
+    "id": "RT-21",
+    "claim": "A shared transactional execution-permit store prevents cross-host replay and duplicate finalization that local filesystem permits cannot prevent.",
+    "experiment": "experiments/30-distributed-execution-permit-store",
+    "spec": "specs/36-distributed-execution-permit-store.md",
+    "runIds": [
+      "dps-mttq7j53",
+      "dps-mttq9s83"
+    ],
+    "tracePaths": [
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedCrossHostReplayExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedConcurrentDuplicateExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedInvalidBurnReplayExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedDuplicateCreationAdmissionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedStorageFailureExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedDistributedAccuracy",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedSharedStoreApiAvailability",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedCrossHostReplayExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedConcurrentDuplicateExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedInvalidBurnReplayExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedDuplicateCreationAdmissionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedStorageFailureExecutionRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedLegitimateExecutionBlockRate",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedDistributedAccuracy",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedSharedStoreApiAvailability",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedCrossHostReplayExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedConcurrentDuplicateExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedInvalidBurnReplayExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedDuplicateCreationAdmissionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedStorageFailureExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedDistributedAccuracy": {
+        "equals": 0.2857142857142857,
+        "tolerance": 1e-12
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq7j53.jsonl#last.aegisWrappedSharedStoreApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedCrossHostReplayExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedConcurrentDuplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedInvalidBurnReplayExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedDuplicateCreationAdmissionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedStorageFailureExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedLegitimateExecutionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedDistributedAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedSharedStoreApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/30-distributed-execution-permit-store/runs/dps-mttq9s83.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/30-distributed-execution-permit-store/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Require host-provided atomic create-if-absent and destructive take for globally one-shot permits; fail closed on missing, duplicate, invalid, replayed, or unavailable storage.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-08-exp30-aegis",
+        "commits": [
+          "1c79f8d00e1108fcf477c3a3fe734cfc788caed5"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 36 pre-registered at a59ed2e before output. Exact seven scenarios and seed used before/after. Deterministic in-memory transactional adapter proves the contract, not a production database. Holdout remains unused."
   }
 ]
