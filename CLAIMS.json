@@ -2869,9 +2869,12 @@
         "package": "@heybeaux/aegis-hook",
         "branch": "nori/2026-09-08-exp30-aegis",
         "commits": [
-          "1c79f8d00e1108fcf477c3a3fe734cfc788caed5"
+          "1c79f8d00e1108fcf477c3a3fe734cfc788caed5",
+          "a9b5c7a"
         ],
-        "prs": []
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/31"
+        ]
       }
     ],
     "evidenceStatus": "verified",
