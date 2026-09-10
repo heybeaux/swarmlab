@@ -144,13 +144,13 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
       return result;
     };
 
-    if (id === 'normal-commit') await invoke('op-normal');
-    if (id === 'precommit-failure-retry') { store.precommitFailures = 1; await invoke('op-pre-fail'); await invoke('op-pre-retry'); }
-    if (id === 'postcommit-timeout-reconcile') { store.postcommitTimeouts = 1; await invoke('op-post-timeout'); }
-    if (id === 'postcommit-timeout-cross-host-retry') { store.postcommitTimeouts = 1; await invoke('op-original'); await invoke('op-other-host'); }
-    if (id === 'status-unavailable') { store.postcommitTimeouts = 1; store.reconciliationFailures = 1; await invoke('op-status-down'); }
-    if (id === 'invalid-snapshot-postcommit') { store.postcommitTimeouts = 1; await invoke('op-invalid', snapshot(permit.approvalId, false)); await invoke('op-invalid-retry'); }
-    if (id === 'duplicate-reconcile') { store.postcommitTimeouts = 1; await invoke('op-duplicate'); await invoke('op-duplicate'); }
+    if (id === 'normal-commit') await invoke('op_normal');
+    if (id === 'precommit-failure-retry') { store.precommitFailures = 1; await invoke('op_pre_fail'); await invoke('op_pre_retry'); }
+    if (id === 'postcommit-timeout-reconcile') { store.postcommitTimeouts = 1; await invoke('op_post_timeout'); }
+    if (id === 'postcommit-timeout-cross-host-retry') { store.postcommitTimeouts = 1; await invoke('op_original'); await invoke('op_other_host'); }
+    if (id === 'status-unavailable') { store.postcommitTimeouts = 1; store.reconciliationFailures = 1; await invoke('op_status_down'); }
+    if (id === 'invalid-snapshot-postcommit') { store.postcommitTimeouts = 1; await invoke('op_invalid', snapshot(permit.approvalId, false)); await invoke('op_invalid-retry'); }
+    if (id === 'duplicate-reconcile') { store.postcommitTimeouts = 1; await invoke('op_duplicate'); await invoke('op_duplicate'); }
 
     const expectedExecutions = ['normal-commit', 'precommit-failure-retry', 'postcommit-timeout-reconcile', 'postcommit-timeout-cross-host-retry', 'duplicate-reconcile'].includes(id) ? 1 : 0;
     const expectedOutcome: Outcome = id === 'status-unavailable' ? 'indeterminate' : id === 'invalid-snapshot-postcommit' ? 'blocked' : id === 'postcommit-timeout-cross-host-retry' || id === 'duplicate-reconcile' ? 'blocked' : 'execute';
