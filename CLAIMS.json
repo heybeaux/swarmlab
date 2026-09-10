@@ -2879,5 +2879,116 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 36 pre-registered at a59ed2e before output. Exact seven scenarios and seed used before/after. Deterministic in-memory transactional adapter proves the contract, not a production database. Holdout remains unused."
+  },
+  {
+    "id": "RT-22",
+    "claim": "Operation-journal reconciliation preserves honest, globally one-shot permit ownership when a remote destructive take commits but its acknowledgement is lost.",
+    "experiment": "experiments/31-indeterminate-permit-take-reconciliation",
+    "spec": "specs/37-indeterminate-permit-take-reconciliation.md",
+    "runIds": [
+      "ipr-mtv5qhsb",
+      "ipr-mtv5qhur"
+    ],
+    "tracePaths": [
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedCommittedTakeOrphanRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedAmbiguityMisclassificationRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationApiAvailability",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedIdempotentReplaySafety",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedUnsafeDuplicateExecutionRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedCommittedTakeOrphanRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAmbiguityMisclassificationRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIndeterminateExecutionRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedLegitimateExecutionBlockRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationApiAvailability",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIdempotentReplaySafety"
+    ],
+    "expectedValues": {
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedCommittedTakeOrphanRate": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedAmbiguityMisclassificationRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedIdempotentReplaySafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedUnsafeDuplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedCommittedTakeOrphanRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAmbiguityMisclassificationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIndeterminateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedLegitimateExecutionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIdempotentReplaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/31-indeterminate-permit-take-reconciliation/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Require atomic permit-take plus operation-journal commit, stable operation IDs, destructive status claim, and explicit execute/blocked/indeterminate results; never collapse acknowledgement loss to boolean false.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-09-exp31-aegis",
+        "commits": [
+          "08e9b5e",
+          "fe59d2f",
+          "7de1622",
+          "0a62fec"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 37 pre-registered at 9f4ed9b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture is deterministic and proves the adapter contract, not a production database. Holdout unused."
   }
 ]

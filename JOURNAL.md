@@ -106,3 +106,7 @@ metadata—still owns the race.
 
 ### 2026-09-08 — exp-30 distributed execution-permit store
 Pre-registered Spec 36 at `a59ed2e` before implementation or output. Built a deterministic seven-scenario real-Aegis harness at `7ccdf0e`. Baseline `108e492` failed all five distributed unsafe classes as `dps-mttq7j53`; fixture control stayed green. Added shared transactional execution-permit store APIs and focused tests in Aegis `1c79f8d`; exact same roster reran green as `dps-mttq9s83`. Existing evidence checks remain regression verification, not the novel evidence.
+
+## 2026-09-09 — exp-31 indeterminate permit-take reconciliation
+
+Pre-registered Spec 37 at `9f4ed9b` before output. The new seven-scenario harness isolated a distributed-systems gap immediately after RT-21: Aegis's shared `take()` was globally atomic, but `catch { return false }` collapsed a response lost after commit into the same answer as a definite miss. Baseline `ipr-mtv5qhsb` orphaned three legitimate committed takes and misclassified the unavailable-status case, despite perfect ask/consume coverage. A deterministic operation journal stayed green. The smallest additive fix was not “retry harder”: stable operation IDs, atomic permit-removal+journal commit, destructive one-shot status claim, and an explicit `execute/blocked/indeterminate` result. Aegis `08e9b5e` reran the unchanged roster green as `ipr-mtv5qhur`. The honest boundary is sharp: this fixes permit ownership ambiguity before the effect; it does not prove a non-idempotent effect completed after Aegis returned `execute`.
