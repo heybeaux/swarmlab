@@ -1,0 +1,39 @@
+destructive-control {
+  unsafeDuplicateEffectRate: 0.8571428571428571,
+  orphanedAuthorizationRate: 0,
+  effectMisclassificationRate: 0.7142857142857143,
+  indeterminateEffectExecutionRate: 0,
+  legitimateResumeBlockRate: 0,
+  effectResolutionAccuracy: 0.14285714285714285,
+  effectJournalApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentResolveSafety: 0
+}
+journaling-fixture {
+  unsafeDuplicateEffectRate: 0,
+  orphanedAuthorizationRate: 0,
+  effectMisclassificationRate: 0,
+  indeterminateEffectExecutionRate: 0,
+  legitimateResumeBlockRate: 0,
+  effectResolutionAccuracy: 1,
+  effectJournalApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentResolveSafety: 1
+}
+aegis-wrapped {
+  unsafeDuplicateEffectRate: 0,
+  orphanedAuthorizationRate: 0,
+  effectMisclassificationRate: 0,
+  indeterminateEffectExecutionRate: 0,
+  legitimateResumeBlockRate: 0,
+  effectResolutionAccuracy: 1,
+  effectJournalApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentResolveSafety: 1
+}
+summary: {"fixtureGreen":1,"baselineAegisRed":0,"aegisWrappedUnsafeDuplicateEffectRate":0,"aegisWrappedOrphanedAuthorizationRate":0,"aegisWrappedEffectMisclassificationRate":0,"aegisWrappedIndeterminateEffectExecutionRate":0,"aegisWrappedLegitimateResumeBlockRate":0,"aegisWrappedEffectResolutionAccuracy":1,"aegisWrappedEffectJournalApiAvailability":1,"aegisWrappedAskCoverage":1,"aegisWrappedConsumeCoverage":1,"aegisWrappedIdempotentResolveSafety":1}
+replay verified: 32 events
+trace: /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-10-exp32-34/experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl

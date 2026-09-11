@@ -1209,3 +1209,28 @@ inside hosts that skip finalization or lie about current authority.
 RT-20's local atomic rename was not a global one-shot primitive. On two independent approval directories, baseline Aegis `108e492` admitted cross-host replay, concurrent duplicate finalization, invalid-burn retry, duplicate creation, and execution during shared-store unavailability (`dps-mttq7j53`; five unsafe rates `1`, accuracy `0.286`). A deterministic atomic-store fixture was fully green.
 
 Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` create-if-absent/destructive-take semantics through shared create/finalize APIs. Invalid snapshots burn the permit; replay, malformed IDs, duplicate create, and store failure fail closed; existing local APIs remain compatible. The unchanged scenarios reran green as `dps-mttq9s83` with all unsafe rates `0` and accuracy/API availability `1`. This proves the adapter contract with a deterministic transactional implementation, not the availability or correctness of any particular production database.
+
+### RT-22 — Indeterminate distributed permit takes need operation reconciliation (exp-31)
+
+- **Finding:** RT-21's remote atomic take was necessary but not sufficient. If the store commits its destructive take and the response is lost, `finalizeExecutionPermitWithStore()` returned boolean `false`; the caller could neither execute nor tell whether a retry was safe. Baseline real-Aegis run `ipr-mtv5qhsb` measured committed-take orphan `3/7`, ambiguity misclassification `1/7`, accuracy `3/7`, API availability `0`, and replay safety `0` while the operation-journal fixture was green.
+- **Change:** Aegis `08e9b5e` adds an additive reconciliation contract: stable operation IDs; host-atomic permit removal plus operation-journal insertion; destructive one-shot `claimPreparedTake`; and `execute | blocked | indeterminate` results. Invalid fresh authority burns the reconciled permit. Unavailable status is explicitly indeterminate, non-retryable, and never executable.
+- **Same-experiment proof:** pinned rerun `ipr-mtv5qhur` moved every unsafe/orphan/misclassification/legitimate-block rate to `0`, with accuracy, API availability, ask/consume coverage, and idempotent replay safety `1`.
+- **Boundary:** the host must provide a durable atomic journal and retain operation status. This closes ownership ambiguity before execution; arbitrary side-effect acknowledgement after `execute` remains a separate receipt/idempotency problem.
+
+### RT-23 — Post-authorization crash recovery needs a retained effect commitment journal (exp-32)
+
+- **Finding:** RT-22 stopped ownership ambiguity before returning `execute`, but destructively removed its only operation record at that exact point. Baseline `eecj-mtwe2v9f` therefore treated resumed missing state as `not_executed/retryable`, producing unsafe duplicates in `6/7` scenarios, effect misclassification in `5/7`, resolution accuracy `1/7`, API availability `0`, and replay safety `0` while the journal fixture stayed green.
+- **Change:** Aegis `72d800a` adds a retained effect-journal contract: atomic permit removal plus durable authorization creation, one-shot non-destructive initial claim, host-reported `started`/`committed` transitions, fresh-authority invalidation, and explicit `executed | not_executed | indeterminate` resolution. Exact same roster `eecj-mtweb62a` moved every unsafe/orphan/misclassification/indeterminate-execution/legitimate-block rate to `0`, with accuracy, API availability, ask/consume coverage, and idempotent resolution safety `1`.
+- **Boundary:** the host owns truthful durable storage and outcome reporting. A started non-transactional effect with no committed outcome is unknowable and remains `indeterminate`; the safe result is to block replay, not pretend Aegis made the external system transactional.
+
+### RT-24 — Retryable effect status is not a start lease (exp-33)
+
+- **Finding:** RT-23 made untouched effects distinguishable, but two callers could both read `not_executed/retryable` and act. Baseline `cesf-mtwekmqk` duplicated effects in `4/7` scenarios, executed during an indeterminate start in `1/7`, achieved start accuracy `3/7`, API availability `0`, and idempotent safety `5/7`; the atomic fixture was green.
+- **Change:** Aegis `6c78a98` adds `beginExecutionEffect()`, binding permit/operation identity, revalidating authority, burning invalid authorization, and atomically fencing `authorized → started`. Exact rerun `cesf-mtweks7l` scored every unsafe/block rate `0` and accuracy/API/coverage/idempotent safety `1`.
+- **Boundary:** the host must supply a linearizable CAS and invoke the boundary immediately before action. `not_executed` is an observation, never execution authority.
+
+### RT-25 — Effect completion needs bound verified receipts, not operation IDs alone (exp-34)
+
+- **Finding:** the raw `commitEffect(operationId)` callback could falsely convert a started/unknown effect into executed. Baseline `erb-mtweqq7o` produced false execution `6/8`, misbound commits `3/8`, unverified commits `2/8`, indeterminate-store execution `1/8`, accuracy `2/8`, and API availability `0`; the receipt fixture stayed green.
+- **Change:** Aegis `4107b2e` adds `completeExecutionEffect()` with exact permit/approval/operation binding, strict receipt digest validation, explicit verification, and atomic first-receipt persistence/conflict handling. Exact rerun `erb-mtweqxk3` moved every unsafe/block rate to `0` and accuracy/API/coverage/idempotent safety to `1`.
+- **Boundary:** Aegis validates attribution and evidence presence. Desired-state inspection and truthful verification remain host-owned.

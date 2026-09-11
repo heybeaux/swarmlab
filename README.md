@@ -122,7 +122,7 @@ Traces land in `experiments/NN-*/runs/` and are read back deterministically by
 ## Status
 
 Built by the autonomous team, in order: `core/` → `observatory/` → experiments
-`01`–`17`, plus retest specs 14–18 and follow-on specs 19–23. Progress is committed
-and pushed to `origin/main` after every green unit, so `git log` is the live build feed.
-Check `JOURNAL.md`, `SYNTHESIS.md`, and the North Star roadmap for the findings and
-next dispatchable work.
+`01`–`34`, including the Aegis retest chain through RT-25. The machine ledger currently contains
+25 verified claims backed by 51 admitted traces and 490 exact score assertions. Progress is
+committed after every green unit; check `JOURNAL.md`, `SYNTHESIS.md`, and the claims ledger for the
+findings and current capability boundaries.

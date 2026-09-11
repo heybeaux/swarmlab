@@ -26,6 +26,13 @@ export interface RunSummary {
   endedAt: number | null;
 }
 
+export interface EvidenceSummary {
+  verifiedClaims: number;
+  traceCount: number;
+  assertionCount: number;
+  latestClaimId: string | null;
+}
+
 export interface ExperimentSummary {
   id: string;
   name: string;

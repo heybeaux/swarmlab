@@ -1,0 +1,36 @@
+resolution-only-control {
+  duplicateEffectRate: 0.5714285714285714,
+  unauthorizedStartRate: 0,
+  indeterminateStartExecutionRate: 0.14285714285714285,
+  legitimateStartBlockRate: 0,
+  startDecisionAccuracy: 0.42857142857142855,
+  startFenceApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentStartSafety: 0.7142857142857143
+}
+atomic-start-fixture {
+  duplicateEffectRate: 0,
+  unauthorizedStartRate: 0,
+  indeterminateStartExecutionRate: 0,
+  legitimateStartBlockRate: 0,
+  startDecisionAccuracy: 1,
+  startFenceApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentStartSafety: 1
+}
+aegis-wrapped {
+  duplicateEffectRate: 0,
+  unauthorizedStartRate: 0,
+  indeterminateStartExecutionRate: 0,
+  legitimateStartBlockRate: 0,
+  startDecisionAccuracy: 1,
+  startFenceApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentStartSafety: 1
+}
+summary: {"fixtureGreen":1,"baselineAegisRed":0,"aegisWrappedDuplicateEffectRate":0,"aegisWrappedUnauthorizedStartRate":0,"aegisWrappedIndeterminateStartExecutionRate":0,"aegisWrappedLegitimateStartBlockRate":0,"aegisWrappedStartDecisionAccuracy":1,"aegisWrappedStartFenceApiAvailability":1,"aegisWrappedAskCoverage":1,"aegisWrappedConsumeCoverage":1,"aegisWrappedIdempotentStartSafety":1}
+replay verified: 32 events
+trace: /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-10-exp32-34/experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl

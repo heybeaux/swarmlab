@@ -2879,5 +2879,440 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 36 pre-registered at a59ed2e before output. Exact seven scenarios and seed used before/after. Deterministic in-memory transactional adapter proves the contract, not a production database. Holdout remains unused."
+  },
+  {
+    "id": "RT-22",
+    "claim": "Operation-journal reconciliation preserves honest, globally one-shot permit ownership when a remote destructive take commits but its acknowledgement is lost.",
+    "experiment": "experiments/31-indeterminate-permit-take-reconciliation",
+    "spec": "specs/37-indeterminate-permit-take-reconciliation.md",
+    "runIds": [
+      "ipr-mtv5qhsb",
+      "ipr-mtv5qhur"
+    ],
+    "tracePaths": [
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedCommittedTakeOrphanRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedAmbiguityMisclassificationRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationApiAvailability",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedIdempotentReplaySafety",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedUnsafeDuplicateExecutionRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedCommittedTakeOrphanRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAmbiguityMisclassificationRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIndeterminateExecutionRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedLegitimateExecutionBlockRate",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationApiAvailability",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIdempotentReplaySafety"
+    ],
+    "expectedValues": {
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedCommittedTakeOrphanRate": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedAmbiguityMisclassificationRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedReconciliationApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl#last.aegisWrappedIdempotentReplaySafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedUnsafeDuplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedCommittedTakeOrphanRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAmbiguityMisclassificationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIndeterminateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedLegitimateExecutionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedReconciliationApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhur.jsonl#last.aegisWrappedIdempotentReplaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/31-indeterminate-permit-take-reconciliation/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Require atomic permit-take plus operation-journal commit, stable operation IDs, destructive status claim, and explicit execute/blocked/indeterminate results; never collapse acknowledgement loss to boolean false.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-09-exp31-aegis",
+        "commits": [
+          "08e9b5e",
+          "fe59d2f",
+          "7de1622",
+          "0a62fec"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 37 pre-registered at 9f4ed9b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture is deterministic and proves the adapter contract, not a production database. Holdout unused."
+  },
+  {
+    "id": "RT-23",
+    "claim": "A retained effect-commitment journal preserves honest post-authorization crash recovery without duplicating committed effects or orphaning untouched authorization.",
+    "experiment": "experiments/32-execution-effect-commitment-journal",
+    "spec": "specs/38-execution-effect-commitment-journal.md",
+    "runIds": [
+      "eecj-mtwe2v9f",
+      "eecj-mtweb62a"
+    ],
+    "tracePaths": [
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectMisclassificationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectResolutionAccuracy",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectJournalApiAvailability",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedIdempotentResolveSafety",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedOrphanedAuthorizationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectMisclassificationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIndeterminateEffectExecutionRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedLegitimateResumeBlockRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectResolutionAccuracy",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectJournalApiAvailability",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIdempotentResolveSafety"
+    ],
+    "expectedValues": {
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate": {
+        "equals": 0.8571428571428571,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectMisclassificationRate": {
+        "equals": 0.7142857142857143,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectResolutionAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectJournalApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedIdempotentResolveSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedOrphanedAuthorizationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectMisclassificationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIndeterminateEffectExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedLegitimateResumeBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectJournalApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIdempotentResolveSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/32-execution-effect-commitment-journal/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Atomically consume permits into durable effect records; make initial authorization claim one-shot but non-destructive; persist started/committed outcome state; classify resume as executed/not_executed/indeterminate and never retry indeterminate effects.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "72d800a"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 38 pre-registered at 34f3906 before baseline output. Same seven scenarios and seed reran against real built Aegis. The deterministic fixture proves the adapter contract, not a production database. A started non-transactional effect remains honestly indeterminate. Holdout unused."
+  },
+  {
+    "id": "RT-24",
+    "claim": "A fresh-authority-checked atomic effect-start fence authorizes exactly one caller when crashed and resumed hosts race from the same retained authorization.",
+    "experiment": "experiments/33-concurrent-effect-start-fencing",
+    "spec": "specs/39-concurrent-effect-start-fencing.md",
+    "runIds": [
+      "cesf-mtwekmqk",
+      "cesf-mtweks7l"
+    ],
+    "tracePaths": [
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedDuplicateEffectRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIndeterminateStartExecutionRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartDecisionAccuracy",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartFenceApiAvailability",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIdempotentStartSafety",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedDuplicateEffectRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedUnauthorizedStartRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIndeterminateStartExecutionRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedLegitimateStartBlockRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartDecisionAccuracy",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartFenceApiAvailability",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIdempotentStartSafety"
+    ],
+    "expectedValues": {
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedDuplicateEffectRate": {
+        "equals": 0.5714285714285714,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIndeterminateStartExecutionRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartDecisionAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartFenceApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIdempotentStartSafety": {
+        "equals": 0.7142857142857143,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedDuplicateEffectRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedUnauthorizedStartRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIndeterminateStartExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedLegitimateStartBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartDecisionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartFenceApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIdempotentStartSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<rt23-aegis> AEGIS_DIST=<rt23-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<rt23-aegis>/packages/aegis-hook/dist/index.js node experiments/33-concurrent-effect-start-fencing/dist/main.js; repeat with RT-24 patched Aegis paths",
+    "stackRecommendation": "Require hosts to call an Aegis-governed, fresh-authority-checked, linearizable authorized-to-started transition immediately before every side effect; never treat not_executed as execution permission.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "6c78a98"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 39 pre-registered at d0b711b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture proves adapter semantics, not a production database. Holdout unused."
+  },
+  {
+    "id": "RT-25",
+    "claim": "Exact permit/approval/operation binding plus a verified desired-state receipt prevents stale, misrouted, or unverified callbacks from falsely committing execution effects.",
+    "experiment": "experiments/34-effect-outcome-receipt-binding",
+    "spec": "specs/40-effect-outcome-receipt-binding.md",
+    "runIds": [
+      "erb-mtweqq7o",
+      "erb-mtweqxk3"
+    ],
+    "tracePaths": [
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedFalseExecutedRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedMisboundCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedUnverifiedCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionAccuracy",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionApiAvailability",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedFalseExecutedRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedMisboundCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedUnverifiedCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedLegitimateCompletionBlockRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionAccuracy",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionApiAvailability",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIdempotentCompletionSafety"
+    ],
+    "expectedValues": {
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedFalseExecutedRate": {
+        "equals": 0.75,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedMisboundCommitRate": {
+        "equals": 0.375,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedUnverifiedCommitRate": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate": {
+        "equals": 0.125,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionAccuracy": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedFalseExecutedRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedMisboundCommitRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedUnverifiedCommitRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedLegitimateCompletionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIdempotentCompletionSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<rt24-aegis> AEGIS_DIST=<rt24-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<rt24-aegis>/packages/aegis-hook/dist/index.js node experiments/34-effect-outcome-receipt-binding/dist/main.js; repeat with RT-25 patched Aegis paths",
+    "stackRecommendation": "Require every terminal effect transition to carry exact permit/approval/operation identity and an independently verified desired-state receipt digest; persist the first terminal receipt atomically and reject conflicts.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "4107b2e"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 40 pre-registered at c652436 before baseline output. Same eight scenarios and seed reran against real built Aegis. Aegis validates attribution/evidence shape; host truthfulness and desired-state inspection remain host-owned. Holdout unused."
   }
 ]

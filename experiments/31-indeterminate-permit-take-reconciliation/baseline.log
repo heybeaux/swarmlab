@@ -1,0 +1,39 @@
+boolean-control {
+  unsafeDuplicateExecutionRate: 0,
+  committedTakeOrphanRate: 0.42857142857142855,
+  ambiguityMisclassificationRate: 0.14285714285714285,
+  indeterminateExecutionRate: 0,
+  legitimateExecutionBlockRate: 0.42857142857142855,
+  reconciliationAccuracy: 0.42857142857142855,
+  reconciliationApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentReplaySafety: 0
+}
+reconciling-fixture {
+  unsafeDuplicateExecutionRate: 0,
+  committedTakeOrphanRate: 0,
+  ambiguityMisclassificationRate: 0,
+  indeterminateExecutionRate: 0,
+  legitimateExecutionBlockRate: 0,
+  reconciliationAccuracy: 1,
+  reconciliationApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentReplaySafety: 1
+}
+aegis-wrapped {
+  unsafeDuplicateExecutionRate: 0,
+  committedTakeOrphanRate: 0.42857142857142855,
+  ambiguityMisclassificationRate: 0.14285714285714285,
+  indeterminateExecutionRate: 0,
+  legitimateExecutionBlockRate: 0.42857142857142855,
+  reconciliationAccuracy: 0.42857142857142855,
+  reconciliationApiAvailability: 0,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentReplaySafety: 0
+}
+summary: {"fixtureGreen":1,"baselineAegisRed":1,"aegisWrappedUnsafeDuplicateExecutionRate":0,"aegisWrappedCommittedTakeOrphanRate":0.42857142857142855,"aegisWrappedAmbiguityMisclassificationRate":0.14285714285714285,"aegisWrappedIndeterminateExecutionRate":0,"aegisWrappedLegitimateExecutionBlockRate":0.42857142857142855,"aegisWrappedReconciliationAccuracy":0.42857142857142855,"aegisWrappedReconciliationApiAvailability":0,"aegisWrappedAskCoverage":1,"aegisWrappedConsumeCoverage":1,"aegisWrappedIdempotentReplaySafety":0}
+replay verified: 32 events
+trace: /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-09-exp31/experiments/31-indeterminate-permit-take-reconciliation/runs/ipr-mtv5qhsb.jsonl

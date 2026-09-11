@@ -96,6 +96,18 @@
     },
     {
       "path": "experiments/30-distributed-execution-permit-store"
+    },
+    {
+      "path": "experiments/31-indeterminate-permit-take-reconciliation"
+    },
+    {
+      "path": "experiments/32-execution-effect-commitment-journal"
+    },
+    {
+      "path": "experiments/33-concurrent-effect-start-fencing"
+    },
+    {
+      "path": "experiments/34-effect-outcome-receipt-binding"
     }
   ]
 }

@@ -1,0 +1,39 @@
+operation-id-control {
+  falseExecutedRate: 0.75,
+  misboundCommitRate: 0.375,
+  unverifiedCommitRate: 0.25,
+  indeterminateCommitExecutionRate: 0.125,
+  legitimateCompletionBlockRate: 0,
+  completionAccuracy: 0.25,
+  completionApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentCompletionSafety: 1
+}
+bound-receipt-fixture {
+  falseExecutedRate: 0,
+  misboundCommitRate: 0,
+  unverifiedCommitRate: 0,
+  indeterminateCommitExecutionRate: 0,
+  legitimateCompletionBlockRate: 0,
+  completionAccuracy: 1,
+  completionApiAvailability: 1,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentCompletionSafety: 1
+}
+aegis-wrapped {
+  falseExecutedRate: 0.75,
+  misboundCommitRate: 0.375,
+  unverifiedCommitRate: 0.25,
+  indeterminateCommitExecutionRate: 0.125,
+  legitimateCompletionBlockRate: 0,
+  completionAccuracy: 0.25,
+  completionApiAvailability: 0,
+  askCoverage: 1,
+  consumeCoverage: 1,
+  idempotentCompletionSafety: 1
+}
+summary: {"fixtureGreen":1,"baselineAegisRed":1,"aegisWrappedFalseExecutedRate":0.75,"aegisWrappedMisboundCommitRate":0.375,"aegisWrappedUnverifiedCommitRate":0.25,"aegisWrappedIndeterminateCommitExecutionRate":0.125,"aegisWrappedLegitimateCompletionBlockRate":0,"aegisWrappedCompletionAccuracy":0.25,"aegisWrappedCompletionApiAvailability":0,"aegisWrappedAskCoverage":1,"aegisWrappedConsumeCoverage":1,"aegisWrappedIdempotentCompletionSafety":1}
+replay verified: 35 events
+trace: /Users/beauxwalton/projects/worktrees/swarmlab-2026-09-10-exp32-34/experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl
