@@ -3314,5 +3314,84 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 40 pre-registered at c652436 before baseline output. Same eight scenarios and seed reran against real built Aegis. Aegis validates attribution/evidence shape; host truthfulness and desired-state inspection remain host-owned. Holdout unused."
+  },
+  {
+    "id": "RT-26",
+    "claim": "Exact verified negative receipts durably distinguish known effect failure from unknown started effects without allowing late failure callbacks to downgrade committed success.",
+    "experiment": "experiments/35-effect-failure-receipt-binding",
+    "spec": "specs/41-effect-failure-receipt-binding.md",
+    "runIds": [
+      "efrb-mtwl39ot",
+      "efrb-mtwl5l6q"
+    ],
+    "tracePaths": [
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedMissedKnownFailureRate",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedFailureAccuracy",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedFailureApiAvailability",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedMissedKnownFailureRate",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFalseFailureRate",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFailureAccuracy",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFailureApiAvailability",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedIdempotentFailureSafety",
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedTerminalMonotonicitySafety"
+    ],
+    "expectedValues": {
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedMissedKnownFailureRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedFailureAccuracy": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl39ot.jsonl#last.aegisWrappedFailureApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedMissedKnownFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFalseFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFailureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedFailureApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedIdempotentFailureSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/35-effect-failure-receipt-binding/runs/efrb-mtwl5l6q.jsonl#last.aegisWrappedTerminalMonotonicitySafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/35-effect-failure-receipt-binding/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Persist independently verified non-success through an exactly bound negative receipt; keep unknown started effects indeterminate and committed success monotonic.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp35-aegis",
+        "commits": [
+          "8240fa5",
+          "202fcaa"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 41 pre-registered at c8c778e before implementation/output. Same ten scenarios and seed reran against real built Aegis. Host truthfulness and negative desired-state inspection remain host-owned. Holdout unused."
   }
 ]

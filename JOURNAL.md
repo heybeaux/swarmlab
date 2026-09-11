@@ -122,3 +122,7 @@ Pre-registered Spec 39 at `d0b711b`. RT-23's durable `not_executed/retryable` an
 ## 2026-09-10 — exp-34 effect-outcome receipt binding
 
 Pre-registered Spec 40 at `c652436`. RT-23/24 made the effect journal durable and start atomic, but `commitEffect(operationId)` remained a bearer callback: any holder of the operation ID could turn started/unknown into executed. Baseline `erb-mtweqq7o` falsely committed six of eight invalid cases; the bound-receipt fixture was green. Aegis `4107b2e` adds exact permit/approval/operation binding, strict receipt digest shape, explicit host verification, and atomic first-receipt terminal persistence with exact duplicate replay. Unchanged `erb-mtweqxk3` went fully green. This closes attribution, not epistemology: the host must actually inspect desired state and can still lie about `verified`.
+
+## 2026-09-10 — exp-35 effect-failure receipt binding
+
+Pre-registered Spec 41 at `c8c778e` before implementation or output. RT-23 deliberately kept unknown started effects indeterminate and RT-25 receipt-bound success, but known, independently verified non-success had no terminal path. Baseline `efrb-mtwl39ot` missed both known-failure scenarios and could not replay negative truth. Aegis `8240fa5` adds strict negative receipt binding, durable failed state, idempotent exact replay, and committed-success monotonicity. The exact ten-scenario roster reran green as `efrb-mtwl5l6q`. The important non-claim: a timeout is not proof of failure; unknown external outcomes remain indeterminate.
