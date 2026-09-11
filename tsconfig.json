@@ -102,6 +102,9 @@
     },
     {
       "path": "experiments/32-execution-effect-commitment-journal"
+    },
+    {
+      "path": "experiments/33-concurrent-effect-start-fencing"
     }
   ]
 }

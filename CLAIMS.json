@@ -3098,5 +3098,108 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 38 pre-registered at 34f3906 before baseline output. Same seven scenarios and seed reran against real built Aegis. The deterministic fixture proves the adapter contract, not a production database. A started non-transactional effect remains honestly indeterminate. Holdout unused."
+  },
+  {
+    "id": "RT-24",
+    "claim": "A fresh-authority-checked atomic effect-start fence authorizes exactly one caller when crashed and resumed hosts race from the same retained authorization.",
+    "experiment": "experiments/33-concurrent-effect-start-fencing",
+    "spec": "specs/39-concurrent-effect-start-fencing.md",
+    "runIds": [
+      "cesf-mtwekmqk",
+      "cesf-mtweks7l"
+    ],
+    "tracePaths": [
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedDuplicateEffectRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIndeterminateStartExecutionRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartDecisionAccuracy",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartFenceApiAvailability",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIdempotentStartSafety",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedDuplicateEffectRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedUnauthorizedStartRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIndeterminateStartExecutionRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedLegitimateStartBlockRate",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartDecisionAccuracy",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartFenceApiAvailability",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIdempotentStartSafety"
+    ],
+    "expectedValues": {
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedDuplicateEffectRate": {
+        "equals": 0.5714285714285714,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIndeterminateStartExecutionRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartDecisionAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedStartFenceApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtwekmqk.jsonl#last.aegisWrappedIdempotentStartSafety": {
+        "equals": 0.7142857142857143,
+        "tolerance": 1e-12
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedDuplicateEffectRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedUnauthorizedStartRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIndeterminateStartExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedLegitimateStartBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartDecisionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedStartFenceApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/33-concurrent-effect-start-fencing/runs/cesf-mtweks7l.jsonl#last.aegisWrappedIdempotentStartSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<rt23-aegis> AEGIS_DIST=<rt23-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<rt23-aegis>/packages/aegis-hook/dist/index.js node experiments/33-concurrent-effect-start-fencing/dist/main.js; repeat with RT-24 patched Aegis paths",
+    "stackRecommendation": "Require hosts to call an Aegis-governed, fresh-authority-checked, linearizable authorized-to-started transition immediately before every side effect; never treat not_executed as execution permission.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "6c78a98"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 39 pre-registered at d0b711b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture proves adapter semantics, not a production database. Holdout unused."
   }
 ]
