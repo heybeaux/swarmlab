@@ -17,6 +17,13 @@
   </p>
 </section>
 
+<section class="evidence" aria-label="Evidence ledger summary">
+  <div><strong>{data.evidence.verifiedClaims}</strong><span>verified claims</span></div>
+  <div><strong>{data.evidence.traceCount}</strong><span>admitted traces</span></div>
+  <div><strong>{data.evidence.assertionCount}</strong><span>score assertions</span></div>
+  {#if data.evidence.latestClaimId}<div><strong>{data.evidence.latestClaimId}</strong><span>latest Aegis retest</span></div>{/if}
+</section>
+
 {#if data.experiments.length === 0}
   <p class="empty mono">No experiments found in <code>experiments/</code>.</p>
 {:else}
@@ -53,6 +60,25 @@
     color: var(--ink-dim);
     margin: 0;
   }
+  .evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    margin: -14px 0 32px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--line);
+  }
+  .evidence div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 14px 18px;
+    background: var(--bg-raised);
+  }
+  .evidence strong { color: var(--violet); font-family: var(--mono); font-size: 18px; }
+  .evidence span { color: var(--ink-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

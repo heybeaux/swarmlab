@@ -4,6 +4,7 @@ import { marked } from 'marked';
 import type {
   ExperimentDetail,
   ExperimentSummary,
+  EvidenceSummary,
   RunSummary,
   TraceEvent
 } from '$lib/types';
@@ -11,6 +12,7 @@ import type {
 /** Monorepo root: observatory/ lives one level below it. */
 const LAB_ROOT = resolve(process.cwd(), '..');
 const EXPERIMENTS_DIR = join(LAB_ROOT, 'experiments');
+const CLAIMS_PATH = join(LAB_ROOT, 'CLAIMS.json');
 
 const ID_RE = /^[\w.-]+$/;
 
@@ -90,6 +92,26 @@ function summarizeRun(id: string, file: string, events: TraceEvent[]): RunSummar
     startedAt: events.length ? events[0].ts : null,
     endedAt: events.length ? events[events.length - 1].ts : null
   };
+}
+
+export async function getEvidenceSummary(): Promise<EvidenceSummary> {
+  try {
+    const claims = JSON.parse(await readFile(CLAIMS_PATH, 'utf8')) as Array<{
+      id?: string;
+      evidenceStatus?: string;
+      tracePaths?: string[];
+      scoreFields?: string[];
+    }>;
+    const verified = claims.filter((claim) => claim.evidenceStatus === 'verified');
+    return {
+      verifiedClaims: verified.length,
+      traceCount: new Set(verified.flatMap((claim) => claim.tracePaths ?? [])).size,
+      assertionCount: verified.reduce((sum, claim) => sum + (claim.scoreFields?.length ?? 0), 0),
+      latestClaimId: verified.at(-1)?.id ?? null
+    };
+  } catch {
+    return { verifiedClaims: 0, traceCount: 0, assertionCount: 0, latestClaimId: null };
+  }
 }
 
 export async function listExperiments(): Promise<ExperimentSummary[]> {

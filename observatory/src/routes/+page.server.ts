@@ -1,6 +1,7 @@
-import { listExperiments } from '$lib/server/lab';
+import { getEvidenceSummary, listExperiments } from '$lib/server/lab';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-  return { experiments: await listExperiments() };
+  const [experiments, evidence] = await Promise.all([listExperiments(), getEvidenceSummary()]);
+  return { experiments, evidence };
 };
