@@ -99,6 +99,9 @@
     },
     {
       "path": "experiments/31-indeterminate-permit-take-reconciliation"
+    },
+    {
+      "path": "experiments/32-execution-effect-commitment-journal"
     }
   ]
 }

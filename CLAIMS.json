@@ -2990,5 +2990,113 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 37 pre-registered at 9f4ed9b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture is deterministic and proves the adapter contract, not a production database. Holdout unused."
+  },
+  {
+    "id": "RT-23",
+    "claim": "A retained effect-commitment journal preserves honest post-authorization crash recovery without duplicating committed effects or orphaning untouched authorization.",
+    "experiment": "experiments/32-execution-effect-commitment-journal",
+    "spec": "specs/38-execution-effect-commitment-journal.md",
+    "runIds": [
+      "eecj-mtwe2v9f",
+      "eecj-mtweb62a"
+    ],
+    "tracePaths": [
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectMisclassificationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectResolutionAccuracy",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectJournalApiAvailability",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedIdempotentResolveSafety",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedOrphanedAuthorizationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectMisclassificationRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIndeterminateEffectExecutionRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedLegitimateResumeBlockRate",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectResolutionAccuracy",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectJournalApiAvailability",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIdempotentResolveSafety"
+    ],
+    "expectedValues": {
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate": {
+        "equals": 0.8571428571428571,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectMisclassificationRate": {
+        "equals": 0.7142857142857143,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectResolutionAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 1e-12
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedEffectJournalApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtwe2v9f.jsonl#last.aegisWrappedIdempotentResolveSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedUnsafeDuplicateEffectRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedOrphanedAuthorizationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectMisclassificationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIndeterminateEffectExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedLegitimateResumeBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedEffectJournalApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/32-execution-effect-commitment-journal/runs/eecj-mtweb62a.jsonl#last.aegisWrappedIdempotentResolveSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/32-execution-effect-commitment-journal/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Atomically consume permits into durable effect records; make initial authorization claim one-shot but non-destructive; persist started/committed outcome state; classify resume as executed/not_executed/indeterminate and never retry indeterminate effects.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "72d800a"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 38 pre-registered at 34f3906 before baseline output. Same seven scenarios and seed reran against real built Aegis. The deterministic fixture proves the adapter contract, not a production database. A started non-transactional effect remains honestly indeterminate. Holdout unused."
   }
 ]
