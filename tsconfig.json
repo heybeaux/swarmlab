@@ -108,6 +108,9 @@
     },
     {
       "path": "experiments/34-effect-outcome-receipt-binding"
+    },
+    {
+      "path": "experiments/35-effect-failure-receipt-binding"
     }
   ]
 }
