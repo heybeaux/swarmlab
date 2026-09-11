@@ -105,6 +105,9 @@
     },
     {
       "path": "experiments/33-concurrent-effect-start-fencing"
+    },
+    {
+      "path": "experiments/34-effect-outcome-receipt-binding"
     }
   ]
 }

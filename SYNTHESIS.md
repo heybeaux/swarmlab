@@ -1228,3 +1228,9 @@ Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` c
 - **Finding:** RT-23 made untouched effects distinguishable, but two callers could both read `not_executed/retryable` and act. Baseline `cesf-mtwekmqk` duplicated effects in `4/7` scenarios, executed during an indeterminate start in `1/7`, achieved start accuracy `3/7`, API availability `0`, and idempotent safety `5/7`; the atomic fixture was green.
 - **Change:** Aegis `6c78a98` adds `beginExecutionEffect()`, binding permit/operation identity, revalidating authority, burning invalid authorization, and atomically fencing `authorized → started`. Exact rerun `cesf-mtweks7l` scored every unsafe/block rate `0` and accuracy/API/coverage/idempotent safety `1`.
 - **Boundary:** the host must supply a linearizable CAS and invoke the boundary immediately before action. `not_executed` is an observation, never execution authority.
+
+### RT-25 — Effect completion needs bound verified receipts, not operation IDs alone (exp-34)
+
+- **Finding:** the raw `commitEffect(operationId)` callback could falsely convert a started/unknown effect into executed. Baseline `erb-mtweqq7o` produced false execution `6/8`, misbound commits `3/8`, unverified commits `2/8`, indeterminate-store execution `1/8`, accuracy `2/8`, and API availability `0`; the receipt fixture stayed green.
+- **Change:** Aegis `4107b2e` adds `completeExecutionEffect()` with exact permit/approval/operation binding, strict receipt digest validation, explicit verification, and atomic first-receipt persistence/conflict handling. Exact rerun `erb-mtweqxk3` moved every unsafe/block rate to `0` and accuracy/API/coverage/idempotent safety to `1`.
+- **Boundary:** Aegis validates attribution and evidence presence. Desired-state inspection and truthful verification remain host-owned.

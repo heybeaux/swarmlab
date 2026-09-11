@@ -118,3 +118,7 @@ Pre-registered Spec 38 at `34f3906` before output. The seven-scenario harness is
 ## 2026-09-10 — exp-33 concurrent effect-start fencing
 
 Pre-registered Spec 39 at `d0b711b`. RT-23's durable `not_executed/retryable` answer was a read, not a lease: two resumers could both observe it and execute. Baseline `cesf-mtwekmqk` duplicated four of seven effects and even executed during an indeterminate start-store failure. The atomic fixture stayed green. Aegis `6c78a98` adds `beginExecutionEffect()`, revalidating authority and crossing a host-linearizable `authorized → started` compare-and-set immediately before action. Unchanged `cesf-mtweks7l` went fully green. The finding is mundane but load-bearing: status is not ownership; a read-side answer must never double as permission.
+
+## 2026-09-10 — exp-34 effect-outcome receipt binding
+
+Pre-registered Spec 40 at `c652436`. RT-23/24 made the effect journal durable and start atomic, but `commitEffect(operationId)` remained a bearer callback: any holder of the operation ID could turn started/unknown into executed. Baseline `erb-mtweqq7o` falsely committed six of eight invalid cases; the bound-receipt fixture was green. Aegis `4107b2e` adds exact permit/approval/operation binding, strict receipt digest shape, explicit host verification, and atomic first-receipt terminal persistence with exact duplicate replay. Unchanged `erb-mtweqxk3` went fully green. This closes attribution, not epistemology: the host must actually inspect desired state and can still lie about `verified`.

@@ -3201,5 +3201,118 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 39 pre-registered at d0b711b before baseline output. Same seven scenarios and seed reran against real built Aegis. Fixture proves adapter semantics, not a production database. Holdout unused."
+  },
+  {
+    "id": "RT-25",
+    "claim": "Exact permit/approval/operation binding plus a verified desired-state receipt prevents stale, misrouted, or unverified callbacks from falsely committing execution effects.",
+    "experiment": "experiments/34-effect-outcome-receipt-binding",
+    "spec": "specs/40-effect-outcome-receipt-binding.md",
+    "runIds": [
+      "erb-mtweqq7o",
+      "erb-mtweqxk3"
+    ],
+    "tracePaths": [
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedFalseExecutedRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedMisboundCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedUnverifiedCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionAccuracy",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionApiAvailability",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedFalseExecutedRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedMisboundCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedUnverifiedCommitRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedLegitimateCompletionBlockRate",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionAccuracy",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionApiAvailability",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIdempotentCompletionSafety"
+    ],
+    "expectedValues": {
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedFalseExecutedRate": {
+        "equals": 0.75,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedMisboundCommitRate": {
+        "equals": 0.375,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedUnverifiedCommitRate": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate": {
+        "equals": 0.125,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionAccuracy": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqq7o.jsonl#last.aegisWrappedCompletionApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedFalseExecutedRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedMisboundCommitRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedUnverifiedCommitRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIndeterminateCommitExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedLegitimateCompletionBlockRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedCompletionApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/34-effect-outcome-receipt-binding/runs/erb-mtweqxk3.jsonl#last.aegisWrappedIdempotentCompletionSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<rt24-aegis> AEGIS_DIST=<rt24-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<rt24-aegis>/packages/aegis-hook/dist/index.js node experiments/34-effect-outcome-receipt-binding/dist/main.js; repeat with RT-25 patched Aegis paths",
+    "stackRecommendation": "Require every terminal effect transition to carry exact permit/approval/operation identity and an independently verified desired-state receipt digest; persist the first terminal receipt atomically and reject conflicts.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-10-exp32-34-aegis",
+        "commits": [
+          "4107b2e"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 40 pre-registered at c652436 before baseline output. Same eight scenarios and seed reran against real built Aegis. Aegis validates attribution/evidence shape; host truthfulness and desired-state inspection remain host-owned. Holdout unused."
   }
 ]
