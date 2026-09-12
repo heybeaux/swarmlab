@@ -111,6 +111,9 @@
     },
     {
       "path": "experiments/35-effect-failure-receipt-binding"
+    },
+    {
+      "path": "experiments/36-terminal-receipt-acknowledgement-reconciliation"
     }
   ]
 }
