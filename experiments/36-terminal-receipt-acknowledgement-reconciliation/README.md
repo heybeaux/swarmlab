@@ -10,6 +10,8 @@ The frozen design has three arms (`exception-only-control`, `receipt-readback-fi
 
 Green requires zero committed receipt orphan, terminal misclassification, conflicting receipt acceptance, or pre-commit false-terminal rates; reconciliation accuracy/API availability/ask/consume/idempotent safety/terminal monotonicity/unavailable-read fail-closed safety must all equal 1. The holdout seed is reserved and unused. Exact commands and the ownership boundary are frozen in Spec 42.
 
-## Results
+## Result — current Aegis red, patched Aegis green
 
-Pending baseline execution.
+Baseline Aegis `6684917ee604b6902d2fc28685f1d036f79449c8` returned `indeterminate` after both exact terminal writes lost their acknowledgements. Pinned run `tra-mty0gffk` orphaned `2/10` committed receipts, misclassified `4/10` scenarios, and scored reconciliation accuracy `0.600`; the exact-readback fixture was fully green.
+
+Aegis `2238094466192389f7e9c075daf65369dbb1f974` adds one durable journal read after success/failure terminal-store exceptions and accepts only the exact bound receipt. The same roster reran as `tra-mty0hgii`: every unsafe/error rate `0`, and all accuracy/API/coverage/idempotent/monotonic/unavailable-read safety metrics `1`. Readback failure still returns `indeterminate`; a different terminal winner returns `blocked/receipt_conflict`.

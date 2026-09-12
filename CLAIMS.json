@@ -3393,5 +3393,94 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 41 pre-registered at c8c778e before implementation/output. Same ten scenarios and seed reran against real built Aegis. Host truthfulness and negative desired-state inspection remain host-owned. Holdout unused."
+  },
+  {
+    "id": "RT-27",
+    "claim": "Exact durable receipt readback reconciles terminal success/failure writes after post-commit acknowledgement loss without accepting a different concurrent terminal receipt.",
+    "experiment": "experiments/36-terminal-receipt-acknowledgement-reconciliation",
+    "spec": "specs/42-terminal-receipt-acknowledgement-reconciliation.md",
+    "runIds": [
+      "tra-mty0gffk",
+      "tra-mty0hgii"
+    ],
+    "tracePaths": [
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedCommittedReceiptOrphanRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedTerminalMisclassificationRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedCommittedReceiptOrphanRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedTerminalMisclassificationRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedConflictingReceiptAcceptanceRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedPrecommitFalseTerminalRate",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedReconciliationAccuracy",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedIdempotentReconciliationSafety",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedTerminalMonotonicitySafety",
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedUnavailableReadFailClosedSafety"
+    ],
+    "expectedValues": {
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedCommittedReceiptOrphanRate": {
+        "equals": 0.2,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedTerminalMisclassificationRate": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0gffk.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 0.6,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedCommittedReceiptOrphanRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedTerminalMisclassificationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedConflictingReceiptAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedPrecommitFalseTerminalRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedReconciliationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedIdempotentReconciliationSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedTerminalMonotonicitySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/36-terminal-receipt-acknowledgement-reconciliation/runs/tra-mty0hgii.jsonl#last.aegisWrappedUnavailableReadFailClosedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/36-terminal-receipt-acknowledgement-reconciliation/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "After a terminal-store exception, read the retained effect once and accept only an exact bound receipt match; conflicting terminal truth blocks, unavailable/non-terminal truth remains indeterminate.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-11-exp36-aegis",
+        "commits": [
+          "2238094",
+          "d096ef3"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 42 pre-registered at d983f63 before implementation/output. Same ten scenarios and seed reran against real built Aegis. Host atomicity, durable exact receipt retention, and linearizable readback remain host-owned. Holdout unused."
   }
 ]
