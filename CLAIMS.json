@@ -3482,5 +3482,98 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 42 pre-registered at d983f63 before implementation/output. Same ten scenarios and seed reran against real built Aegis. Host atomicity, durable exact receipt retention, and linearizable readback remain host-owned. Holdout unused."
+  },
+  {
+    "id": "RT-28",
+    "claim": "Effect reconciliation must validate terminal state and retained exact receipt as one coherent envelope before asserting terminal truth or retry authority.",
+    "experiment": "experiments/37-terminal-journal-integrity",
+    "spec": "specs/43-terminal-journal-integrity.md",
+    "runIds": [
+      "tji-mtzfwl8k",
+      "tji-mtzg16x0"
+    ],
+    "tracePaths": [
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedFalseTerminalCertaintyRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedUnsafeRetryRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedIntegrityClassificationErrorRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedFalseTerminalCertaintyRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedUnsafeRetryRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedIntegrityClassificationErrorRate",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCoherentSuccessPreservation",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCoherentFailurePreservation",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCleanRetryPreservation",
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedStartedFailClosedSafety"
+    ],
+    "expectedValues": {
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedFalseTerminalCertaintyRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedUnsafeRetryRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedIntegrityClassificationErrorRate": {
+        "equals": 0.7142857142857143,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzfwl8k.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.2857142857142857,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedFalseTerminalCertaintyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedUnsafeRetryRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedIntegrityClassificationErrorRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCoherentSuccessPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCoherentFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedCleanRetryPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/37-terminal-journal-integrity/runs/tji-mtzg16x0.jsonl#last.aegisWrappedStartedFailClosedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/37-terminal-journal-integrity/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Receipt-capable effect journals must expose one valid matching receipt for terminal state and no terminal fragments for nonterminal state; incoherence is indeterminate and non-retryable.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-12-exp37-aegis",
+        "commits": [
+          "625be09"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 43 pre-registered at 135a10f before implementation/output. Same fourteen scenarios and seed reran against real built Aegis. Legacy coarse commitEffect stores remain compatible unless they expose receipt capability. Holdout unused."
   }
 ]

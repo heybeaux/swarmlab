@@ -114,6 +114,9 @@
     },
     {
       "path": "experiments/36-terminal-receipt-acknowledgement-reconciliation"
+    },
+    {
+      "path": "experiments/37-terminal-journal-integrity"
     }
   ]
 }
