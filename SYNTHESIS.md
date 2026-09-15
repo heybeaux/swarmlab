@@ -1257,7 +1257,7 @@ Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` c
 
 ### RT-30 — Positive terminal-store results need durable attestation (exp-39)
 
-- **Finding:** exp-36 reconciled thrown terminal writes, but baseline `twa-mu2biamp` showed the normal positive-return branch trusted `committed`/`failed`/`already_*` without exact receipt readback: false-positive terminal rate `1`, wrong-receipt acceptance `1`, unverified-positive rate `1`, and accuracy `0.5`.
+- **Finding:** exp-36 reconciled thrown terminal writes, but baseline `twa-mu2brxy4` showed the normal positive-return branch trusted `committed`/`failed`/`already_*` without exact receipt readback: false-positive terminal rate `1`, wrong-receipt acceptance `1`, unverified-positive rate `1`, and accuracy `0.5`.
 - **Change:** Aegis `74cde86` now attests every positive success/failure store result through the retained journal. Only the exact fully bound receipt returns terminal certainty; different terminal truth conflicts, missing/nonterminal proof is `receipt_unverified`, and unavailable readback remains indeterminate. Definite conflict/not-started returns are preserved without readback.
-- **Same-experiment proof:** unchanged `twa-mu2bkf8p` moved all unsafe rates to `0` and accuracy/API/coverage/preservation/safety metrics to `1`.
+- **Same-experiment proof:** unchanged `twa-mu2bs3hc` moved all unsafe rates to `0` and accuracy/API/coverage/preservation/safety metrics to `1`.
 - **Boundary:** the host still owns atomic write semantics and durable read-after-write visibility. Aegis owns refusing to elevate an adapter enum above observable receipt truth.

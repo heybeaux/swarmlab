@@ -137,4 +137,4 @@ Pre-registered Spec 43 at `135a10f` before implementation or output. The fourtee
 
 ## 2026-09-14 — exp-39 terminal write attestation
 
-Pre-registered Spec 45 at `f6d4596` before implementation or output. The sixteen-scenario real-Aegis harness attacks a different branch than RT-27: terminal writes return a positive enum but omit, mismatch, or hide durable receipt truth. Baseline `twa-mu2biamp` trusted all positive results. Aegis `74cde86` adds exact readback attestation for both success and failure positive paths; the unchanged roster reran fully green as `twa-mu2bkf8p`. Existing evidence checks remain regression verification, not novel evidence.
+Pre-registered Spec 45 at `f6d4596` before implementation or output. The sixteen-scenario real-Aegis harness attacks a different branch than RT-27: terminal writes return a positive enum but omit, mismatch, or hide durable receipt truth. Baseline `twa-mu2brxy4` trusted all positive results. Aegis `74cde86` adds exact readback attestation for both success and failure positive paths; the unchanged roster reran fully green as `twa-mu2bs3hc`. Existing evidence checks remain regression verification, not novel evidence.

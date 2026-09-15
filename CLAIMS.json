@@ -3582,53 +3582,53 @@
     "experiment": "experiments/39-terminal-write-attestation",
     "spec": "specs/45-terminal-write-attestation.md",
     "runIds": [
-      "twa-mu2biamp",
-      "twa-mu2bkf8p"
+      "twa-mu2brxy4",
+      "twa-mu2bs3hc"
     ],
     "tracePaths": [
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl"
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl"
     ],
     "scoreFields": [
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedUnverifiedPositiveRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedResolutionAccuracy",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedUnverifiedPositiveRate",
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedResolutionAccuracy"
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedUnverifiedPositiveRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedUnverifiedPositiveRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedResolutionAccuracy"
     ],
     "expectedValues": {
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedResolutionAccuracy": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2brxy4.jsonl#last.aegisWrappedResolutionAccuracy": {
         "equals": 0.5,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedResolutionAccuracy": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bs3hc.jsonl#last.aegisWrappedResolutionAccuracy": {
         "equals": 1,
         "tolerance": 0
       }
@@ -3648,6 +3648,6 @@
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Spec 45 pre-registered at f6d4596 before implementation/output. Same sixteen scenarios and seed reran against real built Aegis. Holdout unused. GitHub push blocked by authenticated identity permissions."
+    "notes": "Spec 45 pre-registered at f6d4596 (commit-proven 2026-09-15T06:53:25Z) before implementation/output. Same frozen sixteen scenarios and seed reran against real built Aegis after a harness audit made the control arms execute their declared store transition and delayed read failure until terminal-write readback. Initial traces remain preserved but are superseded for claims. Holdout unused. GitHub push blocked by authenticated identity permissions."
   }
 ]
