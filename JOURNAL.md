@@ -134,3 +134,7 @@ Pre-registered Spec 42 at `d983f63` before implementation or output. The ten-sce
 ## 2026-09-12 — exp-37 terminal journal integrity
 
 Pre-registered Spec 43 at `135a10f` before implementation or output. The fourteen-scenario real-Aegis harness attacked a different seam than RT-27: read-side split brain between terminal state and its exact retained receipt. Baseline `tji-mtzfwl8k` trusted every incoherent terminal state and made one receipt-bearing authorized record retryable, while the deterministic coherence fixture stayed green. Aegis `625be09` validates receipt-capable journal records as one integrity envelope and fails incoherence closed; legacy coarse `commitEffect` adapters remain compatible. The exact roster reran fully green as `tji-mtzg16x0`. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-09-14 — exp-39 terminal write attestation
+
+Pre-registered Spec 45 at `f6d4596` before implementation or output. The sixteen-scenario real-Aegis harness attacks a different branch than RT-27: terminal writes return a positive enum but omit, mismatch, or hide durable receipt truth. Baseline `twa-mu2biamp` trusted all positive results. Aegis `74cde86` adds exact readback attestation for both success and failure positive paths; the unchanged roster reran fully green as `twa-mu2bkf8p`. Existing evidence checks remain regression verification, not novel evidence.

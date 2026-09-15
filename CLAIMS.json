@@ -3575,5 +3575,79 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 43 pre-registered at 135a10f before implementation/output. Same fourteen scenarios and seed reran against real built Aegis. Legacy coarse commitEffect stores remain compatible unless they expose receipt capability. Holdout unused."
+  },
+  {
+    "id": "RT-30",
+    "claim": "Positive terminal-store results require exact durable receipt attestation before Aegis may report executed or failed.",
+    "experiment": "experiments/39-terminal-write-attestation",
+    "spec": "specs/45-terminal-write-attestation.md",
+    "runIds": [
+      "twa-mu2biamp",
+      "twa-mu2bkf8p"
+    ],
+    "tracePaths": [
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedUnverifiedPositiveRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedFalsePositiveTerminalRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedUnverifiedPositiveRate",
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedResolutionAccuracy"
+    ],
+    "expectedValues": {
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2biamp.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedFalsePositiveTerminalRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedWrongReceiptAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedUnverifiedPositiveRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/39-terminal-write-attestation/runs/twa-mu2bkf8p.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/39-terminal-write-attestation/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Attest all positive success/failure store enums through exact durable receipt readback.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-14-exp39-aegis",
+        "commits": [
+          "74cde86",
+          "917bc33"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 45 pre-registered at f6d4596 before implementation/output. Same sixteen scenarios and seed reran against real built Aegis. Holdout unused. GitHub push blocked by authenticated identity permissions."
   }
 ]

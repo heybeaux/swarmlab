@@ -1254,3 +1254,10 @@ Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` c
 - **Change:** Aegis `625be09` validates receipt-capable journals as a coherent envelope: one valid exact success receipt for committed, one valid exact failure receipt for failed, and no terminal receipt fragments on nonterminal records. Incoherence becomes `indeterminate/journal_inconsistent`, never retryable; begin and lost-ack readback use the same validator. Legacy RT-23 coarse stores remain compatible until they expose a receipt API.
 - **Same-experiment proof:** unchanged `tji-mtzg16x0` moved all unsafe/error rates to `0` and accuracy/API/coverage/coherent-control preservation to `1`.
 - **Boundary:** the host still owns atomic persistence, linearizable reads, and repair. Aegis owns refusing to convert a violated host contract into terminal certainty or fresh execution authority.
+
+### RT-30 — Positive terminal-store results need durable attestation (exp-39)
+
+- **Finding:** exp-36 reconciled thrown terminal writes, but baseline `twa-mu2biamp` showed the normal positive-return branch trusted `committed`/`failed`/`already_*` without exact receipt readback: false-positive terminal rate `1`, wrong-receipt acceptance `1`, unverified-positive rate `1`, and accuracy `0.5`.
+- **Change:** Aegis `74cde86` now attests every positive success/failure store result through the retained journal. Only the exact fully bound receipt returns terminal certainty; different terminal truth conflicts, missing/nonterminal proof is `receipt_unverified`, and unavailable readback remains indeterminate. Definite conflict/not-started returns are preserved without readback.
+- **Same-experiment proof:** unchanged `twa-mu2bkf8p` moved all unsafe rates to `0` and accuracy/API/coverage/preservation/safety metrics to `1`.
+- **Boundary:** the host still owns atomic write semantics and durable read-after-write visibility. Aegis owns refusing to elevate an adapter enum above observable receipt truth.
