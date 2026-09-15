@@ -138,3 +138,7 @@ Pre-registered Spec 43 at `135a10f` before implementation or output. The fourtee
 ## 2026-09-13 — exp-38 monotonic journal revision
 
 Pre-registered Spec 44 at `e9c7c97` before implementation or output. The thirteen-scenario real-Aegis harness isolates causal replica rollback beyond RT-28's one-record coherence check. Baseline `mjr-mu0vdd5j` matched the replica-trusting control: coherent older authorized/started/burned or missing replica views were treated as current, including retry authority after newer terminal truth. Aegis `c474322` adds an optional authoritative revision-watermark contract and fails stale, impossible, and unavailable revision truth closed at resolve, begin, and post-CAS readback. The unchanged roster reran fully green as `mjr-mu0vempr`. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-09-14 — exp-39 terminal write attestation
+
+Pre-registered Spec 45 at `f6d4596` before implementation or output. The sixteen-scenario real-Aegis harness attacks a different branch than RT-27: terminal writes return a positive enum but omit, mismatch, or hide durable receipt truth. Baseline `twa-mu2brxy4` trusted all positive results. Aegis `74cde86` adds exact readback attestation for both success and failure positive paths; the unchanged roster reran fully green as `twa-mu2bs3hc`. Existing evidence checks remain regression verification, not novel evidence.
