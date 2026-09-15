@@ -119,6 +119,9 @@
       "path": "experiments/37-terminal-journal-integrity"
     },
     {
+      "path": "experiments/38-monotonic-journal-revision"
+    },
+    {
       "path": "experiments/39-terminal-write-attestation"
     }
   ]
