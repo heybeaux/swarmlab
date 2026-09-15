@@ -3575,5 +3575,138 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 43 pre-registered at 135a10f before implementation/output. Same fourteen scenarios and seed reran against real built Aegis. Legacy coarse commitEffect stores remain compatible unless they expose receipt capability. Holdout unused."
+  },
+  {
+    "id": "RT-29",
+    "claim": "Replica-visible effect records need monotonic authoritative revision validation; an internally coherent older record must not regain retry authority or override newer terminal truth.",
+    "experiment": "experiments/38-monotonic-journal-revision",
+    "spec": "specs/44-monotonic-journal-revision.md",
+    "runIds": [
+      "mjr-mu0vdd5j",
+      "mjr-mu0vempr"
+    ],
+    "tracePaths": [
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedStaleRetryAuthorityRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedStaleClassificationErrorRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedRevisionFailureUnsafeRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedRevisionApiAvailability",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentStartedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentCommittedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentFailedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedPostCasRollbackSafety",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedStaleRetryAuthorityRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedStaleClassificationErrorRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedRevisionFailureUnsafeRate",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedRevisionApiAvailability",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentStartedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentCommittedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentFailedPreservation",
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedPostCasRollbackSafety"
+    ],
+    "expectedValues": {
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedStaleRetryAuthorityRate": {
+        "equals": 0.3333333333333333,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedStaleClassificationErrorRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedRevisionFailureUnsafeRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.3076923076923077,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedRevisionApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentStartedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentCommittedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedCurrentFailedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vdd5j.jsonl#last.aegisWrappedPostCasRollbackSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedStaleRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedStaleClassificationErrorRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedRevisionFailureUnsafeRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedRevisionApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentStartedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentCommittedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedCurrentFailedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/38-monotonic-journal-revision/runs/mjr-mu0vempr.jsonl#last.aegisWrappedPostCasRollbackSafety": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/38-monotonic-journal-revision/dist/main.js; repeat with patched Aegis paths",
+    "stackRecommendation": "Revision-capable replicated effect journals must expose authoritative monotonic high-water truth; stale records and retained terminal tombstones fail closed and cannot authorize execution.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-13-exp38-aegis",
+        "commits": [
+          "c474322"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 44 pre-registered at e9c7c97 before implementation/output. Same thirteen scenarios and seed reran against real built Aegis. Legacy unrevisioned stores remain compatible. Holdout unused."
   }
 ]
