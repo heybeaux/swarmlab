@@ -142,3 +142,7 @@ Pre-registered Spec 44 at `e9c7c97` before implementation or output. The thirtee
 ## 2026-09-14 — exp-39 terminal write attestation
 
 Pre-registered Spec 45 at `f6d4596` before implementation or output. The sixteen-scenario real-Aegis harness attacks a different branch than RT-27: terminal writes return a positive enum but omit, mismatch, or hide durable receipt truth. Baseline `twa-mu2brxy4` trusted all positive results. Aegis `74cde86` adds exact readback attestation for both success and failure positive paths; the unchanged roster reran fully green as `twa-mu2bs3hc`. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-09-15 — exp-40 terminal receipt compaction proof
+
+Pre-registered Spec 46 at `37ce7b3` before implementation or output. The seventeen-scenario real-Aegis harness isolates deliberate full-record pruning after RT-28/29/30: baseline `tcp-mu3q8xw5` retained high-water truth but could not recover a committed success or verified failure from compact evidence. Aegis `8c2cc74` adds a strict optional compact-terminal-proof contract and validates authentication, exact identity/outcome/receipt binding, and monotonic terminal revision before resolving; invalid or unavailable proof stays non-retryable and fail-closed. The unchanged roster reran fully green as `tcp-mu3qbgoq`. Existing evidence checks remain regression verification, not novel evidence.
