@@ -123,6 +123,9 @@
     },
     {
       "path": "experiments/39-terminal-write-attestation"
+    },
+    {
+      "path": "experiments/40-terminal-receipt-compaction-proof"
     }
   ]
 }
