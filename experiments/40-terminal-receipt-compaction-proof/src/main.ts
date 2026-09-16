@@ -121,7 +121,7 @@ function configure(store: Store, permit: Permit, scenario: ScenarioId) {
   const success: Receipt = { permitId: permit.id, approvalId: permit.approvalId, operationId, receiptDigest: `sha256:${'a'.repeat(64)}`, verified: true };
   const failure: Receipt = { permitId: permit.id, approvalId: permit.approvalId, operationId, receiptDigest: `sha256:${'b'.repeat(64)}`, verified: true, failureCode: 'external_rejected' };
   const successProof: Proof = { operationId, permitId: permit.id, approvalId: permit.approvalId, outcome: 'committed', receiptDigest: success.receiptDigest, revision: 3, verified: true };
-  const failureProof: Proof = { operationId, permitId: permit.id, approvalId: permit.approvalId, outcome: 'failed', receiptDigest: failure.receiptDigest, failureCode: failure.failureCode, revision: 3, verified: true };
+  const failureProof: Proof = { operationId, permitId: permit.id, approvalId: permit.approvalId, outcome: 'failed', receiptDigest: failure.receiptDigest, failureCode: 'external_rejected', revision: 3, verified: true };
 
   store.highWater = 3;
   store.effects.delete(operationId);
@@ -146,7 +146,7 @@ function configure(store: Store, permit: Permit, scenario: ScenarioId) {
 
 function validDigest(value: unknown): value is string { return typeof value === 'string' && /^sha256:[a-f0-9]{64}$/.test(value); }
 function fixtureResolve(effect: Effect | undefined, highWater: number | undefined, proof: unknown, proofUnavailable: boolean, permit: Permit): ApiResult {
-  if (effect?.revision === highWater) {
+  if (effect !== undefined && effect.revision === highWater) {
     if (effect.state === 'committed' && effect.successReceipt) return { status: 'executed', reason: 'effect_committed', retryable: false };
     if (effect.state === 'failed' && effect.failureReceipt) return { status: 'not_executed', reason: 'effect_failed', retryable: false };
   }
