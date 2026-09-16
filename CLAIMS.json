@@ -3782,5 +3782,208 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 45 pre-registered at f6d4596 (commit-proven 2026-09-15T06:53:25Z) before implementation/output. Same frozen sixteen scenarios and seed reran against real built Aegis after a harness audit made the control arms execute their declared store transition and delayed read failure until terminal-write readback. Initial traces remain preserved but are superseded for claims. Holdout unused. GitHub push blocked by authenticated identity permissions."
+  },
+  {
+    "id": "RT-31",
+    "claim": "Deliberate compaction of a full terminal effect record must retain host-authenticated, exactly bound, revision-current terminal proof; proof-only state never restores retry authority.",
+    "experiment": "experiments/40-terminal-receipt-compaction-proof",
+    "spec": "specs/46-terminal-receipt-compaction-proof.md",
+    "runIds": [
+      "tcp-mu3q8xw5",
+      "tcp-mu3qbgoq"
+    ],
+    "tracePaths": [
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedTerminalProofRecoveryRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedFalseTerminalProofAcceptanceRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedStaleRetryAuthorityRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedCompactionProofApiAvailability",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnprunedSuccessPreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnprunedFailurePreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedValidCompactedSuccessPreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedValidCompactedFailurePreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedMissingProofFailClosedSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedInvalidProofFailClosedSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedRevisionSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnavailableProofSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedTerminalProofOverrideSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedNonterminalProofSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedConsumeCoverage",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedTerminalProofRecoveryRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedFalseTerminalProofAcceptanceRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedStaleRetryAuthorityRate",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedCompactionProofApiAvailability",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnprunedSuccessPreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnprunedFailurePreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedValidCompactedSuccessPreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedValidCompactedFailurePreservation",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedMissingProofFailClosedSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedInvalidProofFailClosedSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedRevisionSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnavailableProofSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedTerminalProofOverrideSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedNonterminalProofSafety",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedTerminalProofRecoveryRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedFalseTerminalProofAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedStaleRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.29411764705882354,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedCompactionProofApiAvailability": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnprunedSuccessPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnprunedFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedValidCompactedSuccessPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedValidCompactedFailurePreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedMissingProofFailClosedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedInvalidProofFailClosedSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedRevisionSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedUnavailableProofSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedTerminalProofOverrideSafety": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedNonterminalProofSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3q8xw5.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedTerminalProofRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedFalseTerminalProofAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedStaleRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedCompactionProofApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnprunedSuccessPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnprunedFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedValidCompactedSuccessPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedValidCompactedFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedMissingProofFailClosedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedInvalidProofFailClosedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedRevisionSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedUnavailableProofSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedTerminalProofOverrideSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedNonterminalProofSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/40-terminal-receipt-compaction-proof/runs/tcp-mu3qbgoq.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/40-terminal-receipt-compaction-proof/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Retain host-authenticated terminal compaction proofs bound to operation, permit, approval, outcome, exact receipt digest, and authoritative terminal revision; invalid or unavailable truth fails closed and non-retryable.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-15-exp40-aegis",
+        "commits": [
+          "8c2cc749d1b413ca22c552dccd23305dcd64b160"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 46 pre-registered at 37ce7b3 before implementation/output. Exact frozen seventeen scenarios and seed ran against real built baseline Aegis 6f24d45 and patched Aegis 8c2cc74. Host authentication is modeled as an explicit verified bit; no production database or signing implementation is claimed. Holdout unused."
   }
 ]
