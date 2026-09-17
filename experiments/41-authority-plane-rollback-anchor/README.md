@@ -1,6 +1,6 @@
 # Experiment 41 — Authority-plane rollback anchor
 
-**Pre-registered:** 2026-09-17T06:43:00Z, before implementation or baseline execution.  
+**Pre-registered:** 2026-09-17T06:33:26Z, before implementation or baseline execution.  
 **Spec:** [`specs/47-authority-plane-rollback-anchor.md`](../../specs/47-authority-plane-rollback-anchor.md)  
 **Seed:** `authority-plane-rollback-anchor-v1`
 
