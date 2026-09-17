@@ -8,6 +8,8 @@ Tests a new restore boundary: an old execution record, host high-water, and comp
 
 Green requires detection of every pre-checkpoint restore, zero restored retry authority, exact classifications, no false rollback when the checkpoint legitimately lags, full public API availability, legacy/current-state preservation, failed-CAS coverage, and ask/consume coverage. Exact scenarios, commands, thresholds, envelope, holdout discipline, and ownership are frozen in Spec 47. `authority-plane-rollback-anchor-holdout-v1` is reserved and unused.
 
-## Results
+## Results — current Aegis red, patched Aegis green
 
-Pending pre-registered baseline execution.
+Baseline real Aegis `b50b46d2d4c965ce7db12cbf0f8f6ec2c187398d`, run `ara-mu55rn5j`, detected only `1/5` rollback scenarios, restored retry authority in `1/5`, reached exact resolution accuracy `7/17`, exposed no checkpoint API, and failed absent/unavailable/invalid checkpoint and post-CAS safety. The strict fixture was fully green.
+
+Patched real Aegis `f5d7d7e663ec3de931e6689862859d27dd7b0d7b`, run `ara-mu55rftq`, detected `5/5`, restored no retry authority, reached `17/17` exact accuracy, and made every frozen API/preservation/safety/coverage metric green. Aegis now feature-detects an additive `AnchoredApprovalExecutionPermitStore`, validates an exact authenticated checkpoint as a lower bound on host high-water revision, and rechecks it after failed begin CAS. Stores without the capability preserve legacy behavior.
