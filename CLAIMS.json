@@ -3985,5 +3985,119 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 46 pre-registered at 37ce7b3 before implementation/output. Exact frozen seventeen scenarios and seed ran against real built baseline Aegis 6f24d45 and patched Aegis 8c2cc74. Host authentication is modeled as an explicit verified bit; no production database or signing implementation is claimed. Holdout unused."
+  },
+  {
+    "id": "RT-32",
+    "claim": "A coherent restore that rolls back the journal and host authority plane can only be detected by comparing host revision truth with an independently retained authenticated monotonic checkpoint.",
+    "experiment": "41-authority-plane-rollback-anchor",
+    "spec": "specs/47-authority-plane-rollback-anchor.md",
+    "runIds": [
+      "ara-mu55rn5j",
+      "ara-mu55z5e7"
+    ],
+    "tracePaths": [
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rn5j.jsonl",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedRollbackRetryAuthorityRate",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentTerminalPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentCompactedPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLaggingCheckpointPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedUnavailableCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAbsentCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedInvalidCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedHostRevisionUnavailableSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedPostCasRollbackSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedRollbackRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentCompactedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLaggingCheckpointPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedUnavailableCheckpointSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAbsentCheckpointSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedInvalidCheckpointSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedHostRevisionUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedPostCasRollbackSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/41-authority-plane-rollback-anchor/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Retain a host-authenticated monotonic revision checkpoint outside the journal backup/restore domain and require Aegis to validate host high-water truth against that lower bound before terminal certainty or retry authority.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-16-exp41-aegis",
+        "commits": [
+          "f5d7d7e663ec3de931e6689862859d27dd7b0d7b",
+          "e3ea34277fc9d6b8bf62fb6d03d29ed234846473"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 47 pre-registered at 9608795/fbbc02a before implementation or output. Frozen seventeen scenarios and seed ran against real built baseline Aegis b50b46d and patched Aegis f5d7d7e. Authentication is modeled as an explicit verified bit; no production transparency service or signing implementation is claimed. Holdout unused."
   }
 ]

@@ -126,6 +126,9 @@
     },
     {
       "path": "experiments/40-terminal-receipt-compaction-proof"
+    },
+    {
+      "path": "experiments/41-authority-plane-rollback-anchor"
     }
   ]
 }
