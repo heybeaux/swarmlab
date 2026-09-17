@@ -3993,92 +3993,92 @@
     "spec": "specs/47-authority-plane-rollback-anchor.md",
     "runIds": [
       "ara-mu55rn5j",
-      "ara-mu55rftq"
+      "ara-mu55z5e7"
     ],
     "tracePaths": [
       "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rn5j.jsonl",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl"
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl"
     ],
     "scoreFields": [
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedRollbackRetryAuthorityRate",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedResolutionAccuracy",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedLegacyPreservation",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentTerminalPreservation",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentCompactedPreservation",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedLaggingCheckpointPreservation",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedUnavailableCheckpointSafety",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAbsentCheckpointSafety",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedInvalidCheckpointSafety",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedHostRevisionUnavailableSafety",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedPostCasRollbackSafety",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAskCoverage",
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedConsumeCoverage"
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedRollbackRetryAuthorityRate",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentTerminalPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentCompactedPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLaggingCheckpointPreservation",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedUnavailableCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAbsentCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedInvalidCheckpointSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedHostRevisionUnavailableSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedPostCasRollbackSafety",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedConsumeCoverage"
     ],
     "expectedValues": {
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAuthorityRollbackDetectionRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedRollbackRetryAuthorityRate": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedRollbackRetryAuthorityRate": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedResolutionAccuracy": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedResolutionAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedTransparencyCheckpointApiAvailability": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedLegacyPreservation": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLegacyPreservation": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentTerminalPreservation": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentTerminalPreservation": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedCurrentCompactedPreservation": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedCurrentCompactedPreservation": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedLaggingCheckpointPreservation": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedLaggingCheckpointPreservation": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedUnavailableCheckpointSafety": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedUnavailableCheckpointSafety": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAbsentCheckpointSafety": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAbsentCheckpointSafety": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedInvalidCheckpointSafety": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedInvalidCheckpointSafety": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedHostRevisionUnavailableSafety": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedHostRevisionUnavailableSafety": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedPostCasRollbackSafety": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedPostCasRollbackSafety": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedAskCoverage": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedAskCoverage": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55rftq.jsonl#last.aegisWrappedConsumeCoverage": {
+      "experiments/41-authority-plane-rollback-anchor/runs/ara-mu55z5e7.jsonl#last.aegisWrappedConsumeCoverage": {
         "equals": 1,
         "tolerance": 0
       }
