@@ -4099,5 +4099,113 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 47 pre-registered at 9608795/fbbc02a before implementation or output. Frozen seventeen scenarios and seed ran against real built baseline Aegis b50b46d and patched Aegis f5d7d7e. Authentication is modeled as an explicit verified bit; no production transparency service or signing implementation is claimed. Holdout unused."
+  },
+  {
+    "id": "RT-33",
+    "claim": "Multiple independently authenticated checkpoint authorities must agree on same-operation history before Aegis returns terminal certainty, retry authority, or execute permission.",
+    "experiment": "42-checkpoint-authority-equivocation",
+    "spec": "specs/48-checkpoint-authority-equivocation.md",
+    "runIds": [
+      "cae-mu6lbz2a",
+      "cae-mu6lbz32"
+    ],
+    "tracePaths": [
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz2a.jsonl",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedCheckpointEquivocationDetectionRate",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedEquivocationRetryAuthorityRate",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedMultiAuthorityCheckpointApiAvailability",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedSingleAnchorPreservation",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedMultiConsistentPreservation",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedTerminalPreservation",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedCompactedTerminalPreservation",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedUnavailableQuorumSafety",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedAbsentQuorumSafety",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedInvalidQuorumSafety",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedPostCasEquivocationSafety",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedCheckpointEquivocationDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedEquivocationRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedMultiAuthorityCheckpointApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedSingleAnchorPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedMultiConsistentPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedCompactedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedUnavailableQuorumSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedAbsentQuorumSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedInvalidQuorumSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedPostCasEquivocationSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/42-checkpoint-authority-equivocation/runs/cae-mu6lbz32.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/42-checkpoint-authority-equivocation/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Expose every independently authenticated checkpoint authority for an operation and require Aegis to validate authority identity, operation binding, same-revision history digests, and duplicate/conflict absence before terminal certainty or retry authority.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-17-exp42-aegis",
+        "commits": [
+          "77883f6e02d4c3e68448cbb71619bef3f511d9e0"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 48 pre-registered at 384a545 before implementation or output. Frozen sixteen scenarios and seed ran against real built baseline Aegis 4a30255 and patched Aegis 77883f6. Two non-admitted setup traces (cae-mu6l7lzn, cae-mu6l9tu5) exposed an API-availability measurement bug and are not claimed. Host witness completeness, quorum policy, signatures, and retention are out of scope. Holdout unused."
   }
 ]
