@@ -161,6 +161,7 @@ interface Runtime {
   finalizeExecutionPermitWithEffectJournal(p: Permit, c: any, o: string, s: any): Promise<any>;
   resolveExecutionEffect(p: Permit, c: any, o: string, s: any): Promise<ApiResult>;
   resolveAnchoredExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
+  resolveMultiAuthorityAnchoredExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
   beginExecutionEffect(p: Permit, c: any, o: string, s: any): Promise<ApiResult>;
 }
 
@@ -177,6 +178,7 @@ async function loadRuntime(): Promise<Runtime> {
     finalizeExecutionPermitWithEffectJournal: hook.finalizeExecutionPermitWithEffectJournal,
     resolveExecutionEffect: hook.resolveExecutionEffect,
     resolveAnchoredExecutionEffect: hook.resolveAnchoredExecutionEffect,
+    resolveMultiAuthorityAnchoredExecutionEffect: hook.resolveMultiAuthorityAnchoredExecutionEffect,
     beginExecutionEffect: hook.beginExecutionEffect,
   };
 }
@@ -415,10 +417,16 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
     else if (arm === 'multi-authority-fixture') result = await fixture(store, postCas);
     else {
       const view = viewForAegis(store, id);
-      apiAvailable = id === 'legacy-current-authorized' || typeof (view as any).readEffectRevisionCheckpoints === 'function';
+      apiAvailable = id === 'legacy-current-authorized' ||
+        id === 'single-anchor-current-authorized' ||
+        typeof runtime.resolveMultiAuthorityAnchoredExecutionEffect === 'function';
       result = postCas
         ? await runtime.beginExecutionEffect(permit, current, operationId, view)
-        : await (runtime.resolveAnchoredExecutionEffect ?? runtime.resolveExecutionEffect)(permit, current, operationId, view);
+        : await (
+            runtime.resolveMultiAuthorityAnchoredExecutionEffect ??
+            runtime.resolveAnchoredExecutionEffect ??
+            runtime.resolveExecutionEffect
+          )(permit, current, operationId, view);
     }
     const want = expected(id);
     const actual = { status: result.status, reason: result.reason ?? '', retryable: result.retryable ?? false };
