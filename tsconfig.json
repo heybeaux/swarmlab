@@ -129,6 +129,9 @@
     },
     {
       "path": "experiments/41-authority-plane-rollback-anchor"
+    },
+    {
+      "path": "experiments/42-checkpoint-authority-equivocation"
     }
   ]
 }
