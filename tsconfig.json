@@ -132,6 +132,9 @@
     },
     {
       "path": "experiments/42-checkpoint-authority-equivocation"
+    },
+    {
+      "path": "experiments/43-checkpoint-witness-set-omission"
     }
   ]
 }
