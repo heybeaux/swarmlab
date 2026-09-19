@@ -4207,5 +4207,109 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 48 pre-registered at 384a545 before implementation or output. Frozen sixteen scenarios and seed ran against real built baseline Aegis 4a30255 and patched Aegis 77883f6. Two non-admitted setup traces (cae-mu6l7lzn, cae-mu6l9tu5) exposed an API-availability measurement bug and are not claimed. Host witness completeness, quorum policy, signatures, and retention are out of scope. Holdout unused."
+  },
+  {
+    "id": "RT-34",
+    "claim": "Visible checkpoint authorities can be mutually consistent while omitting a required witness; Aegis needs an authenticated witness-set completeness contract before terminal certainty, retry authority, or execute permission.",
+    "experiment": "43-checkpoint-witness-set-omission",
+    "spec": "specs/49-checkpoint-witness-set-omission.md",
+    "runIds": [
+      "cwo-mu80pubb",
+      "cwo-mu80u7bx"
+    ],
+    "tracePaths": [
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80pubb.jsonl",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedWitnessOmissionDetectionRate",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedOmissionRetryAuthorityRate",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedWitnessSetApiAvailability",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedCompleteCurrentPreservation",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedTerminalPreservation",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedCompactedTerminalPreservation",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedUnavailableWitnessSetSafety",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedAbsentWitnessSetSafety",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedInvalidWitnessSetSafety",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedPostCasWitnessOmissionSafety",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedWitnessOmissionDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedOmissionRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedWitnessSetApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedCompleteCurrentPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedCompactedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedUnavailableWitnessSetSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedAbsentWitnessSetSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedInvalidWitnessSetSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedPostCasWitnessOmissionSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/43-checkpoint-witness-set-omission/runs/cwo-mu80u7bx.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/43-checkpoint-witness-set-omission/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Expose an authenticated required checkpoint witness set and require Aegis to validate required-authority completeness before terminal certainty, retry authority, or execute permission.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-18-exp43-aegis",
+        "commits": [
+          "a62c52ea4bcdbb9f5e7c29dc06ade20196f6ecc7",
+          "c24b37c4786331c2fd0ecbe147a87952afa4f6dc"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 49 pre-registered at 7d79f6b before implementation or output. Frozen fourteen scenarios and seed ran against real built baseline Aegis 8eb1c32 and patched Aegis c24b37c. Intermediate green trace cwo-mu80s96a used the runtime commit before evidence-gate metadata; final admitted green is cwo-mu80u7bx. Host authentication, witness discovery, signing, and retention remain out of scope. Holdout unused."
   }
 ]
