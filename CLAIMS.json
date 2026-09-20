@@ -4311,5 +4311,67 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 49 pre-registered at 7d79f6b before implementation or output. Frozen fourteen scenarios and seed ran against real built baseline Aegis 8eb1c32 and patched Aegis c24b37c. Intermediate green trace cwo-mu80s96a used the runtime commit before evidence-gate metadata; final admitted green is cwo-mu80u7bx. Host authentication, witness discovery, signing, and retention remain out of scope. Holdout unused."
+  },
+  {
+    "id": "RT-35",
+    "claim": "A complete visible checkpoint witness set can belong to an obsolete roster epoch; Aegis needs authenticated current-roster epoch/digest truth before terminal certainty, retry authority, or execute permission.",
+    "experiment": "44-checkpoint-witness-roster-epoch",
+    "spec": "specs/50-checkpoint-witness-roster-epoch.md",
+    "runIds": [
+      "wre-mu9gc5je",
+      "wre-mu9genkw"
+    ],
+    "tracePaths": [
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9gc5je.jsonl",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitDetectionRate",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitRetryAuthorityRate",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedWitnessRosterApiAvailability",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompleteCurrentPreservation",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedTerminalPreservation",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompactedTerminalPreservation",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedUnavailableRosterSafety",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAbsentRosterSafety",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedInvalidRosterSafety",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedPostCasRosterSplitSafety",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitDetectionRate": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitRetryAuthorityRate": { "equals": 0, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedResolutionAccuracy": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedWitnessRosterApiAvailability": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedLegacyPreservation": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompleteCurrentPreservation": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedTerminalPreservation": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompactedTerminalPreservation": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedUnavailableRosterSafety": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAbsentRosterSafety": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedInvalidRosterSafety": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedPostCasRosterSplitSafety": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAskCoverage": { "equals": 1, "tolerance": 0 },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedConsumeCoverage": { "equals": 1, "tolerance": 0 }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/44-checkpoint-witness-roster-epoch/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Expose authenticated current checkpoint witness-roster truth with a self-checking epoch digest, and require Aegis to compare it with visible witness-set/checkpoint authorities before terminal certainty, retry authority, or execute permission.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-19-exp44-aegis",
+        "commits": [
+          "be465b0eeae5ed140a7bdaf4f88ca5928c095974",
+          "569b11b61edd0579b7755b8af796f98fe56476a3"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 50 pre-registered at 2f59a33 before implementation or output. Frozen sixteen scenarios and seed ran against real built baseline Aegis c2fc0f1 and patched Aegis 569b11b. Earlier green trace wre-mu9gcc38 used uncommitted Aegis runtime and is preserved but not admitted; final admitted green is wre-mu9genkw. Host authentication, roster discovery, signing, and retention remain out of scope. Holdout unused."
   }
 ]

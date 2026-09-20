@@ -135,6 +135,9 @@
     },
     {
       "path": "experiments/43-checkpoint-witness-set-omission"
+    },
+    {
+      "path": "experiments/44-checkpoint-witness-roster-epoch"
     }
   ]
 }
