@@ -4342,20 +4342,62 @@
       "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedConsumeCoverage"
     ],
     "expectedValues": {
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitDetectionRate": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitRetryAuthorityRate": { "equals": 0, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedResolutionAccuracy": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedWitnessRosterApiAvailability": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedLegacyPreservation": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompleteCurrentPreservation": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedTerminalPreservation": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompactedTerminalPreservation": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedUnavailableRosterSafety": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAbsentRosterSafety": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedInvalidRosterSafety": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedPostCasRosterSplitSafety": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAskCoverage": { "equals": 1, "tolerance": 0 },
-      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedConsumeCoverage": { "equals": 1, "tolerance": 0 }
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedRosterSplitRetryAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedWitnessRosterApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompleteCurrentPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedCompactedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedUnavailableRosterSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAbsentRosterSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedInvalidRosterSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedPostCasRosterSplitSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/44-checkpoint-witness-roster-epoch/runs/wre-mu9genkw.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
     },
     "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/44-checkpoint-witness-roster-epoch/dist/main.js; repeat unchanged with patched Aegis paths",
     "stackRecommendation": "Expose authenticated current checkpoint witness-roster truth with a self-checking epoch digest, and require Aegis to compare it with visible witness-set/checkpoint authorities before terminal certainty, retry authority, or execute permission.",
@@ -4373,5 +4415,126 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 50 pre-registered at 2f59a33 before implementation or output. Frozen sixteen scenarios and seed ran against real built baseline Aegis c2fc0f1 and patched Aegis 569b11b. Earlier green trace wre-mu9gcc38 used uncommitted Aegis runtime and is preserved but not admitted; final admitted green is wre-mu9genkw. Host authentication, roster discovery, signing, and retention remain out of scope. Holdout unused."
+  },
+  {
+    "id": "RT-36",
+    "claim": "Once current witness-roster evidence is required for an operation, retry/resume must not silently downgrade through an adapter that strips or loses that capability; Aegis needs explicit strict resolve/begin boundaries and continuity state.",
+    "experiment": "45-checkpoint-roster-capability-downgrade",
+    "spec": "specs/51-checkpoint-roster-capability-downgrade.md",
+    "runIds": [
+      "rcd-mucazy99",
+      "rcd-mucbcbk3"
+    ],
+    "tracePaths": [
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucazy99.jsonl",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCapabilityDowngradeDetectionRate",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedDowngradeAuthorityRestorationRate",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrictRosterContinuityApiAvailability",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCurrentAuthorizedPreservation",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCurrentCommittedPreservation",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCompactedTerminalPreservation",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedAbsentSafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrippedAfterPriorReadSafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrippedAfterUnavailableReadSafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedMalformedRetrySafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedPostCasCapabilityLossSafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedRecoverySafety",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedAskCoverage",
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedConsumeCoverage"
+    ],
+    "expectedValues": {
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCapabilityDowngradeDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedDowngradeAuthorityRestorationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrictRosterContinuityApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCurrentAuthorizedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCurrentCommittedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedCompactedTerminalPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedAbsentSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrippedAfterPriorReadSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedStrippedAfterUnavailableReadSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedMalformedRetrySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedPostCasCapabilityLossSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedRecoverySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedAskCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/45-checkpoint-roster-capability-downgrade/runs/rcd-mucbcbk3.jsonl#last.aegisWrappedConsumeCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<baseline-aegis> AEGIS_DIST=<baseline-aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<baseline-aegis>/packages/aegis-hook/dist/index.js node experiments/45-checkpoint-roster-capability-downgrade/dist/main.js; repeat unchanged with patched Aegis paths",
+    "stackRecommendation": "Require hosts to select an explicit strict current-roster resolve/begin boundary and carry Aegis-created continuity context across adapter views; fail closed when roster capability is unavailable, malformed, stripped, or lost after CAS, while preserving generic legacy APIs.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-20-exp45-aegis",
+        "commits": [
+          "4f2760b2c848beea0e5187f4a1d075c177067d33",
+          "00cae246ef108c769872a4073b98a488e6eb1ac3",
+          "9ee3a9f01383090ef52def969600e3fff55dbd9c",
+          "d1dd7bf551717048b110f701276c89bbbaa79535"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 51 pre-registered at 6f8d6cf before implementation or output. Frozen fifteen scenarios and seed ran against real built baseline Aegis 7e73b06 and committed patched Aegis 4f2760b. Admitted red/green traces are rcd-mucazy99 and rcd-mucbcbk3. Hosts still own durable roster authentication/retention and strict-boundary selection; holdout unused. Edge-hardening commit d1dd7bf adds validation-order, terminal-preservation, transient-recovery, context-isolation, and single-CAS tests; exact unchanged experiment rerun rcd-mucbqflv remains green but the admitted claim trace stays rcd-mucbcbk3."
   }
 ]
