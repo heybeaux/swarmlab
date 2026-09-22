@@ -186,9 +186,10 @@ interface Runtime {
   resolveMultiAuthorityAnchoredExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
   resolveWitnessSetAnchoredExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
   resolveWitnessRosterAnchoredExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
-  resolveStrictRosterContinuityExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
+  createStrictRosterContinuityContext?: () => object;
+  resolveStrictRosterContinuityExecutionEffect?: (p: Permit, c: any, o: string, s: any, continuity?: object) => Promise<ApiResult>;
   beginExecutionEffect(p: Permit, c: any, o: string, s: any): Promise<ApiResult>;
-  beginStrictRosterContinuityExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
+  beginStrictRosterContinuityExecutionEffect?: (p: Permit, c: any, o: string, s: any, continuity?: object) => Promise<ApiResult>;
 }
 
 async function loadRuntime(): Promise<Runtime> {
@@ -207,6 +208,7 @@ async function loadRuntime(): Promise<Runtime> {
     resolveMultiAuthorityAnchoredExecutionEffect: hook.resolveMultiAuthorityAnchoredExecutionEffect,
     resolveWitnessSetAnchoredExecutionEffect: hook.resolveWitnessSetAnchoredExecutionEffect,
     resolveWitnessRosterAnchoredExecutionEffect: hook.resolveWitnessRosterAnchoredExecutionEffect,
+    createStrictRosterContinuityContext: hook.createStrictRosterContinuityContext,
     resolveStrictRosterContinuityExecutionEffect: hook.resolveStrictRosterContinuityExecutionEffect,
     beginExecutionEffect: hook.beginExecutionEffect,
     beginStrictRosterContinuityExecutionEffect: hook.beginStrictRosterContinuityExecutionEffect,
@@ -365,7 +367,9 @@ function configure(store: Store, permit: Permit, id: ScenarioId) {
   } else if (id === 'capability-stripped-after-unavailable-read') {
     store.witnessRosterUnavailable = true;
   } else if (id === 'capability-stripped-after-prior-current-read' || id === 'capability-stripped-after-prior-current-read-before-begin') {
-    store.witnessRoster = undefined;
+    // The underlying store remains roster-capable for the first strict read. The scored adapter
+    // view below strips only the method on retry/resume.
+    store.witnessRoster = currentRoster();
   } else if (id === 'malformed-roster-on-retry') {
     store.witnessRosterMalformed = true;
   } else if (id === 'post-cas-capability-loss') {
@@ -599,8 +603,9 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
     } else {
       const strictResolveFn = runtime.resolveStrictRosterContinuityExecutionEffect;
       const strictBeginFn = runtime.beginStrictRosterContinuityExecutionEffect;
+      const continuity = runtime.createStrictRosterContinuityContext?.();
       apiAvailable = id === 'legacy-generic-witness-set-authorized' ||
-        (typeof strictResolveFn === 'function' && typeof strictBeginFn === 'function');
+        (typeof strictResolveFn === 'function' && typeof strictBeginFn === 'function' && continuity !== undefined);
       if (needsPriorCurrentRead(id)) {
         const priorView = viewForAegis(store, 'strict-current-authorized');
         await (
@@ -610,7 +615,7 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
           runtime.resolveMultiAuthorityAnchoredExecutionEffect ??
           runtime.resolveAnchoredExecutionEffect ??
           runtime.resolveExecutionEffect
-        )(permit, current, operationId, priorView);
+        )(permit, current, operationId, priorView, continuity);
       }
       const view = viewForAegis(store, id);
       const resolveStrict = strictResolveFn ??
@@ -619,11 +624,13 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
         runtime.resolveMultiAuthorityAnchoredExecutionEffect ??
         runtime.resolveAnchoredExecutionEffect ??
         runtime.resolveExecutionEffect;
-      if (needsRecoveryRetry(id)) await resolveStrict(permit, current, operationId, view);
-      if (isBeginPhase) {
-        result = await (strictBeginFn ?? runtime.beginExecutionEffect)(permit, current, operationId, view);
+      if (needsRecoveryRetry(id)) await resolveStrict(permit, current, operationId, view, continuity);
+      if (id === 'legacy-generic-witness-set-authorized') {
+        result = await runtime.resolveExecutionEffect(permit, current, operationId, view);
+      } else if (isBeginPhase) {
+        result = await (strictBeginFn ?? runtime.beginExecutionEffect)(permit, current, operationId, view, continuity);
       } else {
-        result = await resolveStrict(permit, current, operationId, view);
+        result = await resolveStrict(permit, current, operationId, view, continuity);
       }
     }
     const want = expected(id);

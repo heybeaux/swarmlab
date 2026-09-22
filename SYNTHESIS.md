@@ -1301,3 +1301,19 @@ Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` c
 - **Finding:** RT-34 assumes the exposed witness-set policy is fresh. Baseline `wre-mu9gc5je` on Aegis `c2fc0f1` showed that a complete old roster can still restore authority: Aegis detected `0/7` roster-split cases, restored retry/execute/terminal authority in `5/7`, reached `4/16` exact accuracy, and exposed no witness-roster API while the strict fixture stayed green.
 - **Change and retest:** Aegis `be465b0` adds an optional `readEffectRevisionWitnessRoster()` contract, positive roster epoch, self-checking digest over operation/epoch/quorum/sorted authorities, visible witness/current roster comparison, fail-closed invalid/unavailable behavior, and `resolveWitnessRosterAnchoredExecutionEffect()`. Same frozen roster `wre-mu9genkw` detected `7/7`, restored zero unsafe authority, reached `16/16` exact accuracy, and passed every preservation, safety, post-CAS, ask, and consume metric. RT-35 evidence metadata landed in `569b11b`.
 - **Boundary:** Aegis validates exposed current-roster truth; it cannot discover hidden authorities, authenticate production signatures, or guarantee retention. Roster discovery, signing, and durable storage remain host-owned.
+
+### RT-36 — Strict checkpoint-roster evidence must survive adapter capability downgrade (from exp-45)
+
+- **Finding:** RT-35 validated fresh roster content only while the roster capability remained present.
+  Baseline `rcd-mucazy99` on Aegis `7e73b06` detected only `3/9` downgrade cases, restored
+  retry/execute authority in `5/9`, reached `9/15` exact accuracy, and exposed no strict
+  roster-continuity resolve/begin boundary while the deterministic strict fixture was green.
+- **Change and retest:** Aegis `4f2760b` adds explicit strict resolve and begin entry points plus an
+  opaque continuity context that can cross adapter views. It requires roster capability before a
+  strict retry, revalidates it after a successful begin CAS, distinguishes first-read unavailability
+  from disappearance after current evidence, and keeps generic legacy APIs backward compatible.
+  The same frozen roster `rcd-mucbcbk3` detected `9/9`, restored zero authority, reached `15/15`
+  exact accuracy, and passed every preservation, safety, recovery, ASK, and consume metric.
+- **Boundary:** hosts must retain/authenticate roster truth, deliberately select the strict boundary,
+  and carry the Aegis-created continuity context within a workflow. The context is process-local;
+  durable cross-process policy selection remains host-owned.

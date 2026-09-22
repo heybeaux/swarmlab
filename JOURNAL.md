@@ -159,3 +159,13 @@ Pre-registered Spec 49 at `7d79f6b` before implementation or output. The fourtee
 
 ## Spec 50 / exp-44 — Checkpoint witness roster epoch
 Pre-registered Spec 50 at `2f59a33` before implementation or output. The sixteen-scenario real-Aegis harness isolated the next assumption after RT-34: a complete visible witness set can itself be stale if roster membership rolled back. Baseline Aegis `c2fc0f1` detected `0/7` roster-split cases, restored retry/execute/terminal authority in `5/7`, reached exact accuracy `4/16`, and exposed no witness-roster resolver (`wre-mu9gc5je`). The deterministic roster-epoch fixture stayed green. Aegis runtime commit `be465b0` adds an optional current witness-roster contract, positive roster epoch, self-checking roster digest, visible witness/current roster comparison, fail-closed roster truth handling, and `resolveWitnessRosterAnchoredExecutionEffect()`; evidence-gate commit `569b11b` adds RT-35. The exact roster reran green as final admitted run `wre-mu9genkw`. Intermediate green trace `wre-mu9gcc38` used uncommitted runtime code and is preserved but not claimed. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-09-21 — exp-45 checkpoint roster capability downgrade
+
+Resumed the prior night's pre-registration (Spec 51, commit `6f8d6cf`) without changing thresholds.
+Built the deterministic 15-scenario harness and established current-Aegis red on `7e73b06` as
+`rcd-mucazy99`: detection `0.3333`, restored authority `0.5556`, accuracy `0.6`, strict API
+availability `0`. Added general strict roster resolve/begin boundaries and opaque continuity state
+in Aegis `4f2760b`. Exact same seed/scenarios reran green as `rcd-mucbcbk3` with detection,
+accuracy, API availability, and all preservation/safety/coverage metrics `1`, restored authority `0`.
+Intermediate setup/debug traces remain unadmitted. Holdout remains unused.
