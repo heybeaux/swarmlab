@@ -138,6 +138,9 @@
     },
     {
       "path": "experiments/44-checkpoint-witness-roster-epoch"
+    },
+    {
+      "path": "experiments/45-checkpoint-roster-capability-downgrade"
     }
   ]
 }
