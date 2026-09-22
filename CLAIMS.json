@@ -4527,12 +4527,14 @@
         "branch": "nori/2026-09-20-exp45-aegis",
         "commits": [
           "4f2760b2c848beea0e5187f4a1d075c177067d33",
-          "00cae246ef108c769872a4073b98a488e6eb1ac3"
+          "00cae246ef108c769872a4073b98a488e6eb1ac3",
+          "9ee3a9f01383090ef52def969600e3fff55dbd9c",
+          "d1dd7bf551717048b110f701276c89bbbaa79535"
         ],
         "prs": []
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Spec 51 pre-registered at 6f8d6cf before implementation or output. Frozen fifteen scenarios and seed ran against real built baseline Aegis 7e73b06 and committed patched Aegis 4f2760b. Admitted red/green traces are rcd-mucazy99 and rcd-mucbcbk3. Hosts still own durable roster authentication/retention and strict-boundary selection; holdout unused."
+    "notes": "Spec 51 pre-registered at 6f8d6cf before implementation or output. Frozen fifteen scenarios and seed ran against real built baseline Aegis 7e73b06 and committed patched Aegis 4f2760b. Admitted red/green traces are rcd-mucazy99 and rcd-mucbcbk3. Hosts still own durable roster authentication/retention and strict-boundary selection; holdout unused. Edge-hardening commit d1dd7bf adds validation-order, terminal-preservation, transient-recovery, context-isolation, and single-CAS tests; exact unchanged experiment rerun rcd-mucbqflv remains green but the admitted claim trace stays rcd-mucbcbk3."
   }
 ]

@@ -30,3 +30,7 @@ seed, scenario roster, commands, and ownership are frozen in Spec 51.
   availability and every preservation/safety/recovery/coverage metric `1`).
 - The fix adds explicit strict resolve/begin boundaries and Aegis-created continuity context while
   preserving generic legacy API behavior. Intermediate setup/debug traces are not admitted evidence.
+- Edge-hardening commit `d1dd7bf551717048b110f701276c89bbbaa79535` covers validation order,
+  terminal preservation, transient recovery, context isolation, and successful single-CAS behavior.
+  The exact unchanged experiment reran green as `rcd-mucbqflv`; it is corroborating evidence, while
+  `rcd-mucbcbk3` remains the admitted RT-36 trace.

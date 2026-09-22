@@ -1317,3 +1317,12 @@ Aegis `1c79f8d` now exposes async host-provided `ApprovalExecutionPermitStore` c
 - **Boundary:** hosts must retain/authenticate roster truth, deliberately select the strict boundary,
   and carry the Aegis-created continuity context within a workflow. The context is process-local;
   durable cross-process policy selection remains host-owned.
+
+#### RT-36 implementation hardening
+
+A hidden-edge review expanded the contract beyond the frozen experiment's main path: malformed
+permit/operation inputs remain `invalid_snapshot`; foreign or fresh continuity objects cannot inherit
+another workflow's strict selection; transient roster outages can recover; terminal effects remain
+terminal without invoking `beginEffect`; and strict begin performs one state transition with roster
+checks bracketing that CAS. Aegis `d1dd7bf` implements these invariants; `rcd-mucbqflv` and the full
+release gate remain green.

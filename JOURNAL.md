@@ -169,3 +169,12 @@ availability `0`. Added general strict roster resolve/begin boundaries and opaqu
 in Aegis `4f2760b`. Exact same seed/scenarios reran green as `rcd-mucbcbk3` with detection,
 accuracy, API availability, and all preservation/safety/coverage metrics `1`, restored authority `0`.
 Intermediate setup/debug traces remain unadmitted. Holdout remains unused.
+
+### Exp-45 edge hardening
+
+Independent behavior review found public-API edge cases not exercised by the 15 frozen scenarios.
+Aegis `d1dd7bf` now validates strict-resolve inputs before capability classification, exports the
+continuity context type, preserves terminal/invalid begin classifications, avoids consuming the
+workflow journal during strict preflight, checks roster integrity before and after the single begin
+CAS, supports transient roster recovery, and isolates foreign/fresh contexts. Focused tests grew
+from 37 to 44. Exact experiment rerun `rcd-mucbqflv` and full release check remained green.
