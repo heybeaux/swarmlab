@@ -4526,7 +4526,8 @@
         "package": "@heybeaux/aegis-hook",
         "branch": "nori/2026-09-20-exp45-aegis",
         "commits": [
-          "4f2760b2c848beea0e5187f4a1d075c177067d33"
+          "4f2760b2c848beea0e5187f4a1d075c177067d33",
+          "00cae246ef108c769872a4073b98a488e6eb1ac3"
         ],
         "prs": []
       }
