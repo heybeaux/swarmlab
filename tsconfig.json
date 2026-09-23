@@ -141,6 +141,9 @@
     },
     {
       "path": "experiments/45-checkpoint-roster-capability-downgrade"
+    },
+    {
+      "path": "experiments/46-durable-strict-roster-policy"
     }
   ]
 }
