@@ -178,3 +178,11 @@ continuity context type, preserves terminal/invalid begin classifications, avoid
 workflow journal during strict preflight, checks roster integrity before and after the single begin
 CAS, supports transient roster recovery, and isolates foreign/fresh contexts. Focused tests grew
 from 37 to 44. Exact experiment rerun `rcd-mucbqflv` and full release check remained green.
+
+
+## 2026-09-23 — exp-46 durable strict-roster policy
+
+Pre-registered Spec 52 before baseline. Real Aegis `444f04a` was reproducibly red on the frozen
+restart/handoff roster (`dsr-mudqgx1i`); fixture green. Added Aegis host-owned durable marker
+contract and strict resolve/begin policy (`83e802c`). Same scenarios reran fully green as
+`dsr-muf62rva`. Intermediate local traces were diagnostic only and are not admitted.

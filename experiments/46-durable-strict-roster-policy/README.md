@@ -15,3 +15,18 @@ public durable selection/resolve/begin API availability, every control/safety me
 ASK/consume coverage. Exact scenarios, thresholds, ownership, holdout discipline, and baseline and
 post-fix commands are frozen in Spec 52. `durable-strict-roster-policy-holdout-v1` is reserved and
 unused.
+
+## Result
+
+Baseline `dsr-mudqgx1i` against Aegis `444f04a0538ab679e1eee3442565c24989ba00b5`
+was reproducibly red: durable-policy detection `0`, unsafe authority restoration `1`, exact
+resolution accuracy `0.0667`, and public durable strict-roster API availability `0`. The strict
+fixture was fully green.
+
+Aegis `83e802c735c35ac1fd25b102728fb02e09d02c59` adds a host-owned atomic durable-marker
+contract plus selection/readback and resolve/begin boundaries. The same frozen roster reran as
+`dsr-muf62rva`: detection `1`, authority restoration `0`, accuracy/API availability `1`, and every
+secondary control, failure-safety, ASK, and consume metric `1`.
+
+The host still owns linearizable marker durability, cross-host visibility, roster authenticity, and
+retention. This deterministic adapter experiment does not certify a production database.

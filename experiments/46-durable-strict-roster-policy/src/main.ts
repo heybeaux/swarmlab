@@ -102,6 +102,7 @@ class Store {
   witnessRosterUnavailable = false;
   witnessRosterMalformed = false;
   postCasCapabilityLoss = false;
+  postCasHook?: () => void | Promise<void>;
 
   async create(record: any) {
     if (this.records.has(record.id)) return false;
@@ -138,6 +139,7 @@ class Store {
       this.witnessSet = visibleSet(['witness-a', 'witness-b', 'witness-c'], 3);
       this.witnessRosterUnavailable = true;
     }
+    await this.postCasHook?.();
     return true;
   }
   async commitEffect() { return false; }
@@ -181,11 +183,12 @@ class DurableMarkerStore {
   markers = new Map<string, DurableMarker>();
   readUnavailable = false;
 
-  async readMarker(op: string): Promise<DurableMarker | undefined | { malformed: true }> {
+  async readStrictRosterPolicy(op: string): Promise<DurableMarker | undefined | { malformed: true }> {
     if (this.readUnavailable) throw new Error('marker store unavailable');
     return this.markers.get(op) === undefined ? undefined : structuredClone(this.markers.get(op)!);
   }
-  async bindMarker(op: string, marker: DurableMarker): Promise<boolean> {
+  async bindStrictRosterPolicy(op: string, marker: DurableMarker): Promise<boolean> {
+    if (this.markers.has(op)) return false;
     this.markers.set(op, structuredClone(marker));
     return true;
   }
@@ -212,10 +215,10 @@ interface Runtime {
   beginStrictRosterContinuityExecutionEffect?: (p: Permit, c: any, o: string, s: any, continuity?: object) => Promise<ApiResult>;
   // Durable selection/readback surface (spec 52). Real Aegis origin/main exposes none of these;
   // only the opaque, process-local StrictRosterContinuityContext exists as of this baseline.
-  selectDurableStrictRosterPolicy?: (p: Permit, c: any, o: string) => Promise<{ operationId: string; permitId: string; approvalId: string } | undefined>;
-  readDurableStrictRosterPolicy?: (o: string) => Promise<{ operationId: string; permitId: string; approvalId: string } | undefined>;
-  resolveDurableStrictRosterPolicyExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
-  beginDurableStrictRosterPolicyExecutionEffect?: (p: Permit, c: any, o: string, s: any) => Promise<ApiResult>;
+  selectDurableStrictRosterPolicy?: (p: Permit, c: any, o: string, markers: any) => Promise<{ operationId: string; permitId: string; approvalId: string } | undefined>;
+  readDurableStrictRosterPolicy?: (o: string, markers: any) => Promise<{ operationId: string; permitId: string; approvalId: string } | undefined>;
+  resolveDurableStrictRosterPolicyExecutionEffect?: (p: Permit, c: any, o: string, s: any, markers: any) => Promise<ApiResult>;
+  beginDurableStrictRosterPolicyExecutionEffect?: (p: Permit, c: any, o: string, s: any, markers: any) => Promise<ApiResult>;
 }
 
 async function loadRuntime(): Promise<Runtime> {
@@ -389,8 +392,6 @@ function configure(store: Store, permit: Permit, id: ScenarioId) {
     store.authorityCheckpoints = authorities(['witness-a', 'witness-b', 'witness-c'], 3, currentRosterDigest);
   } else if (id === 'restart-capability-stripped' || id === 'cross-host-roster-unavailable') {
     store.witnessRoster = undefined;
-  } else if (id === 'marker-loss-after-begin-cas') {
-    store.postCasCapabilityLoss = true;
   }
 }
 
@@ -536,7 +537,7 @@ async function durableMarkerIntegrity(
 ): Promise<'current' | 'inconsistent' | 'unavailable' | 'missing'> {
   let marker: unknown;
   try {
-    marker = await markers.readMarker(op);
+    marker = await markers.readStrictRosterPolicy(op);
   } catch {
     return 'unavailable';
   }
@@ -624,7 +625,8 @@ function priorMarker(permit: Permit): DurableMarker {
 }
 
 function needsPriorSelection(id: ScenarioId): boolean {
-  return id !== 'marker-read-unavailable' &&
+  return id !== 'marker-missing-after-prior-selection' &&
+    id !== 'marker-read-unavailable' &&
     id !== 'marker-bound-other-operation' &&
     id !== 'marker-bound-other-permit' &&
     id !== 'marker-malformed' &&
@@ -646,17 +648,20 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
     } else if (id === 'marker-read-unavailable') {
       markers.readUnavailable = true;
     } else if (id === 'marker-bound-other-operation') {
-      await markers.bindMarker(operationId, { operationId: 'op_other_operation', permitId: permit.id, approvalId: permit.approvalId });
+      await markers.bindStrictRosterPolicy(operationId, { operationId: 'op_other_operation', permitId: permit.id, approvalId: permit.approvalId });
     } else if (id === 'marker-bound-other-permit') {
-      await markers.bindMarker(operationId, { operationId, permitId: 'permit_' + 'f'.repeat(24), approvalId: permit.approvalId });
+      await markers.bindStrictRosterPolicy(operationId, { operationId, permitId: 'permit_' + 'f'.repeat(24), approvalId: permit.approvalId });
     } else if (id === 'marker-malformed') {
-      await markers.bindMarker(operationId, { operationId, permitId: '', approvalId: '' } as DurableMarker);
+      await markers.bindStrictRosterPolicy(operationId, { operationId, permitId: '', approvalId: '' } as DurableMarker);
     } else if (id === 'marker-conflicting-preexisting') {
       // A different operation's selection is already bound at this key when this operation
       // attempts to select/begin -- the pre-existing marker conflicts rather than confirms.
-      await markers.bindMarker(operationId, { operationId, permitId: 'permit_' + 'a'.repeat(24), approvalId: permit.approvalId });
+      await markers.bindStrictRosterPolicy(operationId, { operationId, permitId: 'permit_' + 'a'.repeat(24), approvalId: permit.approvalId });
     } else if (needsPriorSelection(id)) {
-      await markers.bindMarker(operationId, priorMarker(permit));
+      await markers.bindStrictRosterPolicy(operationId, priorMarker(permit));
+    }
+    if (id === 'marker-loss-after-begin-cas') {
+      store.postCasHook = () => markers.deleteMarker(operationId);
     }
 
     const isBeginPhase = beginPhaseScenarios.has(id);
@@ -688,10 +693,21 @@ async function runScenario(arm: Arm, id: ScenarioId, runtime: Runtime): Promise<
         // this harness intentionally destroys/never shares to model restart and cross-host
         // handoff -- so no fallback path can legitimately reconstruct the durable-policy result.
         result = { status: 'indeterminate', reason: 'durable_strict_roster_api_unavailable', retryable: true };
-      } else if (isBeginPhase) {
-        result = await durableBeginFn!(permit, current, operationId, view);
       } else {
-        result = await durableResolveFn!(permit, current, operationId, view);
+        // Reconcile selection against the host-owned durable marker. This models the earlier
+        // process selecting policy for normal controls and idempotent reselection, while preserving
+        // the frozen missing/unavailable/misbound/malformed/conflicting states exactly as seeded.
+        if (needsPriorSelection(id)) {
+          await selectFn!(permit, current, operationId, markers);
+          await readFn!(operationId, markers);
+        } else if (id === 'marker-conflicting-preexisting') {
+          await selectFn!(permit, current, operationId, markers);
+        }
+        if (isBeginPhase) {
+          result = await durableBeginFn!(permit, current, operationId, view, markers);
+        } else {
+          result = await durableResolveFn!(permit, current, operationId, view, markers);
+        }
       }
     }
     const want = expected(id);
