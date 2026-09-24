@@ -1326,3 +1326,19 @@ another workflow's strict selection; transient roster outages can recover; termi
 terminal without invoking `beginEffect`; and strict begin performs one state transition with roster
 checks bracketing that CAS. Aegis `d1dd7bf` implements these invariants; `rcd-mucbqflv` and the full
 release gate remain green.
+
+
+### RT-37 — Strict roster policy must survive process restart and cross-host handoff (from exp-46)
+
+- **Finding:** RT-36's opaque continuity context protects only a surviving process. Baseline
+  `dsr-mudqgx1i` on Aegis `444f04a` exposed no durable selection/readback boundary, detected
+  `0/9` marker/policy failures, restored authority in `9/9`, reached `1/15` exact accuracy, and had
+  zero durable strict-roster API availability while the deterministic durable fixture stayed green.
+- **Change and retest:** Aegis `83e802c` adds a host-owned atomic operation/permit/approval marker
+  contract, exact idempotent selection/readback, durable strict resolve/begin entry points, and
+  pre/post-CAS marker plus roster revalidation. The unchanged frozen roster `dsr-muf62rva` detected
+  `9/9`, restored zero authority, reached `15/15` exact accuracy, and passed every preservation,
+  failure-safety, ASK, and consume metric.
+- **Boundary:** Aegis validates an exposed durable marker and roster contract. Hosts still own
+  linearizable persistence, cross-host visibility, authentication, retention, and operation lifecycle;
+  the experiment does not certify a production database.
