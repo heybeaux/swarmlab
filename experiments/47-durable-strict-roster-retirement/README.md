@@ -24,5 +24,7 @@ accuracy `0`, and public retirement API availability `0`; the fixture was fully 
 
 Aegis `b287816a0734e2590fc1371186f5fcfd647318c9` adds exact terminal-bound atomic retirement,
 validated retained tombstones, late resolve classification, and late begin/ABA blocking. The same
-frozen scenarios reran as `dsrt-mugleqyl`: detection `1`, authority restoration `0`, accuracy/API
-`1`, and every secondary metric `1`.
+frozen scenarios reran against merged Aegis `403727c` as `dsrt-muglrcuu`: detection `1`, authority
+restoration `0`, accuracy/API `1`, and every secondary metric `1`. The earlier `dsrt-mugleqyl`
+trace is superseded: it ran patched uncommitted source while its metadata still reported baseline
+HEAD, so it is not used by the RT-38 claim.

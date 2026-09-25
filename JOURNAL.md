@@ -191,6 +191,7 @@ contract and strict resolve/begin policy (`83e802c`). Same scenarios reran fully
 
 Pre-registered Spec 53 at `8304a76` before baseline. Real Aegis `942e7be` was reproducibly red on the
 frozen lifecycle roster (`dsrt-muglbjj3`), while the retirement-tombstone fixture was green. Added
-terminal-bound atomic retirement and retained late-retry tombstone policy in Aegis `b287816`. The
-unchanged experiment reran fully green as `dsrt-mugleqyl`. Existing evidence checks remain regression
+terminal-bound atomic retirement and retained late-retry tombstone policy in Aegis `b287816`. The initial green output `dsrt-mugleqyl` was later found to carry the baseline SHA because the
+patched worktree was still uncommitted. The unchanged experiment was rerun against merged Aegis
+`403727c` and proved fully green as corrected run `dsrt-muglrcuu`. Existing evidence checks remain regression
 verification only.
