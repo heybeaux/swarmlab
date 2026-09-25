@@ -15,13 +15,16 @@ const digest = (value: string) => `sha256:${createHash('sha256').update(value).d
 
 const operationId = 'op_durable_strict_roster_retirement';
 const otherOperationId = 'op_unrelated_active_operation';
-const permit = { id: `permit_${'1'.repeat(24)}`, approvalId: `aegis_${'2'.repeat(16)}` };
-const otherPermit = { id: `permit_${'3'.repeat(24)}`, approvalId: `aegis_${'4'.repeat(16)}` };
+const signature = 'lifecycle-harness-signature';
+const permitApprovalId = `aegis_${'2'.repeat(16)}`;
+const otherApprovalId = `aegis_${'4'.repeat(16)}`;
+const permit = { id: `permit_${createHash('sha256').update(`${permitApprovalId}:${signature}`).digest('hex').slice(0, 24)}`, approvalId: permitApprovalId };
+const otherPermit = { id: `permit_${createHash('sha256').update(`${otherApprovalId}:${signature}`).digest('hex').slice(0, 24)}`, approvalId: otherApprovalId };
 const committedDigest = digest('committed-receipt');
 const failedDigest = digest('failed-receipt');
 type Outcome = 'committed' | 'failed';
 type MarkerBase = { operationId: string; permitId: string; approvalId: string };
-type ActiveMarker = MarkerBase & { status: 'active' };
+type ActiveMarker = MarkerBase;
 type RetiredMarker = MarkerBase & { status: 'retired'; outcome: Outcome; receiptDigest: string; terminalRevision: number };
 type Marker = ActiveMarker | RetiredMarker;
 type ActionResult = { status: ActionStatus; reason?: string; retryable?: boolean };
@@ -43,6 +46,21 @@ class LifecycleStore {
     if (this.markers.has(op)) return false;
     this.markers.set(op, structuredClone(marker)); return true;
   }
+  async readEffect(op: string) {
+    const truth = this.terminal.get(op);
+    if (!truth) return { operationId: op, permit: { ...permit, signature }, state: 'authorized', claimed: true, revision: 1 };
+    const p = op === otherOperationId ? otherPermit : permit;
+    return {
+      operationId: op,
+      permit: { ...p, signature },
+      state: truth.outcome,
+      claimed: true,
+      revision: truth.revision,
+      ...(truth.outcome === 'committed'
+        ? { successReceipt: { permitId: p.id, approvalId: p.approvalId, operationId: op, receiptDigest: truth.receiptDigest, verified: true } }
+        : { failureReceipt: { permitId: p.id, approvalId: p.approvalId, operationId: op, receiptDigest: truth.receiptDigest, failureCode: 'verified_failure', verified: true } }),
+    };
+  }
   async retireStrictRosterPolicy(op: string, expectedActive: ActiveMarker, retired: RetiredMarker) {
     if (this.unavailable) throw new Error('lifecycle unavailable');
     const current = this.markers.get(op);
@@ -53,12 +71,12 @@ class LifecycleStore {
     this.markers.set(op, structuredClone(retired)); return true;
   }
 }
-const active = (op: string, p = permit): ActiveMarker => ({ status: 'active', operationId: op, permitId: p.id, approvalId: p.approvalId });
+const active = (op: string, p = permit): ActiveMarker => ({ operationId: op, permitId: p.id, approvalId: p.approvalId });
 const retired = (outcome: Outcome, overrides: Partial<RetiredMarker> = {}): RetiredMarker => ({ ...active(operationId), status: 'retired', outcome, receiptDigest: outcome === 'committed' ? committedDigest : failedDigest, terminalRevision: 3, ...overrides });
 const stable = (value: unknown) => JSON.stringify(value, Object.keys((value ?? {}) as object).sort());
 
 interface Runtime {
-  retireDurableStrictRosterPolicy?: (p: any, op: string, outcome: Outcome, receiptDigest: string, terminalRevision: number, store: any) => Promise<any>;
+  retireDurableStrictRosterPolicy?: (p: any, op: string, outcome: Outcome, receiptDigest: string, terminalRevision: number, store: any, journal: any) => Promise<any>;
   readDurableStrictRosterPolicyLifecycle?: (op: string, store: any) => Promise<any>;
   resolveRetiredDurableStrictRosterPolicyExecutionEffect?: (p: any, op: string, store: any) => Promise<any>;
   beginRetiredDurableStrictRosterPolicyExecutionEffect?: (p: any, op: string, store: any) => Promise<any>;
@@ -99,7 +117,7 @@ async function fixture(id: ScenarioId, store: LifecycleStore): Promise<ActionRes
     if (id === 'unrelated-active-operation') return { status: 'active', reason: 'policy_active', retryable: true };
     if (id === 'retirement-store-unavailable') return { status: 'indeterminate', reason: 'policy_unavailable', retryable: false };
     const marker = await store.readStrictRosterPolicy(operationId).catch(() => undefined);
-    if (id === 'retirement-tombstone-lost' || marker === undefined || marker.status !== 'retired') return { status: 'blocked', reason: 'policy_lifecycle_inconsistent', retryable: false };
+    if (id === 'retirement-tombstone-lost' || marker === undefined || !('status' in marker) || marker.status !== 'retired') return { status: 'blocked', reason: 'policy_lifecycle_inconsistent', retryable: false };
     if (id === 'late-resolve-committed-retired') return { status: 'retired', reason: 'effect_committed', retryable: false };
     if (id === 'late-resolve-failed-retired') return { status: 'retired', reason: 'effect_failed', retryable: false };
     return { status: 'blocked', reason: 'policy_lifecycle_inconsistent', retryable: false };
@@ -133,10 +151,29 @@ async function aegis(id: ScenarioId, store: LifecycleStore, runtime: Runtime): P
   const outcome: Outcome = id.includes('failed') ? 'failed' : 'committed';
   store.terminal.set(operationId, { outcome, receiptDigest: outcome === 'committed' ? committedDigest : failedDigest, revision: 3 });
   if (id.startsWith('retire-')) {
-    const value = await runtime.retireDurableStrictRosterPolicy!(permit, operationId, outcome, outcome === 'committed' ? committedDigest : failedDigest, 3, store);
+    let callPermit = permit;
+    let callOperation = operationId;
+    let callOutcome = outcome;
+    let callDigest = outcome === 'committed' ? committedDigest : failedDigest;
+    if (id === 'retire-before-terminal') store.terminal.delete(operationId);
+    if (id === 'retire-wrong-outcome') {
+      store.terminal.set(operationId, { outcome: 'failed', receiptDigest: failedDigest, revision: 3 });
+      callOutcome = 'committed'; callDigest = committedDigest;
+    }
+    if (id === 'retire-wrong-receipt-digest') callDigest = digest('wrong');
+    if (id === 'retire-other-operation') {
+      callOperation = otherOperationId;
+      store.terminal.set(otherOperationId, { outcome: 'committed', receiptDigest: committedDigest, revision: 3 });
+    }
+    if (id === 'retire-other-permit') callPermit = otherPermit;
+    const value = await runtime.retireDurableStrictRosterPolicy!(callPermit, callOperation, callOutcome, callDigest, 3, store, store);
     return { api, result: value?.status ? value : { status: value ? 'retired' : 'blocked', reason: value ? 'policy_retired' : 'policy_lifecycle_inconsistent', retryable: false } };
   }
-  if (id === 'late-begin-after-retirement' || id === 'reselection-after-retirement') await runtime.retireDurableStrictRosterPolicy!(permit, operationId, outcome, outcome === 'committed' ? committedDigest : failedDigest, 3, store);
+  if (id === 'late-begin-after-retirement' || id === 'reselection-after-retirement') await runtime.retireDurableStrictRosterPolicy!(permit, operationId, outcome, outcome === 'committed' ? committedDigest : failedDigest, 3, store, store);
+  if (id === 'unrelated-active-operation') {
+    const value = await runtime.readDurableStrictRosterPolicyLifecycle!(otherOperationId, store);
+    return { api, result: value !== undefined && !('status' in value) ? { status: 'active', reason: 'policy_active', retryable: true } : { status: 'blocked', reason: 'policy_lifecycle_inconsistent', retryable: false } };
+  }
   const value = id === 'late-begin-after-retirement' || id === 'reselection-after-retirement'
     ? await runtime.beginRetiredDurableStrictRosterPolicyExecutionEffect!(permit, operationId, store)
     : await runtime.resolveRetiredDurableStrictRosterPolicyExecutionEffect!(permit, operationId, store);
