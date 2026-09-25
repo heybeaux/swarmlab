@@ -144,6 +144,9 @@
     },
     {
       "path": "experiments/46-durable-strict-roster-policy"
+    },
+    {
+      "path": "experiments/47-durable-strict-roster-retirement"
     }
   ]
 }
