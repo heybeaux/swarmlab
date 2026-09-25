@@ -186,3 +186,11 @@ Pre-registered Spec 52 before baseline. Real Aegis `444f04a` was reproducibly re
 restart/handoff roster (`dsr-mudqgx1i`); fixture green. Added Aegis host-owned durable marker
 contract and strict resolve/begin policy (`83e802c`). Same scenarios reran fully green as
 `dsr-muf62rva`. Intermediate local traces were diagnostic only and are not admitted.
+
+## 2026-09-24 — exp-47 durable strict-roster retirement
+
+Pre-registered Spec 53 at `8304a76` before baseline. Real Aegis `942e7be` was reproducibly red on the
+frozen lifecycle roster (`dsrt-muglbjj3`), while the retirement-tombstone fixture was green. Added
+terminal-bound atomic retirement and retained late-retry tombstone policy in Aegis `b287816`. The
+unchanged experiment reran fully green as `dsrt-mugleqyl`. Existing evidence checks remain regression
+verification only.

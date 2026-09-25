@@ -1342,3 +1342,17 @@ release gate remain green.
 - **Boundary:** Aegis validates an exposed durable marker and roster contract. Hosts still own
   linearizable persistence, cross-host visibility, authentication, retention, and operation lifecycle;
   the experiment does not certify a production database.
+
+### RT-38 — Durable strict-roster retirement needs terminal-bound tombstones (exp-47)
+
+Exp-46 kept exact strict-roster markers safe across restart but left lifecycle open. The frozen exp-47
+roster showed why deletion is not retirement: naive delete-on-terminal restored authority in 58.3%
+of failure scenarios and reached only 0.25 exact accuracy. Real Aegis `942e7be` exposed no retirement
+surface (`dsrt-muglbjj3`: failure detection 0, authority restoration 1, accuracy/API 0).
+
+Aegis `b287816` adds an atomic exact active-to-retired transition, terminal outcome/digest/revision
+validation, retained tombstone readback, late resolve classification and late begin/ABA blocking. The
+same 16 scenarios reran as `dsrt-mugleqyl`: detection 1, authority restoration 0, accuracy/API 1, and
+every secondary metric 1. Hosts still own linearizable persistence, authentic terminal journal truth,
+tombstone retention horizon and physical GC; this deterministic adapter test does not certify a
+production database or prescribe a TTL.

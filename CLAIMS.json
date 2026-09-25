@@ -4536,5 +4536,138 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 51 pre-registered at 6f8d6cf before implementation or output. Frozen fifteen scenarios and seed ran against real built baseline Aegis 7e73b06 and committed patched Aegis 4f2760b. Admitted red/green traces are rcd-mucazy99 and rcd-mucbcbk3. Hosts still own durable roster authentication/retention and strict-boundary selection; holdout unused. Edge-hardening commit d1dd7bf adds validation-order, terminal-preservation, transient-recovery, context-isolation, and single-CAS tests; exact unchanged experiment rerun rcd-mucbqflv remains green but the admitted claim trace stays rcd-mucbcbk3."
+  },
+  {
+    "id": "RT-38",
+    "claim": "Exact terminal-bound durable strict-roster retirement must preserve a retained tombstone so late retries cannot confuse legitimate GC with marker loss or resurrect authority.",
+    "experiment": "47-durable-strict-roster-retirement",
+    "spec": "specs/53-durable-strict-roster-retirement.md",
+    "runIds": [
+      "dsrt-muglbjj3",
+      "dsrt-mugleqyl"
+    ],
+    "tracePaths": [
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-muglbjj3.jsonl",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedRetirementFailureDetectionRate",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedRetiredAuthorityRestorationRate",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedDurableRetirementApiAvailability",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedCommittedRetirement",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedFailedRetirement",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedIdempotentRetirement",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateCommittedSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateFailedSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateBeginSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedAbaSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedPreTerminalSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongOutcomeSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongDigestSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongOperationSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongPermitSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedMalformedSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedTombstoneLossSafety",
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedOperationIsolation"
+    ],
+    "expectedValues": {
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedRetirementFailureDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedRetiredAuthorityRestorationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedDurableRetirementApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedCommittedRetirement": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedFailedRetirement": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedIdempotentRetirement": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateCommittedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateFailedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedLateBeginSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedAbaSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedPreTerminalSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongOutcomeSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongDigestSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongOperationSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedWrongPermitSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedMalformedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedTombstoneLossSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/47-durable-strict-roster-retirement/runs/dsrt-mugleqyl.jsonl#last.aegisWrappedOperationIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<aegis>/packages/aegis-hook/dist/index.js node experiments/47-durable-strict-roster-retirement/dist/main.js",
+    "stackRecommendation": "Use an atomic exact active-to-retired transition bound to authenticated terminal outcome, receipt digest, and revision; retain retirement tombstones through the late-retry horizon and never turn retired, malformed, missing, or unavailable lifecycle truth into retry authority.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-24-exp47",
+        "commits": [
+          "b287816a0734e2590fc1371186f5fcfd647318c9"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 53 pre-registered at 8304a76 before implementation or output. Frozen 16 scenarios ran against real built Aegis 942e7be (red) and b287816 (green). Deterministic adapter proof; hosts own linearizable storage, authentic terminal truth, retention horizon, and physical GC. Holdout unused."
   }
 ]
