@@ -1,0 +1,1 @@
+{"name":"@swarmlab/experiment-48-durable-strict-roster-retirement-compaction","version":"0.1.0","private":true,"type":"module","dependencies":{"@swarmlab/core":"0.1.0"},"scripts":{"start":"node dist/main.js"}}
