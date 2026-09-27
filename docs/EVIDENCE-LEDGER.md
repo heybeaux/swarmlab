@@ -10,6 +10,11 @@ The machine-readable ledger lives at [`../CLAIMS.json`](../CLAIMS.json). It is i
 
 Each entry represents one headline retest claim from `SYNTHESIS.md` (`RT-01` and onward).
 
+The latest admitted claim is **RT-39**, supported by the real-Aegis red/green exp-48 pair
+`dsrc-mujg8jlt` and `dsrc-mujg9oha`. It establishes that strict-roster retirement compaction needs
+an authenticated self-binding lifecycle checkpoint; existing evidence checks remain regression
+verification rather than novel evidence.
+
 Required fields:
 
 - `id` — stable claim id, matching the `SYNTHESIS.md` heading.
