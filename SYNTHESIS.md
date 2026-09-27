@@ -1358,3 +1358,18 @@ authority restoration 0, accuracy/API 1, and every secondary metric 1. An earlie
 still reported the baseline SHA. Hosts still own linearizable persistence, authentic terminal journal truth,
 tombstone retention horizon and physical GC; this deterministic adapter test does not certify a
 production database or prescribe a TTL.
+
+### RT-39 — Durable strict-roster retirement compaction needs authenticated lifecycle proof (exp-48)
+
+Exp-47's retained tombstone closed marker deletion, but left full lifecycle state permanent. The frozen
+exp-48 roster proved that naive tombstone GC cannot distinguish intentional compaction from lost
+retirement truth. Real Aegis `403727c` exposed no lifecycle-compaction surface (`dsrc-mujg8jlt`:
+failure detection `0`, restored authority `1`, accuracy/API `0`) while the deterministic authenticated
+checkpoint fixture was green.
+
+Aegis `87e8dba` adds an exact atomic tombstone-to-checkpoint transition, strict self-binding proof over
+the omitted permit/approval identity and retained terminal fields, exact readback, late terminal
+classification, and begin/reselection blocking. The unchanged 18 scenarios reran green as
+`dsrc-mujg9oha`: detection/accuracy/API and every secondary metric `1`, restored authority `0`.
+Hosts still own checkpoint independence/authentication, linearizability, visibility, retention and
+physical GC; this deterministic adapter proof does not certify a production store or choose a TTL.

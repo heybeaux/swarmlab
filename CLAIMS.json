@@ -4671,5 +4671,148 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 53 pre-registered at 8304a76 before implementation or output. Frozen 16 scenarios ran against real built baseline Aegis 942e7be (red) and unchanged against merged Aegis 403727c (green, corrected provenance run dsrt-muglrcuu). The earlier dsrt-mugleqyl output was generated from patched uncommitted source while metadata still reported baseline HEAD, so it is retained only as a superseded trace and is not claim evidence. Hosts own linearizable storage, authentic terminal truth, retention horizon, and physical GC. Holdout unused."
+  },
+  {
+    "id": "RT-39",
+    "claim": "Exact durable strict-roster retirement tombstones may be compacted only through an atomic authenticated self-binding lifecycle checkpoint that preserves late terminal classification without restoring retry, begin, or reselection authority.",
+    "experiment": "48-durable-strict-roster-retirement-compaction",
+    "spec": "specs/54-durable-strict-roster-retirement-compaction.md",
+    "runIds": [
+      "dsrc-mujg8jlt",
+      "dsrc-mujg9oha"
+    ],
+    "tracePaths": [
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg8jlt.jsonl",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCompactionFailureDetectionRate",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCompactedAuthorityRestorationRate",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedRetirementCompactionApiAvailability",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCommittedCompaction",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedFailedCompaction",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedIdempotentCompaction",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateCommittedResolveSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateFailedResolveSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateBeginSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedAbaSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedPreRetirementSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongOperationSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongPermitSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongOutcomeSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongDigestSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongRevisionSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedUnverifiedSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedMalformedSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCheckpointLossSafety",
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedOperationIsolation"
+    ],
+    "expectedValues": {
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCompactionFailureDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCompactedAuthorityRestorationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedRetirementCompactionApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCommittedCompaction": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedFailedCompaction": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedIdempotentCompaction": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateCommittedResolveSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateFailedResolveSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedLateBeginSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedAbaSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedPreRetirementSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongOperationSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongPermitSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongOutcomeSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongDigestSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedWrongRevisionSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedUnverifiedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedMalformedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedCheckpointLossSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/48-durable-strict-roster-retirement-compaction/runs/dsrc-mujg9oha.jsonl#last.aegisWrappedOperationIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<aegis>/packages/aegis-hook/dist/index.js node experiments/48-durable-strict-roster-retirement-compaction/dist/main.js",
+    "stackRecommendation": "Use an atomic exact tombstone-to-checkpoint transition with independently authenticated self-binding proof; validate exact operation/permit/approval/outcome/digest/revision on read and never convert missing, malformed, unverified, or unavailable compact proof into authority.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-25-exp48-aegis",
+        "commits": [
+          "87e8dba462d6116619d117f1df845a6701032553"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 54 was pre-registered at 3544bbb before implementation or output. Frozen 18 scenarios ran against real built baseline Aegis 403727c (red) and committed patched Aegis 87e8dba (green). Hosts own independent authentication, linearizable transition, cross-host visibility, retention horizon and physical GC; holdout unused."
   }
 ]

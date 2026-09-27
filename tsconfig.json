@@ -147,6 +147,9 @@
     },
     {
       "path": "experiments/47-durable-strict-roster-retirement"
+    },
+    {
+      "path": "experiments/48-durable-strict-roster-retirement-compaction"
     }
   ]
 }

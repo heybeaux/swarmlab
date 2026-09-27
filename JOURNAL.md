@@ -195,3 +195,12 @@ terminal-bound atomic retirement and retained late-retry tombstone policy in Aeg
 patched worktree was still uncommitted. The unchanged experiment was rerun against merged Aegis
 `403727c` and proved fully green as corrected run `dsrt-muglrcuu`. Existing evidence checks remain regression
 verification only.
+
+## 2026-09-26 — exp-48 durable strict-roster retirement compaction
+
+Recovered the prior worker's committed Spec 54 pre-registration (`3544bbb`) before any output; its
+untracked src was an unrun exp-47 copy, so it was replaced with the actual frozen 18-scenario harness
+without changing thresholds. Baseline real Aegis `403727c` was reproducibly red as `dsrc-mujg8jlt`
+while the authenticated checkpoint fixture was green. Added Aegis atomic exact tombstone-to-checkpoint
+compaction and self-binding compact lifecycle proof in `87e8dba`; same experiment reran fully green as
+`dsrc-mujg9oha`. Existing evidence checks remain regression verification only, not novel evidence.
