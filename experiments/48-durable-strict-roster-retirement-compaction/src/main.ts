@@ -77,9 +77,10 @@ class LifecycleStore {
   async compactStrictRosterPolicyRetirement(op: string, expectedRetired: RetiredMarker, checkpoint: CompactedCheckpoint) {
     if (this.unavailable) throw new Error('lifecycle unavailable');
     const current = this.markers.get(op);
-    if (stable(current) === stable(checkpoint)) return false;
+    const authenticated = { ...checkpoint, verified: true };
+    if (stable(current) === stable(authenticated)) return false;
     if (stable(current) !== stable(expectedRetired)) return false;
-    this.markers.set(op, structuredClone(checkpoint)); return true;
+    this.markers.set(op, structuredClone(authenticated)); return true;
   }
 }
 const active = (op: string, p = permit): ActiveMarker => ({ operationId: op, permitId: p.id, approvalId: p.approvalId });
