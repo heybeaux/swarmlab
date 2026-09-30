@@ -1,6 +1,6 @@
 # Spec 55 - Compact retirement checkpoint equivocation
 
-**Pre-registered:** 2026-09-29T06:47:00Z, before harness implementation or baseline execution.  
+**Pre-registered:** 2026-09-29T06:34:35Z, before harness implementation or baseline execution.  
 **Experiment:** `experiments/49-compact-retirement-checkpoint-equivocation`  
 **Seed:** `compact-retirement-checkpoint-equivocation-v1`  
 **Holdout:** `compact-retirement-checkpoint-equivocation-holdout-v1` is reserved and unused.

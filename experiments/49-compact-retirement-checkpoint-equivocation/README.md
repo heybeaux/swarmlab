@@ -1,6 +1,6 @@
 # Experiment 49 - Compact retirement checkpoint equivocation
 
-**Pre-registered:** 2026-09-29T06:47:00Z before harness implementation or baseline output.  
+**Pre-registered:** 2026-09-29T06:34:35Z before harness implementation or baseline output.  
 **Spec:** [`specs/55-compact-retirement-checkpoint-equivocation.md`](../../specs/55-compact-retirement-checkpoint-equivocation.md)
 
 This experiment tests whether RT-39's single authenticated compact strict-roster retirement proof can
