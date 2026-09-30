@@ -204,3 +204,8 @@ without changing thresholds. Baseline real Aegis `403727c` was reproducibly red 
 while the authenticated checkpoint fixture was green. Added Aegis atomic exact tombstone-to-checkpoint
 compaction and self-binding compact lifecycle proof in `87e8dba`; same experiment reran fully green as
 `dsrc-mujg9oha`. Existing evidence checks remain regression verification only, not novel evidence.
+
+
+## 2026-09-29 — exp-49 compact retirement checkpoint authority agreement
+
+Recovered the prior night's committed pre-registration before any admitted baseline. After repairing uncommitted harness-to-public-contract mismatches without changing frozen scenarios or thresholds, real Aegis `40b6a03` reproduced red as `crce-munqi4mz`. Candidate `e04db90` reran the exact roster green as `crce-munqnsnf`. Existing evidence checks remain regression verification only.

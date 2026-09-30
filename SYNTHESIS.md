@@ -1373,3 +1373,8 @@ classification, and begin/reselection blocking. The unchanged 18 scenarios reran
 `dsrc-mujg9oha`: detection/accuracy/API and every secondary metric `1`, restored authority `0`.
 Hosts still own checkpoint independence/authentication, linearizability, visibility, retention and
 physical GC; this deterministic adapter proof does not certify a production store or choose a TTL.
+
+
+### RT-40 — Compact retirement checkpoints need plural lifecycle-authority agreement (exp-49)
+
+RT-39 authenticated one self-binding compact strict-roster retirement checkpoint, but left that one proof as a restore point. Baseline real Aegis `40b6a03` detected `0/6` lifecycle conflicts and returned false terminal certainty for every conflicting/rolled-back compact proof (`crce-munqi4mz`, accuracy `4/19`, no plural API) while the deterministic fixture was green. Aegis `e04db90` adds independently authenticated compact-lifecycle authority records, strict duplicate/shape/operation/self-binding checks, exact agreement with the local compact proof, and explicit plural resolve/begin boundaries. The unchanged roster reran green as `crce-munqnsnf`: detection/accuracy/API `1`, false terminal certainty `0`, every secondary metric `1`. Aegis only validates exposed authorities; hosts own independence, authentication, completeness, linearizability, retention, and physical GC.

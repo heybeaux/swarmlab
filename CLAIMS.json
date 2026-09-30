@@ -4814,5 +4814,148 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 54 was pre-registered at 3544bbb before implementation or output. Frozen 18 scenarios ran against real built baseline Aegis 403727c (red) and committed patched Aegis 87e8dba (green). Hosts own independent authentication, linearizable transition, cross-host visibility, retention horizon and physical GC; holdout unused."
+  },
+  {
+    "id": "RT-40",
+    "claim": "Compact strict-roster retirement checkpoints provide terminal certainty only when every exposed independently authenticated lifecycle authority is valid, uniquely identified, operation-bound, self-binding, and exactly agrees with the local compact record.",
+    "experiment": "49-compact-retirement-checkpoint-equivocation",
+    "spec": "specs/55-compact-retirement-checkpoint-equivocation.md",
+    "runIds": [
+      "crce-munqi4mz",
+      "crce-munqnsnf"
+    ],
+    "tracePaths": [
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqi4mz.jsonl",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedLifecycleCheckpointEquivocationDetectionRate",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedEquivocationFalseTerminalCertaintyRate",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedMultiAuthorityLifecycleCheckpointApiAvailability",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedSingleCommittedPreservation",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedPluralCommittedPreservation",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedFailedPreservation",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOrderIndependence",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOutcomeConflictSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedReceiptDigestConflictSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedTerminalRevisionConflictSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedCheckpointDigestConflictSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedLocalRollbackConflictSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedAbsentSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedEmptySafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedUnverifiedSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedDuplicateSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedWrongOperationSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedMalformedSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedBeginSafety",
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOperationIsolation"
+    ],
+    "expectedValues": {
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedLifecycleCheckpointEquivocationDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedEquivocationFalseTerminalCertaintyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedMultiAuthorityLifecycleCheckpointApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedSingleCommittedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedPluralCommittedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedFailedPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOrderIndependence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOutcomeConflictSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedReceiptDigestConflictSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedTerminalRevisionConflictSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedCheckpointDigestConflictSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedLocalRollbackConflictSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedAbsentSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedEmptySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedUnverifiedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedDuplicateSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedWrongOperationSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedMalformedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedBeginSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/49-compact-retirement-checkpoint-equivocation/runs/crce-munqnsnf.jsonl#last.aegisWrappedOperationIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_BUILD_ID=<unique> AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js AEGIS_HOOK_DIST=<aegis>/packages/aegis-hook/dist/index.js node experiments/49-compact-retirement-checkpoint-equivocation/dist/main.js",
+    "stackRecommendation": "Validate every exposed authenticated compact-lifecycle authority, require exact agreement with the local proof, fail unavailable truth indeterminate and invalid/conflicting truth blocked, and never grant begin authority from terminal proof.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/aegis-hook",
+        "branch": "nori/2026-09-28-exp49-aegis",
+        "commits": [
+          "e04db90ae4dddfe50b34df1de66d03c08adf400e"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 55 was committed at 24ae5cd before any admitted baseline. Frozen 19 scenarios ran against real built baseline Aegis 40b6a03 (red) and committed candidate e04db90 (green). Setup-only traces from public-contract repair and dirty iteration are not admitted. Hosts own authority independence/authentication, complete enumeration, linearizable reads, retention, and physical GC; holdout unused."
   }
 ]
