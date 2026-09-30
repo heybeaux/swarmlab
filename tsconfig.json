@@ -150,6 +150,9 @@
     },
     {
       "path": "experiments/48-durable-strict-roster-retirement-compaction"
+    },
+    {
+      "path": "experiments/49-compact-retirement-checkpoint-equivocation"
     }
   ]
 }
