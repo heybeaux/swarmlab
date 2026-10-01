@@ -1,6 +1,6 @@
 # Experiment 51 — Source freshness action gate
 
-**Pre-registered:** 2026-10-01T07:03:00Z before implementation or baseline execution.  
+**Pre-registered:** 2026-10-01T06:42:08Z before implementation or baseline execution.  
 **Spec:** [`specs/57-source-freshness-action-gate.md`](../../specs/57-source-freshness-action-gate.md)  
 **Seed:** `source-freshness-action-gate-v1`
 

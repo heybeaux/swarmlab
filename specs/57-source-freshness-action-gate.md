@@ -1,6 +1,6 @@
 # Spec 57 — Source freshness action gate (exp-51)
 
-**Pre-registered:** 2026-10-01T07:03:00Z, before harness implementation or baseline execution.  
+**Pre-registered:** 2026-10-01T06:42:08Z, before harness implementation or baseline execution.  
 **Experiment:** `experiments/51-source-freshness-action-gate`  
 **Seed:** `source-freshness-action-gate-v1`  
 **Holdout:** `source-freshness-action-gate-holdout-v1` is reserved and unused.
