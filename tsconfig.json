@@ -153,6 +153,9 @@
     },
     {
       "path": "experiments/49-compact-retirement-checkpoint-equivocation"
+    },
+    {
+      "path": "experiments/51-source-freshness-action-gate"
     }
   ]
 }
