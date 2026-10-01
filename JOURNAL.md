@@ -209,3 +209,7 @@ compaction and self-binding compact lifecycle proof in `87e8dba`; same experimen
 ## 2026-09-29 — exp-49 compact retirement checkpoint authority agreement
 
 Recovered the prior night's committed pre-registration before any admitted baseline. After repairing uncommitted harness-to-public-contract mismatches without changing frozen scenarios or thresholds, real Aegis `40b6a03` reproduced red as `crce-munqi4mz`. Candidate `e04db90` reran the exact roster green as `crce-munqnsnf`. Existing evidence checks remain regression verification only.
+
+## 2026-09-30 — exp-51 source freshness action gate
+
+An initial compact-lifecycle omission candidate was rejected after independent novelty audit showed it duplicated exp-43 by question, omission mechanism, metrics, and witness-set policy; its branch/trace were preserved and no Aegis patch was made. Spec 57 (`dfdfc39`) then pre-registered the genuinely unbuilt exp-50-to-Aegis boundary before implementation or output. Real Aegis `e7f2ee2` reproduced red as `sfag-mup64k29`; candidate `c2c0368` reran the exact sixteen scenarios green as `sfag-mup67v4j`. Existing evidence checks remain regression verification only.
