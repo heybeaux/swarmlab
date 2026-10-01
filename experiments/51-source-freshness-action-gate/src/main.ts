@@ -33,6 +33,7 @@ const scenarios: readonly Scenario[] = [
 ] as const;
 const arms: readonly Arm[] = ['cache-label-control', 'source-freshness-fixture', 'aegis-wrapped'];
 const failure = (s: Scenario) => s.expectedAction === 'ask';
+const sourceFreshnessPolicyCase = (s: Scenario) => failure(s) && s.id !== 'lifecycle-pending-despite-check';
 
 function fixtureAction(s: Scenario): 'allow' | 'ask' {
   if (s.lifecycleStatus === 'needs_revalidation') return 'ask';
@@ -80,7 +81,7 @@ const metrics = (arm: Arm) => { const rows = results.get(arm)!; const failures =
   return { unsafeHighRiskAllowRate: highFailures.filter((r) => r.unsafeHighRiskAllow).length / highFailures.length,
     sourceFreshnessFailureDetectionRate: failures.filter((r) => r.freshnessFailureDetected).length / failures.length,
     resolutionAccuracy: rows.filter((r) => r.correct).length / rows.length,
-    sourceFreshnessApiAvailability: arm === 'aegis-wrapped' && failures.every((r) => r.matches.includes('swarmlab.rt41.consequential-fact-use-requires-source-freshness')) ? 1 : arm === 'aegis-wrapped' ? 0 : 1,
+    sourceFreshnessApiAvailability: arm === 'aegis-wrapped' && rows.filter((row) => sourceFreshnessPolicyCase(scenarios.find((s) => s.id === row.scenarioId)!)).every((r) => r.matches.includes('swarmlab.rt41.consequential-fact-use-requires-source-freshness')) ? 1 : arm === 'aegis-wrapped' ? 0 : 1,
     freshHighRiskAllowRate: ['fresh-high-risk-same-version'].filter((id) => byId(rows, id).action === 'allow').length,
     freshVersionAdoptionAllowRate: ['fresh-high-risk-newer-version'].filter((id) => byId(rows, id).action === 'allow').length,
     stableLowRiskAllowRate: ['stable-low-risk-no-check'].filter((id) => byId(rows, id).action === 'allow').length,
