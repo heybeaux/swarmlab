@@ -4957,5 +4957,84 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 55 was committed at 24ae5cd before any admitted baseline. Frozen 19 scenarios ran against real built baseline Aegis 40b6a03 (red) and committed candidate e04db90 (green). Setup-only traces from public-contract repair and dirty iteration are not admitted. Hosts own authority independence/authentication, complete enumeration, linearizable reads, retention, and physical GC; holdout unused."
+  },
+  {
+    "id": "RT-41",
+    "claim": "Consequential fact use is allowed only when its action basis is backed by a fresh authenticated observation from the configured source with exact source-version binding; explicit failed checks also fail closed.",
+    "experiment": "51-source-freshness-action-gate",
+    "spec": "specs/57-source-freshness-action-gate.md",
+    "runIds": [
+      "sfag-mup64k29",
+      "sfag-mup67v4j"
+    ],
+    "tracePaths": [
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup64k29.jsonl",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedUnsafeHighRiskAllowRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedSourceFreshnessFailureDetectionRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedSourceFreshnessApiAvailability",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedFreshHighRiskAllowRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedFreshVersionAdoptionAllowRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedStableLowRiskAllowRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedRecoveryAllowRate",
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedBoundaryPreservation"
+    ],
+    "expectedValues": {
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedUnsafeHighRiskAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedSourceFreshnessFailureDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedSourceFreshnessApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedFreshHighRiskAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedFreshVersionAdoptionAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedStableLowRiskAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedRecoveryAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/51-source-freshness-action-gate/runs/sfag-mup67v4j.jsonl#last.aegisWrappedBoundaryPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_BUILD_ID=<unique> AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/51-source-freshness-action-gate/dist/main.js",
+    "stackRecommendation": "Require authenticated action-time source freshness and exact action-basis source-version binding for consequential fact use; fail missing, unavailable, timeout, stale, mismatched, unauthenticated, malformed and unknown evidence closed while preserving low-risk no-check informational use.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-09-30-exp51-source-freshness",
+        "commits": [
+          "c2c0368b0f185e90240cd0b2d87a2e7b7f6d8e21",
+          "a472a04"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 57 was committed at dfdfc39 before harness implementation or observation. Frozen 16 scenarios ran against real built baseline Aegis e7f2ee2 (red) and committed candidate c2c0368 (green). Exp-21 assumes explicit lifecycle evidence; exp-50 measures discovery cadence without Aegis; this experiment proves the action-time governance handoff. Host adapters own truthful authenticated checks, versioning and freshness policy; holdout unused."
   }
 ]
