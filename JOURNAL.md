@@ -213,3 +213,7 @@ Recovered the prior night's committed pre-registration before any admitted basel
 ## 2026-09-30 — exp-51 source freshness action gate
 
 An initial compact-lifecycle omission candidate was rejected after independent novelty audit showed it duplicated exp-43 by question, omission mechanism, metrics, and witness-set policy; its branch/trace were preserved and no Aegis patch was made. Spec 57 (`dfdfc39`) then pre-registered the genuinely unbuilt exp-50-to-Aegis boundary before implementation or output. Real Aegis `e7f2ee2` reproduced red as `sfag-mup64k29`; candidate `c2c0368` reran the exact sixteen scenarios green as `sfag-mup67v4j`. Existing evidence checks remain regression verification only.
+
+## 2026-10-01 — exp-52 source freshness policy binding
+
+Pre-registered Spec 58 at `824b88c` before implementation or output. The eighteen-scenario real-Aegis harness isolated the policy assumption beneath RT-41: a locally fresh/authenticated observation can still be interpreted under a rolled-back or foreign policy envelope. Baseline `sfpb-muqlb7j6` on Aegis `5f548ce` allowed every policy mismatch while the deterministic fixture and RT-41 preservation controls stayed green. Aegis `8f95e15` adds authenticated exact policy identity/version, version-namespace, and canonical-max-age binding; exact same roster reran fully green as `sfpb-muqld2ku`. Existing evidence checks remain regression verification, not novel evidence.
