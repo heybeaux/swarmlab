@@ -5036,5 +5036,90 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 57 was committed at dfdfc39 before harness implementation or observation. Frozen 16 scenarios ran against real built baseline Aegis e7f2ee2 (red) and committed candidate c2c0368 (green). Exp-21 assumes explicit lifecycle evidence; exp-50 measures discovery cadence without Aegis; this experiment proves the action-time governance handoff. Host adapters own truthful authenticated checks, versioning and freshness policy; holdout unused."
+  },
+  {
+    "id": "RT-42",
+    "claim": "Consequential fact use with configured freshness policy is allowed only when a fresh observation is bound to the authenticated current policy identity/version, source-version namespace, and exact maximum-age rule.",
+    "experiment": "52-source-freshness-policy-binding",
+    "spec": "specs/58-source-freshness-policy-binding.md",
+    "runIds": [
+      "sfpb-muqlb7j6",
+      "sfpb-muqld2ku"
+    ],
+    "tracePaths": [
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqlb7j6.jsonl",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedUnsafePolicyMismatchAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedPolicyMismatchDetectionRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedPolicyBindingApiAvailability",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedCurrentPolicyAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedExactBoundaryAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedNewerSourceVersionAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedRecoveryAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedStableLowRiskAllowRate",
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedRt41StaleObservationPreservation"
+    ],
+    "expectedValues": {
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedUnsafePolicyMismatchAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedPolicyMismatchDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedPolicyBindingApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedCurrentPolicyAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedExactBoundaryAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedNewerSourceVersionAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedRecoveryAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedStableLowRiskAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/52-source-freshness-policy-binding/runs/sfpb-muqld2ku.jsonl#last.aegisWrappedRt41StaleObservationPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_BUILD_ID=<unique> AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/52-source-freshness-policy-binding/dist/main.js",
+    "stackRecommendation": "Bind fresh observations to an authenticated exact current policy identity/version, source-version namespace, and canonical maximum age whenever the host configures policy truth; fail incomplete, malformed, unauthenticated or mismatched policy evidence closed.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-01-exp52-source-policy-binding",
+        "commits": [
+          "8f95e15e86b04c05c43cf010f0ccbf3ed6aaa0ad"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/57"
+        ]
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 58 was committed at 824b88c before harness implementation or observation. Frozen 18 scenarios ran against real built baseline Aegis 5f548ce (red) and committed candidate 8f95e15 (green). Exp-51 validates observations but assumes the policy interpreting freshness. Hosts own truthful authenticated canonical policy evidence and cross-host distribution; holdout unused."
   }
 ]

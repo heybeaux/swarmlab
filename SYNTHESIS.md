@@ -1386,3 +1386,11 @@ Exp-21/RT-12 safely consumes explicit revocation and `needs_revalidation` lifecy
 Aegis `c2c0368` adds `SourceFreshnessMetadata` and a deterministic policy that asks on high-risk missing/unavailable/timeout/unknown/stale/unauthenticated/source-mismatched/version-mismatched/malformed evidence. It preserves same-version and freshly adopted newer-version use, inclusive boundary age, low-risk informational no-check use, and recovered fresh sources. The unchanged frozen roster reran green as `sfag-mup67v4j`: unsafe allow `0`, detection/accuracy/API and all secondary metrics `1`.
 
 Aegis evaluates evidence; it does not discover world change. Hosts own trustworthy source selection, observation authentication, monotonic versions, truthful metadata, and source-specific freshness windows. A dishonest adapter can still lie.
+
+### RT-42 — Fresh observations need current policy-envelope binding (exp-52)
+
+RT-41 validated each source observation but assumed one honest current freshness policy. Exp-52 froze fresh-looking observations whose policy identity/revision, source-version namespace, authentication, or maximum-age rule disagreed with the configured current policy. Baseline real Aegis `5f548ce` allowed every mismatch (`sfpb-muqlb7j6`: unsafe allow `1`, detection/API `0`, exact accuracy `0.3889`) while preserving RT-41 observation behavior and while the deterministic fixture stayed green.
+
+Aegis runtime `8f95e15` adds optional exact authenticated policy-envelope binding. Once an expected policy is configured, missing, malformed, unauthenticated, rolled-back/future-mismatched, foreign-identity/namespace, or max-age-divergent evidence asks through RT-42; legacy RT-41 callers and low-risk no-check informational use remain compatible. The unchanged eighteen-scenario roster reran green as `sfpb-muqld2ku`: unsafe allow `0`, detection/accuracy/API and every secondary metric `1`.
+
+Aegis compares evidence; it does not create cross-host consensus. Hosts own policy authentication, canonical identities/namespaces, monotonic policy revision, max-age selection, truthful metadata, and consistent distribution. A dishonest or incomplete adapter can still hide split brain.
