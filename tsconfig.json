@@ -156,10 +156,12 @@
     },
     {
       "path": "experiments/51-source-freshness-action-gate"
-    }
-,
+    },
     {
       "path": "experiments/52-source-freshness-policy-binding"
+    },
+    {
+      "path": "experiments/53-source-freshness-policy-authority-consensus"
     }
   ]
 }
