@@ -5121,5 +5121,114 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 58 was committed at 824b88c before harness implementation or observation. Frozen 18 scenarios ran against real built baseline Aegis 5f548ce (red) and committed candidate 8f95e15 (green). Exp-51 validates observations but assumes the policy interpreting freshness. Hosts own truthful authenticated canonical policy evidence and cross-host distribution; holdout unused."
+  },
+  {
+    "id": "RT-43",
+    "claim": "Consequential fact use with plural freshness-policy truth is allowed only when the exact expected set of independently authenticated authorities all present the same canonical policy identity/version, source-version namespace, and maximum-age rule.",
+    "experiment": "53-source-freshness-policy-authority-consensus",
+    "spec": "specs/59-source-freshness-policy-authority-consensus.md",
+    "runIds": [
+      "sfpac-mus0r5kr",
+      "sfpac-mus0sxzz"
+    ],
+    "tracePaths": [
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0r5kr.jsonl",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedUnsafeAuthorityDisagreementAllowRate",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedAuthorityDisagreementDetectionRate",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedPolicyAuthorityConsensusApiAvailability",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedLegacyRt42Preservation",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedTwoAuthorityAgreement",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedThreeAuthorityAgreement",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedOrderIndependence",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedConflictDetection",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRosterSafety",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedInvalidAuthoritySafety",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRecoveryAllowRate",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRt41StaleObservationPreservation",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedStableLowRiskAllowRate",
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedExplicitFailurePreservation"
+    ],
+    "expectedValues": {
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedUnsafeAuthorityDisagreementAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedAuthorityDisagreementDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedPolicyAuthorityConsensusApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedLegacyRt42Preservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedTwoAuthorityAgreement": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedThreeAuthorityAgreement": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedOrderIndependence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedConflictDetection": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRosterSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedInvalidAuthoritySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRecoveryAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedRt41StaleObservationPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedStableLowRiskAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/53-source-freshness-policy-authority-consensus/runs/sfpac-mus0sxzz.jsonl#last.aegisWrappedExplicitFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_BUILD_ID=<unique> AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/53-source-freshness-policy-authority-consensus/dist/main.js",
+    "stackRecommendation": "Require exact expected-roster set equality and unanimous authenticated agreement with the canonical freshness-policy envelope before consequential fact use; reject missing, empty, malformed, unauthenticated, duplicate, omitted, unexpected, or disagreeing authority evidence.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-02-exp53-policy-authority",
+        "commits": [
+          "cbdf4aa12425fee2cae44fbe93447d130b57c856",
+          "8d50e6ffc578c84dbd5608684bbe0295daa6ef89"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 59 was committed at 9ad1d1d before implementation or observation. Frozen 22 scenarios ran against real built baseline Aegis 19ab9dc (red) and committed candidate cbdf4aa (green). RT-42 binds one host envelope; prior plural-authority experiments govern different journal/lifecycle truth objects. Hosts own authority independence/authentication and complete enumeration; holdout unused."
   }
 ]
