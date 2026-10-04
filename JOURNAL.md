@@ -217,3 +217,7 @@ An initial compact-lifecycle omission candidate was rejected after independent n
 ## 2026-10-01 — exp-52 source freshness policy binding
 
 Pre-registered Spec 58 at `824b88c` before implementation or output. The eighteen-scenario real-Aegis harness isolated the policy assumption beneath RT-41: a locally fresh/authenticated observation can still be interpreted under a rolled-back or foreign policy envelope. Baseline `sfpb-muqlb7j6` on Aegis `5f548ce` allowed every policy mismatch while the deterministic fixture and RT-41 preservation controls stayed green. Aegis `8f95e15` adds authenticated exact policy identity/version, version-namespace, and canonical-max-age binding; exact same roster reran fully green as `sfpb-muqld2ku`. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-10-02 — exp-53 source freshness policy authority consensus
+
+Pre-registered Spec 59 at `9ad1d1d` before implementation or output. The 22-scenario real-Aegis harness isolated the plural-authority gap beneath RT-42: every individual policy view can be authenticated while the policy plane still equivocates. Baseline `sfpac-mus0r5kr` on Aegis `19ab9dc` allowed every disagreement while the fixture and RT-41/42 preservation controls stayed green. Aegis `cbdf4aa` adds exact roster equality and unanimous canonical policy agreement; the same roster reran fully green as `sfpac-mus0sxzz`. Existing evidence checks remain regression verification, not novel evidence.
