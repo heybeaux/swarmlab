@@ -5232,5 +5232,178 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 59 was committed at 9ad1d1d before implementation or observation. Frozen 22 scenarios ran against real built baseline Aegis 19ab9dc (red) and committed candidate cbdf4aa (green). RT-42 binds one host envelope; prior plural-authority experiments govern different journal/lifecycle truth objects. Hosts own authority independence/authentication and complete enumeration; holdout unused."
+  },
+  {
+    "id": "RT-44",
+    "claim": "Consequential fact use with plural freshness-policy truth is allowed only when that exact authority set is bound to one independently authenticated current roster identity, positive epoch, canonical membership digest, and complete member set.",
+    "experiment": "54-source-freshness-policy-authority-roster",
+    "spec": "specs/60-source-freshness-policy-authority-roster.md",
+    "runIds": [
+      "sfpar-muuvkmb3",
+      "sfpar-muuvotrx"
+    ],
+    "tracePaths": [
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvkmb3.jsonl",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnsafeRosterMismatchAllowRate",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRosterMismatchDetectionRate",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedPolicyAuthorityRosterApiAvailability",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedLegacyRt43Preservation",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedTwoAuthorityRosterAllowance",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedThreeAuthorityRosterAllowance",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedOrderIndependence",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedEpochRollbackSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedSameEpochForkSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedIdentitySafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedFutureEpochSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedDigestSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedExpectedDigestSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnauthenticatedSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMissingSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedPartialSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMalformedSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedEmptySafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedDuplicateSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedWhitespaceSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnsafeEpochSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMemberSetMismatchSafety",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRecoveryAllowRate",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRt43DisagreementPreservation",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRt41StaleObservationPreservation",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedStableLowRiskAllowRate",
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedExplicitFailurePreservation"
+    ],
+    "expectedValues": {
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnsafeRosterMismatchAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRosterMismatchDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedPolicyAuthorityRosterApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedLegacyRt43Preservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedTwoAuthorityRosterAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedThreeAuthorityRosterAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedOrderIndependence": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedEpochRollbackSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedSameEpochForkSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedIdentitySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedFutureEpochSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedDigestSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedExpectedDigestSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnauthenticatedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMissingSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedPartialSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMalformedSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedEmptySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedDuplicateSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedWhitespaceSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedUnsafeEpochSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedMemberSetMismatchSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRecoveryAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRt43DisagreementPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedRt41StaleObservationPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedStableLowRiskAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/54-source-freshness-policy-authority-roster/runs/sfpar-muuvotrx.jsonl#last.aegisWrappedExplicitFailurePreservation": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_BUILD_ID=<unique> AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/54-source-freshness-policy-authority-roster/dist/main.js",
+    "stackRecommendation": "Bind RT-43 consensus to an independently authenticated exact current authority roster identity, positive epoch, canonical SHA-256 membership digest, and exact member set; reject partial, missing, malformed, unauthenticated, rolled-back, forked, foreign, digest-inconsistent, duplicate, empty, or member-mismatched configured roster evidence.",
+    "stackReposAndPRs": [
+      {
+        "repo": "~/Dev/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-03-exp54-policy-roster-epoch",
+        "commits": [
+          "599a741036c64b588c853b569b18570ab7a38147"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec 60 was committed at 9e998fa before implementation or observation. Frozen 24 scenarios ran against real built baseline Aegis 5d8c4ed (red) and committed candidate 599a741 (green). RT-43 trusts one caller-supplied expected authority set; exp-54 binds that set to authenticated roster truth. Hosts own independent roster authentication, monotonic epochs, truthful current expected fields, complete membership, and linearizable reads; holdout unused."
   }
 ]

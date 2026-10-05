@@ -221,3 +221,7 @@ Pre-registered Spec 58 at `824b88c` before implementation or output. The eightee
 ## 2026-10-02 — exp-53 source freshness policy authority consensus
 
 Pre-registered Spec 59 at `9ad1d1d` before implementation or output. The 22-scenario real-Aegis harness isolated the plural-authority gap beneath RT-42: every individual policy view can be authenticated while the policy plane still equivocates. Baseline `sfpac-mus0r5kr` on Aegis `19ab9dc` allowed every disagreement while the fixture and RT-41/42 preservation controls stayed green. Aegis `cbdf4aa` adds exact roster equality and unanimous canonical policy agreement; the same roster reran fully green as `sfpac-mus0sxzz`. Existing evidence checks remain regression verification, not novel evidence.
+
+## 2026-10-04 — exp-54 source freshness policy authority roster epoch
+
+Resumed the previous worker's committed Spec 60 pre-registration (`9e998fa`) before any baseline had run, preserving the frozen 24 scenarios, seed, and thresholds. Real Aegis `5d8c4ed` reproduced red as `sfpar-muuvkmb3`: every one of 15 roster-failure scenarios was allowed, detection/API were `0`, exact accuracy was `0.375`, and the deterministic fixture stayed green. Aegis `599a741` adds authenticated exact authority-roster identity/epoch/digest/member binding; the exact roster reran fully green as `sfpar-muuvotrx`. Existing evidence verification remains regression-only, not novel evidence.
