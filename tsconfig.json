@@ -162,6 +162,9 @@
     },
     {
       "path": "experiments/53-source-freshness-policy-authority-consensus"
+    },
+    {
+      "path": "experiments/54-source-freshness-policy-authority-roster"
     }
   ]
 }
