@@ -165,6 +165,9 @@
     },
     {
       "path": "experiments/54-source-freshness-policy-authority-roster"
+    },
+    {
+      "path": "experiments/55-source-policy-roster-checkpoint"
     }
   ]
 }

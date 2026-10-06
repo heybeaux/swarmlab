@@ -126,3 +126,7 @@ For any `file:` dependency, record the external package repo, branch, commit SHA
 ## Holdout discipline
 
 Tuned policies must be labeled `in_sample` until fresh holdout seeds are run. Historical example: `RT-06` evidence-capped probation started as `in_sample` while its probe cadence was still shared-seed-only, then moved to `verified` after the August 15, 2026 five-seed holdout sweep.
+
+## RT-45 — exp-55 durable source-policy roster checkpoint
+
+Pre-registration `730e3b3f8fdc98fc11a85889f47cdc47e70bd65f`; red `sprc-muwb2jz7` (repeat `sprc-muwb2k1q`), green `sprc-muwb77jk`, runtime `86d68cd30c08a26e7ad8e18918770aa069d3f8c7`. Three committed traces, 71 events each, full replay equality verified. Baseline unsafe allow 12/13 → 0; exact accuracy 10/22 → 1; detection 1/13 → 1. Each trace binds the real Aegis artifact and frozen harness with SHA-256. No tuned policy; reserved holdout unused. Pure evaluate remains compatible, not durable-safe. See Spec 61 and CLAIMS.json for exact fields.

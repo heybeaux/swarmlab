@@ -1410,3 +1410,25 @@ RT-43 required every caller-enumerated policy authority to agree, but trusted th
 Aegis runtime `599a741` adds typed `SourceFreshnessPolicyAuthorityRoster` evidence and optional exact expected roster identity/epoch/digest binding. It recomputes a canonical SHA-256 digest over roster identity, positive epoch, and the order-independent member set, requires independent host authentication, and requires roster membership to equal RT-43's expected authorities. The exact frozen roster reran green as `sfpar-muuvotrx`: unsafe allow `0`, detection/accuracy/API and every secondary metric `1`.
 
 This validates evidence; it does not elect a distributed roster. Hosts still own authentication outside the authority members' failure domain, monotonic epoch allocation, truthful current expected fields, complete membership, linearizable reads, and retention. Hidden or colluding authorities remain unobservable.
+
+
+### RT-45 — Source-policy roster history needs durable monotonic checkpoints (exp-55)
+
+Exp-54 bound one call's roster to caller-supplied expected truth. Exp-55 restores both coherently
+across calls/restart, so per-call equality is insufficient. Frozen 22-scenario baseline real Aegis
+`c8fe1b0` (`sprc-muwb2jz7`, repeat `sprc-muwb2k1q`) allowed 12/13 checkpoint failures: unsafe allow
+`12/13`, detection `1/13`, exact accuracy `10/22`, no durable API. The machine-owned fixture
+stayed green. Existing execution-journal checkpoints do not govern this source-policy truth object.
+
+Aegis runtime `86d68cd30c08a26e7ad8e18918770aa069d3f8c7` adds public `evaluateWithSourcePolicyRosterCheckpoint`, host-owned
+checkpoint/store types, positive epoch/authenticated digest/identity validation, same-epoch fork
+refusal, monotonic comparison, and exact independent post-observe readback. Proposed truth is
+`authenticated:false`; Aegis never self-certifies durable truth. `sprc-muwb77jk` reruns the exact
+frozen seed/scenarios: unsafe allow `0`, detection/accuracy/API and every secondary metric `1`.
+Trace SHA-256s and artifact SHA-256s are recorded; full 71-event replay equality was checked.
+
+This strict async boundary is opt-in. Pure `evaluate()` remains compatible and still cannot
+promise cross-call rollback safety. Hosts own linearizable atomic monotonic persistence,
+independent authentication, restart/handoff retention, roster epoch allocation and truthful
+input; rollback of the independent checkpoint itself, collusion and races after final read remain
+unproven. These are deterministic adapter tests, not a production database or predictor claim.

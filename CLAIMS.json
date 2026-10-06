@@ -5407,5 +5407,112 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec 60 was committed at 9e998fa before implementation or observation. Frozen 24 scenarios ran against real built baseline Aegis 5d8c4ed (red) and committed candidate 599a741 (green). RT-43 trusts one caller-supplied expected authority set; exp-54 binds that set to authenticated roster truth. Hosts own independent roster authentication, monotonic epochs, truthful current expected fields, complete membership, and linearizable reads; holdout unused."
+  },
+  {
+    "id": "RT-45",
+    "claim": "Coherent rollback of both expected and presented source-policy roster requires an independently authenticated durable monotonic checkpoint before consequential action; exact post-observe readback prevents false acknowledgement and raced history from certifying allow.",
+    "experiment": "55-source-policy-roster-checkpoint",
+    "spec": "61-source-policy-roster-checkpoint",
+    "runIds": [
+      "sprc-muwb2jz7",
+      "sprc-muwb2k1q",
+      "sprc-muwb77jk"
+    ],
+    "tracePaths": [
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb2jz7.jsonl",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb2k1q.jsonl",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.fixtureAccuracy",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedUnsafeCheckpointAllowRate",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedCheckpointFailureDetectionRate",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedCheckpointApiAvailability",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedValidTransitionAllowance",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedRestartRollbackSafety",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedSameEpochForkSafety",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedAckLossRecovery",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedFalseAcknowledgementSafety",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedRaceSafety",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedEarlierPolicyPreservation",
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedNoCheckpointRegression"
+    ],
+    "expectedValues": {
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedUnsafeCheckpointAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedCheckpointFailureDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedCheckpointApiAvailability": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedValidTransitionAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedRestartRollbackSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedSameEpochForkSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedAckLossRecovery": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedFalseAcknowledgementSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedRaceSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedEarlierPolicyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/55-source-policy-roster-checkpoint/runs/sprc-muwb77jk.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/55-source-policy-roster-checkpoint/dist/main.js",
+    "stackRecommendation": "Use strict public async source-policy roster checkpoint boundary with host-authenticated independent retained monotonic truth; never treat per-call evaluate equality as durable rollback safety.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-05-exp55-roster-checkpoint",
+        "commits": [
+          "86d68cd30c08a26e7ad8e18918770aa069d3f8c7"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/61"
+        ]
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration 730e3b3f8fdc98fc11a85889f47cdc47e70bd65f before observed results. 22 frozen deterministic scenarios; baseline reproduced twice; no thresholds tuned. Real built public API, exact package SHA and content hash in trace. No production DB, collusion resistance, or final-read-to-action atomicity claim. Reserved holdout unused."
   }
 ]
