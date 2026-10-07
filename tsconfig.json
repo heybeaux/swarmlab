@@ -168,6 +168,9 @@
     },
     {
       "path": "experiments/55-source-policy-roster-checkpoint"
+    },
+    {
+      "path": "experiments/56-async-gate-input-integrity"
     }
   ]
 }

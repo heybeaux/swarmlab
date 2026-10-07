@@ -5514,5 +5514,205 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-registration 730e3b3f8fdc98fc11a85889f47cdc47e70bd65f before observed results. 22 frozen deterministic scenarios; baseline reproduced twice; no thresholds tuned. Real built public API, exact package SHA and content hash in trace. No production DB, collusion resistance, or final-read-to-action atomicity claim. Reserved holdout unused."
+  },
+  {
+    "id": "RT-46",
+    "claim": "An asynchronous source-policy gate must bind allow to stable caller-owned action/evidence; mutable input during checkpoint I/O otherwise receives stale authorization.",
+    "experiment": "56-async-gate-input-integrity",
+    "spec": "62-async-gate-input-integrity",
+    "runIds": [
+      "agii-muxqic7t",
+      "agii-muxqic9t",
+      "agii-muxqm4fw"
+    ],
+    "tracePaths": [
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.fixtureAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedInputMutationDetectionRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedEarlyMutationNoObserve",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.fixtureAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedInputMutationDetectionRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedEarlyMutationNoObserve",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.fixtureAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedInputMutationDetectionRate",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedEarlyMutationNoObserve",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedNoCheckpointRegression"
+    ],
+    "expectedValues": {
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedInputMutationDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.3333333333333333,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedEarlyMutationNoObserve": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedCriticalDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic7t.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedInputMutationDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.3333333333333333,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedEarlyMutationNoObserve": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedCriticalDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqic9t.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnsafeMutableInputAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedInputMutationDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedEarlyMutationNoObserve": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/56-async-gate-input-integrity/runs/agii-muxqm4fw.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/56-async-gate-input-integrity/dist/main.js",
+    "stackRecommendation": "Privately snapshot ToolCall and guard observable input integrity after each awaited host operation; preserve original/new deny floors; execute only exact authorized input.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nightly/2026-10-06-exp56",
+        "commits": [
+          "21f34fbedcfb8f48bbe3f61522e530de7595d563"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration 57a40a8988e6659b0ab8a008237b14af078ff197 before implementation/output. Frozen 18 scenarios; repeated real built baseline f37864f945fa914e56c4e1cc070c8874733d9f96; committed candidate 21f34fbedcfb8f48bbe3f61522e530de7595d563; exact public API unchanged. Full dist manifests and harness hash in headers. No tuning; holdout reserved unused. Plain ToolCall/rules/options stability scope only: not transient ABA, getter/proxy or post-return action atomicity. Existing evidence checks are regression-only."
   }
 ]
