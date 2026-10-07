@@ -13,3 +13,5 @@ Results pending.
 - Guard scope: observable changes during await; equivalent copied input allowed. Transient mutate-and-restore is an intentionally passing scope-limit control, NOT detection proof. Host/action atomicity after return and mutable rules/options are unproven.
 
 Pinned candidate `agii-muxqm4fw` on Aegis `21f34fbedcfb8f48bbe3f61522e530de7595d563`: unsafe allow 0, mutation detection 1, resolution accuracy 1, all secondary metrics 1. Each 59-event trace passed full replay equality. Private snapshots/after-await guards address the demonstrated class, not individual fixture command names.
+
+Linked PRs: Aegis https://github.com/heybeaux/aegis/pull/62; SwarmLab https://github.com/heybeaux/swarmlab/pull/45. Local full release gate1074 tests/46evidence cases; SwarmLab45claims/93traces/833assertions. CI/merge tracked in nightly run ledger, not inferred from local exits.
