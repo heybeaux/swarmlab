@@ -1454,6 +1454,26 @@ restored transient mutation and post-return changes are unproven. RT-45's histor
 is still distinct. Regression-only evidence commands do not count as this new development.
 
 
+### RT-47 — Unchanged source observations expire during async checkpoint I/O (exp-57)
+
+Pre-registration `180db76` froze20 scenarios and integer monotonic-clock ground truth before
+implementation/output. Unlike exp56 input aliasing, input and policy remain unchanged throughout.
+Real origin/main Aegis `1550e6ed8a660febee30ce6fe291f41b87bf1bf1` allowed all12 expiry/clock hazards
+(`ase-muz5zo5h`, repeat `ase-muz5zoav` with identical scenario rows), reached8/20 exact accuracy,
+and never sampled elapsed lifetime. The independent fixture was perfect; checkpoint truth remained valid.
+
+Runtime `aeb1abf434d0789b1770ffc956ddb6c96aa987c0` adds optional monotonic-clock injection (real `performance.now` default),
+private entry sample/function capture, inclusive remaining-budget comparisons after read/observe/read,
+invalid/regressing/throwing-clock refusal, early no-observe and post-observe no-read discipline,
+and deny-floor preservation. SAME frozen harness/seed/scenarios reran as `ase-muz63pn3`:
+unsafe allow0/12, detection1, exact accuracy20/20 and every secondary metric1. All65events
+replay exactly; trace manifests bind source and complete real built Aegis artifact, not a local policy copy.
+
+Hosts still own trustworthy initial source timestamps, units/clock, authentic persistence and exact
+immediate action after return. This does not re-observe sources, detect changes inside a valid window,
+validate colluding clocks, cover pre-invocation latency/rules-options mutation or close post-return races.
+No predictive calibration or production-database claim. Reserved holdout unused; no policy tuned.
+
 ## RT-49 — Evaluation receipt reference ownership (exp-59 / Spec65)
 
 Pre-registered `f54a6a1a0f069b1cc4f2f9e4cc6b1de68ee7cedb` before implementation/output. Baseline fetched main Aegis1550e6e produced receipt drift **8/8**, cross-call contamination **8/8**, and exact scenario accuracy **3/21** in both `ero-mv20uicz` and `ero-mv20uig5`. Returned prediction and ruleVersions referenced caller-owned metadata. Matched-rule, defaults and explicit mutation controls correctly stayed independent; detached consumer control was **21/21**.
