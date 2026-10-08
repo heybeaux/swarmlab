@@ -173,6 +173,9 @@
       "path": "experiments/56-async-gate-input-integrity"
     },
     {
+      "path": "experiments/57-async-source-expiry"
+    },
+    {
       "path": "experiments/59-evaluation-receipt-ownership"
     }
   ]
