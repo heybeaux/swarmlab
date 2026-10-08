@@ -130,3 +130,23 @@ Tuned policies must be labeled `in_sample` until fresh holdout seeds are run. Hi
 ## RT-45 — exp-55 durable source-policy roster checkpoint
 
 Pre-registration `730e3b3f8fdc98fc11a85889f47cdc47e70bd65f`; red `sprc-muwb2jz7` (repeat `sprc-muwb2k1q`), green `sprc-muwb77jk`, runtime `86d68cd30c08a26e7ad8e18918770aa069d3f8c7`. Three committed traces, 71 events each, full replay equality verified. Baseline unsafe allow 12/13 → 0; exact accuracy 10/22 → 1; detection 1/13 → 1. Each trace binds the real Aegis artifact and frozen harness with SHA-256. No tuned policy; reserved holdout unused. Pure evaluate remains compatible, not durable-safe. See Spec 61 and CLAIMS.json for exact fields.
+
+## RT-46 — Async gate input integrity (exp-56 / Spec 62)
+
+Pre-registration `57a40a8988e6659b0ab8a008237b14af078ff197` precedes implementation and output. A valid host checkpoint did not save a
+mutable caller object: real baseline Aegis `f37864f945fa914e56c4e1cc070c8874733d9f96` allowed **12/12**
+mutated action/evidence cases while awaiting read/observe/read. Runs `agii-muxqic7t` and `agii-muxqic9t`
+both had exact accuracy **6/18**, mutation detection **0**, and fixture **18/18**.
+
+Aegis `21f34fbedcfb8f48bbe3f61522e530de7595d563` privately snapshots ToolCall and compares the live input after each awaited
+operation. Early visible mutation prevents observe; later mutation refuses stale authorization;
+new critical command preserves deny. Same frozen scenario/seed/harness/API run `agii-muxqm4fw` is
+**18/18** with unsafe allow **0**, detection **1**, all secondary metrics **1**. No thresholds moved.
+Three committed traces (59 events each), full artifact manifests, harness SHA-256, and exact scores
+are pinned in CLAIMS.json. Nine focused new tests cover these boundaries.
+
+This is observable reference-integrity, not action atomicity. Equivalent deep copies remain allowed;
+the explicit transient ABA control remains allowed. Host must own authentic checkpoint truth, stable
+plain-data actions, stable rules/options and exact execution after return. Proxy/getter behavior,
+restored transient mutation and post-return changes are unproven. RT-45's historical rollback check
+is still distinct. Regression-only evidence commands do not count as this new development.

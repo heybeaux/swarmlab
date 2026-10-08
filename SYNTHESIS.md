@@ -1432,3 +1432,23 @@ promise cross-call rollback safety. Hosts own linearizable atomic monotonic pers
 independent authentication, restart/handoff retention, roster epoch allocation and truthful
 input; rollback of the independent checkpoint itself, collusion and races after final read remain
 unproven. These are deterministic adapter tests, not a production database or predictor claim.
+
+## RT-46 — Async gate input integrity (exp-56 / Spec 62)
+
+Pre-registration `57a40a8988e6659b0ab8a008237b14af078ff197` precedes implementation and output. A valid host checkpoint did not save a
+mutable caller object: real baseline Aegis `f37864f945fa914e56c4e1cc070c8874733d9f96` allowed **12/12**
+mutated action/evidence cases while awaiting read/observe/read. Runs `agii-muxqic7t` and `agii-muxqic9t`
+both had exact accuracy **6/18**, mutation detection **0**, and fixture **18/18**.
+
+Aegis `21f34fbedcfb8f48bbe3f61522e530de7595d563` privately snapshots ToolCall and compares the live input after each awaited
+operation. Early visible mutation prevents observe; later mutation refuses stale authorization;
+new critical command preserves deny. Same frozen scenario/seed/harness/API run `agii-muxqm4fw` is
+**18/18** with unsafe allow **0**, detection **1**, all secondary metrics **1**. No thresholds moved.
+Three committed traces (59 events each), full artifact manifests, harness SHA-256, and exact scores
+are pinned in CLAIMS.json. Nine focused new tests cover these boundaries.
+
+This is observable reference-integrity, not action atomicity. Equivalent deep copies remain allowed;
+the explicit transient ABA control remains allowed. Host must own authentic checkpoint truth, stable
+plain-data actions, stable rules/options and exact execution after return. Proxy/getter behavior,
+restored transient mutation and post-return changes are unproven. RT-45's historical rollback check
+is still distinct. Regression-only evidence commands do not count as this new development.
