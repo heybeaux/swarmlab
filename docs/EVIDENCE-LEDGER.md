@@ -185,3 +185,5 @@ RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [
 ### RT-48 / exp58
 
 Spec64 preregistration b0378e0. Baseline1550e6e: `aci-mv0ldq1x`, repeat `aci-mv0ldq3x`; runtime `2dfc4929a9a8f94b28875b69cad577ebe0822fce`, green `aci-mv0lgl6y`. Three admitted 68-event traces; 48 exact scores. Configuration drift is novel; exp55/56 reruns are regression only, exp57 is prior work.
+
+Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
