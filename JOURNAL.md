@@ -269,3 +269,9 @@ the explicit transient ABA control remains allowed. Host must own authentic chec
 plain-data actions, stable rules/options and exact execution after return. Proxy/getter behavior,
 restored transient mutation and post-return changes are unproven. RT-45's historical rollback check
 is still distinct. Regression-only evidence commands do not count as this new development.
+
+## 2026-10-08 — exp58 configuration drift, honest red→green
+
+Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. Real Aegis baseline1550e6e `aci-mv0ldq1x` / `aci-mv0ldq3x` allows12/14 hazards; candidate `2dfc4929a9a8f94b28875b69cad577ebe0822fce` `aci-mv0lgl6y` allows0 and exact21/21. Fixture accounting correction affects no real output or threshold; diagnostics retained non-admitted. New evidence RT48; prior RT47 work preserved, not counted. Claims pin all3 admitted traces and48 scores.
+
+Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.

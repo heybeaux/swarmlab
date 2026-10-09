@@ -1452,3 +1452,25 @@ the explicit transient ABA control remains allowed. Host must own authentic chec
 plain-data actions, stable rules/options and exact execution after return. Proxy/getter behavior,
 restored transient mutation and post-return changes are unproven. RT-45's historical rollback check
 is still distinct. Regression-only evidence commands do not count as this new development.
+
+## RT-48 — Async evaluator configuration integrity (exp-58 / Spec 64)
+
+Pre-registration `b0378e0` preceded implementation/output. Current-main Aegis `1550e6e`
+returned allow for 12/14 mutable configuration hazards (rules/enable/severity/prediction) and ask
+for 2/14 joint configuration weakening/input hazards where the entry critical policy required deny.
+Baseline `aci-mv0ldq1x` and repeat `aci-mv0ldq3x` have identical scenario rows: accuracy7/21,
+config detection2/14, original/current deny preservation0. Independent fixture21/21.
+
+Runtime `2dfc4929a9a8f94b28875b69cad577ebe0822fce` privately captures compiled rules/effective options, compares after each
+await (including thrown I/O), refuses drift through explicit RT48 floor, and preserves both entry
+and current deny classification. The unchanged21-scenario harness `aci-mv0lgl6y` is21/21:
+unsafe allow0, detection1, original/current deny1 and all secondary metrics1. Same harness hash,
+68-event full replay and complete artifact manifests recorded. Twelve new focused regression tests.
+
+Equivalent config and transient ABA controls remain allowed; caller config is not frozen/modified.
+Host owns valid plain-data config/authentic checkpoint and exact immediate execution. Observable
+comparison is not atomic execution: proxies/getters, transient ABA, latency expiry, unsupported
+function overrides and post-return changes unproven. Earlier exp57/RT47 is unlanded carry-over,
+not tonight's novelty; this independent origin/main patch changes no elapsed-clock contract.
+Two initial diagnostic traces had oracle-only I/O counter mismatch (real output unchanged);
+corrected before admitting repeated baseline, preserved but not claimed. Thresholds never moved.

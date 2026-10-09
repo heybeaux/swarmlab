@@ -150,3 +150,7 @@ the explicit transient ABA control remains allowed. Host must own authentic chec
 plain-data actions, stable rules/options and exact execution after return. Proxy/getter behavior,
 restored transient mutation and post-return changes are unproven. RT-45's historical rollback check
 is still distinct. Regression-only evidence commands do not count as this new development.
+
+### RT-48 / exp58
+
+Spec64 preregistration b0378e0. Baseline1550e6e: `aci-mv0ldq1x`, repeat `aci-mv0ldq3x`; runtime `2dfc4929a9a8f94b28875b69cad577ebe0822fce`, green `aci-mv0lgl6y`. Three admitted 68-event traces; 48 exact scores. Configuration drift is novel; exp55/56 reruns are regression only, exp57 is prior work.
