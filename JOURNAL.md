@@ -299,3 +299,9 @@ Committed Aegis `7b4c5b08ab09201d6371a06de343eb435f0b26ed` copies prediction pub
 Results are evidence-verified but **candidate merge/CI not yet confirmed**. No mutable-record tamper detection, signed persistence, transactional action, getter/proxy/extension-data or live production incident claim. Host still owns exact execution and durable signed receipts. Prior exp57/58 remain separately unlanded; no combined certification. Reserved holdout unused; no tuning. Regression verification is not novelty.
 
 RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [SwarmLab47](https://github.com/heybeaux/swarmlab/pull/47). Local release/static/test checks green (1085 tests: 628+95+22+86+51+203), SwarmLab evidence46 claims96 traces872 assertions. GitHub checks/independent review pending at this documentation commit; no remote merge claim.
+
+## 2026-10-08 — exp58 configuration drift, honest red→green
+
+Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. Real Aegis baseline1550e6e `aci-mv0ldq1x` / `aci-mv0ldq3x` allows12/14 hazards; candidate `2dfc4929a9a8f94b28875b69cad577ebe0822fce` `aci-mv0lgl6y` allows0 and exact21/21. Fixture accounting correction affects no real output or threshold; diagnostics retained non-admitted. New evidence RT48; prior RT47 work preserved, not counted. Claims pin all3 admitted traces and48 scores.
+
+Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.

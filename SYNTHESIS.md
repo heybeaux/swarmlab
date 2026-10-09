@@ -1483,3 +1483,25 @@ Committed Aegis `7b4c5b08ab09201d6371a06de343eb435f0b26ed` copies prediction pub
 Results are evidence-verified but **candidate merge/CI not yet confirmed**. No mutable-record tamper detection, signed persistence, transactional action, getter/proxy/extension-data or live production incident claim. Host still owns exact execution and durable signed receipts. Prior exp57/58 remain separately unlanded; no combined certification. Reserved holdout unused; no tuning. Regression verification is not novelty.
 
 RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [SwarmLab47](https://github.com/heybeaux/swarmlab/pull/47). Local release/static/test checks green (1085 tests: 628+95+22+86+51+203), SwarmLab evidence46 claims96 traces872 assertions. GitHub checks/independent review pending at this documentation commit; no remote merge claim.
+
+## RT-48 — Async evaluator configuration integrity (exp-58 / Spec 64)
+
+Pre-registration `b0378e0` preceded implementation/output. Current-main Aegis `1550e6e`
+returned allow for 12/14 mutable configuration hazards (rules/enable/severity/prediction) and ask
+for 2/14 joint configuration weakening/input hazards where the entry critical policy required deny.
+Baseline `aci-mv0ldq1x` and repeat `aci-mv0ldq3x` have identical scenario rows: accuracy7/21,
+config detection2/14, original/current deny preservation0. Independent fixture21/21.
+
+Runtime `2dfc4929a9a8f94b28875b69cad577ebe0822fce` privately captures compiled rules/effective options, compares after each
+await (including thrown I/O), refuses drift through explicit RT48 floor, and preserves both entry
+and current deny classification. The unchanged21-scenario harness `aci-mv0lgl6y` is21/21:
+unsafe allow0, detection1, original/current deny1 and all secondary metrics1. Same harness hash,
+68-event full replay and complete artifact manifests recorded. Twelve new focused regression tests.
+
+Equivalent config and transient ABA controls remain allowed; caller config is not frozen/modified.
+Host owns valid plain-data config/authentic checkpoint and exact immediate execution. Observable
+comparison is not atomic execution: proxies/getters, transient ABA, latency expiry, unsupported
+function overrides and post-return changes unproven. Earlier exp57/RT47 is unlanded carry-over,
+not tonight's novelty; this independent origin/main patch changes no elapsed-clock contract.
+Two initial diagnostic traces had oracle-only I/O counter mismatch (real output unchanged);
+corrected before admitting repeated baseline, preserved but not claimed. Thresholds never moved.
