@@ -16,3 +16,5 @@ Baseline red and candidate local green (CI pending). Run with AEGIS_REPO and AEG
 ## Regression-only verification
 
 SwarmLab build/typecheck and verify:evidence:46 claims/96 traces/881 assertions. Aegis full release:check:1087 tests, evidence47/47 (RT47 intentionally not included: prior unlanded exp57). Focused29/29, including12 new. Exp55/56 same roster fully green, audit traces not admitted. Initial release failed only an explicit evidence-ID list expectation; corrected catalogue assertion, not runtime or thresholds, full rerun green. CI/PR status recorded below when observed.
+
+Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.

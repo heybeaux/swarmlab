@@ -275,3 +275,5 @@ is still distinct. Regression-only evidence commands do not count as this new de
 Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. Real Aegis baseline1550e6e `aci-mv0ldq1x` / `aci-mv0ldq3x` allows12/14 hazards; candidate `2dfc4929a9a8f94b28875b69cad577ebe0822fce` `aci-mv0lgl6y` allows0 and exact21/21. Fixture accounting correction affects no real output or threshold; diagnostics retained non-admitted. New evidence RT48; prior RT47 work preserved, not counted. Claims pin all3 admitted traces and48 scores.
 
 Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.
+
+Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
