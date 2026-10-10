@@ -187,3 +187,13 @@ RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [
 Spec64 preregistration b0378e0. Baseline1550e6e: `aci-mv0ldq1x`, repeat `aci-mv0ldq3x`; runtime `2dfc4929a9a8f94b28875b69cad577ebe0822fce`, green `aci-mv0lgl6y`. Three admitted 68-event traces; 48 exact scores. Configuration drift is novel; exp55/56 reruns are regression only, exp57 is prior work.
 
 Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
+
+## RT-47 + RT-48 integration check (not new experimental evidence)
+
+After the independent frozen exp57 and exp58 receipts, both implementations were combined on a
+base that already contained RT49. The original candidate manifests and run IDs above remain
+historical, not retroactively attributed to this combined source. The unchanged exp57 and exp58
+harnesses each replayed against the combined built Aegis package: 65/65 and 68/68 events,
+respectively, with unsafe allow rate 0 and resolution accuracy 1 in both. Aegis release:check
+passed with 49/49 evidence mappings and combined clock/config unit tests. These integration
+checks do not expand the original experiment scope or certify post-return atomicity.
