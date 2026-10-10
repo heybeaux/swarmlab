@@ -171,6 +171,9 @@
     },
     {
       "path": "experiments/56-async-gate-input-integrity"
+    },
+    {
+      "path": "experiments/59-evaluation-receipt-ownership"
     }
   ]
 }
