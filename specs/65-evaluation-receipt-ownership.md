@@ -21,10 +21,12 @@ Aegis owns independent typed prediction/ruleVersions/matches metadata for each E
 Host owns immediate desired-state execution, durable receipt persistence and signatures, authentic checkpoint, and not directly altering a returned receipt before persisting. This is reference isolation, NOT tamper detection, immutable receipts, approval binding, prediction validation, latency expiry or transactional execution. No ownership ambiguity: metadata is constructed in Aegis; adapters can defensively copy but cannot fix package-level aliasing.
 
 ## Exact commands
+
+Before any experiment output: global pnpm8 rejected the v9 lockfile (infrastructure-only install attempt). Use pinned pnpm10.15.1; frozen lock remains unchanged.
 From `/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-09-exp59`:
 ```bash
-pnpm --dir /Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59 install --frozen-lockfile
-pnpm --dir /Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59 run build
+npx -y pnpm@10.15.1 --dir /Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59 install --frozen-lockfile
+npx -y pnpm@10.15.1 --dir /Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59 run build
 npm install && npm run build && npm run typecheck
 AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59 AEGIS_DIST=/Users/beauxwalton/projects/worktrees/aegis-2026-10-09-exp59/packages/aegis/dist/index.js node experiments/59-evaluation-receipt-ownership/dist/main.js
 # Repeat exact invocation once BEFORE source changes; compare scenario rows.
