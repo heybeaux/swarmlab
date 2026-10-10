@@ -5716,5 +5716,235 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-registration 57a40a8988e6659b0ab8a008237b14af078ff197 before implementation/output. Frozen 18 scenarios; repeated real built baseline f37864f945fa914e56c4e1cc070c8874733d9f96; committed candidate 21f34fbedcfb8f48bbe3f61522e530de7595d563; exact public API unchanged. Full dist manifests and harness hash in headers. No tuning; holdout reserved unused. Plain ToolCall/rules/options stability scope only: not transient ABA, getter/proxy or post-return action atomicity. Existing evidence checks are regression-only."
+  },
+  {
+    "id": "RT-49",
+    "claim": "Evaluation metadata must not alias producer options or contaminate subsequent decisions through consumer writes to prior returned receipts.",
+    "experiment": "59-evaluation-receipt-ownership",
+    "spec": "65-evaluation-receipt-ownership",
+    "runIds": [
+      "ero-mv20uicz",
+      "ero-mv20uig5",
+      "ero-mv20w6b7"
+    ],
+    "tracePaths": [
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.controlAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.oracleAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisReceiptDriftRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisCrossCallContaminationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisResolutionAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisProvenanceIsolationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisMatchesIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisDefaultsCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisFrozenCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisSiblingIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisCallerOwnership",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisExplicitMutationScopeControl",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisEntryActionAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.controlAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.oracleAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisReceiptDriftRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisCrossCallContaminationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisResolutionAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisProvenanceIsolationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisMatchesIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisDefaultsCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisFrozenCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisSiblingIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisCallerOwnership",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisExplicitMutationScopeControl",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisEntryActionAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.controlAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.oracleAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisReceiptDriftRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisCrossCallContaminationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisResolutionAccuracy",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisProvenanceIsolationRate",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisMatchesIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisDefaultsCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisFrozenCompatibility",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisSiblingIsolation",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisCallerOwnership",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisExplicitMutationScopeControl",
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisEntryActionAccuracy"
+    ],
+    "expectedValues": {
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.oracleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisReceiptDriftRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisCrossCallContaminationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisProvenanceIsolationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisMatchesIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisDefaultsCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisFrozenCompatibility": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisSiblingIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisExplicitMutationScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uicz.jsonl#last.aegisEntryActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.oracleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisReceiptDriftRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisCrossCallContaminationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisProvenanceIsolationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisMatchesIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisDefaultsCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisFrozenCompatibility": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisSiblingIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisExplicitMutationScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20uig5.jsonl#last.aegisEntryActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.oracleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisReceiptDriftRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisCrossCallContaminationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisProvenanceIsolationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisMatchesIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisDefaultsCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisFrozenCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisSiblingIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisExplicitMutationScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/59-evaluation-receipt-ownership/runs/ero-mv20w6b7.jsonl#last.aegisEntryActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/59-evaluation-receipt-ownership/dist/main.js",
+    "stackRecommendation": "Copy flat Prediction and version strings at result construction; preserve existing private matches, public mutable interface and exact action behavior. Hosts must persist/sign receipts independently.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nightly/2026-10-09-exp59",
+        "commits": [
+          "7b4c5b08ab09201d6371a06de343eb435f0b26ed"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration f54a6a1a0f069b1cc4f2f9e4cc6b1de68ee7cedb; package-manager command correction before output; frozen21 scenarios/hash unchanged red-green. Baseline1550e6e repeated with identical63 scenario rows. Candidate7b4c5b08ab09201d6371a06de343eb435f0b26ed committed and clean before run. Three68-event traces fully replayed. No fitted policy/holdout used. Ref isolation only, not immutable/signed receipt enforcement or production incident. Prior57/58 candidates unlanded and excluded. Candidate PR/CI pending."
   }
 ]
