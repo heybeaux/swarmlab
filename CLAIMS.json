@@ -5948,5 +5948,390 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-registration f54a6a1a0f069b1cc4f2f9e4cc6b1de68ee7cedb; package-manager command correction before output; frozen21 scenarios/hash unchanged red-green. Baseline1550e6e repeated with identical63 scenario rows. Candidate7b4c5b08ab09201d6371a06de343eb435f0b26ed committed and clean before run. Three68-event traces fully replayed. No fitted policy/holdout used. Ref isolation only, not immutable/signed receipt enforcement or production incident. Prior57/58 candidates unlanded and excluded. Candidate PR/CI pending."
+  },
+  {
+    "id": "RT-47",
+    "claim": "Unchanged source observations can expire during durable checkpoint I/O; real Aegis accounts for monotonic elapsed lifetime at awaited boundaries.",
+    "experiment": "57-async-source-expiry",
+    "spec": "63-async-source-expiry",
+    "runIds": [
+      "ase-muz5zo5h",
+      "ase-muz5zoav",
+      "ase-muz63pn3"
+    ],
+    "tracePaths": [
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.fixtureAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnsafeExpiredAllowRate",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedFailureDetectionRate",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedInclusiveBoundaryAllowance",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedEarlyExpiryNoObserve",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedPostObserveExpiryNoRead",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedClockFailureSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnchangedInput",
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.fixtureAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnsafeExpiredAllowRate",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedFailureDetectionRate",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedInclusiveBoundaryAllowance",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedEarlyExpiryNoObserve",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedPostObserveExpiryNoRead",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedClockFailureSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnchangedInput",
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.fixtureAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnsafeExpiredAllowRate",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedFailureDetectionRate",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedInclusiveBoundaryAllowance",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedEarlyExpiryNoObserve",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedPostObserveExpiryNoRead",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedClockFailureSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedCriticalDenyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnchangedInput",
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedNoCheckpointRegression"
+    ],
+    "expectedValues": {
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.fixtureAccuracy": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnsafeExpiredAllowRate": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedFailureDetectionRate": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedResolutionAccuracy": 0.4,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedInclusiveBoundaryAllowance": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedEarlyExpiryNoObserve": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedPostObserveExpiryNoRead": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedClockFailureSafety": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedCriticalDenyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedLegacyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnavailableSafety": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedUnchangedInput": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zo5h.jsonl#last.aegisWrappedNoCheckpointRegression": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.fixtureAccuracy": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnsafeExpiredAllowRate": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedFailureDetectionRate": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedResolutionAccuracy": 0.4,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedInclusiveBoundaryAllowance": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedEarlyExpiryNoObserve": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedPostObserveExpiryNoRead": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedClockFailureSafety": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedCriticalDenyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedLegacyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnavailableSafety": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedUnchangedInput": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz5zoav.jsonl#last.aegisWrappedNoCheckpointRegression": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.fixtureAccuracy": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnsafeExpiredAllowRate": 0,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedFailureDetectionRate": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedResolutionAccuracy": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedInclusiveBoundaryAllowance": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedEarlyExpiryNoObserve": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedPostObserveExpiryNoRead": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedClockFailureSafety": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedCriticalDenyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedLegacyPreservation": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnavailableSafety": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedUnchangedInput": 1,
+      "experiments/57-async-source-expiry/runs/ase-muz63pn3.jsonl#last.aegisWrappedNoCheckpointRegression": 1
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/57-async-source-expiry/dist/main.js",
+    "stackRecommendation": "Aegis strict async source-policy boundary must debit observation age by awaited elapsed lifetime, fail closed on invalid/regressing clocks, and preserve deny floors.",
+    "stackReposAndPRs": [
+      "heybeaux/aegis runtime aeb1abf434d0789b1770ffc956ddb6c96aa987c0; linked PR pending",
+      "heybeaux/swarmlab experiment PR pending"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration180db76 before implementation/output. Same frozen20 scenarios/harness9e0c79d on current-origin baseline1550e6e twice and candidate. Fixture all metrics green; wrapped hazards12/12 allowed->0/12, accuracy8/20->20/20. Full65-event replay equality and complete artifact manifest. No tuned policy; reserved holdout unused. Host clock/timestamps trustworthy. Post-return races, source change inside valid window, rules/options mutation unproven."
+  },
+  {
+    "id": "RT-48",
+    "claim": "Private entry-time evaluator configuration plus after-await comparison prevents stale authorization and preserves original/current deny floors during mutable rules/options drift.",
+    "experiment": "experiments/58-async-evaluator-config-integrity",
+    "spec": "specs/64-async-evaluator-config-integrity.md",
+    "runIds": [
+      "aci-mv0ldq1x",
+      "aci-mv0ldq3x",
+      "aci-mv0lgl6y"
+    ],
+    "tracePaths": [
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.fixtureAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnsafeConfigAllowRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedConfigFailureDetectionRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedCurrentDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEntryDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEarlyNoObserve",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedPostObserveNoRead",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEquivalentAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedInitialFloorPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedCallerOwnership",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.fixtureAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnsafeConfigAllowRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedConfigFailureDetectionRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedCurrentDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEntryDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEarlyNoObserve",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedPostObserveNoRead",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEquivalentAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedInitialFloorPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedCallerOwnership",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedNoCheckpointRegression",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.fixtureAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnsafeConfigAllowRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedConfigFailureDetectionRate",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedResolutionAccuracy",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedCurrentDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEntryDenyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEarlyNoObserve",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedPostObserveNoRead",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnchangedAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEquivalentAllowance",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedInitialFloorPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedLegacyPreservation",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnavailableSafety",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedTransientAbaScopeControl",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedCallerOwnership",
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedNoCheckpointRegression"
+    ],
+    "expectedValues": {
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnsafeConfigAllowRate": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedConfigFailureDetectionRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.3333333333333333,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedCurrentDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEntryDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEarlyNoObserve": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedPostObserveNoRead": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedEquivalentAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedInitialFloorPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq1x.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnsafeConfigAllowRate": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedConfigFailureDetectionRate": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 0.3333333333333333,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedCurrentDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEntryDenyPreservation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEarlyNoObserve": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedPostObserveNoRead": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedEquivalentAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedInitialFloorPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0ldq3x.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnsafeConfigAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedConfigFailureDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedCurrentDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEntryDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEarlyNoObserve": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedPostObserveNoRead": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnchangedAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedEquivalentAllowance": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedInitialFloorPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedLegacyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedUnavailableSafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedTransientAbaScopeControl": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/58-async-evaluator-config-integrity/runs/aci-mv0lgl6y.jsonl#last.aegisWrappedNoCheckpointRegression": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/58-async-evaluator-config-integrity/dist/main.js",
+    "stackRecommendation": "Capture and compare evaluator policy during awaited I/O; never weaken original/current deny under simultaneous input/configuration drift.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-08-exp58",
+        "commits": [
+          "2dfc4929a9a8f94b28875b69cad577ebe0822fce"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/63"
+        ],
+        "dirtyState": "clean-tracked-at-run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "seedSetId": "async-evaluator-config-integrity-v1",
+    "notes": "Pre-registration b0378e0 BEFORE implementation/output; 21 frozen scenarios. Current-main baseline repeated with identical 63 arm scenario rows, same harness hash candidate; full 68-event replay equality. Two diagnostic traces had fixture-only I/O-accounting error; preserved locally but excluded from claims. Thresholds/scenarios unchanged. Exp57/RT47 remains prior unlanded work, NOT novelty tonight. No threshold tuned; holdout reserved unused. Authentic plain-data host, no post-return/ABA/getter/proxy/latency claims."
   }
 ]

@@ -126,3 +126,5 @@ Built by the autonomous team, in order: `core/` → `observatory/` → experimen
 25 verified claims backed by 51 admitted traces and 490 exact score assertions. Progress is
 committed after every green unit; check `JOURNAL.md`, `SYNTHESIS.md`, and the claims ledger for the
 findings and current capability boundaries.
+
+- Exp-58 preregistered: [async evaluator configuration integrity](experiments/58-async-evaluator-config-integrity/README.md), [Spec 64](specs/64-async-evaluator-config-integrity.md).

@@ -271,6 +271,26 @@ restored transient mutation and post-return changes are unproven. RT-45's histor
 is still distinct. Regression-only evidence commands do not count as this new development.
 
 
+### RT-47 — Unchanged source observations expire during async checkpoint I/O (exp-57)
+
+Pre-registration `180db76` froze20 scenarios and integer monotonic-clock ground truth before
+implementation/output. Unlike exp56 input aliasing, input and policy remain unchanged throughout.
+Real origin/main Aegis `1550e6ed8a660febee30ce6fe291f41b87bf1bf1` allowed all12 expiry/clock hazards
+(`ase-muz5zo5h`, repeat `ase-muz5zoav` with identical scenario rows), reached8/20 exact accuracy,
+and never sampled elapsed lifetime. The independent fixture was perfect; checkpoint truth remained valid.
+
+Runtime `aeb1abf434d0789b1770ffc956ddb6c96aa987c0` adds optional monotonic-clock injection (real `performance.now` default),
+private entry sample/function capture, inclusive remaining-budget comparisons after read/observe/read,
+invalid/regressing/throwing-clock refusal, early no-observe and post-observe no-read discipline,
+and deny-floor preservation. SAME frozen harness/seed/scenarios reran as `ase-muz63pn3`:
+unsafe allow0/12, detection1, exact accuracy20/20 and every secondary metric1. All65events
+replay exactly; trace manifests bind source and complete real built Aegis artifact, not a local policy copy.
+
+Hosts still own trustworthy initial source timestamps, units/clock, authentic persistence and exact
+immediate action after return. This does not re-observe sources, detect changes inside a valid window,
+validate colluding clocks, cover pre-invocation latency/rules-options mutation or close post-return races.
+No predictive calibration or production-database claim. Reserved holdout unused; no policy tuned.
+
 ## 2026-10-09 — New exp59 receipt ownership
 Pre-registered `f54a6a1a0f069b1cc4f2f9e4cc6b1de68ee7cedb` before implementation/output. Baseline fetched main Aegis1550e6e produced receipt drift **8/8**, cross-call contamination **8/8**, and exact scenario accuracy **3/21** in both `ero-mv20uicz` and `ero-mv20uig5`. Returned prediction and ruleVersions referenced caller-owned metadata. Matched-rule, defaults and explicit mutation controls correctly stayed independent; detached consumer control was **21/21**.
 
@@ -279,3 +299,11 @@ Committed Aegis `7b4c5b08ab09201d6371a06de343eb435f0b26ed` copies prediction pub
 Results are evidence-verified but **candidate merge/CI not yet confirmed**. No mutable-record tamper detection, signed persistence, transactional action, getter/proxy/extension-data or live production incident claim. Host still owns exact execution and durable signed receipts. Prior exp57/58 remain separately unlanded; no combined certification. Reserved holdout unused; no tuning. Regression verification is not novelty.
 
 RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [SwarmLab47](https://github.com/heybeaux/swarmlab/pull/47). Local release/static/test checks green (1085 tests: 628+95+22+86+51+203), SwarmLab evidence46 claims96 traces872 assertions. GitHub checks/independent review pending at this documentation commit; no remote merge claim.
+
+## 2026-10-08 — exp58 configuration drift, honest red→green
+
+Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. Real Aegis baseline1550e6e `aci-mv0ldq1x` / `aci-mv0ldq3x` allows12/14 hazards; candidate `2dfc4929a9a8f94b28875b69cad577ebe0822fce` `aci-mv0lgl6y` allows0 and exact21/21. Fixture accounting correction affects no real output or threshold; diagnostics retained non-admitted. New evidence RT48; prior RT47 work preserved, not counted. Claims pin all3 admitted traces and48 scores.
+
+Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.
+
+Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
