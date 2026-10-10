@@ -16,3 +16,5 @@ npm install && npm run build && npm run typecheck
 AEGIS_REPO=<built-aegis> AEGIS_DIST=<built-aegis>/packages/aegis/dist/index.js node experiments/59-evaluation-receipt-ownership/dist/main.js
 ```
 The process deliberately exits0 for a valid red run; inspect summary metrics. Entry action remains correctly classified at baseline, but receipt metadata becomes inconsistent post-return. Fixtures/controls are explicitly NOT runtime improvement evidence.
+
+RT49 paired candidates: [Aegis64](https://github.com/heybeaux/aegis/pull/64) / [SwarmLab47](https://github.com/heybeaux/swarmlab/pull/47). Local release/static/test checks green (1086 tests), SwarmLab evidence46 claims96 traces872 assertions. GitHub checks/independent review pending at this documentation commit; no remote merge claim.
