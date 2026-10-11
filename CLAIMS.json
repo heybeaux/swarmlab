@@ -6333,5 +6333,180 @@
     "evidenceStatus": "verified",
     "seedSetId": "async-evaluator-config-integrity-v1",
     "notes": "Pre-registration b0378e0 BEFORE implementation/output; 21 frozen scenarios. Current-main baseline repeated with identical 63 arm scenario rows, same harness hash candidate; full 68-event replay equality. Two diagnostic traces had fixture-only I/O-accounting error; preserved locally but excluded from claims. Thresholds/scenarios unchanged. Exp57/RT47 remains prior unlanded work, NOT novelty tonight. No threshold tuned; holdout reserved unused. Authentic plain-data host, no post-return/ABA/getter/proxy/latency claims."
+  },
+  {
+    "id": "RT-50",
+    "claim": "Malformed runtime predictor contributions and thresholds require a fixed diagnostic ask floor rather than silent authorization or a formatting exception; valid typed predictions retain escalation semantics. Candidate held for RT48 fixture migration.",
+    "experiment": "experiments/60-predictor-numeric-contract",
+    "spec": "specs/66-predictor-numeric-contract.md",
+    "runIds": [
+      "pnc-mv3g8k05",
+      "pnc-mv3g8k40",
+      "pnc-mv3gda9w"
+    ],
+    "tracePaths": [
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCallerOwnership",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCallerOwnership",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCallerOwnership"
+    ],
+    "expectedValues": {
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0.8378378378378378,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.28846153846153844,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCrashRate": {
+        "equals": 0.019230769230769232,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 0.16216216216216217,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0.8378378378378378,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.28846153846153844,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCrashRate": {
+        "equals": 0.019230769230769232,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 0.16216216216216217,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCrashRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/60-predictor-numeric-contract/dist/main.js",
+    "stackRecommendation": "Validate consumer numeric contracts before allow; preserve stronger deterministic deny, caller ownership and undefined legacy path. Migrate malformed prior fixtures explicitly before promotion.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-10-exp60",
+        "commits": [
+          "bde9260e75b1a74f458b80d3d53244454d973b34",
+          "d94a4d9c2fd944347f054b1c9274b343c9f892a3"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/66"
+        ],
+        "dirtyState": "clean tracked/untracked at admitted runs"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "seedSetId": "predictor-numeric-contract-v1",
+    "notes": "Pre-registration 3518c35 before implementation/output; 52 frozen scenarios, 104 real-arm rows, 210 events each. Two baseline rows/manifests identical. Exact same harness candidate green. Tagged NaN/Infinity/undefined retained. Producer control illustrative NOT Aegis improvement. No fitted params; reserved holdout unused. Candidate only: merge HOLD because unchanged exp58 partial Prediction fixture red; old claims/traces not rewritten. Focused/unit fixture clarifications do not erase behavioral regression. No origin/main improvement claim."
   }
 ]
