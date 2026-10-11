@@ -180,6 +180,9 @@
     },
     {
       "path": "experiments/59-evaluation-receipt-ownership"
+    },
+    {
+      "path": "experiments/60-predictor-numeric-contract"
     }
   ]
 }
