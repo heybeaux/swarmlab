@@ -6496,10 +6496,12 @@
         "package": "@heybeaux/lattice-aegis",
         "branch": "nori/2026-10-10-exp60",
         "commits": [
-          "bde9260",
-          "d94a4d9"
+          "bde9260e75b1a74f458b80d3d53244454d973b34",
+          "d94a4d9c2fd944347f054b1c9274b343c9f892a3"
         ],
-        "prs": [],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/66"
+        ],
         "dirtyState": "clean tracked/untracked at admitted runs"
       }
     ],
