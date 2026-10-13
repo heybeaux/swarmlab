@@ -81,6 +81,6 @@ const rate=(rows:Row[],p:(r:Row)=>boolean)=>rows.filter(p).length/rows.length;
 const hs=real.filter(r=>r.hazard),unmixed=hs.filter(r=>!r.mixed),mixed=hs.filter(r=>r.mixed),strict=hs.filter(r=>r.mode==='strict');
 const summary={controlAccuracy:rate(repair,r=>r.correct),aegisUnsafeInvalidAllowRate:rate(unmixed,r=>r.action==='allow'),aegisInvalidBindingDetectionRate:rate(hs,r=>r.ids.includes(DIAG)),aegisResolutionAccuracy:rate(real,r=>r.correct),aegisDenyPreservation:rate(mixed,r=>r.action==='deny'&&r.ids.includes('binding.independent')),aegisEarlyNoIO:rate(strict,r=>r.reads===0&&r.observes===0),aegisValidCompatibility:rate(real.filter(r=>!r.hazard),r=>r.correct),aegisCallerOwnership:rate(real,r=>r.checks['ownership']!),aegisHitDedup:rate(real,r=>r.checks['dedup']!)};
 trace.append({t:'score',ts:Date.now(),scores:summary});
-const replay=await readRunRecord(path);if(!isDeepStrictEqual(replay.events,trace.toRunRecord().events))throw new Error('full replay mismatch');
+const replay=await readRunRecord(path);if(JSON.stringify(replay.events)!==JSON.stringify(trace.toRunRecord().events))throw new Error('full replay mismatch');
 console.log('summary:',JSON.stringify(summary));console.log('rows:',real.length,'replay verified:',replay.events.length);console.log(`trace: ${path}`);
 if(summary.controlAccuracy!==1)throw new Error('producer repair control failed');
