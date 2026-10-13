@@ -6416,10 +6416,12 @@
         "commits": [
           "bdaace056ac4cbce8a04fc2966702e26e472dd85"
         ],
-        "prs": []
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/68"
+        ]
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Frozen60 scenarios, seed compiled-rule-binding-v1;122 events per trace; same source hash and repeated baseline rows/artifacts. Two pre-admission traces preserved unclaimed due serialized replay comparator error, corrected without threshold/policy/scenario change. No holdout tuning. Ordinary RegExp/config only; no broad schema/getter/proxy/ReDoS/live calibration claim. Candidate source not yet merged; prior RT50/51 separate."
+    "notes": "Frozen60 scenarios, seed compiled-rule-binding-v1;122 events per trace; same source hash and repeated baseline rows/artifacts. Two pre-admission traces preserved unclaimed due serialized replay comparator error, corrected without threshold/policy/scenario change. No holdout tuning. Ordinary RegExp/config only; no broad schema/getter/proxy/ReDoS/live calibration claim. Candidate source not yet merged; prior RT50/51 separate. Linked SwarmLab51/Aegis68; Aegis executable GitHub release-check success at5aa989a. SwarmLab has zero Actions workflows; CodeRabbit success says review skipped, NOT executable CI. Paired PRs held pending SwarmLab CI coverage, no merged-main improvement claim."
   }
 ]
