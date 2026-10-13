@@ -6333,5 +6333,93 @@
     "evidenceStatus": "verified",
     "seedSetId": "async-evaluator-config-integrity-v1",
     "notes": "Pre-registration b0378e0 BEFORE implementation/output; 21 frozen scenarios. Current-main baseline repeated with identical 63 arm scenario rows, same harness hash candidate; full 68-event replay equality. Two diagnostic traces had fixture-only I/O-accounting error; preserved locally but excluded from claims. Thresholds/scenarios unchanged. Exp57/RT47 remains prior unlanded work, NOT novelty tonight. No threshold tuned; holdout reserved unused. Authentic plain-data host, no post-return/ABA/getter/proxy/latency claims."
+  },
+  {
+    "id": "RT-52",
+    "claim": "Enabled applicable compiled regex caches must remain bound to declared stateless rule configuration at invocation; real Aegis baseline silently allowed6/16 hazards, candidate refuses all with explicit diagnostic while retaining valid deny/controls.",
+    "experiment": "62-compiled-rule-binding-integrity",
+    "spec": "68-compiled-rule-binding-integrity",
+    "runIds": [
+      "crbi-mv6b9cr1",
+      "crbi-mv6b9ctl",
+      "crbi-mv6bfvgw"
+    ],
+    "tracePaths": [
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisHitDedup",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisHitDedup",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisHitDedup"
+    ],
+    "expectedValues": {
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisUnsafeInvalidAllowRate": 0.375,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisInvalidBindingDetectionRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisResolutionAccuracy": 0.4666666666666667,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisEarlyNoIO": 0.875,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisCallerOwnership": 0.9333333333333333,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisHitDedup": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisUnsafeInvalidAllowRate": 0.375,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisInvalidBindingDetectionRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisResolutionAccuracy": 0.4666666666666667,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisEarlyNoIO": 0.875,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisCallerOwnership": 0.9333333333333333,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisHitDedup": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisUnsafeInvalidAllowRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisInvalidBindingDetectionRate": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisResolutionAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisEarlyNoIO": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisCallerOwnership": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisHitDedup": 1
+    },
+    "reproductionCommand": "AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/62-compiled-rule-binding-integrity/dist/main.js",
+    "stackRecommendation": "Validate declared/cache binding and stateless dialect at Aegis public evaluation entry, skip invalid matcher, explicit non-weakenable ask floor, retain valid deny/prediction and async RT48 conservative critical drift refusal.",
+    "stackReposAndPRs": [
+      {
+        "repo": "heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "bdaace056ac4cbce8a04fc2966702e26e472dd85"
+        ],
+        "prs": []
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen60 scenarios, seed compiled-rule-binding-v1;122 events per trace; same source hash and repeated baseline rows/artifacts. Two pre-admission traces preserved unclaimed due serialized replay comparator error, corrected without threshold/policy/scenario change. No holdout tuning. Ordinary RegExp/config only; no broad schema/getter/proxy/ReDoS/live calibration claim. Candidate source not yet merged; prior RT50/51 separate."
   }
 ]
