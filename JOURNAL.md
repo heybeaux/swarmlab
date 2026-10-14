@@ -307,3 +307,15 @@ Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. R
 Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.
 
 Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
+
+## 2026-10-13 — Novel exp63; authority is about coverage, not just severity
+
+## RT53 — Rule-overlay coverage consent (exp63 / Spec69)
+
+Pre-registration `c8bc120` preceded implementation and observations; pre-observation configuration correction `060e6b8` pins high/critical deny for every arm. Real fetched-main Aegis `4be84ed4aab018bee1b9a77b6012b9b97c966d1c` (`occ-mv7qlhb7`, repeat `occ-mv7qlhdk`) allowed **10/10** unconsented matcher/scope losses: rejection **0/10**, resolution **14/25**. Preceding base fixture and pinned-host control **10/10**; explicit reviewed allowances **3/3**. Scenario rows and complete package manifests identical across baseline runs.
+
+Aegis runtime `bc879d6c7fd213b49ef355b64bd83196098ffa0e` compares enabled classifier kind/pattern/target/effective flags and case-sensitive tool-set containment at mergeLayers. Opaque matcher replacements and tool contractions require consent on THIS overlay; warning retains entire preceding effective rule. Flag order/empty equivalence, set-equivalent/expanded tools, metadata, disabled-base re-enable, explicit retunes and insertion order preserved. **Same unchanged harness/seed/scenarios** `occ-mv7qn439`: unsafe allow **0/10**, coverage rejection **10/10**, exact resolution **25/25**, all secondary metrics **1**. Three full replay-verified37-event traces plus source/dist manifests and SHA-256 receipts committed. Focused tests **13 red/6 pass ->19 green**; no thresholds moved.
+
+This tests cascade authority BEFORE compilation, distinct from RT48 in-flight config drift and RT52 declared/cache binding. No regex-language inclusion proof: even safe opaque broadening needs explicit review. No post-merge alias isolation, sandbox execution, learned predictor or production incident claim. Host owns trusted overlays, intentional consent and safe action execution. Prior exp60/61/62 candidates remain unmerged and separate. Explicit authority tightening needs migration review; local evidence green is not remote CI/merge confirmation. Stored old evidence is regression, not novel work.
+
+Setup: default pnpm8 rejected lockfile9 before install; used already available corepack pnpm10.9.0 matching CI, no lockfile recreation. Both primary dirty checkouts untouched; dated origin/main worktrees. No .acr edits; Territory refresh not required.

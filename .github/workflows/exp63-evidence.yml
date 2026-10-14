@@ -1,0 +1,36 @@
+name: exp63-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install, build and type-check SwarmLab
+        run: npm ci && npm run build && npm run typecheck
+      - name: Verify committed corpus and exact exp63 receipts
+        run: npm run verify:evidence && node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs
+      - name: Checkout exact evidence-backed Aegis runtime (not moving main)
+        uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: bc879d6c7fd213b49ef355b64bd83196098ffa0e
+          path: .aegis-candidate
+      - name: Build real Aegis
+        working-directory: .aegis-candidate
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Rerun exact frozen exp63 and inspect metrics, not exit code
+        run: |
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/63-rule-overlay-coverage-consent/dist/main.js > "$RUNNER_TEMP/exp63.log"
+          cat "$RUNNER_TEMP/exp63.log"
+          node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs --latest

@@ -197,3 +197,6 @@ harnesses each replayed against the combined built Aegis package: 65/65 and 68/6
 respectively, with unsafe allow rate 0 and resolution accuracy 1 in both. Aegis release:check
 passed with 49/49 evidence mappings and combined clock/config unit tests. These integration
 checks do not expand the original experiment scope or certify post-return atomicity.
+
+### RT53 / exp63
+Pre-registration c8bc120; occ-mv7qlhb7 / occ-mv7qlhdk red -> occ-mv7qn439 green; exact source/dist/trace hashes in adjacent .receipt.json; frozen harness sha256:5acc408f7c473e0ee849f015fd4609c41c2275e10dcba15c5960a5e68cff660b. Real Aegis runtime bc879d6c7fd213b49ef355b64bd83196098ffa0e; candidate only, PR/CI state tracked in nightly ledger.
