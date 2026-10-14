@@ -16,8 +16,18 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Install, build and type-check SwarmLab
-        run: npm ci && npm run build && npm run typecheck
+          cache-dependency-path: experiments/63-rule-overlay-coverage-consent/ci/package-lock.json
+      - name: Install portable experiment/core toolchain
+        # Older experiments retain machine-local file deps; do not rewrite unrelated packages.
+        run: |
+          npm ci --prefix experiments/63-rule-overlay-coverage-consent/ci --workspaces=false
+          ln -s experiments/63-rule-overlay-coverage-consent/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+      - name: Build and type-check core plus new experiment
+        run: |
+          node_modules/.bin/tsc -b core experiments/63-rule-overlay-coverage-consent
+          node_modules/.bin/tsc -b --force core experiments/63-rule-overlay-coverage-consent
       - name: Verify committed corpus and exact exp63 receipts
         run: npm run verify:evidence && node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs
       - name: Checkout exact evidence-backed Aegis runtime (not moving main)

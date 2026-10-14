@@ -14,3 +14,5 @@ This tests cascade authority BEFORE compilation, distinct from RT48 in-flight co
 
 ## Run
 `npm install && npm run build` then `AEGIS_REPO=/path/to/real/aegis node experiments/63-rule-overlay-coverage-consent/dist/main.js`. Aegis must be built with compatible pnpm10 (`corepack pnpm@10.9.0`). Inspect receipt.green and all metrics; a diagnostic red has exit0 intentionally. CI validates actual desired state, not command exit alone. New PR CI must run this fresh package integration plus corpus verification.
+
+CI portability: root npm ci includes historical absolute file dependencies into unrelated stack checkouts. The new executable CI therefore uses a pinned isolated TypeScript/Node-types toolchain to build/typecheck core+exp63, replay-verifies the ENTIRE static evidence corpus and exp63 receipts, and freshly reruns exp63 against the exact committed real Aegis runtime. Full-repo build/typecheck are additionally verified locally; no unrelated stack dependencies are rewritten.
