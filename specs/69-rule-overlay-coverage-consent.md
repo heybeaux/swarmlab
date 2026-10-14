@@ -32,3 +32,5 @@ Repeat exact node invocation twice for baseline reproducibility, once post-patch
 
 ## Landing and uncertainty
 Full replay equality, content-addressed receipts and committed traces; preserve red. Small general Aegis policy fix only after reproducible red. No speculative inclusion algorithm or special fixture names. Changing formerly accepted matcher retunes is a deliberate authority tightening; hold for migration/owner review if necessary. No improvement claim without same real-package before/after. PR CI required before merge; no CI workflow in current SwarmLab main is NOT executable green.
+
+Pre-observation implementation correction: severity-escalation hazard uses high -> critical (not critical -> critical). Frozen host severityTable={critical:deny,high:deny,medium:ask,low:allow} for EVERY scenario/arm/run makes its preceding high classifier a deny floor. All assertions/thresholds/scenario counts unchanged; no experiment run observed.

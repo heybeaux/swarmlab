@@ -9,7 +9,7 @@ import { MessageBus, TraceWriter, readRunRecord } from '@swarmlab/core';
 type Action = 'allow' | 'ask' | 'deny';
 type Severity = 'critical' | 'high' | 'medium' | 'low';
 type Rule = {id:string;category:'bash';severity:Severity;description:string;match:{kind:'regex'|'substring';pattern:string;flags?:string;target:'command'|'content'};appliesTo:string[];enabled?:boolean;allowDowngrade?:boolean};
-interface Runtime {mergeLayers(layers:Rule[][]):{rules:Rule[];warnings:{ruleId:string;message:string}[]}; loadPack(pack:{packId:string;version:string;rules:Rule[]}):unknown[];evaluate(call:{tool:string;command:string},rules:unknown[]):{action:Action;matches:unknown[]}}
+interface Runtime {mergeLayers(layers:Rule[][]):{rules:Rule[];warnings:{ruleId:string;message:string}[]}; loadPack(pack:{packId:string;version:string;rules:Rule[]}):unknown[];evaluate(call:{tool:string;command:string},rules:unknown[],options?:{severityTable:{critical:Action;high:Action;medium:Action;low:Action}}):{action:Action;matches:unknown[]}}
 const EXP='63-rule-overlay-coverage-consent';
 const SEED='overlay-coverage-consent-v1';
 const REPO=process.env['AEGIS_REPO'];
@@ -33,7 +33,7 @@ function hazard(id:string,b:Rule,o:Rule,command='BLOCK',prior?:Rule){
 {const b=base();hazard('regex-to-substring',b,overlay(b,{match:{...b.match,kind:'substring'}}));}
 {const b=base();hazard('appliesTo-drop-Bash',b,overlay(b,{appliesTo:['Shell']}));}
 {const b=overlay(base(),{appliesTo:['*']});hazard('wildcard-to-finite',b,overlay(b,{appliesTo:['Shell']}));}
-{const b=overlay(base(),{appliesTo:['Bash']});hazard('severity-escalation-plus-narrow',b,overlay(b,{severity:'critical',match:{...b.match,pattern:'OTHER'}}));}
+{const b=overlay(base(),{appliesTo:['Bash'],severity:'high'});hazard('severity-escalation-plus-narrow',b,overlay(b,{severity:'critical',match:{...b.match,pattern:'OTHER'}}));}
 {const b=overlay(base(),{description:'explicit previous consent',allowDowngrade:true});const o=overlay(b,{match:{...b.match,pattern:'OTHER'}});delete o.allowDowngrade;hazard('prior-explicit-consent-not-inherited',b,o,'BLOCK',base());}
 {const b=overlay(base(),{description:'intermediate expanded policy',appliesTo:['Bash','Shell','Execute']});hazard('intermediate-base-retained',b,overlay(b,{appliesTo:['Shell','Execute']}),'BLOCK',base());}
 function control(id:string,b:Rule,o:Rule,expected:Rule,action:Action='deny',warnings=0,explicit=false){scenarios.push({id,hazard:false,layers:[[b],[o]],preceding:[clone(b)],expected:[expected],warnings,action,command:'BLOCK',tool:'Bash',explicit});}
@@ -57,10 +57,10 @@ const dir=join(import.meta.dirname,'..','runs');mkdirSync(dir,{recursive:true});
 const runId=`occ-${Date.now().toString(36)}`;const tracePath=join(dir,`${runId}.jsonl`);
 const trace=new TraceWriter(tracePath,{runId,experiment:EXP});const bus=new MessageBus({trace});
 const files=execFileSync('find',[join(REPO,'packages/aegis/src'),join(REPO,'packages/aegis/dist'),'-type','f'],{encoding:'utf8'}).trim().split('\n').sort();
-const packageInfo={sha:execFileSync('git',['-C',REPO,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),dirty:execFileSync('git',['-C',REPO,'status','--porcelain'],{encoding:'utf8'}),repo:REPO,distSha256:hash(readFileSync(DIST)),manifest:files.map(file=>({file:file.slice(REPO.length+1),sha256:hash(readFileSync(file))})),mode:'real-built-public-api',config:'package defaults; no override'};
+const packageInfo={sha:execFileSync('git',['-C',REPO,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),dirty:execFileSync('git',['-C',REPO,'status','--porcelain'],{encoding:'utf8'}),repo:REPO,distSha256:hash(readFileSync(DIST)),manifest:files.map(file=>({file:file.slice(REPO.length+1),sha256:hash(readFileSync(file))})),mode:'real-built-public-api',config:'severityTable critical/high deny; medium ask; low allow; all other package defaults'};
 const harnessSha256=hash(readFileSync(join(import.meta.dirname,'..','src/main.ts')));
 bus.publish({from:'moderator',to:'*',topic:'meta',body:{evidenceVersion:1,experiment:EXP,seed:SEED,holdout:'reserved-unused-no-tuning',runId,scenarios,harnessSha256,aegis:packageInfo}});
-function evaluate(rules:Rule[],s:Scenario){return runtime.evaluate({tool:s.tool,command:s.command},runtime.loadPack({packId:'coverage-consent',version:'1',rules})).action;}
+function evaluate(rules:Rule[],s:Scenario){return runtime.evaluate({tool:s.tool,command:s.command},runtime.loadPack({packId:'coverage-consent',version:'1',rules}),{severityTable:{critical:'deny',high:'deny',medium:'ask',low:'allow'}}).action;}
 const rows=[];
 for(const s of scenarios){
  const before=JSON.stringify(s.layers);
