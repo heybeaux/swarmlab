@@ -6333,5 +6333,169 @@
     "evidenceStatus": "verified",
     "seedSetId": "async-evaluator-config-integrity-v1",
     "notes": "Pre-registration b0378e0 BEFORE implementation/output; 21 frozen scenarios. Current-main baseline repeated with identical 63 arm scenario rows, same harness hash candidate; full 68-event replay equality. Two diagnostic traces had fixture-only I/O-accounting error; preserved locally but excluded from claims. Thresholds/scenarios unchanged. Exp57/RT47 remains prior unlanded work, NOT novelty tonight. No threshold tuned; holdout reserved unused. Authentic plain-data host, no post-return/ABA/getter/proxy/latency claims."
+  },
+  {
+    "id": "RT-53",
+    "claim": "Unconsented matcher/scope replacement silently removes effective cascade coverage even at unchanged or higher severity; real Aegis conservative overlay-consent enforcement preserves preceding enabled classifiers without weakening explicit host retunes.",
+    "experiment": "experiments/63-rule-overlay-coverage-consent",
+    "spec": "specs/69-rule-overlay-coverage-consent.md",
+    "runIds": [
+      "occ-mv7qlhb7",
+      "occ-mv7qlhdk",
+      "occ-mv7qn439"
+    ],
+    "tracePaths": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.explicitConsentAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.explicitConsentAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.explicitConsentAccuracy"
+    ],
+    "expectedValues": {
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.56,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.9333333333333333,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.56,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.9333333333333333,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-10-13-exp63 node experiments/63-rule-overlay-coverage-consent/dist/main.js",
+    "stackRecommendation": "Require per-overlay allowDowngrade:true for opaque matcher replacement or contracted enabled tool scope; do not infer regex language inclusion. Hosts own review/provenance.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nightly/2026-10-13-exp63",
+        "commits": [
+          "bc879d6c7fd213b49ef355b64bd83196098ffa0e"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/69",
+          "https://github.com/heybeaux/swarmlab/pull/52"
+        ],
+        "dirtyState": "clean on admitted runtime result"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic machine-owned frozen25 scenarios; 10 hazards baseline unsafe allow10/10, coverage rejection0/10; same-harness candidate25/25. 15 controls include conservative rejection of opaque broadening. No holdout tuning; reserved unused. Host explicit retunes require review after tightening. No predictive calibration, regex inclusion or post-merge alias claim. Candidate not remotely merged; CI tracked separately. Prior RT50/51/52 remain separate unmerged experiments, not silently certified.",
+    "artifactReceipts": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.receipt.json",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.receipt.json",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.receipt.json"
+    ]
   }
 ]

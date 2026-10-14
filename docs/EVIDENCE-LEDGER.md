@@ -197,3 +197,14 @@ harnesses each replayed against the combined built Aegis package: 65/65 and 68/6
 respectively, with unsafe allow rate 0 and resolution accuracy 1 in both. Aegis release:check
 passed with 49/49 evidence mappings and combined clock/config unit tests. These integration
 checks do not expand the original experiment scope or certify post-return atomicity.
+
+### RT53 / exp63
+Pre-registration c8bc120; occ-mv7qlhb7 / occ-mv7qlhdk red -> occ-mv7qn439 green; exact source/dist/trace hashes in adjacent .receipt.json; frozen harness sha256:5acc408f7c473e0ee849f015fd4609c41c2275e10dcba15c5960a5e68cff660b. Real Aegis runtime bc879d6c7fd213b49ef355b64bd83196098ffa0e; candidate only, PR/CI state tracked in nightly ledger.
+
+RT53 linked candidates: [Aegis69](https://github.com/heybeaux/aegis/pull/69) / [SwarmLab52](https://github.com/heybeaux/swarmlab/pull/52). Local1144 tests + Aegis stored50/50; SwarmLab49 claims105 traces983 assertions; exact clean-worktree CI rehearsal green. Remote CI pending; NOT merged; migration review required. Stored gate range is50 cases throughRT53 with50–52 absent, not53/53 or certification of prior candidates.
+
+### Same-experiment observable evidence-verifier audit
+
+Independent verification reproduced false acceptance: bare `--latest` certified the existing committed green as fresh; missing secondary metrics and altered action/effective-rule rows were accepted when stored self-check booleans stayed green. This is evidence tooling, NOT a new nightly experiment or an Aegis policy defect. The original three traces and all thresholds remain unchanged.
+
+Receipt verification now pins the frozen scenario/harness contract, requires the complete exact metric set, independently recomputes row field checks and all eight metrics, rejects duplicate/omitted or relabeled scenarios, and inspects every live source/dist hash. New `run-and-verify.mjs` requires exactly one newly produced receipt and checks its exact ID against prior IDs and invocation start; bare `--latest` fails closed. Fifteen verifier regressions cover stale-run acceptance, altered trace checks and live artifact mismatch. The exact unchanged experiment reran green in a clean real-Aegisbc879d6 worktree; audit trace remains non-admitted. Core/experiment build/typecheck, full evidence corpus, and all15 verifier tests green. Runtime still byte-identical to bc879d6; no thresholds tuned, no `.acr` changes, migration hold retained.
