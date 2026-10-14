@@ -29,7 +29,7 @@ jobs:
           node_modules/.bin/tsc -b core experiments/63-rule-overlay-coverage-consent
           node_modules/.bin/tsc -b --force core experiments/63-rule-overlay-coverage-consent
       - name: Verify committed corpus and exact exp63 receipts
-        run: npm run verify:evidence && node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs
+        run: npm run verify:evidence && node --test experiments/63-rule-overlay-coverage-consent/verify-receipts.test.mjs && node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs
       - name: Checkout exact evidence-backed Aegis runtime (not moving main)
         uses: actions/checkout@v4
         with:
@@ -41,6 +41,6 @@ jobs:
         run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
       - name: Rerun exact frozen exp63 and inspect metrics, not exit code
         run: |
-          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/63-rule-overlay-coverage-consent/dist/main.js > "$RUNNER_TEMP/exp63.log"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/63-rule-overlay-coverage-consent/run-and-verify.mjs > "$RUNNER_TEMP/exp63.log"
           cat "$RUNNER_TEMP/exp63.log"
-          node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs --latest
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node --test experiments/63-rule-overlay-coverage-consent/verify-receipts.test.mjs
