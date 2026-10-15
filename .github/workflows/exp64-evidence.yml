@@ -41,6 +41,9 @@ jobs:
         run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
       - name: Execute same frozen experiment and inspect rows/metrics/actual source-dist receipts
         run: |
+          START="$(node -e 'console.log(Date.now())')"
           AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/64-merged-rule-ownership/dist/main.js > "$RUNNER_TEMP/exp64.log"
           cat "$RUNNER_TEMP/exp64.log"
-          node experiments/64-merged-rule-ownership/verify-receipts.mjs --run "$RUNNER_TEMP/exp64.log"
+          node experiments/64-merged-rule-ownership/verify-receipts.mjs --run "$RUNNER_TEMP/exp64.log" --since "$START"
+      - name: Verifier negative controls (tampered copies of the fresh live log must be rejected)
+        run: node experiments/64-merged-rule-ownership/test-verifier.mjs "$RUNNER_TEMP/exp64.log"

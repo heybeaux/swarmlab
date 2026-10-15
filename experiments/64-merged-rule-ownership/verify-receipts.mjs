@@ -10,9 +10,13 @@ const check=(v,m)=>{if(!v)fail(m);};
 const ids=['new-top','new-match','new-scope','new-references','overlay-top','overlay-match','overlay-scope','inherited-references','rejected-base','consumer-to-input','sibling-results','shared-nested-rules','empty','insertion-dedup','tighten','reject','consent','frozen','explicit-output','explicit-remerge','warnings'];
 const limits={detachedControlAccuracy:1,aegisProducerDriftRate:0,aegisUnsafeAllowRate:0,aegisResolutionAccuracy:1,aegisConsumerIsolation:1,aegisControlAccuracy:1,aegisCallerOwnership:1};
 check(hash(readFileSync(join(dir,'src/main.ts')))===receipts.harnessSha256,'frozen harness hash');
+const CHECK_KEYS={producer:['callerWritable','entryDenied','protected','snapshot','warningShape'],'consumer-to-input':['callerWritable','entryDenied','input','outputWritable','warningShape'],'sibling-results':['callerWritable','entryDenied','input','protected','sibling','warningShape'],'shared-nested-rules':['callerWritable','entryDenied','input','protected','sibling','warningShape'],empty:['empty'],'insertion-dedup':['collapse','order','precedence'],tighten:['deny','severity','warn'],reject:['deny','retained','warn'],consent:['accepted','allow','warn'],frozen:['allow','input','writable'],'explicit-output':['effect','writable'],'explicit-remerge':['new','old'],warnings:['independent']};
+const keysFor=(id,i)=>i<9?CHECK_KEYS.producer:CHECK_KEYS[id];
+const scenarioRows=events=>events.filter(e=>e.t==='message'&&e.topic==='scenario').map(e=>({from:e.from,body:e.body}));
+const readTrace=path=>readFileSync(path,'utf8').trim().split('\n').map(l=>JSON.parse(l));
 let baselineRows;
 function inspect(path,expected,live=false){
- const events=readFileSync(path,'utf8').trim().split('\n').map(l=>JSON.parse(l));
+ const events=readTrace(path);
  check(events.length===46,'exact46 events');const meta=events[0];check(meta.t==='message'&&meta.topic==='meta','header');
  const m=meta.body;check(m.experiment==='64-merged-rule-ownership'&&m.seed==='merged-rule-ownership-v1','experiment/seed');
  check(same(m.scenarios,ids),'frozen roster');check(m.scenarioSha256===hash(JSON.stringify(ids)),'roster hash');
@@ -25,7 +29,7 @@ function inspect(path,expected,live=false){
  else check(m.aegis.sha===expected.aegisSha,'frozen package SHA');
  const arms=['real-aegis','detached-boundary-control'];const groups={};
  for(const arm of arms){const rows=events.filter(e=>e.t==='message'&&e.topic==='scenario'&&e.from===arm).map(e=>e.body);check(same(rows.map(r=>r.id),ids),`${arm} exact row roster`);groups[arm]=rows;
-  for(const [i,r] of rows.entries()){check(r.hazard===(i<12)&&r.producer===(i<9),'hazard denominator');check(r.unsafe===([0,1,2,4,5,6,8,10,11].includes(i)),'unsafe denominator');check(Object.values(r.checks).every(v=>typeof v==='boolean'),'boolean checks');check(r.correct===Object.values(r.checks).every(Boolean),'row correctness');
+  for(const [i,r] of rows.entries()){check(r.hazard===(i<12)&&r.producer===(i<9),'hazard denominator');check(r.unsafe===([0,1,2,4,5,6,8,10,11].includes(i)),'unsafe denominator');check(r.checks&&typeof r.checks==='object'&&same(Object.keys(r.checks).sort(),keysFor(r.id,i)),`exact check keys ${arm}/${r.id}`);check(Object.values(r.checks).every(v=>typeof v==='boolean'),'boolean checks');check(r.correct===Object.values(r.checks).every(Boolean),'row correctness');
    if(i<12){check(r.checks.entryDenied===true,'baseline guarded deny fixture');check(r.checks.callerWritable===true,'caller mutable');check(r.checks.warningShape===true,'warning compatibility');}
    if(i<9){check(r.checks.snapshot===same(r.before,r.after),'independent producer snapshot equality');check(r.checks.protected===(r.action==='deny'),'protected action');}
   }
@@ -35,7 +39,24 @@ function inspect(path,expected,live=false){
  const summary={detachedControlAccuracy:calc(arms[1]).resolutionAccuracy,...Object.fromEntries(Object.entries(calc(arms[0])).map(([k,v])=>[`aegis${k[0].toUpperCase()}${k.slice(1)}`,v]))};check(same(scoreEvents[2].scores,summary),'recomputed last summary');check(same(summary,live?limits:expected.metrics),'frozen expected thresholds/observed baseline');check(calc(arms[1]).resolutionAccuracy===1,'diagnostic all21 ground truth');
  if(!live&&expected.role==='baseline'){if(baselineRows)check(same(groups,baselineRows),'repeated baseline identical rows');baselineRows=groups;}
  console.log(`verified ${m.runId??expected?.runId??path}: ${JSON.stringify(summary)}`);
+ return {events,summary};
 }
 for(const r of receipts.runs){const path=join(root,r.trace);check(hash(readFileSync(path))===r.traceSha256,`content-addressed ${r.runId}`);inspect(path,r);}
-if(process.argv.includes('--run')){const log=JSON.parse(readFileSync(process.argv[process.argv.indexOf('--run')+1],'utf8'));check(log.failed.length===0,'fresh live rows green');inspect(log.trace,null,true);}
+const arg=name=>{const i=process.argv.indexOf(name);return i<0?undefined:process.argv[i+1];};
+if(process.argv.includes('--run')){
+ const log=JSON.parse(readFileSync(arg('--run'),'utf8'));
+ check(typeof log.runId==='string'&&/^mro-[0-9a-z]+$/.test(log.runId),'live log run id');
+ check(typeof log.trace==='string'&&log.trace.endsWith(`/${log.runId}.jsonl`),'live log trace bound to run id');
+ check(Array.isArray(log.failed)&&log.failed.length===0,'fresh live rows green');
+ check(!receipts.runs.some(r=>r.runId===log.runId),'live run is not an admitted frozen receipt');
+ const {events,summary}=inspect(log.trace,null,true);
+ check(same(log.summary,summary),'live log summary equals recomputed trace summary');
+ check(log.replayEvents===events.length,'live log replay count equals trace');
+ // Observable data, not only self-reported booleans: every live row (both arms) must equal the content-addressed green body.
+ const pinned=receipts.runs.filter(r=>r.role==='candidate');check(pinned.length===1,'one pinned green receipt');
+ check(same(scenarioRows(events),scenarioRows(readTrace(join(root,pinned[0].trace)))),'live scenario bodies equal pinned content-addressed green rows');
+ const since=arg('--since');
+ if(since!==undefined){const t=Number(since);check(Number.isFinite(t)&&t>0,'valid --since');let prev=t;for(const e of events){check(typeof e.ts==='number'&&e.ts>=prev,'fresh monotonic timestamps after invocation start');prev=e.ts;}check(prev<=Date.now()+60000,'timestamps not in future');}
+ else if(process.env['CI'])fail('--since required in CI for freshness');
+}
 console.log('exp64 frozen receipts/roster/row checks/ground truth snapshots/recomputed metrics verified');
