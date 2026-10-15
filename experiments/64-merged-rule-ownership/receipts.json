@@ -1,0 +1,55 @@
+{
+  "harnessSha256": "sha256:369255115903a4f030bbab92a386bd234f396b9c2a48ed95a63b25c6edf4b95c",
+  "candidateSha": "edb9f557fc776b5710360a453f0df0146f3b977b",
+  "patchSourceSha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e",
+  "runs": [
+    {
+      "runId": "mro-mv96376j",
+      "role": "baseline",
+      "trace": "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl",
+      "traceSha256": "sha256:2646379fb14ff7729820e289dbdb0dc9a1444dd435884ad23b50246d1fa95695",
+      "aegisSha": "4be84ed4aab018bee1b9a77b6012b9b97c966d1c",
+      "metrics": {
+        "detachedControlAccuracy": 1,
+        "aegisProducerDriftRate": 0.8888888888888888,
+        "aegisUnsafeAllowRate": 0.8888888888888888,
+        "aegisResolutionAccuracy": 0.38095238095238093,
+        "aegisConsumerIsolation": 0,
+        "aegisControlAccuracy": 0.7777777777777778,
+        "aegisCallerOwnership": 1
+      }
+    },
+    {
+      "runId": "mro-mv9637ag",
+      "role": "baseline",
+      "trace": "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl",
+      "traceSha256": "sha256:d0c73e72b61b61db5a5d5b939135d60ca19c53630847fa7f2251dc1076e73194",
+      "aegisSha": "4be84ed4aab018bee1b9a77b6012b9b97c966d1c",
+      "metrics": {
+        "detachedControlAccuracy": 1,
+        "aegisProducerDriftRate": 0.8888888888888888,
+        "aegisUnsafeAllowRate": 0.8888888888888888,
+        "aegisResolutionAccuracy": 0.38095238095238093,
+        "aegisConsumerIsolation": 0,
+        "aegisControlAccuracy": 0.7777777777777778,
+        "aegisCallerOwnership": 1
+      }
+    },
+    {
+      "runId": "mro-mv966i1f",
+      "role": "candidate",
+      "trace": "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl",
+      "traceSha256": "sha256:ad0cc81f05a2dced5c087cda949be0f45f1bc771dd592059923e8415a03e3d13",
+      "aegisSha": "f27427879984856bad36731788376dbc74702aaa",
+      "metrics": {
+        "detachedControlAccuracy": 1,
+        "aegisProducerDriftRate": 0,
+        "aegisUnsafeAllowRate": 0,
+        "aegisResolutionAccuracy": 1,
+        "aegisConsumerIsolation": 1,
+        "aegisControlAccuracy": 1,
+        "aegisCallerOwnership": 1
+      }
+    }
+  ]
+}

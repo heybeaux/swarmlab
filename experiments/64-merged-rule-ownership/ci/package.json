@@ -1,0 +1,8 @@
+{
+  "name": "exp64-portable-ci-tools",
+  "private": true,
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.19.15"
+  }
+}
