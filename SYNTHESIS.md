@@ -1505,3 +1505,29 @@ function overrides and post-return changes unproven. Earlier exp57/RT47 is unlan
 not tonight's novelty; this independent origin/main patch changes no elapsed-clock contract.
 Two initial diagnostic traces had oracle-only I/O counter mismatch (real output unchanged);
 corrected before admitting repeated baseline, preserved but not claimed. Thresholds never moved.
+
+## RT54 — Merged rule reference ownership (exp64 / Spec70, 2026-10-14)
+
+New pre-registered question: can caller-owned rule recipes edit already-constructed
+cascade policy between synchronous merge and compilation? Pre-registration `4e5c4c8`;
+21 frozen scenarios, no tuning or LLM judge. Distinct from in-flight RT48, receipt
+metadata RT49, defaults RT51, compiled-cache RT52 and overlay consent RT53.
+
+Real Aegis `4be84ed` baseline `mro-mv96376j` / `mro-mv9637ag` identical rows:
+producer drift **8/9**, unsafe allow **8/9**, exact resolution **8/21**;
+consumer isolation **0**, compatibility controls **7/9**, caller ownership **1**.
+Independent detached-boundary diagnostic **21/21** on both baselines; it is a
+control, not replacement Aegis. These red traces remain committed.
+
+Runtime patch `f27427879984856bad36731788376dbc74702aaa` clones each effective Rule independently at
+merge return. Separate cloning is important: cloning the whole array preserves
+shared nested identities across distinct rule ids. Same unchanged harness/seeds,
+`mro-mv966i1f`: producer drift **0/9**, unsafe allow **0/9**, resolution **21/21**,
+all secondary metrics **1**,46-event full replay; manifests pin real package.
+Focused frozen tests **16 red/4 pass ->20 green**. Thresholds unchanged.
+
+Host owns provenance, deliberate policy edits and reloading; result remains
+editable. Direct loadPack binding, live immutability/atomic execution, getters or
+proxies are not claimed. Stored scores are historical regression evidence,
+not runtime verification. Full regression and remote CI/PR status will be recorded
+below when actually observed. Prior exp60–63 candidates remain separate/unmerged.

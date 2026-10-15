@@ -1,0 +1,46 @@
+name: exp64-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: experiments/64-merged-rule-ownership/ci/package-lock.json
+      - name: Install portable core/experiment toolchain
+        # Older experiments retain machine-local file deps; do not rewrite unrelated packages.
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+      - name: Build and typecheck core plus new experiment
+        run: |
+          node_modules/.bin/tsc -b core experiments/64-merged-rule-ownership
+          node_modules/.bin/tsc -b --force core experiments/64-merged-rule-ownership
+      - name: Verify frozen corpus and exact content-addressed experiment receipts
+        run: npm run verify:evidence && node experiments/64-merged-rule-ownership/verify-receipts.mjs
+      - name: Checkout exact candidate (not moving main)
+        uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: edb9f557fc776b5710360a453f0df0146f3b977b
+          path: .aegis-candidate
+      - name: Build real Aegis
+        working-directory: .aegis-candidate
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Execute same frozen experiment and inspect rows/metrics/actual source-dist receipts
+        run: |
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/64-merged-rule-ownership/dist/main.js > "$RUNNER_TEMP/exp64.log"
+          cat "$RUNNER_TEMP/exp64.log"
+          node experiments/64-merged-rule-ownership/verify-receipts.mjs --run "$RUNNER_TEMP/exp64.log"

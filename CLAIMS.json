@@ -6333,5 +6333,75 @@
     "evidenceStatus": "verified",
     "seedSetId": "async-evaluator-config-integrity-v1",
     "notes": "Pre-registration b0378e0 BEFORE implementation/output; 21 frozen scenarios. Current-main baseline repeated with identical 63 arm scenario rows, same harness hash candidate; full 68-event replay equality. Two diagnostic traces had fixture-only I/O-accounting error; preserved locally but excluded from claims. Thresholds/scenarios unchanged. Exp57/RT47 remains prior unlanded work, NOT novelty tonight. No threshold tuned; holdout reserved unused. Authentic plain-data host, no post-return/ABA/getter/proxy/latency claims."
+  },
+  {
+    "id": "RT-54",
+    "claim": "Mutable caller recipes must not silently edit a constructed effective cascade or receive consumer edits through merged rule aliases.",
+    "experiment": "experiments/64-merged-rule-ownership",
+    "spec": "specs/70-merged-rule-ownership.md",
+    "runIds": [
+      "mro-mv96376j",
+      "mro-mv9637ag",
+      "mro-mv966i1f"
+    ],
+    "tracePaths": [
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.detachedControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisProducerDriftRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisResolutionAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisConsumerIsolation",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisCallerOwnership",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.detachedControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisProducerDriftRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisResolutionAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisConsumerIsolation",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisCallerOwnership",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.detachedControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisProducerDriftRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisResolutionAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisConsumerIsolation",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisControlAccuracy",
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisCallerOwnership"
+    ],
+    "expectedValues": {
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.detachedControlAccuracy": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisProducerDriftRate": 0.8888888888888888,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisUnsafeAllowRate": 0.8888888888888888,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisResolutionAccuracy": 0.38095238095238093,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisConsumerIsolation": 0,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisControlAccuracy": 0.7777777777777778,
+      "experiments/64-merged-rule-ownership/runs/mro-mv96376j.jsonl#last.aegisCallerOwnership": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.detachedControlAccuracy": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisProducerDriftRate": 0.8888888888888888,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisUnsafeAllowRate": 0.8888888888888888,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisResolutionAccuracy": 0.38095238095238093,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisConsumerIsolation": 0,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisControlAccuracy": 0.7777777777777778,
+      "experiments/64-merged-rule-ownership/runs/mro-mv9637ag.jsonl#last.aegisCallerOwnership": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.detachedControlAccuracy": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisProducerDriftRate": 0,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisUnsafeAllowRate": 0,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisResolutionAccuracy": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisConsumerIsolation": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisControlAccuracy": 1,
+      "experiments/64-merged-rule-ownership/runs/mro-mv966i1f.jsonl#last.aegisCallerOwnership": 1
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/pinned/real/aegis node experiments/64-merged-rule-ownership/dist/main.js",
+    "stackRecommendation": "Each returned effective Rule owns a structured clone; precedence, warnings and mutable output contract unchanged.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis",
+      "https://github.com/heybeaux/swarmlab"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Unique synchronous cascade value-ownership boundary. Baseline origin/main4be84ed repeated identical rows, 8/9 unsafe allow; f274278 unchanged-harness21/21 green. Holdout unused (no tuning), raw traces/package manifests preserved. Candidate not remotely merged; RT50\u201353 pending and not imported. Direct result mutation/loadPack aliasing unproven by design."
   }
 ]

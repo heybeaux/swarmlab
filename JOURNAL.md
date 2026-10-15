@@ -307,3 +307,41 @@ Spec64 b0378e0; 21 frozen scenarios, seed async-evaluator-config-integrity-v1. R
 Local regression:1087 Aegis tests, gate47/47; SwarmLab46 claims/96 traces/881 assertions; exp55/56 green regression only. Orphaned exp57 preserved, not landed or independently certified. RT47 rebase must reconcile trusted clock function capture with RT48 plain-policy snapshot; combined behavior unproven.
 
 Linked PRs: https://github.com/heybeaux/aegis/pull/63 (Aegis), https://github.com/heybeaux/swarmlab/pull/46 (SwarmLab). Local green; CI status inspected in tonight's pipeline ledger before any merge.
+
+## RT54 — Merged rule reference ownership (exp64 / Spec70, 2026-10-14)
+
+New pre-registered question: can caller-owned rule recipes edit already-constructed
+cascade policy between synchronous merge and compilation? Pre-registration `4e5c4c8`;
+21 frozen scenarios, no tuning or LLM judge. Distinct from in-flight RT48, receipt
+metadata RT49, defaults RT51, compiled-cache RT52 and overlay consent RT53.
+
+Real Aegis `4be84ed` baseline `mro-mv96376j` / `mro-mv9637ag` identical rows:
+producer drift **8/9**, unsafe allow **8/9**, exact resolution **8/21**;
+consumer isolation **0**, compatibility controls **7/9**, caller ownership **1**.
+Independent detached-boundary diagnostic **21/21** on both baselines; it is a
+control, not replacement Aegis. These red traces remain committed.
+
+Runtime patch `f27427879984856bad36731788376dbc74702aaa` clones each effective Rule independently at
+merge return. Separate cloning is important: cloning the whole array preserves
+shared nested identities across distinct rule ids. Same unchanged harness/seeds,
+`mro-mv966i1f`: producer drift **0/9**, unsafe allow **0/9**, resolution **21/21**,
+all secondary metrics **1**,46-event full replay; manifests pin real package.
+Focused frozen tests **16 red/4 pass ->20 green**. Thresholds unchanged.
+
+Host owns provenance, deliberate policy edits and reloading; result remains
+editable. Direct loadPack binding, live immutability/atomic execution, getters or
+proxies are not claimed. Stored scores are historical regression evidence,
+not runtime verification. Full regression and remote CI/PR status will be recorded
+below when actually observed. Prior exp60–63 candidates remain separate/unmerged.
+
+### Regression verification (not new evidence)
+Full Aegis release:check at `edb9f55`: build/typecheck **1145/1145 tests**
+(628core,152Aegis,22collect,86label,203hook,54bench), static measured evidence **50/50**.
+Initial evidence catalogue update exposed one stale expected report banner, not a
+runtime regression: corrected RT49->RT54 expectation; preserved red log, full rerun
+green. SwarmLab build/typecheck and verify:evidence **49claims105traces980assertions**.
+Fresh same-harness `mro-mv96dcb4` on clean final candidate **21/21**, actual source/dist
+manifest audited. Frozen red+green46-event receipts verified; no thresholds moved.
+Baseline frozen/remerge compatibility controls fail on real old Aegis7/9, whereas
+the detached diagnostic is21/21, distinguishing general ownership gap from fixture
+failure. Holdout remains unused. No source .acr changes; Territory not refreshed.
