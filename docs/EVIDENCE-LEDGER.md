@@ -246,3 +246,20 @@ SwarmLab [PR53](https://github.com/heybeaux/swarmlab/pull/53), evidence
 Both inspected CLEAN/MERGEABLE; CodeRabbit success is review-skipped, **not review
 approval**. No protections bypassed. Final documentation commit will get its own CI;
 merge/main SHA/status recorded in the nightly ledger, not inferred here.
+
+### Verifier hardening follow-up (2026-10-14, not new evidence)
+An independent audit found that `verify-receipts.mjs --run` checked self-reported row
+booleans but not the full observable data. It accepted missing or empty check maps,
+changed rule/input/action data with unchanged booleans, missing or retagged log
+identity/summary, and stale timestamps. Manifest and unsafe-action tampering were
+already rejected. The admitted red/green traces were never affected: their bodies
+match, and the runtime fix independently passed.
+The verifier now requires the exact per-scenario check keys. It requires both arms'
+live scenario bodies to equal the content-addressed pinned green rows. It binds
+log run ID, trace path, summary and replay count to the recomputed trace. It rejects
+frozen receipts presented as live runs. With `--since`, it requires fresh,
+monotonic timestamps; CI requires `--since`. `test-verifier.mjs` checks 17 tampered
+copies of a fresh live log, plus a positive control and a CI freshness check, and
+runs in CI. Frozen harness hash, thresholds, scenarios, receipts and traces are
+unchanged. The audit rerun was not admitted as evidence. Limitation: run identity
+is bound by filename because the frozen harness does not embed `runId` in the trace.
