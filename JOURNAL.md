@@ -345,3 +345,14 @@ manifest audited. Frozen red+green46-event receipts verified; no thresholds move
 Baseline frozen/remerge compatibility controls fail on real old Aegis7/9, whereas
 the detached diagnostic is21/21, distinguishing general ownership gap from fixture
 failure. Holdout remains unused. No source .acr changes; Territory not refreshed.
+
+### Linked PRs and observed GitHub CI
+Aegis [PR70](https://github.com/heybeaux/aegis/pull/70), candidate
+`edb9f557fc776b5710360a453f0df0146f3b977b`: release-check
+[38694629492](https://github.com/heybeaux/aegis/actions/runs/38694629492) **SUCCESS**.
+SwarmLab [PR53](https://github.com/heybeaux/swarmlab/pull/53), evidence
+`b973bd8db231b4168191a773f9f0e06f463192a2`: portable replay + pinned real-package
+[38694637393](https://github.com/heybeaux/swarmlab/actions/runs/38694637393) **SUCCESS**.
+Both inspected CLEAN/MERGEABLE; CodeRabbit success is review-skipped, **not review
+approval**. No protections bypassed. Final documentation commit will get its own CI;
+merge/main SHA/status recorded in the nightly ledger, not inferred here.

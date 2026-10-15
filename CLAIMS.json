@@ -6398,8 +6398,8 @@
     "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/pinned/real/aegis node experiments/64-merged-rule-ownership/dist/main.js",
     "stackRecommendation": "Each returned effective Rule owns a structured clone; precedence, warnings and mutable output contract unchanged.",
     "stackReposAndPRs": [
-      "https://github.com/heybeaux/aegis",
-      "https://github.com/heybeaux/swarmlab"
+      "https://github.com/heybeaux/aegis/pull/70",
+      "https://github.com/heybeaux/swarmlab/pull/53"
     ],
     "evidenceStatus": "verified",
     "notes": "Unique synchronous cascade value-ownership boundary. Baseline origin/main4be84ed repeated identical rows, 8/9 unsafe allow; f274278 unchanged-harness21/21 green. Holdout unused (no tuning), raw traces/package manifests preserved. Candidate not remotely merged; RT50\u201353 pending and not imported. Direct result mutation/loadPack aliasing unproven by design."
