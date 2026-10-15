@@ -180,6 +180,9 @@
     },
     {
       "path": "experiments/59-evaluation-receipt-ownership"
+    },
+    {
+      "path": "experiments/64-merged-rule-ownership"
     }
   ]
 }
