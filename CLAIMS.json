@@ -6403,5 +6403,147 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Unique synchronous cascade value-ownership boundary. Baseline origin/main4be84ed repeated identical rows, 8/9 unsafe allow; f274278 unchanged-harness21/21 green. Holdout unused (no tuning), raw traces/package manifests preserved. Candidate not remotely merged; RT50\u201353 pending and not imported. Direct result mutation/loadPack aliasing unproven by design."
+  },
+  {
+    "id": "RT-55",
+    "claim": "Loaded compiled policy owns its validated Rule snapshot: producer recipe edits require explicit reload and cannot silently retune decisions or backwrite through consumer outputs.",
+    "experiment": "experiments/65-loaded-rule-ownership",
+    "spec": "specs/71-loaded-rule-ownership.md",
+    "runIds": [
+      "lro-mvalf27u",
+      "lro-mvalf2al",
+      "lro-mvalgz7p"
+    ],
+    "tracePaths": [
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.detachedControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisProducerDriftRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisResolutionAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisConsumerIsolation",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisCallerOwnership",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.detachedControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisProducerDriftRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisResolutionAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisConsumerIsolation",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisCallerOwnership",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.detachedControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisProducerDriftRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisUnsafeAllowRate",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisResolutionAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisConsumerIsolation",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisControlAccuracy",
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisCallerOwnership"
+    ],
+    "expectedValues": {
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.detachedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisProducerDriftRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisUnsafeAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.16666666666666666,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisConsumerIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf27u.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.detachedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisProducerDriftRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisUnsafeAllowRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.16666666666666666,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisConsumerIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalf2al.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.detachedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisProducerDriftRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisUnsafeAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisConsumerIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/65-loaded-rule-ownership/runs/lro-mvalgz7p.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "node_modules/.bin/tsc -b core experiments/65-loaded-rule-ownership && AEGIS_REPO=/path/to/recorded/aegis node experiments/65-loaded-rule-ownership/dist/main.js && node experiments/65-loaded-rule-ownership/verify-receipts.mjs",
+    "stackRecommendation": "Clone each input Rule independently before loader validation/compilation; preserve editable outputs and require explicit producer reload.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "35f332ebca7ea7a5c58f069574345a3768c6c29f"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/71"
+        ],
+        "dirtyState": "clean"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec71 pre-registered before implementation/output; real public built API; frozen18 scenarios repeat-red then same-harness green,38-event full replay; content-addressed receipts with complete source/dist manifests. Direct loadPack not mergeLayers/compiled-cache tamper/in-flight config. No thresholds tuned, holdout unused. Local runtime result verified; PR/CI/merge not inferred. Static scores are historical regression only; live pinned-package CI added separately."
   }
 ]

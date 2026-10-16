@@ -10,10 +10,15 @@ The machine-readable ledger lives at [`../CLAIMS.json`](../CLAIMS.json). It is i
 
 Each entry represents one headline retest claim from `SYNTHESIS.md` (`RT-01` and onward).
 
-The latest admitted claim is **RT-39**, supported by the real-Aegis red/green exp-48 pair
-`dsrc-mujg8jlt` and `dsrc-mujg9oha`. It establishes that strict-roster retirement compaction needs
-an authenticated self-binding lifecycle checkpoint; existing evidence checks remain regression
-verification rather than novel evidence.
+The latest admitted claim is **RT-55**, exp65 direct loader validation-snapshot
+ownership (Spec71). Frozen18-scenario real-Aegis repeated red `lro-mvalf27u` /
+`lro-mvalf2al` and same-design green `lro-mvalgz7p` preserve all observable rows,
+38-event full replay, exact Git/source/dist manifests and content-addressed
+receipts. `node experiments/65-loaded-rule-ownership/verify-receipts.mjs` verifies
+frozen receipts. CI also reruns the frozen design against pinned real Aegis and
+checks fresh live rows/artifacts; static score checks alone are not runtime proof.
+Full corpus currently50 claims108 traces1001 assertions; ids RT50–53 remain on
+separate unmerged branches, not silently certified by the range label.
 
 Required fields:
 
