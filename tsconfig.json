@@ -183,6 +183,9 @@
     },
     {
       "path": "experiments/64-merged-rule-ownership"
+    },
+    {
+      "path": "experiments/65-loaded-rule-ownership"
     }
   ]
 }
