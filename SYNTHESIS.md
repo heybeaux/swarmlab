@@ -1589,3 +1589,14 @@ Loaded outputs remain mutable. Not immutable policy, arbitrary getter/proxy/
 function/extension-data support, cache-tamper enforcement, atomic execution,
 production safety certification or calibrated prediction. Source .acr unchanged;
 Territory not refreshed. Pending RT50–53 branches not imported or certified.
+
+### Linked PRs / observed executable CI
+Paired [Aegis71](https://github.com/heybeaux/aegis/pull/71) candidate `1831c858da1583ac9e6ecbc323942caa2bf2c84b`,
+[SwarmLab55](https://github.com/heybeaux/swarmlab/pull/55) initial head `a2c33a6`. SwarmLab executable exp65 CI
+[38862709129](https://github.com/heybeaux/swarmlab/actions/runs/38862709129)
+**SUCCESS**, fresh real-package run `lro-mvaloro5` **18/18**; actual source/dist
+manifest and full both-arm row equality verified,16 tamper controls rejected.
+Existing exp64 workflow [38862709134](https://github.com/heybeaux/swarmlab/actions/runs/38862709134)
+**SUCCESS** as regression only. Aegis release CI pending at this documentation
+write; no merge inferred. Final head/checks/merge tracked in nightly ledger;
+CodeRabbit SUCCESS alone is not review approval.
