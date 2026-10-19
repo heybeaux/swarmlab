@@ -1,0 +1,249 @@
+{
+  "experiment": "66-loader-probe-preemption",
+  "preRegistrationCommit": "632df6b424123cb000dd83f4f918c213b654a7f3",
+  "frozenHarnessCommit": "d98b0cbe05562b05e12bdacd6f79d336ced7aea3",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:9a8207c859d18dde75557d054afd298d8fa84e54b26ad91e8087a360dd013497"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:27fa81ee719d92366a362d7081b27057969416bc445ebece1b62997808dbeb70"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:8494340165640ad5999e7ab480c5c4ef7f5fcdbda02dc027d566fd7e39047431"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:f191f1302024ac62b9e5d9059414c3e39287e968175530c953825d6402166a9c"
+    }
+  ],
+  "harnessSha256": "sha256:8fecf99f3254d2e152e5e87a4c496ef08f6e8b47446ecb748946f64ab8fd0c7e",
+  "candidateSha": "db899177bea17b15f814c5a7ccd7e605a01bb112",
+  "runs": [
+    {
+      "role": "baseline",
+      "runId": "lpp-mvevxxcc-75248",
+      "trace": "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl",
+      "traceSha256": "sha256:514137c8fde264ed62f0107bd5704f317e512d2dd4376477d7d523b2a38db116",
+      "metrics": {
+        "aegisProbeWatchdogRate": 1,
+        "aegisHazardRejectionRate": 0,
+        "aegisResolutionAccuracy": 0.631578947368421,
+        "aegisControlAccuracy": 0.8571428571428571,
+        "aegisRecoveryRate": 0.631578947368421,
+        "substringControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegis": {
+        "sha": "f73ce63d5ab1f389fbda3465916bcba2afb4b117",
+        "dirty": "",
+        "repo": "/Users/beauxwalton/projects/worktrees/aegis-2026-10-18-exp66-baseline",
+        "manifest": [
+          {
+            "file": "packages/aegis/dist/index.d.ts",
+            "sha256": "sha256:c125251eed281a3e148f4795ac8e8fa7c7065b1e8e35e47a886b327fe30446bd"
+          },
+          {
+            "file": "packages/aegis/dist/index.js",
+            "sha256": "sha256:5fbd5bb5a31d823c9a3a4c21e3d167db7e590eccb3ac5a4605526abe194cb1ec"
+          },
+          {
+            "file": "packages/aegis/dist/index.js.map",
+            "sha256": "sha256:d98673e07a5e9832012f07b7c4b14357d913faf0663ca7cd2a9b246a04841b89"
+          },
+          {
+            "file": "packages/aegis/package.json",
+            "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+          },
+          {
+            "file": "packages/aegis/src/eval/evaluate.ts",
+            "sha256": "sha256:5eb4bebb46ec0dee67ddaada08b1a49d5bfbb814710489622fbde5c5be26b32d"
+          },
+          {
+            "file": "packages/aegis/src/eval/preprocess.ts",
+            "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+          },
+          {
+            "file": "packages/aegis/src/eval/safe-command.ts",
+            "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+          },
+          {
+            "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+            "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+          },
+          {
+            "file": "packages/aegis/src/index.ts",
+            "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+          },
+          {
+            "file": "packages/aegis/src/rules/loader.ts",
+            "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+          },
+          {
+            "file": "packages/aegis/src/rules/merge.ts",
+            "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+          },
+          {
+            "file": "packages/aegis/src/types.ts",
+            "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+          }
+        ],
+        "manifestSha256": "sha256:4200ab154ac853dd1f273ae178287d2c5034ecd20c2e5cd595c9eb4ebf11180d"
+      },
+      "startedAt": 1792392039948,
+      "endedAt": 1792392048522,
+      "replayEvents": 26
+    },
+    {
+      "role": "baseline-repeat",
+      "runId": "lpp-mvevy3zp-75313",
+      "trace": "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl",
+      "traceSha256": "sha256:66b2f9a2f453f23abcd8d34ced50baa9cf8c0b3c12d5d6a9011e15190d003e69",
+      "metrics": {
+        "aegisProbeWatchdogRate": 1,
+        "aegisHazardRejectionRate": 0,
+        "aegisResolutionAccuracy": 0.631578947368421,
+        "aegisControlAccuracy": 0.8571428571428571,
+        "aegisRecoveryRate": 0.631578947368421,
+        "substringControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegis": {
+        "sha": "f73ce63d5ab1f389fbda3465916bcba2afb4b117",
+        "dirty": "",
+        "repo": "/Users/beauxwalton/projects/worktrees/aegis-2026-10-18-exp66-baseline",
+        "manifest": [
+          {
+            "file": "packages/aegis/dist/index.d.ts",
+            "sha256": "sha256:c125251eed281a3e148f4795ac8e8fa7c7065b1e8e35e47a886b327fe30446bd"
+          },
+          {
+            "file": "packages/aegis/dist/index.js",
+            "sha256": "sha256:5fbd5bb5a31d823c9a3a4c21e3d167db7e590eccb3ac5a4605526abe194cb1ec"
+          },
+          {
+            "file": "packages/aegis/dist/index.js.map",
+            "sha256": "sha256:d98673e07a5e9832012f07b7c4b14357d913faf0663ca7cd2a9b246a04841b89"
+          },
+          {
+            "file": "packages/aegis/package.json",
+            "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+          },
+          {
+            "file": "packages/aegis/src/eval/evaluate.ts",
+            "sha256": "sha256:5eb4bebb46ec0dee67ddaada08b1a49d5bfbb814710489622fbde5c5be26b32d"
+          },
+          {
+            "file": "packages/aegis/src/eval/preprocess.ts",
+            "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+          },
+          {
+            "file": "packages/aegis/src/eval/safe-command.ts",
+            "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+          },
+          {
+            "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+            "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+          },
+          {
+            "file": "packages/aegis/src/index.ts",
+            "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+          },
+          {
+            "file": "packages/aegis/src/rules/loader.ts",
+            "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+          },
+          {
+            "file": "packages/aegis/src/rules/merge.ts",
+            "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+          },
+          {
+            "file": "packages/aegis/src/types.ts",
+            "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+          }
+        ],
+        "manifestSha256": "sha256:4200ab154ac853dd1f273ae178287d2c5034ecd20c2e5cd595c9eb4ebf11180d"
+      },
+      "startedAt": 1792392048565,
+      "endedAt": 1792392057191,
+      "replayEvents": 26
+    },
+    {
+      "role": "candidate",
+      "runId": "lpp-mvew4ef8-93479",
+      "trace": "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl",
+      "traceSha256": "sha256:84bc7f16ed51a72ceb234365c81f28f3669eed943c0673bd0c9a4d565f283f4b",
+      "metrics": {
+        "aegisProbeWatchdogRate": 0,
+        "aegisHazardRejectionRate": 1,
+        "aegisResolutionAccuracy": 1,
+        "aegisControlAccuracy": 1,
+        "aegisRecoveryRate": 1,
+        "substringControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegis": {
+        "sha": "db899177bea17b15f814c5a7ccd7e605a01bb112",
+        "dirty": "",
+        "repo": "/Users/beauxwalton/projects/worktrees/aegis-2026-10-18-exp66",
+        "manifest": [
+          {
+            "file": "packages/aegis/dist/index.d.ts",
+            "sha256": "sha256:c125251eed281a3e148f4795ac8e8fa7c7065b1e8e35e47a886b327fe30446bd"
+          },
+          {
+            "file": "packages/aegis/dist/index.js",
+            "sha256": "sha256:baee170258cda623a9e1083f6674b0e933ed8300030ab87b99d7103e0043f6e9"
+          },
+          {
+            "file": "packages/aegis/dist/index.js.map",
+            "sha256": "sha256:51ede98e24cbb43f5fb1164b364a954293bf09432478c5032e451a4d6b8962d5"
+          },
+          {
+            "file": "packages/aegis/package.json",
+            "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+          },
+          {
+            "file": "packages/aegis/src/eval/evaluate.ts",
+            "sha256": "sha256:5eb4bebb46ec0dee67ddaada08b1a49d5bfbb814710489622fbde5c5be26b32d"
+          },
+          {
+            "file": "packages/aegis/src/eval/preprocess.ts",
+            "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+          },
+          {
+            "file": "packages/aegis/src/eval/safe-command.ts",
+            "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+          },
+          {
+            "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+            "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+          },
+          {
+            "file": "packages/aegis/src/index.ts",
+            "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+          },
+          {
+            "file": "packages/aegis/src/rules/loader.ts",
+            "sha256": "sha256:3baea4031f3916b2e38301a4d9317f0ff1f9dd0212582ea40605edd7cb6dc90e"
+          },
+          {
+            "file": "packages/aegis/src/rules/merge.ts",
+            "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+          },
+          {
+            "file": "packages/aegis/src/types.ts",
+            "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+          }
+        ],
+        "manifestSha256": "sha256:605412aad0ce059e625c8c402e3a01c1e8eb8e46b04548d6cc657f9ebc4a0614"
+      },
+      "startedAt": 1792392342020,
+      "endedAt": 1792392343279,
+      "replayEvents": 26
+    }
+  ]
+}
