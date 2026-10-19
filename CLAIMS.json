@@ -6545,5 +6545,138 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec71 pre-registered before implementation/output; real public built API; frozen18 scenarios repeat-red then same-harness green,38-event full replay; content-addressed receipts with complete source/dist manifests. Direct loadPack not mergeLayers/compiled-cache tamper/in-flight config. No thresholds tuned, holdout unused. Local runtime result verified; PR/CI/merge not inferred. Static scores are historical regression only; live pinned-package CI added separately."
+  },
+  {
+    "id": "RT-56",
+    "claim": "Interrupting V8 deadlines reject pathological loader regex probes and preserve synchronous API recovery; post-test elapsed checks instead leave all five hazard children stuck past the watchdog.",
+    "experiment": "experiments/66-loader-probe-preemption",
+    "spec": "specs/72-loader-probe-preemption.md",
+    "runIds": [
+      "lpp-mvevxxcc-75248",
+      "lpp-mvevy3zp-75313",
+      "lpp-mvew4ef8-93479"
+    ],
+    "tracePaths": [
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.infrastructureFailures",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.infrastructureFailures",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisRecoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisRecoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/built/aegis node experiments/66-loader-probe-preemption/main.mjs && node experiments/66-loader-probe-preemption/verify-receipts.mjs",
+    "stackRecommendation": "Aegis must interrupt its own native load-time probes; preserve RulePackError context and fail closed. Finite probes do not prove general regex safety or bounded runtime evaluate.",
+    "stackReposAndPRs": [
+      "heybeaux/aegis@db899177bea17b15f814c5a7ccd7e605a01bb112",
+      "https://github.com/heybeaux/aegis/pull/72"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec632df6b before implementation and observation. Five hazards timed out twice,14 controls included2 real invalid-budget failures (0/-1),5substring controls green; no fixture defect found. Candidate19/19+5/5. No tuning, holdout unused. Stored catalogue regression not live proof; frozen harness + actual built package CI required. Automatic merge held: one safe-builtin25ms false positive in full regression; later green rerun does not resolve the risk."
   }
 ]

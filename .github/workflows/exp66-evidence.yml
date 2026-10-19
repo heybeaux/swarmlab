@@ -1,0 +1,48 @@
+name: exp66-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable evidence core tools (legacy absolute file deps untouched)
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core
+          node_modules/.bin/tsc -b --force core
+          for file in experiments/66-loader-probe-preemption/*.mjs; do node --check "$file"; done
+          npm run verify:evidence
+          node experiments/66-loader-probe-preemption/verify-receipts.mjs
+      - uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: db899177bea17b15f814c5a7ccd7e605a01bb112
+          path: .aegis-exp66
+      - name: Build exact real Aegis package
+        working-directory: .aegis-exp66
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Frozen scenario design, actual source/dist, machine outcomes and tamper controls
+        run: |
+          START="$(node -e 'console.log(Date.now())')"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp66" node experiments/66-loader-probe-preemption/main.mjs > "$RUNNER_TEMP/exp66.log"
+          cat "$RUNNER_TEMP/exp66.log"
+          node experiments/66-loader-probe-preemption/verify-receipts.mjs --run "$RUNNER_TEMP/exp66.log" --since "$START"
+          node experiments/66-loader-probe-preemption/test-verifier.mjs "$RUNNER_TEMP/exp66.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exp66-runtime-evidence
+          path: experiments/66-loader-probe-preemption/runs/
