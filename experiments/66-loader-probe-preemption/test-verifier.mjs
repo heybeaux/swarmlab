@@ -28,4 +28,24 @@ run('unknown-scenario',e=>{row(e).id='renamed';});
 run('missing-recovery',e=>{delete row(e).result.response.recovery;});
 run('wrong-runid',e=>{e[0].body.runId='other';});
 run('wrong-watchdog',e=>{e[0].body.watchdogMs=5000;});
-console.log('exp66 verifier: positive +15 tamper controls passed');
+// Observable-interface audit: a deadline claim needs actual ordered timestamps,
+// and the summary/log must describe the very trace whose outcomes were checked.
+run('late-library-return',e=>{row(e).result.endAt=row(e).result.startAt+1501;});
+run('missing-ready',e=>{delete row(e).result.readyAt;});
+run('future-run-start',e=>{e[0].body.startedAt=Date.now()+86400000;});
+run('stale-row-time',e=>{const x=row(e).result;x.readyAt=1;x.startAt=1;x.endAt=2;});
+run('retagged-score-event',e=>{e.at(-1).t='not-a-score';});
+run('unbound-result-artifact',(_e,r)=>{r.aegis={sha:'FORGED'};});
+run('missing-result-timestamps',(_e,r)=>{delete r.startedAt;delete r.endedAt;});
+run('contradictory-failed-list',(_e,r)=>{r.failed=[{id:'nested-a',status:'watchdog'}];});
+run('missing-result-harness',(_e,r)=>{delete r.harnessManifest;});
+run('forged-result-harness',(_e,r)=>{r.harnessSha256='sha256:forged';});
+run('future-result-end',(_e,r)=>{r.endedAt=Date.now()+86400000;});
+run('reversed-row-times',e=>{const x=row(e).result;x.readyAt=x.startAt+10;});
+run('row-before-run',e=>{row(e).result.startAt=e[0].body.startedAt-1;});
+run('row-event-before-return',e=>{e.find(x=>x.topic==='scenario').ts=row(e).result.endAt-1;});
+run('invalid-row-clock',e=>{row(e).result.readyAt=null;});
+run('wrong-score-envelope',e=>{e.at(-1).from='fake';});
+run('wrong-scenario-envelope',e=>{e.find(x=>x.topic==='scenario').to='somewhere-else';});
+run('stale-score-time',e=>{e.at(-1).ts=1;});
+console.log('exp66 verifier: positive +33 tamper controls passed');

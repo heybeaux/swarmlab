@@ -47,3 +47,17 @@ bounded evaluation watchdog/host-input contract before testing, not tonight.
 Aegis: https://github.com/heybeaux/aegis/pull/72. SwarmLab paired PR recorded below once opened.
 
 Paired SwarmLab PR: https://github.com/heybeaux/swarmlab/pull/56. Aegis release CI https://github.com/heybeaux/aegis/actions/runs/39212271270 observed SUCCESS at db899177; independent wall-clock compatibility merge hold remains.
+
+
+### Same-experiment observable evidence audit
+
+An independent interface check found the live verifier accepted late returns,
+missing/future/stale clocks, a retagged score event and contradictory result-log
+metadata. These are **evidence-gate gaps**, not another nightly experiment or a
+new Aegis runtime improvement. The verifier now enforces ordered run/event/child
+timestamps, actual return strictly before the frozen1500ms watchdog, exact score/
+scenario envelopes and full result-log/trace metadata agreement. All existing
+frozen harness/spec/scenarios/thresholds/receipts/traces are byte-identical.
+Added18 tamper negatives to the existing15: **33 rejected + positive accepted**.
+No threshold adjustment, whitelist or retry hides the safe-builtin timing failure.
+**PR72/PR56 remain held, not merged**, despite local/remote green.
