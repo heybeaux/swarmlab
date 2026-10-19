@@ -45,3 +45,5 @@ probe alphabet may load but block runtime evaluation; pre-register a separate
 bounded evaluation watchdog/host-input contract before testing, not tonight.
 
 Aegis: https://github.com/heybeaux/aegis/pull/72. SwarmLab paired PR recorded below once opened.
+
+Paired SwarmLab PR: https://github.com/heybeaux/swarmlab/pull/56. Aegis release CI https://github.com/heybeaux/aegis/actions/runs/39212271270 observed SUCCESS at db899177; independent wall-clock compatibility merge hold remains.
