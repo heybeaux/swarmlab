@@ -1,0 +1,1 @@
+{"name":"@swarmlab/experiment-66-loader-probe-preemption","version":"0.1.0","private":true,"type":"module","scripts":{"start":"node main.mjs","check":"node --check scenarios.mjs && node --check oracle.mjs && node --check child.mjs && node --check main.mjs"}}
