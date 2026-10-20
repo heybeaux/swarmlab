@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: heybeaux/aegis
-          ref: 46090e614b9fed08fab2eda7d5b7a383a3e62bdd
+          ref: dad90106194bee218a006243ae857decde2f7c52
           path: .aegis-exp67
       - name: Build actual pinned package
         working-directory: .aegis-exp67
@@ -39,5 +39,5 @@ jobs:
           START="$(node -e 'console.log(Date.now())')"
           AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp67" node experiments/67-runtime-regex-input-budget/main.mjs > "$RUNNER_TEMP/exp67.log"
           cat "$RUNNER_TEMP/exp67.log"
-          node experiments/67-runtime-regex-input-budget/verify-receipts.mjs --run "$RUNNER_TEMP/exp67.log" --since "$START" --sha "46090e614b9fed08fab2eda7d5b7a383a3e62bdd"
+          node experiments/67-runtime-regex-input-budget/verify-receipts.mjs --run "$RUNNER_TEMP/exp67.log" --since "$START" --sha "dad90106194bee218a006243ae857decde2f7c52"
           node experiments/67-runtime-regex-input-budget/test-verifier.mjs "$RUNNER_TEMP/exp67.log"

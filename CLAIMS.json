@@ -6554,12 +6554,12 @@
     "runIds": [
       "rrib-mvgbfpzj-90188",
       "rrib-mvgbfz19-90260",
-      "rrib-mvgbm9x1-7963"
+      "rrib-mvgctbkv-17960"
     ],
     "tracePaths": [
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl",
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl"
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl"
     ],
     "scoreFields": [
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.runtimeWatchdogRate",
@@ -6578,14 +6578,14 @@
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.ownershipRate",
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.linearControlAccuracy",
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.infrastructureFailures",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.runtimeWatchdogRate",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.unresolvedSafetyRate",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.resolutionAccuracy",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.controlAccuracy",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.recoveryRate",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.ownershipRate",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.linearControlAccuracy",
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.infrastructureFailures"
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.runtimeWatchdogRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.unresolvedSafetyRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.resolutionAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.controlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.recoveryRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.ownershipRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.linearControlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.infrastructureFailures"
     ],
     "expectedValues": {
       "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.runtimeWatchdogRate": {
@@ -6652,35 +6652,35 @@
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.runtimeWatchdogRate": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.runtimeWatchdogRate": {
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.unresolvedSafetyRate": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.unresolvedSafetyRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.resolutionAccuracy": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.resolutionAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.controlAccuracy": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.controlAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.recoveryRate": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.recoveryRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.ownershipRate": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.ownershipRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.linearControlAccuracy": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.linearControlAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.infrastructureFailures": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgctbkv-17960.jsonl#last.infrastructureFailures": {
         "equals": 0,
         "tolerance": 0
       }
@@ -6692,7 +6692,7 @@
         "repo": "https://github.com/heybeaux/aegis",
         "package": "@heybeaux/lattice-aegis",
         "commits": [
-          "0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77"
+          "dad90106194bee218a006243ae857decde2f7c52"
         ],
         "prs": [
           "https://github.com/heybeaux/aegis/pull/73",
@@ -6702,6 +6702,6 @@
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Spec73 prereg32fcac7 before implementation/output; frozen80dd9dd four-file design; repeated real origin/main red7/7 watchdogs,12 controls+7 linear controls green. Same frozen design real candidate green19/19,28-event replay, full source/dist manifests and content addresses. Verified describes measured candidate evidence, NOT main/CI/merge. RT56 loader PR still held/not incorporated. Initial implementation caused benchmark timeout regression; optimized private realm preserved design; old red artifacts retained unadmitted. Per-match budget only; no whole-call/loader/preprocess deadline claim; holdout unused; no old exp novelty. FINAL HOLD: actual-package SwarmLab CI39383004370 green but Aegis release CI39382876674 red:2benchmark determinism tests exceed5s on runner. Local1188tests green does not settle overhead. NeitherPR merged, no main/release improvement claimed; verified is corpus evidence only. Same-experiment independent verifier audit: strict40hex expected pin, third-receipt/index-to-admitted-trace binding;39negative controls+disk/virtual positives, frozen design/receipts/traces unchanged. Runtime CI regression hold retained. Private realm native RegExp.input retention not zero-retention proof."
+    "notes": "Spec73 prereg32fcac7 before implementation/output; frozen80dd9dd four-file design; repeated real origin/main red7/7 watchdogs,12 controls+7 linear controls green. Same frozen design real candidate green19/19,28-event replay, full source/dist manifests and content addresses. Verified describes measured candidate evidence, NOT main/CI/merge. RT56 loader PR still held/not incorporated. Initial implementation caused benchmark timeout regression; optimized private realm preserved design; old red artifacts retained unadmitted. Per-match budget only; no whole-call/loader/preprocess deadline claim; holdout unused; no old exp novelty. FINAL HOLD: actual-package SwarmLab CI39383004370 green but Aegis release CI39382876674 red:2benchmark determinism tests exceed5s on runner. Local1188tests green does not settle overhead. NeitherPR merged, no main/release improvement claimed; verified is corpus evidence only. Same-experiment independent verifier audit: strict40hex expected pin, third-receipt/index-to-admitted-trace binding;39negative controls+disk/virtual positives, frozen design/receipts/traces unchanged. Runtime CI regression hold retained. Private realm native RegExp.input retention not zero-retention proof. CI regression fix: per-match VM entry (0bfd2fdc, green rrib-mvgbm9x1-7963 superseded, trace retained unadmitted) replaced by batched single-entry matching with per-job retry and RegExp static clearing at dad90106194bee218a006243ae857decde2f7c52; same frozen design green rrib-mvgctbkv-17960; benchmark determinism 5s tests ~0.2s locally."
   }
 ]
