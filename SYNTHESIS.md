@@ -1600,3 +1600,12 @@ Existing exp64 workflow [38862709134](https://github.com/heybeaux/swarmlab/actio
 **SUCCESS** as regression only. Aegis release CI pending at this documentation
 write; no merge inferred. Final head/checks/merge tracked in nightly ledger;
 CodeRabbit SUCCESS alone is not review approval.
+
+
+### RT-57 — Finite loader probes do not bound actual runtime regex inputs (exp67)
+
+[Spec73](specs/73-runtime-regex-input-budget.md) preregistered before code/output; new boundary, not exp66 loader replay. Real origin/main `f73ce63d5ab1f389fbda3465916bcba2afb4b117` accepted seven patterns then hung on actual command/content/path/argv or decoded input; the parent killed each at1500ms. Repeated runs `rrib-mvgbfpzj-90188`, `rrib-mvgbfz19-90260` reproduce red, with12 compatibility and7 linear controls green. Candidate `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77`, run `rrib-mvgbm9x1-7963`, same design: bounded unresolved safety0→1, resolution12/19→19/19, watchdog1→0.
+
+Aegis must interrupt native matching on actual host inputs, keep unknown separate from nonmatch, and retain an independent ask floor not configurable away via severityTable. Continue other rules so an independent deny survives; no fake hazardous rule hit. Patch uses fixed VM code, never interpolated input; fresh native regex with private realm and cleared data slots preserves flags/lookbehind/backreferences and recovery. Source/dist and full trace receipts executable. Candidate evidence verified, not yet an assertion of merged status or remote CI.
+
+Compatibility finding: creating one realm per match caused2 existing benchmark tests to exceed unchanged5s deadlines. Optimized private realm restores them; this red is retained, not hidden by changing test timeouts. No whole-call cumulative budget, loader/probe safety, preprocessing budget or malicious-JS claim. RT56 still held separately; holdout unused, thresholds unchanged.

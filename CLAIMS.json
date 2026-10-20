@@ -6545,5 +6545,162 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Spec71 pre-registered before implementation/output; real public built API; frozen18 scenarios repeat-red then same-harness green,38-event full replay; content-addressed receipts with complete source/dist manifests. Direct loadPack not mergeLayers/compiled-cache tamper/in-flight config. No thresholds tuned, holdout unused. Local runtime result verified; PR/CI/merge not inferred. Static scores are historical regression only; live pinned-package CI added separately."
+  },
+  {
+    "id": "RT-57",
+    "claim": "Finite loader probes miss catastrophic actual-input matching; real Aegis runtime match interruption yields an unresolved ask floor and preserves independent deny on the frozen19-case exp67 corpus.",
+    "experiment": "experiments/67-runtime-regex-input-budget",
+    "spec": "specs/73-runtime-regex-input-budget.md",
+    "runIds": [
+      "rrib-mvgbfpzj-90188",
+      "rrib-mvgbfz19-90260",
+      "rrib-mvgbm9x1-7963"
+    ],
+    "tracePaths": [
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.runtimeWatchdogRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.unresolvedSafetyRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.resolutionAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.controlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.recoveryRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.ownershipRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.linearControlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.infrastructureFailures",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.runtimeWatchdogRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.unresolvedSafetyRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.resolutionAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.controlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.recoveryRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.ownershipRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.linearControlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.infrastructureFailures",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.runtimeWatchdogRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.unresolvedSafetyRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.resolutionAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.controlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.recoveryRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.ownershipRate",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.linearControlAccuracy",
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.runtimeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.unresolvedSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.resolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.recoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.ownershipRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfpzj-90188.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.runtimeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.unresolvedSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.resolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.recoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.ownershipRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.runtimeWatchdogRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.unresolvedSafetyRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbm9x1-7963.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/67-runtime-regex-input-budget/main.mjs && node experiments/67-runtime-regex-input-budget/verify-receipts.mjs",
+    "stackRecommendation": "Bound actual native regex matching; unknown must force an independent ask floor without a fabricated hit or hiding separate rule/predictor deny. Do not equate a finite loader corpus with runtime safety.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/73"
+        ],
+        "dirtyState": "clean"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec73 prereg32fcac7 before implementation/output; frozen80dd9dd four-file design; repeated real origin/main red7/7 watchdogs,12 controls+7 linear controls green. Same frozen design real candidate green19/19,28-event replay, full source/dist manifests and content addresses. Verified describes measured candidate evidence, NOT main/CI/merge. RT56 loader PR still held/not incorporated. Initial implementation caused benchmark timeout regression; optimized private realm preserved design; old red artifacts retained unadmitted. Per-match budget only; no whole-call/loader/preprocess deadline claim; holdout unused; no old exp novelty."
   }
 ]

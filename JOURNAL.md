@@ -431,3 +431,10 @@ Existing exp64 workflow [38862709134](https://github.com/heybeaux/swarmlab/actio
 **SUCCESS** as regression only. Aegis release CI pending at this documentation
 write; no merge inferred. Final head/checks/merge tracked in nightly ledger;
 CodeRabbit SUCCESS alone is not review approval.
+
+
+## 2026-10-19 — exp67 / RT57 actual-input regex preemption
+
+New failure mode pre-registered `32fcac7`, runnable frozen design `80dd9dd`. Origin/main Aegis `f73ce63d5ab1f389fbda3465916bcba2afb4b117` twice hangs7/7 actual-input hazards after successful load. Controls12/12, linear7/7. Runtime patch then same19 scenarios green at `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77` / `rrib-mvgbm9x1-7963`. Full source/dist manifests, red/red/green traces and executable verifier. Initial naive per-match-realm implementation regressed2 benchmark timing tests, preserved red and optimized without relaxing old tests or frozen thresholds. Existing held PRs untouched; neither old suite nor loader experiment counts as tonight's novelty. Checks/CI/PR/merge to be recorded after observation.
+
+Local final verification:1188 Aegis tests/release52/52; SwarmLab51claims111traces1025assertions;24verifier tamper controls; fresh live audit `rrib-mvgbq80t-19868` not admitted. Aegis PR73 opened, remote CI pending.
