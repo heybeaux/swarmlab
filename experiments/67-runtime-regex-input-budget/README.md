@@ -19,3 +19,14 @@ Uncertainty: bounded matching is not cumulative budget or preprocessing/loader p
 ## Verification / delivery
 
 Aegis paired [PR73](https://github.com/heybeaux/aegis/pull/73); CI pin `46090e614b9fed08fab2eda7d5b7a383a3e62bdd` (runtime source/dist byte-identical to admitted `0bfd2fdc`). Full local release build+typecheck+1188 tests (628core193aegis22collect86label203hook56bench) green, stored evidence52/52. SwarmLab core+neighbor64/65 build/forcedtypecheck and all exp67 ESM syntax checks passed; verify:evidence51claims111traces1025assertions. Verifier24tamper rejections+positive. Fresh exact-head actual package audit `rrib-mvgbq80t-19868` is unadmitted and not tonight's novelty. Prior exp15/16/17 not run/count. .acr unchanged, no Territory refresh. Remote CI and merge status must be observed separately.
+
+## FINAL HOLD — remote compatibility regression (not merged)
+
+Linked PRs: [SwarmLab57](https://github.com/heybeaux/swarmlab/pull/57) / [Aegis73](https://github.com/heybeaux/aegis/pull/73). Aegis head `46090e614b9fed08fab2eda7d5b7a383a3e62bdd`; runtime admitted `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77`. Source/dist unchanged between them.
+
+- SwarmLab [real-package CI39383004370](https://github.com/heybeaux/swarmlab/actions/runs/39383004370) SUCCESS: frozen19-case experiment green against actual pinned Aegis, exact evaluations/manifests verified;24tamper rejections+positive. Neighbor64/65 CI success are regressions only.
+- Aegis [release CI39382876674](https://github.com/heybeaux/aegis/actions/runs/39382876674) FAILURE: two unchanged benchmark determinism tests timed out at5000ms (observed9066ms and7518ms). Other package tests passed; build/typecheck passed. Local full1188tests/release green does NOT resolve cross-platform runtime overhead. The private-realm optimization corrected local initial failures, but **has not fixed the CI compatibility regression**.
+
+Final status `pr-open-held-ci-regression`. Neither PR merged, no release improvement claimed. Experiment post-fix result green is bounded to this corpus; overall nightly landing is RED until matching overhead is reduced and unchanged tests pass on CI. Do not raise test timeouts, move frozen thresholds, count old suites as development, or rerun until lucky. Review general batched native matching / carefully scoped compiled-native caching, with unchanged oracle and before/after revalidation, as same-experiment follow-up; no speculative patch tonight.
+
+Next *new* hypothesis (not selected/run): can an unbounded count of individually bounded regex rules/targets starve the overall evaluate call? Cumulative-work budget needs independent preregistration. Loader/preprocessing boundaries remain unproven. .acr unchanged, Territory not refreshed. Pre-existing primary checkout changes untouched; worktrees and all red artifacts retained.
