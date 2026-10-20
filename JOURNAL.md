@@ -431,3 +431,33 @@ Existing exp64 workflow [38862709134](https://github.com/heybeaux/swarmlab/actio
 **SUCCESS** as regression only. Aegis release CI pending at this documentation
 write; no merge inferred. Final head/checks/merge tracked in nightly ledger;
 CodeRabbit SUCCESS alone is not review approval.
+
+
+## 2026-10-19 — exp67 / RT57 actual-input regex preemption
+
+New failure mode pre-registered `32fcac7`, runnable frozen design `80dd9dd`. Origin/main Aegis `f73ce63d5ab1f389fbda3465916bcba2afb4b117` twice hangs7/7 actual-input hazards after successful load. Controls12/12, linear7/7. Runtime patch then same19 scenarios green at `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77` / `rrib-mvgbm9x1-7963`. Full source/dist manifests, red/red/green traces and executable verifier. Initial naive per-match-realm implementation regressed2 benchmark timing tests, preserved red and optimized without relaxing old tests or frozen thresholds. Existing held PRs untouched; neither old suite nor loader experiment counts as tonight's novelty. Checks/CI/PR/merge to be recorded after observation.
+
+Local final verification:1188 Aegis tests/release52/52; SwarmLab51claims111traces1025assertions;24verifier tamper controls; fresh live audit `rrib-mvgbq80t-19868` not admitted. Aegis PR73 opened, remote CI pending.
+
+## FINAL HOLD — remote compatibility regression (not merged)
+
+Linked PRs: [SwarmLab57](https://github.com/heybeaux/swarmlab/pull/57) / [Aegis73](https://github.com/heybeaux/aegis/pull/73). Aegis head `46090e614b9fed08fab2eda7d5b7a383a3e62bdd`; runtime admitted `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77`. Source/dist unchanged between them.
+
+- SwarmLab [real-package CI39383004370](https://github.com/heybeaux/swarmlab/actions/runs/39383004370) SUCCESS: frozen19-case experiment green against actual pinned Aegis, exact evaluations/manifests verified;24tamper rejections+positive. Neighbor64/65 CI success are regressions only.
+- Aegis [release CI39382876674](https://github.com/heybeaux/aegis/actions/runs/39382876674) FAILURE: two unchanged benchmark determinism tests timed out at5000ms (observed9066ms and7518ms). Other package tests passed; build/typecheck passed. Local full1188tests/release green does NOT resolve cross-platform runtime overhead. The private-realm optimization corrected local initial failures, but **has not fixed the CI compatibility regression**.
+
+Final status `pr-open-held-ci-regression`. Neither PR merged, no release improvement claimed. Experiment post-fix result green is bounded to this corpus; overall nightly landing is RED until matching overhead is reduced and unchanged tests pass on CI. Do not raise test timeouts, move frozen thresholds, count old suites as development, or rerun until lucky. Review general batched native matching / carefully scoped compiled-native caching, with unchanged oracle and before/after revalidation, as same-experiment follow-up; no speculative patch tonight.
+
+Next *new* hypothesis (not selected/run): can an unbounded count of individually bounded regex rules/targets starve the overall evaluate call? Cumulative-work budget needs independent preregistration. Loader/preprocessing boundaries remain unproven. .acr unchanged, Territory not refreshed. Pre-existing primary checkout changes untouched; worktrees and all red artifacts retained.
+
+## Same-experiment evidence-interface audit (runtime hold retained)
+
+Independent observable audit fixed three demonstrated verifier holes: empty `--sha` disabled expected-package validation; unbound auxiliary green decision index could redefine fresh-live expectations; unbound duplicate green metadata was unchecked. The verifier now strictly validates CLI/pin/freshness, binds exactly3unique receipts and third green reference, and derives exact live decision expectations from the admitted content-addressed green trace. Original verifier accepted all three attacks; patched verifier rejects them while accepting the same positive actual-package run. **39tamper rejections + disk/virtual positive controls**. Spec, frozen4-file harness/oracle/scenarios, receipts and admitted3traces/sidecars unchanged.
+
+Actual package audit `rrib-mvgc1r1g-44921` green19/19 is unadmitted, not a new nightly result. Full local release1188tests/evidence52/52 and SwarmLab51claims111traces1025assertions remain green. Aegis CI39382876674 still blocks both linked PRs: no runtime change, no merge or release-improvement claim. Private VM named slots clear, but native `RegExp.input` can retain the last matched input within the private realm; do not claim zero input retention. Same-rule timeout suppresses later targets conservatively; cumulative and loader budgets unproven. Historical traces lack per-child spawn time, so do not claim independent import-time attestation from those traces.
+
+## CI-regression resolution (same exp67; frozen design unchanged)
+
+Aegis CI39382876674 failed two unchanged 5s benchmark determinism tests because the runtime entered a VM once per native match (~2.4ms/eval on the 118-rule builtin corpus vs 5µs on main). Fix `dad90106194bee218a006243ae857decde2f7c52`: one VM entry per evaluation batches all native tests in sequential order (compiled cache by source+flags, lastIndex reset); a batch timeout retries the in-flight job alone with a fresh full budget, so only a job that alone exceeds the budget is unknown; legacy `RegExp.input` statics and data slots cleared after each call (closes the retention caveat from the interface audit). ~0.13ms/eval; determinism tests ~0.2s locally. Test timeouts NOT raised.
+
+Same frozen19-case harness, same seeds/thresholds: admitted green replaced by `rrib-mvgctbkv-17960` (19/19, identical decisions to superseded `rrib-mvgbm9x1-7963`, which stays in the repo but is no longer admitted; recorded under `supersededGreen`). Red/red baselines unchanged. Fresh unadmitted live audit verified with 39 tamper rejections. Local Aegis release:check 1192 tests (628+197+22+86+203+56), evidence 52/52; four new focused tests cover shared-budget false-unknown, mid-batch timeout with later genuine deny, cache statelessness, per-target ordering. A test using a loader-probe alphabet hung `loadPack` (exp66/RT56 boundary, held separately); test alphabet changed, not the loader. Merge only after observed exact-head CI.

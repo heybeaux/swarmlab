@@ -1,0 +1,127 @@
+{
+  "runId": "rrib-mvgbfz19-90260",
+  "trace": "experiments/67-runtime-regex-input-budget/runs/rrib-mvgbfz19-90260.jsonl",
+  "traceSha256": "sha256:8393244f7c2f13b9da58080bb880f68a4fd4070f2b174b36dbbc469369750777",
+  "startedAt": 1792478542365,
+  "endedAt": 1792478554068,
+  "aegisSha": "f73ce63d5ab1f389fbda3465916bcba2afb4b117",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:4200ab154ac853dd1f273ae178287d2c5034ecd20c2e5cd595c9eb4ebf11180d",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:d638d1c845fe202c28c3473cdd69286ebee222bd241946520d4a3853b1796630"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:ec7593b190750a261459cdb0a2203f2fcd392e86fcc98cdd00762e1bc8b92764"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:fb1b0b8e0f43eb54617a745740934cdefb1c569ff24a4851571bca79c437f88c"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:c5805a03893d9cce72a39396a1877aada661fcc1c4ef5d38add7023e629c08f5"
+    }
+  ],
+  "harnessSha256": "sha256:e33735fe1d0a67851c2307834bc24c1696e142c7795be98238d2484328a1bcf7",
+  "summary": {
+    "runtimeWatchdogRate": 1,
+    "unresolvedSafetyRate": 0,
+    "resolutionAccuracy": 0.631578947368421,
+    "controlAccuracy": 1,
+    "recoveryRate": 0.631578947368421,
+    "ownershipRate": 0.631578947368421,
+    "linearControlAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "nested-q-command",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "nested-q-path",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "nested-q-argv",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "ambiguous-z-content",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "base64-decoded-command",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "low-severity-all-allow",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "critical-deny-preserved",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": false,
+        "diagnostic": false,
+        "recovered": false,
+        "ownership": false
+      }
+    }
+  ],
+  "replayEvents": 28
+}

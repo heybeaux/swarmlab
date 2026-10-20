@@ -1600,3 +1600,32 @@ Existing exp64 workflow [38862709134](https://github.com/heybeaux/swarmlab/actio
 **SUCCESS** as regression only. Aegis release CI pending at this documentation
 write; no merge inferred. Final head/checks/merge tracked in nightly ledger;
 CodeRabbit SUCCESS alone is not review approval.
+
+
+### RT-57 — Finite loader probes do not bound actual runtime regex inputs (exp67)
+
+[Spec73](specs/73-runtime-regex-input-budget.md) preregistered before code/output; new boundary, not exp66 loader replay. Real origin/main `f73ce63d5ab1f389fbda3465916bcba2afb4b117` accepted seven patterns then hung on actual command/content/path/argv or decoded input; the parent killed each at1500ms. Repeated runs `rrib-mvgbfpzj-90188`, `rrib-mvgbfz19-90260` reproduce red, with12 compatibility and7 linear controls green. Candidate `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77`, run `rrib-mvgbm9x1-7963`, same design: bounded unresolved safety0→1, resolution12/19→19/19, watchdog1→0.
+
+Aegis must interrupt native matching on actual host inputs, keep unknown separate from nonmatch, and retain an independent ask floor not configurable away via severityTable. Continue other rules so an independent deny survives; no fake hazardous rule hit. Patch uses fixed VM code, never interpolated input; fresh native regex with private realm and cleared data slots preserves flags/lookbehind/backreferences and recovery. Source/dist and full trace receipts executable. Candidate evidence verified, not yet an assertion of merged status or remote CI.
+
+Compatibility finding: creating one realm per match caused2 existing benchmark tests to exceed unchanged5s deadlines. Optimized private realm restores them; this red is retained, not hidden by changing test timeouts. No whole-call cumulative budget, loader/probe safety, preprocessing budget or malicious-JS claim. RT56 still held separately; holdout unused, thresholds unchanged.
+
+## FINAL HOLD — remote compatibility regression (not merged)
+
+Linked PRs: [SwarmLab57](https://github.com/heybeaux/swarmlab/pull/57) / [Aegis73](https://github.com/heybeaux/aegis/pull/73). Aegis head `46090e614b9fed08fab2eda7d5b7a383a3e62bdd`; runtime admitted `0bfd2fdc065d5e27c98f0e566d6d40e6ede99d77`. Source/dist unchanged between them.
+
+- SwarmLab [real-package CI39383004370](https://github.com/heybeaux/swarmlab/actions/runs/39383004370) SUCCESS: frozen19-case experiment green against actual pinned Aegis, exact evaluations/manifests verified;24tamper rejections+positive. Neighbor64/65 CI success are regressions only.
+- Aegis [release CI39382876674](https://github.com/heybeaux/aegis/actions/runs/39382876674) FAILURE: two unchanged benchmark determinism tests timed out at5000ms (observed9066ms and7518ms). Other package tests passed; build/typecheck passed. Local full1188tests/release green does NOT resolve cross-platform runtime overhead. The private-realm optimization corrected local initial failures, but **has not fixed the CI compatibility regression**.
+
+Final status `pr-open-held-ci-regression`. Neither PR merged, no release improvement claimed. Experiment post-fix result green is bounded to this corpus; overall nightly landing is RED until matching overhead is reduced and unchanged tests pass on CI. Do not raise test timeouts, move frozen thresholds, count old suites as development, or rerun until lucky. Review general batched native matching / carefully scoped compiled-native caching, with unchanged oracle and before/after revalidation, as same-experiment follow-up; no speculative patch tonight.
+
+Next *new* hypothesis (not selected/run): can an unbounded count of individually bounded regex rules/targets starve the overall evaluate call? Cumulative-work budget needs independent preregistration. Loader/preprocessing boundaries remain unproven. .acr unchanged, Territory not refreshed. Pre-existing primary checkout changes untouched; worktrees and all red artifacts retained.
+
+### RT57 evidence-interface correction (same experiment, not a new claim)
+Three executable-verifier holes were reproduced and corrected: empty expected SHA, unbound live decision index, unbound green metadata. Require exact CLI40hex pin and reconstruct live expectations from admitted content-addressed green trace;39negative controls plus two positive paths. Frozen design and admitted results unchanged. Corpus green is not release green: original Aegis CI timing regression still blocks merge. Also, clearing named private VM slots does not clear native RegExp.input; zero-retention remains unproven.
+
+## CI-regression resolution (same exp67; frozen design unchanged)
+
+Aegis CI39382876674 failed two unchanged 5s benchmark determinism tests because the runtime entered a VM once per native match (~2.4ms/eval on the 118-rule builtin corpus vs 5µs on main). Fix `dad90106194bee218a006243ae857decde2f7c52`: one VM entry per evaluation batches all native tests in sequential order (compiled cache by source+flags, lastIndex reset); a batch timeout retries the in-flight job alone with a fresh full budget, so only a job that alone exceeds the budget is unknown; legacy `RegExp.input` statics and data slots cleared after each call (closes the retention caveat from the interface audit). ~0.13ms/eval; determinism tests ~0.2s locally. Test timeouts NOT raised.
+
+Same frozen19-case harness, same seeds/thresholds: admitted green replaced by `rrib-mvgctbkv-17960` (19/19, identical decisions to superseded `rrib-mvgbm9x1-7963`, which stays in the repo but is no longer admitted; recorded under `supersededGreen`). Red/red baselines unchanged. Fresh unadmitted live audit verified with 39 tamper rejections. Local Aegis release:check 1192 tests (628+197+22+86+203+56), evidence 52/52; four new focused tests cover shared-budget false-unknown, mid-batch timeout with later genuine deny, cache statelessness, per-target ordering. A test using a loader-probe alphabet hung `loadPack` (exp66/RT56 boundary, held separately); test alphabet changed, not the loader. Merge only after observed exact-head CI.
