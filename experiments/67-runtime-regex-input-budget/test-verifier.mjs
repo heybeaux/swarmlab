@@ -47,3 +47,67 @@ for(let i=0;i<cases.length;i++){
  console.log(`rejected: ${name}`);
 }
 console.log(`${cases.length} tamper rejections + positive control`);
+
+// Strict CLI and independent-index controls must fail for the intended reason,
+// not simply because an unrelated positive trace could not be loaded.
+const cliCases=[
+ ['empty package pin',['--run',resolve(log),'--since',String(since),'--sha',''],/invalid expected package sha/],
+ ['short package pin',['--run',resolve(log),'--since',String(since),'--sha','123'],/invalid expected package sha/],
+ ['nonhex package pin',['--run',resolve(log),'--since',String(since),'--sha','z'.repeat(40)],/invalid expected package sha/],
+ ['empty log',['--run','','--since',String(since),'--sha',sha],/run log required/],
+ ['exponent since',['--run',resolve(log),'--since','1e3','--sha',sha],/invalid since/],
+ ['hex since',['--run',resolve(log),'--since','0x10','--sha',sha],/invalid since/],
+ ['unsafe since',['--run',resolve(log),'--since','9007199254740992','--sha',sha],/invalid since/],
+ ['zero since',['--run',resolve(log),'--since','0','--sha',sha],/invalid since/],
+ ['extra argument',['--run',resolve(log),'--since',String(since),'--sha',sha,'ignored'],/usage/],
+];
+for(const [name,args,diagnostic] of cliCases){
+ const out=spawnSync(process.execPath,[join(root,'verify-receipts.mjs'),...args],{cwd:process.cwd(),encoding:'utf8'});
+ if(out.status===0||!diagnostic.test(out.stderr))throw Error(`CLI tamper accepted or unrelated failure: ${name}: ${out.stderr}`);
+ console.log(`rejected: ${name}`);
+}
+
+// The child substitutes reads in memory. No admitted receipt/trace/index on disk
+// is ever edited, and each mutation is independent of the positive control.
+const virtualVerifier=String.raw`
+ import fs from 'node:fs';
+ import {syncBuiltinESMExports} from 'node:module';
+ import {createHash} from 'node:crypto';
+ const c=JSON.parse(process.env.EXP67_VERIFIER_CONTROL);
+ const original=fs.readFileSync;
+ const raw=c.events.map(e=>JSON.stringify(e)).join('\n')+'\n';
+ c.result.traceSha256='sha256:'+createHash('sha256').update(raw).digest('hex');
+ const replacement=new Map([[c.log,JSON.stringify(c.result)],[c.trace,raw],
+  [c.sidecar,JSON.stringify(c.result)],[c.receiptPath,JSON.stringify(c.receipts)]]);
+ fs.readFileSync=function(p,opts){const v=replacement.get(String(p));return v===undefined?original(p,opts):
+  ((typeof opts==='string'||opts?.encoding)?v:Buffer.from(v));};
+ syncBuiltinESMExports();
+ process.argv=['node',c.verifier,'--run',c.log,'--since',String(c.since),'--sha',c.sha];
+ await import(c.verifier);
+`;
+const reference=JSON.parse(readFileSync(join(root,'receipts.json'),'utf8'));
+const indexCases=[
+ ['virtual positive',()=>{},null],
+ ['unbound green decision and matching live value',(e,r,c)=>{
+  c.greenEvaluations['nested-q-command'].decidedBy='prediction';
+  e[1].body.result.response.evaluation.decidedBy='prediction';
+ },/green evaluation index must equal admitted decisions/],
+ ['missing green decision',(e,r,c)=>{delete c.greenEvaluations['nested-q-command'];},/green evaluation index/],
+ ['extra green decision',(e,r,c)=>{c.greenEvaluations.unregistered={action:'allow'};},/green evaluation index/],
+ ['unbound green metadata reference',(e,r,c)=>{c.green.aegisSha='0'.repeat(40);},/green reference must be admitted/],
+ ['duplicate admitted receipt',(e,r,c)=>{c.runs[1]=structuredClone(c.runs[0]);},/duplicate receipt run/],
+ ['extra admitted receipt',(e,r,c)=>{c.runs.push(structuredClone(c.runs[0]));},/red\/red\/green receipt roster/],
+];
+for(const [name,mutate,diagnostic] of indexCases){
+ const e=structuredClone(events),r=structuredClone(live),c=structuredClone(reference),id=`rrib-virtual-${process.pid}`;
+ r.runId=id;e[0].body.runId=id;r.trace=join(audit,`${id}.jsonl`);mutate(e,r,c);
+ const payload={events:e,result:r,receipts:c,log:join(audit,'virtual-live.json'),trace:r.trace,
+  sidecar:join(root,'runs',`${id}.result.json`),receiptPath:join(root,'receipts.json'),
+  verifier:join(root,'verify-receipts.mjs'),since,sha};
+ const out=spawnSync(process.execPath,['--input-type=module','-e',virtualVerifier],{
+  cwd:process.cwd(),env:{...process.env,EXP67_VERIFIER_CONTROL:JSON.stringify(payload)},encoding:'utf8'});
+ if(diagnostic?(out.status===0||!diagnostic.test(out.stderr)):out.status!==0)
+  throw Error(`Index control rejected incorrectly: ${name}: ${out.stderr}`);
+ console.log(`${diagnostic?'rejected':'accepted'}: ${name}`);
+}
+console.log(`${cases.length+cliCases.length+indexCases.length-1} tamper rejections + disk/virtual positive controls`);

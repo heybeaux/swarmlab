@@ -1,4 +1,4 @@
-import {readFileSync,realpathSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import {resolve,join,basename} from 'node:path';
 import {createHash} from 'node:crypto';
 import {isDeepStrictEqual as same} from 'node:util';
@@ -6,7 +6,21 @@ import {experiment,seed,holdoutSeed,WATCHDOG_MS,IMPORT_MS,scenarios,negativeCont
 import {assess,metrics,assertRows} from './oracle.mjs';
 const root=import.meta.dirname,hash=b=>`sha256:${createHash('sha256').update(b).digest('hex')}`,read=p=>JSON.parse(readFileSync(p,'utf8'));
 const eq=(a,b,msg)=>{if(!same(a,b))throw Error(msg);};const ok=(v,msg)=>{if(!v)throw Error(msg);};
+const args=process.argv.slice(2);
+let liveRequest;
+if(args.length){
+ ok(args.length===6&&args[0]==='--run'&&args[2]==='--since'&&args[4]==='--sha',
+   'usage --run log --since integer-ms --sha exact-sha');
+ ok(typeof args[1]==='string'&&args[1].length>0,'run log required');
+ ok(/^[1-9][0-9]*$/.test(args[3]),'invalid since');
+ const since=Number(args[3]);ok(Number.isSafeInteger(since),'invalid since');
+ ok(/^[a-f0-9]{40}$/.test(args[5]),'invalid expected package sha');
+ liveRequest={log:resolve(args[1]),since,sha:args[5]};
+}
 const receipts=read(join(root,'receipts.json'));
+ok(Array.isArray(receipts.runs)&&receipts.runs.length===3,'red/red/green receipt roster');
+ok(new Set(receipts.runs.map(r=>r.runId)).size===3,'duplicate receipt run');
+eq(receipts.green,receipts.runs[2],'green reference must be admitted third receipt');
 for(const f of receipts.harnessManifest)eq(hash(readFileSync(join(root,f.file))),f.sha256,`frozen design changed ${f.file}`);
 function verify(result,receipt,{since=0,live=false,sha}={}){
  ok(result&&typeof result==='object','result missing');
@@ -63,8 +77,13 @@ function verify(result,receipt,{since=0,live=false,sha}={}){
 const admitted=receipts.runs.map(r=>verify(read(join(root,'runs',`${r.runId}.result.json`)),r));
 eq(admitted[0].result.summary,admitted[1].result.summary,'baseline repeat');eq(admitted[0].meta.aegis.manifest,admitted[1].meta.aegis.manifest,'repeat package');
 eq(admitted[0].result.summary.runtimeWatchdogRate,1,'baseline not red');eq(admitted[0].result.summary.controlAccuracy,1,'baseline controls');eq(admitted[0].result.summary.linearControlAccuracy,1,'baseline linear');eq(admitted[2].result.summary,thresholds,'admitted green');
-const args=process.argv.slice(2);if(args.length){
- ok(args[0]==='--run'&&args.length===6&&args[2]==='--since'&&args[4]==='--sha','usage --run log --since integer-ms --sha exact-sha');
- const since=Number(args[3]);ok(Number.isSafeInteger(since)&&since>0,'invalid since');verify(read(resolve(args[1])),null,{since,live:true,sha:args[5]});
+// Reference decisions are not independent claims: derive them from the already
+// content-addressed, verified green trace. Never let an auxiliary index redefine
+// what a fresh real-package run is required to reproduce.
+const greenEvaluations=Object.fromEntries([...admitted[2].rows,...admitted[2].controls]
+ .map(r=>[r.id,r.result.response.evaluation]));
+eq(receipts.greenEvaluations,greenEvaluations,'green evaluation index must equal admitted decisions');
+if(liveRequest){
+ verify(read(liveRequest.log),null,{since:liveRequest.since,live:true,sha:liveRequest.sha});
 }
 console.log(`exp67: red/red/green receipts verified${args.length?' + fresh actual live package': ''}`);
