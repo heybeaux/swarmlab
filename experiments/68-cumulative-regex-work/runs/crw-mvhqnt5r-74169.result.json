@@ -1,0 +1,147 @@
+{
+  "runId": "crw-mvhqnt5r-74169",
+  "trace": "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl",
+  "traceSha256": "sha256:687d5a13074c081d87c7a2a1d9469cb7e01ad0ac87a6cf70222597e24786ecd3",
+  "startedAt": 1792564568415,
+  "endedAt": 1792564581974,
+  "aegisSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:0d06c476de03f781ec760d41a57775e53e169fbe8df90544519c3beeaf4c79b8",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:289c93356a6b0acea760ad0e1ed2fd812c9eff2203a88530d4a3278ed39a5689"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:11fac267082b43e7bf34e3cf6de0164d00f291e1b3e8ba88962f63fcf6f62d68"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:8b30b6e927be16dec0cd1cbb2f0583866d69468ec5e9c2982f45db97d41b6728"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:ea19b87ecb2811bbe9fe41af5732b9555365e8349c7a87eedd53d1f55bf8de18"
+    }
+  ],
+  "harnessSha256": "sha256:06599358c517ac4b62c54fea983e81aafdec7de2de5e23e1869189c0ed45fae0",
+  "summary": {
+    "aggregateWatchdogRate": 1,
+    "cumulativeSafetyRate": 0,
+    "resolutionAccuracy": 0.6190476190476191,
+    "controlAccuracy": 1,
+    "recoveryRate": 0.6190476190476191,
+    "ownershipRate": 0.6190476190476191,
+    "linearControlAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "nested-q-command",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "nested-q-path",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "nested-q-argv",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "ambiguous-z-content",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "base64-decoded-command",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "low-severity-all-allow",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": true,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "critical-deny-preserved",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": false,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    },
+    {
+      "id": "critical-after-work",
+      "status": "watchdog",
+      "checks": {
+        "bounded": false,
+        "action": false,
+        "hitsExact": false,
+        "diagnostic": false,
+        "cumulative": false,
+        "recovered": false,
+        "ownership": false
+      }
+    }
+  ],
+  "replayEvents": 31
+}
