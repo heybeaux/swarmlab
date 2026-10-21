@@ -1,0 +1,586 @@
+{
+  "experiment": "68-cumulative-regex-work",
+  "preRegistrationCommit": "f5dbc19f35af2e894d5ced702eb422aa59be0a4a",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:289c93356a6b0acea760ad0e1ed2fd812c9eff2203a88530d4a3278ed39a5689"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:11fac267082b43e7bf34e3cf6de0164d00f291e1b3e8ba88962f63fcf6f62d68"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:8b30b6e927be16dec0cd1cbb2f0583866d69468ec5e9c2982f45db97d41b6728"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:ea19b87ecb2811bbe9fe41af5732b9555365e8349c7a87eedd53d1f55bf8de18"
+    }
+  ],
+  "runs": [
+    {
+      "runId": "crw-mvhqnt5r-74169",
+      "traceSha256": "sha256:687d5a13074c081d87c7a2a1d9469cb7e01ad0ac87a6cf70222597e24786ecd3",
+      "aegisSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+      "summary": {
+        "aggregateWatchdogRate": 1,
+        "cumulativeSafetyRate": 0,
+        "resolutionAccuracy": 0.6190476190476191,
+        "controlAccuracy": 1,
+        "recoveryRate": 0.6190476190476191,
+        "ownershipRate": 0.6190476190476191,
+        "linearControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegisManifest": [
+        {
+          "file": "packages/aegis/dist/index.d.ts",
+          "sha256": "sha256:34272e66a4f6b461b98675cd32313367ba0b8a062622842a08a3dbb98446b5ea"
+        },
+        {
+          "file": "packages/aegis/dist/index.js",
+          "sha256": "sha256:bed954db2583c90332b07935ee2da0dee83e84b0221e198c189e9da0ffce7118"
+        },
+        {
+          "file": "packages/aegis/dist/index.js.map",
+          "sha256": "sha256:bbdc6d676efb689565ada984c6843046c0416dc760b25befe987c926a4ab4c4e"
+        },
+        {
+          "file": "packages/aegis/package.json",
+          "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+        },
+        {
+          "file": "packages/aegis/src/eval/evaluate.ts",
+          "sha256": "sha256:8df003c4ad66efde1901d5c6e49d1ebc0f9ab12d56778992b5fdc03168199c20"
+        },
+        {
+          "file": "packages/aegis/src/eval/preprocess.ts",
+          "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+        },
+        {
+          "file": "packages/aegis/src/eval/regex-budget.ts",
+          "sha256": "sha256:d4ffe45a7ed045d2a3a87e5f1da14310b3e243d61d5e632fd32f43a402a6a637"
+        },
+        {
+          "file": "packages/aegis/src/eval/safe-command.ts",
+          "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+        },
+        {
+          "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+          "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+        },
+        {
+          "file": "packages/aegis/src/index.ts",
+          "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+        },
+        {
+          "file": "packages/aegis/src/rules/loader.ts",
+          "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+        },
+        {
+          "file": "packages/aegis/src/rules/merge.ts",
+          "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+        },
+        {
+          "file": "packages/aegis/src/types.ts",
+          "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+        }
+      ],
+      "resultSha256": "sha256:9359e01fd957e4640cbaed0504b788205a9f54639138dfbbb370f30328d461ae"
+    },
+    {
+      "runId": "crw-mvhqo3nm-74077",
+      "traceSha256": "sha256:66853ad72faa80d9327acaf880b9d389cb1a72e44e9e47ba8ec4c43af00a0979",
+      "aegisSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+      "summary": {
+        "aggregateWatchdogRate": 1,
+        "cumulativeSafetyRate": 0,
+        "resolutionAccuracy": 0.6190476190476191,
+        "controlAccuracy": 1,
+        "recoveryRate": 0.6190476190476191,
+        "ownershipRate": 0.6190476190476191,
+        "linearControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegisManifest": [
+        {
+          "file": "packages/aegis/dist/index.d.ts",
+          "sha256": "sha256:34272e66a4f6b461b98675cd32313367ba0b8a062622842a08a3dbb98446b5ea"
+        },
+        {
+          "file": "packages/aegis/dist/index.js",
+          "sha256": "sha256:bed954db2583c90332b07935ee2da0dee83e84b0221e198c189e9da0ffce7118"
+        },
+        {
+          "file": "packages/aegis/dist/index.js.map",
+          "sha256": "sha256:bbdc6d676efb689565ada984c6843046c0416dc760b25befe987c926a4ab4c4e"
+        },
+        {
+          "file": "packages/aegis/package.json",
+          "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+        },
+        {
+          "file": "packages/aegis/src/eval/evaluate.ts",
+          "sha256": "sha256:8df003c4ad66efde1901d5c6e49d1ebc0f9ab12d56778992b5fdc03168199c20"
+        },
+        {
+          "file": "packages/aegis/src/eval/preprocess.ts",
+          "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+        },
+        {
+          "file": "packages/aegis/src/eval/regex-budget.ts",
+          "sha256": "sha256:d4ffe45a7ed045d2a3a87e5f1da14310b3e243d61d5e632fd32f43a402a6a637"
+        },
+        {
+          "file": "packages/aegis/src/eval/safe-command.ts",
+          "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+        },
+        {
+          "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+          "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+        },
+        {
+          "file": "packages/aegis/src/index.ts",
+          "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+        },
+        {
+          "file": "packages/aegis/src/rules/loader.ts",
+          "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+        },
+        {
+          "file": "packages/aegis/src/rules/merge.ts",
+          "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+        },
+        {
+          "file": "packages/aegis/src/types.ts",
+          "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+        }
+      ],
+      "resultSha256": "sha256:c03577c80d12e2cfb9ca0acf09c43e463357a035543f87f6346d3b897f09fad5"
+    },
+    {
+      "runId": "crw-mvhqqvjv-84114",
+      "traceSha256": "sha256:fda6eeb753cb60eee1c31efcb616598209c3fa6ce3aaed185aff95d3d4d1548d",
+      "aegisSha": "fee7bd9ab4d71d399c5f243b0c110aeb6833b616",
+      "summary": {
+        "aggregateWatchdogRate": 0,
+        "cumulativeSafetyRate": 1,
+        "resolutionAccuracy": 1,
+        "controlAccuracy": 1,
+        "recoveryRate": 1,
+        "ownershipRate": 1,
+        "linearControlAccuracy": 1,
+        "infrastructureFailures": 0
+      },
+      "aegisManifest": [
+        {
+          "file": "packages/aegis/dist/index.d.ts",
+          "sha256": "sha256:06f3c30e5df7a0018f69bcbb8bb9bea738bedbb095b8ad4dd8b051c6f5db6b6b"
+        },
+        {
+          "file": "packages/aegis/dist/index.js",
+          "sha256": "sha256:821156ce03bf464fb443665e0bcb9b719ac6cd97816780618dcb54b0fa4a1e7c"
+        },
+        {
+          "file": "packages/aegis/dist/index.js.map",
+          "sha256": "sha256:1b9b0492177459747b5a65b231287974e33e256581aa96aeb52ead4f03556d0c"
+        },
+        {
+          "file": "packages/aegis/package.json",
+          "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+        },
+        {
+          "file": "packages/aegis/src/eval/evaluate.ts",
+          "sha256": "sha256:39f5d91debad3e3ddb0ab418d36bce233d7020596a48cd5e6db2253b22081578"
+        },
+        {
+          "file": "packages/aegis/src/eval/preprocess.ts",
+          "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+        },
+        {
+          "file": "packages/aegis/src/eval/regex-budget.ts",
+          "sha256": "sha256:ed3e1c83105dc9fdd7cac7f015c18dcf18af245e6b2ad9b1c6077b72122c0b46"
+        },
+        {
+          "file": "packages/aegis/src/eval/safe-command.ts",
+          "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+        },
+        {
+          "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+          "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+        },
+        {
+          "file": "packages/aegis/src/index.ts",
+          "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+        },
+        {
+          "file": "packages/aegis/src/rules/loader.ts",
+          "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+        },
+        {
+          "file": "packages/aegis/src/rules/merge.ts",
+          "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+        },
+        {
+          "file": "packages/aegis/src/types.ts",
+          "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+        }
+      ],
+      "resultSha256": "sha256:4385ab14c6cc84f8ce16eb257014911dde2afe3e6e5024bbc7f7750c2a189e50"
+    }
+  ],
+  "green": {
+    "runId": "crw-mvhqqvjv-84114",
+    "traceSha256": "sha256:fda6eeb753cb60eee1c31efcb616598209c3fa6ce3aaed185aff95d3d4d1548d",
+    "aegisSha": "fee7bd9ab4d71d399c5f243b0c110aeb6833b616",
+    "summary": {
+      "aggregateWatchdogRate": 0,
+      "cumulativeSafetyRate": 1,
+      "resolutionAccuracy": 1,
+      "controlAccuracy": 1,
+      "recoveryRate": 1,
+      "ownershipRate": 1,
+      "linearControlAccuracy": 1,
+      "infrastructureFailures": 0
+    },
+    "aegisManifest": [
+      {
+        "file": "packages/aegis/dist/index.d.ts",
+        "sha256": "sha256:06f3c30e5df7a0018f69bcbb8bb9bea738bedbb095b8ad4dd8b051c6f5db6b6b"
+      },
+      {
+        "file": "packages/aegis/dist/index.js",
+        "sha256": "sha256:821156ce03bf464fb443665e0bcb9b719ac6cd97816780618dcb54b0fa4a1e7c"
+      },
+      {
+        "file": "packages/aegis/dist/index.js.map",
+        "sha256": "sha256:1b9b0492177459747b5a65b231287974e33e256581aa96aeb52ead4f03556d0c"
+      },
+      {
+        "file": "packages/aegis/package.json",
+        "sha256": "sha256:d86e3de257d5712edb53461ffe68da6c5959c8099a493344fd8a36776d0c395b"
+      },
+      {
+        "file": "packages/aegis/src/eval/evaluate.ts",
+        "sha256": "sha256:39f5d91debad3e3ddb0ab418d36bce233d7020596a48cd5e6db2253b22081578"
+      },
+      {
+        "file": "packages/aegis/src/eval/preprocess.ts",
+        "sha256": "sha256:05b1c40d78d87538f5fe4a0892307a23af0447bc26a683c8beedc66e881952f9"
+      },
+      {
+        "file": "packages/aegis/src/eval/regex-budget.ts",
+        "sha256": "sha256:ed3e1c83105dc9fdd7cac7f015c18dcf18af245e6b2ad9b1c6077b72122c0b46"
+      },
+      {
+        "file": "packages/aegis/src/eval/safe-command.ts",
+        "sha256": "sha256:00236420fc95731348dd00331c4e0a5b7f55266b23604e300c7e44686e55bb9a"
+      },
+      {
+        "file": "packages/aegis/src/eval/source-policy-checkpoint.ts",
+        "sha256": "sha256:e5507169549e2b558bd6624f48598d4c0d63cf288ec262b5eb36c6234dec68b3"
+      },
+      {
+        "file": "packages/aegis/src/index.ts",
+        "sha256": "sha256:ee13318d75e32322eb9eed687e517df6a0dc9cf9d9394a5c85be486c99c45129"
+      },
+      {
+        "file": "packages/aegis/src/rules/loader.ts",
+        "sha256": "sha256:8da48a548e77a343dca94beeddaea5d19926752ac9b72df8f6ad2c4b9bb3c651"
+      },
+      {
+        "file": "packages/aegis/src/rules/merge.ts",
+        "sha256": "sha256:15792d138874a8b4fac914412dd0a72134480eb770bf32404da29a28e6e1e99e"
+      },
+      {
+        "file": "packages/aegis/src/types.ts",
+        "sha256": "sha256:ae2f91bbefd2320198b892d71f29bb0fcde737227cb0c0a25d06e6202da6dc3e"
+      }
+    ],
+    "resultSha256": "sha256:4385ab14c6cc84f8ce16eb257014911dde2afe3e6e5024bbc7f7750c2a189e50"
+  },
+  "greenEvaluations": {
+    "single-timeout-control": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "regex match budget exceeded or matching unavailable (100ms); unresolved rules: single",
+      "ruleVersions": []
+    },
+    "nested-q-command": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "nested-q-path": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "nested-q-argv": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "ambiguous-z-content": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "base64-decoded-command": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "low-severity-all-allow": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [],
+      "reason": "cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "critical-deny-preserved": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "crit.drop",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule crit.drop; cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "critical-after-work": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "crit.drop",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule crit.drop; cumulative regex work budget exceeded (250ms); unresolved rules: work.0, work.1, work.2, work.3, work.4, work.5, work.6, work.7, work.8, work.9, work.10, work.11, work.12, work.13, work.14, work.15, work.16, work.17, work.18, work.19",
+      "ruleVersions": []
+    },
+    "regex-positive": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.danger",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule ctl.danger",
+      "ruleVersions": []
+    },
+    "regex-negative": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "lookbehind-backreference": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.backref",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule ctl.backref",
+      "ruleVersions": []
+    },
+    "flags-imsu": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.flags",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule ctl.flags",
+      "ruleVersions": []
+    },
+    "literal-substring": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.literal",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule ctl.literal",
+      "ruleVersions": []
+    },
+    "disabled-hazard": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "wrong-tool-hazard": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "no-target-hazard": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "empty-pack": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "path-array-second": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.path",
+          "severity": "critical",
+          "category": "bash",
+          "target": "path"
+        }
+      ],
+      "reason": "fixture rule ctl.path",
+      "ruleVersions": []
+    },
+    "argv-array-second": {
+      "action": "ask",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.argv",
+          "severity": "high",
+          "category": "bash",
+          "target": "argv"
+        }
+      ],
+      "reason": "fixture rule ctl.argv",
+      "ruleVersions": []
+    },
+    "preprocess-hex-positive": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "ctl.hex",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule ctl.hex",
+      "ruleVersions": []
+    },
+    "linear-nested-q-command": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-nested-q-path": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-nested-q-argv": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-ambiguous-z-content": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-base64-decoded-command": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-low-severity-all-allow": {
+      "action": "allow",
+      "decidedBy": "both",
+      "matches": [],
+      "reason": "no rule matched",
+      "ruleVersions": []
+    },
+    "linear-critical-deny-preserved": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "crit.drop",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule crit.drop",
+      "ruleVersions": []
+    },
+    "linear-critical-after-work": {
+      "action": "deny",
+      "decidedBy": "severity",
+      "matches": [
+        {
+          "id": "crit.drop",
+          "severity": "critical",
+          "category": "bash",
+          "target": "command"
+        }
+      ],
+      "reason": "fixture rule crit.drop",
+      "ruleVersions": []
+    }
+  }
+}
