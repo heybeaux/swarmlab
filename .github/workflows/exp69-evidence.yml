@@ -1,0 +1,44 @@
+name: exp69-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable core toolchain, pre-existing file dependencies unchanged
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core
+          node_modules/.bin/tsc -b --force core
+          for f in experiments/69-encoded-occurrence-coverage/*.mjs; do node --check "$f"; done
+      - name: Verify corpus and admitted red-red-green receipts
+        run: npm run verify:evidence && node experiments/69-encoded-occurrence-coverage/verify-receipts.mjs
+      - name: Checkout exact Aegis candidate
+        uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: f230eb62419977b3ee0d45b4b127740846b5d725
+          path: .aegis-exp69
+      - name: Build actual package
+        working-directory: .aegis-exp69
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Execute unchanged design; bind actual output and source/dist, freshness and expected pin
+        run: |
+          START="$(node -e 'console.log(Date.now())')"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp69" node experiments/69-encoded-occurrence-coverage/main.mjs > "$RUNNER_TEMP/exp69.log"
+          cat "$RUNNER_TEMP/exp69.log"
+          node experiments/69-encoded-occurrence-coverage/verify-receipts.mjs --run "$RUNNER_TEMP/exp69.log" --since "$START" --sha f230eb62419977b3ee0d45b4b127740846b5d725
+          node experiments/69-encoded-occurrence-coverage/test-verifier.mjs "$RUNNER_TEMP/exp69.log"

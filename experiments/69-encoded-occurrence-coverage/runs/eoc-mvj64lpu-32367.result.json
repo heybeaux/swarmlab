@@ -1,0 +1,239 @@
+{
+  "runId": "eoc-mvj64lpu-32367",
+  "trace": "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl",
+  "traceSha256": "sha256:b26f40802acc432f36565d444c6111b385d27192e89dbaefa2030b834d163128",
+  "startedAt": 1792651012338,
+  "endedAt": 1792651013420,
+  "aegisSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:0d06c476de03f781ec760d41a57775e53e169fbe8df90544519c3beeaf4c79b8",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:7e21ea5ade4eaeff8ac6c8c01ee9a53bb12630925f3f7037b6c69c481d83a4ce"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:bb96fe76635e1fc0e119d026c5ddedce68a21245965f5ee647a612a7fdb35e5a"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:d24b393003b2f5882710e868698880a5563f5b5f2f414543bf592f5e79907111"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:d27ab69037514913c1ab1083edc0e887bab75607bba2fccda1f567c719145ced"
+    }
+  ],
+  "harnessSha256": "sha256:b8a23815d506ab65c2520f67f9775aaf578544614228783141e00ee2b1e340da",
+  "summary": {
+    "laterPayloadMissRate": 1,
+    "extractionAccuracy": 0.36363636363636365,
+    "resolutionAccuracy": 0.36363636363636365,
+    "controlAccuracy": 0.6666666666666666,
+    "directControlAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "echo-pipes",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "printf-pipes",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "mixed-pipes",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "herestrings",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "echo-subshells",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "bare-subshells",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "third-slot",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "binary-noise-first",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "duplicate-safe-first",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "case-insensitive-later",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "danger-first",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": true,
+        "hits": true,
+        "reason": true,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "high-then-critical",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": false,
+        "hits": false,
+        "reason": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "preprocess-off",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": true,
+        "hits": true,
+        "reason": true,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    },
+    {
+      "id": "wrong-tool",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "extraction": false,
+        "action": true,
+        "hits": true,
+        "reason": true,
+        "ownership": true,
+        "recovery": true,
+        "direct": true
+      }
+    }
+  ],
+  "replayEvents": 24
+}
