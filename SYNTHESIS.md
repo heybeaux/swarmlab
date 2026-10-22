@@ -1665,3 +1665,8 @@ are not novel evidence. Linked PR/CI and merge status recorded only as observed.
 Paired runtime candidate [Aegis75](https://github.com/heybeaux/aegis/pull/75),
 exact executable CI pin `f230eb62419977b3ee0d45b4b127740846b5d725`. Remote checks not yet observed;
 no merge inferred.
+
+Paired evidence [SwarmLab59](https://github.com/heybeaux/swarmlab/pull/59); source `.acr` unchanged.
+Local Aegis release/build/typecheck1209tests+53historical gates and SwarmLab
+52claims114traces1049assertions green. Actual remote checks pending at this
+documentation commit. Red/red/green design and all22cases unchanged.

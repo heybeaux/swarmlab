@@ -6854,7 +6854,8 @@
           "f230eb62419977b3ee0d45b4b127740846b5d725"
         ],
         "prs": [
-          "https://github.com/heybeaux/aegis/pull/75"
+          "https://github.com/heybeaux/aegis/pull/75",
+          "https://github.com/heybeaux/swarmlab/pull/59"
         ],
         "dirtyState": "clean"
       }
