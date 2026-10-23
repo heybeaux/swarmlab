@@ -21,3 +21,9 @@ Run: `AEGIS_REPO=/path/to/aegis node experiments/70-preprocess-admission/main.mj
 - Full legacy SwarmLab root build/typecheck has63errors from missing/changed old Parliament/Engram modules. Same63errors reproduced identically on unchanged main5a62453 using the same portable toolchain. No unrelated legacy repair attempted.
 - Source `.acr` cards unchanged; Territory not refreshed. Dedicated origin/main worktrees; dirty primary checkouts and held earlier PRs untouched.
 - Independent review and merge/main checks are tracked in the nightly ledger; this page does not assert merge or certification.
+
+## Same-experiment evidence-interface audit
+
+An independent post-merge audit demonstrated that numeric comparisons let string/fractional evidence timestamps through and that each child could claim a start preceding the previous sequential scenario. The verifier now requires safe nonnegative integer timestamps (including verification clock/run end/event/score), and child ready/start/end must follow the prior scenario event. Positive fresh real-Aegis evidence still passes; verifier negative controls increased from35 to49. The spec, frozen four-file harness/oracle, thresholds, admitted red/red/green traces and content-addressed receipts are byte-identical. No additional experiment, runtime change, or evidence claim was introduced.
+
+**Release hold retained:** Aegis merged-main release run39914001768 failed the unchanged RT57 calibration test; [issue77](https://github.com/heybeaux/aegis/issues/77) remains unresolved. A fresh local1208-test release pass does not erase that CI red. Timestamp hardening is an evidence-validation fix, not a runtime release certification.
