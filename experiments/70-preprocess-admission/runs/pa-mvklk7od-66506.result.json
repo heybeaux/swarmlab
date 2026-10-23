@@ -1,0 +1,154 @@
+{
+  "runId": "pa-mvklk7od-66506",
+  "trace": "experiments/70-preprocess-admission/runs/pa-mvklk7od-66506.jsonl",
+  "traceSha256": "sha256:e176ddc256a18fbbccfdde1d86edbce6ecdf926177a6f282e792b5a605a95205",
+  "startedAt": 1792737401053,
+  "endedAt": 1792737402057,
+  "aegisSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:0d06c476de03f781ec760d41a57775e53e169fbe8df90544519c3beeaf4c79b8",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:cfffe6150dc00dcc7e76286c656197f1525d1363f560910b5e0009f1d425c167"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:40e31f526745e87bdecb9d5572df53ba9002a8de51ea6cadc098cecccc6c13fb"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:33ab9a81fde8260b5a1846903bc1e32880a8af4f9b5e2e2da931d96e7c3a55a8"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:81a344dd123bbc085160310d7460d19d9af24f158c142897cb8b319a3c70c5f4"
+    }
+  ],
+  "harnessSha256": "sha256:c3475421ab82a295d6ec124a8315a5ae08cfc20fe5c7a803587e80295bf7a67f",
+  "summary": {
+    "admissionSafetyRate": 0,
+    "resolutionAccuracy": 0.6,
+    "controlAccuracy": 1,
+    "rawControlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "oversize-original",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": false,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "unique-hex-expansion",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": false,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "decoded-volume",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": false,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "severity-allow-cannot-waive",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": false,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "predictor-deny",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": true,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "raw-critical-deny",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": true,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "admitted-decoded-critical",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": true,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    },
+    {
+      "id": "other-target-critical",
+      "status": "returned",
+      "checks": {
+        "bounded": true,
+        "action": true,
+        "hits": true,
+        "diagnostic": false,
+        "ownership": true,
+        "recovery": true,
+        "raw": true,
+        "positive": true
+      }
+    }
+  ],
+  "replayEvents": 22
+}

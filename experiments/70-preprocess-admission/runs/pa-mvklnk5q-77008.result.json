@@ -1,0 +1,41 @@
+{
+  "runId": "pa-mvklnk5q-77008",
+  "trace": "experiments/70-preprocess-admission/runs/pa-mvklnk5q-77008.jsonl",
+  "traceSha256": "sha256:40c062cdf8d23d9d3e186ff4d0f762aee43372e2f358bd87c49bc0e9031fe2a0",
+  "startedAt": 1792737557198,
+  "endedAt": 1792737558334,
+  "aegisSha": "9e99e7bfb109aace16b393418e234162be52f7d5",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:ec8232c36cccf72aa847d3f9f46edefd2cea9c03ed7933b523e17a631634291e",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:cfffe6150dc00dcc7e76286c656197f1525d1363f560910b5e0009f1d425c167"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:40e31f526745e87bdecb9d5572df53ba9002a8de51ea6cadc098cecccc6c13fb"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:33ab9a81fde8260b5a1846903bc1e32880a8af4f9b5e2e2da931d96e7c3a55a8"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:81a344dd123bbc085160310d7460d19d9af24f158c142897cb8b319a3c70c5f4"
+    }
+  ],
+  "harnessSha256": "sha256:c3475421ab82a295d6ec124a8315a5ae08cfc20fe5c7a803587e80295bf7a67f",
+  "summary": {
+    "admissionSafetyRate": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "rawControlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": [],
+  "replayEvents": 22
+}

@@ -1,0 +1,33 @@
+{
+  "experiment": "70-preprocess-admission",
+  "preRegistrationCommit": "0f8efd2",
+  "frozenHarnessCommit": "ab9b4dd",
+  "baselineSha": "27375f6a04cd9403725499d75ac046d8d6e33986",
+  "candidateSha": "9e99e7bfb109aace16b393418e234162be52f7d5",
+  "baselineMetrics": {
+    "admissionSafetyRate": 0,
+    "resolutionAccuracy": 0.6,
+    "controlAccuracy": 1,
+    "rawControlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "pa-mvklk7od-66506",
+      "traceSha256": "sha256:e176ddc256a18fbbccfdde1d86edbce6ecdf926177a6f282e792b5a605a95205",
+      "resultSha256": "sha256:06acfeabd40493ecdeb72d7ce264bf9d6dc5873bad19b061ab113f4d22571754"
+    },
+    {
+      "runId": "pa-mvklk8hq-66544",
+      "traceSha256": "sha256:c971595569423b1927dbf00d0465e55669049bdb98121f0c847cb9df9a3a869e",
+      "resultSha256": "sha256:334ec487844cb6ff76a9049c32e6b1f0acc7c11e25ecc585c8f2a1fa5f88f463"
+    },
+    {
+      "runId": "pa-mvklnk5q-77008",
+      "traceSha256": "sha256:40c062cdf8d23d9d3e186ff4d0f762aee43372e2f358bd87c49bc0e9031fe2a0",
+      "resultSha256": "sha256:ec16ed981531d6cccbf7c19c72c0f225a64770f6635b553434db5869a364f556"
+    }
+  ]
+}
