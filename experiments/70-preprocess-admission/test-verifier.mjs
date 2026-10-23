@@ -20,4 +20,12 @@ bad('summary tamper',r=>r.summary.admissionSafetyRate=0);bad('failed list',r=>r.
 bad('dirty package',(r,e)=>e[0].body.aegis.dirty=' M src');bad('artifact binding',r=>r.aegisManifestSha256='sha256:'+'0'.repeat(64));bad('manifest',(r,e)=>e[0].body.aegis.manifest=[]);
 bad('harness binding',r=>r.harnessManifest=[]);bad('harness digest',(r,e)=>e[0].body.harnessSha256='sha256:'+'0'.repeat(64));bad('threshold',(r,e)=>e[0].body.thresholds.admissionSafetyRate=0);
 bad('end',r=>r.endedAt=r.startedAt-1);bad('result start',r=>r.startedAt--);bad('event time',(r,e)=>e[1].ts=0);
+bad('string result end',r=>r.endedAt=String(r.endedAt));bad('fractional result end',r=>r.endedAt+=.5);
+bad('string meta time',(r,e)=>e[0].ts=String(e[0].ts));bad('fractional meta time',(r,e)=>e[0].ts+=.5);
+bad('string event time',(r,e)=>e[1].ts=String(e[1].ts));bad('fractional event time',(r,e)=>e[1].ts+=.5);
+bad('string score time',(r,e)=>e.at(-1).ts=String(e.at(-1).ts));bad('fractional score time',(r,e)=>e.at(-1).ts+=.5);
+bad('nonsequential child',(r,e)=>{const c=e[2].body.result;c.readyAt=e[0].body.startedAt;c.startAt=c.readyAt;c.endAt=c.readyAt+1;});
+bad('child before meta',(r,e)=>{e[0].ts=e[1].ts;e[1].body.result.readyAt=e[0].body.startedAt;});
+bad('string verification clock',(r,e,o)=>o.now=String(o.now));bad('fractional verification clock',(r,e,o)=>o.now+=.5);
+bad('string since',(r,e,o)=>o.since=String(o.since));bad('negative since',(r,e,o)=>o.since=-1);
 console.log(`exp70 verifier: positive control + ${rejected} tamper rejections`);

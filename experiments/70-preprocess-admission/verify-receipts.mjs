@@ -13,9 +13,10 @@ const receipt=json(join(root,'receipts.json'));
 const fullSha=/^[a-f0-9]{40}$/;
 function check(v,message){assert.ok(v,message);}
 function eq(a,b,message){assert.ok(same(a,b),message);}
+function timestamp(value,message){check(Number.isSafeInteger(value)&&value>=0,message);}
 export function validate(result,events,{sha,since=0,now=Date.now(),reference,traceBytes}={}){
- check(fullSha.test(sha),'expected SHA must be exact 40hex');
- check(Number.isSafeInteger(since)&&since>=0&&since<=now,'invalid since');
+ check(typeof sha==='string'&&fullSha.test(sha),'expected SHA must be exact 40hex');
+ timestamp(now,'invalid verification clock');timestamp(since,'invalid since');check(since<=now,'invalid since');
  check(typeof result.runId==='string'&&/^pa-[a-z0-9]+-[0-9]+$/.test(result.runId),'runId');
  check(Array.isArray(events)&&events.length===22,'event count');
  const metaEvent=events[0],meta=metaEvent.body;
@@ -30,24 +31,25 @@ export function validate(result,events,{sha,since=0,now=Date.now(),reference,tra
  for(const m of meta.aegis.manifest)check(typeof m.file==='string'&&/^sha256:[a-f0-9]{64}$/.test(m.sha256),'manifest shape');
  eq(meta.aegis.manifestSha256,hash(JSON.stringify(meta.aegis.manifest)),'artifact digest');eq(result.aegisManifestSha256,meta.aegis.manifestSha256,'artifact result binding');
  if(reference)eq(meta.aegis.manifest,reference.meta.aegis.manifest,'pinned actual source/dist/package equality');
- check(Number.isSafeInteger(meta.startedAt)&&meta.startedAt>=since&&meta.startedAt<=now,'start freshness');eq(result.startedAt,meta.startedAt,'start binding');check(result.endedAt>=meta.startedAt&&result.endedAt<=now,'end freshness');
- let previous=meta.startedAt;
- check(metaEvent.ts>=previous&&metaEvent.ts<=result.endedAt,'meta timestamp');
+ timestamp(meta.startedAt,'start timestamp');timestamp(result.endedAt,'end timestamp');
+ check(meta.startedAt>=since&&meta.startedAt<=now,'start freshness');eq(result.startedAt,meta.startedAt,'start binding');check(result.endedAt>=meta.startedAt&&result.endedAt<=now,'end freshness');
+ timestamp(metaEvent.ts,'meta timestamp');check(metaEvent.ts>=meta.startedAt&&metaEvent.ts<=result.endedAt,'meta timestamp');
+ let previous=metaEvent.ts;
  const rows=[];
  for(let i=0;i<20;i++){
   const e=events[i+1],s=scenarios[i],row=e.body,r=row.result;
   eq([e.t,e.from,e.to,e.topic],['message','real-aegis','moderator','scenario'],'scenario envelope');
-  check(e.ts>=previous&&e.ts<=result.endedAt,'event order/time');previous=e.ts;
+  timestamp(e.ts,'event timestamp');check(e.ts>=previous&&e.ts<=result.endedAt,'event order/time');
   eq(row.id,s.id,'scenario id');eq(row.kind,s.kind,'scenario arm');
   eq(r.status,'returned','no child watchdog');eq(r.exit,0,'child exit');eq(r.signal,null,'child signal');eq(r.stdout,'','child stdout');eq(r.stderr,'','child stderr');
-  check(!r.childError&&!r.response.error,'child error');check(Number.isSafeInteger(r.readyAt)&&Number.isSafeInteger(r.startAt)&&Number.isSafeInteger(r.endAt),'ready/start/end');
-  check(r.readyAt>=meta.startedAt&&r.readyAt<=r.startAt&&r.startAt<=r.endAt&&r.endAt<=e.ts,'child freshness/order');check(r.endAt-r.startAt<=WATCHDOG_MS,'parent-observed deadline');
+  check(!r.childError&&!r.response.error,'child error');timestamp(r.readyAt,'ready timestamp');timestamp(r.startAt,'child start timestamp');timestamp(r.endAt,'child end timestamp');
+  check(r.readyAt>=previous&&r.readyAt<=r.startAt&&r.startAt<=r.endAt&&r.endAt<=e.ts,'child freshness/order');check(r.endAt-r.startAt<=WATCHDOG_MS,'parent-observed deadline');
   check(Number.isFinite(r.response.elapsedMs)&&r.response.elapsedMs>=0&&r.response.elapsedMs<=WATCHDOG_MS,'elapsed deadline');
   eq(row,assess(s,r),'recomputed row');
   if(reference){eq(r.response.evaluation,reference.rows[i].result.response.evaluation,'live full evaluation');eq(r.response.raw,reference.rows[i].result.response.raw,'live raw full evaluation');}
-  rows.push(row);
+  rows.push(row);previous=e.ts;
  }
- const score=events.at(-1);eq(score.t,'score','terminal score');check(score.ts>=previous&&score.ts<=result.endedAt,'score timestamp');
+ const score=events.at(-1);eq(score.t,'score','terminal score');timestamp(score.ts,'score timestamp');check(score.ts>=previous&&score.ts<=result.endedAt,'score timestamp');
  const summary=metrics(rows);eq(score.scores,summary,'replayed score');eq(result.summary,summary,'result score');eq(result.passed,same(summary,thresholds),'passed classification');eq(result.failed,rows.filter(r=>!r.correct).map(r=>({id:r.id,status:r.result.status,checks:r.checks})),'failed classification');eq(result.replayEvents,22,'replay count');
  eq(basename(result.trace),`${result.runId}.jsonl`,'trace identity');
  if(traceBytes)eq(result.traceSha256,hash(traceBytes),'trace/result digest');
