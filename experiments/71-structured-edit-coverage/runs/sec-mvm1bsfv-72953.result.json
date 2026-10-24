@@ -1,0 +1,40 @@
+{
+  "runId": "sec-mvm1bsfv-72953",
+  "trace": "experiments/71-structured-edit-coverage/runs/sec-mvm1bsfv-72953.jsonl",
+  "traceSha256": "sha256:721d14da95d2e63fb535f302209ff671ff034bf699c3f7b9de57a9d582c0911b",
+  "startedAt": 1792824348091,
+  "endedAt": 1792824348195,
+  "aegisSha": "259882071774cd2f65da09e8077363995ff11dd2",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:aaf0f0318979d78a265cf6f656f7cbdb19c06b79f35982c8867b501bd9c4bad5",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:c7e2031f352bf339ddb14a976d20cc5c01ff210449d7397b387095aa59c9e70a"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:21f0f3972d7c664e130b252a6552bd28444bf2e44ee9e271b6484915c0c7ae97"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:04c4504ef7466caa20d78f75920312c2c11f3b89e9d4b1fa8c37ebc804367cbc"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:f4c6cb659ed3628f43ccc60d6e576012cdfdadfc8c77c00ef5c0f5d9c209324c"
+    }
+  ],
+  "summary": {
+    "hazardCoverage": 1,
+    "controlAccuracy": 1,
+    "identityCoverage": 1,
+    "directAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

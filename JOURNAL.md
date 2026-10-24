@@ -470,3 +470,37 @@ Pre-registration `0f8efd2`, frozen harness `ab9b4dd`; [Spec76](specs/76-preproce
 The general change bounds evaluator preprocessing admission: original<=65536 UTF16 units; variants<=64 including original; decoded total<=8192 units. First exceeding unique candidate stops extraction; original and admitted prefix still undergo real rules, independent ask on incomplete coverage cannot waive genuine deny. Standalone extractor remains unbounded/compatible. **This is a new conservative admission policy, not measured CPU/memory exhaustion, a latency speedup, whole-call bound or production certification.** Native budgets start later; pending exp68/69 were not imported. No threshold tuning; holdout unused. Existing evidence checks are regression-only. GitHub checks/merge status must be consulted separately from verified corpus.
 
 Delivery: linked [Aegis76](https://github.com/heybeaux/aegis/pull/76) / [SwarmLab60](https://github.com/heybeaux/swarmlab/pull/60); candidate releaseCI39913263015 and pinned real-package CI39913371949 SUCCESS. Local1208tests, relevant exp67 regression19/19green. Legacy root build63errors exactly reproducible unchanged baseline; changed ESM/core static green. No merged/production claim from these receipts; final ledger owns status.
+
+
+## RT-61 / exp71 — Structured replacement coverage (2026-10-23)
+
+[Spec77](specs/77-structured-edit-coverage.md), preregistration1bc1564; initial harness e5059f8,
+unique-region fixture correction/final frozen harness cadebd5. Actual fetched Aegis
+32391a41c4d09cdad2e4aa083382b222d78976c2 missed8/8 hazards and all8 identity probes on
+`sec-mvm1703u-57714` and `sec-mvm1707n-57732`. Direct scalar8/8 and compatibility10/10 passed,
+so this is a projection gap, not a broken rule fixture. Initial red pair used repeated
+oldText and was re-frozen/re-baselined before candidate observations; retained unadmitted.
+Same18cases real Aegis runtime `259882071774cd2f65da09e8077363995ff11dd2` / `sec-mvm17vay-59158` is18/18green,
+hazardCoverage0→1, identityCoverage0→1, resolutionAccuracy10/18→1. No LLM judge,
+threshold tuning or holdout use. Full response JSONL and source/dist/package hashes committed.
+
+Fix: optional independent `ToolCall.contentFragments`, projection from validated
+OpenClaw edit.edits[].newText, content rule traversal without joining boundaries,
+ordered identity binding and max per-fragment heuristic risk. Scalar input preserved.
+Host still owns validation, unique oldText/application and action receipts. No support
+claim for arbitrary apply_patch/malformed envelopes or production calibration. Review
+found no blockers; literal host `newText` contract explicitly unit-tested, no invented aliases.
+
+Regression-only: full Aegis release:check1216tests green (628+216+22+86+207+57),
+historical catalogue52/52. RT61 candidate constant remains OUTSIDE landed release catalogue;
+focused test asserts pending/PARTIAL. Two catalogue/test-bookkeeping red runs retained,
+not hidden. Prior RT57 timingCI issue77 still open. SwarmLab core build/forced typecheck,
+ESM syntax and evidence replay green. Legacy root build63TypeScript errors unchanged
+from prior nightly; not a full root-build-green claim. Receipts re-scored from raw outcomes;
+24 forged evidence variants rejected; live verifier binds response equality, exact SHA,
+fresh timestamps and actual source/dist bytes. Existing15/16/17 not run.
+
+Delivery: [Aegis78](https://github.com/heybeaux/aegis/pull/78); linked SwarmLab PR pending.
+CI/mergeability must be observed before merge. .acr unchanged, Territory not refreshed.
+Next independent hypothesis: path/argv/content-fragment arrays can expand regex planning
+before native deadlines; resource admission not tested or claimed here.
