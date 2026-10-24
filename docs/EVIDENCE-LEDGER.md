@@ -302,3 +302,17 @@ Delivery: [Aegis78](https://github.com/heybeaux/aegis/pull/78); linked SwarmLab 
 CI/mergeability must be observed before merge. .acr unchanged, Territory not refreshed.
 Next independent hypothesis: path/argv/content-fragment arrays can expand regex planning
 before native deadlines; resource admission not tested or claimed here.
+
+
+### Delivery hold — observed CI, not inferred success
+Linked [SwarmLab62](https://github.com/heybeaux/swarmlab/pull/62) / [Aegis78](https://github.com/heybeaux/aegis/pull/78).
+SwarmLab experimentCI [40071762631](https://github.com/heybeaux/swarmlab/actions/runs/40071762631)
+SUCCESS at c3eeea2: frozen raw red-red-green,24tamper cases, fresh pinned actual-package18/18.
+Aegis releaseCI [40071707272](https://github.com/heybeaux/aegis/actions/runs/40071707272)
+FAILED at3eee4db: unchanged core/test/test-helpers.test.ts:70 real Date.now determinism
+expectation,627/628core. Zero core diff against baseline; local1216tests passed.
+[Issue79](https://github.com/heybeaux/aegis/issues/79) records the blocker (distinct from77).
+Both PRs remain OPEN/unmerged; no rerun-to-green or unrelated patch. Subsequent doc-only
+head has separate CI; nightly ledger records latest exact-head checks. Unadmitted local
+review/final-live traces retained separately from the three pinned corpus runs.
+Legacy root63TypeScript diagnostic lines exactly equal unchanged-main baseline.
