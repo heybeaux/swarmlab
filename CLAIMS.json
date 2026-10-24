@@ -6846,5 +6846,84 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-reg0f8efd2; frozenab9b4dd before output. Two current-main red8/8 hazards, controls12/12+raw8/8 green. Same frozen20scenarios candidate allgreen. Real loadPack/evaluate exactsource/dist/package+full evaluations. verified means replayed bounded corpus, not CI/merge certification. No threshold tuning, holdout unused. Pending exp68/69 not imported. Fixed caps are new conservative policy, not proof that baseline caused actual CPU/memory exhaustion. No old15/16/17 run. Source .acr unchanged. Exact candidate9e99e7b releaseCI39913263015 and actual-package labCI39913371949 SUCCESS. Root legacy build/typecheck fails63errors identically at baseline5a62453 under same portable toolchain; core+all changed ESM static pass. No unrelated legacy fixes."
+  },
+  {
+    "id": "RT-61",
+    "claim": "Faithful independent structured-edit replacement projection restores8/8 content hazards and changed-content identity binding while preserving10controls.",
+    "experiment": "experiments/71-structured-edit-coverage",
+    "spec": "specs/77-structured-edit-coverage.md",
+    "runIds": [
+      "sec-mvm1703u-57714",
+      "sec-mvm1707n-57732",
+      "sec-mvm17vay-59158"
+    ],
+    "tracePaths": [
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.infrastructureFailures",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.infrastructureFailures",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.hazardCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.identityCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.resolutionAccuracy": 0.5555555555555556,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.infrastructureFailures": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.hazardCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.identityCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.resolutionAccuracy": 0.5555555555555556,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.infrastructureFailures": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.hazardCoverage": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.identityCoverage": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.resolutionAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.infrastructureFailures": 0
+    },
+    "reproductionCommand": "node experiments/71-structured-edit-coverage/verify-receipts.mjs && AEGIS_REPO=/path/to/built/aegis node experiments/71-structured-edit-coverage/main.mjs",
+    "stackRecommendation": "Inspect independent replacement strings and bind ordered fragment boundaries into approval/predictor identities.",
+    "stackReposAndPRs": [
+      {
+        "repo": "heybeaux/aegis",
+        "pr": "https://github.com/heybeaux/aegis/pull/78",
+        "commit": "259882071774cd2f65da09e8077363995ff11dd2"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Verified bounded synthetic corpus, not heldout-trained model or production certification. Host owns schema/oldText matching/application; no actual file edits or credentials. Baseline twice at32391a4; green2598820. Preliminary duplicate oldText fixture red pair retained but NOT admitted. All final fixtures have indexed unique original regions. 24 tamper controls and actual-artifact live verifier separate from legacy score replay. RT61 candidate outside Aegis landed catalogue pending delivery."
   }
 ]

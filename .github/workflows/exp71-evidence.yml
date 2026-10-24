@@ -1,0 +1,47 @@
+name: exp71-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable static checks and frozen receipts
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core
+          node_modules/.bin/tsc -b --force core
+          for f in experiments/71-structured-edit-coverage/*.mjs; do node --check "$f"; done
+          npm run verify:evidence
+          node experiments/71-structured-edit-coverage/verify-receipts.mjs
+          node experiments/71-structured-edit-coverage/test-verifier.mjs
+      - uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: 259882071774cd2f65da09e8077363995ff11dd2
+          path: .aegis-exp71
+      - name: Build actual pinned public API packages
+        working-directory: .aegis-exp71
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm --filter @heybeaux/lattice-aegis build
+          pnpm --filter @heybeaux/aegis-collect build
+          pnpm --filter @heybeaux/aegis-hook build
+      - name: Fresh frozen design and actual artifact byte verification
+        run: |
+          START="$(node -e 'console.log(Date.now())')"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp71" node experiments/71-structured-edit-coverage/main.mjs > "$RUNNER_TEMP/exp71.json"
+          cat "$RUNNER_TEMP/exp71.json"
+          node experiments/71-structured-edit-coverage/verify-receipts.mjs --run "$RUNNER_TEMP/exp71.json" --since "$START" --sha 259882071774cd2f65da09e8077363995ff11dd2 --repo "$GITHUB_WORKSPACE/.aegis-exp71"
