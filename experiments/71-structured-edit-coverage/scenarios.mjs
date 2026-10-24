@@ -2,7 +2,7 @@ export const experiment='71-structured-edit-coverage', seed='structured-edit-v1'
 export const marker='LAB_SECRET_DO_NOT_WRITE';
 const rule=(id,severity,pattern,kind='substring',target='content',extra={})=>({id,category:'secrets',severity,description:`reason:${id}`,appliesTo:['Edit'],match:{kind,pattern,target},...extra});
 export const rules=[rule('lab.secret','critical',marker),rule('lab.injection','high','ignore\\s+previous\\s+instructions','regex'),rule('lab.config','medium','\\.cfg$','regex','path'),rule('lab.disabled','critical','DISABLED','substring','content',{enabled:false}),rule('lab.other','critical','OTHER','substring','content',{appliesTo:['Write']})];
-const batch=values=>({toolName:'edit',params:{path:'/lab/file.txt',edits:values.map(newText=>({oldText:'old',newText}))}});
+const batch=values=>({toolName:'edit',params:{path:'/lab/file.txt',edits:values.map((newText,i)=>({oldText:`original-region-${i}`,newText}))}});
 const item=(id,kind,values,action='allow',hits=[],extra={})=>({id,kind,event:batch(values),expected:{action,hits},...extra});
 export const scenarios=[
  item('sole','hazard',[marker],'deny',['lab.secret']),
