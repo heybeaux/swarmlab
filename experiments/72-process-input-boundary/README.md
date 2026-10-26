@@ -1,5 +1,46 @@
-# Exp72 — Interactive process input boundary
+# Exp72 — Interactive process input review boundary
 
-[Pre-registered Spec78](../../specs/78-process-input-boundary.md).
+## RT-62 / exp72 — Interactive process input is not a complete command
 
-Results pending; no baseline observed.
+[Spec78](../../specs/78-process-input-boundary.md), preregistration12edf6f, frozen796b77e.
+Fetched main32391a41c4d09cdad2e4aa083382b222d78976c2 reproduced two red runs
+`pib-mvowbjbg-97970` / `pib-mvowbjgw-97989`: reviewCoverage0/18,
+identityCoverage0/18, directBoundaryAccuracy0. All9compatibility controls and
+destructive-command positive-control checks pass; independent deny, ownership
+and recovery remain1. This is a new action-boundary policy, NOT empirical shell
+execution or a claim that these27 fixtures exhaust terminal behavior.
+
+Actual runtime97108ecec292dc2642c3f87692e57b2ff49c7a92, same27cases
+`pib-mvowdfh8-1211`: review/identity/directBoundary/control/deny/ownership/recovery
+and resolution all1, infrastructure0. No threshold tuning or holdout use.
+Source/dist/package hashes, full raw JSONL and sidecars committed; companion
+verifier recomputes raw checks, binds identities/timestamps/artifacts, rejects26
+forgeries; CI runs fresh exact pinned package and checks observable equality.
+
+General fix: classify OpenClaw process.write/send-keys/paste/submit as ProcessInput;
+independent ask floor cannot be configured away by optimistic prediction or
+severity. No fabricated rule hits, genuine deny wins. Bind action/sessionId and
+raw input fields via detached digest into approvalSignature/actionKeyFor.
+Do NOT map fragments to independently safe Bash commands: benign/empty text,
+EOF or submit may complete existing buffered input. Read/management controls
+unchanged. Host owns input validation, authenticated process/session, buffered
+terminal state and exact approved execution. No terminal emulator, safe-fragment
+exemption, actual approval consumption, automatic plugin rollout, calibrated
+prediction or production-safety claim.
+
+Regression-only: focused17tests pass; full local release1225tests
+(628+216+22+86+217+56), historical52/52. SwarmLab core build/forcedtypecheck
+and changed ESM syntax pass; verify:evidence53claims117traces1073assertions.
+Candidate evidence bookkeeping initially lacked required change field; typecheck
+red retained in execution log, corrected before commit. Final release rerun/checks
+reported in nightly ledger. RT62 stays pending/outside landed catalogue.
+Prior Aegis78 remains OPEN/CIred at unchanged core clock test; no lucky rerun,
+prior branch absorption or unrelated repair. .acr unchanged; Territory skipped.
+
+Linked PRs/CI status are recorded after observation. No merge claimed here.
+Next distinct question: binding payload/session strings does not attest immutable
+process-generation identity; can a recycled session handle replay approval?
+This requires host authenticated generation evidence, NOT another input-fragment
+variant. Queue path/argv cumulative work remains separate/unselected.
+
+Commands: `AEGIS_REPO=/path/to/built/aegis node experiments/72-process-input-boundary/main.mjs`; `node experiments/72-process-input-boundary/verify-receipts.mjs`; `node experiments/72-process-input-boundary/test-verifier.mjs`.

@@ -1,0 +1,43 @@
+name: exp72-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable core toolchain (legacy file dependencies untouched)
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core
+          node_modules/.bin/tsc -b --force core
+          for f in experiments/72-process-input-boundary/*.mjs; do node --check "$f"; done
+      - name: Verify admitted evidence and recomputed red-red-green receipts
+        run: npm run verify:evidence && node experiments/72-process-input-boundary/verify-receipts.mjs
+      - uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: 7cb6ce641fae04919c5ae10f3a0903ac55cdeecd
+          path: .aegis-exp72
+      - name: Build actual pinned package
+        working-directory: .aegis-exp72
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build && pnpm --filter @heybeaux/aegis-collect build && pnpm --filter @heybeaux/aegis-hook build
+      - name: Frozen design against actual artifact, fresh typed outcomes not exit0
+        run: |
+          START="$(node -e 'console.log(Date.now())')"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp72" node experiments/72-process-input-boundary/main.mjs > "$RUNNER_TEMP/exp72.log"
+          cat "$RUNNER_TEMP/exp72.log"
+          node experiments/72-process-input-boundary/verify-receipts.mjs --run "$RUNNER_TEMP/exp72.log" --since "$START" --sha "7cb6ce641fae04919c5ae10f3a0903ac55cdeecd" --repo "$GITHUB_WORKSPACE/.aegis-exp72"
+          node experiments/72-process-input-boundary/test-verifier.mjs

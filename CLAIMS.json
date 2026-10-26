@@ -6846,5 +6846,175 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-reg0f8efd2; frozenab9b4dd before output. Two current-main red8/8 hazards, controls12/12+raw8/8 green. Same frozen20scenarios candidate allgreen. Real loadPack/evaluate exactsource/dist/package+full evaluations. verified means replayed bounded corpus, not CI/merge certification. No threshold tuning, holdout unused. Pending exp68/69 not imported. Fixed caps are new conservative policy, not proof that baseline caused actual CPU/memory exhaustion. No old15/16/17 run. Source .acr unchanged. Exact candidate9e99e7b releaseCI39913263015 and actual-package labCI39913371949 SUCCESS. Root legacy build/typecheck fails63errors identically at baseline5a62453 under same portable toolchain; core+all changed ESM static pass. No unrelated legacy fixes."
+  },
+  {
+    "id": "RT-62",
+    "claim": "Interactive process input requires review and exact session/payload identity; real adapter omitted both at baseline, same frozen27cases now green.",
+    "experiment": "experiments/72-process-input-boundary",
+    "spec": "specs/78-process-input-boundary.md",
+    "runIds": [
+      "pib-mvowbjbg-97970",
+      "pib-mvowbjgw-97989",
+      "pib-mvowdfh8-1211"
+    ],
+    "tracePaths": [
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.reviewCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.controlAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.identityCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.directBoundaryAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.independentDenyAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.ownershipRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.recoveryRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.resolutionAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.infrastructureFailures",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.reviewCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.controlAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.identityCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.directBoundaryAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.independentDenyAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.ownershipRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.recoveryRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.resolutionAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.infrastructureFailures",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.reviewCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.controlAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.identityCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.directBoundaryAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.independentDenyAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.ownershipRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.recoveryRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.resolutionAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.reviewCoverage": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.identityCoverage": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.directBoundaryAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.independentDenyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.resolutionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.reviewCoverage": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.identityCoverage": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.directBoundaryAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.independentDenyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.resolutionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.reviewCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.identityCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.directBoundaryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.independentDenyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/72-process-input-boundary/main.mjs && node experiments/72-process-input-boundary/verify-receipts.mjs",
+    "stackRecommendation": "Require conservative review of every interactive input fragment; bind action/session/raw payload into approval and predictor identity. Host owns terminal state and execution.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/aegis-hook + @heybeaux/lattice-aegis",
+        "commits": [
+          "97108ecec292dc2642c3f87692e57b2ff49c7a92"
+        ],
+        "prs": [],
+        "dirtyState": "clean"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Preregister12edf6f; frozen796b77e. Real built package baseline red twice; all9control checks and positive direct rule preserved. Candidate27/27. No LLM judge, no tuning, holdout unused. Conservative ask for benign/empty input is deliberate; not terminal emulation, actual approval consumption, plugin rollout or production certification. verified describes replayed corpus, not merge/CI. Prior pending experiments not imported."
   }
 ]

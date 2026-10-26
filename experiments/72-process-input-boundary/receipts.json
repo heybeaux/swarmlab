@@ -1,0 +1,33 @@
+{
+  "experiment": "72-process-input-boundary",
+  "baselineSha": "32391a41c4d09cdad2e4aa083382b222d78976c2",
+  "candidateSha": "97108ecec292dc2642c3f87692e57b2ff49c7a92",
+  "baselineMetrics": {
+    "reviewCoverage": 0,
+    "controlAccuracy": 1,
+    "identityCoverage": 0,
+    "directBoundaryAccuracy": 0,
+    "independentDenyAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 0,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "pib-mvowbjbg-97970",
+      "resultSha256": "sha256:331f0c8dcb6791973f898a2f1ce96f3b7736cd30b24723eba091ede630da03a3",
+      "traceSha256": "sha256:faf1291f4803238e79a46cc9ffc7ab87c320f791db0578cefd42b9fbb394b399"
+    },
+    {
+      "runId": "pib-mvowbjgw-97989",
+      "resultSha256": "sha256:8ebc4cfefaf4aab30c775db8c04f20e0971200eb05a66f7ce263bdfcef025caa",
+      "traceSha256": "sha256:c657bd1e927de84ca53badbcc4f11113c1976a393922be0cbda4a6f20bc6ae9b"
+    },
+    {
+      "runId": "pib-mvowdfh8-1211",
+      "resultSha256": "sha256:ab5bae507aeb8fa1d87e44fc40df4e1ef872c37ed468faebebc5eb3831beb99e",
+      "traceSha256": "sha256:cfad596e944fbb26f2a4a31dc83dd687a6b246157208537326b11a23684f40e8"
+    }
+  ]
+}
