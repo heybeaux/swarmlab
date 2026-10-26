@@ -312,3 +312,20 @@ Next distinct question: binding payload/session strings does not attest immutabl
 process-generation identity; can a recycled session handle replay approval?
 This requires host authenticated generation evidence, NOT another input-fragment
 variant. Queue path/argv cumulative work remains separate/unselected.
+
+### Observed exact-head PR CI / linked delivery
+[Aegis80](https://github.com/heybeaux/aegis/pull/80), head7cb6ce641fae04919c5ae10f3a0903ac55cdeecd:
+[releaseCI40282693478](https://github.com/heybeaux/aegis/actions/runs/40282693478) SUCCESS, CLEAN/MERGEABLE.
+[SwarmLab63](https://github.com/heybeaux/swarmlab/pull/63), initial evidence head2f1f8a2:
+[actual-package exp72CI40282698361](https://github.com/heybeaux/swarmlab/actions/runs/40282698361) SUCCESS;
+all other registered workflow checks SUCCESS. Fresh actual source/dist/evaluation
+equality and26tamper rejections observed in CI, not inferred from exit0.
+Final local release after evidence bookkeeping:1226tests(628+216+22+86+217+57),
+build/typecheck and historical52/52 green. Independent read-only review no blockers;
+its prose mistakenly says honest-null for baseline: actual classification is
+**reproducible-red**. Review does not certify approval-store consumption, terminal
+state or session-generation authenticity. Current runtime PR includes no prior
+held branch. Prior78/79 unchanged; current normal CI passed without rerunning.
+Final docs-head checks and merge/main status must still be observed; nightly ledger
+owns final status. Candidate catalogue promotion remains separate from corpus
+proof; static historical52/52 is not a fresh execution of RT62.

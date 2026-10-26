@@ -7010,7 +7010,10 @@
         "commits": [
           "97108ecec292dc2642c3f87692e57b2ff49c7a92"
         ],
-        "prs": [],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/80",
+          "https://github.com/heybeaux/swarmlab/pull/63"
+        ],
         "dirtyState": "clean"
       }
     ],
