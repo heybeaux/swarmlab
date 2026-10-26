@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: heybeaux/aegis
-          ref: 7cb6ce641fae04919c5ae10f3a0903ac55cdeecd
+          ref: 3acbacc4a9954992605c6136347371940ac6dac2
           path: .aegis-exp72
       - name: Build actual pinned package
         working-directory: .aegis-exp72
@@ -39,5 +39,5 @@ jobs:
           START="$(node -e 'console.log(Date.now())')"
           AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp72" node experiments/72-process-input-boundary/main.mjs > "$RUNNER_TEMP/exp72.log"
           cat "$RUNNER_TEMP/exp72.log"
-          node experiments/72-process-input-boundary/verify-receipts.mjs --run "$RUNNER_TEMP/exp72.log" --since "$START" --sha "7cb6ce641fae04919c5ae10f3a0903ac55cdeecd" --repo "$GITHUB_WORKSPACE/.aegis-exp72"
+          node experiments/72-process-input-boundary/verify-receipts.mjs --run "$RUNNER_TEMP/exp72.log" --since "$START" --sha "3acbacc4a9954992605c6136347371940ac6dac2" --repo "$GITHUB_WORKSPACE/.aegis-exp72"
           node experiments/72-process-input-boundary/test-verifier.mjs

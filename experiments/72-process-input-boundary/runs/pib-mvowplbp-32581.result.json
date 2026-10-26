@@ -1,0 +1,41 @@
+{
+  "runId": "pib-mvowplbp-32581",
+  "trace": "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl",
+  "traceSha256": "sha256:d67c5985d635eac159f0eacc4942d55fe7b149c75d5b5e1d2196c2e589fa9936",
+  "startedAt": 1792997992501,
+  "endedAt": 1792997992633,
+  "aegisSha": "3acbacc4a9954992605c6136347371940ac6dac2",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:f6ed97797771528af18b279426ea528d36a0d809baa63d570e416af133e0459b",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:e45c93ec06e41f007312af0cf91d7360b889cd8b7a617dfeea06e84c74668e35"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:f88eb70da8660da57ea16e36b867476fd402435148ae72b530238d052b152fdb"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:bbd3377f09e61066833f9f849e1e094f49bc199b82d578c8ad4009fabd12eb59"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:3bb4165a029788a0aa156441120307a046bf38d37599dfeffb6a6dc252c91028"
+    }
+  ],
+  "summary": {
+    "reviewCoverage": 1,
+    "controlAccuracy": 1,
+    "identityCoverage": 1,
+    "directBoundaryAccuracy": 1,
+    "independentDenyAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

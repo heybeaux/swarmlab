@@ -1,7 +1,7 @@
 {
   "experiment": "72-process-input-boundary",
   "baselineSha": "32391a41c4d09cdad2e4aa083382b222d78976c2",
-  "candidateSha": "97108ecec292dc2642c3f87692e57b2ff49c7a92",
+  "candidateSha": "3acbacc4a9954992605c6136347371940ac6dac2",
   "baselineMetrics": {
     "reviewCoverage": 0,
     "controlAccuracy": 1,
@@ -25,9 +25,18 @@
       "traceSha256": "sha256:c657bd1e927de84ca53badbcc4f11113c1976a393922be0cbda4a6f20bc6ae9b"
     },
     {
+      "runId": "pib-mvowplbp-32581",
+      "resultSha256": "sha256:f2096479f84a0616e4644c6ab5bf0a86d129192663d3185284bfcb5e2b4816c4",
+      "traceSha256": "sha256:d67c5985d635eac159f0eacc4942d55fe7b149c75d5b5e1d2196c2e589fa9936"
+    }
+  ],
+  "supersededGreen": {
+    "candidateSha": "97108ecec292dc2642c3f87692e57b2ff49c7a92",
+    "run": {
       "runId": "pib-mvowdfh8-1211",
       "resultSha256": "sha256:ab5bae507aeb8fa1d87e44fc40df4e1ef872c37ed468faebebc5eb3831beb99e",
       "traceSha256": "sha256:cfad596e944fbb26f2a4a31dc83dd687a6b246157208537326b11a23684f40e8"
-    }
-  ]
+    },
+    "reason": "final observable-interface audit found legacy process-scoped deny downgraded by tool refinement; corpus still green but candidate not admissible release"
+  }
 }

@@ -6855,12 +6855,12 @@
     "runIds": [
       "pib-mvowbjbg-97970",
       "pib-mvowbjgw-97989",
-      "pib-mvowdfh8-1211"
+      "pib-mvowplbp-32581"
     ],
     "tracePaths": [
       "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl",
       "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl"
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl"
     ],
     "scoreFields": [
       "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.reviewCoverage",
@@ -6881,15 +6881,15 @@
       "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.recoveryRate",
       "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.resolutionAccuracy",
       "experiments/72-process-input-boundary/runs/pib-mvowbjgw-97989.jsonl#last.infrastructureFailures",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.reviewCoverage",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.controlAccuracy",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.identityCoverage",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.directBoundaryAccuracy",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.independentDenyAccuracy",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.ownershipRate",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.recoveryRate",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.resolutionAccuracy",
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.infrastructureFailures"
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.reviewCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.controlAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.identityCoverage",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.directBoundaryAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.independentDenyAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.ownershipRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.recoveryRate",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.resolutionAccuracy",
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.infrastructureFailures"
     ],
     "expectedValues": {
       "experiments/72-process-input-boundary/runs/pib-mvowbjbg-97970.jsonl#last.reviewCoverage": {
@@ -6964,39 +6964,39 @@
         "equals": 0,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.reviewCoverage": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.reviewCoverage": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.controlAccuracy": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.controlAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.identityCoverage": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.identityCoverage": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.directBoundaryAccuracy": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.directBoundaryAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.independentDenyAccuracy": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.independentDenyAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.ownershipRate": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.ownershipRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.recoveryRate": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.recoveryRate": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.resolutionAccuracy": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.resolutionAccuracy": {
         "equals": 1,
         "tolerance": 0
       },
-      "experiments/72-process-input-boundary/runs/pib-mvowdfh8-1211.jsonl#last.infrastructureFailures": {
+      "experiments/72-process-input-boundary/runs/pib-mvowplbp-32581.jsonl#last.infrastructureFailures": {
         "equals": 0,
         "tolerance": 0
       }
@@ -7008,7 +7008,7 @@
         "repo": "https://github.com/heybeaux/aegis",
         "package": "@heybeaux/aegis-hook + @heybeaux/lattice-aegis",
         "commits": [
-          "97108ecec292dc2642c3f87692e57b2ff49c7a92"
+          "3acbacc4a9954992605c6136347371940ac6dac2"
         ],
         "prs": [
           "https://github.com/heybeaux/aegis/pull/80",
@@ -7018,6 +7018,6 @@
       }
     ],
     "evidenceStatus": "verified",
-    "notes": "Preregister12edf6f; frozen796b77e. Real built package baseline red twice; all9control checks and positive direct rule preserved. Candidate27/27. No LLM judge, no tuning, holdout unused. Conservative ask for benign/empty input is deliberate; not terminal emulation, actual approval consumption, plugin rollout or production certification. verified describes replayed corpus, not merge/CI. Prior pending experiments not imported."
+    "notes": "Preregister12edf6f; frozen796b77e. Real built package baseline red twice; all9control checks and positive direct rule preserved. Candidate27/27. No LLM judge, no tuning, holdout unused. Conservative ask for benign/empty input is deliberate; not terminal emulation, actual approval consumption, plugin rollout or production certification. verified describes replayed corpus, not merge/CI. Prior pending experiments not imported. Final compatibility audit found process-scoped critical deny lost after renaming; correction3acbacc preserves that scope. Same frozen harness unchanged; superseded green retained, admitted green replaced after full regression."
   }
 ]

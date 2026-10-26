@@ -530,3 +530,16 @@ held branch. Prior78/79 unchanged; current normal CI passed without rerunning.
 Final docs-head checks and merge/main status must still be observed; nightly ledger
 owns final status. Candidate catalogue promotion remains separate from corpus
 proof; static historical52/52 is not a fresh execution of RT62.
+
+### Final compatibility red and correction (same experiment, no threshold change)
+Final independent observable-interface probe found existing `appliesTo:['process']`
+critical content policy denied a paste on main but only asked on candidate97108ec.
+This was a genuine policy-scope regression, missed by initial reviewer; not hidden
+by corpus green or prior CI. Corrected3acbacc keeps legacy process-scoped rules
+applicable to ProcessInput while preserving input-specific and unrelated scopes.
+Two focused regressions added:19focusedtests; full local1228tests
+(628+217+22+86+218+57), historical52/52 green. Same frozen27-case harness now
+admits `pib-mvowplbp-32581` at `3acbacc4a9954992605c6136347371940ac6dac2`, all metrics unchanged green.
+Former green `pib-mvowdfh8-1211` remains committed/superseded in receipts; raw reds
+and frozen scenarios/oracle/child/main unchanged. Final exact-head CI must be
+observed again; earlier green CI does NOT certify this corrective commit.
