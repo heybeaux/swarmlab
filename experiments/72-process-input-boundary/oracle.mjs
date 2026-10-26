@@ -1,0 +1,10 @@
+import {isDeepStrictEqual as same} from 'node:util';
+import {scenarios,thresholds,fields} from './scenarios.mjs';
+const bare=(v,action)=>v?.action===action&&Array.isArray(v.matches)&&v.matches.length===0;
+export function assess(s,result){const r=result.response,input=s.kind==='input',id=r?.identity;
+ const identity=!input||(id&&same(Object.keys(id.changes),['sessionId',...fields])&&same(id.base,id.clone)&&Object.values(id.changes).every(v=>v.signature!==id.base.signature&&v.key!==id.base.key));
+ const checks={review:bare(r?.empty,s.expected)&&(!input||r?.empty?.reason?.includes('process input requires review')),builtin:r?.builtin?.action===s.expected,permissive:bare(r?.permissive,s.expected),identity:!!identity,directBoundary:bare(r?.directBoundary,'ask'),independentDeny:r?.independentDeny?.action==='deny'&&same(r?.independentDeny?.matches?.map(h=>h.id),['lab.deny']),positive:r?.positive?.action==='deny'&&r?.positive?.matches?.some(h=>h.id==='bash.rm-rf-root'),ownership:r?.ownership===true&&r?.detached===true,recovery:r?.recovery?.action==='allow',infrastructure:result.status==='returned'&&!r?.error};
+ return {id:s.id,kind:s.kind,result,checks,correct:Object.values(checks).every(Boolean)};}
+export function metrics(rows){const inputs=rows.filter(r=>r.kind==='input'),controls=rows.filter(r=>r.kind==='control'),rate=(rs,fn)=>rs.filter(fn).length/rs.length;return {reviewCoverage:rate(inputs,r=>r.checks.review&&r.checks.builtin&&r.checks.permissive),controlAccuracy:rate(controls,r=>r.checks.review&&r.checks.builtin&&r.checks.permissive),identityCoverage:rate(inputs,r=>r.checks.identity),directBoundaryAccuracy:rate(rows,r=>r.checks.directBoundary),independentDenyAccuracy:rate(rows,r=>r.checks.independentDeny),ownershipRate:rate(rows,r=>r.checks.ownership),recoveryRate:rate(rows,r=>r.checks.recovery),resolutionAccuracy:rate(rows,r=>r.correct),infrastructureFailures:rows.filter(r=>!r.checks.infrastructure).length};}
+export const passing=m=>same(m,thresholds);
+export function rescore(rows){if(rows.length!==scenarios.length)throw Error('row count');return rows.map((r,i)=>assess(scenarios[i],r.result));}
