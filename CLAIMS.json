@@ -8349,5 +8349,150 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen deterministic corpus; no holdout tuning, no real terminal execution or host deployment. CI and merge status separate. Historical52/52 Aegis catalogue does not certify RT63."
+  },
+  {
+    "id": "RT-64",
+    "claim": "New ProcessInput execution permits must retain authenticated target lifetime across approval consumption and finalization: actual baseline authorizes16/16 hazardous target transitions; unchanged24-case corpus with retained target binding blocks all16 and preserves8/8 valid executions and one-shot replay.",
+    "experiment": "experiments/74-process-execution-target",
+    "spec": "specs/80-process-execution-target.md",
+    "runIds": [
+      "pet-mw1sxdo3-29192",
+      "pet-mw1sxdrw-29210",
+      "pet-mw1t0mch-35427"
+    ],
+    "tracePaths": [
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.unsafeExecutionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.validExecutionAccuracy",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.replayBlockRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.approvalConsumptionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.processRecordBindingRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.ownershipRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.staleSnapshotDiagnosticRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.infrastructureFailures",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.unsafeExecutionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.validExecutionAccuracy",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.replayBlockRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.approvalConsumptionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.processRecordBindingRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.ownershipRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.staleSnapshotDiagnosticRate",
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.infrastructureFailures",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.unsafeExecutionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.validExecutionAccuracy",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.replayBlockRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.approvalConsumptionRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.processRecordBindingRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.ownershipRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.staleSnapshotDiagnosticRate",
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.unsafeExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.validExecutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.processRecordBindingRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.staleSnapshotDiagnosticRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.unsafeExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.validExecutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.processRecordBindingRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.staleSnapshotDiagnosticRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1sxdrw-29210.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.unsafeExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.validExecutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.processRecordBindingRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.staleSnapshotDiagnosticRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/74-process-execution-target/main.mjs && node experiments/74-process-execution-target/verify-receipts.mjs",
+    "stackRecommendation": "Retain authenticated process lifetime in execution permits and compare fresh host target at every execution/resume boundary. Host must drain legacy process permits and atomically bind actual writes.",
+    "stackReposAndPRs": [],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic local/shared storage corpus; no actual terminal execution or atomic host-write proof. Stale-snapshot diagnostic still authorizes as expected. No threshold tuning; unused holdout. CI/merge separate."
   }
 ]

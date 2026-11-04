@@ -1,0 +1,45 @@
+{
+  "experiment": "74-process-execution-target",
+  "preregistration": "3596654",
+  "setupCorrection": "235a666",
+  "frozenHarness": "812c6c4",
+  "baselineSha": "85d451dbb9a8d956023514b2cf1e360d6913fbc0",
+  "candidateSha": "26f269567ab7ba335577f0b556b088c3adde5f15",
+  "baselineMetrics": {
+    "unsafeExecutionRate": 1,
+    "validExecutionAccuracy": 1,
+    "replayBlockRate": 1,
+    "approvalConsumptionRate": 1,
+    "processRecordBindingRate": 0,
+    "ownershipRate": 1,
+    "staleSnapshotDiagnosticRate": 1,
+    "infrastructureFailures": 0
+  },
+  "candidateMetrics": {
+    "unsafeExecutionRate": 0,
+    "validExecutionAccuracy": 1,
+    "replayBlockRate": 1,
+    "approvalConsumptionRate": 1,
+    "processRecordBindingRate": 1,
+    "ownershipRate": 1,
+    "staleSnapshotDiagnosticRate": 1,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "pet-mw1sxdo3-29192",
+      "traceSha256": "sha256:6a94228af22b60eb33f1050fa5ad7c0237323cccf507a907e86f1281e049b029",
+      "resultSha256": "sha256:2ab1d9fb614349ff6c5425cdb190aedc6064f714ccfc9d3fefbc7d08369db90f"
+    },
+    {
+      "runId": "pet-mw1sxdrw-29210",
+      "traceSha256": "sha256:148c8e9be78f7e44ca6674968a408965a9d032c4e22edb02f4053f635a51d792",
+      "resultSha256": "sha256:b8a27b427a3f7494f78ac85962f171db5582a812f6bcd2a41618f9e956f3c934"
+    },
+    {
+      "runId": "pet-mw1t0mch-35427",
+      "traceSha256": "sha256:b5b110d80355e0a7ce00ad73dbeea542ba1f590a37ce4a7f25e2e17e56d1c755",
+      "resultSha256": "sha256:12a4d4baba9ccbd7b3f4b1ba64e2d896f4449d6d04032336685536b2106bf442"
+    }
+  ]
+}
