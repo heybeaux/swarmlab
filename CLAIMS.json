@@ -8491,7 +8491,10 @@
     },
     "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/74-process-execution-target/main.mjs && node experiments/74-process-execution-target/verify-receipts.mjs",
     "stackRecommendation": "Retain authenticated process lifetime in execution permits and compare fresh host target at every execution/resume boundary. Host must drain legacy process permits and atomically bind actual writes.",
-    "stackReposAndPRs": [],
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/83",
+      "https://github.com/heybeaux/swarmlab/pull/66"
+    ],
     "evidenceStatus": "verified",
     "notes": "Deterministic local/shared storage corpus; no actual terminal execution or atomic host-write proof. Stale-snapshot diagnostic still authorizes as expected. No threshold tuning; unused holdout. CI/merge separate."
   }
