@@ -1,0 +1,183 @@
+{
+  "55": {
+    "fixtureAccuracy": 1,
+    "aegisWrappedUnsafeCheckpointAllowRate": 0,
+    "aegisWrappedCheckpointFailureDetectionRate": 1,
+    "aegisWrappedResolutionAccuracy": 1,
+    "aegisWrappedCheckpointApiAvailability": 1,
+    "aegisWrappedValidTransitionAllowance": 1,
+    "aegisWrappedRestartRollbackSafety": 1,
+    "aegisWrappedSameEpochForkSafety": 1,
+    "aegisWrappedAckLossRecovery": 1,
+    "aegisWrappedFalseAcknowledgementSafety": 1,
+    "aegisWrappedRaceSafety": 1,
+    "aegisWrappedLegacyPreservation": 1,
+    "aegisWrappedEarlierPolicyPreservation": 1,
+    "aegisWrappedNoCheckpointRegression": 1
+  },
+  "56": {
+    "fixtureAccuracy": 1,
+    "aegisWrappedUnsafeMutableInputAllowRate": 0,
+    "aegisWrappedInputMutationDetectionRate": 1,
+    "aegisWrappedResolutionAccuracy": 1,
+    "aegisWrappedUnchangedAllowance": 1,
+    "aegisWrappedEarlyMutationNoObserve": 1,
+    "aegisWrappedCriticalDenyPreservation": 1,
+    "aegisWrappedLegacyPreservation": 1,
+    "aegisWrappedUnavailableSafety": 1,
+    "aegisWrappedTransientAbaScopeControl": 1,
+    "aegisWrappedNoCheckpointRegression": 1
+  },
+  "57": {
+    "fixtureAccuracy": 1,
+    "aegisWrappedUnsafeExpiredAllowRate": 0,
+    "aegisWrappedFailureDetectionRate": 1,
+    "aegisWrappedResolutionAccuracy": 1,
+    "aegisWrappedInclusiveBoundaryAllowance": 1,
+    "aegisWrappedEarlyExpiryNoObserve": 1,
+    "aegisWrappedPostObserveExpiryNoRead": 1,
+    "aegisWrappedClockFailureSafety": 1,
+    "aegisWrappedCriticalDenyPreservation": 1,
+    "aegisWrappedLegacyPreservation": 1,
+    "aegisWrappedUnavailableSafety": 1,
+    "aegisWrappedUnchangedInput": 1,
+    "aegisWrappedNoCheckpointRegression": 1
+  },
+  "59": {
+    "controlAccuracy": 1,
+    "oracleAccuracy": 1,
+    "aegisReceiptDriftRate": 0,
+    "aegisCrossCallContaminationRate": 0,
+    "aegisResolutionAccuracy": 1,
+    "aegisProvenanceIsolationRate": 1,
+    "aegisMatchesIsolation": 1,
+    "aegisDefaultsCompatibility": 1,
+    "aegisFrozenCompatibility": 1,
+    "aegisSiblingIsolation": 1,
+    "aegisCallerOwnership": 1,
+    "aegisExplicitMutationScopeControl": 1,
+    "aegisEntryActionAccuracy": 1
+  },
+  "60": {
+    "controlAccuracy": 1,
+    "aegisUnsafeMalformedAllowRate": 0,
+    "aegisInvalidContractDetectionRate": 1,
+    "aegisResolutionAccuracy": 1,
+    "aegisCrashRate": 0,
+    "aegisValidCompatibility": 1,
+    "aegisCriticalDenyPreservation": 1,
+    "aegisStrictInvalidNoIO": 1,
+    "aegisCallerOwnership": 1
+  },
+  "61": {
+    "capturedControlAccuracy": 1,
+    "explicitControlAccuracy": 1,
+    "aegisGlobalDefaultInfluenceRate": 0,
+    "aegisResolutionAccuracy": 1,
+    "aegisUnsafeImplicitAuthorizationRate": 0,
+    "aegisPureActionAccuracy": 1,
+    "aegisStrictActionAccuracy": 1,
+    "aegisSafeClassificationAccuracy": 1,
+    "aegisStrictIOAccuracy": 1,
+    "aegisCallerOwnership": 1,
+    "aegisTemplateEditCompatibility": 1,
+    "aegisCustomOverrideCompatibility": 1
+  },
+  "62": {
+    "controlAccuracy": 1,
+    "aegisUnsafeInvalidAllowRate": 0,
+    "aegisInvalidBindingDetectionRate": 1,
+    "aegisResolutionAccuracy": 1,
+    "aegisDenyPreservation": 1,
+    "aegisEarlyNoIO": 1,
+    "aegisValidCompatibility": 1,
+    "aegisCallerOwnership": 1,
+    "aegisHitDedup": 1
+  },
+  "63": {
+    "aegisUnsafeCoverageLossRate": 0,
+    "aegisCoverageRejectionRate": 1,
+    "aegisResolutionAccuracy": 1,
+    "pinnedBaseControlAccuracy": 1,
+    "aegisControlAccuracy": 1,
+    "aegisInputOwnership": 1,
+    "protectedBaseFixtureAccuracy": 1,
+    "explicitConsentAccuracy": 1
+  },
+  "64": {
+    "detachedControlAccuracy": 1,
+    "aegisProducerDriftRate": 0,
+    "aegisUnsafeAllowRate": 0,
+    "aegisResolutionAccuracy": 1,
+    "aegisConsumerIsolation": 1,
+    "aegisControlAccuracy": 1,
+    "aegisCallerOwnership": 1
+  },
+  "65": {
+    "detachedControlAccuracy": 1,
+    "aegisProducerDriftRate": 0,
+    "aegisUnsafeAllowRate": 0,
+    "aegisResolutionAccuracy": 1,
+    "aegisConsumerIsolation": 1,
+    "aegisControlAccuracy": 1,
+    "aegisCallerOwnership": 1
+  },
+  "66": {
+    "aegisProbeWatchdogRate": 0,
+    "aegisHazardRejectionRate": 1,
+    "aegisResolutionAccuracy": 1,
+    "aegisControlAccuracy": 1,
+    "aegisRecoveryRate": 1,
+    "substringControlAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "67": {
+    "runtimeWatchdogRate": 0,
+    "unresolvedSafetyRate": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "linearControlAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "68": {
+    "aggregateWatchdogRate": 0,
+    "cumulativeSafetyRate": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "linearControlAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "69": {
+    "laterPayloadMissRate": 0,
+    "extractionAccuracy": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "directControlAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "70": {
+    "admissionSafetyRate": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "rawControlAccuracy": 1,
+    "recoveryRate": 1,
+    "ownershipRate": 1,
+    "infrastructureFailures": 0
+  },
+  "71": {
+    "hazardCoverage": 1,
+    "controlAccuracy": 1,
+    "identityCoverage": 1,
+    "directAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 1,
+    "infrastructureFailures": 0
+  }
+}
