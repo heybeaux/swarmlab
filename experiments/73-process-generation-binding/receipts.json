@@ -1,0 +1,35 @@
+{
+  "experiment": "73-process-generation-binding",
+  "preRegistrationCommit": "70bf3dc",
+  "frozenHarnessCommit": "402fe74",
+  "baselineSha": "72f9692331486e426c41167596b5898fb90fe5b7",
+  "candidateSha": "01b4360b912724e313ffbde995987b82fa1c94a8",
+  "baselineMetrics": {
+    "unsafeConsumptionRate": 1,
+    "hazardRejectionRate": 0,
+    "validRetryAccuracy": 1,
+    "retainedApprovalRecovery": 0,
+    "identityIsolation": 0,
+    "ownershipRate": 1,
+    "denyPreservation": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "pgb-mw1eg181-9165",
+      "traceSha256": "sha256:4e7b5faf240acdc8fa3ff2269c7e580f9dd4a102e216e70a8be13d2172ec4d64",
+      "resultSha256": "sha256:e14b81d97039507d413cb85f5f5addff39a660dc1e0ef2a4c3b26c8d2047531d"
+    },
+    {
+      "runId": "pgb-mw1eg1cm-9181",
+      "traceSha256": "sha256:92add5eb3e202f6958a4daf64051a2dbd1bd33f00d6f4648de85ec5b779eac90",
+      "resultSha256": "sha256:e27893c094b4dd34e037ea9c64fdee4cb94084538579e768713b2d3b42579bed"
+    },
+    {
+      "runId": "pgb-mw1ei87x-16013",
+      "traceSha256": "sha256:aa2d23f54f203ad5d3f03c0b583df15dfca7c512cd28997acfb4d2fcb1a730a2",
+      "resultSha256": "sha256:f77b0abe1bd98529279e87a78b8e8e6d374a82d265f30e9467487606ed711d3d"
+    }
+  ]
+}

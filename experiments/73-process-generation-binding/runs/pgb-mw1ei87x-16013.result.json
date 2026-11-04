@@ -1,0 +1,41 @@
+{
+  "runId": "pgb-mw1ei87x-16013",
+  "trace": "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl",
+  "traceSha256": "sha256:aa2d23f54f203ad5d3f03c0b583df15dfca7c512cd28997acfb4d2fcb1a730a2",
+  "startedAt": 1793753476125,
+  "endedAt": 1793753476215,
+  "aegisSha": "01b4360b912724e313ffbde995987b82fa1c94a8",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:ebf234bc0537f85744ae22392386015a934387d480e3d2cacafce103bff43739",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:62dcbee7dbe658e2cecfb4988bf7f5b6dd9fddd332b3683e94c3606dbad31dd0"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:64feb00b0421402c607b52395534ac2d94403074ae92f8d0f6f6de8bd0f56dd8"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:97ec5b7f0ae809d99df83c7beaa5700603765cd5a8ed63066f204852a71362fb"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:de034a60532217778c8acb1b8b1ae1f8e0265b187d8ecdc94af2a7cc31e658ca"
+    }
+  ],
+  "summary": {
+    "unsafeConsumptionRate": 0,
+    "hazardRejectionRate": 1,
+    "validRetryAccuracy": 1,
+    "retainedApprovalRecovery": 1,
+    "identityIsolation": 1,
+    "ownershipRate": 1,
+    "denyPreservation": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
