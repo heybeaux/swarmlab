@@ -128,3 +128,5 @@ committed after every green unit; check `JOURNAL.md`, `SYNTHESIS.md`, and the cl
 findings and current capability boundaries.
 
 - Exp-58 preregistered: [async evaluator configuration integrity](experiments/58-async-evaluator-config-integrity/README.md), [Spec 64](specs/64-async-evaluator-config-integrity.md).
+
+- Exp62 preregistered: [compiled rule binding integrity](experiments/62-compiled-rule-binding-integrity/README.md), [Spec68](specs/68-compiled-rule-binding-integrity.md).

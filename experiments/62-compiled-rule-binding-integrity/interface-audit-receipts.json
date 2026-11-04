@@ -1,0 +1,180 @@
+{
+  "scope": "same frozen experiment audit, not new nightly novelty",
+  "baselineRowsExact": true,
+  "fixedRowsExact": true,
+  "harnessHashIdentical": true,
+  "baselineArtifactsExact": true,
+  "audits": [
+    {
+      "path": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6c1axe.jsonl",
+      "sha256": "78c8470379de4be08f3b15f0056642f85e798e32d73a071e58e1e91574c1a454",
+      "aegisSha": "4be84ed4aab018bee1b9a77b6012b9b97c966d1c",
+      "artifactManifest": [
+        {
+          "file": "packages/aegis/dist/index.d.ts",
+          "sha256": "sha256:1ea02b9e32157fad80820bd48078f0cc3ab6e2f7c3c7a491ed939a314e3b6493"
+        },
+        {
+          "file": "packages/aegis/dist/index.js",
+          "sha256": "sha256:fa6f2ed51faa3ab7a3b8d85364e27ab15308a7db5a67eacddd5d3f70a2884848"
+        },
+        {
+          "file": "packages/aegis/dist/index.js.map",
+          "sha256": "sha256:c36da740a6bc3080b182fdb0e285e578f00b03d73dbfadbd9b7c304fbd9abde1"
+        }
+      ],
+      "harnessSha256": "sha256:eebc559f2db9c8cd3379404e934d46eed164b59e9e862290505ca2cbdfce6991",
+      "scores": {
+        "controlAccuracy": 1,
+        "aegisUnsafeInvalidAllowRate": 0.375,
+        "aegisInvalidBindingDetectionRate": 0,
+        "aegisResolutionAccuracy": 0.4666666666666667,
+        "aegisDenyPreservation": 1,
+        "aegisEarlyNoIO": 0.875,
+        "aegisValidCompatibility": 1,
+        "aegisCallerOwnership": 0.9333333333333333,
+        "aegisHitDedup": 1
+      }
+    },
+    {
+      "path": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6c7fo8.jsonl",
+      "sha256": "0c6e9a88a7fca0f1b24d0f866b85392ccb8e22bba350ad6429c91b0dd5a58c9d",
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1",
+      "artifactManifest": [
+        {
+          "file": "packages/aegis/dist/index.d.ts",
+          "sha256": "sha256:e3d65e062464d629dc16d40813ac4b74f44f72b2a59545baa5af0269c9734744"
+        },
+        {
+          "file": "packages/aegis/dist/index.js",
+          "sha256": "sha256:3f620e14406a43f86f9771757cd0bdfa179ed4022c3737711189fe958fbca1d1"
+        },
+        {
+          "file": "packages/aegis/dist/index.js.map",
+          "sha256": "sha256:6a85365b45708d3a1bd749de54fdab9706282de8919497e4a6452e923c10ddc3"
+        }
+      ],
+      "harnessSha256": "sha256:eebc559f2db9c8cd3379404e934d46eed164b59e9e862290505ca2cbdfce6991",
+      "scores": {
+        "controlAccuracy": 1,
+        "aegisUnsafeInvalidAllowRate": 0,
+        "aegisInvalidBindingDetectionRate": 1,
+        "aegisResolutionAccuracy": 1,
+        "aegisDenyPreservation": 1,
+        "aegisEarlyNoIO": 1,
+        "aegisValidCompatibility": 1,
+        "aegisCallerOwnership": 1,
+        "aegisHitDedup": 1
+      }
+    }
+  ],
+  "regressions": [
+    {
+      "log": "final-regression-55-source-policy-roster-checkpoint.log",
+      "trace": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/55-source-policy-roster-checkpoint/runs/sprc-mv6c7fqp.jsonl",
+      "sha256": "b56376a9599b094fc68a0a27456144610ba25f4b3ee57a4a575afc43c909e1e5",
+      "scores": {
+        "fixtureAccuracy": 1,
+        "aegisWrappedUnsafeCheckpointAllowRate": 0,
+        "aegisWrappedCheckpointFailureDetectionRate": 1,
+        "aegisWrappedResolutionAccuracy": 1,
+        "aegisWrappedCheckpointApiAvailability": 1,
+        "aegisWrappedValidTransitionAllowance": 1,
+        "aegisWrappedRestartRollbackSafety": 1,
+        "aegisWrappedSameEpochForkSafety": 1,
+        "aegisWrappedAckLossRecovery": 1,
+        "aegisWrappedFalseAcknowledgementSafety": 1,
+        "aegisWrappedRaceSafety": 1,
+        "aegisWrappedLegacyPreservation": 1,
+        "aegisWrappedEarlierPolicyPreservation": 1,
+        "aegisWrappedNoCheckpointRegression": 1
+      },
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1"
+    },
+    {
+      "log": "final-regression-56-async-gate-input-integrity.log",
+      "trace": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/56-async-gate-input-integrity/runs/agii-mv6c7fsl.jsonl",
+      "sha256": "4b94ce39255827cd19c6f31229046a8acdbdb028219e2697a6638025c0bbdf62",
+      "scores": {
+        "fixtureAccuracy": 1,
+        "aegisWrappedUnsafeMutableInputAllowRate": 0,
+        "aegisWrappedInputMutationDetectionRate": 1,
+        "aegisWrappedResolutionAccuracy": 1,
+        "aegisWrappedUnchangedAllowance": 1,
+        "aegisWrappedEarlyMutationNoObserve": 1,
+        "aegisWrappedCriticalDenyPreservation": 1,
+        "aegisWrappedLegacyPreservation": 1,
+        "aegisWrappedUnavailableSafety": 1,
+        "aegisWrappedTransientAbaScopeControl": 1,
+        "aegisWrappedNoCheckpointRegression": 1
+      },
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1"
+    },
+    {
+      "log": "final-regression-57-async-source-expiry.log",
+      "trace": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/57-async-source-expiry/runs/ase-mv6c7fum.jsonl",
+      "sha256": "d18401ef7ed40c5032eda0f0ddcc0c92eb67d78f6d866b927585a471e8901b24",
+      "scores": {
+        "fixtureAccuracy": 1,
+        "aegisWrappedUnsafeExpiredAllowRate": 0,
+        "aegisWrappedFailureDetectionRate": 1,
+        "aegisWrappedResolutionAccuracy": 1,
+        "aegisWrappedInclusiveBoundaryAllowance": 1,
+        "aegisWrappedEarlyExpiryNoObserve": 1,
+        "aegisWrappedPostObserveExpiryNoRead": 1,
+        "aegisWrappedClockFailureSafety": 1,
+        "aegisWrappedCriticalDenyPreservation": 1,
+        "aegisWrappedLegacyPreservation": 1,
+        "aegisWrappedUnavailableSafety": 1,
+        "aegisWrappedUnchangedInput": 1,
+        "aegisWrappedNoCheckpointRegression": 1
+      },
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1"
+    },
+    {
+      "log": "final-regression-58-async-evaluator-config-integrity.log",
+      "trace": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/58-async-evaluator-config-integrity/runs/aci-mv6c7fx7.jsonl",
+      "sha256": "e318749ff01eac407d2d5c7e9fe3aad9b6f55f4ebdc884e8e7e4e03212e82182",
+      "scores": {
+        "fixtureAccuracy": 1,
+        "aegisWrappedUnsafeConfigAllowRate": 0,
+        "aegisWrappedConfigFailureDetectionRate": 1,
+        "aegisWrappedResolutionAccuracy": 1,
+        "aegisWrappedCurrentDenyPreservation": 1,
+        "aegisWrappedEntryDenyPreservation": 1,
+        "aegisWrappedEarlyNoObserve": 1,
+        "aegisWrappedPostObserveNoRead": 1,
+        "aegisWrappedUnchangedAllowance": 1,
+        "aegisWrappedEquivalentAllowance": 1,
+        "aegisWrappedInitialFloorPreservation": 1,
+        "aegisWrappedLegacyPreservation": 1,
+        "aegisWrappedUnavailableSafety": 1,
+        "aegisWrappedTransientAbaScopeControl": 1,
+        "aegisWrappedCallerOwnership": 1,
+        "aegisWrappedNoCheckpointRegression": 1
+      },
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1"
+    },
+    {
+      "log": "final-regression-59-evaluation-receipt-ownership.log",
+      "trace": "/Users/beauxwalton/projects/worktrees/swarmlab-2026-10-12-exp62-interface/experiments/59-evaluation-receipt-ownership/runs/ero-mv6c7fzp.jsonl",
+      "sha256": "0c4e4e7eefb4779047eedbfac191837618fbed4209f45a7bede20b8e55240330",
+      "scores": {
+        "controlAccuracy": 1,
+        "oracleAccuracy": 1,
+        "aegisReceiptDriftRate": 0,
+        "aegisCrossCallContaminationRate": 0,
+        "aegisResolutionAccuracy": 1,
+        "aegisProvenanceIsolationRate": 1,
+        "aegisMatchesIsolation": 1,
+        "aegisDefaultsCompatibility": 1,
+        "aegisFrozenCompatibility": 1,
+        "aegisSiblingIsolation": 1,
+        "aegisCallerOwnership": 1,
+        "aegisExplicitMutationScopeControl": 1,
+        "aegisEntryActionAccuracy": 1
+      },
+      "aegisSha": "93d2e8c73cfadff03e42b97f4d160fbe850cadc1"
+    }
+  ]
+}

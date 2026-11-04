@@ -1,0 +1,101 @@
+[
+  {
+    "runId": "crbi-mv6b9cr1",
+    "path": "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl",
+    "sha256": "c049d8e9a0798d59f2e8d590d4440447ddd7f97c17fbc2f3efac50081ab56282",
+    "aegisSha": "4be84ed4aab018bee1b9a77b6012b9b97c966d1c",
+    "aegisManifest": [
+      {
+        "file": "packages/aegis/dist/index.d.ts",
+        "sha256": "sha256:1ea02b9e32157fad80820bd48078f0cc3ab6e2f7c3c7a491ed939a314e3b6493"
+      },
+      {
+        "file": "packages/aegis/dist/index.js",
+        "sha256": "sha256:fa6f2ed51faa3ab7a3b8d85364e27ab15308a7db5a67eacddd5d3f70a2884848"
+      },
+      {
+        "file": "packages/aegis/dist/index.js.map",
+        "sha256": "sha256:c36da740a6bc3080b182fdb0e285e578f00b03d73dbfadbd9b7c304fbd9abde1"
+      }
+    ],
+    "harnessSha256": "sha256:eebc559f2db9c8cd3379404e934d46eed164b59e9e862290505ca2cbdfce6991",
+    "events": 122,
+    "scores": {
+      "controlAccuracy": 1,
+      "aegisUnsafeInvalidAllowRate": 0.375,
+      "aegisInvalidBindingDetectionRate": 0,
+      "aegisResolutionAccuracy": 0.4666666666666667,
+      "aegisDenyPreservation": 1,
+      "aegisEarlyNoIO": 0.875,
+      "aegisValidCompatibility": 1,
+      "aegisCallerOwnership": 0.9333333333333333,
+      "aegisHitDedup": 1
+    }
+  },
+  {
+    "runId": "crbi-mv6b9ctl",
+    "path": "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl",
+    "sha256": "268f419ccf0345e75227b309893cbf74f86422d27aa4f0b75cbf529595c84a49",
+    "aegisSha": "4be84ed4aab018bee1b9a77b6012b9b97c966d1c",
+    "aegisManifest": [
+      {
+        "file": "packages/aegis/dist/index.d.ts",
+        "sha256": "sha256:1ea02b9e32157fad80820bd48078f0cc3ab6e2f7c3c7a491ed939a314e3b6493"
+      },
+      {
+        "file": "packages/aegis/dist/index.js",
+        "sha256": "sha256:fa6f2ed51faa3ab7a3b8d85364e27ab15308a7db5a67eacddd5d3f70a2884848"
+      },
+      {
+        "file": "packages/aegis/dist/index.js.map",
+        "sha256": "sha256:c36da740a6bc3080b182fdb0e285e578f00b03d73dbfadbd9b7c304fbd9abde1"
+      }
+    ],
+    "harnessSha256": "sha256:eebc559f2db9c8cd3379404e934d46eed164b59e9e862290505ca2cbdfce6991",
+    "events": 122,
+    "scores": {
+      "controlAccuracy": 1,
+      "aegisUnsafeInvalidAllowRate": 0.375,
+      "aegisInvalidBindingDetectionRate": 0,
+      "aegisResolutionAccuracy": 0.4666666666666667,
+      "aegisDenyPreservation": 1,
+      "aegisEarlyNoIO": 0.875,
+      "aegisValidCompatibility": 1,
+      "aegisCallerOwnership": 0.9333333333333333,
+      "aegisHitDedup": 1
+    }
+  },
+  {
+    "runId": "crbi-mv6bfvgw",
+    "path": "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl",
+    "sha256": "7ccab71620a280497ff6fae75109788eac7fc51fd5d89a90aa5d57fd9a21a8fc",
+    "aegisSha": "bdaace056ac4cbce8a04fc2966702e26e472dd85",
+    "aegisManifest": [
+      {
+        "file": "packages/aegis/dist/index.d.ts",
+        "sha256": "sha256:e3d65e062464d629dc16d40813ac4b74f44f72b2a59545baa5af0269c9734744"
+      },
+      {
+        "file": "packages/aegis/dist/index.js",
+        "sha256": "sha256:47c7cdf7dd0b49e34f5c82cbcbaff5ffbedbbc3bbc42124087e221335d6f08fc"
+      },
+      {
+        "file": "packages/aegis/dist/index.js.map",
+        "sha256": "sha256:7fd67030383740687274c76d1a70ef0af1e4af861d23bb4eb83213c60f75230b"
+      }
+    ],
+    "harnessSha256": "sha256:eebc559f2db9c8cd3379404e934d46eed164b59e9e862290505ca2cbdfce6991",
+    "events": 122,
+    "scores": {
+      "controlAccuracy": 1,
+      "aegisUnsafeInvalidAllowRate": 0,
+      "aegisInvalidBindingDetectionRate": 1,
+      "aegisResolutionAccuracy": 1,
+      "aegisDenyPreservation": 1,
+      "aegisEarlyNoIO": 1,
+      "aegisValidCompatibility": 1,
+      "aegisCallerOwnership": 1,
+      "aegisHitDedup": 1
+    }
+  }
+]
