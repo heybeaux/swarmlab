@@ -7098,5 +7098,164 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Verified bounded synthetic corpus, not heldout-trained model or production certification. Host owns schema/oldText matching/application; no actual file edits or credentials. Baseline twice at32391a4; green2598820. Preliminary duplicate oldText fixture red pair retained but NOT admitted. All final fixtures have indexed unique original regions. 24 tamper controls and actual-artifact live verifier separate from legacy score replay. RT61 candidate outside Aegis landed catalogue pending delivery."
+  },
+  {
+    "id": "RT-59",
+    "claim": "Enumerating every supported encoded occurrence prevents harmless first payloads hiding consequential later payloads from actual Aegis decode-then-rescan evaluation.",
+    "experiment": "69-encoded-occurrence-coverage",
+    "spec": "75-encoded-occurrence-coverage",
+    "runIds": [
+      "eoc-mvj64lpu-32367",
+      "eoc-mvj64ml5-32409",
+      "eoc-mvj66nj2-36850"
+    ],
+    "tracePaths": [
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.infrastructureFailures",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.infrastructureFailures",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.laterPayloadMissRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.extractionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.resolutionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.laterPayloadMissRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.extractionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.resolutionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.laterPayloadMissRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.extractionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/69-encoded-occurrence-coverage/main.mjs && node experiments/69-encoded-occurrence-coverage/verify-receipts.mjs",
+    "stackRecommendation": "Enumerate all supported same-family occurrences; preserve legacy family/source order, trim/dedup and single-layer grammar. Independently budget preprocessing in future; no arbitrary-shell or performance certification.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "5061c96bae57cf0084ba69721e2dd908899510b0",
+          "f230eb62419977b3ee0d45b4b127740846b5d725"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/75",
+          "https://github.com/heybeaux/swarmlab/pull/59"
+        ],
+        "dirtyState": "clean"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Preregister4394497/setup correction5deb644 before output; frozen harness3ed0466 unchanged. Repeated main red10/10 later-payload miss,10/10 direct controls deny. Four compatibility cases also expose the same extraction gap;8others green, no infra failures. Candidate22/22green;24event full replay,source/dist content manifests and27tamper controls. Verified=bounded candidate corpus evidence, NOT merged-main or remote CI proof. Holdout unused/no tuning. No recursive shell interpretation/execution, preprocessing CPU/memory budget or production safety claim. Prior exp68 open/unimported,15/16/17 not novelty."
   }
 ]

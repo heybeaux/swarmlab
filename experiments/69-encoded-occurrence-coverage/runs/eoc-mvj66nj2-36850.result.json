@@ -1,0 +1,42 @@
+{
+  "runId": "eoc-mvj66nj2-36850",
+  "trace": "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl",
+  "traceSha256": "sha256:552b7349b718eceddc1891a8e7ee176474cbdb6ac6a36cd73dd6c4fa848eb7ba",
+  "startedAt": 1792651107998,
+  "endedAt": 1792651109062,
+  "aegisSha": "5061c96bae57cf0084ba69721e2dd908899510b0",
+  "aegisDirty": "",
+  "aegisManifestSha256": "sha256:6d2e196a9f63deffe43afd7809955508b45e7f0547e14a85467a99ab1dde8f81",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:7e21ea5ade4eaeff8ac6c8c01ee9a53bb12630925f3f7037b6c69c481d83a4ce"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:bb96fe76635e1fc0e119d026c5ddedce68a21245965f5ee647a612a7fdb35e5a"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:d24b393003b2f5882710e868698880a5563f5b5f2f414543bf592f5e79907111"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:d27ab69037514913c1ab1083edc0e887bab75607bba2fccda1f567c719145ced"
+    }
+  ],
+  "harnessSha256": "sha256:b8a23815d506ab65c2520f67f9775aaf578544614228783141e00ee2b1e340da",
+  "summary": {
+    "laterPayloadMissRate": 0,
+    "extractionAccuracy": 1,
+    "resolutionAccuracy": 1,
+    "controlAccuracy": 1,
+    "directControlAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": [],
+  "replayEvents": 24
+}
