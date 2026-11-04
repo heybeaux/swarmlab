@@ -1,0 +1,224 @@
+{
+  "runId": "pgb-mw1eg1cm-9181",
+  "trace": "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl",
+  "traceSha256": "sha256:92add5eb3e202f6958a4daf64051a2dbd1bd33f00d6f4648de85ec5b779eac90",
+  "startedAt": 1793753373910,
+  "endedAt": 1793753374000,
+  "aegisSha": "72f9692331486e426c41167596b5898fb90fe5b7",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:950a82a9b983516faf199bd8295a7bb5c04a29f11c69e7d9368dd578116ad75e",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:62dcbee7dbe658e2cecfb4988bf7f5b6dd9fddd332b3683e94c3606dbad31dd0"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:64feb00b0421402c607b52395534ac2d94403074ae92f8d0f6f6de8bd0f56dd8"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:97ec5b7f0ae809d99df83c7beaa5700603765cd5a8ed63066f204852a71362fb"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:de034a60532217778c8acb1b8b1ae1f8e0265b187d8ecdc94af2a7cc31e658ca"
+    }
+  ],
+  "summary": {
+    "unsafeConsumptionRate": 1,
+    "hazardRejectionRate": 0,
+    "validRetryAccuracy": 1,
+    "retainedApprovalRecovery": 0,
+    "identityIsolation": 0,
+    "ownershipRate": 1,
+    "denyPreservation": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "changed-generation",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "changed-host",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "missing-retry-target",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "unverified-retry-target",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "mismatched-session",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "empty-generation",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "params-only-retry",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "params-old-top-level-new",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": false,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "both-absent",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": true,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "both-unverified",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": true,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "both-empty",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": true,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "both-params-only",
+      "checks": {
+        "hazard": false,
+        "validRetry": true,
+        "retained": true,
+        "identity": true,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "generation-identity",
+      "checks": {
+        "hazard": true,
+        "validRetry": true,
+        "retained": true,
+        "identity": false,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "host-identity",
+      "checks": {
+        "hazard": true,
+        "validRetry": true,
+        "retained": true,
+        "identity": false,
+        "ownership": true,
+        "deny": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

@@ -7019,5 +7019,168 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Preregister12edf6f; frozen796b77e. Real built package baseline red twice; all9control checks and positive direct rule preserved. Candidate27/27. No LLM judge, no tuning, holdout unused. Conservative ask for benign/empty input is deliberate; not terminal emulation, actual approval consumption, plugin rollout or production certification. verified describes replayed corpus, not merge/CI. Prior pending experiments not imported. Final compatibility audit found process-scoped critical deny lost after renaming; correction3acbacc preserves that scope. Same frozen harness unchanged; superseded green retained, admitted green replaced after full regression."
+  },
+  {
+    "id": "RT-63",
+    "claim": "Process-input approval consumption requires authenticated immutable host-generation identity: real baseline consumed all12 hazardous retries; same frozen20cases with target binding reject all12 while preserving6 valid retries and8 retained grants.",
+    "experiment": "experiments/73-process-generation-binding",
+    "spec": "specs/79-process-generation-binding.md",
+    "runIds": [
+      "pgb-mw1eg181-9165",
+      "pgb-mw1eg1cm-9181",
+      "pgb-mw1ei87x-16013"
+    ],
+    "tracePaths": [
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.unsafeConsumptionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.hazardRejectionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.validRetryAccuracy",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.retainedApprovalRecovery",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.identityIsolation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.ownershipRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.denyPreservation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.recoveryRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.infrastructureFailures",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.unsafeConsumptionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.hazardRejectionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.validRetryAccuracy",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.retainedApprovalRecovery",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.identityIsolation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.ownershipRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.denyPreservation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.recoveryRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.infrastructureFailures",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.unsafeConsumptionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.hazardRejectionRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.validRetryAccuracy",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.retainedApprovalRecovery",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.identityIsolation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.ownershipRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.denyPreservation",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.recoveryRate",
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.unsafeConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.hazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.validRetryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.retainedApprovalRecovery": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.identityIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.denyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg181-9165.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.unsafeConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.hazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.validRetryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.retainedApprovalRecovery": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.identityIsolation": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.denyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1eg1cm-9181.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.unsafeConsumptionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.hazardRejectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.validRetryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.retainedApprovalRecovery": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.identityIsolation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.denyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/73-process-generation-binding/runs/pgb-mw1ei87x-16013.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/73-process-generation-binding/main.mjs && node experiments/73-process-generation-binding/verify-receipts.mjs",
+    "stackRecommendation": "Bind trusted host target lifetime to approval/action identity; refuse process consumption without valid host evidence. Host must implement authenticated generation resolution and atomic execution.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/81",
+      "https://github.com/heybeaux/swarmlab/pull/64"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen deterministic corpus; no holdout tuning, no real terminal execution or host deployment. CI and merge status separate. Historical52/52 Aegis catalogue does not certify RT63."
   }
 ]
