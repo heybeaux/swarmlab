@@ -1,0 +1,34 @@
+{
+  "experiment": "71-structured-edit-coverage",
+  "preRegistrationCommit": "1bc1564",
+  "frozenHarnessCommit": "cadebd5",
+  "baselineSha": "32391a41c4d09cdad2e4aa083382b222d78976c2",
+  "candidateSha": "259882071774cd2f65da09e8077363995ff11dd2",
+  "baselineMetrics": {
+    "hazardCoverage": 0,
+    "controlAccuracy": 1,
+    "identityCoverage": 0,
+    "directAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 0.5555555555555556,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "sec-mvm1703u-57714",
+      "traceSha256": "sha256:94d9e5df21ff9e5dd8833f6ffbe81e1386b1aa6caa976278047a4b8e354e063e",
+      "resultSha256": "sha256:b80e99d242d4bc94ea80cf8d671c633eecb1b622f567a95edfe47d4b7a0cc9bd"
+    },
+    {
+      "runId": "sec-mvm1707n-57732",
+      "traceSha256": "sha256:f7dfb30d0019cd3690c9c75985c05ee894321539bae88396792a22ee6cb9de94",
+      "resultSha256": "sha256:7a1521c4e876523dacbb1347018d34177924c2bc19dcbaa13d860a69b74b2a4b"
+    },
+    {
+      "runId": "sec-mvm17vay-59158",
+      "traceSha256": "sha256:b32d6fbe871b31c28863c079c0a6be7ce3dfd91fedcff98a1f7cd874ad5e28ff",
+      "resultSha256": "sha256:df29ea7d4597bceee5c4a5ed9f19bdffaaf4ab3425be7c2cd5584f2f30b9006c"
+    }
+  ]
+}
