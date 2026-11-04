@@ -192,6 +192,9 @@
     },
     {
       "path": "experiments/61-package-default-policy-isolation"
+    },
+    {
+      "path": "experiments/63-rule-overlay-coverage-consent"
     }
   ]
 }

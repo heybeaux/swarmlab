@@ -1,0 +1,46 @@
+name: exp63-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: experiments/63-rule-overlay-coverage-consent/ci/package-lock.json
+      - name: Install portable experiment/core toolchain
+        # Older experiments retain machine-local file deps; do not rewrite unrelated packages.
+        run: |
+          npm ci --prefix experiments/63-rule-overlay-coverage-consent/ci --workspaces=false
+          ln -s experiments/63-rule-overlay-coverage-consent/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+      - name: Build and type-check core plus new experiment
+        run: |
+          node_modules/.bin/tsc -b core experiments/63-rule-overlay-coverage-consent
+          node_modules/.bin/tsc -b --force core experiments/63-rule-overlay-coverage-consent
+      - name: Verify committed corpus and exact exp63 receipts
+        run: npm run verify:evidence && node --test experiments/63-rule-overlay-coverage-consent/verify-receipts.test.mjs && node experiments/63-rule-overlay-coverage-consent/verify-receipts.mjs
+      - name: Checkout exact evidence-backed Aegis runtime (not moving main)
+        uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: bc879d6c7fd213b49ef355b64bd83196098ffa0e
+          path: .aegis-candidate
+      - name: Build real Aegis
+        working-directory: .aegis-candidate
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Rerun exact frozen exp63 and inspect metrics, not exit code
+        run: |
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node experiments/63-rule-overlay-coverage-consent/run-and-verify.mjs > "$RUNNER_TEMP/exp63.log"
+          cat "$RUNNER_TEMP/exp63.log"
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-candidate" node --test experiments/63-rule-overlay-coverage-consent/verify-receipts.test.mjs
