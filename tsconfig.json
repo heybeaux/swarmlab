@@ -186,6 +186,18 @@
     },
     {
       "path": "experiments/65-loaded-rule-ownership"
+    },
+    {
+      "path": "experiments/62-compiled-rule-binding-integrity"
+    },
+    {
+      "path": "experiments/61-package-default-policy-isolation"
+    },
+    {
+      "path": "experiments/63-rule-overlay-coverage-consent"
+    },
+    {
+      "path": "experiments/60-predictor-numeric-contract"
     }
   ]
 }

@@ -7021,6 +7021,1173 @@
     "notes": "Preregister12edf6f; frozen796b77e. Real built package baseline red twice; all9control checks and positive direct rule preserved. Candidate27/27. No LLM judge, no tuning, holdout unused. Conservative ask for benign/empty input is deliberate; not terminal emulation, actual approval consumption, plugin rollout or production certification. verified describes replayed corpus, not merge/CI. Prior pending experiments not imported. Final compatibility audit found process-scoped critical deny lost after renaming; correction3acbacc preserves that scope. Same frozen harness unchanged; superseded green retained, admitted green replaced after full regression."
   },
   {
+    "id": "RT-61",
+    "claim": "Faithful independent structured-edit replacement projection restores8/8 content hazards and changed-content identity binding while preserving10controls.",
+    "experiment": "experiments/71-structured-edit-coverage",
+    "spec": "specs/77-structured-edit-coverage.md",
+    "runIds": [
+      "sec-mvm1703u-57714",
+      "sec-mvm1707n-57732",
+      "sec-mvm17vay-59158"
+    ],
+    "tracePaths": [
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.infrastructureFailures",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.infrastructureFailures",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.hazardCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.controlAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.identityCoverage",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.directAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.ownershipRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.recoveryRate",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.resolutionAccuracy",
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.hazardCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.identityCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.resolutionAccuracy": 0.5555555555555556,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl#last.infrastructureFailures": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.hazardCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.identityCoverage": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.resolutionAccuracy": 0.5555555555555556,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm1707n-57732.jsonl#last.infrastructureFailures": 0,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.hazardCoverage": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.controlAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.identityCoverage": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.directAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.ownershipRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.recoveryRate": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.resolutionAccuracy": 1,
+      "experiments/71-structured-edit-coverage/runs/sec-mvm17vay-59158.jsonl#last.infrastructureFailures": 0
+    },
+    "reproductionCommand": "node experiments/71-structured-edit-coverage/verify-receipts.mjs && AEGIS_REPO=/path/to/built/aegis node experiments/71-structured-edit-coverage/main.mjs",
+    "stackRecommendation": "Inspect independent replacement strings and bind ordered fragment boundaries into approval/predictor identities.",
+    "stackReposAndPRs": [
+      {
+        "repo": "heybeaux/aegis",
+        "pr": "https://github.com/heybeaux/aegis/pull/78",
+        "commit": "259882071774cd2f65da09e8077363995ff11dd2"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Verified bounded synthetic corpus, not heldout-trained model or production certification. Host owns schema/oldText matching/application; no actual file edits or credentials. Baseline twice at32391a4; green2598820. Preliminary duplicate oldText fixture red pair retained but NOT admitted. All final fixtures have indexed unique original regions. 24 tamper controls and actual-artifact live verifier separate from legacy score replay. RT61 candidate outside Aegis landed catalogue pending delivery."
+  },
+  {
+    "id": "RT-59",
+    "claim": "Enumerating every supported encoded occurrence prevents harmless first payloads hiding consequential later payloads from actual Aegis decode-then-rescan evaluation.",
+    "experiment": "69-encoded-occurrence-coverage",
+    "spec": "75-encoded-occurrence-coverage",
+    "runIds": [
+      "eoc-mvj64lpu-32367",
+      "eoc-mvj64ml5-32409",
+      "eoc-mvj66nj2-36850"
+    ],
+    "tracePaths": [
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.infrastructureFailures",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.infrastructureFailures",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.laterPayloadMissRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.extractionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.resolutionAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.controlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.directControlAccuracy",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.ownershipRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.recoveryRate",
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.laterPayloadMissRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.extractionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.resolutionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64lpu-32367.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.laterPayloadMissRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.extractionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.resolutionAccuracy": {
+        "equals": 0.36363636363636365,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj64ml5-32409.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.laterPayloadMissRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.extractionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.directControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/69-encoded-occurrence-coverage/runs/eoc-mvj66nj2-36850.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/69-encoded-occurrence-coverage/main.mjs && node experiments/69-encoded-occurrence-coverage/verify-receipts.mjs",
+    "stackRecommendation": "Enumerate all supported same-family occurrences; preserve legacy family/source order, trim/dedup and single-layer grammar. Independently budget preprocessing in future; no arbitrary-shell or performance certification.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "5061c96bae57cf0084ba69721e2dd908899510b0",
+          "f230eb62419977b3ee0d45b4b127740846b5d725"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/75",
+          "https://github.com/heybeaux/swarmlab/pull/59"
+        ],
+        "dirtyState": "clean"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Preregister4394497/setup correction5deb644 before output; frozen harness3ed0466 unchanged. Repeated main red10/10 later-payload miss,10/10 direct controls deny. Four compatibility cases also expose the same extraction gap;8others green, no infra failures. Candidate22/22green;24event full replay,source/dist content manifests and27tamper controls. Verified=bounded candidate corpus evidence, NOT merged-main or remote CI proof. Holdout unused/no tuning. No recursive shell interpretation/execution, preprocessing CPU/memory budget or production safety claim. Prior exp68 open/unimported,15/16/17 not novelty."
+  },
+  {
+    "id": "RT-58",
+    "claim": "One finite per-match regex budget does not bound cumulative native work; a shared evaluation deadline replaces multi-rule watchdog starvation with honest unresolved ask while preserving proven deny.",
+    "experiment": "experiments/68-cumulative-regex-work",
+    "spec": "specs/74-cumulative-regex-work.md",
+    "runIds": [
+      "crw-mvhqnt5r-74169",
+      "crw-mvhqo3nm-74077",
+      "crw-mvhqqvjv-84114"
+    ],
+    "tracePaths": [
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.infrastructureFailures",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.infrastructureFailures",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.aggregateWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.cumulativeSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.resolutionAccuracy": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.recoveryRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.ownershipRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.aggregateWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.cumulativeSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.resolutionAccuracy": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.recoveryRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.ownershipRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.aggregateWatchdogRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.cumulativeSafetyRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/68-cumulative-regex-work/main.mjs && node experiments/68-cumulative-regex-work/verify-receipts.mjs",
+    "stackRecommendation": "Aegis owns one cumulative deadline across native regex batch/retry work, independent unknown ask floor; host owns policies and execution. Not a whole-evaluate/preprocess/load bound.",
+    "stackReposAndPRs": [
+      "heybeaux/aegis",
+      "heybeaux/swarmlab"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration f5dbc19f35af2e894d5ced702eb422aa59be0a4a before implementation/output. Fixed seed and reserved unused holdout. Two real-main red runs and same frozen-design green. No threshold tuning. Source/dist/harness SHA manifests bound;13compatibility+8linear controls preserve fixture falsifiability. Historical stored scores not live certification; exact pin+full typed live CI separately. See receipts.json and executable verifier."
+  },
+  {
+    "id": "RT-52",
+    "claim": "Enabled applicable compiled regex caches must remain bound to declared stateless rule configuration at invocation; real Aegis baseline silently allowed6/16 hazards, candidate refuses all with explicit diagnostic while retaining valid deny/controls.",
+    "experiment": "62-compiled-rule-binding-integrity",
+    "spec": "68-compiled-rule-binding-integrity",
+    "runIds": [
+      "crbi-mv6b9cr1",
+      "crbi-mv6b9ctl",
+      "crbi-mv6bfvgw"
+    ],
+    "tracePaths": [
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisHitDedup",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisHitDedup",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.controlAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisUnsafeInvalidAllowRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisInvalidBindingDetectionRate",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisResolutionAccuracy",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisDenyPreservation",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisEarlyNoIO",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisValidCompatibility",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisCallerOwnership",
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisHitDedup"
+    ],
+    "expectedValues": {
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisUnsafeInvalidAllowRate": 0.375,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisInvalidBindingDetectionRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisResolutionAccuracy": 0.4666666666666667,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisEarlyNoIO": 0.875,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisCallerOwnership": 0.9333333333333333,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9cr1.jsonl#last.aegisHitDedup": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisUnsafeInvalidAllowRate": 0.375,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisInvalidBindingDetectionRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisResolutionAccuracy": 0.4666666666666667,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisEarlyNoIO": 0.875,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisCallerOwnership": 0.9333333333333333,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6b9ctl.jsonl#last.aegisHitDedup": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.controlAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisUnsafeInvalidAllowRate": 0,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisInvalidBindingDetectionRate": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisResolutionAccuracy": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisDenyPreservation": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisEarlyNoIO": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisValidCompatibility": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisCallerOwnership": 1,
+      "experiments/62-compiled-rule-binding-integrity/runs/crbi-mv6bfvgw.jsonl#last.aegisHitDedup": 1
+    },
+    "reproductionCommand": "AEGIS_REPO=<aegis> AEGIS_DIST=<aegis>/packages/aegis/dist/index.js node experiments/62-compiled-rule-binding-integrity/dist/main.js",
+    "stackRecommendation": "Validate declared/cache binding and stateless dialect at Aegis public evaluation entry, skip invalid matcher, explicit non-weakenable ask floor, retain valid deny/prediction and async RT48 conservative critical drift refusal.",
+    "stackReposAndPRs": [
+      {
+        "repo": "heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "commits": [
+          "bdaace056ac4cbce8a04fc2966702e26e472dd85"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/68"
+        ]
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen60 scenarios, seed compiled-rule-binding-v1;122 events per trace; same source hash and repeated baseline rows/artifacts. Two pre-admission traces preserved unclaimed due serialized replay comparator error, corrected without threshold/policy/scenario change. No holdout tuning. Ordinary RegExp/config only; no broad schema/getter/proxy/ReDoS/live calibration claim. Candidate source not yet merged; prior RT50/51 separate. Linked SwarmLab51/Aegis68; Aegis executable GitHub release-check success at5aa989a. SwarmLab has zero Actions workflows; CodeRabbit success says review skipped, NOT executable CI. Paired PRs held pending SwarmLab CI coverage, no merged-main improvement claim."
+  },
+  {
+    "id": "RT-51",
+    "claim": "Unrelated exported default recipe edits influenced 9/9 implicit policy hazards before the real-package fix; identical registered experiment now isolates all 16 scenario sets while keeping explicit overrides/editability. RT50 is reserved prior unmerged work, not omitted evidence.",
+    "experiment": "61-package-default-policy-isolation",
+    "spec": "67-package-default-policy-isolation",
+    "runIds": [
+      "dpi-mv4vqk63",
+      "dpi-mv4vqkba",
+      "dpi-mv4vti3m"
+    ],
+    "tracePaths": [
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCustomOverrideCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCustomOverrideCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCustomOverrideCompatibility"
+    ],
+    "expectedValues": {
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.4375,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 0.8125,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 0.6875,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.4375,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 0.8125,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 0.6875,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/61-package-default-policy-isolation/dist/main.js",
+    "stackRecommendation": "Separate implicit package policy from editable exported recipes; host customization remains explicit per call. Protect async effective defaults too.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-11-exp61",
+        "commits": [
+          "186cc3541218ca0a591bc36fd02bc7708f0d65bd"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/67"
+        ],
+        "dirtyState": "clean-tracked-at-experiment-run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "seedSetId": "package-default-policy-isolation-v1",
+    "notes": "Pre-registration 5271a6f0a95728cfc74e18ed2e102501554cd229 before implementation/output. Two baseline runs same full48 scenario body rows and same artifact hashes; frozen harness sha256:49fa6e5e6816be71d37f21c92b738fb385c1b056d1351996e9fad0ef2cc4e97b unchanged candidate. Full53-event replay. No fitted parameters; holdout reserved unused. Controls illustrate mitigation/explicit customization, not improvement. Public exports remain mutable. Behavioral migration for ambient-mutating hosts; CI/merge separate from verified experiment. No malformed inputs/proxy/getter/process compromise/transactional action claim."
+  },
+  {
+    "id": "RT-53",
+    "claim": "Unconsented matcher/scope replacement silently removes effective cascade coverage even at unchanged or higher severity; real Aegis conservative overlay-consent enforcement preserves preceding enabled classifiers without weakening explicit host retunes.",
+    "experiment": "experiments/63-rule-overlay-coverage-consent",
+    "spec": "specs/69-rule-overlay-coverage-consent.md",
+    "runIds": [
+      "occ-mv7qlhb7",
+      "occ-mv7qlhdk",
+      "occ-mv7qn439"
+    ],
+    "tracePaths": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.explicitConsentAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.explicitConsentAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisUnsafeCoverageLossRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisCoverageRejectionRate",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisResolutionAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.pinnedBaseControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisControlAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisInputOwnership",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.protectedBaseFixtureAccuracy",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.explicitConsentAccuracy"
+    ],
+    "expectedValues": {
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.56,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.9333333333333333,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.56,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.9333333333333333,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisUnsafeCoverageLossRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisCoverageRejectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.pinnedBaseControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.aegisInputOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.protectedBaseFixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.jsonl#last.explicitConsentAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-10-13-exp63 node experiments/63-rule-overlay-coverage-consent/dist/main.js",
+    "stackRecommendation": "Require per-overlay allowDowngrade:true for opaque matcher replacement or contracted enabled tool scope; do not infer regex language inclusion. Hosts own review/provenance.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nightly/2026-10-13-exp63",
+        "commits": [
+          "bc879d6c7fd213b49ef355b64bd83196098ffa0e"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/69",
+          "https://github.com/heybeaux/swarmlab/pull/52"
+        ],
+        "dirtyState": "clean on admitted runtime result"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic machine-owned frozen25 scenarios; 10 hazards baseline unsafe allow10/10, coverage rejection0/10; same-harness candidate25/25. 15 controls include conservative rejection of opaque broadening. No holdout tuning; reserved unused. Host explicit retunes require review after tightening. No predictive calibration, regex inclusion or post-merge alias claim. Candidate not remotely merged; CI tracked separately. Prior RT50/51/52 remain separate unmerged experiments, not silently certified.",
+    "artifactReceipts": [
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhb7.receipt.json",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qlhdk.receipt.json",
+      "experiments/63-rule-overlay-coverage-consent/runs/occ-mv7qn439.receipt.json"
+    ]
+  },
+  {
+    "id": "RT-50",
+    "claim": "Malformed runtime predictor contributions and thresholds require a fixed diagnostic ask floor rather than silent authorization or a formatting exception; valid typed predictions retain escalation semantics. Candidate held for RT48 fixture migration.",
+    "experiment": "experiments/60-predictor-numeric-contract",
+    "spec": "specs/66-predictor-numeric-contract.md",
+    "runIds": [
+      "pnc-mv3g8k05",
+      "pnc-mv3g8k40",
+      "pnc-mv3gda9w"
+    ],
+    "tracePaths": [
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCallerOwnership",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCallerOwnership",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.controlAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisUnsafeMalformedAllowRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisInvalidContractDetectionRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisResolutionAccuracy",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCrashRate",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisValidCompatibility",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCriticalDenyPreservation",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisStrictInvalidNoIO",
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCallerOwnership"
+    ],
+    "expectedValues": {
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0.8378378378378378,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.28846153846153844,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCrashRate": {
+        "equals": 0.019230769230769232,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 0.16216216216216217,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k05.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0.8378378378378378,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.28846153846153844,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCrashRate": {
+        "equals": 0.019230769230769232,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 0.16216216216216217,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3g8k40.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisUnsafeMalformedAllowRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisInvalidContractDetectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCrashRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisValidCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCriticalDenyPreservation": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisStrictInvalidNoIO": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/60-predictor-numeric-contract/runs/pnc-mv3gda9w.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/60-predictor-numeric-contract/dist/main.js",
+    "stackRecommendation": "Validate consumer numeric contracts before allow; preserve stronger deterministic deny, caller ownership and undefined legacy path. Migrate malformed prior fixtures explicitly before promotion.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-10-exp60",
+        "commits": [
+          "bde9260e75b1a74f458b80d3d53244454d973b34",
+          "d94a4d9c2fd944347f054b1c9274b343c9f892a3"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/66"
+        ],
+        "dirtyState": "clean tracked/untracked at admitted runs"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "seedSetId": "predictor-numeric-contract-v1",
+    "notes": "Pre-registration 3518c35 before implementation/output; 52 frozen scenarios, 104 real-arm rows, 210 events each. Two baseline rows/manifests identical. Exact same harness candidate green. Tagged NaN/Infinity/undefined retained. Producer control illustrative NOT Aegis improvement. No fitted params; reserved holdout unused. Candidate only: merge HOLD because unchanged exp58 partial Prediction fixture red; old claims/traces not rewritten. Focused/unit fixture clarifications do not erase behavioral regression. No origin/main improvement claim."
+  },
+  {
+    "id": "RT-56",
+    "claim": "Interrupting V8 deadlines reject pathological loader regex probes and preserve synchronous API recovery; post-test elapsed checks instead leave all five hazard children stuck past the watchdog.",
+    "experiment": "experiments/66-loader-probe-preemption",
+    "spec": "specs/72-loader-probe-preemption.md",
+    "runIds": [
+      "lpp-mvevxxcc-75248",
+      "lpp-mvevy3zp-75313",
+      "lpp-mvew4ef8-93479"
+    ],
+    "tracePaths": [
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.infrastructureFailures",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.infrastructureFailures",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisProbeWatchdogRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisHazardRejectionRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisResolutionAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisRecoveryRate",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.substringControlAccuracy",
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.aegisRecoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevxxcc-75248.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisControlAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.aegisRecoveryRate": {
+        "equals": 0.631578947368421,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvevy3zp-75313.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisProbeWatchdogRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisHazardRejectionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.aegisRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.substringControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/66-loader-probe-preemption/runs/lpp-mvew4ef8-93479.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/built/aegis node experiments/66-loader-probe-preemption/main.mjs && node experiments/66-loader-probe-preemption/verify-receipts.mjs",
+    "stackRecommendation": "Aegis must interrupt its own native load-time probes; preserve RulePackError context and fail closed. Finite probes do not prove general regex safety or bounded runtime evaluate.",
+    "stackReposAndPRs": [
+      "heybeaux/aegis@db899177bea17b15f814c5a7ccd7e605a01bb112",
+      "https://github.com/heybeaux/aegis/pull/72"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Spec632df6b before implementation and observation. Five hazards timed out twice,14 controls included2 real invalid-budget failures (0/-1),5substring controls green; no fixture defect found. Candidate19/19+5/5. No tuning, holdout unused. Stored catalogue regression not live proof; frozen harness + actual built package CI required. Automatic merge held: one safe-builtin25ms false positive in full regression; later green rerun does not resolve the risk."
+  },
+  {
     "id": "RT-63",
     "claim": "Process-input approval consumption requires authenticated immutable host-generation identity: real baseline consumed all12 hazardous retries; same frozen20cases with target binding reject all12 while preserving6 valid retries and8 retained grants.",
     "experiment": "experiments/73-process-generation-binding",

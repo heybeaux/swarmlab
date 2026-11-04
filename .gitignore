@@ -2,3 +2,5 @@ node_modules/
 dist/
 *.tsbuildinfo
 .openclaw/
+
+.integration-runs/

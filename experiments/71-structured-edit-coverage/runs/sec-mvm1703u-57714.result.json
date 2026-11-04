@@ -1,0 +1,137 @@
+{
+  "runId": "sec-mvm1703u-57714",
+  "trace": "experiments/71-structured-edit-coverage/runs/sec-mvm1703u-57714.jsonl",
+  "traceSha256": "sha256:94d9e5df21ff9e5dd8833f6ffbe81e1386b1aa6caa976278047a4b8e354e063e",
+  "startedAt": 1792824124746,
+  "endedAt": 1792824124832,
+  "aegisSha": "32391a41c4d09cdad2e4aa083382b222d78976c2",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:387308323e49acf09011cf992e7465da6045495853b465e65a286ce8e3b1111e",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:c7e2031f352bf339ddb14a976d20cc5c01ff210449d7397b387095aa59c9e70a"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:21f0f3972d7c664e130b252a6552bd28444bf2e44ee9e271b6484915c0c7ae97"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:04c4504ef7466caa20d78f75920312c2c11f3b89e9d4b1fa8c37ebc804367cbc"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:f4c6cb659ed3628f43ccc60d6e576012cdfdadfc8c77c00ef5c0f5d9c209324c"
+    }
+  ],
+  "summary": {
+    "hazardCoverage": 0,
+    "controlAccuracy": 1,
+    "identityCoverage": 0,
+    "directAccuracy": 1,
+    "ownershipRate": 1,
+    "recoveryRate": 1,
+    "resolutionAccuracy": 0.5555555555555556,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "sole",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "first",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "last",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "third",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "empty-first",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "duplicate",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "scalar-masking",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "regex-second",
+      "checks": {
+        "action": false,
+        "hits": false,
+        "ownership": true,
+        "recovery": true,
+        "direct": true,
+        "identity": false,
+        "infrastructure": true
+      }
+    }
+  ]
+}

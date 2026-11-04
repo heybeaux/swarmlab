@@ -1,0 +1,45 @@
+name: integrated-aegis
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  combined-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build experiment harnesses
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core experiments/55-source-policy-roster-checkpoint experiments/56-async-gate-input-integrity experiments/57-async-source-expiry experiments/59-evaluation-receipt-ownership experiments/60-predictor-numeric-contract experiments/61-package-default-policy-isolation experiments/62-compiled-rule-binding-integrity experiments/63-rule-overlay-coverage-consent experiments/64-merged-rule-ownership experiments/65-loaded-rule-ownership
+          npm run verify:evidence
+      - uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: 87ece9c0f43de40de00ca30d5de20986f38efca9
+          path: .aegis-integrated
+      - name: Build integrated real packages
+        working-directory: .aegis-integrated
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+      - name: Verify combined runtime and producer migrations
+        env:
+          AEGIS_REPO: ${{ github.workspace }}/.aegis-integrated
+        run: node scripts/verify-integrated-aegis.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: combined-runtime-regression
+          path: .integration-runs/
+          include-hidden-files: true

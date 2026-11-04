@@ -1712,6 +1712,204 @@ Former green `pib-mvowdfh8-1211` remains committed/superseded in receipts; raw r
 and frozen scenarios/oracle/child/main unchanged. Final exact-head CI must be
 observed again; earlier green CI does NOT certify this corrective commit.
 
+## RT-61 / exp71 — Structured replacement coverage (2026-10-23)
+
+[Spec77](specs/77-structured-edit-coverage.md), preregistration1bc1564; initial harness e5059f8,
+unique-region fixture correction/final frozen harness cadebd5. Actual fetched Aegis
+32391a41c4d09cdad2e4aa083382b222d78976c2 missed8/8 hazards and all8 identity probes on
+`sec-mvm1703u-57714` and `sec-mvm1707n-57732`. Direct scalar8/8 and compatibility10/10 passed,
+so this is a projection gap, not a broken rule fixture. Initial red pair used repeated
+oldText and was re-frozen/re-baselined before candidate observations; retained unadmitted.
+Same18cases real Aegis runtime `259882071774cd2f65da09e8077363995ff11dd2` / `sec-mvm17vay-59158` is18/18green,
+hazardCoverage0→1, identityCoverage0→1, resolutionAccuracy10/18→1. No LLM judge,
+threshold tuning or holdout use. Full response JSONL and source/dist/package hashes committed.
+
+Fix: optional independent `ToolCall.contentFragments`, projection from validated
+OpenClaw edit.edits[].newText, content rule traversal without joining boundaries,
+ordered identity binding and max per-fragment heuristic risk. Scalar input preserved.
+Host still owns validation, unique oldText/application and action receipts. No support
+claim for arbitrary apply_patch/malformed envelopes or production calibration. Review
+found no blockers; literal host `newText` contract explicitly unit-tested, no invented aliases.
+
+Regression-only: full Aegis release:check1216tests green (628+216+22+86+207+57),
+historical catalogue52/52. RT61 candidate constant remains OUTSIDE landed release catalogue;
+focused test asserts pending/PARTIAL. Two catalogue/test-bookkeeping red runs retained,
+not hidden. Prior RT57 timingCI issue77 still open. SwarmLab core build/forced typecheck,
+ESM syntax and evidence replay green. Legacy root build63TypeScript errors unchanged
+from prior nightly; not a full root-build-green claim. Receipts re-scored from raw outcomes;
+24 forged evidence variants rejected; live verifier binds response equality, exact SHA,
+fresh timestamps and actual source/dist bytes. Existing15/16/17 not run.
+
+Delivery: [Aegis78](https://github.com/heybeaux/aegis/pull/78); linked SwarmLab PR pending.
+CI/mergeability must be observed before merge. .acr unchanged, Territory not refreshed.
+Next independent hypothesis: path/argv/content-fragment arrays can expand regex planning
+before native deadlines; resource admission not tested or claimed here.
+
+
+### Delivery hold — observed CI, not inferred success
+Linked [SwarmLab62](https://github.com/heybeaux/swarmlab/pull/62) / [Aegis78](https://github.com/heybeaux/aegis/pull/78).
+SwarmLab experimentCI [40071762631](https://github.com/heybeaux/swarmlab/actions/runs/40071762631)
+SUCCESS at c3eeea2: frozen raw red-red-green,24tamper cases, fresh pinned actual-package18/18.
+Aegis releaseCI [40071707272](https://github.com/heybeaux/aegis/actions/runs/40071707272)
+FAILED at3eee4db: unchanged core/test/test-helpers.test.ts:70 real Date.now determinism
+expectation,627/628core. Zero core diff against baseline; local1216tests passed.
+[Issue79](https://github.com/heybeaux/aegis/issues/79) records the blocker (distinct from77).
+Both PRs remain OPEN/unmerged; no rerun-to-green or unrelated patch. Subsequent doc-only
+head has separate CI; nightly ledger records latest exact-head checks. Unadmitted local
+review/final-live traces retained separately from the three pinned corpus runs.
+Legacy root63TypeScript diagnostic lines exactly equal unchanged-main baseline.
+## RT-59 — Later encoded payloads must not disappear (exp69 / Spec75)
+
+Pre-registration `4394497` (setup-only package-manager correction `5deb644`)
+preceded all harness/output. Frozen four-file design `3ed0466`:22 scenarios,
+fixed seed, no tuning/LLM judge. Novel boundary is occurrence completeness,
+not exp67/68 native matching deadlines. Real fetched Aegis
+`27375f6a04cd9403725499d75ac046d8d6e33986` baseline
+`eoc-mvj64lpu-32367` / `eoc-mvj64ml5-32409` has10/10
+later-payload misses,10/10 direct plaintext controls deny, exact extraction8/22,
+resolution8/22. Four compatibility cases share the extraction gap (danger-first
+loses a safe second payload; high-first loses critical second; preprocess-off/
+wrong-tool actions correct but extraction incomplete);8other controls green.
+All repeated observable rows identical; ownership/recovery1, infrastructure0.
+Red results retained, not hidden by claiming all compatibility controls passed.
+
+Runtime `5061c96bae57cf0084ba69721e2dd908899510b0` enumerates all supported
+base64 occurrences using per-call global iterators; original first, legacy
+family priority, source order within family, trim/dedup and one-layer grammar
+preserved. Same frozen design `eoc-mvj66nj2-36850`: later miss0,
+exact extraction/resolution22/22, every secondary1, infrastructure0. Full
+24-event replay and source/dist manifests/content addresses in receipts.json.
+17 focused regressions; full release1209 tests (628+214+22+86+203+56), historical
+catalogue53/53. Live candidate audit +27tamper rejections/actual+virtual positives
+verify exact decision/array bodies, package pin, freshness and actual files.
+
+Host owns policy/input authenticity and execution. This is not recursive shell
+interpretation, new grammar, arbitrary encoding support, preprocessing CPU/memory
+bounds or production certification. Public options/default false retained.
+No .acr edits/Territory refresh; prior primary changes untouched, pending exp68
+not imported or certified. Holdout reserved/unused. Regression-only checks
+are not novel evidence. Linked PR/CI and merge status recorded only as observed.
+
+Paired runtime candidate [Aegis75](https://github.com/heybeaux/aegis/pull/75),
+exact executable CI pin `f230eb62419977b3ee0d45b4b127740846b5d725`. Remote checks not yet observed;
+no merge inferred.
+
+Paired evidence [SwarmLab59](https://github.com/heybeaux/swarmlab/pull/59); source `.acr` unchanged.
+Local Aegis release/build/typecheck1209tests+53historical gates and SwarmLab
+52claims114traces1049assertions green. Actual remote checks pending at this
+documentation commit. Red/red/green design and all22cases unchanged.
+## RT58 / exp68 — cumulative native regex work (Spec74)
+
+Pre-registration `f5dbc19f35af2e894d5ced702eb422aa59be0a4a` before implementation/output. Twenty independent loader-accepted patterns consume100ms each on actual input, not loader probes. This is a NEW cumulative-work boundary explicitly outside RT57/exp67. Repeated real-main `27375f6a04cd9403725499d75ac046d8d6e33986` baselines `crw-mvhqnt5r-74169` / `crw-mvhqo3nm-74077`:8/8hazards killed by1500ms parent watchdog;13compatibility+8linear controls pass, no infrastructure failure. Parent kill is NOT Aegis refusal. Red traces retained.
+
+Runtime `fee7bd9ab4d71d399c5f243b0c110aeb6833b616` rerun `crw-mvhqqvjv-84114`, exact21scenarios+8linear same seeds/thresholds: watchdog1→0, cumulative safety0→1, resolution13/21→21/21; all controls/recovery/ownership pass. Default250ms total caps native batch AND retry allowance across rules/targets/decoded variants; per-match limit remains. Unknown is independent ask even all-allow severityTable, never a match; previously proven regex and separate substring/predictor deny remain. Later native matches may be unknown. No fixture-specific rule count/pattern policy. 19focused +25RT57 regression tests passed; full release before catalogue1211tests,52/52historical evidence. Final exact-head checks/CI tracked in nightly ledger; no merge asserted here.
+
+Source/dist/full typed traces and hashes in receipts; verifier recomputes roster/checks/scores, binds exact package and admitted green evaluations,39tamper rejections +disk/virtual positives. Holdout reserved unused, no tuning. Scope NOT preprocessing/job-plan/loader/compilation/memory, arbitrary JS or absolute evaluate time bound. Host owns input/policy provenance and execution. Source .acr unchanged, no Territory refresh. Existing held PRs untouched. Next new question (not selected/run): can decode-then-rescan variant expansion consume unbounded preprocessing work before native matching begins? Needs independent preregistration.
+
+Final local release candidate `fb842ea66be1666ca771195b5923c2bdcb096aa0` (runtime/source/dist unchanged from admitted fee7bd9) passed build+typecheck+1212tests (628+216+22+86+203+57),53/53stored evidence. Initial catalogue count assertion expected52 vs53; corrected explicit count, red log retained, not runtime regression. SwarmLab core build+forcedtypecheck and verify:evidence52claims114traces1049assertions pass. Exp67 on candidate19/19 passed as REGRESSION ONLY, not novelty. Paired Aegis PR74: https://github.com/heybeaux/aegis/pull/74. Fresh exact-head package verification and CI required before merge.
+## RT52 — Compiled rule binding integrity (exp62 / Spec68)
+
+Pre-registration761fafa and pre-observation arithmetic clarification f68b60f froze60 scenarios before implementation/output. Real fetched origin/main Aegis4be84ed baseline `crbi-mv6b9cr1` and repeat `crbi-mv6b9ctl` have identical scenario rows: unsafe invalid allow6/16 (0.375), diagnostic0/32, accuracy28/60, caller ownership56/60; valid controls28/28 and independent deny16/16 stayed green. Strict gate avoided most but not all invalid-cache I/O (14/16). This is declared-policy/cache divergence AT invocation, unlike RT48 configuration changes DURING awaits.
+
+Aegis runtime `bdaace056ac4cbce8a04fc2966702e26e472dd85` validates normalized source/flags binding and allowed stateless dialect for enabled tool-applicable regex caches; skips invalid matcher and adds explicit RT52 ask floor that severity options cannot weaken. Keeps independent deny/prediction, equivalent flag order, stateless lastIndex, disabled/foreign/nonregex controls and signatures. An existing RT48 unit expectation exposed deny-to-ask regression when a critical cache changed mid-await; rather than running unbound policy or rewriting the test, RT48 now conservatively refuses indeterminate critical coverage as deny. Unchanged exp58/59 regression runs green.
+
+SAME frozen harness `crbi-mv6bfvgw` is60/60, unsafe allow0, detection1, ownership1, no-I/O1 and all secondary metrics1. Full122-event serialized replay/complete artifact and trace receipts pinned. Producer-repair control60/60 demonstrates host mitigation, NOT Aegis improvement. Two initial comparator-diagnostic runs are preserved unadmitted; JSON serialization omitted undefined from replay while in-memory deep equality retained it. Corrected before admitted repeated baseline; no thresholds changed.
+
+Candidate only at this documentation commit; CI/merge status recorded separately, not assumed. No calibration, in-process adversary, proxy/getter/subclass, schema-wide validation, ReDoS budget redesign or post-return atomic execution claim. Reload rules via loadPack after edits; loader still owns ReDoS admission. No .acr change, Territory skipped. Reserved holdout unused; no parameter tuning.
+
+### Landing status (2026-10-13 UTC)
+
+Linked [Aegis68](https://github.com/heybeaux/aegis/pull/68) / [SwarmLab51](https://github.com/heybeaux/swarmlab/pull/51), both clean/mergeable. Aegis head5aa989a GitHub executable release-check [38358788952](https://github.com/heybeaux/aegis/actions/runs/38358788952) SUCCESS; local release1153 tests (628+160+22+86+203+54) and stored50/50. SwarmLab local build/typecheck/evidence49 claims105 traces986 assertions green, but repo has NO GitHub Actions workflows. CodeRabbit success on both explicitly means review skipped, not executable CI. Independent read-only review found no blocker; numerical/prose audit corrections recorded in nightly artifacts (ownership56/60, four pure stateful cases including mixed; snapshot explains strict stateful deny). **Both PRs remain OPEN, held for missing executable SwarmLab CI coverage**; not a merged/production improvement claim. No thresholds moved. Prior RT50/51 draft holds remain independent.
+
+### Same-experiment interface hardening (2026-10-13 UTC)
+
+Independent observable-boundary probes found an RT52 candidate-introduced regression: invalid low cache + separate valid critical nonmatch returned deny instead of origin/main ask at first read/observe/final read/rejected I/O. Fixed by requiring invalid binding and critical severity on the SAME applicable enabled entry (commit86333e0), then preserving explicit RT52 evidence alongside RT48 on low-cache refusals (runtime `93d2e8c73cfadff03e42b97f4d160fbe850cadc1`). Old tests unchanged;15 focused regressions added. This is same RT52 hardening, not a new experiment/claim, and thresholds/seeds/roster untouched.
+
+Fresh baseline audit crbi-mv6c1axe matches all120 admitted baseline arm rows and artifact manifest; final hardened crbi-mv6c7fo8 matches all120 original green rows and frozen harness hash, all122 events replay. Supplemental traces are non-admitted; content-addressed audit receipts committed separately. Final full release green1168 tests (628+175+22+86+54+203), stored50/50; unchanged exp55–59 inspected green. SwarmLab fresh build/typecheck/evidence49claims105traces986assertions green. Aegis68 CI must certify updated head; original CI cannot be inherited. Paired PRs68/51 stay OPEN held for absent executable SwarmLab CI. No source cards changed/Territory refresh, no other nightly novelty counted.
+## RT-51 — Package-default policy isolation (exp61 / Spec67)
+
+Pre-registration `5271a6f0a95728cfc74e18ed2e102501554cd229` preceded all implementation/output. Fetched current main Aegis `4be84ed` let edits to exported severity/threshold/Set recipes silently become unrelated consumers' implicit policy: **9/9** hazards influenced decisions, **6/6** weakening hazards escaped their required default classification, exact scenario accuracy **7/16**. Baselines `dpi-mv4vqk63` / `dpi-mv4vqkba` have identical full scenario bodies/artifact manifests. Captured-host and explicit-template controls both **16/16**; no fixture or LLM decided success.
+
+Aegis runtime `186cc3541218ca0a591bc36fd02bc7708f0d65bd` separates private implicit severity/prediction/safe defaults from publicly editable recipe copies, including strict async effective options. SAME immutable harness/scenario/seed `dpi-mv4vti3m`: influence **0/9**, weakening failures **0/6**, accuracy **16/16**, every secondary/control metric **1**. Three committed53-event replay traces pin package/source/full artifact hashes; 14 focused unit regressions transition11 red/3 pass to14 green. Public names/types/editability preserved; passing edited recipes explicitly still selects host policy. No frozen caller data or fixture-specific branching.
+
+This is between-call ambient policy isolation, distinct from RT48 in-flight configuration/RT49 output ownership/RT50 numeric validation. RT50 remains separately reserved in prior unmerged draft PRs66/49; no cherry-pick or false combined claim. Hosts using ambient DEFAULT_* mutation must migrate to existing explicit options. Lattice/host owns distributing/selecting overrides; Aegis owns private defaults. Arbitrary process compromise/getters/proxies, malformed policy and signed/transactional execution unproven. No tuning; holdout unused. Local green is not CI/merge proof; candidate status recorded in nightly ledger and linked PRs. Existing exp55–59 unchanged neighbor checks are regression ONLY, not novelty.
+
+### Regression-only / release results
+SwarmLab build+typecheck+verify:evidence pass (49 claims,105 traces,995 assertions). Aegis release:check passes build+typecheck+1139 tests (628+146+22+86+54+203) and50/50 evidence mappings implemented in candidate source, NOT remote-main certification. Neighbor exp55/56/57/58/59 exact accuracy1/unsafe0 replay71/59/65/68/68events against runtime186cc35; committed traces/receipts do not rewrite their historical claims. First release attempt exposed evidence-accounting test assertions, repaired before full green rerun. No runtime/scenario/threshold tuning.
+
+**Merge HOLD / draft:** implicit policy isolation intentionally removes undocumented ambient DEFAULT_* configuration. Beaux should review migration to explicit options before adoption. CI can be green without resolving that policy decision. Prior RT50 draft remains separate. Source .acr unchanged; Territory not refreshed.
+
+Paired draft candidates: [Aegis67](https://github.com/heybeaux/aegis/pull/67) / [SwarmLab50](https://github.com/heybeaux/swarmlab/pull/50). Owner migration review HOLD applies even with green checks; no merged-main claim.
+## RT53 — Rule-overlay coverage consent (exp63 / Spec69)
+
+Pre-registration `c8bc120` preceded implementation and observations; pre-observation configuration correction `060e6b8` pins high/critical deny for every arm. Real fetched-main Aegis `4be84ed4aab018bee1b9a77b6012b9b97c966d1c` (`occ-mv7qlhb7`, repeat `occ-mv7qlhdk`) allowed **10/10** unconsented matcher/scope losses: rejection **0/10**, resolution **14/25**. Preceding base fixture and pinned-host control **10/10**; explicit reviewed allowances **3/3**. Scenario rows and complete package manifests identical across baseline runs.
+
+Aegis runtime `bc879d6c7fd213b49ef355b64bd83196098ffa0e` compares enabled classifier kind/pattern/target/effective flags and case-sensitive tool-set containment at mergeLayers. Opaque matcher replacements and tool contractions require consent on THIS overlay; warning retains entire preceding effective rule. Flag order/empty equivalence, set-equivalent/expanded tools, metadata, disabled-base re-enable, explicit retunes and insertion order preserved. **Same unchanged harness/seed/scenarios** `occ-mv7qn439`: unsafe allow **0/10**, coverage rejection **10/10**, exact resolution **25/25**, all secondary metrics **1**. Three full replay-verified37-event traces plus source/dist manifests and SHA-256 receipts committed. Focused tests **13 red/6 pass ->19 green**; no thresholds moved.
+
+This tests cascade authority BEFORE compilation, distinct from RT48 in-flight config drift and RT52 declared/cache binding. No regex-language inclusion proof: even safe opaque broadening needs explicit review. No post-merge alias isolation, sandbox execution, learned predictor or production incident claim. Host owns trusted overlays, intentional consent and safe action execution. Prior exp60/61/62 candidates remain unmerged and separate. Explicit authority tightening needs migration review; local evidence green is not remote CI/merge confirmation. Stored old evidence is regression, not novel work.
+
+RT53 linked candidates: [Aegis69](https://github.com/heybeaux/aegis/pull/69) / [SwarmLab52](https://github.com/heybeaux/swarmlab/pull/52). Local1144 tests + Aegis stored50/50; SwarmLab49 claims105 traces983 assertions; exact clean-worktree CI rehearsal green. Remote CI pending; NOT merged; migration review required. Stored gate range is50 cases throughRT53 with50–52 absent, not53/53 or certification of prior candidates.
+
+### Same-experiment observable evidence-verifier audit
+
+Independent verification reproduced false acceptance: bare `--latest` certified the existing committed green as fresh; missing secondary metrics and altered action/effective-rule rows were accepted when stored self-check booleans stayed green. This is evidence tooling, NOT a new nightly experiment or an Aegis policy defect. The original three traces and all thresholds remain unchanged.
+
+Receipt verification now pins the frozen scenario/harness contract, requires the complete exact metric set, independently recomputes row field checks and all eight metrics, rejects duplicate/omitted or relabeled scenarios, and inspects every live source/dist hash. New `run-and-verify.mjs` requires exactly one newly produced receipt and checks its exact ID against prior IDs and invocation start; bare `--latest` fails closed. Fifteen verifier regressions cover stale-run acceptance, altered trace checks and live artifact mismatch. The exact unchanged experiment reran green in a clean real-Aegisbc879d6 worktree; audit trace remains non-admitted. Core/experiment build/typecheck, full evidence corpus, and all15 verifier tests green. Runtime still byte-identical to bc879d6; no thresholds tuned, no `.acr` changes, migration hold retained.
+
+## RT-50 — Predictor numeric contract integrity (exp60 / Spec66, candidate HOLD)
+
+Novel numeric consumer-boundary test, not elapsed source freshness RT47, during-await policy mutation RT48, or returned alias isolation RT49. Pre-registered `3518c35` before implementation/results. 52 frozen scenarios at pure and strict public APIs; exact built real Aegis; machine equality, tagged nonfinite values, no LLM judgment. Authentic fixed roster and deterministic zero clock isolate predictor shape from host faults.
+
+Baseline Aegis `4be84ed`: `pnc-mv3g8k05` and `pnc-mv3g8k40`, identical 208 scenario rows and package manifests. Runtime candidate `bde9260`: `pnc-mv3gda9w`, identical harness hash, 210-event replay each. Unsafe malformed allow **62/74 -> 0/74**, malformed diagnostic **0/74 -> 74/74**, complete resolution **30/104 -> 104/104**, crashes **2/104 -> 0**. Valid controls **30/30** and deterministic critical deny preserved. Full fields/metrics in CLAIMS and committed traces; producer validation control is illustrative, not package improvement.
+
+Consumer validation requires finite numeric pFailure/confidence in inclusive [0,1], awm/prior source, ordered finite [0,1] ask/deny thresholds (equality allowed). Only undefined is absence; null is invalid. Fixed diagnostic ask cannot be bypassed by custom medium severity downgrade. Invalid prediction is omitted from typed receipt. Host/AWM retains origin/calibration responsibility; getters/proxies and transport faults not tested.
+
+**Merge HOLD / regression red:** unchanged exp58 supplies partial Prediction `{pFailure:.1}` missing required confidence/source. Candidate correctly asks before I/O, making frozen RT48 resolution 3/21 rather than 21/21. Unsafe allow remains 0, but this is NOT a green regression. Trace `aci-mv3get8b` is preserved as diagnostic, not admitted new evidence or a rewritten RT48 receipt. Two unit drift fixtures now use complete Prediction and ordered tightened thresholds (.02/.05); no frozen experiment edit. Full Aegis release check passes 1175 tests, static stored evidence49/49; these do not certify current behavior of old fixtures. Neighbour exp55/56/57/59 real-package regressions green; SwarmLab build/typecheck/evidence green. Candidate unmerged pending explicit contract migration review; no origin/main improvement claim. Independent novelty audit failed at startup; independent patch review pending, no certification yet. Primary dirty checkouts untouched, .acr unchanged/Territory skipped.
+
+Next: dedicated RT48 fixture migration/re-pinning with owner review, while tomorrow's new hypothesis must remain novel (e.g. mutable exported defaults between calls need an explicit policy ownership contract; deduplicate first).
+
+Linked **draft HOLD** PRs: [Aegis#66](https://github.com/heybeaux/aegis/pull/66), [SwarmLab#49](https://github.com/heybeaux/swarmlab/pull/49). No merge authorized while frozen exp58 regression remains red.
+## RT56 — Loader regex-probe preemption (exp66 / Spec72, 2026-10-18)
+
+Pre-registration `632df6b424123cb000dd83f4f918c213b654a7f3` preceded harness implementation and
+output; harness `d98b0cbe05562b05e12bdacd6f79d336ced7aea3` froze19 scenarios and5 substring controls.
+New failure boundary: the loader's own synchronous regex probe can block before
+its elapsed-time check executes. Not receipt honesty/recall replay, rule ownership,
+compiled-cache binding or in-flight config drift. Original queue is already built.
+
+Real origin/main Aegis `f73ce63d5ab1f389fbda3465916bcba2afb4b117`,
+`lpp-mvevxxcc-75248` / `lpp-mvevy3zp-75313`: **5/5** hazard children watchdog-killed after1500ms,
+**0/5** bound ReDoS rejections, **12/19** total correct, **12/14** controls,
+**5/5** literal substring controls. Repeated deterministic outcomes identical;
+raw timestamps differ. Invalid budgets0/-1 were genuine additional safe-pattern
+rejections, not fixture errors. Both red traces preserved, no thresholds moved.
+
+Runtime `528438cc279623e5c57fa3c5b6f8375b3c7109fc` runs a fixed probe script with primitive
+pattern/flags/text inside an interruptible V8 context; synchronous API, whole-pack
+refusal and RulePackError identities preserved. Invalid env values use default25ms.
+Frozen candidate `db899177bea17b15f814c5a7ccd7e605a01bb112`, `lpp-mvew4ef8-93479`: **19/19** + **5/5**, zero watchdog,
+all5 hazards return exact typed errors and subsequent safe load works. Focused public
+artifact tests8red10pass→18green. Complete source/dist manifests, frozen harness,
+trace hashes and machine oracles in receipts.json. Fresh live run independently
+checked against actual files; verifier rejects15 tampers and accepts positive.
+
+Regression-only: full build/typecheck/release **1185 tests** (628+190+22+86+203+56),
+evidence52/52; SwarmLab core build/forced typecheck + native ESM syntax +
+verify:evidence51claims111traces1022assertions. One intermediate release failed a
+stale explicit catalogue count51→52 (corrected); another **falsely rejected safe
+builtin secrets.openai-key.bash at25ms under parallel test load**. Focused hook and
+subsequent full release passed unchanged. This new wall-clock compatibility risk
+is unresolved; green rerun does NOT erase red. **Aegis PR72 held from automatic
+merge**, even if CI passes. Linked SwarmLab CI runs frozen design against pinned
+real package, not merely stored scores. Remote CI unobserved at this write.
+
+Scope: finite loader probes only. Native runtime evaluate still has no general
+regex deadline. No general ReDoS safety proof, sandbox guarantee, arbitrary pack
+resource bound, production certification or tuned holdout claim. No .acr changes;
+Territory untouched. Existing dirty primary checkouts untouched. Prior pending
+experiments remain separate. Next new hypothesis: patterns absent from the finite
+probe alphabet may load but block runtime evaluation; pre-register a separate
+bounded evaluation watchdog/host-input contract before testing, not tonight.
 
 ## RT-63 / exp73 — Approval belongs to a process lifetime, not a recycled handle
 
