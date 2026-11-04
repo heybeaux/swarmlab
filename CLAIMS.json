@@ -7257,5 +7257,153 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Preregister4394497/setup correction5deb644 before output; frozen harness3ed0466 unchanged. Repeated main red10/10 later-payload miss,10/10 direct controls deny. Four compatibility cases also expose the same extraction gap;8others green, no infra failures. Candidate22/22green;24event full replay,source/dist content manifests and27tamper controls. Verified=bounded candidate corpus evidence, NOT merged-main or remote CI proof. Holdout unused/no tuning. No recursive shell interpretation/execution, preprocessing CPU/memory budget or production safety claim. Prior exp68 open/unimported,15/16/17 not novelty."
+  },
+  {
+    "id": "RT-58",
+    "claim": "One finite per-match regex budget does not bound cumulative native work; a shared evaluation deadline replaces multi-rule watchdog starvation with honest unresolved ask while preserving proven deny.",
+    "experiment": "experiments/68-cumulative-regex-work",
+    "spec": "specs/74-cumulative-regex-work.md",
+    "runIds": [
+      "crw-mvhqnt5r-74169",
+      "crw-mvhqo3nm-74077",
+      "crw-mvhqqvjv-84114"
+    ],
+    "tracePaths": [
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.infrastructureFailures",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.infrastructureFailures",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.aggregateWatchdogRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.cumulativeSafetyRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.resolutionAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.controlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.recoveryRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.ownershipRate",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.linearControlAccuracy",
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.aggregateWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.cumulativeSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.resolutionAccuracy": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.recoveryRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.ownershipRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqnt5r-74169.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.aggregateWatchdogRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.cumulativeSafetyRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.resolutionAccuracy": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.recoveryRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.ownershipRate": {
+        "equals": 0.6190476190476191,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqo3nm-74077.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.aggregateWatchdogRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.cumulativeSafetyRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.resolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.recoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.linearControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/68-cumulative-regex-work/runs/crw-mvhqqvjv-84114.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/pinned/aegis node experiments/68-cumulative-regex-work/main.mjs && node experiments/68-cumulative-regex-work/verify-receipts.mjs",
+    "stackRecommendation": "Aegis owns one cumulative deadline across native regex batch/retry work, independent unknown ask floor; host owns policies and execution. Not a whole-evaluate/preprocess/load bound.",
+    "stackReposAndPRs": [
+      "heybeaux/aegis",
+      "heybeaux/swarmlab"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration f5dbc19f35af2e894d5ced702eb422aa59be0a4a before implementation/output. Fixed seed and reserved unused holdout. Two real-main red runs and same frozen-design green. No threshold tuning. Source/dist/harness SHA manifests bound;13compatibility+8linear controls preserve fixture falsifiability. Historical stored scores not live certification; exact pin+full typed live CI separately. See receipts.json and executable verifier."
   }
 ]
