@@ -189,6 +189,9 @@
     },
     {
       "path": "experiments/62-compiled-rule-binding-integrity"
+    },
+    {
+      "path": "experiments/61-package-default-policy-isolation"
     }
   ]
 }

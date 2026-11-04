@@ -7495,5 +7495,224 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen60 scenarios, seed compiled-rule-binding-v1;122 events per trace; same source hash and repeated baseline rows/artifacts. Two pre-admission traces preserved unclaimed due serialized replay comparator error, corrected without threshold/policy/scenario change. No holdout tuning. Ordinary RegExp/config only; no broad schema/getter/proxy/ReDoS/live calibration claim. Candidate source not yet merged; prior RT50/51 separate. Linked SwarmLab51/Aegis68; Aegis executable GitHub release-check success at5aa989a. SwarmLab has zero Actions workflows; CodeRabbit success says review skipped, NOT executable CI. Paired PRs held pending SwarmLab CI coverage, no merged-main improvement claim."
+  },
+  {
+    "id": "RT-51",
+    "claim": "Unrelated exported default recipe edits influenced 9/9 implicit policy hazards before the real-package fix; identical registered experiment now isolates all 16 scenario sets while keeping explicit overrides/editability. RT50 is reserved prior unmerged work, not omitted evidence.",
+    "experiment": "61-package-default-policy-isolation",
+    "spec": "67-package-default-policy-isolation",
+    "runIds": [
+      "dpi-mv4vqk63",
+      "dpi-mv4vqkba",
+      "dpi-mv4vti3m"
+    ],
+    "tracePaths": [
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCustomOverrideCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCustomOverrideCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.capturedControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.explicitControlAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisGlobalDefaultInfluenceRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisResolutionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisUnsafeImplicitAuthorizationRate",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisPureActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictActionAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisSafeClassificationAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictIOAccuracy",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCallerOwnership",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisTemplateEditCompatibility",
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCustomOverrideCompatibility"
+    ],
+    "expectedValues": {
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.4375,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 0.8125,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 0.6875,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqk63.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 0.4375,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 0.625,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 0.8125,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 0.6875,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vqkba.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.capturedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.explicitControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisGlobalDefaultInfluenceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisResolutionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisUnsafeImplicitAuthorizationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisPureActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictActionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisSafeClassificationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisStrictIOAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCallerOwnership": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisTemplateEditCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/61-package-default-policy-isolation/runs/dpi-mv4vti3m.jsonl#last.aegisCustomOverrideCompatibility": {
+        "equals": 1,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "npm run build && AEGIS_REPO=/path/to/built/aegis AEGIS_DIST=/path/to/built/aegis/packages/aegis/dist/index.js node experiments/61-package-default-policy-isolation/dist/main.js",
+    "stackRecommendation": "Separate implicit package policy from editable exported recipes; host customization remains explicit per call. Protect async effective defaults too.",
+    "stackReposAndPRs": [
+      {
+        "repo": "https://github.com/heybeaux/aegis",
+        "package": "@heybeaux/lattice-aegis",
+        "branch": "nori/2026-10-11-exp61",
+        "commits": [
+          "186cc3541218ca0a591bc36fd02bc7708f0d65bd"
+        ],
+        "prs": [
+          "https://github.com/heybeaux/aegis/pull/67"
+        ],
+        "dirtyState": "clean-tracked-at-experiment-run"
+      }
+    ],
+    "evidenceStatus": "verified",
+    "seedSetId": "package-default-policy-isolation-v1",
+    "notes": "Pre-registration 5271a6f0a95728cfc74e18ed2e102501554cd229 before implementation/output. Two baseline runs same full48 scenario body rows and same artifact hashes; frozen harness sha256:49fa6e5e6816be71d37f21c92b738fb385c1b056d1351996e9fad0ef2cc4e97b unchanged candidate. Full53-event replay. No fitted parameters; holdout reserved unused. Controls illustrate mitigation/explicit customization, not improvement. Public exports remain mutable. Behavioral migration for ambient-mutating hosts; CI/merge separate from verified experiment. No malformed inputs/proxy/getter/process compromise/transactional action claim."
   }
 ]
