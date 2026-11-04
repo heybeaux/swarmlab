@@ -1,0 +1,40 @@
+{
+  "runId": "pet-mw1t0mch-35427",
+  "trace": "experiments/74-process-execution-target/runs/pet-mw1t0mch-35427.jsonl",
+  "traceSha256": "sha256:b5b110d80355e0a7ce00ad73dbeea542ba1f590a37ce4a7f25e2e17e56d1c755",
+  "startedAt": 1793777848865,
+  "endedAt": 1793777848948,
+  "aegisSha": "26f269567ab7ba335577f0b556b088c3adde5f15",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:99b274697803c05879a663a6ff0680483abad60b4e3e9fac77378fbf4b183e18",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:dfbb640ed50193bae164ccfe2180955fd65b012c9b297428e8211aa8bc7ac50c"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:28f57e600ea5469426b738bb80af9eb74f93c5413b99d550ed36348d5bd05949"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:5529cc2f294539546548428149464f79e2e167d4d6abfb6dd3f461612982e1fb"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:717dbee6009b8cffae4843781502bfc2ab687120f8f053e914529f661e2f5c90"
+    }
+  ],
+  "summary": {
+    "unsafeExecutionRate": 0,
+    "validExecutionAccuracy": 1,
+    "replayBlockRate": 1,
+    "approvalConsumptionRate": 1,
+    "processRecordBindingRate": 1,
+    "ownershipRate": 1,
+    "staleSnapshotDiagnosticRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

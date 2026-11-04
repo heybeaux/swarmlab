@@ -1,0 +1,305 @@
+{
+  "runId": "pet-mw1sxdo3-29192",
+  "trace": "experiments/74-process-execution-target/runs/pet-mw1sxdo3-29192.jsonl",
+  "traceSha256": "sha256:6a94228af22b60eb33f1050fa5ad7c0237323cccf507a907e86f1281e049b029",
+  "startedAt": 1793777697651,
+  "endedAt": 1793777697742,
+  "aegisSha": "85d451dbb9a8d956023514b2cf1e360d6913fbc0",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:354e3f4aa85a032bc433b0a7a82f8d89b377d9c99b7cd864c4d6a8b061a0606c",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:dfbb640ed50193bae164ccfe2180955fd65b012c9b297428e8211aa8bc7ac50c"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:28f57e600ea5469426b738bb80af9eb74f93c5413b99d550ed36348d5bd05949"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:5529cc2f294539546548428149464f79e2e167d4d6abfb6dd3f461612982e1fb"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:717dbee6009b8cffae4843781502bfc2ab687120f8f053e914529f661e2f5c90"
+    }
+  ],
+  "summary": {
+    "unsafeExecutionRate": 1,
+    "validExecutionAccuracy": 1,
+    "replayBlockRate": 1,
+    "approvalConsumptionRate": 1,
+    "processRecordBindingRate": 0,
+    "ownershipRate": 1,
+    "staleSnapshotDiagnosticRate": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "local-generation",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-host",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-session",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-missing",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-unverified",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-blank",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-array",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-params-only",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-exact",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-reordered",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "local-extra",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-generation",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-host",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-session",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-missing",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-unverified",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-blank",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-array",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-params-only",
+      "checks": {
+        "execution": false,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-exact",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-reordered",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "shared-extra",
+      "checks": {
+        "execution": true,
+        "replay": true,
+        "consumption": true,
+        "binding": false,
+        "ownership": true,
+        "diagnostic": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
