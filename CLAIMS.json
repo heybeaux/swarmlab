@@ -7177,8 +7177,8 @@
     "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/73-process-generation-binding/main.mjs && node experiments/73-process-generation-binding/verify-receipts.mjs",
     "stackRecommendation": "Bind trusted host target lifetime to approval/action identity; refuse process consumption without valid host evidence. Host must implement authenticated generation resolution and atomic execution.",
     "stackReposAndPRs": [
-      "https://github.com/heybeaux/aegis",
-      "https://github.com/heybeaux/swarmlab"
+      "https://github.com/heybeaux/aegis/pull/81",
+      "https://github.com/heybeaux/swarmlab/pull/64"
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen deterministic corpus; no holdout tuning, no real terminal execution or host deployment. CI and merge status separate. Historical52/52 Aegis catalogue does not certify RT63."

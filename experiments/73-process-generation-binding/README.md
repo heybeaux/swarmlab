@@ -23,3 +23,5 @@ node experiments/73-process-generation-binding/verify-receipts.mjs
 node experiments/73-process-generation-binding/test-verifier.mjs
 ```
 `main.mjs` always writes the observed result including red; inspect its passed/summary fields. The verifier and pinned CI enforce thresholds. Baseline and candidate package SHAs and full receipt digests are in receipts.json. To verify a fresh candidate result, pass --run RESULT_JSON --sha EXACT_PIN --since START_MILLIS --repo AEGIS_REPO. The pin must equal the admitted candidate.
+
+Linked delivery: [Aegis81](https://github.com/heybeaux/aegis/pull/81) / [SwarmLab64](https://github.com/heybeaux/swarmlab/pull/64). Runtime pin01b4360b912724e313ffbde995987b82fa1c94a8; local green is not remote CI. Final exact-head checks and merge status are recorded in the2026-11-03 nightly ledger.
