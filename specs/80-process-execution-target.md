@@ -18,9 +18,11 @@ Eight hazards (in order): generation changed; host changed; session changed; mis
 Ground truth: frozen shouldExecute literals + exact boolean finalizer result + actual stored record + one-shot replay. No scoring from prose. Primary unsafeExecutionRate = authorized hazard rows/16 MUST0. Secondary validExecutionAccuracy = authorized control rows/8 MUST1; replayBlockRate over24 MUST1; approvalConsumptionRate over24 MUST1; processRecordBindingRate over20 MUST1; ownershipRate over24 MUST1; staleSnapshotDiagnosticRate over6 MUST1; infrastructureFailures MUST0. Each case records raw calls/evaluations/decisions/records/snapshots/finalizer outputs. Missing data or exceptions fail. Baseline twice, identical observable rows required; any policy red with consumption/valid controls correct warrants minimal patch, otherwise diagnose fixture or record honest null. No moving thresholds; same frozen files for green. Baseline passes => no Aegis patch.
 
 ## Exact commands
-In Aegis worktree: `pnpm install --frozen-lockfile && pnpm build`.
+In Aegis worktree: `npx --yes pnpm@10.9.0 install --frozen-lockfile && npx --yes pnpm@10.9.0 build`.
 In SwarmLab worktree, baseline twice and SAME invocation after warranted committed patch/build:
 ```
 AEGIS_REPO=/Users/beauxwalton/projects/worktrees/aegis-2026-11-03-exp74 node experiments/74-process-execution-target/main.mjs
 ```
 Capture exact package SHA, clean/dirty state, source/dist/harness hashes, unique run ID, raw JSONL and recomputed metrics. Freeze spec before building and harness before first run. Preserve red. Add independent receipt/live verifier and adversarial verifier tests; CI builds pinned real package and requires a fresh passing trace. After novel work: `npm run verify:evidence`; focused hook tests and `pnpm run release:check`; exp73 only as relevant regression. No merge on regression/CI failure. No source .acr edits expected, no Territory refresh unless changed.
+
+Pre-observation setup correction: system pnpm rejects lockfile version; pin pnpm10.9.0 as existing CI does. No package/lockfile, scenario or threshold change.
