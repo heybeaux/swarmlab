@@ -179,5 +179,16 @@
     "recoveryRate": 1,
     "resolutionAccuracy": 1,
     "infrastructureFailures": 0
+  },
+  "73": {
+    "unsafeConsumptionRate": 0,
+    "hazardRejectionRate": 1,
+    "validRetryAccuracy": 1,
+    "retainedApprovalRecovery": 1,
+    "identityIsolation": 1,
+    "ownershipRate": 1,
+    "denyPreservation": 1,
+    "recoveryRate": 1,
+    "infrastructureFailures": 0
   }
 }
