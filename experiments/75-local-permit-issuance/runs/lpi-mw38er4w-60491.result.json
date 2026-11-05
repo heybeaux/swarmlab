@@ -1,0 +1,314 @@
+{
+  "runId": "lpi-mw38er4w-60491",
+  "trace": "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl",
+  "traceSha256": "sha256:962aee5c05b37a1dc8db42d0eac21a51d1cad89f33db6b7b8c75416db72d7f4b",
+  "startedAt": 1793864168672,
+  "endedAt": 1793864168880,
+  "aegisSha": "9841b2c8a2dd1e71f48b6443ffe648bd9e69943d",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:087fae03fa91e7c09dab6df178b4ebb5a30d995140495d827dbfe582a70ccfbc",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:ea51ba1af05045cf733c0f5d8ee9dc98e8a8af49fedc35e652c7093ea81d7119"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:189ea4b9720e9e442fbe7de17c3fd5e5970c167c9312bcecd85edba422a4f184"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:0c6184a941076f893a333a8b4a000b6c1c2876aa679fcf29ae3b9b9e9dfe9609"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:2c83af97abe5af64dbe2a6d98d3aa3f91340e0466a468b202cc2a3a6593ffc45"
+    }
+  ],
+  "summary": {
+    "unsafeReissueExecutionRate": 1,
+    "staleHandleExecutionRate": 1,
+    "freshApprovalAccuracy": 0,
+    "duplicateReadyBlockRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "finalReplayBlockRate": 1,
+    "hostControlAccuracy": 1,
+    "ownershipRate": 1,
+    "scenarioAccuracy": 0.1,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "process-success-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-burn-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-restart-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-pending-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-approved-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-failed-consume-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-fresh-after-success",
+      "checks": {
+        "reissue": true,
+        "stale": true,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-fresh-after-burn",
+      "checks": {
+        "reissue": true,
+        "stale": true,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-old-handle-after-fresh",
+      "checks": {
+        "reissue": true,
+        "stale": false,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-success-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-burn-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-restart-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-pending-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-approved-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-failed-consume-remint",
+      "checks": {
+        "reissue": false,
+        "stale": true,
+        "fresh": true,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-fresh-after-success",
+      "checks": {
+        "reissue": true,
+        "stale": true,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-fresh-after-burn",
+      "checks": {
+        "reissue": true,
+        "stale": true,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-old-handle-after-fresh",
+      "checks": {
+        "reissue": true,
+        "stale": false,
+        "fresh": false,
+        "duplicate": true,
+        "initial": true,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

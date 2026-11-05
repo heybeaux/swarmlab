@@ -1,0 +1,37 @@
+{
+  "experiment": "75-local-permit-issuance",
+  "preRegistrationCommit": "dee55d3",
+  "frozenHarnessCommit": "c51ab2d",
+  "baselineSha": "9841b2c8a2dd1e71f48b6443ffe648bd9e69943d",
+  "candidateSha": "8162da4f7842a909fa155893bcec2cf4af12af4f",
+  "baselineMetrics": {
+    "unsafeReissueExecutionRate": 1,
+    "staleHandleExecutionRate": 1,
+    "freshApprovalAccuracy": 0,
+    "duplicateReadyBlockRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "finalReplayBlockRate": 1,
+    "hostControlAccuracy": 1,
+    "ownershipRate": 1,
+    "scenarioAccuracy": 0.1,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "lpi-mw38eqx1-60473",
+      "traceSha256": "sha256:a7d2d65e66569c1d167043345b8ed6aacae8b0eb9884877f7d133c1b0ed771b2",
+      "resultSha256": "sha256:2670dbe854196d35caa4b63ebe154f97df06e235ddf45b2860a8434fe0fd96e0"
+    },
+    {
+      "runId": "lpi-mw38er4w-60491",
+      "traceSha256": "sha256:962aee5c05b37a1dc8db42d0eac21a51d1cad89f33db6b7b8c75416db72d7f4b",
+      "resultSha256": "sha256:6feca6bc98eb1307b61f10d16ef99d3edf1e7aed5c2e8a47f64e14d6363bfd48"
+    },
+    {
+      "runId": "lpi-mw38hk2d-67844",
+      "traceSha256": "sha256:590fbcad466ddf45bb2e1a6a62c37b75691b4f8f89604f0d406a99992da97d57",
+      "resultSha256": "sha256:600f58d7bfe4599c7356b88037a32b75194b5d2b7d013a52b96026fa71626ea8"
+    }
+  ]
+}
