@@ -8497,5 +8497,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic local/shared storage corpus; no actual terminal execution or atomic host-write proof. Stale-snapshot diagnostic still authorizes as expected. No threshold tuning; unused holdout. CI/merge separate."
+  },
+  {
+    "id": "RT-65",
+    "claim": "Local persisted issuance identity prevents spent-permit recreation and old-handle capture of fresh approval while preserving legitimate reapproval in the fixed20-case corpus.",
+    "experiment": "experiments/75-local-permit-issuance",
+    "spec": "specs/81-local-permit-issuance.md",
+    "runIds": [
+      "lpi-mw38eqx1-60473",
+      "lpi-mw38er4w-60491",
+      "lpi-mw38hk2d-67844"
+    ],
+    "tracePaths": [
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.unsafeReissueExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.staleHandleExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.freshApprovalAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.duplicateReadyBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.initialLifecycleAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.approvalConsumptionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.finalReplayBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.hostControlAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.ownershipRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.scenarioAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.infrastructureFailures",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.unsafeReissueExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.staleHandleExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.freshApprovalAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.duplicateReadyBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.initialLifecycleAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.approvalConsumptionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.finalReplayBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.hostControlAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.ownershipRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.scenarioAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.infrastructureFailures",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.unsafeReissueExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.staleHandleExecutionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.freshApprovalAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.duplicateReadyBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.initialLifecycleAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.approvalConsumptionRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.finalReplayBlockRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.hostControlAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.ownershipRate",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.scenarioAccuracy",
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.unsafeReissueExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.staleHandleExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.freshApprovalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.duplicateReadyBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.finalReplayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.hostControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.scenarioAccuracy": {
+        "equals": 0.1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38eqx1-60473.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.unsafeReissueExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.staleHandleExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.freshApprovalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.duplicateReadyBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.finalReplayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.hostControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.scenarioAccuracy": {
+        "equals": 0.1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38er4w-60491.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.unsafeReissueExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.staleHandleExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.freshApprovalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.duplicateReadyBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.finalReplayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.hostControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/75-local-permit-issuance/runs/lpi-mw38hk2d-67844.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/75-local-permit-issuance/main.mjs && node experiments/75-local-permit-issuance/verify-receipts.mjs",
+    "stackRecommendation": "Retain a per-consumption local issuance identity and atomic persistent issuance marker; give fresh approval a distinct handle. Hosts retain protected metadata and migrate legacy grants. Shared-store reissuance requires separate design.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/84"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic local filesystem corpus only; 12/12 unsafe remints and2/2 stale handle executions before,0after; all6fresh controls pass. Opaque IDs/timestamps normalized only for cross-run comparison. No shared-store, adversarial filesystem, concurrent consume/reapprove, fsync or deployment claim. Holdout unused; CI/merge tracked separately."
   }
 ]
