@@ -1,0 +1,15 @@
+import {isDeepStrictEqual as same} from 'node:util';
+import {scenarios,thresholds} from './scenarios.mjs';
+const all=a=>Array.isArray(a)&&a.every(x=>x===false);
+const consumed=a=>a?.requested?.exitCode===2&&a?.requested?.approval?.status==='pending'&&a?.consumed?.exitCode===0&&a?.consumed?.approval?.status==='consumed';
+export function assess(s,result){const r=result.response??{},cs=r.creations??[],accept=cs.map(c=>c.accepted),exec=r.executions??[];
+ const fixture=r.fixture;
+ const fixtureOK=fixture?.first===true&&fixture.taken==='fixture-one'&&fixture.reissue===false&&fixture.fresh===true&&fixture.legacyFirst===true&&fixture.legacyTaken==='legacy'&&fixture.legacyAgain===true&&same(fixture.state.issued,['fixture-one','fixture-two']);
+ const hasInitial=!s.refusal&&!s.failure&&s.kind!=='concurrent-initial';
+ const checks={consumption:consumed(r.approval),initial:!hasInitial||r.first===!s.burn,remint:!s.remint||(cs.length===(s.kind==='concurrent-remint'?3:2)&&cs.slice(1).every(c=>c.accepted===false)&&exec.length===0),stale:s.kind!=='stale-handle-after-fresh'||r.stale===false,fresh:!s.fresh||(consumed(r.freshApproval)&&same(accept,[true,true])&&cs[0].permit.id!==cs[1].permit.id&&same(exec,[true])),concurrent:s.kind!=='concurrent-initial'||(same(accept,[true,false])&&same(exec,[true])),refusal:!s.refusal||(same(accept,[false])&&r.operations?.length===0),failure:!s.failure||(s.kind==='create-before-failure'?same(accept,[false,true])&&same(exec,[true]):same(accept,[false,false])&&exec.length===0&&r.after?.issued?.length===1&&r.after?.ready?.length===1),legacy:s.kind!=='legacy-control'||(same(accept,[true])&&r.first===true),replay:all(r.replays),ownership:r.ownership===true,fixture:fixtureOK,infrastructure:result.status==='returned'};
+ return {id:s.id,result,checks,correct:Object.values(checks).every(x=>x===true)};
+}
+export const rescore=rows=>rows.map((r,i)=>assess(scenarios[i],r.result));
+export function metrics(rows){const rate=(key,filter=()=>true)=>{const selected=rows.filter((r,i)=>filter(scenarios[i]));return selected.filter(r=>r.checks[key]).length/selected.length;};
+ return {unsafeReissueRate:rows.filter((r,i)=>scenarios[i].remint&&r.result.response?.executions?.some(x=>x===true)).length/8,staleHandleExecutionRate:rows.filter((r,i)=>scenarios[i].kind==='stale-handle-after-fresh'&&r.result.response?.stale===true).length/2,freshApprovalAccuracy:rate('fresh',s=>s.fresh),concurrentInitialAccuracy:rate('concurrent',s=>s.kind==='concurrent-initial'),capabilityRefusalAccuracy:rate('refusal',s=>s.refusal),createFailureAccuracy:rate('failure',s=>s.failure),legacyAccuracy:rate('legacy',s=>s.kind==='legacy-control'),approvalConsumptionRate:rate('consumption'),initialLifecycleAccuracy:rate('initial'),replayBlockRate:rate('replay'),ownershipRate:rate('ownership'),fixtureControlAccuracy:rate('fixture'),scenarioAccuracy:rows.filter(r=>r.correct).length/rows.length,infrastructureFailures:rows.filter(r=>!r.checks.infrastructure).length};}
+export const passing=scores=>same(scores,thresholds);
