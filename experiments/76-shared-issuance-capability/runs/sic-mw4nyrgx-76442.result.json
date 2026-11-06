@@ -1,0 +1,46 @@
+{
+  "runId": "sic-mw4nyrgx-76442",
+  "trace": "experiments/76-shared-issuance-capability/runs/sic-mw4nyrgx-76442.jsonl",
+  "traceSha256": "sha256:954578424cd42e0f039bd3970035936f222b2c1a3e0c3af7a109cf29e009b47e",
+  "startedAt": 1793950762641,
+  "endedAt": 1793950762736,
+  "aegisSha": "dad07662ae7f7b88386b88844a576ef2afd7679b",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:aa9556f9c97095a2759642dff0361cd84ea5792c27ddb6e54ebf4d65a023bf42",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:b6ae9a054e0cce811b7b8f97cfb72611653d5e84e42b27be26d2fbced27680d3"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:5020dab5bf2a4a7d851ede094b05353f2c594ad28e3c3255cc743be6a9898d38"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:9805c33c78cb9f4ea47398fdf3e609fc4f6e6c5d2bb3d885fec59bde49a4b7b3"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:39ac7fcb9397ea8493140dc0e01bf659f411b3206a3f62066e0adb5b2472f857"
+    }
+  ],
+  "summary": {
+    "unsafeReissueRate": 0,
+    "staleHandleExecutionRate": 0,
+    "freshApprovalAccuracy": 1,
+    "concurrentInitialAccuracy": 1,
+    "capabilityRefusalAccuracy": 1,
+    "createFailureAccuracy": 1,
+    "legacyAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipRate": 1,
+    "fixtureControlAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

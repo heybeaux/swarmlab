@@ -1,0 +1,479 @@
+{
+  "runId": "sic-mw4nur18-64948",
+  "trace": "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl",
+  "traceSha256": "sha256:5be83686c1de2635b6ebf0e41570fd0a551cd8d969cbd70270137fc7af788f62",
+  "startedAt": 1793950575452,
+  "endedAt": 1793950575547,
+  "aegisSha": "2c3a68d20b0fc7dd033eeba717567a04748fdb02",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:0b67766441ea5708557d322a6ce6f36ac2528156bb6a02474ac41e0d128a6b64",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:b6ae9a054e0cce811b7b8f97cfb72611653d5e84e42b27be26d2fbced27680d3"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:5020dab5bf2a4a7d851ede094b05353f2c594ad28e3c3255cc743be6a9898d38"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:9805c33c78cb9f4ea47398fdf3e609fc4f6e6c5d2bb3d885fec59bde49a4b7b3"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:39ac7fcb9397ea8493140dc0e01bf659f411b3206a3f62066e0adb5b2472f857"
+    }
+  ],
+  "summary": {
+    "unsafeReissueRate": 1,
+    "staleHandleExecutionRate": 1,
+    "freshApprovalAccuracy": 0,
+    "concurrentInitialAccuracy": 1,
+    "capabilityRefusalAccuracy": 0,
+    "createFailureAccuracy": 0,
+    "legacyAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipRate": 1,
+    "fixtureControlAccuracy": 1,
+    "scenarioAccuracy": 0.14285714285714285,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-success-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-burn-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconnect-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-concurrent-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-fresh-after-success",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-fresh-after-burn",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-stale-handle-after-fresh",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": false,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-missing-capability",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-missing-issuance",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-blank-issuance",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-create-before-failure",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": false,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-create-after-commit-failure",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": false,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-success-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-burn-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconnect-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-concurrent-remint",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": false,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-fresh-after-success",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-fresh-after-burn",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-stale-handle-after-fresh",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": false,
+        "fresh": false,
+        "concurrent": true,
+        "refusal": true,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-missing-capability",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-missing-issuance",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-blank-issuance",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": false,
+        "failure": true,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-create-before-failure",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": false,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-create-after-commit-failure",
+      "checks": {
+        "consumption": true,
+        "initial": true,
+        "remint": true,
+        "stale": true,
+        "fresh": true,
+        "concurrent": true,
+        "refusal": true,
+        "failure": false,
+        "legacy": true,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

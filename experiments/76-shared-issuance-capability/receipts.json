@@ -1,0 +1,45 @@
+{
+  "experiment": "76-shared-issuance-capability",
+  "baselineSha": "2c3a68d20b0fc7dd033eeba717567a04748fdb02",
+  "candidateSha": "dad07662ae7f7b88386b88844a576ef2afd7679b",
+  "baselineMetrics": {
+    "unsafeReissueRate": 1,
+    "staleHandleExecutionRate": 1,
+    "freshApprovalAccuracy": 0,
+    "concurrentInitialAccuracy": 1,
+    "capabilityRefusalAccuracy": 0,
+    "createFailureAccuracy": 0,
+    "legacyAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipRate": 1,
+    "fixtureControlAccuracy": 1,
+    "scenarioAccuracy": 0.14285714285714285,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "sic-mw4nuqxc-64932",
+      "traceSha256": "sha256:b77084358b593f1a19a7c26e3d2c37d849c90a2e7b51078adce39a54f32bd7c4",
+      "resultSha256": "sha256:1d89230fd6fb4fd54f6eb8d020f68994409ed297d27b4ebf3552412ac6219398"
+    },
+    {
+      "runId": "sic-mw4nur18-64948",
+      "traceSha256": "sha256:5be83686c1de2635b6ebf0e41570fd0a551cd8d969cbd70270137fc7af788f62",
+      "resultSha256": "sha256:2f145c2204eb7269f50bc73f4a01721897cb1b84ac937abefb2e4f73325c48b4"
+    },
+    {
+      "runId": "sic-mw4nxfb6-71023",
+      "traceSha256": "sha256:87b4e57c224a2537ce1315ef41a27d3cf236081f576c292fab8ee749306c4734",
+      "resultSha256": "sha256:e25aa7bcd09161ee6a7aeb915eb75ea986e06cc305a078001040213634db49db"
+    }
+  ],
+  "preRegistrationCommit": "0730d79",
+  "frozenHarnessCommit": "235afbc",
+  "nonAdmittedDiagnostics": [
+    "sic-mw4nu27u-64213",
+    "sic-mw4nu4d0-64261"
+  ],
+  "correction": "Consumption event-field correction only; diagnostic traces and original oracle retained in git. No scenario/threshold tuning."
+}
