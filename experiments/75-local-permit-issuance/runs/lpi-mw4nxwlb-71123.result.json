@@ -1,0 +1,43 @@
+{
+  "runId": "lpi-mw4nxwlb-71123",
+  "trace": "experiments/75-local-permit-issuance/runs/lpi-mw4nxwlb-71123.jsonl",
+  "traceSha256": "sha256:1d00e0316017dac1139b3412f9ebeafcfa82c3e19f49babef1744aff10f13ce9",
+  "startedAt": 1793950722623,
+  "endedAt": 1793950722857,
+  "aegisSha": "dad07662ae7f7b88386b88844a576ef2afd7679b",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:aa9556f9c97095a2759642dff0361cd84ea5792c27ddb6e54ebf4d65a023bf42",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:ea51ba1af05045cf733c0f5d8ee9dc98e8a8af49fedc35e652c7093ea81d7119"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:189ea4b9720e9e442fbe7de17c3fd5e5970c167c9312bcecd85edba422a4f184"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:0c6184a941076f893a333a8b4a000b6c1c2876aa679fcf29ae3b9b9e9dfe9609"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:2c83af97abe5af64dbe2a6d98d3aa3f91340e0466a468b202cc2a3a6593ffc45"
+    }
+  ],
+  "summary": {
+    "unsafeReissueExecutionRate": 0,
+    "staleHandleExecutionRate": 0,
+    "freshApprovalAccuracy": 1,
+    "duplicateReadyBlockRate": 1,
+    "initialLifecycleAccuracy": 1,
+    "approvalConsumptionRate": 1,
+    "finalReplayBlockRate": 1,
+    "hostControlAccuracy": 1,
+    "ownershipRate": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

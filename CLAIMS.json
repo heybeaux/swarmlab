@@ -8689,5 +8689,242 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic local filesystem corpus only; 12/12 unsafe remints and2/2 stale handle executions before,0after; all6fresh controls pass. Opaque IDs/timestamps normalized only for cross-run comparison. No shared-store, adversarial filesystem, concurrent consume/reapprove, fsync or deployment claim. Holdout unused; CI/merge tracked separately."
+  },
+  {
+    "id": "RT-66",
+    "claim": "Strict shared issuance capability and per-consumption handles prevent cross-host remint and stale-handle capture while refusing incapable adapters in the fixed28-case corpus.",
+    "experiment": "experiments/76-shared-issuance-capability",
+    "spec": "specs/82-shared-issuance-capability.md",
+    "runIds": [
+      "sic-mw4nuqxc-64932",
+      "sic-mw4nur18-64948",
+      "sic-mw4nxfb6-71023"
+    ],
+    "tracePaths": [
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.unsafeReissueRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.staleHandleExecutionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.freshApprovalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.concurrentInitialAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.capabilityRefusalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.createFailureAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.legacyAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.approvalConsumptionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.initialLifecycleAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.replayBlockRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.ownershipRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.fixtureControlAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.scenarioAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.infrastructureFailures",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.unsafeReissueRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.staleHandleExecutionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.freshApprovalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.concurrentInitialAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.capabilityRefusalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.createFailureAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.legacyAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.approvalConsumptionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.initialLifecycleAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.replayBlockRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.ownershipRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.fixtureControlAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.scenarioAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.infrastructureFailures",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.unsafeReissueRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.staleHandleExecutionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.freshApprovalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.concurrentInitialAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.capabilityRefusalAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.createFailureAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.legacyAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.approvalConsumptionRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.initialLifecycleAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.replayBlockRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.ownershipRate",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.fixtureControlAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.scenarioAccuracy",
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.unsafeReissueRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.staleHandleExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.freshApprovalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.concurrentInitialAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.capabilityRefusalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.createFailureAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.legacyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.fixtureControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.scenarioAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nuqxc-64932.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.unsafeReissueRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.staleHandleExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.freshApprovalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.concurrentInitialAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.capabilityRefusalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.createFailureAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.legacyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.fixtureControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.scenarioAccuracy": {
+        "equals": 0.14285714285714285,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nur18-64948.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.unsafeReissueRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.staleHandleExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.freshApprovalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.concurrentInitialAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.capabilityRefusalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.createFailureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.legacyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.approvalConsumptionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.initialLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.ownershipRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.fixtureControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/76-shared-issuance-capability/runs/sic-mw4nxfb6-71023.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/76-shared-issuance-capability/main.mjs && node experiments/76-shared-issuance-capability/verify-receipts.mjs",
+    "stackRecommendation": "Opt in with trusted stable consumed-grant identity and durable atomic createOnce/take storage. Refuse missing capability; never downgrade. Retain issuance markers. Legacy create/take alone is not remint-safe.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/85"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Real public built Aegis; deterministic storage fixture, not production database. Both baseline raw responses identical. Initial oracle event-field defect preserved as diagnostic runs; fixed before Aegis edits, no thresholds/scenario tuning. Holdout unused. No deployment, malicious host/storage, lost-handle recovery or durable DB proof."
   }
 ]
