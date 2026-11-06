@@ -107,3 +107,10 @@ fresh pinned-package CI. AFTER novel work: `npm run verify:evidence`, relevant
 exp74/75 regression, `npx --yes pnpm@10.9.0 run release:check`. All CI/mergeability
 must pass to land; pending checks allow overnight pending exit. No .acr edits
 planned; refresh Territory only if source cards change.
+
+## Harness correction before any Aegis edits
+Initial runs sic-mw4nu27u-64213 and sic-mw4nu4d0-64261 preserved as
+non-admitted diagnostics: oracle incorrectly looked for approval.status instead of
+public approval.event. Raw traces show event requested/consumed and exit2/0.
+Correct only field lookup, retain all thresholds/scenarios/seed/host code; rerun
+baseline twice before attribution or patch. Old oracle recoverable at28cc942.

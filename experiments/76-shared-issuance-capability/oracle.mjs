@@ -1,7 +1,7 @@
 import {isDeepStrictEqual as same} from 'node:util';
 import {scenarios,thresholds} from './scenarios.mjs';
 const all=a=>Array.isArray(a)&&a.every(x=>x===false);
-const consumed=a=>a?.requested?.exitCode===2&&a?.requested?.approval?.status==='pending'&&a?.consumed?.exitCode===0&&a?.consumed?.approval?.status==='consumed';
+const consumed=a=>a?.requested?.exitCode===2&&a?.requested?.approval?.event==='requested'&&a?.consumed?.exitCode===0&&a?.consumed?.approval?.event==='consumed';
 export function assess(s,result){const r=result.response??{},cs=r.creations??[],accept=cs.map(c=>c.accepted),exec=r.executions??[];
  const fixture=r.fixture;
  const fixtureOK=fixture?.first===true&&fixture.taken==='fixture-one'&&fixture.reissue===false&&fixture.fresh===true&&fixture.legacyFirst===true&&fixture.legacyTaken==='legacy'&&fixture.legacyAgain===true&&same(fixture.state.issued,['fixture-one','fixture-two']);
