@@ -8926,5 +8926,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Real public built Aegis; deterministic storage fixture, not production database. Both baseline raw responses identical. Initial oracle event-field defect preserved as diagnostic runs; fixed before Aegis edits, no thresholds/scenario tuning. Holdout unused. No deployment, malicious host/storage, lost-handle recovery or durable DB proof."
+  },
+  {
+    "id": "RT-67",
+    "claim": "Opt-in exact issuance readback recovers ten lost-handle scenarios without duplicate execution or accepting corrupt/unavailable readback in the 28-case real Aegis corpus.",
+    "experiment": "experiments/77-shared-issuance-recovery",
+    "spec": "specs/83-shared-issuance-recovery.md",
+    "runIds": [
+      "sir-mw6382rf-91926",
+      "sir-mw6382w4-91948",
+      "sir-mw63a7ys-99583"
+    ],
+    "tracePaths": [
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.recoveryAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.duplicateExecutionRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.unsafeReadbackAcceptanceRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.refusalAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.lifecycleAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.consumptionAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.replayBlockRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.controlAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.fixtureAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.scenarioAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.infrastructureFailures",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.recoveryAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.duplicateExecutionRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.unsafeReadbackAcceptanceRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.refusalAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.lifecycleAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.consumptionAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.replayBlockRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.controlAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.fixtureAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.scenarioAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.infrastructureFailures",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.recoveryAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.duplicateExecutionRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.unsafeReadbackAcceptanceRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.refusalAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.lifecycleAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.consumptionAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.replayBlockRate",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.controlAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.fixtureAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.scenarioAccuracy",
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.recoveryAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.duplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.unsafeReadbackAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.refusalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.lifecycleAccuracy": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.replayBlockRate": {
+        "equals": 0.9285714285714286,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.recoveryAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.duplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.unsafeReadbackAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.refusalAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.lifecycleAccuracy": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.replayBlockRate": {
+        "equals": 0.9285714285714286,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw6382w4-91948.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.duplicateExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.unsafeReadbackAcceptanceRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.refusalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.lifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/77-shared-issuance-recovery/runs/sir-mw63a7ys-99583.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/77-shared-issuance-recovery/main.mjs && node experiments/77-shared-issuance-recovery/verify-receipts.mjs",
+    "stackRecommendation": "Opt-in recoverExisting requires coherent readIssuedPermit with marker and ready state; exact binding recovers handles only. Atomic take and fresh snapshot remain mandatory.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/86"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic storage fixture and actual public built package. Recovery 0/10 to10/10, all28green. Baseline raw repeats identical. Recovery returns a handle, never execution permission. No production DB durability, external side effects, host deployment or malicious storage claim. Holdout unused."
   }
 ]

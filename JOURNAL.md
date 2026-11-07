@@ -864,3 +864,45 @@ against take reconciliation before preregistering; no such recovery claim here.
 Linked runtime: [Aegis85](https://github.com/heybeaux/aegis/pull/85).
 Executable pin dad0766; docs-only head3efa656. Final local evidence65claims,
 153traces,1406assertions verified. Remote CI and merge tracked in nightly ledger.
+
+
+## 2026-11-06 — exp77 shared issuance acknowledgement recovery
+
+Spec83 pre-registration59244fa and frozen harness ec933f7 preceded all observations.
+New boundary: CREATE acknowledgement recovery; exp31 reconciled destructive TAKE
+and exp76 explicitly accepted lost-handle orphaning. Real Aegis `340cc7798d375f131c0e5181bfe213e0249296f2`,
+`sir-mw6382rf-91926` / `sir-mw6382w4-91948`: identical raw28rows,
+**0/10 recovery**, **0/2 capability refusals**,16/28complete cases.
+Consumption, no-recovery control and fixture all28/28; infrastructure0.
+Duplicate execution and unsafe readback acceptance were already0. The two
+baseline replay failures are first takes after erroneously accepted unsupported
+recovery requests, not duplicate execution evidence. Both reds retained.
+
+Runtime `103e343d351c694bdf9103208af30ec583ffbda8`, SAME immutable28cases,
+`sir-mw63a7ys-99583`: **10/10 recovery**, **2/2 refusal**,28/28green.
+Optional recoverExisting requires coherent readIssuedPermit before mutation.
+False/exception creation can recover only an exactly matching issued-ready
+record, with expected binding detached before await. No new issuance, take or
+execution decision occurs in recovery. Multiple hosts can hold the same handle;
+atomic take and fresh authorization still yield one execution. Existing strict
+defaults reject duplicates, as the frozen no-recovery controls demonstrate.
+
+Host owns authentic per-consumption IDs, atomic durable marker+ready publication,
+coherent reads, take and fresh authority. Aegis owns capability refusal and
+binding verification. Deterministic shared Map fixture, no database durability,
+external effects, deployment, malicious storage, crash-after-take or holdout claim.
+Reserved holdout unused; no threshold/scenario tuning.24new tests10red/14pass to
+24green; focused45pass; full release1514tests plus58historical gates pass. Static
+58-case catalogue is not execution of RT67. exp76 relevant regression28/28green.
+
+Three admitted30-event traces and complete source/dist manifests retained;
+independent verifier recomputes outcomes, requires fresh pinned-package raw
+equality and rejects36tamper controls. Local fresh actual-artifact validation
+passed. SwarmLab evidence66claims156traces1439assertions verified. Source.acr
+unchanged; no Territory refresh. Exact-head PR checks and merge status are tracked
+separately in nightly ledger, never inferred from local green.
+
+Next new hypothesis: does mutable caller authority change across an asynchronous
+shared finalization take alter the snapshot that Aegis validates? Deduplicate
+against exp56/58 (evaluator async boundaries) and execution snapshot tests before
+pre-registering; no claim or speculative patch tonight.

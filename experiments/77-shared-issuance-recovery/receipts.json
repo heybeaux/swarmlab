@@ -1,0 +1,37 @@
+{
+  "experiment": "77-shared-issuance-recovery",
+  "preRegistrationCommit": "59244fa5dde8713492039ff3fa6e4ea93672fff1",
+  "frozenHarnessCommit": "ec933f7734391ec00bdedcd7d9010646ca01d79e",
+  "baselineSha": "340cc7798d375f131c0e5181bfe213e0249296f2",
+  "candidateSha": "103e343d351c694bdf9103208af30ec583ffbda8",
+  "baselineMetrics": {
+    "recoveryAccuracy": 0,
+    "duplicateExecutionRate": 0,
+    "unsafeReadbackAcceptanceRate": 0,
+    "refusalAccuracy": 0,
+    "lifecycleAccuracy": 0.5714285714285714,
+    "consumptionAccuracy": 1,
+    "replayBlockRate": 0.9285714285714286,
+    "controlAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5714285714285714,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "sir-mw6382rf-91926",
+      "traceSha256": "sha256:4be06051ab7b0a2701cb1ab229c98305af18dd19842f26da0a5e4977abe33eac",
+      "resultSha256": "sha256:a451975e051e6fd33cc0370dca62e31cf99401ad104296a5fafdeb1d214b5830"
+    },
+    {
+      "runId": "sir-mw6382w4-91948",
+      "traceSha256": "sha256:42864f149dfc47a84b559ae9bbcd1077457cbed18eea36254e6268a267f17c5d",
+      "resultSha256": "sha256:be62df92d04ac7d4566a217005c822fab802ff49849b129e821b66f49303bf03"
+    },
+    {
+      "runId": "sir-mw63a7ys-99583",
+      "traceSha256": "sha256:7626556dced3a9848ec9778381f1c752e8e2af69372d70fbbe76dc2641fe7fe6",
+      "resultSha256": "sha256:6d5113891426afe90c719b5dc961cc124a111ead72b5704370ccae8cae140be2"
+    }
+  ]
+}
