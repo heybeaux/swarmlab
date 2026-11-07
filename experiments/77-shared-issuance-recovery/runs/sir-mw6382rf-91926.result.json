@@ -1,0 +1,224 @@
+{
+  "runId": "sir-mw6382rf-91926",
+  "trace": "experiments/77-shared-issuance-recovery/runs/sir-mw6382rf-91926.jsonl",
+  "traceSha256": "sha256:4be06051ab7b0a2701cb1ab229c98305af18dd19842f26da0a5e4977abe33eac",
+  "startedAt": 1794036857595,
+  "endedAt": 1794036857717,
+  "aegisSha": "340cc7798d375f131c0e5181bfe213e0249296f2",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:559b14aad5273cc700e3c21dd3d98715bd54c07c2162ec01ab7da5bc1d5d41cc",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:47a5cc64035b51a3913858ce0b5748c831904c3549aea67eb0a2380d25228085"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:6b2d970f11df4d9822a79b0d7d1c252fc389fba497c2b24e4d89e5b1bb77a539"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:213e879a748f35903f8f6f0d69e6964d6b7504951608339622209276e81844e0"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:d54658c73ff9ea647aef2d36f7b30481878de79b67f601497f04b2747588a20a"
+    }
+  ],
+  "summary": {
+    "recoveryAccuracy": 0,
+    "duplicateExecutionRate": 0,
+    "unsafeReadbackAcceptanceRate": 0,
+    "refusalAccuracy": 0,
+    "lifecycleAccuracy": 0.5714285714285714,
+    "consumptionAccuracy": 1,
+    "replayBlockRate": 0.9285714285714286,
+    "controlAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5714285714285714,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-ack-loss",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconnect-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-concurrent-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-revoked-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-missing-capability",
+      "checks": {
+        "recovery": true,
+        "duplicate": true,
+        "readback": true,
+        "refusal": false,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": false,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-stale-handle-fresh",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-ack-loss",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconnect-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-concurrent-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-revoked-recovery",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-missing-capability",
+      "checks": {
+        "recovery": true,
+        "duplicate": true,
+        "readback": true,
+        "refusal": false,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": false,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-stale-handle-fresh",
+      "checks": {
+        "recovery": false,
+        "duplicate": true,
+        "readback": true,
+        "refusal": true,
+        "lifecycle": false,
+        "consumption": true,
+        "replay": true,
+        "control": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
