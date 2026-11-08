@@ -1,0 +1,5 @@
+export const experiment='78-finalization-input-integrity';
+export const seed='finalization-input-integrity-v1',holdoutSeed='finalization-input-integrity-holdout-v1';
+const kinds=['unchanged','equivalent','revoked-repaired','unchecked-repaired','structure-repaired','digest-repaired','link-repaired','valid-revoked','valid-link-revoked','transient-ABA','unavailable'];
+export const scenarios=['bash','process'].flatMap(tool=>['simple','reconciled'].flatMap(api=>[...kinds,...(tool==='process'?['process-generation-repaired']:[])].map(kind=>({id:`${tool}-${api}-${kind}`,tool,api,kind,repair:kind.endsWith('-repaired'),mutation:kind.endsWith('-repaired')||kind.startsWith('valid-'),allow:['unchanged','equivalent','transient-ABA'].includes(kind)}))));
+export const thresholds={unsafeRepairExecutionRate:0,mutationBlockAccuracy:1,controlAccuracy:1,unchangedAccuracy:1,unavailableAccuracy:1,consumptionAccuracy:1,lifecycleAccuracy:1,replayBlockRate:1,ownershipAccuracy:1,fixtureAccuracy:1,scenarioAccuracy:1,infrastructureFailures:0};
