@@ -9118,5 +9118,212 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic storage fixture and actual public built package. Recovery 0/10 to10/10, all28green. Baseline raw repeats identical. Recovery returns a handle, never execution permission. No production DB durability, external side effects, host deployment or malicious storage claim. Holdout unused."
+  },
+  {
+    "id": "RT-68",
+    "claim": "Shared simple/reconciled finalization rejects authority repaired during storage: unsafe repair execution22/22 to0/22; frozen46cases pass.",
+    "experiment": "78-finalization-input-integrity",
+    "spec": "specs/84-finalization-input-integrity.md",
+    "runIds": [
+      "fii-mw7iok3w-26732",
+      "fii-mw7ioxsi-27340",
+      "fii-mw7irbzf-35786"
+    ],
+    "tracePaths": [
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unsafeRepairExecutionRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.mutationBlockAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.controlAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unchangedAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unavailableAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.consumptionAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.lifecycleAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.replayBlockRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.ownershipAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.fixtureAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.scenarioAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.infrastructureFailures",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unsafeRepairExecutionRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.mutationBlockAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.controlAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unchangedAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unavailableAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.consumptionAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.lifecycleAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.replayBlockRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.ownershipAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.fixtureAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.scenarioAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.infrastructureFailures",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unsafeRepairExecutionRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.mutationBlockAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.controlAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unchangedAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unavailableAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.consumptionAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.lifecycleAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.replayBlockRate",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.ownershipAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.fixtureAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.scenarioAccuracy",
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unsafeRepairExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.mutationBlockAccuracy": {
+        "equals": 0.26666666666666666,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unchangedAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.unavailableAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.lifecycleAccuracy": {
+        "equals": 0.5217391304347826,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5217391304347826,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unsafeRepairExecutionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.mutationBlockAccuracy": {
+        "equals": 0.26666666666666666,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unchangedAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.unavailableAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.lifecycleAccuracy": {
+        "equals": 0.5217391304347826,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5217391304347826,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7ioxsi-27340.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unsafeRepairExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.mutationBlockAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unchangedAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.unavailableAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.consumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.lifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/78-finalization-input-integrity/main.mjs && node experiments/78-finalization-input-integrity/verify-receipts.mjs",
+    "stackRecommendation": "Retain private entry permit/snapshot binding through shared finalization, reject observed drift and consume prepared grants; host supplies fresh authentic authority and atomic storage.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/87"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic barrier storage fixture and actual built public Aegis. No external effects, database durability, effect-journal safety, transient ABA or production claim; holdout unused. Baseline repeated raw equality, unchanged post-fix design."
   }
 ]

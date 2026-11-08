@@ -1,0 +1,397 @@
+{
+  "runId": "fii-mw7iok3w-26732",
+  "trace": "experiments/78-finalization-input-integrity/runs/fii-mw7iok3w-26732.jsonl",
+  "traceSha256": "sha256:a78fc96a6ee6ee8086f698ca6f8eb7e5567cfc6cf631158a223015a4774f3503",
+  "startedAt": 1794123286988,
+  "endedAt": 1794123287098,
+  "aegisSha": "2e7d4dd7d8e301713fb4169f9dc4e73d93e6bd98",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:2e33616eb4aeaa341c1295eabeb3c75c91bd0ce7f78464e9f57805f2a2ba77b1",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:64ab09e91fdb2f36b799987f8a0390a1d44b7f5654ad2024166e3e09a2c8d8a9"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:38413abc340ae0814aa77d2f79acef7f355e8242a0116b2d0de26bdf8d653576"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:af12c71cd22ffbc35f51153cd34fa13549a3fd04bc3a27d9265c755874735f6b"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:a3ab43b74edee0789fcffc9ad564c98b5a9a1d5869b22d29d7f011cede65ac47"
+    }
+  ],
+  "summary": {
+    "unsafeRepairExecutionRate": 1,
+    "mutationBlockAccuracy": 0.26666666666666666,
+    "controlAccuracy": 1,
+    "unchangedAccuracy": 1,
+    "unavailableAccuracy": 1,
+    "consumptionAccuracy": 1,
+    "lifecycleAccuracy": 0.5217391304347826,
+    "replayBlockRate": 1,
+    "ownershipAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5217391304347826,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-simple-revoked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-simple-unchecked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-simple-structure-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-simple-digest-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-simple-link-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconciled-revoked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconciled-unchecked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconciled-structure-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconciled-digest-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-reconciled-link-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-revoked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-unchecked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-structure-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-digest-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-link-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-simple-process-generation-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-revoked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-unchecked-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-structure-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-digest-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-link-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-reconciled-process-generation-repaired",
+      "checks": {
+        "repair": false,
+        "mutation": false,
+        "control": true,
+        "unchanged": true,
+        "unavailable": true,
+        "consumption": true,
+        "lifecycle": false,
+        "replay": true,
+        "ownership": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

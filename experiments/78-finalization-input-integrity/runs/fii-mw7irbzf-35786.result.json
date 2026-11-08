@@ -1,0 +1,44 @@
+{
+  "runId": "fii-mw7irbzf-35786",
+  "trace": "experiments/78-finalization-input-integrity/runs/fii-mw7irbzf-35786.jsonl",
+  "traceSha256": "sha256:e2d63ca8adf3b1c4fc97550f49bfe649e281b972ead238dc9cb74e88fc7af8bb",
+  "startedAt": 1794123416427,
+  "endedAt": 1794123416546,
+  "aegisSha": "63cbf6fafdd97b8eb14973006da2899b73b970b3",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:df455825c05ac2c7f2aed14a87e21e860c25082ba744ddfadd991b87d12c4d06",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:64ab09e91fdb2f36b799987f8a0390a1d44b7f5654ad2024166e3e09a2c8d8a9"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:38413abc340ae0814aa77d2f79acef7f355e8242a0116b2d0de26bdf8d653576"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:af12c71cd22ffbc35f51153cd34fa13549a3fd04bc3a27d9265c755874735f6b"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:a3ab43b74edee0789fcffc9ad564c98b5a9a1d5869b22d29d7f011cede65ac47"
+    }
+  ],
+  "summary": {
+    "unsafeRepairExecutionRate": 0,
+    "mutationBlockAccuracy": 1,
+    "controlAccuracy": 1,
+    "unchangedAccuracy": 1,
+    "unavailableAccuracy": 1,
+    "consumptionAccuracy": 1,
+    "lifecycleAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
