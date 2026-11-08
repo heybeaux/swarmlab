@@ -1,0 +1,38 @@
+{
+  "experiment": "78-finalization-input-integrity",
+  "preRegistrationCommit": "562701c717c6b723f3701f1eaab8dcbae607eaa7",
+  "frozenHarnessCommit": "3f73dc80d5695f46fcb03bb22d6b9ae530d40b8a",
+  "baselineSha": "2e7d4dd7d8e301713fb4169f9dc4e73d93e6bd98",
+  "candidateSha": "63cbf6fafdd97b8eb14973006da2899b73b970b3",
+  "baselineMetrics": {
+    "unsafeRepairExecutionRate": 1,
+    "mutationBlockAccuracy": 0.26666666666666666,
+    "controlAccuracy": 1,
+    "unchangedAccuracy": 1,
+    "unavailableAccuracy": 1,
+    "consumptionAccuracy": 1,
+    "lifecycleAccuracy": 0.5217391304347826,
+    "replayBlockRate": 1,
+    "ownershipAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5217391304347826,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "fii-mw7iok3w-26732",
+      "traceSha256": "sha256:a78fc96a6ee6ee8086f698ca6f8eb7e5567cfc6cf631158a223015a4774f3503",
+      "resultSha256": "sha256:a819cdac21df85813600e14228f8afbf7a9f8b574f9a776956e332835d5f927f"
+    },
+    {
+      "runId": "fii-mw7ioxsi-27340",
+      "traceSha256": "sha256:529fd9663a8aa229457190717671a427b50774664a35413b88ced870d2284953",
+      "resultSha256": "sha256:702fedb2d6c836ff782b108edaabccf31cad97383669370b072eb53f3e1d6d73"
+    },
+    {
+      "runId": "fii-mw7irbzf-35786",
+      "traceSha256": "sha256:e2d63ca8adf3b1c4fc97550f49bfe649e281b972ead238dc9cb74e88fc7af8bb",
+      "resultSha256": "sha256:6957f23f37cf13d3681a9745ea78003318f073d2c81b8cc72e3460a04b4807a0"
+    }
+  ]
+}
