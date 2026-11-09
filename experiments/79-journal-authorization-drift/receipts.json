@@ -1,0 +1,36 @@
+{
+  "experiment": "79-journal-authorization-drift",
+  "baselineSha": "104113f41774a874680fc334841a6ce2a12f3012",
+  "candidateSha": "889660ade10cf42c16978dfc3f302d31c3e76589",
+  "baselineMetrics": {
+    "unsafeResumeRate": 1,
+    "durableInvalidationAccuracy": 0.23529411764705882,
+    "initialDecisionAccuracy": 0.5517241379310345,
+    "controlAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "uncertaintyAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5517241379310345,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "jad-mw9axhn7-30518",
+      "traceSha256": "sha256:aefecbc02afc029edf44b9452a67fb8e276b4b7cbfdcdf3d35cab7e1efa9a17a",
+      "resultSha256": "sha256:51441d15768c07fe46401c5793b432d0f596a9ecaca4e77972dfaea251763101"
+    },
+    {
+      "runId": "jad-mw9axpq5-30959",
+      "traceSha256": "sha256:231defdf3c66e82ef1b556c5b4d96be02587877f3bc0f488b73c5ba77895958e",
+      "resultSha256": "sha256:29bc6587ae1a4869259176a7ee55a643eb10665f406ad74ebc9c6e51eebde966"
+    },
+    {
+      "runId": "jad-mw9b1cmu-47983",
+      "traceSha256": "sha256:8a70fa6499f7ee36a65f66201c568059157ddeb9d4d5b09fdd8b5c9c71d0fd6b",
+      "resultSha256": "sha256:c4c03a7e4c87fb521258d25f6882ec6dc285ffc3a965f1494b7304b9ee27498a"
+    }
+  ]
+}
