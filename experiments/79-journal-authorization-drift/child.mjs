@@ -19,7 +19,7 @@ function storage(){
  const clone=v=>v===undefined?undefined:structuredClone(v);
  const state=()=>({ready:[...ready.values()].map(clone),effects:[...effects.values()].map(clone),issued:[...issued].sort()});
  const store={
-  async create(r){if(ready.has(r.id))return false;ready.set(r.id,clone(r));return true;},
+  async create(r){operations.push({op:'create',record:clone(r)});if(ready.has(r.id))return false;issued.add(r.id);ready.set(r.id,clone(r));return true;},
   async createOnce(r){operations.push({op:'createOnce',record:clone(r)});if(issued.has(r.id))return false;issued.add(r.id);ready.set(r.id,clone(r));return true;},
   async take(id){const r=ready.get(id);ready.delete(id);return clone(r);},
   async prepareEffect(id,operationId){operations.push({op:'prepare',id,operationId});await hook('prepare');const existing=effects.get(operationId);if(existing)return existing.permit.id===id;const r=ready.get(id);if(!r)return false;ready.delete(id);effects.set(operationId,{operationId,permit:clone(r),state:'authorized',claimed:false});if(ackLoss)throw Error('ack lost after commit');return true;},
@@ -57,7 +57,7 @@ async function run(s){const dir=mkdtempSync(join(tmpdir(),'aegis-exp79-'));try{
  const call=callFor(s),evaluation=evaluate(call,rules),requested=decision(h.decide(evaluation,{call,approvalDir:dir}));
  h.approvePending(requested.approval.id,dir);const consumed=decision(h.decide(evaluation,{call,approvalDir:dir})),id=consumed.approval.id;
  const clean={approvalId:id,authorizationDigest:'epoch-1',effectiveConsumerId:'root',links:[{actorId:'root',authorityLevel:1,verified:true,revoked:false}],revoked:false,revocationChecked:true,structurallyValid:true,...(s.tool==='process'?{processTarget:structuredClone(target)}:{})};
- const st=storage(),permit=await h.createExecutionPermitWithStore(call,evaluation,id,st.store,{issuanceId:'grant-1'}),current=structuredClone(clean);invalidate(s,current);
+ const st=storage(),permit=await h.createExecutionPermitWithStore(call,evaluation,id,st.store),current=structuredClone(clean);invalidate(s,current);
  const entry=structuredClone({permit,current});let expected=structuredClone(entry);
  const gates={prepare:{entered:deferred(),release:deferred()},claim:{entered:deferred(),release:deferred()}};
  st.setHook(async stage=>{gates[stage].entered.resolve();await gates[stage].release.promise;});
@@ -72,7 +72,7 @@ async function run(s){const dir=mkdtempSync(join(tmpdir(),'aegis-exp79-'));try{
  const other={...st.store};
  if(!s.uncertain){resolved=await h.resolveExecutionEffect(entry.permit,structuredClone(clean),'op_drift',other);started=await h.beginExecutionEffect(entry.permit,structuredClone(clean),'op_drift',other);startReplay=await h.beginExecutionEffect(entry.permit,structuredClone(clean),'op_drift',other);}
  const replay=await finish(entry.permit,structuredClone(clean),other),afterResume=st.state();
- const control=storage(),cp=await h.createExecutionPermitWithStore(call,evaluation,id,control.store,{issuanceId:'grant-control'});
+ const control=storage(),cp=await h.createExecutionPermitWithStore(call,evaluation,id,control.store);
  const cr=await finish(cp,structuredClone(clean),control.store),cres=await h.resolveExecutionEffect(cp,structuredClone(clean),'op_drift',control.store),cs=await h.beginExecutionEffect(cp,structuredClone(clean),'op_drift',control.store),csr=await h.beginExecutionEffect(cp,structuredClone(clean),'op_drift',control.store),creplay=await finish(cp,structuredClone(clean),control.store);
  return {call,evaluation,approval:{requested,consumed},entry,live,result,after,recovery,beforeResume,resolved,started,startReplay,replay,afterResume,operations:st.operations,ownership:same(live,expected),control:{result:cr,resolved:cres,started:cs,startReplay:csr,replay:creplay,state:control.state()},fixture:await fixture()};
  }finally{rmSync(dir,{recursive:true,force:true});}}

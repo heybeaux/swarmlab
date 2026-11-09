@@ -87,3 +87,14 @@ Preregistration commit precedes implementation; harness commit precedes first ru
 After novel work: focused hook tests; `npx --yes pnpm@10.9.0 run release:check`;
 `npm run verify:evidence`; relevant exp78 regression. Receipt tamper controls and
 fresh pinned real-package CI. Linked PRs; merge only green CI and clean mergeability.
+
+## Setup amendment before Aegis edits
+The original frozen harness9fa55a2 used strict issuance. Diagnostic runs
+jad-mw9avnrp-23305 and jad-mw9avq50-23476 showed ALL unchanged controls blocked:
+permitRecordMatches derives only legacy IDs whereas strict issuance uses a separate
+namespace. These runs are NOT admitted drift baselines and remain committed.
+Use the four-argument real issuance API already used by journal tests, in isolated
+stores with exactly one issuance. Store issued roster records creates for inspection;
+no remint safety claim. No Aegis edits, hypothesis/scenario/threshold changes.
+This setup amendment is committed before rerunning baseline. Strict-issuance journal
+compatibility is a separate future hypothesis, not patched or counted tonight.
