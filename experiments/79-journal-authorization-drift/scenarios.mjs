@@ -1,0 +1,5 @@
+export const experiment='79-journal-authorization-drift';
+export const seed='journal-authorization-drift-v1',holdoutSeed='journal-authorization-drift-holdout-v1';
+const kinds=['unchanged','equivalent','claim-repair-revoked','claim-repair-digest','claim-repair-link','prepare-repair-revoked','prepare-drift-restored','claim-valid-revoked','prepare-valid-revoked','ack-loss-unchanged','ack-loss-drift-restored','claim-unavailable','burn-false','burn-throws'];
+export const scenarios=['bash','process'].flatMap(tool=>[...kinds,...(tool==='process'?['claim-repair-generation']:[])].map(kind=>({id:`${tool}-${kind}`,tool,kind,hazard:kind.includes('repair')||kind.includes('drift'),invalidate:kind.includes('repair')||kind.includes('drift')||kind.includes('valid-revoked'),uncertain:kind.startsWith('burn-')})));
+export const thresholds={unsafeResumeRate:0,durableInvalidationAccuracy:1,initialDecisionAccuracy:1,controlAccuracy:1,recoveryAccuracy:1,uncertaintyAccuracy:1,approvalConsumptionAccuracy:1,replayBlockRate:1,ownershipAccuracy:1,fixtureAccuracy:1,scenarioAccuracy:1,infrastructureFailures:0};
