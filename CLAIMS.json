@@ -9325,5 +9325,212 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic barrier storage fixture and actual built public Aegis. No external effects, database durability, effect-journal safety, transient ABA or production claim; holdout unused. Baseline repeated raw equality, unchanged post-fix design."
+  },
+  {
+    "id": "RT-69",
+    "claim": "Entry authority drift during journal finalization durably burns retained authorization and prevents clean-snapshot resume/start in the fixed 29-case real-Aegis corpus.",
+    "experiment": "experiments/79-journal-authorization-drift",
+    "spec": "specs/85-journal-authorization-drift.md",
+    "runIds": [
+      "jad-mw9axhn7-30518",
+      "jad-mw9axpq5-30959",
+      "jad-mw9b1cmu-47983"
+    ],
+    "tracePaths": [
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.unsafeResumeRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.durableInvalidationAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.initialDecisionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.controlAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.recoveryAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.uncertaintyAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.replayBlockRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.ownershipAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.fixtureAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.scenarioAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.infrastructureFailures",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.unsafeResumeRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.durableInvalidationAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.initialDecisionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.controlAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.recoveryAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.uncertaintyAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.replayBlockRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.ownershipAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.fixtureAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.scenarioAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.infrastructureFailures",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.unsafeResumeRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.durableInvalidationAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.initialDecisionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.controlAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.recoveryAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.uncertaintyAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.replayBlockRate",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.ownershipAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.fixtureAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.scenarioAccuracy",
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.unsafeResumeRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0.23529411764705882,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.initialDecisionAccuracy": {
+        "equals": 0.5517241379310345,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5517241379310345,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axhn7-30518.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.unsafeResumeRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0.23529411764705882,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.initialDecisionAccuracy": {
+        "equals": 0.5517241379310345,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5517241379310345,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9axpq5-30959.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.unsafeResumeRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.initialDecisionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.replayBlockRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/79-journal-authorization-drift/runs/jad-mw9b1cmu-47983.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/aegis node experiments/79-journal-authorization-drift/main.mjs && node experiments/79-journal-authorization-drift/verify-receipts.mjs",
+    "stackRecommendation": "Capture entry authority, remember drift at prepare and claim, durably burn before definitive rejection; preserve uncertainty when burn fails. Host owns authentic snapshots, atomic durable storage and quarantine.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/88"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Legacy journal-compatible issuance; strict-issuance setup diagnostics preserved, not admitted. Map fixture, no database or external effects; holdout unused. Burn failure leaves uncertain authorization: host must quarantine. No claim-after-commit recovery or resume-input drift guarantee."
   }
 ]
