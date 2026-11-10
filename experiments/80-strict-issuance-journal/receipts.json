@@ -1,0 +1,32 @@
+{
+  "experiment": "80-strict-issuance-journal",
+  "baselineSha": "a52fc456d07a05527931c6b2c690e1f09c94ad27",
+  "candidateSha": "67b57ac7871347119973aee1da24f155716a979e",
+  "baselineMetrics": {
+    "strictLifecycleAccuracy": 0,
+    "negativeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "replaySafety": 1,
+    "scenarioAccuracy": 0.6428571428571429,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "sij-mwadm3oo-46577",
+      "traceSha256": "sha256:d8ef230f9d9b8a8baee29a26dd6abe27654d86cb3a1bba4126a888ba92d37e60",
+      "resultSha256": "sha256:33ac4989ff814266d22843b2467e957563bc34936bff2cc02e6da1da9f0ab6c1"
+    },
+    {
+      "runId": "sij-mwadm5kq-46665",
+      "traceSha256": "sha256:718e969d40fcea750f9263f5faedb7d0977922f1a477ab894da5ea580272dc0e",
+      "resultSha256": "sha256:b9d8754f0976d7383ead01a1bb88ca95c4b1d43c7e0477288ba204297bbeb2be"
+    },
+    {
+      "runId": "sij-mwadqqbj-62323",
+      "traceSha256": "sha256:1de7cc49840a220d4b70e87011d960886d7cea0801317b630eac096d1ca4640b",
+      "resultSha256": "sha256:c8a9ddec2a15462efab831c236740324f01abefee819c537dc2d960539c1150b"
+    }
+  ]
+}

@@ -9532,5 +9532,152 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Legacy journal-compatible issuance; strict-issuance setup diagnostics preserved, not admitted. Map fixture, no database or external effects; holdout unused. Burn failure leaves uncertain authorization: host must quarantine. No claim-after-commit recovery or resume-input drift guarantee."
+  },
+  {
+    "id": "RT-70",
+    "claim": "Strict shared issuance survives effect journal authorization/start/terminal resolution while preserving identity rejection in the fixed exp80 corpus.",
+    "experiment": "experiments/80-strict-issuance-journal",
+    "spec": "specs/86-strict-issuance-journal.md",
+    "runIds": [
+      "sij-mwadm3oo-46577",
+      "sij-mwadm5kq-46665",
+      "sij-mwadqqbj-62323"
+    ],
+    "tracePaths": [
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.strictLifecycleAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.negativeAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.controlAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.fixtureAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.replaySafety",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.scenarioAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.infrastructureFailures",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.strictLifecycleAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.negativeAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.controlAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.fixtureAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.replaySafety",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.scenarioAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.infrastructureFailures",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.strictLifecycleAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.negativeAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.controlAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.fixtureAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.replaySafety",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.scenarioAccuracy",
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.strictLifecycleAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.negativeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.scenarioAccuracy": {
+        "equals": 0.6428571428571429,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm3oo-46577.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.strictLifecycleAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.negativeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.scenarioAccuracy": {
+        "equals": 0.6428571428571429,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadm5kq-46665.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.strictLifecycleAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.negativeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/80-strict-issuance-journal/main.mjs && node experiments/80-strict-issuance-journal/verify-receipts.mjs",
+    "stackRecommendation": "Retain and validate strict issuance derivation in journal records; preserve legacy validation; explicitly drain/reapprove older strict grants lacking metadata.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/89"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Pre-registration d7f3a86; oracle field correction ec63394 before admitted red. Baseline a52fc45 red twice, candidate67b57ac green. Fixed28cases; no holdout tuning, database/external-effect/deployment or migration proof. Diagnostics preserved but not admitted. verify-receipts rescoring and pinned live CI complement the generic evidence gate."
   }
 ]

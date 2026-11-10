@@ -1,0 +1,349 @@
+{
+  "runId": "sij-mwadlgts-45129",
+  "trace": "experiments/80-strict-issuance-journal/runs/sij-mwadlgts-45129.jsonl",
+  "traceSha256": "sha256:b2d6608e83ed6b0d34f8168f6000dca13fd1419f85e75b040c5b21cd18748673",
+  "startedAt": 1794296143216,
+  "endedAt": 1794296143345,
+  "aegisSha": "a52fc456d07a05527931c6b2c690e1f09c94ad27",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:86bde9bf57e9b0ee6c8dbb90eef97a7342ccde9ab6862b61cc5c536afdfc7a05",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:c3f8e863acc2843f6a1c517cd5f853dddcb78ca1ebaf6713cacaf555243f1e6c"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:acec3c518e928d35216b7cea88944ca8675395d7ecf1324c6177d27d32abb3a8"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:b4e1659156b0de55aaef60f644baf0a4fb5d2f3f04ffb8c8085686a4ecbdc470"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:096052ce5466a2993540486ab2c338b28110103947e8573b9b4b3b05c6d2d22d"
+    }
+  ],
+  "summary": {
+    "strictLifecycleAccuracy": 0,
+    "negativeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 0,
+    "fixtureAccuracy": 1,
+    "replaySafety": 1,
+    "scenarioAccuracy": 0,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-strict-success",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-strict-failure",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-strict-recovered-handle",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-strict-prepare-ack-loss",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-strict-fresh-grant",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-legacy-success",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-signature-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-issuance-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-issuance-remove",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-issuance-invalid",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-cross-grant-record",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-revoked",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-read-signature-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-read-issuance-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-strict-success",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-strict-failure",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-strict-recovered-handle",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-strict-prepare-ack-loss",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-strict-fresh-grant",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-legacy-success",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-signature-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-issuance-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-issuance-remove",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-issuance-invalid",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-cross-grant-record",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-revoked",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-read-signature-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-read-issuance-change",
+      "checks": {
+        "scenario": true,
+        "controls": true,
+        "consumption": false,
+        "fixture": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

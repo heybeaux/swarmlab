@@ -1,0 +1,40 @@
+{
+  "runId": "sij-mwadqqbj-62323",
+  "trace": "experiments/80-strict-issuance-journal/runs/sij-mwadqqbj-62323.jsonl",
+  "traceSha256": "sha256:1de7cc49840a220d4b70e87011d960886d7cea0801317b630eac096d1ca4640b",
+  "startedAt": 1794296388799,
+  "endedAt": 1794296388898,
+  "aegisSha": "67b57ac7871347119973aee1da24f155716a979e",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:7bd588110cdc2dc05390db4a3ef04e98b2377f4b149c3b6255d430dafde6f876",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:c3f8e863acc2843f6a1c517cd5f853dddcb78ca1ebaf6713cacaf555243f1e6c"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:974e9ff04d8caf6d1613128da1d219e3a5c938a8a996e33a6631c9b5237500be"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:b4e1659156b0de55aaef60f644baf0a4fb5d2f3f04ffb8c8085686a4ecbdc470"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:096052ce5466a2993540486ab2c338b28110103947e8573b9b4b3b05c6d2d22d"
+    }
+  ],
+  "summary": {
+    "strictLifecycleAccuracy": 1,
+    "negativeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "replaySafety": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
