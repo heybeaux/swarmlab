@@ -16,7 +16,7 @@ export function assess(s,result){
  const f=r.fixture;
  const fixture=valid&&f.first===true&&f.duplicate===false&&f.prepared===true&&eq(f.claimed,{id:'fixture',signature:'original'})&&f.claimReplay===null&&f.start===true&&f.startReplay===false&&f.remint===false&&eq(f.state.issued,['fixture'])&&f.state.ready.length===0;
  const controls=valid&&lifecycleOK(r.legacyControl)&&eq(r.simpleControl,{first:true,replay:false});
- const consumption=valid&&r.approvals.length===(['strict-fresh-grant','cross-grant-record'].includes(s.kind)?2:1)&&r.approvals.every(a=>a.requested.approval?.status==='pending'&&a.consumed.approval?.status==='consumed');
+ const consumption=valid&&r.approvals.length===(['strict-fresh-grant','cross-grant-record'].includes(s.kind)?2:1)&&r.approvals.every(a=>a.requested.approval?.event==='requested'&&a.requested.exitCode===2&&a.consumed.approval?.event==='consumed'&&a.consumed.exitCode===0);
  const replay=valid&&(s.positive?denied(o.beginReplay)&&denied(o.terminalBegin)&&denied(o.finalizeReplay):denied(o.begin));
  const checks={scenario,controls,consumption,fixture,replay,infrastructure:valid};
  return {id:s.id,result,checks,correct:Object.values(checks).every(Boolean)};

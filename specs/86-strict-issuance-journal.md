@@ -82,3 +82,11 @@ Preserve source/dist hashes, SHA, trace/run ID and independently rescored output
 After novel work: focused tests, pnpm release:check, npm run verify:evidence;
 exp77 and exp79 only as compatibility regressions. Linked PRs and pinned actual
 package CI, raw readback, tamper tests; merge only passing checks and clean state.
+
+## Oracle field correction before Aegis changes
+Initial frozen harness894be50 diagnostics sij-mwadlgts-45129 and
+sij-mwadlj1s-45210 incorrectly inspected approval.status. The public API emits
+approval.event=requested/consumed (exit2/0), visibly present in both retained raw
+traces. Correct only that observation field and assert exit codes; no scenario,
+policy, threshold or expected lifecycle changes. Diagnostics are not admitted
+as baseline evidence. Commit the correction before repeating baseline twice.
