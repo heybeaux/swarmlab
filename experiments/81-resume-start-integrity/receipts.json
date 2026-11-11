@@ -1,0 +1,36 @@
+{
+  "experiment": "81-resume-start-integrity",
+  "preRegistrationCommit": "7198e09",
+  "frozenHarnessCommit": "3549bdf",
+  "baselineSha": "6f29b9a72d97948ca85ac7b4862679be25cd350a",
+  "candidateSha": "1ec252873f2a7127a71b6843f6efe6cab28a180b",
+  "baselineMetrics": {
+    "unsafeAuthorityRate": 1,
+    "rejectionAccuracy": 0.18181818181818182,
+    "positiveAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "replaySafety": 0.5333333333333333,
+    "scenarioAccuracy": 0.4,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "rsi-mwbszq49-50440",
+      "traceSha256": "sha256:4d751709188987cd524966c1c813de22a09304bd7c34dd318c35ee94e4740bb3",
+      "resultSha256": "sha256:dc78dec6824d29db1a8c217e30f85701ec68a5625146edf230987c714cf916cd"
+    },
+    {
+      "runId": "rsi-mwbt02lg-50852",
+      "traceSha256": "sha256:b5571ab393efb7362e3d38b46aca9d51bda31571d1fe42eba042e901bb37f7ba",
+      "resultSha256": "sha256:527ee400d72162d81f112a660626d0d19e84cb29668d0565b513b354f1219a39"
+    },
+    {
+      "runId": "rsi-mwbt28pg-56156",
+      "traceSha256": "sha256:d83034e7706bfd2e6a3f9eb05f5b69d083bbd55cd716fbb3ee01877bd0622054",
+      "resultSha256": "sha256:01c834a4de9c3f0bb5eb006e74bdcd01c1008bc106b78b8a895eab713eeb5c1d"
+    }
+  ]
+}

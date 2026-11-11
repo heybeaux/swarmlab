@@ -1,0 +1,259 @@
+{
+  "runId": "rsi-mwbszq49-50440",
+  "trace": "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl",
+  "traceSha256": "sha256:4d751709188987cd524966c1c813de22a09304bd7c34dd318c35ee94e4740bb3",
+  "startedAt": 1794382468857,
+  "endedAt": 1794382468974,
+  "aegisSha": "6f29b9a72d97948ca85ac7b4862679be25cd350a",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:83b8276885de6f4282a65b1dc6965dd24f3dde84fe9673967b68f514601c4b68",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:33349a5d9612bcd4ef81bf9a82096d0a21f07b2b30e85469f8c78e297f1d557b"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:963ffe3af640e358f4d44be73ac91102dc2dcb9a62b12fe70bb29075fc0bc793"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:596fb90fa5826952f349ef8922a124df6423254a72eedd768c3a70ceba6f8bd7"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:891a36034f461de0c7de5f7d108b8f8e38b0445e65774a7d128d3fdcb00c1e6c"
+    }
+  ],
+  "summary": {
+    "unsafeAuthorityRate": 1,
+    "rejectionAccuracy": 0.18181818181818182,
+    "positiveAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "replaySafety": 0.5333333333333333,
+    "scenarioAccuracy": 0.4,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-resolve-repair-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-repair-digest",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-repair-link",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-repair-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-repair-digest",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-repair-link",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-cas-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-post-read-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-repair-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-repair-digest",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-repair-link",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-repair-generation",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-repair-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-repair-digest",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-repair-link",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-repair-generation",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": false,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-cas-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-post-read-revoked",
+      "checks": {
+        "scenario": false,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "replay": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
