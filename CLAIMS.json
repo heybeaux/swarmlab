@@ -9679,5 +9679,182 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Pre-registration d7f3a86; oracle field correction ec63394 before admitted red. Baseline a52fc45 red twice, candidate67b57ac green. Fixed28cases; no holdout tuning, database/external-effect/deployment or migration proof. Diagnostics preserved but not admitted. verify-receipts rescoring and pinned live CI complement the generic evidence gate."
+  },
+  {
+    "id": "RT-71",
+    "claim": "Entry-bound resume/start authority rejects asynchronous repairs and late revocation in the frozen thirty-case real-Aegis contract experiment.",
+    "experiment": "experiments/81-resume-start-integrity",
+    "spec": "specs/87-resume-start-integrity.md",
+    "runIds": [
+      "rsi-mwbszq49-50440",
+      "rsi-mwbt02lg-50852",
+      "rsi-mwbt28pg-56156"
+    ],
+    "tracePaths": [
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.unsafeAuthorityRate",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.rejectionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.positiveAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.controlAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.fixtureAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.ownershipAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.replaySafety",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.scenarioAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.infrastructureFailures",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.unsafeAuthorityRate",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.rejectionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.positiveAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.controlAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.fixtureAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.ownershipAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.replaySafety",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.scenarioAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.infrastructureFailures",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.unsafeAuthorityRate",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.rejectionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.positiveAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.controlAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.fixtureAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.ownershipAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.replaySafety",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.scenarioAccuracy",
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.unsafeAuthorityRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.rejectionAccuracy": {
+        "equals": 0.18181818181818182,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.replaySafety": {
+        "equals": 0.5333333333333333,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.scenarioAccuracy": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbszq49-50440.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.unsafeAuthorityRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.rejectionAccuracy": {
+        "equals": 0.18181818181818182,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.replaySafety": {
+        "equals": 0.5333333333333333,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.scenarioAccuracy": {
+        "equals": 0.4,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt02lg-50852.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.unsafeAuthorityRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.rejectionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/81-resume-start-integrity/runs/rsi-mwbt28pg-56156.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/81-resume-start-integrity/main.mjs && node experiments/81-resume-start-integrity/verify-receipts.mjs",
+    "stackRecommendation": "Capture entry authority for resume/start; refuse drift before retry or execution; preserve started fence after CAS refusal.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/90"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic bounded contract; red-red-green source/artifact receipts. Holdout unused. No production durability or external effect proof."
   }
 ]
