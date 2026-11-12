@@ -1,0 +1,140 @@
+{
+  "runId": "rba-mwd8f54q-94953",
+  "trace": "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl",
+  "traceSha256": "sha256:eacb641e8ed39ad4d0e1fcbed519e7eb44919da9cdfbc0f0ed6174d6eb6a6ee5",
+  "startedAt": 1794468848570,
+  "endedAt": 1794468848669,
+  "aegisSha": "63387b582721c5326780b7e936c226ff61c1597f",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:fd8b355ff69e4084a64fb5ba71ba1168fe56f599398a5b3255728c362247d890",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:2cb555ca6bd7761d2af9e13d9dab6904bfd90a28e2e0c89f69d22c5431f221aa"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:26f200a1769ffeac4ee3da19fe4ec5cc191541644ee740c68ee140f11e82896c"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:879afa506a564c55431249acde0a11c43925da7494b376af30438bc3b6784081"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:bbef84533cdd8f5912056036faae0ec01352098b300f71e5f6820aba6ed10ed8"
+    }
+  ],
+  "summary": {
+    "falseDefinitiveRate": 0.5,
+    "uncertaintyAccuracy": 0.5,
+    "confirmedBurnAccuracy": 1,
+    "validAccuracy": 1,
+    "stateAccuracy": 1,
+    "probeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.6666666666666666,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-resolve-burn-false",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-concurrent-start",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-burn-false",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-concurrent-start",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-burn-false",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-concurrent-start",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-burn-false",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-concurrent-start",
+      "checks": {
+        "scenario": false,
+        "state": true,
+        "probe": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
