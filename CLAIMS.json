@@ -9856,5 +9856,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic bounded contract; red-red-green source/artifact receipts. Holdout unused. No production durability or external effect proof."
+  },
+  {
+    "id": "RT-72",
+    "claim": "Checking resume/start burn acknowledgements eliminates false definitive invalidation reports in the frozen 24-case real-Aegis experiment.",
+    "experiment": "experiments/82-resume-burn-ack",
+    "spec": "specs/88-resume-burn-ack.md",
+    "runIds": [
+      "rba-mwd8f50h-94937",
+      "rba-mwd8f54q-94953",
+      "rba-mwd8h1rw-95860"
+    ],
+    "tracePaths": [
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.falseDefinitiveRate",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.uncertaintyAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.confirmedBurnAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.validAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.stateAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.probeAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.controlAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.fixtureAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.scenarioAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.infrastructureFailures",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.falseDefinitiveRate",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.uncertaintyAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.confirmedBurnAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.validAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.stateAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.probeAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.controlAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.fixtureAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.scenarioAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.infrastructureFailures",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.falseDefinitiveRate",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.uncertaintyAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.confirmedBurnAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.validAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.stateAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.probeAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.controlAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.fixtureAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.scenarioAccuracy",
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.falseDefinitiveRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.scenarioAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f50h-94937.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.falseDefinitiveRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.scenarioAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8f54q-94953.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.falseDefinitiveRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/82-resume-burn-ack/runs/rba-mwd8h1rw-95860.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/82-resume-burn-ack/main.mjs && node experiments/82-resume-burn-ack/verify-receipts.mjs",
+    "stackRecommendation": "Report indeterminate on unconfirmed resume invalidation; hosts quarantine and reconcile instead of assuming a durable burn.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/91"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen red-red-green contract evidence; holdout unused. No external effect or production durability proof."
   }
 ]

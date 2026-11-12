@@ -1,0 +1,37 @@
+{
+  "experiment": "82-resume-burn-ack",
+  "preRegistrationCommit": "a8d6b227d46aa4a7332b1850d0df8def161b4885",
+  "frozenHarnessCommit": "0a57408b15f0415eefbe06f1740c8c4a5ffc7978",
+  "baselineSha": "63387b582721c5326780b7e936c226ff61c1597f",
+  "candidateSha": "6cc58be3fac4276613d570009d0a202d269e8778",
+  "baselineMetrics": {
+    "falseDefinitiveRate": 0.5,
+    "uncertaintyAccuracy": 0.5,
+    "confirmedBurnAccuracy": 1,
+    "validAccuracy": 1,
+    "stateAccuracy": 1,
+    "probeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.6666666666666666,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "rba-mwd8f50h-94937",
+      "traceSha256": "sha256:876afc9e2fc9d8894dd83e37041359461e2b73a59b321eaf93cb57af1c995664",
+      "resultSha256": "sha256:d835f8f1564b7528382b6c98f2438210fac6779d76bee042a1cb7685d3a79eaf"
+    },
+    {
+      "runId": "rba-mwd8f54q-94953",
+      "traceSha256": "sha256:eacb641e8ed39ad4d0e1fcbed519e7eb44919da9cdfbc0f0ed6174d6eb6a6ee5",
+      "resultSha256": "sha256:7d547a4c024357c878c21622854489668b6afc71a36507211a7ede90f485446b"
+    },
+    {
+      "runId": "rba-mwd8h1rw-95860",
+      "traceSha256": "sha256:6a7ba1c1e7de827af7aa460a706d546d6ab6252ea7d96bda796e8c489f77fd63",
+      "resultSha256": "sha256:b66cbae8ce6ff3427675406fd92eb241891f204d3cb5395d708b88a3923d689e"
+    }
+  ]
+}
