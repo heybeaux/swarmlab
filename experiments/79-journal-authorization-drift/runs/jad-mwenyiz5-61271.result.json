@@ -1,0 +1,44 @@
+{
+  "runId": "jad-mwenyiz5-61271",
+  "trace": "experiments/79-journal-authorization-drift/runs/jad-mwenyiz5-61271.jsonl",
+  "traceSha256": "sha256:7acaacedad081ac878cd93a556210956469e2816d39bc0da963e661226f86e4c",
+  "startedAt": 1794555413393,
+  "endedAt": 1794555413487,
+  "aegisSha": "43e4a82a71311a320e42555b9e24ef5cb3fc37de",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:189b7fddc3571a87b6fb69f8d4ff20e44d858d9fedb84b59c87bd4da49f9fcf8",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:409ab5ef30a9518df7c3acbc8c9c175359acae59017860b3abc3bc5838238e96"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:c85acfc1c2cd772d8292d069f803e311f1f8f421e09098b92f1d709ca4e8fad7"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:26a8e0063a3e6afecd4791d830ea2eee3bbbd6368c6d83ffa1ae4f56cb65b6e4"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:b493d34aa5937b3ba3c0f7beda5852a3703ed2843738771ffe09848dc8fba4f8"
+    }
+  ],
+  "summary": {
+    "unsafeResumeRate": 0,
+    "durableInvalidationAccuracy": 1,
+    "initialDecisionAccuracy": 1,
+    "controlAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "uncertaintyAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "replayBlockRate": 1,
+    "ownershipAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

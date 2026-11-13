@@ -10048,5 +10048,182 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen red-red-green contract evidence; holdout unused. No external effect or production durability proof."
+  },
+  {
+    "id": "RT-73",
+    "claim": "Observed authority drift remains durably invalidated across before/after-commit claim failures: unsafe clean recovery16/16 to0/16, unchanged32-case real-Aegis experiment.",
+    "experiment": "experiments/83-claim-failure-invalidation",
+    "spec": "specs/89-claim-failure-invalidation.md",
+    "runIds": [
+      "cfi-mwenvqdn-58549",
+      "cfi-mwenvqib-58565",
+      "cfi-mwenxju0-59624"
+    ],
+    "tracePaths": [
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.unsafeRecoveryRate",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.durableInvalidationAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.uncertaintyAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.recoveryAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.controlAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.fixtureAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.stateAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.scenarioAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.infrastructureFailures",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.unsafeRecoveryRate",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.durableInvalidationAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.uncertaintyAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.recoveryAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.controlAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.fixtureAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.stateAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.scenarioAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.infrastructureFailures",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.unsafeRecoveryRate",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.durableInvalidationAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.uncertaintyAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.recoveryAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.controlAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.fixtureAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.stateAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.scenarioAccuracy",
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqdn-58549.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.unsafeRecoveryRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/83-claim-failure-invalidation/runs/cfi-mwenxju0-59624.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/83-claim-failure-invalidation/main.mjs && node experiments/83-claim-failure-invalidation/verify-receipts.mjs",
+    "stackRecommendation": "Do not discard observed invalidation when claim I/O rejects; burn durably or return uncertainty. Host quarantines failed burns.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/92"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen red-red-green deterministic contract evidence; source/artifact manifests and raw replay. Holdout unused. No external effect, production durability or deployment proof."
   }
 ]

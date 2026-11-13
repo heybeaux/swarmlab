@@ -1,0 +1,36 @@
+{
+  "experiment": "83-claim-failure-invalidation",
+  "preRegistrationCommit": "4c329472a7c3cbdc06ceb8aceb23c24d01fa01ca",
+  "frozenHarnessCommit": "a5ce3b812312a88b74ea69886bd0b71ee8b9692d",
+  "baselineSha": "23e33e098ad24b04aed8291b654c953af2165073",
+  "candidateSha": "43e4a82a71311a320e42555b9e24ef5cb3fc37de",
+  "baselineMetrics": {
+    "unsafeRecoveryRate": 1,
+    "durableInvalidationAccuracy": 0,
+    "uncertaintyAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "stateAccuracy": 1,
+    "scenarioAccuracy": 0.5,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "cfi-mwenvqdn-58549",
+      "traceSha256": "sha256:a59bdaf200ba331c40823c431422fba5fc38fc97bb18c006b853f3a89109838b",
+      "resultSha256": "sha256:b0c8696b7973f100e383f63e3a86447ffe330f9ae688aa80e8dda4f8c25fa9a9"
+    },
+    {
+      "runId": "cfi-mwenvqib-58565",
+      "traceSha256": "sha256:70fd6938d71c2107b0daf492bac9853b4bb7eba8220c7a2ececeec44a60d8ea8",
+      "resultSha256": "sha256:b087711c6706b0c0640aa88a308e1bdc237c2a04f24425d5c76c92d2fbb99102"
+    },
+    {
+      "runId": "cfi-mwenxju0-59624",
+      "traceSha256": "sha256:cbd8587be1765ec82a5ca88c5c5fd84bdada043b97c7daff5d460f69b9a7792f",
+      "resultSha256": "sha256:3156151626df5657ac544594d8bfb46242511d4f772885d14eeb8bfbe89be4df"
+    }
+  ]
+}

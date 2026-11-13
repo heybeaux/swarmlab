@@ -1,0 +1,267 @@
+{
+  "runId": "cfi-mwenvqib-58565",
+  "trace": "experiments/83-claim-failure-invalidation/runs/cfi-mwenvqib-58565.jsonl",
+  "traceSha256": "sha256:70fd6938d71c2107b0daf492bac9853b4bb7eba8220c7a2ececeec44a60d8ea8",
+  "startedAt": 1794555283187,
+  "endedAt": 1794555283305,
+  "aegisSha": "23e33e098ad24b04aed8291b654c953af2165073",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:fd53d94ec542d1711542cf05aa7481ac02b5e80f3cd11a22cb70d9a17a7b2137",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:94526b4d1cb896e76fbd3be8ee962090642b43f3d0a0f27f134a383617904db6"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:34aa76dabecee55abb345bf669dfaf62f94c40dc74348f7cf27b507f765b02d2"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:a7d2086fe0a0b1651aab150616843142d09e2a50c4509b0c9b136e2470c3b175"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:454469b1d83e0e1fc8f37803e84f4121c59243ac4c8e6c4d66e647de2c2553df"
+    }
+  ],
+  "summary": {
+    "unsafeRecoveryRate": 1,
+    "durableInvalidationAccuracy": 0,
+    "uncertaintyAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "stateAccuracy": 1,
+    "scenarioAccuracy": 0.5,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-throw-before-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-before-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-before-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-before-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-after-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-after-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-after-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-throw-after-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-before-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-before-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-before-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-before-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-after-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-after-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-after-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-throw-after-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": true,
+        "recovery": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

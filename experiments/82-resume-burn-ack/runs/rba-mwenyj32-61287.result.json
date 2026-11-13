@@ -1,0 +1,43 @@
+{
+  "runId": "rba-mwenyj32-61287",
+  "trace": "experiments/82-resume-burn-ack/runs/rba-mwenyj32-61287.jsonl",
+  "traceSha256": "sha256:c5e0369cef122331e3569bd2a31245394317028b6b10f7e50887afeeec3ee1a3",
+  "startedAt": 1794555413534,
+  "endedAt": 1794555413639,
+  "aegisSha": "43e4a82a71311a320e42555b9e24ef5cb3fc37de",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:189b7fddc3571a87b6fb69f8d4ff20e44d858d9fedb84b59c87bd4da49f9fcf8",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:2cb555ca6bd7761d2af9e13d9dab6904bfd90a28e2e0c89f69d22c5431f221aa"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:26f200a1769ffeac4ee3da19fe4ec5cc191541644ee740c68ee140f11e82896c"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:879afa506a564c55431249acde0a11c43925da7494b376af30438bc3b6784081"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:bbef84533cdd8f5912056036faae0ec01352098b300f71e5f6820aba6ed10ed8"
+    }
+  ],
+  "summary": {
+    "falseDefinitiveRate": 0,
+    "uncertaintyAccuracy": 1,
+    "confirmedBurnAccuracy": 1,
+    "validAccuracy": 1,
+    "stateAccuracy": 1,
+    "probeAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
