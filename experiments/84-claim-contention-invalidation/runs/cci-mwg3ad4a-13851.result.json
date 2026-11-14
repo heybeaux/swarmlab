@@ -1,0 +1,493 @@
+{
+  "runId": "cci-mwg3ad4a-13851",
+  "trace": "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl",
+  "traceSha256": "sha256:cb09d2a7320aae76d75c42c1e34512114e3fc6c92758c28413d851d45c7461c2",
+  "startedAt": 1794641626090,
+  "endedAt": 1794641626211,
+  "aegisSha": "53200335d71b81494470693737c635fea5af1226",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:81f360971b6df650a9d8cedc2d32cb41274dd4289d79b7d112805f50bfcf5f12",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:110e121623e7ef4de280d4bfeadf4311b719808c7fa5070a6774bdd014813f7d"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:54273e0bb69987114a747e483bcc20ddb3536ac05832fe4756f1006b8dcd3141"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:b14d69ed9684c1564cb7b3e3a083720984f3ca00e923bbcbd076a31e7f655614"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:7f6b8431d0c3746bcb007db64dbb80f55b1f933730c7493ee3e11a99162c67af"
+    }
+  ],
+  "summary": {
+    "unsafeRecoveryRate": 1,
+    "durableInvalidationAccuracy": 0,
+    "uncertaintyAccuracy": 0,
+    "contentionControlAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "rivalAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "stateAccuracy": 1,
+    "scenarioAccuracy": 0.2222222222222222,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-normal-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-claim-revoke-false",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-claim-revoke-throws",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-normal-claim-revoke-started",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-claim-revoke-false",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-claim-revoke-throws",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-lost-claim-revoke-started",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-claim-revoke-false",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-claim-revoke-throws",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-normal-claim-revoke-started",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-prepare-drift-restored-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-claim-revoke-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-repair-revoked-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-handle-change-true",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-claim-revoke-false",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-claim-revoke-throws",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-lost-claim-revoke-started",
+      "checks": {
+        "scenario": false,
+        "invalidation": false,
+        "uncertainty": false,
+        "contentionControl": true,
+        "recovery": true,
+        "rival": true,
+        "controls": true,
+        "consumption": true,
+        "fixture": true,
+        "state": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

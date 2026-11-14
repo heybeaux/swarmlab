@@ -10225,5 +10225,212 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen red-red-green deterministic contract evidence; source/artifact manifests and raw replay. Holdout unused. No external effect, production durability or deployment proof."
+  },
+  {
+    "id": "RT-74",
+    "claim": "Observed invalidation survives real competing claims: unsafe recovery16/16 to0/16 and truthful uncertainty0/12 to12/12 in unchanged36-case real-Aegis experiment.",
+    "experiment": "experiments/84-claim-contention-invalidation",
+    "spec": "specs/90-claim-contention-invalidation.md",
+    "runIds": [
+      "cci-mwg3acz8-13833",
+      "cci-mwg3ad4a-13851",
+      "cci-mwg3dlnl-15251"
+    ],
+    "tracePaths": [
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.unsafeRecoveryRate",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.durableInvalidationAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.uncertaintyAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.contentionControlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.recoveryAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.rivalAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.controlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.fixtureAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.stateAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.scenarioAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.infrastructureFailures",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.unsafeRecoveryRate",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.durableInvalidationAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.uncertaintyAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.contentionControlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.recoveryAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.rivalAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.controlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.fixtureAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.stateAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.scenarioAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.infrastructureFailures",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.unsafeRecoveryRate",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.durableInvalidationAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.uncertaintyAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.contentionControlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.recoveryAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.rivalAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.controlAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.fixtureAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.stateAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.scenarioAccuracy",
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.contentionControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.scenarioAccuracy": {
+        "equals": 0.2222222222222222,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3acz8-13833.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.contentionControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.scenarioAccuracy": {
+        "equals": 0.2222222222222222,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3ad4a-13851.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.unsafeRecoveryRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.durableInvalidationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.contentionControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/84-claim-contention-invalidation/runs/cci-mwg3dlnl-15251.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/84-claim-contention-invalidation/main.mjs && node experiments/84-claim-contention-invalidation/verify-receipts.mjs",
+    "stackRecommendation": "Check observed input drift before empty-claim returns; durably burn or expose uncertainty, never roll back competing starts.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/93"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Frozen red-red-green deterministic storage contract; raw outcomes and complete package manifests. No external-effect/durability/deployment proof. Holdout unused."
   }
 ]
