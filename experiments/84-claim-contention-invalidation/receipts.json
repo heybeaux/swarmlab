@@ -1,0 +1,38 @@
+{
+  "experiment": "84-claim-contention-invalidation",
+  "preRegistrationCommit": "41d8c50ca335ba3521574edb42e6fff23ddc4ba5",
+  "frozenHarnessCommit": "72ca11106bf6c90e255be99b8167489211ff73b6",
+  "baselineSha": "53200335d71b81494470693737c635fea5af1226",
+  "candidateSha": "7c00391db7e79857934eb25eb3051278bc489bdc",
+  "baselineMetrics": {
+    "unsafeRecoveryRate": 1,
+    "durableInvalidationAccuracy": 0,
+    "uncertaintyAccuracy": 0,
+    "contentionControlAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "rivalAccuracy": 1,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "stateAccuracy": 1,
+    "scenarioAccuracy": 0.2222222222222222,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "cci-mwg3acz8-13833",
+      "traceSha256": "sha256:f8255309461e579c5e17f13ab16f8e16ceb684d9e3dc49c3c93717326366fd98",
+      "resultSha256": "sha256:9e6434faaee64b250b7c95b194de9fdf3ec6119ed34bb6bb01a33cddfb9d666e"
+    },
+    {
+      "runId": "cci-mwg3ad4a-13851",
+      "traceSha256": "sha256:cb09d2a7320aae76d75c42c1e34512114e3fc6c92758c28413d851d45c7461c2",
+      "resultSha256": "sha256:37e4c74f20161243acc39949dbdef5c3381163d055d9b6be91cd7114c689ea65"
+    },
+    {
+      "runId": "cci-mwg3dlnl-15251",
+      "traceSha256": "sha256:6064b4f17013615da08219df22d2b1bceb7d668410710d5c14c7d5ec90054487",
+      "resultSha256": "sha256:11f0123b0686157630f6b5ff338888aa4860299bc1b1c3144c3d33f5d95a14a3"
+    }
+  ]
+}
