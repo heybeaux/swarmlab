@@ -1,0 +1,224 @@
+{
+  "runId": "poi-mwhiqynn-35946",
+  "trace": "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl",
+  "traceSha256": "sha256:b2be8e69b3ec75e2adc888e103af76bfb9feb1ecf8d87cd6410ab3df9bfc142c",
+  "startedAt": 1794728060915,
+  "endedAt": 1794728061039,
+  "aegisSha": "42234abfcb6becc04846d546f82bb0038ac6e673",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:549404daafa6356bc98ac09ffbacbd5a047f45f700b64535433e9428c3fd4b77",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:7f8d0c1c71a899462f9db66d4644fb9de8de35ab1442297dd89b6fd786db0c1d"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:e0da69d268dd36330da617302ce486af5c63bae1ba269e071f81b79433ab2b9c"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:bb81c9ad47384fcf3102e64534fc60b237ef36a27b22c4df38726f07a2f19abc"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:f96607f29846508c8c8e4f66730b73b5ded2fffe27fa34f987045f63417f1404"
+    }
+  ],
+  "summary": {
+    "foreignMutationRate": 0.5,
+    "collisionDecisionAccuracy": 0.8333333333333334,
+    "ownerRecoveryAccuracy": 0.8333333333333334,
+    "challengerRecoveryAccuracy": 1,
+    "sameOwnerControlAccuracy": 0.6666666666666666,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5333333333333333,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-distinct-unclaimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": false,
+        "owner": false,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-distinct-claimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-distinct-started-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-same-unclaimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": false,
+        "owner": false,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-same-claimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-same-started-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-control-unavailable",
+      "checks": {
+        "isolation": true,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": false,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-distinct-unclaimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": false,
+        "owner": false,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-distinct-claimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-distinct-started-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-same-unclaimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": false,
+        "owner": false,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-same-claimed-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-same-started-lost",
+      "checks": {
+        "isolation": false,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-control-unavailable",
+      "checks": {
+        "isolation": true,
+        "decision": true,
+        "owner": true,
+        "challenger": true,
+        "control": false,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
