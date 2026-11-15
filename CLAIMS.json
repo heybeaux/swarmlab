@@ -10432,5 +10432,167 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Frozen red-red-green deterministic storage contract; raw outcomes and complete package manifests. No external-effect/durability/deployment proof. Holdout unused."
+  },
+  {
+    "id": "RT-75",
+    "claim": "Exact retained-operation ownership readback after ambiguous prepare prevents cross-permit claim/burn attempts in the frozen 30-case real-Aegis corpus.",
+    "experiment": "experiments/85-prepare-ownership-isolation",
+    "spec": "specs/91-prepare-ownership-isolation.md",
+    "runIds": [
+      "poi-mwhiqyj3-35930",
+      "poi-mwhiqynn-35946",
+      "poi-mwhiu7cn-37309"
+    ],
+    "tracePaths": [
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.foreignMutationRate",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.collisionDecisionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.ownerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.challengerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.sameOwnerControlAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.fixtureAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.scenarioAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.infrastructureFailures",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.foreignMutationRate",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.collisionDecisionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.ownerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.challengerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.sameOwnerControlAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.fixtureAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.scenarioAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.infrastructureFailures",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.foreignMutationRate",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.collisionDecisionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.ownerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.challengerRecoveryAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.sameOwnerControlAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.fixtureAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.scenarioAccuracy",
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.foreignMutationRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.collisionDecisionAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.ownerRecoveryAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.challengerRecoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.sameOwnerControlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5333333333333333,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqyj3-35930.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.foreignMutationRate": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.collisionDecisionAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.ownerRecoveryAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.challengerRecoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.sameOwnerControlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5333333333333333,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiqynn-35946.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.foreignMutationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.collisionDecisionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.ownerRecoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.challengerRecoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.sameOwnerControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/85-prepare-ownership-isolation/main.mjs && node experiments/85-prepare-ownership-isolation/verify-receipts.mjs",
+    "stackRecommendation": "Require exact retained ownership before reconciling ambiguous prepare; unreadable/malformed ownership stays indeterminate without claim or burn.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/94"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "foreignMutationRate counts actual foreign changes OR attempted claim/burn/begin. Baseline12/24 isolation failures include4 actual burns; no external effect or production durability claim. Holdout unused."
   }
 ]

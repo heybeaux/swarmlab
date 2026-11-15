@@ -1,0 +1,41 @@
+{
+  "runId": "poi-mwhiu7cn-37309",
+  "trace": "experiments/85-prepare-ownership-isolation/runs/poi-mwhiu7cn-37309.jsonl",
+  "traceSha256": "sha256:3397d92592e20a314fc1d592c2733dcdbd2afca0401e6dcebff7df5cde7af093",
+  "startedAt": 1794728212151,
+  "endedAt": 1794728212261,
+  "aegisSha": "faf961ed15cecb5bc2d838342ff44c7d9c6e9529",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:486496b8dbf0ea52fd18521c50ed0f9a9eea926027994b96df5d5d087d770429",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:7f8d0c1c71a899462f9db66d4644fb9de8de35ab1442297dd89b6fd786db0c1d"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:e0da69d268dd36330da617302ce486af5c63bae1ba269e071f81b79433ab2b9c"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:bb81c9ad47384fcf3102e64534fc60b237ef36a27b22c4df38726f07a2f19abc"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:f96607f29846508c8c8e4f66730b73b5ded2fffe27fa34f987045f63417f1404"
+    }
+  ],
+  "summary": {
+    "foreignMutationRate": 0,
+    "collisionDecisionAccuracy": 1,
+    "ownerRecoveryAccuracy": 1,
+    "challengerRecoveryAccuracy": 1,
+    "sameOwnerControlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
