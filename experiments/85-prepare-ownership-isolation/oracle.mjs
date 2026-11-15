@@ -15,7 +15,7 @@ export function assess(s,result){
   isolation=eq(r.before,r.after)&&!r.challengerOperations.some(o=>['claim','burn','begin'].includes(o.op));
   decision=eq(r.result,blocked('not_taken',true));
   owner=lifecycle(r.ownerRecovery,s.occupancy==='unclaimed'?execute:blocked('not_taken'),s.occupancy==='started')&&r.ownerRecovery.state.effects[0]?.state==='started';
-  challenger=lifecycle(r.challengerRecovery,execute)&&r.challengerRecovery.state.ready.length===0&&r.challengerRecovery.state.effects.length===2&&r.challengerRecovery.state.effects.every(e=>e.state==='started');
+  challenger=lifecycle(r.challengerRecovery,execute)&&r.challengerRecovery.state.ready.length===0&&r.challengerRecovery.state.effects.length===2&&r.challengerRecovery.state.effects.find(e=>e.operationId==='op_contender')?.state==='started';
   consumption=approval(r.victim.approval)&&approval(r.contender.approval);
  }else if(valid){
   const unavailable=s.ack==='unavailable';setup=r.prepareValue===true;
