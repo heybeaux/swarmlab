@@ -950,3 +950,6 @@ while beginEffect awaits its CAS grant stale authority after the storage start?
 Deduplicate against exp81 before pre-registering; no claim made here.
 
 Runtime PR: [Aegis94](https://github.com/heybeaux/aegis/pull/94).
+
+
+RT-76 / Spec92 / exp86: strict wrapper authority. Red22/22 unsafe permissions to0/22; same34cases pass. [Receipts](../experiments/86-strict-wrapper-authority/receipts.json), [design](../specs/92-strict-wrapper-authority.md). Regression checks are not novel evidence.

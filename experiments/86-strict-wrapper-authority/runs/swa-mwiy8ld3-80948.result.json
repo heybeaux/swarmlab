@@ -1,0 +1,374 @@
+{
+  "runId": "swa-mwiy8ld3-80948",
+  "trace": "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl",
+  "traceSha256": "sha256:7ee282f8d118711a8dfc469b32e3c1c8f1f80ca6ee4d72edf2259b8142f17b8e",
+  "startedAt": 1794814543911,
+  "endedAt": 1794814544044,
+  "aegisSha": "d9d50b0fab3ae76cbe53457d5ef3c7a05bd359ef",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:d63c029af06c3c6b93a988f43d923b25a59d6ebd45a6d019a50de2624e1bbf60",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:0f5265a14ee7e845ff3c915e10aed46d8decf8510dcc5b7b73012a90460dfaef"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:bc642bccac5105e54f3e8a33132ff1bc1631a5ced51d7454272386cafa7ccbe0"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:38f3d3630594994ee110785ec31f7d157fbde217577e555775fb69ddaab23d16"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:206544ef620a13b20ffb3e67aa5f0ade4a418cb7c3923fd986e69709d8014905"
+    }
+  ],
+  "summary": {
+    "unsafePermissionRate": 1,
+    "preflightInvalidationAccuracy": 0,
+    "postflightFenceAccuracy": 0,
+    "positiveAccuracy": 1,
+    "recoverySafety": 0.5294117647058824,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "scenarioAccuracy": 0.35294117647058826,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-durable-resolve-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-resolve-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-resolve-pre-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-begin-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-begin-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-begin-pre-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-begin-post-revoke",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-durable-begin-post-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-continuity-begin-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-continuity-begin-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-continuity-begin-post-revoke",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-resolve-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-resolve-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-resolve-pre-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-begin-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-begin-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-begin-pre-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-begin-post-revoke",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-durable-begin-post-revoke-restored",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-continuity-begin-repair-revoked",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-continuity-begin-repair-link",
+      "checks": {
+        "safe": false,
+        "preflight": false,
+        "postflight": true,
+        "positive": true,
+        "recovery": false,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-continuity-begin-post-revoke",
+      "checks": {
+        "safe": false,
+        "preflight": true,
+        "postflight": false,
+        "positive": true,
+        "recovery": true,
+        "control": true,
+        "consumption": true,
+        "fixture": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
