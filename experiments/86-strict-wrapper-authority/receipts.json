@@ -1,0 +1,37 @@
+{
+  "experiment": "86-strict-wrapper-authority",
+  "preRegistrationCommit": "6c3fdd3dc02b6c8686bde6c60ee6eeb0564d23ee",
+  "frozenHarnessCommit": "ddf35271689f01de3b2a2e7d0f2c458f777bac3c",
+  "baselineSha": "d9d50b0fab3ae76cbe53457d5ef3c7a05bd359ef",
+  "candidateSha": "f3de18171b11d39edf52d14a1eadc7e27c53e8e8",
+  "baselineMetrics": {
+    "unsafePermissionRate": 1,
+    "preflightInvalidationAccuracy": 0,
+    "postflightFenceAccuracy": 0,
+    "positiveAccuracy": 1,
+    "recoverySafety": 0.5294117647058824,
+    "controlAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "scenarioAccuracy": 0.35294117647058826,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "swa-mwiy8ld3-80948",
+      "traceSha256": "sha256:7ee282f8d118711a8dfc469b32e3c1c8f1f80ca6ee4d72edf2259b8142f17b8e",
+      "resultSha256": "sha256:1fef733318ffa71366d0eae4f86f792bdbbf06c78765b6aa5828dba16fca19c1"
+    },
+    {
+      "runId": "swa-mwiy8lib-80964",
+      "traceSha256": "sha256:fba28d798a8363a28094b43a54b2cf9d9610cc61609bf28e75b6f59135a3f9bc",
+      "resultSha256": "sha256:b3a089c89171cff686db9a3f6e176f05d334a83a5ddf64f84582a77f11a725fb"
+    },
+    {
+      "runId": "swa-mwiycahy-81995",
+      "traceSha256": "sha256:3fac19bc1fc2e740b9e9f96bffda7eee04c94866e27e581aab89dea085c94b20",
+      "resultSha256": "sha256:d8c9f61c15461bdbc4fe6a70a434dcb5606ae8f56d9fe92d6c9c4ea46fa9f712"
+    }
+  ]
+}

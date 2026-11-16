@@ -10594,5 +10594,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "foreignMutationRate counts actual foreign changes OR attempted claim/burn/begin. Baseline12/24 isolation failures include4 actual burns; no external effect or production durability claim. Holdout unused."
+  },
+  {
+    "id": "RT-76",
+    "claim": "Strict wrapper authority binding prevents permission after authority repairs during preflight or revocation during postflight in 34 deterministic real-package cases.",
+    "experiment": "experiments/86-strict-wrapper-authority",
+    "spec": "specs/92-strict-wrapper-authority.md",
+    "runIds": [
+      "swa-mwiy8ld3-80948",
+      "swa-mwiy8lib-80964",
+      "swa-mwiycahy-81995"
+    ],
+    "tracePaths": [
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.unsafePermissionRate",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.preflightInvalidationAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.postflightFenceAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.positiveAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.recoverySafety",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.controlAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.fixtureAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.ownershipAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.scenarioAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.infrastructureFailures",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.unsafePermissionRate",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.preflightInvalidationAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.postflightFenceAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.positiveAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.recoverySafety",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.controlAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.fixtureAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.ownershipAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.scenarioAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.infrastructureFailures",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.unsafePermissionRate",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.preflightInvalidationAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.postflightFenceAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.positiveAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.recoverySafety",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.controlAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.fixtureAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.ownershipAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.scenarioAccuracy",
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.unsafePermissionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.preflightInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.postflightFenceAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.recoverySafety": {
+        "equals": 0.5294117647058824,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.scenarioAccuracy": {
+        "equals": 0.35294117647058826,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8ld3-80948.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.unsafePermissionRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.preflightInvalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.postflightFenceAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.recoverySafety": {
+        "equals": 0.5294117647058824,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.scenarioAccuracy": {
+        "equals": 0.35294117647058826,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiy8lib-80964.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.unsafePermissionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.preflightInvalidationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.postflightFenceAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.recoverySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/86-strict-wrapper-authority/runs/swa-mwiycahy-81995.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/86-strict-wrapper-authority/main.mjs && node experiments/86-strict-wrapper-authority/verify-receipts.mjs",
+    "stackRecommendation": "Carry one captured authority binding through the complete public wrapper invocation; remember observed drift and preserve started fences.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/95"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "22/22 baseline hazards granted execute or retry permission; candidate0/22. Preflight16 burn; postflight6 retain started fence. No external effect, production durability or deployment proof. Holdout unused."
   }
 ]
