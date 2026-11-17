@@ -10594,5 +10594,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "foreignMutationRate counts actual foreign changes OR attempted claim/burn/begin. Baseline12/24 isolation failures include4 actual burns; no external effect or production durability claim. Holdout unused."
+  },
+  {
+    "id": "RT-77",
+    "claim": "Durable strict policy selection must attest the immutable entry binding: exp87 observed eight false receipts and sixteen accepted drift cases on baseline; the same real-package design passes all26 after entry binding checks.",
+    "experiment": "experiments/87-policy-selection-integrity",
+    "spec": "specs/93-policy-selection-integrity.md",
+    "runIds": [
+      "psi-mwkdngk3-21746",
+      "psi-mwkdngp9-21764",
+      "psi-mwkdptxa-22799"
+    ],
+    "tracePaths": [
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.falseReceiptRate",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.hazardRejectionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.positiveAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.conflictControlAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.storageIsolationAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.recoveryAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.callerOwnershipAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.fixtureAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.scenarioAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.infrastructureFailures",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.falseReceiptRate",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.hazardRejectionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.positiveAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.conflictControlAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.storageIsolationAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.recoveryAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.callerOwnershipAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.fixtureAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.scenarioAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.infrastructureFailures",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.falseReceiptRate",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.hazardRejectionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.positiveAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.conflictControlAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.storageIsolationAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.recoveryAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.callerOwnershipAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.fixtureAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.scenarioAccuracy",
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.falseReceiptRate": {
+        "equals": 0.3076923076923077,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.conflictControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.scenarioAccuracy": {
+        "equals": 0.38461538461538464,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngk3-21746.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.falseReceiptRate": {
+        "equals": 0.3076923076923077,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.conflictControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.scenarioAccuracy": {
+        "equals": 0.38461538461538464,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.falseReceiptRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.conflictControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/87-policy-selection-integrity/runs/psi-mwkdptxa-22799.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/87-policy-selection-integrity/main.mjs && node experiments/87-policy-selection-integrity/verify-receipts.mjs",
+    "stackRecommendation": "Capture selection identity at entry, compare after every await, and validate readback against captured identity; rejected attestation must not erase persisted truth.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/96"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic storage fixture and real package. Selection attestation only, not execution authority, production DB, external effect or deployment proof. Holdout unused. Exp86 remains separately unmerged."
   }
 ]

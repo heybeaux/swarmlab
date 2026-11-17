@@ -1,0 +1,36 @@
+{
+  "experiment": "87-policy-selection-integrity",
+  "preRegistrationCommit": "ec322432b3896cd88b36b741c0cde4e3366d80a9",
+  "baselineSha": "d9d50b0fab3ae76cbe53457d5ef3c7a05bd359ef",
+  "candidateSha": "0459356d7570f684077111f2068724606d98a695",
+  "baselineMetrics": {
+    "falseReceiptRate": 0.3076923076923077,
+    "hazardRejectionAccuracy": 0,
+    "positiveAccuracy": 1,
+    "conflictControlAccuracy": 1,
+    "storageIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.38461538461538464,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "psi-mwkdngk3-21746",
+      "traceSha256": "sha256:66869ebc18952b4b9275f5ddda8fe3449543d356cbba0ba260d047b0aa576b5f",
+      "resultSha256": "sha256:362f896fc52a0d62cc27144779f47dbeb502ca19466db112afbb81f7ca17f0a2"
+    },
+    {
+      "runId": "psi-mwkdngp9-21764",
+      "traceSha256": "sha256:941abf4c53be61327c867e1a84ba4c5a7cd011355891505021f1bd0c951d6f46",
+      "resultSha256": "sha256:a0612cc534cacb294a545f5a1ab60a81fe54b74dd25e44423e03fa5c52fa2737"
+    },
+    {
+      "runId": "psi-mwkdptxa-22799",
+      "traceSha256": "sha256:3fc88c09973e2b2a50a5ba45874e73fdc658fd2a5b897294637e0476cf33931b",
+      "resultSha256": "sha256:61a269beefe83d43a65c2b642fd66e81ba51b0f6e5256ac71f90964d6f4ed8a4"
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "runId": "psi-mwkdngp9-21764",
+  "trace": "experiments/87-policy-selection-integrity/runs/psi-mwkdngp9-21764.jsonl",
+  "traceSha256": "sha256:941abf4c53be61327c867e1a84ba4c5a7cd011355891505021f1bd0c951d6f46",
+  "startedAt": 1794900898125,
+  "endedAt": 1794900898228,
+  "aegisSha": "d9d50b0fab3ae76cbe53457d5ef3c7a05bd359ef",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:d63c029af06c3c6b93a988f43d923b25a59d6ebd45a6d019a50de2624e1bbf60",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:4a0c4bf19858d47a1d4896b8ea30ed85d718e04800e38318f1a5e912af461a97"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:cae9a3d2fc0400cc921c5f5ba8802131989736ec492b6473dd2814aafbeb5b61"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:7fc8b0960513a17d1e621cfdbca1d5171c06b7d459de9119337d3213665fd92c"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:97b810e514fc0f23a02a6809e290cfe6b70ce35727d99c934e9837f198fdec76"
+    }
+  ],
+  "summary": {
+    "falseReceiptRate": 0.3076923076923077,
+    "hazardRejectionAccuracy": 0,
+    "positiveAccuracy": 1,
+    "conflictControlAccuracy": 1,
+    "storageIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.38461538461538464,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-foreign-same-bind",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-foreign-same-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-foreign-distinct-bind",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-foreign-distinct-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-current-bind",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-current-read",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-current-bind-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-permit-bind-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-foreign-same-bind",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-foreign-same-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-foreign-distinct-bind",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-foreign-distinct-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-current-bind",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-current-read",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-current-bind-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-permit-bind-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
