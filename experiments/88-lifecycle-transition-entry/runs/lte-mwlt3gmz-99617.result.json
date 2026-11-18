@@ -1,0 +1,254 @@
+{
+  "runId": "lte-mwlt3gmz-99617",
+  "trace": "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl",
+  "traceSha256": "sha256:b09e76f88d3568f2bf49f2ee87dda25813cf324d40cbf67f2ac182b0ba796125",
+  "startedAt": 1794987304955,
+  "endedAt": 1794987305068,
+  "aegisSha": "90bd6b1aa0bbe6821d455939611b935788002679",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:c9c5946c9fea93e3845a9f7c82b675b5efcb59b0d8913c04a228fc4704b3ac35",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:3319636cbaf32f850fc53f9fb51e8822973feffbb58835ffb2fe2d5bd098da60"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:08b2d471abe7e52d9685756d5d2a3ec2e69658967feb2960bbe8c24b11f4e8b1"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:6f987df09ad77bf6f50c7df7f4cb3083d94ff5b7741b11e647fd9a3550efd9ee"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:0df94e545050f62671d1d51336f4fd8b2a156c483ed6f4035165cd4daf46cf22"
+    }
+  ],
+  "summary": {
+    "falseAttestationRate": 0.3125,
+    "hazardRejectionAccuracy": 0,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "transitionIsolationAccuracy": 0.9375,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5625,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "committed-retire-foreign-journal-journal",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": false,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-retire-foreign-retained-cas",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-retire-foreign-retained-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-retire-local-drift-cas-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-compact-foreign-retained-cas",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-compact-foreign-retained-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-compact-local-drift-cas-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-retire-foreign-journal-journal",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": false,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-retire-foreign-retained-cas",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-retire-foreign-retained-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-retire-local-drift-cas-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-compact-foreign-retained-cas",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-compact-foreign-retained-read",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-compact-local-drift-cas-restore",
+      "checks": {
+        "honest": true,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
