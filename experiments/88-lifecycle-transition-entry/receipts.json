@@ -1,0 +1,50 @@
+{
+  "experiment": "88-lifecycle-transition-entry",
+  "baselineSha": "90bd6b1aa0bbe6821d455939611b935788002679",
+  "candidateSha": "2baf564bf2b6d94cb049966ce5ba444d2c17c0f7",
+  "baselineMetrics": {
+    "falseAttestationRate": 0.3125,
+    "hazardRejectionAccuracy": 0,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "transitionIsolationAccuracy": 0.9375,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.5625,
+    "infrastructureFailures": 0
+  },
+  "candidateMetrics": {
+    "falseAttestationRate": 0,
+    "hazardRejectionAccuracy": 1,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "transitionIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "preRegistrationCommit": "4d29974",
+  "frozenHarnessCommit": "3a51dcd",
+  "runs": [
+    {
+      "runId": "lte-mwlt3ghr-99601",
+      "traceSha256": "sha256:5ef01ebf6ae0787a2fce262c72a8f9ea96574e6a852478a1901b876284b2885c",
+      "resultSha256": "sha256:dcf7ea2fb1e182cbc0bea0ded84e3af7443bf8bed12902a268eb79ce882e99dc"
+    },
+    {
+      "runId": "lte-mwlt3gmz-99617",
+      "traceSha256": "sha256:b09e76f88d3568f2bf49f2ee87dda25813cf324d40cbf67f2ac182b0ba796125",
+      "resultSha256": "sha256:f7a4b04b8f83beb28990e5420d373a7d07c91ef7b34a82aeec78387c9cd5034b"
+    },
+    {
+      "runId": "lte-mwlt73lc-1281",
+      "traceSha256": "sha256:6074cdadfde467f7e1fbf01c9ad146076dbb190c30ddabfd2801ad14973bf5cf",
+      "resultSha256": "sha256:b76509c2869d52d6b0b7ba521cae9258dff1331565c2b85c4df38e1eb645b696"
+    }
+  ]
+}

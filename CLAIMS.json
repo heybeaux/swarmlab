@@ -10786,5 +10786,197 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic storage fixture and real package. Selection attestation only, not execution authority, production DB, external effect or deployment proof. Holdout unused. Exp86 remains separately unmerged."
+  },
+  {
+    "id": "RT-78",
+    "claim": "Lifecycle retirement/compaction must attest entry permit identity across awaited storage. Exp88 found 10 false attestations and 14 accepted drift hazards on current Aegis; identical real-package design passes32/32 after immutable entry binding.",
+    "experiment": "experiments/88-lifecycle-transition-entry",
+    "spec": "specs/94-lifecycle-transition-entry.md",
+    "runIds": [
+      "lte-mwlt3ghr-99601",
+      "lte-mwlt3gmz-99617",
+      "lte-mwlt73lc-1281"
+    ],
+    "tracePaths": [
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.falseAttestationRate",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.hazardRejectionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.positiveAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.conflictAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.transitionIsolationAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.recoveryAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.callerOwnershipAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.fixtureAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.scenarioAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.infrastructureFailures",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.falseAttestationRate",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.hazardRejectionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.positiveAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.conflictAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.transitionIsolationAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.recoveryAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.callerOwnershipAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.fixtureAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.scenarioAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.infrastructureFailures",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.falseAttestationRate",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.hazardRejectionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.positiveAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.conflictAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.transitionIsolationAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.recoveryAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.callerOwnershipAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.fixtureAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.scenarioAccuracy",
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.falseAttestationRate": {
+        "equals": 0.3125,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.transitionIsolationAccuracy": {
+        "equals": 0.9375,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5625,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3ghr-99601.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.falseAttestationRate": {
+        "equals": 0.3125,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.transitionIsolationAccuracy": {
+        "equals": 0.9375,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5625,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt3gmz-99617.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.falseAttestationRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.transitionIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/88-lifecycle-transition-entry/runs/lte-mwlt73lc-1281.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/88-lifecycle-transition-entry/main.mjs && node experiments/88-lifecycle-transition-entry/verify-receipts.mjs",
+    "stackRecommendation": "Snapshot lifecycle permit/approval identity before terminal reads; check after each await and bind CAS/readback to entry. Preserve persisted transitions after drift and allow clean idempotent retry.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/97"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic detached atomic host fixture, real approvals/permits and public lifecycle APIs. Host-seeded authenticated terminal records; not proof of real external effects, durability or deployment. Holdout unused; no tuning. Source .acr unchanged."
   }
 ]
