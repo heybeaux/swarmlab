@@ -991,3 +991,13 @@ nightly ledger. Next hypothesis: can retirement/compaction attestation mix mutab
 entry identity and awaited terminal proof? Deduplicate before selecting it.
 
 Runtime PR: [Aegis96](https://github.com/heybeaux/aegis/pull/96).
+
+
+### RT-78 — exp88 lifecycle transition entry binding
+
+Spec94 / preregistration4d29974 / frozen3a51dcd. Baseline10/32 false attestations,
+0/14 hazards rejected; candidate0/32 and14/14, all32pass. Full red-red-green traces,
+package manifests and receipts in experiments/88-lifecycle-transition-entry.
+CLAIMS.json records every score with exact expected value; verify-receipts.mjs
+independently rescores raw outcomes. Deterministic host terminal inputs, no external
+effect or deployment claim. See experiment README for limits and exact SHAs.
