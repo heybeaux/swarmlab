@@ -10978,5 +10978,227 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic detached atomic host fixture, real approvals/permits and public lifecycle APIs. Host-seeded authenticated terminal records; not proof of real external effects, durability or deployment. Holdout unused; no tuning. Source .acr unchanged."
+  },
+  {
+    "id": "RT-79",
+    "claim": "Late lifecycle resolvers must bind terminal classification to entry identity: exp89 baseline falsely classified eight foreign proofs; unchanged real-package corpus now rejects all24 drift hazards and passes56/56 scenarios.",
+    "experiment": "experiments/89-late-lifecycle-resolution",
+    "spec": "specs/95-late-lifecycle-resolution.md",
+    "runIds": [
+      "llr-mwn8hwem-74816",
+      "llr-mwn8hwjz-74833",
+      "llr-mwn8krgp-76122"
+    ],
+    "tracePaths": [
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.falseTerminalRate",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.hazardRejectionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.positiveAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.conflictAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.outageAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.beginSafetyAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.storageIsolationAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.recoveryAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.callerOwnershipAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.fixtureAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.scenarioAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.infrastructureFailures",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.falseTerminalRate",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.hazardRejectionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.positiveAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.conflictAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.outageAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.beginSafetyAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.storageIsolationAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.recoveryAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.callerOwnershipAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.fixtureAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.scenarioAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.infrastructureFailures",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.falseTerminalRate",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.hazardRejectionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.positiveAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.conflictAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.outageAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.beginSafetyAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.storageIsolationAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.recoveryAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.callerOwnershipAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.approvalConsumptionAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.fixtureAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.scenarioAccuracy",
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.falseTerminalRate": {
+        "equals": 0.1428571428571429,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.outageAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.beginSafetyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.scenarioAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.falseTerminalRate": {
+        "equals": 0.1428571428571429,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.outageAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.beginSafetyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.scenarioAccuracy": {
+        "equals": 0.8571428571428571,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwjz-74833.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.falseTerminalRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.positiveAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.conflictAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.outageAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.beginSafetyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.storageIsolationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.callerOwnershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.approvalConsumptionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/89-late-lifecycle-resolution/runs/llr-mwn8krgp-76122.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/89-late-lifecycle-resolution/main.mjs && node experiments/89-late-lifecycle-resolution/verify-receipts.mjs",
+    "stackRecommendation": "Capture entry permit/approval identity for late resolution, check stability after every awaited proof/authority read, validate against captured IDs; never freeze caller state or alter retained proof.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/98"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Bash-only deterministic detached host storage; real approvals/issued permits/public lifecycle APIs, host-seeded authenticated terminal proofs. No external effect, production durability, hostile adapter, hidden ABA within one callback, post-return or deployment guarantee. Holdout unused. CI/merge tracked separately."
   }
 ]
