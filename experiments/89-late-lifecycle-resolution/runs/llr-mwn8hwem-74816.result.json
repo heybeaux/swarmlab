@@ -1,0 +1,182 @@
+{
+  "runId": "llr-mwn8hwem-74816",
+  "trace": "experiments/89-late-lifecycle-resolution/runs/llr-mwn8hwem-74816.jsonl",
+  "traceSha256": "sha256:238fd29643af38c5d070928aa73892018ee25a0d814246c9a7d4022a9021e91c",
+  "startedAt": 1795073638990,
+  "endedAt": 1795073639136,
+  "aegisSha": "4744da93fe969032bd9b586730e4c8fe05986970",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:126865ddcd93cbe1ee6f2351d2bdf14ab647c9a9522d364a8bb823f3162598d9",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:066a896f59448767172468770f69bc81b5d3524b79b5585e77d59803cb8e051b"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:99f7ab58075bfb09e5349c4390a2c46a68eb3d3c9592042d62e13e3ac6164773"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:0dc8ff37a15591522a2c9569f5365b659c4b794b7bcf78cba98cd473a00f82e7"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:b651091489e933e9fae42d6f8a0f5aae97ded76ad3962cf51e7f01d52dad326b"
+    }
+  ],
+  "summary": {
+    "falseTerminalRate": 0.1428571428571429,
+    "hazardRejectionAccuracy": 0.6666666666666666,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "outageAccuracy": 1,
+    "beginSafetyAccuracy": 1,
+    "storageIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.8571428571428571,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "committed-retired-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-legacy-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-auto-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "committed-explicit-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-retired-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-legacy-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-auto-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "failed-explicit-foreign-switch",
+      "checks": {
+        "honest": false,
+        "rejection": false,
+        "positive": true,
+        "conflict": true,
+        "outage": true,
+        "begin": true,
+        "isolation": true,
+        "recovery": true,
+        "ownership": true,
+        "consumption": true,
+        "fixture": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

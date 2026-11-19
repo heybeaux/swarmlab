@@ -1,0 +1,52 @@
+{
+  "experiment": "89-late-lifecycle-resolution",
+  "baselineSha": "4744da93fe969032bd9b586730e4c8fe05986970",
+  "candidateSha": "1b35ded5653ad7b9ae1cba251826f028d60aac35",
+  "baselineMetrics": {
+    "falseTerminalRate": 0.1428571428571429,
+    "hazardRejectionAccuracy": 0.6666666666666666,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "outageAccuracy": 1,
+    "beginSafetyAccuracy": 1,
+    "storageIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 0.8571428571428571,
+    "infrastructureFailures": 0
+  },
+  "candidateMetrics": {
+    "falseTerminalRate": 0,
+    "hazardRejectionAccuracy": 1,
+    "positiveAccuracy": 1,
+    "conflictAccuracy": 1,
+    "outageAccuracy": 1,
+    "beginSafetyAccuracy": 1,
+    "storageIsolationAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "callerOwnershipAccuracy": 1,
+    "approvalConsumptionAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "llr-mwn8hwem-74816",
+      "traceSha256": "sha256:238fd29643af38c5d070928aa73892018ee25a0d814246c9a7d4022a9021e91c",
+      "resultSha256": "sha256:695d37fa0cbe6cf785c39bd95e586fb27f06c8b7d4b2024521b22bc5b9cd39ef"
+    },
+    {
+      "runId": "llr-mwn8hwjz-74833",
+      "traceSha256": "sha256:0455fb794e16aa928004cac18294c97142a94a613b73265b040eea1540605ec8",
+      "resultSha256": "sha256:112556e4836ae578685e0fd2e39f0d8af97afca0e6c887300eb42e05d06f342e"
+    },
+    {
+      "runId": "llr-mwn8krgp-76122",
+      "traceSha256": "sha256:b0228a5b6d98592840afa98d868b08c36382922e1c10588fc97ac625a58bb63c",
+      "resultSha256": "sha256:c06f0ead42537b4a8cd0f88f1ade20a7b25b8717a24224b0dfb088ff2a1f41f6"
+    }
+  ]
+}
