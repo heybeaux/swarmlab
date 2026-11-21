@@ -1,0 +1,33 @@
+{
+  "experiment": "91-safe-command-newline",
+  "baselineSha": "f0f1f685538165a0affbce69b4d4725631fe7153",
+  "candidateSha": "902dd23fab904322241426ecb59eeb49fe9ae835",
+  "baselineMetrics": {
+    "hazardRejectionAccuracy": 0,
+    "falseSafeRate": 1,
+    "controlAccuracy": 0.8333333333333334,
+    "separatorControlAccuracy": 1,
+    "shellGroundTruthAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "scenarioAccuracy": 0.5,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "scn-mwq3dh6p-83466",
+      "resultSha256": "sha256:9dfc2793b658fa52073309be01d99c722335fad69f74bb0bb5cdade5664ae74b",
+      "traceSha256": "sha256:97245b7a7f3a611e613e0401a6f4411398fefd66ac5b7b72ba834b6fb734c0d8"
+    },
+    {
+      "runId": "scn-mwq3dhbl-83548",
+      "resultSha256": "sha256:74cdea2f9ed7c86e1b4b0b835a00479fe4e144f90f0c5f9cf3a215d868e13a1a",
+      "traceSha256": "sha256:f46a583331ac4187e5954095349edb379005d6e2513be488a3dc5eb2010045e3"
+    },
+    {
+      "runId": "scn-mwq3exj6-84199",
+      "resultSha256": "sha256:57b92c6e3b5daca43e0a26a9a4b50fe61cea581be20406b2fddbb079a6bdcfd6",
+      "traceSha256": "sha256:32beebebe649e0b8cb477caddf1b8fe3986d75d3f216557f23b4028573eca2bd"
+    }
+  ]
+}
