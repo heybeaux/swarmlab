@@ -1,0 +1,162 @@
+{
+  "runId": "scn-mwq3dhbl-83548",
+  "trace": "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl",
+  "traceSha256": "sha256:f46a583331ac4187e5954095349edb379005d6e2513be488a3dc5eb2010045e3",
+  "startedAt": 1795246433265,
+  "endedAt": 1795246433400,
+  "aegisSha": "f0f1f685538165a0affbce69b4d4725631fe7153",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:4148de979e9bfe456a73c6fdb7e8b243208e35397fcfe8871001be28af07e372",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:9823ef7aa60aa8b32a779f183f5321c097670d739dffb764449063036567ecfc"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:0fb4e1590e1b94757b1d67e3ad0bebb91f166d16fe12cfce44dd06816a2e2d98"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:b71b116b8a6114b355f6d3424bc184b6e8e5c50e0ca3f3b26a10b8a307453ee3"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:2863ff97d3f08b6936547ad61d96a50edb9a1c85d6a80b53850436fdeb0363eb"
+    }
+  ],
+  "summary": {
+    "hazardRejectionAccuracy": 0,
+    "falseSafeRate": 1,
+    "controlAccuracy": 0.8333333333333334,
+    "separatorControlAccuracy": 1,
+    "shellGroundTruthAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "recoveryAccuracy": 1,
+    "scenarioAccuracy": 0.5,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "lf",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "double-lf",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "lf-tab",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "crlf",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "comment",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "continuation-then-separator",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "pwd",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "whoami",
+      "checks": {
+        "rejection": false,
+        "control": true,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "quoted-lf",
+      "checks": {
+        "rejection": true,
+        "control": false,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "escaped-lf",
+      "checks": {
+        "rejection": true,
+        "control": false,
+        "paired": true,
+        "shell": true,
+        "ownership": true,
+        "recovery": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}

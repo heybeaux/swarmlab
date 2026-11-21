@@ -11200,5 +11200,167 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Bash-only deterministic detached host storage; real approvals/issued permits/public lifecycle APIs, host-seeded authenticated terminal proofs. No external effect, production durability, hostile adapter, hidden ABA within one callback, post-return or deployment guarantee. Holdout unused. CI/merge tracked separately."
+  },
+  {
+    "id": "RT-81",
+    "claim": "The exported safe-command classifier must reject embedded shell LF separators: real Aegis initially labeled all eight multi-command fixtures safe; the same frozen corpus rejects all eight after adding LF to combinator checks. No current evaluator/hook bypass is claimed.",
+    "experiment": "experiments/91-safe-command-newline",
+    "spec": "specs/97-safe-command-newline.md",
+    "runIds": [
+      "scn-mwq3dh6p-83466",
+      "scn-mwq3dhbl-83548",
+      "scn-mwq3exj6-84199"
+    ],
+    "tracePaths": [
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.hazardRejectionAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.falseSafeRate",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.controlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.separatorControlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.shellGroundTruthAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.ownershipAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.recoveryAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.scenarioAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.infrastructureFailures",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.hazardRejectionAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.falseSafeRate",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.controlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.separatorControlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.shellGroundTruthAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.ownershipAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.recoveryAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.scenarioAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.infrastructureFailures",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.hazardRejectionAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.falseSafeRate",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.controlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.separatorControlAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.shellGroundTruthAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.ownershipAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.recoveryAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.scenarioAccuracy",
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.falseSafeRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.controlAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.separatorControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.shellGroundTruthAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dh6p-83466.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.falseSafeRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.controlAccuracy": {
+        "equals": 0.8333333333333334,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.separatorControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.shellGroundTruthAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3dhbl-83548.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.hazardRejectionAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.falseSafeRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.separatorControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.shellGroundTruthAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/91-safe-command-newline/runs/scn-mwq3exj6-84199.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/91-safe-command-newline/main.mjs && node experiments/91-safe-command-newline/verify-receipts.mjs",
+    "stackRecommendation": "Reject embedded LF conservatively in the public safe-command helper; preserve outer whitespace and explicit allowlist ownership. Do not present lexical classification as shell parsing or hook authorization.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/99"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Eight hazards plus twelve controls; real package export and harmless Bash marker ground truth, no real side effects. Baseline twice identical. Holdout unused, no tuning. Candidate/CI/merge recorded separately."
   }
 ]
