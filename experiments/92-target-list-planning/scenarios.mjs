@@ -1,0 +1,15 @@
+export const experiment='92-target-list-planning',seed='target-list-planning-v1',holdoutSeed='target-list-planning-holdout-v1';
+export const thresholds={hazardAccuracy:1,pairedControlAccuracy:1,controlAccuracy:1,scenarioAccuracy:1,runtimeFailureRate:0,infrastructureFailures:0};
+const base=(id,target,count,extra={})=>({id,target,count,...extra});
+const hazards=[base('wide-path','path',200000),base('wide-argv','argv',200000),base('wide-content','content',200000),base('wide-all-allow','argv',200000,{allAllow:true}),base('wide-deny-before','path',200000,{critical:'before'}),base('wide-deny-after','content',200000,{critical:'after'})];
+export const scenarios=[...hazards.map(s=>({...s,kind:'hazard',rules:32,expected:{action:s.critical?'deny':'ask',hits:s.critical?['critical']:[],admission:true}})),...hazards.map(s=>({...s,id:`paired-${s.id}`,kind:'paired',count:1,rules:32,expected:{action:s.critical?'deny':'allow',hits:s.critical?['critical']:[],admission:false}})),
+...[
+base('path-boundary','path',1024),base('argv-last-positive','argv',1024,{marker:1023}),base('content-last-positive','content',1023,{scalar:true,marker:1022}),base('path-omitted-positive','path',1025,{marker:1024,overflow:true}),base('argv-prefix-positive','argv',1025,{marker:0,overflow:true}),base('content-overflow','content',1024,{scalar:true,overflow:true}),base('wide-disabled','path',200000,{disabled:true}),base('wide-wrong-tool','argv',200000,{wrongTool:true}),base('wide-empty-pack','path',200000,{empty:true}),base('fragments-not-joined','content',2,{split:true}),base('overflow-predictor-deny','path',1025,{overflow:true,prediction:true}),base('command-positive','command',1,{marker:0}),
+].map(s=>({...s,kind:'control',rules:1,expected:{action:s.prediction||(s.marker!==undefined&&s.marker<1024)?'deny':s.overflow?'ask':'allow',hits:s.marker!==undefined&&s.marker<1024?['target.0']:[],admission:!!s.overflow}}))];
+export function fixture(s){
+ const values=Array(s.count).fill('safe');if(s.marker!==undefined)values[s.marker]='NEVER';if(s.split)values.splice(0,2,'NE','VER');
+ const call={tool:'Bash',command:s.critical?'DANGER':'safe',...(s.target==='path'?{paths:values}:s.target==='argv'?{argv:values}:s.target==='content'?{contentFragments:values,...(s.scalar?{content:'safe'}:{})}:{command:values[0]})};
+ const rules=s.empty?[]:Array.from({length:s.rules},(_,i)=>({id:`target.${i}`,category:'bash',severity:'critical',description:'target marker',match:{kind:'regex',target:s.target,pattern:'^NEVER$'},appliesTo:[s.wrongTool?'Other':'*'],enabled:!s.disabled}));
+ const crit={id:'critical',category:'bash',severity:'critical',description:'independent command deny',match:{kind:'substring',target:'command',pattern:'DANGER'},appliesTo:['*']};if(s.critical==='before')rules.unshift(crit);if(s.critical==='after')rules.push(crit);
+ const opts={...(s.allAllow?{severityTable:{critical:'allow',high:'allow',medium:'allow',low:'allow'}}:{}),...(s.prediction?{prediction:{pFailure:0.99,confidence:1,source:'awm'}}:{})};return {call,rules,opts};
+}
