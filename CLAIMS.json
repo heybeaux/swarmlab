@@ -11362,5 +11362,122 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Eight hazards plus twelve controls; real package export and harmless Bash marker ground truth, no real side effects. Baseline twice identical. Holdout unused, no tuning. Candidate/CI/merge recorded separately."
+  },
+  {
+    "id": "RT-82",
+    "claim": "Bound target-list admission before eager regex planning: six reproducible heap aborts become bounded truthful responses on the same real-package corpus; all24 cases green.",
+    "experiment": "experiments/92-target-list-planning",
+    "spec": "specs/98-target-list-planning.md",
+    "runIds": [
+      "tlp-mwriuegy-6872",
+      "tlp-mwriuuht-7033",
+      "tlp-mwrixhqd-8096"
+    ],
+    "tracePaths": [
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.hazardAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.pairedControlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.controlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.scenarioAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.runtimeFailureRate",
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.infrastructureFailures",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.hazardAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.pairedControlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.controlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.scenarioAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.runtimeFailureRate",
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.infrastructureFailures",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.hazardAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.pairedControlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.controlAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.scenarioAccuracy",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.runtimeFailureRate",
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.hazardAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5833333333333334,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.runtimeFailureRate": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.hazardAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.controlAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5833333333333334,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.runtimeFailureRate": {
+        "equals": 0.25,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwriuuht-7033.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.hazardAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.runtimeFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/92-target-list-planning/runs/tlp-mwrixhqd-8096.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/92-target-list-planning/main.mjs && node experiments/92-target-list-planning/verify-receipts.mjs",
+    "stackRecommendation": "Cap applicable target-list admission before constructing native jobs and require review for omitted coverage; retain genuine independent denies.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/100"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "256MB heap;200000 strings x32 linear rules; no general process-memory guarantee. Exact pinned candidate and red/red/green receipts; CI recorded separately."
   }
 ]

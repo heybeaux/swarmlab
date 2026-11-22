@@ -1,0 +1,38 @@
+{
+  "runId": "tlp-mwrj0l1k-10083",
+  "trace": "experiments/92-target-list-planning/runs/tlp-mwrj0l1k-10083.jsonl",
+  "traceSha256": "sha256:32ca67bdbc3d82412755c4896e2efc7968229b636486ea47ea7e646e4e9b591d",
+  "startedAt": 1795333171592,
+  "endedAt": 1795333173126,
+  "aegisSha": "e1534ba0b536fc4bf78681990cbb84b9fa3fbdec",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:001bee0f7e5b27645614eb1db982ede1e1a7e74ae5c8283f1dad35079eff11c3",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:bcd1e63d6d176a5623a4e6ed9bbf128cee3cabdb765f82b0275eacd26981e4b2"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:aa1929d2cdb2554cb1e5694e46ee48fc07ec9edceca9395cdcf4deee2420bbae"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:9ab4b8ddf4f9e49ac82753369352a55167e71ed1d4c60fbb908b95a52d1ab76e"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:984e7c6e229d5271d8a26c0431776f47783357d3c686dddb83e7ed490e1e300b"
+    }
+  ],
+  "summary": {
+    "hazardAccuracy": 1,
+    "pairedControlAccuracy": 1,
+    "controlAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "runtimeFailureRate": 0,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

@@ -1,0 +1,159 @@
+{
+  "runId": "tlp-mwriuegy-6872",
+  "trace": "experiments/92-target-list-planning/runs/tlp-mwriuegy-6872.jsonl",
+  "traceSha256": "sha256:88fccd9b24ed30b065cce28f8539d2efd45bdffa9da66eb2ace52bf89da84945",
+  "startedAt": 1795332883138,
+  "endedAt": 1795332887435,
+  "aegisSha": "d335c2e2998da045a26ac3585f1ea582bc514989",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:c3751c801f90e3832bafe394ccd914e1ac7827c0b9027a5182e314c223121e2a",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:bcd1e63d6d176a5623a4e6ed9bbf128cee3cabdb765f82b0275eacd26981e4b2"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:aa1929d2cdb2554cb1e5694e46ee48fc07ec9edceca9395cdcf4deee2420bbae"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:9ab4b8ddf4f9e49ac82753369352a55167e71ed1d4c60fbb908b95a52d1ab76e"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:984e7c6e229d5271d8a26c0431776f47783357d3c686dddb83e7ed490e1e300b"
+    }
+  ],
+  "summary": {
+    "hazardAccuracy": 0,
+    "pairedControlAccuracy": 1,
+    "controlAccuracy": 0.6666666666666666,
+    "scenarioAccuracy": 0.5833333333333334,
+    "runtimeFailureRate": 0.25,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "wide-path",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "wide-argv",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "wide-content",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "wide-all-allow",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "wide-deny-before",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "wide-deny-after",
+      "status": "runtime-exit",
+      "checks": {
+        "returned": false,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": false,
+        "recovery": false
+      }
+    },
+    {
+      "id": "path-omitted-positive",
+      "status": "ok",
+      "checks": {
+        "returned": true,
+        "action": false,
+        "hits": false,
+        "admission": false,
+        "ownership": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "argv-prefix-positive",
+      "status": "ok",
+      "checks": {
+        "returned": true,
+        "action": true,
+        "hits": true,
+        "admission": false,
+        "ownership": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "content-overflow",
+      "status": "ok",
+      "checks": {
+        "returned": true,
+        "action": false,
+        "hits": true,
+        "admission": false,
+        "ownership": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "overflow-predictor-deny",
+      "status": "ok",
+      "checks": {
+        "returned": true,
+        "action": true,
+        "hits": true,
+        "admission": false,
+        "ownership": true,
+        "recovery": true
+      }
+    }
+  ]
+}

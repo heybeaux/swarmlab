@@ -1,0 +1,40 @@
+{
+  "experiment": "92-target-list-planning",
+  "preregistrationCommit": "ff95b54757ca3ebd946630c74b5d1a8daaa526c1",
+  "harnessCommit": "305900b5f9db09bf1c3a39ebc26bb8fd36cafedf",
+  "baselineSha": "d335c2e2998da045a26ac3585f1ea582bc514989",
+  "candidateSha": "e1534ba0b536fc4bf78681990cbb84b9fa3fbdec",
+  "baselineMetrics": {
+    "hazardAccuracy": 0,
+    "pairedControlAccuracy": 1,
+    "controlAccuracy": 0.6666666666666666,
+    "scenarioAccuracy": 0.5833333333333334,
+    "runtimeFailureRate": 0.25,
+    "infrastructureFailures": 0
+  },
+  "candidateMetrics": {
+    "hazardAccuracy": 1,
+    "pairedControlAccuracy": 1,
+    "controlAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "runtimeFailureRate": 0,
+    "infrastructureFailures": 0
+  },
+  "runs": [
+    {
+      "runId": "tlp-mwriuegy-6872",
+      "traceSha256": "sha256:88fccd9b24ed30b065cce28f8539d2efd45bdffa9da66eb2ace52bf89da84945",
+      "resultSha256": "sha256:4460c960bc82f11985901333108500223ffe86e2d9a287fecafc07dc334b2099"
+    },
+    {
+      "runId": "tlp-mwriuuht-7033",
+      "traceSha256": "sha256:7a19504cbd3859e3c85fbd35e482bbedbea6da661604552becf5cbf2588ba9b5",
+      "resultSha256": "sha256:1c8b510e7eff78e89ff26c6625785a682943740da968be4fce84f7f67a8fdf15"
+    },
+    {
+      "runId": "tlp-mwrixhqd-8096",
+      "traceSha256": "sha256:ef4ff430c1ac2d62dc606748f5bde5d7e07ecd0bd54c6de15280a8dafedd16e5",
+      "resultSha256": "sha256:93769244f6c6ff87fd3d129b9df27dec317411a633c02d6c5526f660826f061b"
+    }
+  ]
+}
