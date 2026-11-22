@@ -1,0 +1,5 @@
+import {isDeepStrictEqual as equal} from 'node:util';
+import {thresholds} from './scenarios.mjs';
+export function assess(s,r){const e=r.response?.evaluation;const checks={returned:r.status==='ok'&&!r.response?.error,action:e?.action===s.expected.action,hits:equal(e?.matches?.map(h=>h.id),s.expected.hits),admission:!!e&&/target.*admission.*budget/i.test(e.reason)===s.expected.admission,ownership:r.response?.ownership===true,recovery:r.response?.recovered===true};return {id:s.id,kind:s.kind,observation:r,checks,correct:Object.values(checks).every(Boolean)};}
+export function metrics(rows){const rate=kind=>{const xs=rows.filter(r=>r.kind===kind);return xs.filter(r=>r.correct).length/xs.length;};return {hazardAccuracy:rate('hazard'),pairedControlAccuracy:rate('paired'),controlAccuracy:rate('control'),scenarioAccuracy:rows.filter(r=>r.correct).length/rows.length,runtimeFailureRate:rows.filter(r=>['runtime-exit','watchdog','runtime-error'].includes(r.observation.status)).length/rows.length,infrastructureFailures:rows.filter(r=>r.observation.status==='infrastructure-error').length};}
+export const passing=scores=>equal(scores,thresholds);
