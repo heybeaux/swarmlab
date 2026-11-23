@@ -1,0 +1,38 @@
+{
+  "runId": "lls-mwsy9z5z-35108",
+  "trace": "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl",
+  "traceSha256": "sha256:791a446b62a2971c776ed1a70b835fd6824dac7b5fb8f41e61ab516220e6a52b",
+  "startedAt": 1795419270215,
+  "endedAt": 1795419283828,
+  "aegisSha": "9c06ee809849a3c60e15160388636f93ab04918d",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:001bee0f7e5b27645614eb1db982ede1e1a7e74ae5c8283f1dad35079eff11c3",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:cf54112e802a2738a6d430f08f14f2a3551433f6659b4c253fdc1bac8b5f5d1d"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:d463b063acd23ee7a4d7cf7952cd32e6281f5a6e29f4a1ddb251a9ecbb5710a6"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:6cc7f189b1a8c52d481e2343717eb5308fa9a5f0dabf064a0184cb7263a689f3"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:437e3522fd703fc5da12b32c994d3362b75d8d5d505df6d1b76c17cb5016c1a1"
+    }
+  ],
+  "summary": {
+    "stressAccuracy": 1,
+    "pairedControlAccuracy": 1,
+    "controlAccuracy": 1,
+    "scenarioAccuracy": 1,
+    "runtimeFailureRate": 0,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}

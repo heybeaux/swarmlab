@@ -1,0 +1,53 @@
+name: exp93-evidence
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  replay-and-real-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable core toolchain (legacy file dependencies untouched)
+        run: |
+          npm ci --prefix experiments/64-merged-rule-ownership/ci --workspaces=false
+          ln -s experiments/64-merged-rule-ownership/ci/node_modules node_modules
+          mkdir -p node_modules/@swarmlab
+          ln -s "$GITHUB_WORKSPACE/core" node_modules/@swarmlab/core
+          node_modules/.bin/tsc -b core
+          node_modules/.bin/tsc -b --force core
+          for f in experiments/93-large-literal-scan/*.mjs; do node --check "$f"; done
+      - name: Verify admitted evidence and recomputed honest-null receipts
+        run: npm run verify:evidence && node experiments/93-large-literal-scan/verify-receipts.mjs
+      - uses: actions/checkout@v4
+        with:
+          repository: heybeaux/aegis
+          ref: 9c06ee809849a3c60e15160388636f93ab04918d
+          path: .aegis-exp93
+      - name: Build actual pinned package
+        working-directory: .aegis-exp93
+        run: pnpm install --frozen-lockfile && pnpm --filter @heybeaux/lattice-aegis build
+      - name: Frozen design against actual artifact, fresh typed outcomes not exit0
+        run: |
+          START="$(node -e 'console.log(Date.now())')"
+          status=0
+          AEGIS_REPO="$GITHUB_WORKSPACE/.aegis-exp93" node experiments/93-large-literal-scan/main.mjs > "$RUNNER_TEMP/exp93.log" || status=$?
+          cat "$RUNNER_TEMP/exp93.log"
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
+          node experiments/93-large-literal-scan/verify-receipts.mjs --run "$RUNNER_TEMP/exp93.log" --since "$START" --sha "9c06ee809849a3c60e15160388636f93ab04918d" --repo "$GITHUB_WORKSPACE/.aegis-exp93"
+          node experiments/93-large-literal-scan/test-verifier.mjs
+      - name: Preserve raw CI evidence even when the experiment is red
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exp93-observations
+          path: |
+            experiments/93-large-literal-scan/runs/
+            ${{ runner.temp }}/exp93.log

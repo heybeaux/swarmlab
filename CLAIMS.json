@@ -11479,5 +11479,88 @@
     ],
     "evidenceStatus": "verified",
     "notes": "256MB heap;200000 strings x32 linear rules; no general process-memory guarantee. Exact pinned candidate and red/red/green receipts; CI recorded separately."
+  },
+  {
+    "id": "EXP-93-NULL",
+    "claim": "Two local frozen runs of64 literal rules scanning a single128MiB input completed all22 scenarios within1500ms; honest null with only0.7ms minimum stress headroom, not robust latency or Aegis improvement evidence.",
+    "experiment": "experiments/93-large-literal-scan",
+    "spec": "specs/99-large-literal-scan.md",
+    "runIds": [
+      "lls-mwsy9z5z-35108",
+      "lls-mwsyau0t-35355"
+    ],
+    "tracePaths": [
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.stressAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.pairedControlAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.controlAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.scenarioAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.runtimeFailureRate",
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.infrastructureFailures",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.stressAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.pairedControlAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.controlAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.scenarioAccuracy",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.runtimeFailureRate",
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.stressAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.runtimeFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsy9z5z-35108.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.stressAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.controlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.runtimeFailureRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/93-large-literal-scan/runs/lls-mwsyau0t-35355.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/93-large-literal-scan/main.mjs && node experiments/93-large-literal-scan/verify-receipts.mjs",
+    "stackRecommendation": "No runtime patch warranted by passing pre-registered baseline. Preserve near-threshold timing and test hardware sensitivity in pinned-package CI without changing acceptance limits.",
+    "stackReposAndPRs": [],
+    "evidenceStatus": "verified",
+    "notes": "Verified means replayed local observations only. No Aegis improvement, holdout, confidence guarantee, deployment or production-safety claim. CI outcome is separate; local null must not erase any later CI red."
   }
 ]
