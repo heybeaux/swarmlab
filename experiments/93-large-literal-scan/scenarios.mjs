@@ -7,7 +7,7 @@ export const scenarios=[...stress.map(s=>({...s,kind:'stress',length:huge})),...
  {id:'huge-disabled',target:'command',length:huge,disabled:true},
  {id:'huge-wrong-tool',target:'command',length:huge,wrongTool:true},
  {id:'huge-empty',target:'command',length:huge,empty:true},
- {id:'ordinary-hit',target:'command',length:256,hit:true,simple:true},
+ {id:'ordinary-hit',target:'command',length:257,hit:true,simple:true},
  {id:'ordinary-miss',target:'command',length:4096},
  {id:'fragments-separate',target:'fragment',length:1,split:true},
  {id:'huge-predictor-deny',target:'path',length:huge,prediction:true},
