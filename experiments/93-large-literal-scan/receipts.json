@@ -1,0 +1,23 @@
+{
+  "experiment": "93-large-literal-scan",
+  "outcome": "honest-null",
+  "baselineSha": "9c06ee809849a3c60e15160388636f93ab04918d",
+  "preRegistrationCommit": "f92ab04",
+  "frozenHarnessCommit": "a8bf186",
+  "runs": [
+    {
+      "runId": "lls-mwsy9z5z-35108",
+      "resultSha256": "sha256:582dda68afd2276d08b11be08a081b0ebd3c43f32f65cec0db330b91b8e07451",
+      "traceSha256": "sha256:791a446b62a2971c776ed1a70b835fd6824dac7b5fb8f41e61ab516220e6a52b"
+    },
+    {
+      "runId": "lls-mwsyau0t-35355",
+      "resultSha256": "sha256:ee5cafef66a5e26275f13b7c701c27f807c40be831a55fc9911989ad39050a35",
+      "traceSha256": "sha256:3b6dbce0e2ad0356bfd7fcbd1d7ac6610564b2f37dc7f2cd2ce228de99bc7b33"
+    }
+  ],
+  "limitations": [
+    "Slowest of14 stress observations1499.3ms versus1500ms bound. Near-threshold local observation, no robust latency/general resource safety claim.",
+    "No tuning or holdout use; no Aegis patch. CI may expose hardware/scheduling sensitivity."
+  ]
+}
