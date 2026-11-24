@@ -1040,3 +1040,12 @@ separate. Next hypothesis: can oversized individual substring inputs consume
 unbounded work outside the native regex VM? Deduplicate before selection.
 
 Runtime PR: [Aegis100](https://github.com/heybeaux/aegis/pull/100).
+
+### RT-84 — execution authority lease
+
+New exp94, Spec100;34fixed scenarios, baseline24/26unsafe -> candidate0/26.
+Red/red/green traces and source/dist receipts under `experiments/94-execution-authority-lease/runs/`.
+Replay: `node experiments/94-execution-authority-lease/verify-receipts.mjs`.
+Missing opt-in capability; no persisted permit TTL. Local verification proven; CI/merge separate.
+
+Runtime PR: [Aegis101](https://github.com/heybeaux/aegis/pull/101).

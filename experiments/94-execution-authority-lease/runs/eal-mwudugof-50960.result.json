@@ -1,0 +1,354 @@
+{
+  "runId": "eal-mwudugof-50960",
+  "trace": "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl",
+  "traceSha256": "sha256:932c41132cbc1468f3e6da6ccab992029be2f92954b83d2da04f323619daf346",
+  "startedAt": 1795505886447,
+  "endedAt": 1795505886544,
+  "aegisSha": "9c06ee809849a3c60e15160388636f93ab04918d",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:79b20bea387a9b2412f1d5124bc648605161c053f8a0c7853ccfce0e14322eba",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:aa0bf15885fa41dec057ad55083ef51de13f5ebbfdcac133803048c194a82b6f"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:5120bef9ad57530445c114ed6029276dc8aaeb2e17a5c2b92399f8e0b4912e47"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:0c9113a66b2344223a083f99eed4c853a2f95fd4157c96c99854134f7b743e4d"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:c51ee993520d5f804f8a58ed00434f73c33fdfec42aad7823311c1d3fc875893"
+    }
+  ],
+  "summary": {
+    "unsafeExecutionRate": 0.9230769230769231,
+    "scenarioAccuracy": 0.23529411764705882,
+    "pairedControlAccuracy": 1,
+    "replaySafety": 1,
+    "ownershipAccuracy": 1,
+    "approvalCoverage": 1,
+    "fixtureAccuracy": 1,
+    "recoverySafety": 0.9411764705882353,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "simple-expired",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-expired-entry",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-regressed",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-nan",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-infinite",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-throws",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-deadline-nan",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-deadline-fraction",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-deadline-expanded",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-replaced",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-clock-invalid-entry",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "simple-store-unavailable",
+      "checks": {
+        "outcome": true,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": false
+      }
+    },
+    {
+      "id": "reconciled-expired",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-expired-entry",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-regressed",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-nan",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-infinite",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-throws",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-deadline-nan",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-deadline-fraction",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-deadline-expanded",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-replaced",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-clock-invalid-entry",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-store-unavailable",
+      "checks": {
+        "outcome": true,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": false
+      }
+    },
+    {
+      "id": "reconciled-prepare-expired-restore",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    },
+    {
+      "id": "reconciled-prepare-expired-ack-loss",
+      "checks": {
+        "outcome": false,
+        "control": true,
+        "replay": true,
+        "ownership": true,
+        "approval": true,
+        "fixture": true,
+        "recovery": true
+      }
+    }
+  ]
+}

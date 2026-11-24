@@ -11479,5 +11479,167 @@
     ],
     "evidenceStatus": "verified",
     "notes": "256MB heap;200000 strings x32 linear rules; no general process-memory guarantee. Exact pinned candidate and red/red/green receipts; CI recorded separately."
+  },
+  {
+    "id": "RT-84",
+    "claim": "Optional host authority leases across shared destructive finalization reject expiry and clock failures: unsafe execution24/26 to0/26 on the unchanged34-case real-Aegis experiment; paired no-lease controls preserved.",
+    "experiment": "94-execution-authority-lease",
+    "spec": "100-execution-authority-lease",
+    "runIds": [
+      "eal-mwudugof-50960",
+      "eal-mwuduv3y-51571",
+      "eal-mwudxv3v-54112"
+    ],
+    "tracePaths": [
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.unsafeExecutionRate",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.scenarioAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.pairedControlAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.replaySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.ownershipAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.approvalCoverage",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.fixtureAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.recoverySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.infrastructureFailures",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.unsafeExecutionRate",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.scenarioAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.pairedControlAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.replaySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.ownershipAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.approvalCoverage",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.fixtureAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.recoverySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.infrastructureFailures",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.unsafeExecutionRate",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.scenarioAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.pairedControlAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.replaySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.ownershipAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.approvalCoverage",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.fixtureAccuracy",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.recoverySafety",
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.unsafeExecutionRate": {
+        "equals": 0.9230769230769231,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.scenarioAccuracy": {
+        "equals": 0.23529411764705882,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.approvalCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.recoverySafety": {
+        "equals": 0.9411764705882353,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudugof-50960.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.unsafeExecutionRate": {
+        "equals": 0.9230769230769231,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.scenarioAccuracy": {
+        "equals": 0.23529411764705882,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.approvalCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.recoverySafety": {
+        "equals": 0.9411764705882353,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwuduv3y-51571.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.unsafeExecutionRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.replaySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.approvalCoverage": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.recoverySafety": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/absolute/path/to/built/aegis node experiments/94-execution-authority-lease/main.mjs && node experiments/94-execution-authority-lease/verify-receipts.mjs",
+    "stackRecommendation": "Capture an optional trusted-host execution-authority deadline/clock across shared finalization awaits; preserve observed expiry and burn consumed grants. Hosts supply every retry; no persisted permit TTL.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/101"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic missing capability test, not violation of existing documented TTL. CI/merge tracked separately; no journal/local or post-return guarantee. Holdout unused."
   }
 ]

@@ -1,0 +1,41 @@
+{
+  "runId": "eal-mwudxv3v-54112",
+  "trace": "experiments/94-execution-authority-lease/runs/eal-mwudxv3v-54112.jsonl",
+  "traceSha256": "sha256:6d55c479aa455958c69447b411ff92727e944c338616914ca156936db7b82ba1",
+  "startedAt": 1795506045115,
+  "endedAt": 1795506045208,
+  "aegisSha": "33322aa6e30e7c74a3b13da90c6409bcc56aded3",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:292eaf70cadf52c89b3f13cc60f813ed2c80a5df6611910e9c6b25cc7e82b9f6",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:aa0bf15885fa41dec057ad55083ef51de13f5ebbfdcac133803048c194a82b6f"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:5120bef9ad57530445c114ed6029276dc8aaeb2e17a5c2b92399f8e0b4912e47"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:0c9113a66b2344223a083f99eed4c853a2f95fd4157c96c99854134f7b743e4d"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:c51ee993520d5f804f8a58ed00434f73c33fdfec42aad7823311c1d3fc875893"
+    }
+  ],
+  "summary": {
+    "unsafeExecutionRate": 0,
+    "scenarioAccuracy": 1,
+    "pairedControlAccuracy": 1,
+    "replaySafety": 1,
+    "ownershipAccuracy": 1,
+    "approvalCoverage": 1,
+    "fixtureAccuracy": 1,
+    "recoverySafety": 1,
+    "infrastructureFailures": 0
+  },
+  "passed": true,
+  "failed": []
+}
