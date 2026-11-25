@@ -33,8 +33,10 @@ binding and mandatory begin CAS assumed; no external effect, production durabili
 hostile-storage, unseen ABA, post-return race, deployment or predictor claim.
 Uncertain operations require host quarantine. No tuned parameters; holdout unused.
 No .acr edits or Territory refresh. Prior incomplete86/90 and honest-null93 remain
-separate. Next hypothesis: can mutable permit records returned by a host adapter
-change authorization while finalization awaits a later persistence operation?
-Deduplicate against existing observation-ownership work before selecting.
+separate. Next hypothesis: can truthy nonboolean burn acknowledgements be mistaken for confirmed
+durable invalidation during finalization or resume?
+Deduplicate against existing acknowledgement-attestation work before selecting.
 
 See [Spec101](../../specs/101-static-authority-invalidation.md) for exact design and commands.
+
+Linked PRs: [Aegis102](https://github.com/heybeaux/aegis/pull/102) and [SwarmLab86](https://github.com/heybeaux/swarmlab/pull/86).

@@ -11859,7 +11859,8 @@
     "reproductionCommand": "AEGIS_REPO=/path/to/aegis node experiments/95-static-authority-invalidation/main.mjs && node experiments/95-static-authority-invalidation/verify-receipts.mjs",
     "stackRecommendation": "Validate owned retained permit against static entry authority after absent journal claims; burn with acknowledgement, preserve uncertainty and fenced valid recovery.",
     "stackReposAndPRs": [
-      "https://github.com/heybeaux/aegis"
+      "https://github.com/heybeaux/aegis/pull/102",
+      "https://github.com/heybeaux/swarmlab/pull/86"
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic synthetic public-API corpus. Pre-registration f68653d987918c14fd054291605b563b6c72192e; frozen harness 66f5288d79c857b683ce36a516ea8fa9d4a6d21b. No parameter tuning or holdout use. Exact source/dist hashes and raw rescoring in receipts.json. No production/deployment/learned-predictor claim."
