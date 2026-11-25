@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,readdirSync,statSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {resolve,join,relative,isAbsolute} from 'node:path';
 import {createHash} from 'node:crypto';
@@ -44,7 +44,18 @@ export function validate(result,events,{expectedSha,expectedScores,since=0,artif
  assert.deepEqual(m.harnessManifest,currentHarness);assert.deepEqual(result.harnessManifest,currentHarness);
  assert.equal(m.aegis.sha,expectedSha);assert.equal(result.aegisSha,expectedSha);assert.equal(m.aegis.dirty,'');assert.equal(result.aegisDirty,'');
  assert.equal(m.aegis.manifestSha256,hash(JSON.stringify(m.aegis.manifest)));assert.equal(result.manifestSha256,m.aegis.manifestSha256);
- const admittedResult=[...receipts.baseline,receipts.candidate].find(r=>r.aegisSha===expectedSha);assert(admittedResult);assert.equal(result.manifestSha256,admittedResult.manifestSha256);
+ const admittedResult=[...receipts.baseline,receipts.candidate].find(r=>r.aegisSha===expectedSha);assert(admittedResult);
+ if(!artifactRepo)assert.equal(result.manifestSha256,admittedResult.manifestSha256);
+ else {
+  // Clean CI lacks orphan bundles retained by incremental local tsup builds.
+  // Source identity is exact; every artifact actually present is independently hashed.
+  const admittedMeta=JSON.parse(readFileSync(checkedPath(repoRoot,admittedResult.trace),'utf8').split('\n')[0]).body;
+  const source=manifest=>manifest.filter(f=>!f.file.includes('/dist/'));
+  assert.deepEqual(source(m.aegis.manifest),source(admittedMeta.aegis.manifest));
+  const walk=p=>readdirSync(p).sort().flatMap(n=>statSync(join(p,n)).isDirectory()?walk(join(p,n)):[join(p,n)]);
+  const actual=['aegis','aegis-hook','aegis-collect'].flatMap(p=>[...walk(join(artifactRepo,'packages',p,'src')),...walk(join(artifactRepo,'packages',p,'dist')),join(artifactRepo,'packages',p,'package.json')]).sort().map(f=>({file:relative(artifactRepo,f),sha256:hash(readFileSync(f))}));
+  assert.deepEqual(m.aegis.manifest,actual);
+ }
  const paths=m.aegis.manifest.map(x=>x.file);assert.equal(new Set(paths).size,paths.length);
  for(const pkg of ['aegis','aegis-hook','aegis-collect']){assert(paths.some(p=>p.startsWith(`packages/${pkg}/src/`)));assert(paths.includes(`packages/${pkg}/dist/index.js`));assert(paths.includes(`packages/${pkg}/package.json`));}
  for(const entry of m.aegis.manifest){checkedPath(repoRoot,entry.file);assert.match(entry.sha256,/^sha256:[a-f0-9]{64}$/);}

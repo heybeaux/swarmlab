@@ -1505,3 +1505,10 @@ durable invalidation during finalization or resume?
 Deduplicate against existing acknowledgement-attestation work before selecting.
 
 Linked PRs: [Aegis102](https://github.com/heybeaux/aegis/pull/102) and [SwarmLab86](https://github.com/heybeaux/swarmlab/pull/86).
+
+CI receipt correction: initial run45569980004 reproduced57/57 green but the verifier
+incorrectly required identical full build inventories. Downloaded CI artifacts show
+only two old baseline chunk files absent from the clean build; all shared hashes
+match. Verifier now binds exact source identity and enumerates/hashes the complete
+actual build inventory for live verification. Frozen experiment, metrics, thresholds,
+and admitted red/red/green receipts unchanged. Failure retained in nightly artifacts.
