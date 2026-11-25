@@ -1,0 +1,1469 @@
+{
+  "preregistrationCommit": "f68653d987918c14fd054291605b563b6c72192e",
+  "frozenHarnessCommit": "66f5288d79c857b683ce36a516ea8fa9d4a6d21b",
+  "baseline": [
+    {
+      "runId": "sai-mwvt5ktv-55914",
+      "trace": "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl",
+      "traceSha256": "sha256:f05c02a4c9ab43ea659a5e7e3aa5dec2d25e00a5df793c3d4e01093d830849bf",
+      "startedAt": 1795592065459,
+      "endedAt": 1795592065616,
+      "aegisSha": "beffd514ea144bfdcf13531cbc9d87760bbc55b4",
+      "aegisDirty": "",
+      "manifestSha256": "sha256:cc0b815ae46abbfb587ebd350fe56121d296adfb3d6b368f489c5be1197ab870",
+      "harnessManifest": [
+        {
+          "file": "scenarios.mjs",
+          "sha256": "sha256:acdfc45edba2515e80af7a2e8f7c07eadb9a9f3e0cfceb20f9e7bcd63994fe84"
+        },
+        {
+          "file": "oracle.mjs",
+          "sha256": "sha256:4c01305468d6098211f2fd26a562e52640ccc276bf01205556a56500e0362455"
+        },
+        {
+          "file": "child.mjs",
+          "sha256": "sha256:b8f1f4020a7bf7f38fbb806ede4a4adaf7721f052779a0c2103d0a0458e1d6bd"
+        },
+        {
+          "file": "main.mjs",
+          "sha256": "sha256:190d4f70d572a07a0d96802e44c1b8afcf573f80b204abf28f88cd88d091a26c"
+        }
+      ],
+      "summary": {
+        "unsafeRecoveryRate": 1,
+        "invalidationAccuracy": 0,
+        "uncertaintyAccuracy": 0.6666666666666666,
+        "validControlAccuracy": 1,
+        "recoveryAccuracy": 1,
+        "pairedControlAccuracy": 1,
+        "rivalAccuracy": 1,
+        "approvalAccuracy": 1,
+        "fixtureAccuracy": 1,
+        "ownershipAccuracy": 1,
+        "stateAccuracy": 1,
+        "scenarioAccuracy": 0.3157894736842105,
+        "infrastructureFailures": 0
+      },
+      "passed": false,
+      "failed": [
+        {
+          "id": "bash-throw-before-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-false-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-throws-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-true-throws",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-false-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-throws-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-true-throws",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        }
+      ]
+    },
+    {
+      "runId": "sai-mwvt5kzi-55932",
+      "trace": "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl",
+      "traceSha256": "sha256:5fb1da6f060bc50404091558789dad54d3fd5edc7dcd77f7dd9ed28640c02296",
+      "startedAt": 1795592065662,
+      "endedAt": 1795592065807,
+      "aegisSha": "beffd514ea144bfdcf13531cbc9d87760bbc55b4",
+      "aegisDirty": "",
+      "manifestSha256": "sha256:cc0b815ae46abbfb587ebd350fe56121d296adfb3d6b368f489c5be1197ab870",
+      "harnessManifest": [
+        {
+          "file": "scenarios.mjs",
+          "sha256": "sha256:acdfc45edba2515e80af7a2e8f7c07eadb9a9f3e0cfceb20f9e7bcd63994fe84"
+        },
+        {
+          "file": "oracle.mjs",
+          "sha256": "sha256:4c01305468d6098211f2fd26a562e52640ccc276bf01205556a56500e0362455"
+        },
+        {
+          "file": "child.mjs",
+          "sha256": "sha256:b8f1f4020a7bf7f38fbb806ede4a4adaf7721f052779a0c2103d0a0458e1d6bd"
+        },
+        {
+          "file": "main.mjs",
+          "sha256": "sha256:190d4f70d572a07a0d96802e44c1b8afcf573f80b204abf28f88cd88d091a26c"
+        }
+      ],
+      "summary": {
+        "unsafeRecoveryRate": 1,
+        "invalidationAccuracy": 0,
+        "uncertaintyAccuracy": 0.6666666666666666,
+        "validControlAccuracy": 1,
+        "recoveryAccuracy": 1,
+        "pairedControlAccuracy": 1,
+        "rivalAccuracy": 1,
+        "approvalAccuracy": 1,
+        "fixtureAccuracy": 1,
+        "ownershipAccuracy": 1,
+        "stateAccuracy": 1,
+        "scenarioAccuracy": 0.3157894736842105,
+        "infrastructureFailures": 0
+      },
+      "passed": false,
+      "failed": [
+        {
+          "id": "bash-throw-before-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-before-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-throw-after-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-false-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-throws-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "bash-contended-revoked-true-throws",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-before-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-throw-after-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": true,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-unchecked-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-structural-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-digest-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-consumer-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-false-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-throws-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-revoked-true-throws",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        },
+        {
+          "id": "process-contended-generation-true-ok",
+          "checks": {
+            "outcome": false,
+            "invalidation": false,
+            "uncertainty": false,
+            "validControl": true,
+            "recovery": true,
+            "paired": true,
+            "rival": true,
+            "approval": true,
+            "fixture": true,
+            "ownership": true,
+            "state": true,
+            "infrastructure": true
+          }
+        }
+      ]
+    }
+  ],
+  "candidate": {
+    "runId": "sai-mwvt8cdf-57287",
+    "trace": "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl",
+    "traceSha256": "sha256:8fda1e29a0bc6cb2883145ecfd358898efdb844883a06b57bec25087b48f452c",
+    "startedAt": 1795592194467,
+    "endedAt": 1795592194610,
+    "aegisSha": "ff5da736e94a675b122cc741046c87228da0873d",
+    "aegisDirty": "",
+    "manifestSha256": "sha256:543e41bd5f4d8f6e55fde086fdfa00ce35eea4e18602ca15b567529305e760f8",
+    "harnessManifest": [
+      {
+        "file": "scenarios.mjs",
+        "sha256": "sha256:acdfc45edba2515e80af7a2e8f7c07eadb9a9f3e0cfceb20f9e7bcd63994fe84"
+      },
+      {
+        "file": "oracle.mjs",
+        "sha256": "sha256:4c01305468d6098211f2fd26a562e52640ccc276bf01205556a56500e0362455"
+      },
+      {
+        "file": "child.mjs",
+        "sha256": "sha256:b8f1f4020a7bf7f38fbb806ede4a4adaf7721f052779a0c2103d0a0458e1d6bd"
+      },
+      {
+        "file": "main.mjs",
+        "sha256": "sha256:190d4f70d572a07a0d96802e44c1b8afcf573f80b204abf28f88cd88d091a26c"
+      }
+    ],
+    "summary": {
+      "unsafeRecoveryRate": 0,
+      "invalidationAccuracy": 1,
+      "uncertaintyAccuracy": 1,
+      "validControlAccuracy": 1,
+      "recoveryAccuracy": 1,
+      "pairedControlAccuracy": 1,
+      "rivalAccuracy": 1,
+      "approvalAccuracy": 1,
+      "fixtureAccuracy": 1,
+      "ownershipAccuracy": 1,
+      "stateAccuracy": 1,
+      "scenarioAccuracy": 1,
+      "infrastructureFailures": 0
+    },
+    "passed": true,
+    "failed": []
+  }
+}

@@ -11641,5 +11641,227 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic missing capability test, not violation of existing documented TTL. CI/merge tracked separately; no journal/local or post-return guarantee. Holdout unused."
+  },
+  {
+    "id": "RT-85",
+    "claim": "Static invalid journal authority must be durably invalidated even when claim throws or returns no record: real Aegis clean recoveries33/33 to0/33 with57/57 frozen scenarios passing. Failed read/burn remains uncertainty.",
+    "experiment": "experiments/95-static-authority-invalidation",
+    "spec": "specs/101-static-authority-invalidation.md",
+    "runIds": [
+      "sai-mwvt5ktv-55914",
+      "sai-mwvt5kzi-55932",
+      "sai-mwvt8cdf-57287"
+    ],
+    "tracePaths": [
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.unsafeRecoveryRate",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.invalidationAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.uncertaintyAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.validControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.recoveryAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.pairedControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.rivalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.approvalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.fixtureAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.ownershipAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.stateAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.scenarioAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.infrastructureFailures",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.unsafeRecoveryRate",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.invalidationAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.uncertaintyAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.validControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.recoveryAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.pairedControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.rivalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.approvalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.fixtureAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.ownershipAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.stateAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.scenarioAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.infrastructureFailures",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.unsafeRecoveryRate",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.invalidationAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.uncertaintyAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.validControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.recoveryAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.pairedControlAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.rivalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.approvalAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.fixtureAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.ownershipAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.stateAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.scenarioAccuracy",
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.invalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.validControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.scenarioAccuracy": {
+        "equals": 0.3157894736842105,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5ktv-55914.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.unsafeRecoveryRate": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.invalidationAccuracy": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.6666666666666666,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.validControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.scenarioAccuracy": {
+        "equals": 0.3157894736842105,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt5kzi-55932.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.unsafeRecoveryRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.invalidationAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.validControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.recoveryAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.rivalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/95-static-authority-invalidation/runs/sai-mwvt8cdf-57287.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/aegis node experiments/95-static-authority-invalidation/main.mjs && node experiments/95-static-authority-invalidation/verify-receipts.mjs",
+    "stackRecommendation": "Validate owned retained permit against static entry authority after absent journal claims; burn with acknowledgement, preserve uncertainty and fenced valid recovery.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Deterministic synthetic public-API corpus. Pre-registration f68653d987918c14fd054291605b563b6c72192e; frozen harness 66f5288d79c857b683ce36a516ea8fa9d4a6d21b. No parameter tuning or holdout use. Exact source/dist hashes and raw rescoring in receipts.json. No production/deployment/learned-predictor claim."
   }
 ]
