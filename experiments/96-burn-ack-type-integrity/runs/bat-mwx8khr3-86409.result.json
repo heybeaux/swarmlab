@@ -1,0 +1,357 @@
+{
+  "runId": "bat-mwx8khr3-86409",
+  "trace": "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl",
+  "traceSha256": "sha256:3d29838e52c28263915419bbef3a42b39354835c4f3dbdbd150a318fb5c537c4",
+  "startedAt": 1795678421727,
+  "endedAt": 1795678421865,
+  "aegisSha": "1e969bc025a5b2af3a4a614481f1f7f73582ff48",
+  "aegisDirty": "",
+  "manifestSha256": "sha256:1908bf5151dbca34c6204181c27f5aa26b4aa295164f00797156708b31e3df55",
+  "harnessManifest": [
+    {
+      "file": "scenarios.mjs",
+      "sha256": "sha256:1272444281e6b231e7f275ff2b468782c2eef01c732ca08cb7a91598482b0f2c"
+    },
+    {
+      "file": "oracle.mjs",
+      "sha256": "sha256:fe74b47e8d959cbc176170b9efbfb9a30716257ba5c94082cf1fcd07f88217eb"
+    },
+    {
+      "file": "child.mjs",
+      "sha256": "sha256:10ff613dce935f3e4c7e4e1374b3d3e891ce0a7d4d3433a559f9b7f3f4eec103"
+    },
+    {
+      "file": "main.mjs",
+      "sha256": "sha256:bf09c9ee9b0e47dc65c2a21284a037aaf741965ee6de56cad3e99234e27adaca"
+    }
+  ],
+  "summary": {
+    "falseDefinitiveRate": 0.5714285714285714,
+    "uncertaintyAccuracy": 0.42857142857142855,
+    "confirmedBurnAccuracy": 1,
+    "validAccuracy": 1,
+    "stateAccuracy": 1,
+    "probeAccuracy": 1,
+    "pairedControlAccuracy": 1,
+    "approvalAccuracy": 1,
+    "fixtureAccuracy": 1,
+    "ownershipAccuracy": 1,
+    "scenarioAccuracy": 0.5555555555555556,
+    "infrastructureFailures": 0
+  },
+  "passed": false,
+  "failed": [
+    {
+      "id": "bash-finalize-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-finalize-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-finalize-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-finalize-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-resolve-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "bash-begin-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-finalize-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-finalize-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-finalize-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-finalize-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-resolve-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-string",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-number",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-object",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    },
+    {
+      "id": "process-begin-array",
+      "checks": {
+        "outcome": false,
+        "state": true,
+        "probe": true,
+        "paired": true,
+        "fixture": true,
+        "approval": true,
+        "ownership": true,
+        "infrastructure": true
+      }
+    }
+  ]
+}
