@@ -11864,5 +11864,212 @@
     ],
     "evidenceStatus": "verified",
     "notes": "Deterministic synthetic public-API corpus. Pre-registration f68653d987918c14fd054291605b563b6c72192e; frozen harness 66f5288d79c857b683ce36a516ea8fa9d4a6d21b. No parameter tuning or holdout use. Exact source/dist hashes and raw rescoring in receipts.json. No production/deployment/learned-predictor claim."
+  },
+  {
+    "id": "RT-86",
+    "claim": "Malformed truthy burn acknowledgements falsely confirmed invalidation24/42 to0/42 after real Aegis requires literal true;54/54 frozen scenarios pass.",
+    "experiment": "experiments/96-burn-ack-type-integrity",
+    "spec": "specs/102-burn-ack-type-integrity.md",
+    "runIds": [
+      "bat-mwx8khl7-86391",
+      "bat-mwx8khr3-86409",
+      "bat-mwx8mq43-87449"
+    ],
+    "tracePaths": [
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl"
+    ],
+    "scoreFields": [
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.falseDefinitiveRate",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.uncertaintyAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.confirmedBurnAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.validAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.stateAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.probeAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.pairedControlAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.approvalAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.fixtureAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.ownershipAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.scenarioAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.infrastructureFailures",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.falseDefinitiveRate",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.uncertaintyAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.confirmedBurnAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.validAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.stateAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.probeAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.pairedControlAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.approvalAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.fixtureAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.ownershipAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.scenarioAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.infrastructureFailures",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.falseDefinitiveRate",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.uncertaintyAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.confirmedBurnAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.validAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.stateAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.probeAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.pairedControlAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.approvalAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.fixtureAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.ownershipAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.scenarioAccuracy",
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.infrastructureFailures"
+    ],
+    "expectedValues": {
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.falseDefinitiveRate": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5555555555555556,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khl7-86391.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.falseDefinitiveRate": {
+        "equals": 0.5714285714285714,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.uncertaintyAccuracy": {
+        "equals": 0.42857142857142855,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.scenarioAccuracy": {
+        "equals": 0.5555555555555556,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8khr3-86409.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.falseDefinitiveRate": {
+        "equals": 0,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.uncertaintyAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.confirmedBurnAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.validAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.stateAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.probeAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.pairedControlAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.approvalAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.fixtureAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.ownershipAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.scenarioAccuracy": {
+        "equals": 1,
+        "tolerance": 0
+      },
+      "experiments/96-burn-ack-type-integrity/runs/bat-mwx8mq43-87449.jsonl#last.infrastructureFailures": {
+        "equals": 0,
+        "tolerance": 0
+      }
+    },
+    "reproductionCommand": "AEGIS_REPO=/path/to/aegis node experiments/96-burn-ack-type-integrity/main.mjs && node experiments/96-burn-ack-type-integrity/verify-receipts.mjs",
+    "stackRecommendation": "Require literal true at each durable burn boundary; uncertain protocol evidence requires host quarantine.",
+    "stackReposAndPRs": [
+      "https://github.com/heybeaux/aegis/pull/103"
+    ],
+    "evidenceStatus": "verified",
+    "notes": "Synthetic malformed adapter protocol faults, no parameter tuning/holdout use. Source/dist and frozen-harness receipts preserved. No protection against dishonest literal true or production deployment claim."
   }
 ]
